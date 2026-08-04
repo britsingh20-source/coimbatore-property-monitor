@@ -104,12 +104,27 @@ PROPERTY_SCHEMA = {
 }
 
 
+MAX_TRANSCRIPT_CHARS = 15000
+
+
 def extract_property(video):
+
+    transcript_status = video.get("transcript_status", "unavailable")
+    transcript_text = video.get("transcript", "") or ""
+
+    if len(transcript_text) > MAX_TRANSCRIPT_CHARS:
+        transcript_text = transcript_text[:MAX_TRANSCRIPT_CHARS] + " ...[truncated]"
+
+    if transcript_status == "available" and transcript_text:
+        transcript_block = transcript_text
+    else:
+        transcript_block = "(no transcript available for this video)"
 
     prompt = f"""
 You are a real-estate data extraction system.
 
-Analyze the following YouTube property listing metadata.
+Analyze the following YouTube property listing metadata, and the video
+transcript when one is available.
 
 IMPORTANT RULES:
 
@@ -128,6 +143,14 @@ IMPORTANT RULES:
 8. Identify the exact locality mentioned.
 9. If multiple properties are discussed, identify that fact.
 10. source_facts must contain the factual statements used for extraction.
+11. The transcript may be unavailable for this video (transcript_status
+    below will say so). In that case, base the analysis only on the
+    title and description. Do not treat a missing transcript as missing
+    property information by itself.
+12. When both the transcript and the title/description are available,
+    prefer the transcript for specific facts (numbers, prices, area)
+    since it is spoken detail, but use the title/description for
+    anything the transcript does not cover.
 
 VIDEO TITLE:
 {video["title"]}
@@ -143,6 +166,12 @@ PUBLISHED:
 
 VIDEO URL:
 {video["url"]}
+
+TRANSCRIPT STATUS:
+{transcript_status}
+
+TRANSCRIPT:
+{transcript_block}
 """
 
     response = client.models.generate_content(
