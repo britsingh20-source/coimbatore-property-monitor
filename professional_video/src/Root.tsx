@@ -8,7 +8,7 @@ const defaults: PropertyVideoProps = {
   facts: [], maps: [], actualVideos: [], representativeVideos: [], images: [], audio: null,
   durationInFrames: 1440, isActualProperty: false,
   disclosure: 'Representative visuals; verify the actual property before purchase.',
-  brand: 'SB BUILDERS', cta: 'Schedule a verified site visit', phone: '9003787621',
+  brand: 'COIMBATOREVEEDU BUILDERS', cta: 'Schedule a verified site visit', phone: '9003787621',
 };
 
 export const RemotionRoot: React.FC = () => (
