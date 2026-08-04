@@ -16,4 +16,5 @@ export type PropertyVideoProps = {
   disclosure: string;
   brand: string;
   cta: string;
+  phone: string;
 };
