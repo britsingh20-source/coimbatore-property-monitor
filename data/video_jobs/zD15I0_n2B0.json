@@ -1,0 +1,41 @@
+{
+  "video_id": "zD15I0_n2B0",
+  "source_url": "https://www.youtube.com/watch?v=zD15I0_n2B0",
+  "property_location": "Karamadai, Near Savitha Hospital, Coimbatore",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": 2,
+    "land_area": "2.5 Cents",
+    "built_up_area": "900 sqft",
+    "price": "45 Lakhs",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "10'0\" x 18'0\" Car parking",
+    "approval": "DTCP approved"
+  },
+  "verified_facts": "2BHK Independent Villa located in Karamadai, Coimbatore, Land area is 2.5 Cents and built-up area is 900 sqft, North facing site and North facing main door, DTCP approved site, Price is 45 Lakhs (negotiable), 75% Bank Loan Available, Includes Borewell and 6,000 Liters Sump",
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "ffmpeg-free",
+  "required_owned_images_folder": "assets/properties/zD15I0_n2B0/",
+  "optional_owned_audio": "assets/audio/zD15I0_n2B0.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story modern house finished in light beige and brown tones with a parapet terrace roof, decorative gate, tiled driveway porch, and external staircase leading to the terrace.. Neighbourhood: Residential area with open plots, nearby under-construction houses, and boundary fencing.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story modern house finished in light beige and brown tones with a parapet terrace roof, decorative gate, tiled driveway porch, and external staircase leading to the terrace.. Neighbourhood: Residential area with open plots, nearby under-construction houses, and boundary fencing.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story modern house finished in light beige and brown tones with a parapet terrace roof, decorative gate, tiled driveway porch, and external staircase leading to the terrace.. Neighbourhood: Residential area with open plots, nearby under-construction houses, and boundary fencing.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story modern house finished in light beige and brown tones with a parapet terrace roof, decorative gate, tiled driveway porch, and external staircase leading to the terrace.. Neighbourhood: Residential area with open plots, nearby under-construction houses, and boundary fencing.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "approval_pending"
+}
