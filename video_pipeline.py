@@ -36,7 +36,7 @@ def build_video_job(video: dict, property_data: dict, location: dict) -> Path:
         "verified_facts": facts,
         "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
         "aspect_ratio": "9:16",
-        "render_engine": "ffmpeg-free",
+        "render_engine": "remotion-professional-free",
         "required_owned_images_folder": f"assets/properties/{video['video_id']}/",
         "optional_owned_audio": f"assets/audio/{video['video_id']}.mp3",
         "scenes": scenes,
