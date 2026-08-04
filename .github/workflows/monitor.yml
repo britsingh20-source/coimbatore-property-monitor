@@ -2,39 +2,39 @@ name: Property Monitor
 
 on:
   schedule:
-    - cron: '0 * * * *'   # every hour
+    - cron: "0 * * * *"
   workflow_dispatch: {}
+
+concurrency:
+  group: property-monitor-main
+  cancel-in-progress: false
 
 permissions:
   contents: write
 
 jobs:
-  run-monitor:
-    runs-on: ubuntu-latest
+  monitor:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
-          python-version: '3.11'
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Run property monitor (DIAGNOSTIC MODE)
-        continue-on-error: true
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Run monitor
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python debug_run.py
-
-      - name: Commit updated data
+          MAX_VIDEOS_PER_RUN: "3"
+        run: python main.py
+      - name: Commit state, records and approval jobs
         if: always()
         run: |
           git config user.name "property-monitor-bot"
           git config user.email "actions@github.com"
-          git add data/properties.csv debug_output.txt
-          git diff --staged --quiet || git commit -m "Update property data [automated]"
+          git add data/properties.csv data/state.json data/video_jobs || true
+          git diff --staged --quiet || git commit -m "Update property monitor state [automated]"
+          git pull --rebase
           git push
