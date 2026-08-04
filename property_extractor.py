@@ -1,6 +1,10 @@
 import json
 import os
+import time
+
 from google import genai
+from google.genai import errors
+
 
 client = genai.Client(
     api_key=os.environ["GEMINI_API_KEY"]
@@ -106,25 +110,46 @@ PROPERTY_SCHEMA = {
 
 MAX_TRANSCRIPT_CHARS = 15000
 
+MAX_RETRIES = 4
+
+RETRY_DELAYS = [
+    5,
+    15,
+    30,
+    60
+]
+
 
 def extract_property(video):
 
-    transcript_status = video.get("transcript_status", "unavailable")
-    transcript_text = video.get("transcript", "") or ""
+    transcript_status = video.get(
+        "transcript_status",
+        "unavailable"
+    )
+
+    transcript_text = video.get(
+        "transcript",
+        ""
+    ) or ""
 
     if len(transcript_text) > MAX_TRANSCRIPT_CHARS:
-        transcript_text = transcript_text[:MAX_TRANSCRIPT_CHARS] + " ...[truncated]"
+        transcript_text = (
+            transcript_text[:MAX_TRANSCRIPT_CHARS]
+            + " ...[truncated]"
+        )
 
     if transcript_status == "available" and transcript_text:
         transcript_block = transcript_text
     else:
-        transcript_block = "(no transcript available for this video)"
+        transcript_block = (
+            "(no transcript available for this video)"
+        )
 
     prompt = f"""
 You are a real-estate data extraction system.
 
-Analyze the following YouTube property listing metadata, and the video
-transcript when one is available.
+Analyze the following YouTube property listing metadata,
+and the video transcript when one is available.
 
 IMPORTANT RULES:
 
@@ -142,15 +167,10 @@ IMPORTANT RULES:
 7. Distinguish asking price from other prices.
 8. Identify the exact locality mentioned.
 9. If multiple properties are discussed, identify that fact.
-10. source_facts must contain the factual statements used for extraction.
-11. The transcript may be unavailable for this video (transcript_status
-    below will say so). In that case, base the analysis only on the
-    title and description. Do not treat a missing transcript as missing
-    property information by itself.
-12. When both the transcript and the title/description are available,
-    prefer the transcript for specific facts (numbers, prices, area)
-    since it is spoken detail, but use the title/description for
-    anything the transcript does not cover.
+10. source_facts must contain the factual statements used
+    for extraction.
+11. If transcript is unavailable, use only title and description.
+12. Never invent information.
 
 VIDEO TITLE:
 {video["title"]}
@@ -174,13 +194,96 @@ TRANSCRIPT:
 {transcript_block}
 """
 
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt,
-        config={
-            "response_mime_type": "application/json",
-            "response_schema": PROPERTY_SCHEMA
-        }
+    last_error = None
+
+    for attempt in range(MAX_RETRIES):
+
+        try:
+
+            print(
+                f"Gemini attempt "
+                f"{attempt + 1}/{MAX_RETRIES}: "
+                f"{video['title']}"
+            )
+
+            response = client.models.generate_content(
+                model="gemini-2.5-flash",
+                contents=prompt,
+                config={
+                    "response_mime_type": "application/json",
+                    "response_schema": PROPERTY_SCHEMA
+                }
+            )
+
+            if not response.text:
+                raise RuntimeError(
+                    "Gemini returned an empty response"
+                )
+
+            result = json.loads(response.text)
+
+            result["gemini_status"] = "success"
+
+            return result
+
+        except errors.ServerError as e:
+
+            last_error = e
+
+            print(
+                f"Gemini server error "
+                f"(attempt {attempt + 1}): {e}"
+            )
+
+            if attempt < MAX_RETRIES - 1:
+
+                delay = RETRY_DELAYS[attempt]
+
+                print(
+                    f"Waiting {delay} seconds "
+                    f"before retry..."
+                )
+
+                time.sleep(delay)
+
+        except Exception as e:
+
+            last_error = e
+
+            print(
+                f"Gemini error "
+                f"(attempt {attempt + 1}): {e}"
+            )
+
+            break
+
+    print(
+        f"Gemini failed after {MAX_RETRIES} attempts "
+        f"for video: {video['title']}"
     )
 
-    return json.loads(response.text)
+    return {
+        "is_property_listing": False,
+        "location": "NOT SPECIFIED",
+        "property_type": "NOT SPECIFIED",
+        "bhk": "NOT SPECIFIED",
+        "land_area": "NOT SPECIFIED",
+        "built_up_area": "NOT SPECIFIED",
+        "price": "NOT SPECIFIED",
+        "facing": "NOT SPECIFIED",
+        "road_width": "NOT SPECIFIED",
+        "floors": "NOT SPECIFIED",
+        "bedrooms": "NOT SPECIFIED",
+        "bathrooms": "NOT SPECIFIED",
+        "parking": "NOT SPECIFIED",
+        "approval": "NOT SPECIFIED",
+        "amenities": [],
+        "nearby_landmarks": [],
+        "contact_details": "NOT SPECIFIED",
+        "missing_fields": [
+            "Gemini analysis failed"
+        ],
+        "source_facts": [],
+        "gemini_status": "failed_retry_later",
+        "gemini_error": str(last_error)
+    }
