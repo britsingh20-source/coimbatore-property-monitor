@@ -1,4 +1,5 @@
 import json
+import math
 import subprocess
 from pathlib import Path
 
@@ -34,11 +35,11 @@ def _timestamp(total_seconds: int) -> str:
     return f"{hours:02d}:{minutes:02d}:{seconds:02d},000"
 
 
-def write_srt(path: Path, lines: list[str]) -> None:
+def write_srt(path: Path, lines: list[str], seconds_per_image: int = SECONDS_PER_IMAGE) -> None:
     blocks = []
     for index, line in enumerate(lines, start=1):
-        start = (index - 1) * SECONDS_PER_IMAGE
-        end = index * SECONDS_PER_IMAGE
+        start = (index - 1) * seconds_per_image
+        end = index * seconds_per_image
         blocks.append(
             f"{index}\n{_timestamp(start)} --> {_timestamp(end)}\n{line}\n"
         )
@@ -57,7 +58,16 @@ def render_job(job_path: Path) -> Path:
     output_dir = OUTPUTS / video_id
     output_dir.mkdir(parents=True, exist_ok=True)
     clips = []
-    frames = SECONDS_PER_IMAGE * FPS
+    audio = next((path for path in [AUDIO / f"{video_id}.mp3", AUDIO / f"{video_id}.wav"] if path.exists()), None)
+    seconds_per_image = SECONDS_PER_IMAGE
+    if audio:
+        probe = subprocess.run([
+            "ffprobe", "-v", "error", "-show_entries", "format=duration",
+            "-of", "default=noprint_wrappers=1:nokey=1", str(audio),
+        ], check=True, capture_output=True, text=True)
+        audio_seconds = float(probe.stdout.strip())
+        seconds_per_image = max(SECONDS_PER_IMAGE, math.ceil(audio_seconds / len(images)) + 1)
+    frames = seconds_per_image * FPS
 
     for index, image in enumerate(images, start=1):
         clip = output_dir / f"{index:02d}.mp4"
@@ -67,11 +77,11 @@ def render_job(job_path: Path) -> Path:
             "crop=1080:1920,"
             f"zoompan=z='{zoom}':d={frames}:s=1080x1920:fps={FPS},"
             "fade=t=in:st=0:d=0.5,"
-            f"fade=t=out:st={SECONDS_PER_IMAGE - 0.5}:d=0.5,format=yuv420p"
+            f"fade=t=out:st={seconds_per_image - 0.5}:d=0.5,format=yuv420p"
         )
         subprocess.run([
             "ffmpeg", "-y", "-loop", "1", "-i", str(image),
-            "-vf", filter_graph, "-t", str(SECONDS_PER_IMAGE), "-r", str(FPS),
+            "-vf", filter_graph, "-t", str(seconds_per_image), "-r", str(FPS),
             "-c:v", "libx264", "-preset", "medium", "-crf", "19", str(clip),
         ], check=True)
         clips.append(clip)
@@ -87,9 +97,8 @@ def render_job(job_path: Path) -> Path:
     ], check=True)
 
     captions = output_dir / "captions.srt"
-    write_srt(captions, caption_lines(job, len(images)))
+    write_srt(captions, caption_lines(job, len(images)), seconds_per_image)
     final = output_dir / "final-free-vertical.mp4"
-    audio = next((path for path in [AUDIO / f"{video_id}.mp3", AUDIO / f"{video_id}.wav"] if path.exists()), None)
     command = ["ffmpeg", "-y", "-i", str(joined)]
     if audio:
         command += ["-stream_loop", "-1", "-i", str(audio)]
