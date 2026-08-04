@@ -2,14 +2,14 @@
 
 This project discovers recent YouTube property listings, analyzes each public
 video once with Gemini, filters configured Coimbatore localities, stores durable
-retry state, and creates reviewable vertical-video jobs. Veo rendering is manual
-and restricted to IDs explicitly listed in `data/approved_video_ids.txt`.
+retry state, and creates reviewable vertical-video jobs. Final video rendering
+uses FFmpeg and makes no paid video-generation API calls.
 
 ## Safety and publishing rule
 
-Generated videos are original AI visualizations based on verified listing facts.
-They are not copies of competitor footage and must display this disclosure when
-published: **AI visualisation based on listing facts; not actual property footage.**
+Only property/location photographs owned by the advertiser or explicitly licensed
+for reuse may be placed in `assets/properties`. Competitor footage and thumbnails
+must not be copied. The renderer displays a verification disclosure automatically.
 
 No generated video is automatically uploaded to Instagram, YouTube or WhatsApp.
 A person must verify the property facts, approve the source ID and review the
@@ -18,17 +18,22 @@ rendered artifact first.
 ## Required GitHub secrets
 
 - `YOUTUBE_API_KEY`
-- `GEMINI_API_KEY` with billing/quota for video understanding
-- Veo access on the same Google project for video generation
+- `GEMINI_API_KEY` for property analysis (video rendering itself does not use it)
 
 ## Workflow
 
 1. `Property Monitor` runs hourly and processes at most three eligible videos.
 2. Successful target-locality records are written to `data/properties.csv`.
 3. A storyboard is written to `data/video_jobs/<video-id>.json`.
-4. Verify the facts and add the ID to `data/approved_video_ids.txt`.
-5. Manually run `Generate Approved Property Videos`.
-6. Download the 9:16 MP4 artifact, review it and add branding/captions before publishing.
+4. Add at least three owned JPG/PNG photos to `assets/properties/<video-id>/`.
+5. Optionally add your Tamil narration or licensed music as `assets/audio/<video-id>.mp3`.
+6. Verify the facts and add the ID to `data/approved_video_ids.txt`.
+7. Manually run `Render Free Approved Property Videos`.
+8. Download and review the 1080×1920 MP4 artifact before publishing.
+
+Each photo receives a slow cinematic pan/zoom, fade transitions and fact captions.
+With five images the result is 30 seconds long. No Veo, Runway, Kling or other paid
+video service is called.
 
 ## Local checks
 
