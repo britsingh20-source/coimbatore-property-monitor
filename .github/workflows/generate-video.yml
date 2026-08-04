@@ -1,4 +1,4 @@
-name: Render Free Approved Property Videos
+name: Render Professional Approved Property Videos
 
 on:
   workflow_dispatch: {}
@@ -26,8 +26,15 @@ jobs:
         with:
           python-version: "3.11"
           cache: pip
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: professional_video/package-lock.json
       - run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-noto-core
       - run: pip install -r requirements.txt
+      - run: npm ci
+        working-directory: professional_video
       - name: Decode bundled sample visuals
         run: python sample_assets.py
       - name: Source licensed media and create Tamil male voice-over
@@ -35,14 +42,40 @@ jobs:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           TAMIL_MALE_VOICE: ta-IN-ValluvarNeural
         run: python prepare_free_assets.py
-      - name: Render only approved IDs without a paid video API
-        run: python render_free_approved.py
+      - name: Render professional Remotion reels
+        id: professional
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r video_id; do
+            [[ -z "$video_id" || "$video_id" == \#* ]] && continue
+            python prepare_remotion_job.py "data/video_jobs/${video_id}.json"
+            mkdir -p "outputs/${video_id}"
+            (
+              cd professional_video
+              npx remotion render src/index.ts PropertyReel \
+                "../outputs/${video_id}/professional-vertical.mp4" \
+                --props="../data/remotion_props/${video_id}.json" \
+                --codec=h264 --crf=18 --concurrency=2
+            )
+          done < data/approved_video_ids.txt
+      - name: Emergency FFmpeg fallback
+        if: steps.professional.outcome == 'failure'
+        run: |
+          echo "Remotion failed; rendering the reviewable FFmpeg fallback. Inspect render-mode.txt."
+          python render_free_approved.py
+          mkdir -p outputs
+          echo "FFMPEG_FALLBACK" > outputs/render-mode.txt
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
-          name: free-approved-property-videos
+          name: professional-approved-property-videos
           path: |
             outputs/**/*.mp4
+            outputs/render-mode.txt
             data/media_attribution/*.json
+            data/geocoding/*.json
             data/voiceover_scripts/*.txt
           if-no-files-found: warn
           retention-days: 7
