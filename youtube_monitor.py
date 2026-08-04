@@ -33,11 +33,14 @@ def get_channel(handle):
     }
 
 
-def get_latest_video(uploads_playlist):
+RECENT_UPLOADS = int(os.environ.get("RECENT_UPLOADS", "20"))
+
+
+def get_recent_videos(uploads_playlist, max_results=RECENT_UPLOADS):
     params = {
         "part": "snippet,contentDetails",
         "playlistId": uploads_playlist,
-        "maxResults": 5,
+        "maxResults": min(50, max_results),
         "key": os.environ["YOUTUBE_API_KEY"]
     }
 
@@ -51,7 +54,7 @@ def get_latest_video(uploads_playlist):
     items = response.json().get("items", [])
 
     if not items:
-        return None
+        return []
 
     videos = []
 
@@ -74,7 +77,7 @@ def get_latest_video(uploads_playlist):
         reverse=True
     )
 
-    return videos[0]
+    return videos[:max_results]
 
 
 def main():
@@ -89,18 +92,18 @@ def main():
         try:
             channel_info = get_channel(channel["handle"])
 
-            latest = get_latest_video(
+            videos = get_recent_videos(
                 channel_info["uploads_playlist"]
             )
 
-            if latest:
-                latest["source_name"] = channel["name"]
-                results.append(latest)
+            for video in videos:
+                video["source_name"] = channel["name"]
+                results.append(video)
 
-                print(
-                    f'{channel["name"]}: '
-                    f'{latest["title"]}'
-                )
+            print(
+                f'{channel["name"]}: '
+                f'found {len(videos)} recent upload(s)'
+            )
 
         except Exception as e:
             print(
