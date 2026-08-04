@@ -235,10 +235,12 @@
       "status": "discovered"
     },
     "G8fsvbuFTZs": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
-      "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-08-04T23:58:07.669126+00:00",
+      "last_error": "sequence item 2: expected str instance, dict found",
+      "next_retry_at": "2026-08-05T01:58:07.669139+00:00",
+      "status": "retry_pending"
     },
     "GHUm7c6Biyk": {
       "attempts": 0,
@@ -391,11 +393,11 @@
       "status": "discovered"
     },
     "WUYXWxA4-3c": {
-      "attempts": 1,
+      "attempts": 2,
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
-      "last_attempt_at": "2026-08-04T21:04:14.002550+00:00",
+      "last_attempt_at": "2026-08-04T23:57:26.857880+00:00",
       "last_error": "sequence item 2: expected str instance, dict found",
-      "next_retry_at": "2026-08-04T23:04:14.002560+00:00",
+      "next_retry_at": "2026-08-05T03:57:26.857892+00:00",
       "status": "retry_pending"
     },
     "XsQeU41Wl68": {
@@ -586,11 +588,12 @@
     },
     "x_AU0ze5FwI": {
       "attempts": 1,
+      "completed_at": "2026-08-04T23:57:13.987986+00:00",
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
       "last_attempt_at": "2026-08-04T21:03:59.241070+00:00",
-      "last_error": "sequence item 2: expected str instance, dict found",
+      "last_error": "",
       "next_retry_at": "2026-08-04T23:03:59.241080+00:00",
-      "status": "retry_pending"
+      "status": "archived_non_target"
     },
     "zD15I0_n2B0": {
       "attempts": 0,
