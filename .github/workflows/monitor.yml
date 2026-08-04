@@ -23,16 +23,18 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run property monitor
+      - name: Run property monitor (DIAGNOSTIC MODE)
+        continue-on-error: true
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python main.py
+        run: python debug_run.py
 
       - name: Commit updated data
+        if: always()
         run: |
           git config user.name "property-monitor-bot"
           git config user.email "actions@github.com"
-          git add data/properties.csv
+          git add data/properties.csv debug_output.txt
           git diff --staged --quiet || git commit -m "Update property data [automated]"
           git push
