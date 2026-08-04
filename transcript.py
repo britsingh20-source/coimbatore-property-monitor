@@ -1,152 +1,186 @@
-import re
+import os
+import time
 
-from youtube_transcript_api import YouTubeTranscriptApi
-from youtube_transcript_api._errors import (
-    TranscriptsDisabled,
-    NoTranscriptFound,
-    VideoUnavailable,
-    YouTubeTranscriptApiException
+from google import genai
+from google.genai import errors, types
+
+
+client = genai.Client(
+    api_key=os.environ["GEMINI_API_KEY"]
 )
 
-# Preference order: Tamil first, then English.
-PREFERRED_LANGUAGES = ["ta", "en"]
+TRANSCRIPT_MODEL = os.environ.get(
+    "GEMINI_TRANSCRIPT_MODEL",
+    "gemini-3.6-flash"
+)
+
+MAX_RETRIES = 3
+RETRY_DELAYS = [5, 15, 30]
 
 
-def _clean(text):
-    text = text.replace("\n", " ")
-    text = re.sub(r"\s+", " ", text)
-    return text.strip()
-
-
-def get_transcript(video_id):
+def get_transcript(video_url: str) -> dict:
     """
-    Attempt to obtain a transcript/caption track for a YouTube video.
+    Ask Gemini to transcribe the spoken content from a public
+    YouTube video URL.
 
-    Preference order:
-      1. Manually-created Tamil transcript
-      2. Manually-created English transcript
-      3. Auto-generated Tamil transcript
-      4. Auto-generated English transcript
-      5. Any other available transcript track (whatever language)
-
-    This function never raises. Any failure (no captions, disabled
-    captions, video unavailable, network error, unexpected library
-    error, etc.) is caught and reported back as a status so the
-    calling pipeline can log it and continue to the next video.
-
-    Returns a dict:
+    Returns:
         {
-            "status": "available" | "unavailable" | "empty" | "error",
-            "language": <language code, e.g. "ta"/"en", or "">,
-            "is_generated": <bool>,
-            "text": <transcript text, or "">,
-            "error": <string description, "" if none>
+            "status": "available" | "unavailable" | "error",
+            "language": str,
+            "text": str,
+            "error": str
         }
     """
-    try:
-        api = YouTubeTranscriptApi()
-        transcript_list = api.list(video_id)
-    except (TranscriptsDisabled, NoTranscriptFound, VideoUnavailable) as exc:
+
+    if not video_url:
         return {
             "status": "unavailable",
             "language": "",
-            "is_generated": False,
             "text": "",
-            "error": str(exc)
-        }
-    except (YouTubeTranscriptApiException, Exception) as exc:
-        # Covers rate limiting, network issues, blocked requests, malformed
-        # video IDs, or any other unexpected failure. The workflow must
-        # keep going regardless.
-        return {
-            "status": "error",
-            "language": "",
-            "is_generated": False,
-            "text": "",
-            "error": str(exc)
+            "error": "Video URL is missing"
         }
 
-    tracks = list(transcript_list)
+    prompt = """
+Transcribe the spoken content of this YouTube video accurately.
 
-    if not tracks:
-        return {
-            "status": "unavailable",
-            "language": "",
-            "is_generated": False,
-            "text": "",
-            "error": "No transcript tracks found"
-        }
+Instructions:
 
-    ordered = []
+1. Preserve Tamil speech in Tamil script.
+2. Preserve English words and property terms as spoken.
+3. Include every property specification mentioned, including:
+   - location
+   - price
+   - BHK
+   - land area
+   - built-up area
+   - cents
+   - square feet
+   - facing
+   - road width
+   - approval
+   - parking
+   - landmarks
+   - phone number
+4. Do not summarize.
+5. Do not invent missing speech.
+6. Ignore background music and unrelated sound.
+7. Return only the transcript text.
+"""
 
-    # Manually-created tracks first: Tamil, then English.
-    for lang in PREFERRED_LANGUAGES:
-        ordered.extend(
-            t for t in tracks
-            if t.language_code == lang and not t.is_generated
-        )
+    last_error = None
 
-    # Auto-generated tracks next: Tamil, then English.
-    for lang in PREFERRED_LANGUAGES:
-        ordered.extend(
-            t for t in tracks
-            if t.language_code == lang and t.is_generated
-        )
+    for attempt in range(MAX_RETRIES):
 
-    # Fallback: any other track in whatever order the API returned.
-    ordered.extend(t for t in tracks if t not in ordered)
+        try:
+            print(
+                f"Gemini transcript attempt "
+                f"{attempt + 1}/{MAX_RETRIES}"
+            )
 
-    track = ordered[0]
+            response = client.models.generate_content(
+                model=TRANSCRIPT_MODEL,
+                contents=[
+                    types.Content(
+                        parts=[
+                            types.Part(
+                                file_data=types.FileData(
+                                    file_uri=video_url
+                                )
+                            ),
+                            types.Part(
+                                text=prompt
+                            )
+                        ]
+                    )
+                ]
+            )
 
-    try:
-        fetched = track.fetch()
-    except Exception as exc:
-        return {
-            "status": "error",
-            "language": track.language_code,
-            "is_generated": track.is_generated,
-            "text": "",
-            "error": str(exc)
-        }
+            transcript_text = (
+                response.text or ""
+            ).strip()
 
-    parts = []
-    for item in fetched:
-        text = getattr(item, "text", None)
-        if text is None and isinstance(item, dict):
-            text = item.get("text", "")
-        if text:
-            parts.append(text)
+            if not transcript_text:
+                return {
+                    "status": "unavailable",
+                    "language": "",
+                    "text": "",
+                    "error": (
+                        "Gemini returned an empty transcript"
+                    )
+                }
 
-    text = _clean(" ".join(parts))
+            language = detect_language_label(
+                transcript_text
+            )
 
-    if not text:
-        return {
-            "status": "empty",
-            "language": track.language_code,
-            "is_generated": track.is_generated,
-            "text": "",
-            "error": "Transcript track returned no text"
-        }
+            return {
+                "status": "available",
+                "language": language,
+                "text": transcript_text,
+                "error": ""
+            }
+
+        except errors.ServerError as error:
+            last_error = error
+
+            print(
+                f"Gemini transcript server error: "
+                f"{error}"
+            )
+
+            if attempt < MAX_RETRIES - 1:
+                delay = RETRY_DELAYS[attempt]
+
+                print(
+                    f"Waiting {delay} seconds "
+                    "before transcript retry..."
+                )
+
+                time.sleep(delay)
+
+        except Exception as error:
+            last_error = error
+
+            print(
+                f"Gemini transcript error: {error}"
+            )
+
+            break
 
     return {
-        "status": "available",
-        "language": track.language_code,
-        "is_generated": track.is_generated,
-        "text": text,
-        "error": ""
+        "status": "error",
+        "language": "",
+        "text": "",
+        "error": str(last_error)
     }
 
 
-if __name__ == "__main__":
-    import sys
+def detect_language_label(text: str) -> str:
+    """
+    Simple label for CSV visibility.
+    This does not alter or translate the transcript.
+    """
 
-    if len(sys.argv) > 1:
-        result = get_transcript(sys.argv[1])
-        print(f"status: {result['status']}")
-        print(f"language: {result['language'] or '-'}")
-        print(f"is_generated: {result['is_generated']}")
-        if result["error"]:
-            print(f"note: {result['error']}")
-        print(result["text"][:500])
-    else:
-        print("Usage: python transcript.py <video_id>")
+    tamil_count = sum(
+        1
+        for character in text
+        if "\u0B80" <= character <= "\u0BFF"
+    )
+
+    latin_count = sum(
+        1
+        for character in text
+        if character.isascii()
+        and character.isalpha()
+    )
+
+    if tamil_count > 0 and latin_count > 0:
+        return "ta-en"
+
+    if tamil_count > 0:
+        return "ta"
+
+    if latin_count > 0:
+        return "en"
+
+    return "unknown"
