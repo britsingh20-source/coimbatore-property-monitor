@@ -3,7 +3,7 @@
 This project discovers recent YouTube property listings, analyzes each public
 video once with Gemini, filters configured Coimbatore localities, stores durable
 retry state, and creates reviewable vertical-video jobs. Final video rendering
-uses FFmpeg and makes no paid video-generation API calls.
+uses Remotion, OpenStreetMap and FFmpeg without a paid video-generation API.
 
 ## Safety and publishing rule
 
@@ -19,6 +19,7 @@ rendered artifact first.
 
 - `YOUTUBE_API_KEY`
 - `GEMINI_API_KEY` for property analysis (video rendering itself does not use it)
+- `PEXELS_API_KEY` (optional) for free licensed walkthrough clips
 
 ## Workflow
 
@@ -26,17 +27,31 @@ rendered artifact first.
 2. Successful target-locality records are written to `data/properties.csv`.
 3. A storyboard is written to `data/video_jobs/<video-id>.json`.
 4. Verify the facts and add the ID to `data/approved_video_ids.txt`.
-5. Manually run `Render Free Approved Property Videos`.
-6. The workflow searches Wikimedia Commons for exact-locality media, optionally
-   falls back to Pexels when `PEXELS_API_KEY` is configured, and saves attribution.
-7. It writes a fact-based Tamil script and generates a male Tamil narration using
+5. Manually run `Render Professional Approved Property Videos`.
+6. The workflow searches Wikimedia Commons for exact-locality photographs and,
+   when `PEXELS_API_KEY` is configured, Pexels for licensed property walkthrough clips.
+7. Nominatim geocodes the locality once and a cached three-stage OpenStreetMap zoom
+   is rendered with required attribution. The pin is never presented as an exact
+   property coordinate unless the input has been independently verified.
+8. It writes a fact-based Tamil script and generates a male Tamil narration using
    `ta-IN-ValluvarNeural`.
-8. Download and review the 1080×1920 MP4 plus its attribution file before publishing.
+9. Remotion creates a 1080×1920 broadcast-style reel with a hook, map animation,
+   real video clips, verified fact cards, disclosure and branded CTA.
+10. Download and review the MP4 plus its attribution file before publishing.
 
-User-owned photos always take priority when present. Retrieved stock/locality media
-is labeled as representative—not the actual property. Each photo receives a slow
-cinematic pan/zoom, transitions and fact captions. The timing automatically expands
-to fit the complete Tamil narration. No paid video-generation API is called.
+User-owned video always takes priority, followed by user-owned photos and licensed
+stock clips. Retrieved stock/locality media is visibly labeled as representative—not
+the actual property. The timeline automatically expands to fit the Tamil narration.
+If the Chromium/Remotion render fails, the existing FFmpeg renderer produces a
+clearly identified fallback rather than losing the complete workflow run.
+
+## What “professional” means here
+
+This free GitHub Actions architecture can create polished editing, motion graphics,
+map storytelling, narration and licensed B-roll. It cannot invent an exact, truthful
+walkthrough of a house that was never filmed. Put actual portrait or landscape clips
+in `assets/properties/<video-id>/`; the workflow automatically promotes them and
+changes the footage label to `ACTUAL PROPERTY FOOTAGE`.
 
 Pexels API access is free but requires an API key. Without it, the workflow uses
 Wikimedia Commons and its per-file license/attribution metadata.
