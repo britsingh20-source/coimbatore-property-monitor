@@ -26,8 +26,15 @@ def build_video_job(video: dict, property_data: dict, location: dict) -> Path:
         "video_id": video["video_id"],
         "source_url": video["url"],
         "property_location": property_data.get("location", "NOT SPECIFIED"),
+        "property": {
+            key: property_data.get(key, "NOT SPECIFIED")
+            for key in (
+                "property_type", "bhk", "land_area", "built_up_area", "price",
+                "facing", "road_width", "parking", "approval"
+            )
+        },
         "verified_facts": facts,
-        "disclosure": "Property visuals supplied by the advertiser; verify details before purchase.",
+        "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
         "aspect_ratio": "9:16",
         "render_engine": "ffmpeg-free",
         "required_owned_images_folder": f"assets/properties/{video['video_id']}/",
