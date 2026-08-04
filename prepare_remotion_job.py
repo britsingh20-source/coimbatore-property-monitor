@@ -89,7 +89,7 @@ def prepare(job_path: Path) -> Path:
         "durationInFrames": duration_seconds * 30,
         "isActualProperty": bool(job.get("media_is_actual_property", False)),
         "disclosure": job.get("disclosure", "Representative visuals; verify before purchase."),
-        "brand": "SB BUILDERS",
+        "brand": "COIMBATOREVEEDU BUILDERS",
         "cta": "Schedule a verified site visit",
         "phone": str(job.get("contact_number") or DEFAULT_PHONE),
     }
