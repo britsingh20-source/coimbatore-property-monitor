@@ -1,2 +1,2 @@
 # Add exactly one verified video ID per line, commit it, then manually run
-# “Generate Approved Property Videos”. Generation can incur API charges.
+# “Render Free Approved Property Videos”. Rendering does not call a paid video API.
