@@ -1,6 +1,7 @@
 import csv
 import os
 from youtube_monitor import main as monitor_channels
+from transcript import get_transcript
 from property_extractor import extract_property
 
 
@@ -13,6 +14,8 @@ FIELDS = [
     "video_title",
     "video_url",
     "published_at",
+    "transcript_status",
+    "transcript_language",
     "is_property_listing",
     "location",
     "property_type",
@@ -72,6 +75,8 @@ def save_record(video, property_data):
         "video_title": video["title"],
         "video_url": video["url"],
         "published_at": video["published_at"],
+        "transcript_status": video.get("transcript_status", "unavailable"),
+        "transcript_language": video.get("transcript_language", ""),
         **property_data
     }
 
@@ -119,6 +124,22 @@ def run():
         print(
             f"NEW VIDEO: {video['title']}"
         )
+
+        transcript_result = get_transcript(video_id)
+
+        video["transcript_status"] = transcript_result["status"]
+        video["transcript_language"] = transcript_result["language"]
+        video["transcript"] = transcript_result["text"]
+
+        print(
+            f"Transcript: {transcript_result['status']} "
+            f"({transcript_result['language'] or '-'})"
+        )
+
+        if transcript_result["error"]:
+            print(
+                f"Transcript note: {transcript_result['error']}"
+            )
 
         property_data = extract_property(video)
 
