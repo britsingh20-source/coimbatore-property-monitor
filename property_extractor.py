@@ -1,0 +1,157 @@
+import json
+import os
+from google import genai
+
+client = genai.Client(
+    api_key=os.environ["GEMINI_API_KEY"]
+)
+
+
+PROPERTY_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "is_property_listing": {
+            "type": "boolean"
+        },
+        "location": {
+            "type": "string"
+        },
+        "property_type": {
+            "type": "string"
+        },
+        "bhk": {
+            "type": "string"
+        },
+        "land_area": {
+            "type": "string"
+        },
+        "built_up_area": {
+            "type": "string"
+        },
+        "price": {
+            "type": "string"
+        },
+        "facing": {
+            "type": "string"
+        },
+        "road_width": {
+            "type": "string"
+        },
+        "floors": {
+            "type": "string"
+        },
+        "bedrooms": {
+            "type": "string"
+        },
+        "bathrooms": {
+            "type": "string"
+        },
+        "parking": {
+            "type": "string"
+        },
+        "approval": {
+            "type": "string"
+        },
+        "amenities": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "nearby_landmarks": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "contact_details": {
+            "type": "string"
+        },
+        "missing_fields": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "source_facts": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "required": [
+        "is_property_listing",
+        "location",
+        "property_type",
+        "bhk",
+        "land_area",
+        "built_up_area",
+        "price",
+        "facing",
+        "road_width",
+        "floors",
+        "bedrooms",
+        "bathrooms",
+        "parking",
+        "approval",
+        "amenities",
+        "nearby_landmarks",
+        "contact_details",
+        "missing_fields",
+        "source_facts"
+    ]
+}
+
+
+def extract_property(video):
+
+    prompt = f"""
+You are a real-estate data extraction system.
+
+Analyze the following YouTube property listing metadata.
+
+IMPORTANT RULES:
+
+1. Extract ONLY information explicitly present.
+2. NEVER guess missing property information.
+3. If a field is unavailable, return "NOT SPECIFIED".
+4. Preserve numbers exactly where possible.
+5. Preserve units such as:
+   - cents
+   - sq.ft
+   - lakhs
+   - crores
+   - feet
+6. Distinguish land area from built-up area.
+7. Distinguish asking price from other prices.
+8. Identify the exact locality mentioned.
+9. If multiple properties are discussed, identify that fact.
+10. source_facts must contain the factual statements used for extraction.
+
+VIDEO TITLE:
+{video["title"]}
+
+VIDEO DESCRIPTION:
+{video["description"]}
+
+CHANNEL:
+{video["channel_title"]}
+
+PUBLISHED:
+{video["published_at"]}
+
+VIDEO URL:
+{video["url"]}
+"""
+
+    response = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=prompt,
+        config={
+            "response_mime_type": "application/json",
+            "response_schema": PROPERTY_SCHEMA
+        }
+    )
+
+    return json.loads(response.text)
