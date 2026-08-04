@@ -1,0 +1,21 @@
+{
+  "video_id": "pattanam-sample",
+  "source_url": "https://www.youtube.com/watch?v=v55WAeeuLt8",
+  "property_location": "Pattanam, Coimbatore",
+  "property": {
+    "property_type": "தனி வீடு",
+    "bhk": "2BHK",
+    "land_area": "2.75 சென்ட்",
+    "built_up_area": "1050 சதுர அடி",
+    "price": "65 லட்சம், பேச்சுவார்த்தைக்கு உட்பட்டது",
+    "facing": "வடக்கு பார்த்தது",
+    "road_width": "30 மற்றும் 33 அடி தார் சாலை",
+    "parking": "14 × 16 அடி",
+    "approval": "DTCP மற்றும் பிளான் அப்ரூவல்"
+  },
+  "verified_facts": "2BHK, 2.75 cents, 1050 sqft, Rs.65 lakhs, north facing, DTCP approved",
+  "disclosure": "இவை செயற்கை நுண்ணறிவில் உருவாக்கப்பட்ட பிரதிநிதி காட்சிகள்; உண்மையான வீட்டு காட்சிகள் அல்ல.",
+  "aspect_ratio": "9:16",
+  "render_engine": "ffmpeg-free",
+  "status": "approved_sample"
+}
