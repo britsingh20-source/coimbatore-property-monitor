@@ -1,0 +1,35 @@
+name: Generate Approved Property Videos
+
+on:
+  workflow_dispatch: {}
+
+concurrency:
+  group: property-video-generation
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - run: pip install -r requirements.txt
+      - name: Generate only approved IDs
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_VIDEO_MODEL: veo-3.1-generate-preview
+        run: python generate_approved_videos.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: approved-property-videos
+          path: outputs/**/*.mp4
+          if-no-files-found: warn
+          retention-days: 7
