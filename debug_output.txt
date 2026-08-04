@@ -1,4 +1,0 @@
-python: 3.11.15
-YOUTUBE_API_KEY set: True
-GEMINI_API_KEY set: True
-RESULT: SUCCESS - main.run() completed without raising
