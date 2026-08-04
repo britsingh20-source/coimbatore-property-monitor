@@ -44,7 +44,8 @@ FIELDS = [
 ]
 
 
-def load_existing_ids():
+def load_existing_ids() -> set[str]:
+    """Load video IDs that have already been processed."""
 
     if not os.path.exists(OUTPUT_FILE):
         return set()
@@ -56,13 +57,12 @@ def load_existing_ids():
         "r",
         encoding="utf-8",
         newline=""
-    ) as f:
+    ) as file:
 
-        reader = csv.DictReader(f)
+        reader = csv.DictReader(file)
 
         for row in reader:
-
-            video_id = row.get("video_id")
+            video_id = row.get("video_id", "").strip()
 
             if video_id:
                 ids.add(video_id)
@@ -70,36 +70,36 @@ def load_existing_ids():
     return ids
 
 
-def save_record(video, property_data):
+def save_record(
+    video: dict,
+    property_data: dict
+) -> None:
+    """Append one processed video record to the CSV database."""
 
     os.makedirs(
         os.path.dirname(OUTPUT_FILE),
         exist_ok=True
     )
 
-    exists = os.path.exists(OUTPUT_FILE)
+    file_exists = os.path.exists(OUTPUT_FILE)
 
     row = {
         "source_name": video.get(
             "source_name",
             "NOT SPECIFIED"
         ),
-
         "video_id": video.get(
             "video_id",
             "NOT SPECIFIED"
         ),
-
         "video_title": video.get(
             "title",
             "NOT SPECIFIED"
         ),
-
         "video_url": video.get(
             "url",
             "NOT SPECIFIED"
         ),
-
         "published_at": video.get(
             "published_at",
             "NOT SPECIFIED"
@@ -109,7 +109,6 @@ def save_record(video, property_data):
             "transcript_status",
             "unavailable"
         ),
-
         "transcript_language": video.get(
             "transcript_language",
             "NOT SPECIFIED"
@@ -119,7 +118,6 @@ def save_record(video, property_data):
             "gemini_status",
             "unknown"
         ),
-
         "gemini_error": property_data.get(
             "gemini_error",
             ""
@@ -129,101 +127,82 @@ def save_record(video, property_data):
             "is_property_listing",
             False
         ),
-
         "location": property_data.get(
             "location",
             "NOT SPECIFIED"
         ),
-
         "property_type": property_data.get(
             "property_type",
             "NOT SPECIFIED"
         ),
-
         "bhk": property_data.get(
             "bhk",
             "NOT SPECIFIED"
         ),
-
         "land_area": property_data.get(
             "land_area",
             "NOT SPECIFIED"
         ),
-
         "built_up_area": property_data.get(
             "built_up_area",
             "NOT SPECIFIED"
         ),
-
         "price": property_data.get(
             "price",
             "NOT SPECIFIED"
         ),
-
         "facing": property_data.get(
             "facing",
             "NOT SPECIFIED"
         ),
-
         "road_width": property_data.get(
             "road_width",
             "NOT SPECIFIED"
         ),
-
         "floors": property_data.get(
             "floors",
             "NOT SPECIFIED"
         ),
-
         "bedrooms": property_data.get(
             "bedrooms",
             "NOT SPECIFIED"
         ),
-
         "bathrooms": property_data.get(
             "bathrooms",
             "NOT SPECIFIED"
         ),
-
         "parking": property_data.get(
             "parking",
             "NOT SPECIFIED"
         ),
-
         "approval": property_data.get(
             "approval",
             "NOT SPECIFIED"
         ),
-
         "amenities": property_data.get(
             "amenities",
             []
         ),
-
         "nearby_landmarks": property_data.get(
             "nearby_landmarks",
             []
         ),
-
         "contact_details": property_data.get(
             "contact_details",
             "NOT SPECIFIED"
         ),
-
         "missing_fields": property_data.get(
             "missing_fields",
             []
         ),
-
         "source_facts": property_data.get(
             "source_facts",
             []
         )
     }
 
-    # Convert lists into CSV-friendly text.
+    # Convert lists into readable CSV values.
     for key, value in row.items():
-
         if isinstance(value, list):
             row[key] = " | ".join(
                 str(item)
@@ -235,40 +214,91 @@ def save_record(video, property_data):
         "a",
         encoding="utf-8",
         newline=""
-    ) as f:
+    ) as file:
 
         writer = csv.DictWriter(
-            f,
+            file,
             fieldnames=FIELDS,
             extrasaction="ignore"
         )
 
-        if not exists:
+        if not file_exists:
             writer.writeheader()
 
         writer.writerow(row)
 
 
-def run():
+def build_failed_property_result(
+    error: Exception
+) -> dict:
+    """Return a safe record when Gemini property extraction fails."""
+
+    return {
+        "is_property_listing": False,
+        "location": "NOT SPECIFIED",
+        "property_type": "NOT SPECIFIED",
+        "bhk": "NOT SPECIFIED",
+        "land_area": "NOT SPECIFIED",
+        "built_up_area": "NOT SPECIFIED",
+        "price": "NOT SPECIFIED",
+        "facing": "NOT SPECIFIED",
+        "road_width": "NOT SPECIFIED",
+        "floors": "NOT SPECIFIED",
+        "bedrooms": "NOT SPECIFIED",
+        "bathrooms": "NOT SPECIFIED",
+        "parking": "NOT SPECIFIED",
+        "approval": "NOT SPECIFIED",
+        "amenities": [],
+        "nearby_landmarks": [],
+        "contact_details": "NOT SPECIFIED",
+        "missing_fields": [
+            "Gemini property analysis failed"
+        ],
+        "source_facts": [],
+        "gemini_status": "failed_retry_later",
+        "gemini_error": str(error)
+    }
+
+
+def run() -> None:
+    """Run the complete property-monitor workflow."""
 
     existing_ids = load_existing_ids()
+    recent_videos = monitor_channels()
 
-    videos = monitor_channels()
+    new_videos = [
+        video
+        for video in recent_videos
+        if video.get("video_id") not in existing_ids
+    ]
 
-    for video in videos:
+    print(
+        f"Total recent videos checked: "
+        f"{len(recent_videos)}"
+    )
 
-        video_id = video["video_id"]
+    print(
+        f"New videos to process: "
+        f"{len(new_videos)}"
+    )
 
-        if video_id in existing_ids:
+    if not new_videos:
+        print("No new videos found.")
+        return
 
-            print(
-                f"Already processed: {video_id}"
-            )
+    for index, video in enumerate(
+        new_videos,
+        start=1
+    ):
+        video_id = video.get("video_id", "")
+        video_url = video.get("url", "")
 
-            continue
-
+        print("")
         print(
-            f"NEW VIDEO: {video['title']}"
+            f"Processing {index}/{len(new_videos)}"
+        )
+        print(
+            f"NEW VIDEO: {video.get('title', 'UNTITLED')}"
         )
 
         # -----------------------------
@@ -276,22 +306,23 @@ def run():
         # -----------------------------
 
         try:
-
+            # IMPORTANT:
+            # Send the complete YouTube URL,
+            # not only the video ID.
             transcript_result = get_transcript(
-                video_id
+                video_url
             )
 
-        except Exception as e:
-
+        except Exception as error:
             print(
-                f"Transcript exception: {e}"
+                f"Transcript exception: {error}"
             )
 
             transcript_result = {
                 "status": "error",
                 "language": "",
                 "text": "",
-                "error": str(e)
+                "error": str(error)
             }
 
         video["transcript_status"] = (
@@ -316,74 +347,69 @@ def run():
         )
 
         print(
-            f"Transcript: "
+            "Transcript: "
             f"{video['transcript_status']} "
             f"({video['transcript_language'] or '-'})"
         )
 
-        if transcript_result.get("error"):
+        transcript_error = transcript_result.get(
+            "error",
+            ""
+        )
 
+        if transcript_error:
             print(
-                f"Transcript note: "
-                f"{transcript_result['error']}"
+                f"Transcript note: {transcript_error}"
             )
 
         # -----------------------------
-        # GEMINI
+        # PROPERTY EXTRACTION
         # -----------------------------
 
         try:
-
             property_data = extract_property(
                 video
             )
 
-        except Exception as e:
-
+        except Exception as error:
             print(
-                f"Gemini exception: {e}"
+                f"Gemini property exception: {error}"
             )
 
-            property_data = {
-                "is_property_listing": False,
-                "location": "NOT SPECIFIED",
-                "property_type": "NOT SPECIFIED",
-                "bhk": "NOT SPECIFIED",
-                "land_area": "NOT SPECIFIED",
-                "built_up_area": "NOT SPECIFIED",
-                "price": "NOT SPECIFIED",
-                "facing": "NOT SPECIFIED",
-                "road_width": "NOT SPECIFIED",
-                "floors": "NOT SPECIFIED",
-                "bedrooms": "NOT SPECIFIED",
-                "bathrooms": "NOT SPECIFIED",
-                "parking": "NOT SPECIFIED",
-                "approval": "NOT SPECIFIED",
-                "amenities": [],
-                "nearby_landmarks": [],
-                "contact_details": "NOT SPECIFIED",
-                "missing_fields": [
-                    "Gemini analysis failed"
-                ],
-                "source_facts": [],
-                "gemini_status": "failed_retry_later",
-                "gemini_error": str(e)
-            }
+            property_data = (
+                build_failed_property_result(
+                    error
+                )
+            )
 
         # -----------------------------
         # SAVE
         # -----------------------------
 
-        save_record(
-            video,
-            property_data
-        )
+        try:
+            save_record(
+                video,
+                property_data
+            )
 
-        existing_ids.add(video_id)
+            existing_ids.add(video_id)
 
-        print(
-            f"Saved: {video['title']}"
-        )
+            print(
+                f"Saved: "
+                f"{video.get('title', 'UNTITLED')}"
+            )
+
+        except Exception as error:
+            print(
+                f"CSV save failed for "
+                f"{video_id}: {error}"
+            )
+
+            # Continue with other videos.
+            continue
+
+    print("")
+    print("Property-monitor run completed.")
 
 
 if __name__ == "__main__":
