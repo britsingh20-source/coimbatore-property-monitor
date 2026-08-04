@@ -43,11 +43,11 @@ const ContactRail: React.FC<{brand: string; phone: string}> = ({brand, phone}) =
 
 const MediaFrame: React.FC<{
   src: string; video: boolean; label: string; index: number; total: number;
-  price: string; location: string; facts: Fact[]; nextImage?: string;
-}> = ({src, video, label, index, total, price, location, facts, nextImage}) => {
+  price: string; location: string; facts: Fact[]; duration: number; nextImage?: string;
+}> = ({src, video, label, index, total, price, location, facts, duration, nextImage}) => {
   const frame = useCurrentFrame();
-  const scale = interpolate(frame, [0, 170], index % 2 ? [1.02, 1.13] : [1.12, 1.02], {extrapolateRight: 'clamp'});
-  const opacity = interpolate(frame, [0, 12, 158, 178], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const scale = interpolate(frame, [0, duration], index % 2 ? [1.02, 1.13] : [1.12, 1.02], {extrapolateRight: 'clamp'});
+  const opacity = interpolate(frame, [0, 12, Math.max(14, duration - 18), duration], [0, 1, 1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const activeFact = facts.length ? facts[index % facts.length] : null;
   return (
     <AbsoluteFill style={{backgroundColor: navy, opacity, overflow: 'hidden', fontFamily: typeface}}>
@@ -176,12 +176,12 @@ export const PropertyReel: React.FC<PropertyVideoProps> = (props) => {
 
   return (
     <AbsoluteFill style={{backgroundColor: navy}}>
-      {media[0] && <MediaFrame {...media[0]} label={disclosure} index={0} total={media.length} price={props.price} location={props.location} facts={props.facts} nextImage={props.images[1]} />}
+      {media[0] && <MediaFrame {...media[0]} label={disclosure} index={0} total={media.length} price={props.price} location={props.location} facts={props.facts} duration={durationInFrames} nextImage={props.images[1]} />}
       <Sequence from={0} durationInFrames={135}><Hook location={props.location} title={props.title} price={props.price} /></Sequence>
       <Sequence from={mapStart} durationInFrames={205}><MapStage maps={props.maps} location={props.location} /></Sequence>
       {media.map((item, index) => (
         <Sequence key={`${item.src}-${index}`} from={mediaStart + index * mediaFrames} durationInFrames={mediaFrames + 10}>
-          <MediaFrame {...item} label={disclosure} index={index} total={media.length} price={props.price} location={props.location} facts={props.facts} nextImage={!item.video && props.images.length > 1 ? props.images[(index + 1) % props.images.length] : undefined} />
+          <MediaFrame {...item} label={disclosure} index={index} total={media.length} price={props.price} location={props.location} facts={props.facts} duration={mediaFrames + 10} nextImage={!item.video && props.images.length > 1 ? props.images[(index + 1) % props.images.length] : undefined} />
         </Sequence>
       ))}
       <Sequence from={factsStart} durationInFrames={218}><Facts facts={props.facts} location={props.location} price={props.price} /></Sequence>
