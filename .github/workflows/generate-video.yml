@@ -1,4 +1,4 @@
-name: Generate Approved Property Videos
+name: Render Free Approved Property Videos
 
 on:
   workflow_dispatch: {}
@@ -20,16 +20,13 @@ jobs:
         with:
           python-version: "3.11"
           cache: pip
-      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-noto-core
       - run: pip install -r requirements.txt
-      - name: Generate only approved IDs
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_VIDEO_MODEL: veo-3.1-generate-preview
-        run: python generate_approved_videos.py
+      - name: Render only approved IDs without a paid video API
+        run: python render_free_approved.py
       - uses: actions/upload-artifact@v4
         with:
-          name: approved-property-videos
+          name: free-approved-property-videos
           path: outputs/**/*.mp4
           if-no-files-found: warn
           retention-days: 7
