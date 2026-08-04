@@ -1,0 +1,41 @@
+{
+  "video_id": "v55WAeeuLt8",
+  "source_url": "https://www.youtube.com/watch?v=v55WAeeuLt8",
+  "property_location": "1.50 km from Pattanam, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Single Family House / Simplex Villa",
+    "bhk": "2 BHK",
+    "land_area": "2.75 Cents",
+    "built_up_area": "1050 sq.ft.",
+    "price": "₹65 Lakhs (Negotiable)",
+    "facing": "North",
+    "road_width": "30 & 33 feet tar road",
+    "parking": "Covered Car Parking (14x16 ft)",
+    "approval": "DTCP Approved & Plan Approved"
+  },
+  "verified_facts": "Land area is 2.75 cents and building area is 1050 sqft., House is North facing 2BHK Simplex model., Price listed is 65 Lakhs (Negotiable) with up to 85% loan support., Located 1.50 kms from Pattanam, Coimbatore., Parking size is 14x16 ft, living hall is 10x20 ft, kitchen is 10x8 ft, master bedroom is 10x16 ft, and kids bedroom is 10x10 ft.",
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "ffmpeg-free",
+  "required_owned_images_folder": "assets/properties/v55WAeeuLt8/",
+  "optional_owned_audio": "assets/audio/v55WAeeuLt8.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story elevation featuring cream and accent maroon walls, CNC decorative metal cutouts, yellow entrance ramp, grey metal gate, tiled car parking porch, stainless steel staircase railing leading to a spacious open rooftop terrace with dual water tanks.. Neighbourhood: Residential developing area with wide roads and scattered modern houses located near Pattanam, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story elevation featuring cream and accent maroon walls, CNC decorative metal cutouts, yellow entrance ramp, grey metal gate, tiled car parking porch, stainless steel staircase railing leading to a spacious open rooftop terrace with dual water tanks.. Neighbourhood: Residential developing area with wide roads and scattered modern houses located near Pattanam, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story elevation featuring cream and accent maroon walls, CNC decorative metal cutouts, yellow entrance ramp, grey metal gate, tiled car parking porch, stainless steel staircase railing leading to a spacious open rooftop terrace with dual water tanks.. Neighbourhood: Residential developing area with wide roads and scattered modern houses located near Pattanam, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story elevation featuring cream and accent maroon walls, CNC decorative metal cutouts, yellow entrance ramp, grey metal gate, tiled car parking porch, stainless steel staircase railing leading to a spacious open rooftop terrace with dual water tanks.. Neighbourhood: Residential developing area with wide roads and scattered modern houses located near Pattanam, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "approval_pending"
+}
