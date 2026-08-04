@@ -22,11 +22,19 @@ jobs:
           cache: pip
       - run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-noto-core
       - run: pip install -r requirements.txt
+      - name: Source licensed media and create Tamil male voice-over
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          TAMIL_MALE_VOICE: ta-IN-ValluvarNeural
+        run: python prepare_free_assets.py
       - name: Render only approved IDs without a paid video API
         run: python render_free_approved.py
       - uses: actions/upload-artifact@v4
         with:
           name: free-approved-property-videos
-          path: outputs/**/*.mp4
+          path: |
+            outputs/**/*.mp4
+            data/media_attribution/*.json
+            data/voiceover_scripts/*.txt
           if-no-files-found: warn
           retention-days: 7
