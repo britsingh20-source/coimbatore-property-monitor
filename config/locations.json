@@ -1,0 +1,15 @@
+{
+  "city": "Coimbatore",
+  "city_aliases": ["coimbatore", "covai", "kovai", "கோவை", "கோயம்புத்தூர்"],
+  "target_localities": {
+    "Saravanampatti": ["saravanampatti", "சரவணம்பட்டி"],
+    "Thudiyalur": ["thudiyalur", "துடியலூர்"],
+    "Pannimadai": ["pannimadai", "pannirmadai", "பன்னிமடை"],
+    "Idigarai": ["idigarai", "இடிகரை"],
+    "Narasimhanaickenpalayam": ["narasimhanaickenpalayam", "narasimmanaickenpalayam", "என்.எஸ்.என்.பாளையம்"],
+    "Vadavalli": ["vadavalli", "வடவள்ளி"],
+    "Karamadai": ["karamadai", "காரமடை"],
+    "Pattanam": ["pattanam", "பட்டணம்"],
+    "RS Puram": ["rs puram", "r.s. puram", "ஆர்.எஸ்.புரம்"]
+  }
+}
