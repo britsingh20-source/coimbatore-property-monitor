@@ -30,7 +30,8 @@ FIELDS = [
     "amenities",
     "nearby_landmarks",
     "contact_details",
-    "missing_fields"
+    "missing_fields",
+    "source_facts"
 ]
 
 
