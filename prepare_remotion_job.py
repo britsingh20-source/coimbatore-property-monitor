@@ -27,6 +27,23 @@ def _copy(files: list[Path], destination: Path, prefix: str) -> list[str]:
     return copied
 
 
+def _copy_scene_videos(source_root: Path, destination: Path) -> dict[str, list[str]]:
+    scene_media = {}
+    for scene_folder in sorted(path for path in source_root.glob("*") if path.is_dir()):
+        files = [
+            path for pattern in ("*.mp4", "*.mov", "*.m4v", "*.webm")
+            for path in scene_folder.glob(pattern)
+        ]
+        copied = []
+        for index, source in enumerate(sorted(files), start=1):
+            target = destination / f"stock-{scene_folder.name}-{index:02d}{source.suffix.lower()}"
+            shutil.copy2(source, target)
+            copied.append(f"render/{destination.name}/{target.name}")
+        if copied:
+            scene_media[scene_folder.name] = copied
+    return scene_media
+
+
 def _value(prop: dict, key: str, fallback: str = "Verify during visit") -> str:
     value = str(prop.get(key, "")).strip()
     return value if value and value.upper() != "NOT SPECIFIED" else fallback
@@ -49,7 +66,7 @@ def prepare(job_path: Path) -> Path:
     map_folder = Path("assets/maps") / video_id
     image_files = [path for pattern in ("*.jpg", "*.jpeg", "*.png", "*.webp") for path in property_folder.glob(pattern)]
     owned_clips = [path for pattern in ("*.mp4", "*.mov", "*.m4v", "*.webm") for path in property_folder.glob(pattern)]
-    stock_clips = [path for pattern in ("*.mp4", "*.mov", "*.m4v", "*.webm") for path in stock_video_folder.glob(pattern)]
+    stock_clips = [path for pattern in ("*.mp4", "*.mov", "*.m4v", "*.webm") for path in stock_video_folder.rglob(pattern)]
     map_files = list(map_folder.glob("map-*.jpg"))
 
     images = _copy(image_files, destination, "property")
@@ -97,7 +114,7 @@ def prepare(job_path: Path) -> Path:
     duration_frames = sum(scene_durations[scene] for scene in scene_order)
     data = {
         "videoId": video_id,
-        "location": job.get("property_location", "Coimbatore"),
+        "location": job.get("property_location", "Coimbatore"),\n        "locationLabel": location_label(job),
         "title": f"{_value(prop, 'bhk', '')} {_value(prop, 'property_type', 'Property')}".strip(),
         "price": _value(prop, "price", "Contact for price"),
         "facts": [
