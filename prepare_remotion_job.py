@@ -1,6 +1,5 @@
 import argparse
 import json
-import math
 import shutil
 import subprocess
 from pathlib import Path
@@ -33,6 +32,10 @@ def _value(prop: dict, key: str, fallback: str = "Verify during visit") -> str:
     return value if value and value.upper() != "NOT SPECIFIED" else fallback
 
 
+def _present(prop: dict, key: str) -> bool:
+    return bool(_value(prop, key, ""))
+
+
 def prepare(job_path: Path) -> Path:
     job = json.loads(job_path.read_text(encoding="utf-8"))
     video_id = job["video_id"]
@@ -55,19 +58,43 @@ def prepare(job_path: Path) -> Path:
     maps = _copy(map_files, destination, "map")
     audio_source = Path("assets/audio") / f"{video_id}.mp3"
     audio = None
-    audio_seconds = 0.0
     if audio_source.exists() and audio_source.stat().st_size > 0:
         target = destination / "narration.mp3"
         shutil.copy2(audio_source, target)
         try:
-            audio_seconds = _duration(target)
             audio = f"render/{video_id}/{target.name}"
         except (subprocess.CalledProcessError, ValueError):
             target.unlink(missing_ok=True)
             print(f"Ignoring invalid narration audio: {audio_source}")
 
-    duration_seconds = max(48, min(75, math.ceil(audio_seconds + 2)))
     prop = job.get("property", {})
+    property_type = _value(prop, "property_type", "property").lower()
+    template_variant = "plot" if any(word in property_type for word in ("plot", "land", "site")) else "home"
+    manifest_path = Path("assets/audio") / video_id / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else []
+    minimum_frames = {
+        "location": 267, "land": 123, "builtUp": 137, "price": 150,
+        "facing": 98, "road": 155, "approval": 127,
+        "disclosure": 214, "verify": 179, "cta": 165,
+    }
+    voice_segments = []
+    scene_order = []
+    scene_durations = {}
+    for item in manifest:
+        source = Path("assets/audio") / video_id / item["file"]
+        if not source.exists():
+            continue
+        target = destination / f"voice-{item['scene']}.mp3"
+        shutil.copy2(source, target)
+        scene = item["scene"]
+        duration = max(minimum_frames.get(scene, 120), int(float(item["duration_seconds"]) * 30) + 18)
+        scene_order.append(scene)
+        scene_durations[scene] = duration
+        voice_segments.append({"scene": scene, "src": f"render/{video_id}/{target.name}"})
+    if not scene_order:
+        scene_order = ["location", "land", "builtUp", "price", "facing", "road", "approval", "disclosure", "verify", "cta"]
+        scene_durations = {scene: minimum_frames[scene] for scene in scene_order}
+    duration_frames = sum(scene_durations[scene] for scene in scene_order)
     data = {
         "videoId": video_id,
         "location": job.get("property_location", "Coimbatore"),
@@ -86,7 +113,11 @@ def prepare(job_path: Path) -> Path:
         "representativeVideos": representative_videos,
         "images": images,
         "audio": audio,
-        "durationInFrames": duration_seconds * 30,
+        "voiceSegments": voice_segments,
+        "sceneOrder": scene_order,
+        "sceneDurations": scene_durations,
+        "templateVariant": template_variant,
+        "durationInFrames": duration_frames,
         "isActualProperty": bool(job.get("media_is_actual_property", False)),
         "disclosure": job.get("disclosure", "Representative visuals; verify before purchase."),
         "brand": "COIMBATOREVEEDU BUILDERS",
