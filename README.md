@@ -15,10 +15,15 @@ vertical marketing videos with Remotion.
    property facts becomes `auto_approved`.
 6. Sparse or ambiguous listings become `needs_review` and are not rendered.
 7. The monitor commits the job JSON to `data/video_jobs/`.
-8. That commit automatically triggers **Render Autopilot Property Videos**.
-9. The selector renders only auto-approved jobs changed by that commit.
-10. The MP4 and its attribution, map and narration records are uploaded as a
-    seven-day GitHub Actions artifact.
+8. It sends a `repository_dispatch` event containing only the newly approved
+   video IDs. This explicit dispatch is required because GitHub does not start a
+   second workflow from a normal `GITHUB_TOKEN` push.
+9. **Render Autopilot Property Videos** validates the dispatched IDs against the
+   committed `auto_approved` jobs and rejects historical or unapproved IDs.
+10. Each property is rendered independently. One failed property cannot prevent
+    the remaining dispatched properties from completing.
+11. MP4 files plus attribution, map, voice-engine and failure diagnostics are
+    uploaded as a seven-day GitHub Actions artifact.
 
 No manual footage upload or workflow dispatch is required for a valid listing.
 
@@ -37,6 +42,9 @@ No manual footage upload or workflow dispatch is required for a valid listing.
 - Every narration manifest records the actual TTS engine and style used.
 - The Remotion timeline expands automatically to fit the narration.
 - Automatically sourced property media is labelled as representative.
+
+Dispatch uses the built-in repository `GITHUB_TOKEN`; no personal access token
+or additional secret is required.
 
 The system never presents stock footage as the actual property. Advertiser-owned
 media is still supported and takes priority when it exists, but it is optional.
@@ -70,7 +78,9 @@ Optional repository variable:
 
 `workflow_dispatch` remains available. A manually listed ID in
 `data/approved_video_ids.txt` is included during manual or pull-request runs.
-Push-triggered production renders do not rerender the historical approval list.
+Manual runs can also accept comma-separated video IDs. Blank manual runs use
+`data/approved_video_ids.txt`. Automated production renders use only the exact
+IDs supplied by the monitor and never rerender the historical approval list.
 
 ## Local validation
 
