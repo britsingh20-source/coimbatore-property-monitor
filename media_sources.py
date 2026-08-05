@@ -234,9 +234,29 @@ def source_property_videos(job: dict, limit: int = 4) -> list[dict]:
         } for path in sorted(owned)]
 
     location = job.get("property_location", "Coimbatore")
-    candidates = search_pexels_videos(f"modern Indian house walkthrough {location}", limit=limit)
-    if len(candidates) < 2:
-        candidates.extend(search_pexels_videos("modern house interior walkthrough", limit=limit))
+    property_type = str((job.get("property") or {}).get("property_type", "property")).lower()
+    if any(kind in property_type for kind in ("plot", "land", "site")):
+        queries = [
+            f"residential land plots aerial roads {location}",
+            "plotted development layout roads aerial India",
+            "residential land site road drone India",
+        ]
+    else:
+        queries = [
+            f"modern Indian {property_type} exterior walkthrough {location}",
+            "modern Indian house interior walkthrough",
+            "residential street house exterior India",
+        ]
+    candidates = []
+    seen_sources = set()
+    for query in queries:
+        for item in search_pexels_videos(query, limit=limit):
+            identity = item.get("source_url") or item.get("download_url")
+            if identity not in seen_sources:
+                candidates.append(item)
+                seen_sources.add(identity)
+        if len(candidates) >= limit:
+            break
     saved = download_media(candidates, Path("assets/videos") / video_id, limit=limit)
     for item in saved:
         item["actual_property"] = False
