@@ -4,7 +4,10 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from media_sources import (\n    _allowed_scene_visual, _allowed_visual, _scene_video_queries,\n    search_pexels_videos, source_property_media, source_property_videos,\n)
+from media_sources import (
+    _allowed_scene_visual, _allowed_visual, _scene_video_queries,
+    search_pexels_videos, source_property_media, source_property_videos,
+)
 
 
 class MediaSourceTests(unittest.TestCase):
