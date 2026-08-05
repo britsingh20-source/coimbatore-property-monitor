@@ -92,7 +92,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cache/huggingface/hub
-          key: indic-parler-v1-${{ runner.os }}
+          key: indic-parler-v2-${{ runner.os }}-${{ hashFiles('requirements-indic-parler.txt') }}
+          restore-keys: |
+            indic-parler-v2-${{ runner.os }}-
       - name: Install Indic Parler-TTS when configured
         if: steps.select.outputs.has_jobs == 'true'
         env:
@@ -101,7 +103,7 @@ jobs:
         run: |
           set -euo pipefail
           if [[ -n "${HF_TOKEN:-}" ]]; then
-            pip install --index-url https://download.pytorch.org/whl/cpu "torch>=2.4,<3"
+            pip install --index-url https://download.pytorch.org/whl/cpu "torch>=2.4,<3" "torchaudio>=2.4,<3"
             pip install -r requirements-indic-parler.txt
           else
             echo "::warning::HF_TOKEN is not configured; this run will retain the Edge emergency voice."
@@ -128,6 +130,7 @@ jobs:
           TTS_ALLOW_EDGE_FALLBACK: "false"
           TAMIL_MALE_VOICE: ta-IN-ValluvarNeural
           VIDEO_IDS_FILE: data/render_queue.txt
+          ASSET_FAILURES_FILE: outputs/asset-failure-ids.txt
         shell: bash
         run: |
           set -euo pipefail
@@ -154,6 +157,14 @@ jobs:
           while IFS= read -r video_id; do
             [[ -z "$video_id" || "$video_id" == \#* ]] && continue
             mkdir -p "outputs/$video_id"
+
+            if [[ -f outputs/asset-failure-ids.txt ]] && grep -Fxq "$video_id" outputs/asset-failure-ids.txt; then
+              echo "$video_id" >> outputs/failed-render-ids.txt
+              echo "ASSET_OR_VOICE_FAILED" > "outputs/$video_id/render-mode.txt"
+              echo "::error::Skipping $video_id because fresh media or voice preparation failed; stale assets are prohibited."
+              continue
+            fi
+
             printf '%s\n' "$video_id" > data/single-render-queue.txt
 
             if (
@@ -198,6 +209,7 @@ jobs:
             outputs/**/render-mode.txt
             outputs/failed-render-ids.txt
             outputs/fallback-render-ids.txt
+            outputs/asset-failure-ids.txt
             data/render_queue.txt
             data/media_attribution/*.json
             data/geocoding/*.json
