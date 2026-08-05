@@ -1,0 +1,41 @@
+{
+  "video_id": "G8fsvbuFTZs",
+  "source_url": "https://www.youtube.com/watch?v=G8fsvbuFTZs",
+  "property_location": "Near Thudiyalur, NGGO Colony, Mettupalayam Road, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "2 cents to 4 cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "NOT SPECIFIED",
+    "facing": "North, West, East, South",
+    "road_width": "30 ft and 33 ft wide tar roads",
+    "parking": "NOT SPECIFIED",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "Project name is Castle Grande located near Thudiyalur and NGGO Colony, Coimbatore., Spread across 4 acres divided into 80 villa plots., Plot sizes range from 2 cents to 4 cents., Road widths inside the layout are 30 ft and 33 ft., Layout features solar street lights, covered drainage, individual water pipeline connections, and avenue tree plantation., Secured with a 6-foot compound wall topped with a 2.5-foot solar electric fence and 24/7 gated security., Located 5-10 minutes from Saravanampatti IT companies, educational institutions, hospitals, and New NGGO Flyover.",
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "ffmpeg-free",
+  "required_owned_images_folder": "assets/properties/G8fsvbuFTZs/",
+  "optional_owned_audio": "assets/audio/G8fsvbuFTZs.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Well-developed plot layout named Castle Grande featuring blacktop roads lined with painted curbs, solar light poles, plot division markers, landscaping trees, security entry gates, and a decorated perimeter wall with solar e-fencing.. Neighbourhood: Green, low-pollution setting surrounded by coconut groves near Thudiyalur, with convenient vehicular connectivity to Mettupalayam Road flyovers, IT hubs, and institutions in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Well-developed plot layout named Castle Grande featuring blacktop roads lined with painted curbs, solar light poles, plot division markers, landscaping trees, security entry gates, and a decorated perimeter wall with solar e-fencing.. Neighbourhood: Green, low-pollution setting surrounded by coconut groves near Thudiyalur, with convenient vehicular connectivity to Mettupalayam Road flyovers, IT hubs, and institutions in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Well-developed plot layout named Castle Grande featuring blacktop roads lined with painted curbs, solar light poles, plot division markers, landscaping trees, security entry gates, and a decorated perimeter wall with solar e-fencing.. Neighbourhood: Green, low-pollution setting surrounded by coconut groves near Thudiyalur, with convenient vehicular connectivity to Mettupalayam Road flyovers, IT hubs, and institutions in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Well-developed plot layout named Castle Grande featuring blacktop roads lined with painted curbs, solar light poles, plot division markers, landscaping trees, security entry gates, and a decorated perimeter wall with solar e-fencing.. Neighbourhood: Green, low-pollution setting surrounded by coconut groves near Thudiyalur, with convenient vehicular connectivity to Mettupalayam Road flyovers, IT hubs, and institutions in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "approval_pending"
+}

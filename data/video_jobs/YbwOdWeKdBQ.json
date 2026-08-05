@@ -1,0 +1,41 @@
+{
+  "video_id": "YbwOdWeKdBQ",
+  "source_url": "https://www.youtube.com/watch?v=YbwOdWeKdBQ",
+  "property_location": "1.50 kms from Pattanam, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Single Family House (Simplex)",
+    "bhk": 2,
+    "land_area": "2.75 Cents",
+    "built_up_area": "1050 sqft",
+    "price": "₹63 Lakhs (Negotiable)",
+    "facing": "North",
+    "road_width": "30 & 33 feet",
+    "parking": "16x16 ft covered parking space",
+    "approval": "DTCP & Plan Approved"
+  },
+  "verified_facts": "The house is a 2BHK Simplex model built on 2.75 cents of land with 1050 sqft built-up area., Property features a North-facing layout located 1.50 km from Pattanam, Coimbatore., Includes 2 bedrooms with attached bathrooms, living hall (10x20 ft), kitchen (10x8 ft), covered car parking (16x16 ft), and an additional toilet under the external staircase., Price is quoted at 63 Lakhs (negotiable), including interior work, with up to 85% loan availability.",
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "ffmpeg-free",
+  "required_owned_images_folder": "assets/properties/YbwOdWeKdBQ/",
+  "optional_owned_audio": "assets/audio/YbwOdWeKdBQ.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story exterior with a yellow entrance ramp, grey folding gate, white and grey painted walls with a maroon accent section, patterned portico floor tiles, outer staircase, and open rooftop terrace with dual water tanks.. Neighbourhood: Residential suburban neighborhood surrounded by independent houses, blue-painted neighboring residences, and unpaved/tar road access.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story exterior with a yellow entrance ramp, grey folding gate, white and grey painted walls with a maroon accent section, patterned portico floor tiles, outer staircase, and open rooftop terrace with dual water tanks.. Neighbourhood: Residential suburban neighborhood surrounded by independent houses, blue-painted neighboring residences, and unpaved/tar road access.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story exterior with a yellow entrance ramp, grey folding gate, white and grey painted walls with a maroon accent section, patterned portico floor tiles, outer staircase, and open rooftop terrace with dual water tanks.. Neighbourhood: Residential suburban neighborhood surrounded by independent houses, blue-painted neighboring residences, and unpaved/tar road access.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story exterior with a yellow entrance ramp, grey folding gate, white and grey painted walls with a maroon accent section, patterned portico floor tiles, outer staircase, and open rooftop terrace with dual water tanks.. Neighbourhood: Residential suburban neighborhood surrounded by independent houses, blue-painted neighboring residences, and unpaved/tar road access.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "approval_pending"
+}
