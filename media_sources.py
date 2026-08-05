@@ -2,8 +2,11 @@ import html
 import json
 import os
 import re
+import textwrap
 from pathlib import Path
+
 import requests
+from PIL import Image, ImageDraw, ImageFont
 
 
 COMMONS_API = "https://commons.wikimedia.org/w/api.php"
@@ -111,6 +114,59 @@ def download_media(items: list[dict], destination: Path, limit: int = 6) -> list
     return saved
 
 
+def _font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
+    names = [
+        "/usr/share/fonts/truetype/noto/NotoSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/noto/NotoSans-Regular.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+    ]
+    for name in names:
+        if Path(name).exists():
+            return ImageFont.truetype(name, size)
+    return ImageFont.load_default()
+
+
+def generate_fact_graphics(job: dict, destination: Path, count: int, start: int = 1) -> list[dict]:
+    """Create honest branded VFX plates when free location media is insufficient."""
+    destination.mkdir(parents=True, exist_ok=True)
+    prop = job.get("property") or {}
+    location = job.get("property_location", "Coimbatore")
+    location_short = ", ".join(part.strip() for part in location.split(",")[:2])
+    cards = [
+        ("LOCATION FOCUS", location_short, "COIMBATORE"),
+        ("LAND HIGHLIGHT", prop.get("land_area", "PROPERTY DETAILS"), prop.get("property_type", "PROPERTY")),
+        ("ROAD CONNECTIVITY", prop.get("road_width", "LOCAL ACCESS"), prop.get("facing", "VERIFY ON SITE")),
+        ("PROJECT FACTS", prop.get("approval", "DETAILS FROM SOURCE"), "SITE VISIT RECOMMENDED"),
+    ]
+    colors = [(6, 18, 35), (8, 30, 28), (30, 20, 8), (25, 10, 35)]
+    output = []
+    for offset in range(count):
+        title, value, footer = cards[offset % len(cards)]
+        image = Image.new("RGB", (1080, 1920), colors[offset % len(colors)])
+        draw = ImageDraw.Draw(image)
+        accent = (35, 231, 190)
+        draw.rounded_rectangle((70, 120, 1010, 1800), radius=48, outline=accent, width=5)
+        for radius in (130, 230, 330):
+            draw.ellipse((540-radius, 510-radius, 540+radius, 510+radius), outline=(*accent, 110), width=4)
+        draw.line((175, 1130, 410, 900, 665, 1050, 900, 780), fill=accent, width=18)
+        for x, y in ((175, 1130), (410, 900), (665, 1050), (900, 780)):
+            draw.ellipse((x-24, y-24, x+24, y+24), fill=(255, 190, 45), outline="white", width=5)
+        draw.text((100, 150), "COIMBATOREVEEDU BUILDERS", font=_font(42, True), fill="white")
+        draw.text((100, 1270), title, font=_font(46, True), fill=accent)
+        wrapped = textwrap.fill(str(value), width=20)
+        draw.multiline_text((100, 1360), wrapped, font=_font(72, True), fill="white", spacing=16)
+        draw.text((100, 1690), str(footer), font=_font(38, True), fill=(255, 190, 45))
+        draw.text((100, 1760), "Representative graphic • Verify property on site", font=_font(28), fill=(205, 215, 225))
+        path = destination / f"{start + offset:02d}-autopilot-vfx.jpg"
+        image.save(path, quality=92)
+        output.append({
+            "local_file": str(path), "provider": "CoimbatoreVeedu Builders Autopilot",
+            "license": "Original generated graphic", "media_kind": "image",
+            "actual_property": False, "exact_location_candidate": False,
+            "source_url": job.get("source_url", ""),
+        })
+    return output
+
+
 def source_property_media(job: dict, minimum: int = 3) -> list[dict]:
     video_id = job["video_id"]
     destination = Path("assets/properties") / video_id
@@ -125,29 +181,42 @@ def source_property_media(job: dict, minimum: int = 3) -> list[dict]:
         } for path in sorted(existing)]
 
     location = job.get("property_location", "Coimbatore")
+    prop = job.get("property") or {}
+    property_type = prop.get("property_type", "property")
     queries = [
         f"{location} Coimbatore Tamil Nadu",
-        f"{location} architecture",
+        f"{location} roads buildings",
+        f"{property_type} layout Coimbatore Tamil Nadu",
         "Coimbatore Tamil Nadu streets architecture",
+        "Coimbatore aerial city Tamil Nadu",
     ]
     candidates = []
+    seen_urls = set()
     for query in queries:
-        candidates.extend(search_commons(query, limit=6))
-        if len(candidates) >= 6:
-            break
-    if len(candidates) < minimum:
-        candidates.extend(search_pexels("modern Indian house interior exterior", limit=8))
+        try:
+            results = search_commons(query, limit=8)
+        except requests.RequestException as error:
+            print(f"Commons search skipped for {query!r}: {error}")
+            continue
+        for item in results:
+            if item["download_url"] not in seen_urls:
+                candidates.append(item)
+                seen_urls.add(item["download_url"])
+    candidates.extend(search_pexels(f"modern Indian {property_type} interior exterior", limit=8))
 
     saved = download_media(candidates, destination, limit=6)
     for item in saved:
         item["actual_property"] = False
+    if len(saved) < minimum:
+        fallback_count = minimum - len(saved)
+        saved.extend(generate_fact_graphics(job, destination, fallback_count, start=len(saved) + 1))
+        print(f"Used {fallback_count} autopilot VFX fallback plate(s) for {video_id}")
+
     attribution = Path("data/media_attribution")
     attribution.mkdir(parents=True, exist_ok=True)
     (attribution / f"{video_id}.json").write_text(
         json.dumps(saved, ensure_ascii=False, indent=2), encoding="utf-8"
     )
-    if len(saved) < minimum:
-        raise RuntimeError(f"Only {len(saved)} reusable images found for {location}; need {minimum}")
     return saved
 
 
