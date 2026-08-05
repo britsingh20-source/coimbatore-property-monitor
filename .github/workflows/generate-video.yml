@@ -15,6 +15,9 @@ on:
       - media_sources.py
       - map_assets.py
       - requirements.txt
+      - requirements-indic-parler.txt
+      - tamil_voiceover.py
+      - tests/test_tamil_voiceover.py
       - data/video_jobs/**
   push:
     branches: [main]
@@ -33,7 +36,7 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-24.04
-    timeout-minutes: 60
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v5
         with:
@@ -49,6 +52,21 @@ jobs:
           cache-dependency-path: professional_video/package-lock.json
       - run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-noto-core
       - run: pip install -r requirements.txt
+      - name: Cache the gated Indic Parler model
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface/hub
+          key: indic-parler-v1-${{ runner.os }}
+      - name: Install Indic Parler-TTS when configured
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        shell: bash
+        run: |
+          if [[ -n "${HF_TOKEN:-}" ]]; then
+            pip install -r requirements-indic-parler.txt
+          else
+            echo "::warning::HF_TOKEN is not configured; this run will retain the Edge emergency voice."
+          fi
       - name: Validate automation and media pipeline
         run: python -m unittest discover -s tests -v
       - run: npm ci
@@ -66,9 +84,21 @@ jobs:
       - name: Source licensed media, maps and Tamil male voice-over
         env:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          INDIC_PARLER_STYLE: ${{ vars.INDIC_PARLER_STYLE }}
+          TTS_ALLOW_EDGE_FALLBACK: "false"
           TAMIL_MALE_VOICE: ta-IN-ValluvarNeural
           VIDEO_IDS_FILE: data/render_queue.txt
-        run: python prepare_free_assets.py
+        shell: bash
+        run: |
+          if [[ -n "${HF_TOKEN:-}" ]]; then
+            export TTS_ENGINE=indic-parler
+            echo "Using strict AI4Bharat Indic Parler-TTS narration."
+          else
+            export TTS_ENGINE=edge
+            echo "::warning::Using Edge emergency voice because HF_TOKEN is absent."
+          fi
+          python prepare_free_assets.py
       - name: Render professional Remotion reels
         id: professional
         continue-on-error: true
@@ -110,6 +140,7 @@ jobs:
             data/media_attribution/*.json
             data/geocoding/*.json
             data/voiceover_scripts/*.txt
+            assets/audio/**/manifest.json
             data/remotion_props/*.json
           if-no-files-found: warn
           retention-days: 7
