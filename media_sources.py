@@ -1,5 +1,6 @@
 import html
 import json
+import math
 import os
 import re
 import textwrap
@@ -13,11 +14,25 @@ COMMONS_API = "https://commons.wikimedia.org/w/api.php"
 PEXELS_PHOTO_API = "https://api.pexels.com/v1/search"
 PEXELS_VIDEO_API = "https://api.pexels.com/videos/search"
 USER_AGENT = "CoimbatorePropertyMonitor/1.0 (property media attribution bot)"
+BLOCKED_VISUAL_TERMS = {
+    "temple", "church", "mosque", "masjid", "shrine", "cathedral",
+    "religious", "religion", "worship", "prayer", "deity", "god",
+    "festival", "procession", "monastery", "chapel", "minaret",
+}
 
 
 def _plain(value: str) -> str:
     value = html.unescape(value or "")
     return re.sub(r"<[^>]+>", "", value).strip()
+
+
+def _allowed_visual(item: dict) -> bool:
+    """Reject media whose searchable metadata signals religious imagery."""
+    searchable = " ".join(str(item.get(key, "")) for key in (
+        "source_url", "download_url", "title", "description", "alt",
+    )).lower()
+    tokens = set(re.findall(r"[a-z]+", searchable))
+    return not tokens.intersection(BLOCKED_VISUAL_TERMS)
 
 
 def search_commons(query: str, limit: int = 8) -> list[dict]:
@@ -40,8 +55,9 @@ def search_commons(query: str, limit: int = 8) -> list[dict]:
             "license": _plain(metadata.get("LicenseShortName", {}).get("value", "See source page")),
             "provider": "Wikimedia Commons",
             "exact_location_candidate": True,
+            "title": page.get("title", ""),
         })
-    return [item for item in items if item["download_url"]]
+    return [item for item in items if item["download_url"] and _allowed_visual(item)]
 
 
 def search_pexels(query: str, limit: int = 8) -> list[dict]:
@@ -52,15 +68,16 @@ def search_pexels(query: str, limit: int = 8) -> list[dict]:
         "query": query, "orientation": "portrait", "per_page": min(limit, 80),
     }, headers={"Authorization": api_key}, timeout=30)
     response.raise_for_status()
-    return [{
+    return [item for item in [{
         "download_url": photo["src"].get("large2x") or photo["src"]["large"],
         "source_url": photo["url"],
+        "alt": photo.get("alt", ""),
         "creator": photo.get("photographer", "Pexels contributor"),
         "license": "Pexels License",
         "provider": "Pexels",
         "media_kind": "image",
         "exact_location_candidate": False,
-    } for photo in response.json().get("photos", [])]
+    } for photo in response.json().get("photos", [])] if _allowed_visual(item)]
 
 
 def search_pexels_videos(query: str, limit: int = 6) -> list[dict]:
@@ -90,8 +107,9 @@ def search_pexels_videos(query: str, limit: int = 6) -> list[dict]:
             "provider": "Pexels",
             "media_kind": "video",
             "exact_location_candidate": False,
+            "duration_seconds": video.get("duration"),
         })
-    return clips
+    return [item for item in clips if _allowed_visual(item)]
 
 
 def download_media(items: list[dict], destination: Path, limit: int = 6) -> list[dict]:
@@ -155,7 +173,7 @@ def generate_fact_graphics(job: dict, destination: Path, count: int, start: int 
         wrapped = textwrap.fill(str(value), width=20)
         draw.multiline_text((100, 1360), wrapped, font=_font(72, True), fill="white", spacing=16)
         draw.text((100, 1690), str(footer), font=_font(38, True), fill=(255, 190, 45))
-        draw.text((100, 1760), "Representative graphic • Verify property on site", font=_font(28), fill=(205, 215, 225))
+        draw.text((100, 1760), "SOURCE-BASED DETAILS • SITE VISIT AVAILABLE", font=_font(28), fill=(205, 215, 225))
         path = destination / f"{start + offset:02d}-autopilot-vfx.jpg"
         image.save(path, quality=92)
         output.append({
@@ -199,10 +217,12 @@ def source_property_media(job: dict, minimum: int = 3) -> list[dict]:
             print(f"Commons search skipped for {query!r}: {error}")
             continue
         for item in results:
-            if item["download_url"] not in seen_urls:
+            if _allowed_visual(item) and item["download_url"] not in seen_urls:
                 candidates.append(item)
                 seen_urls.add(item["download_url"])
-    candidates.extend(search_pexels(f"modern Indian {property_type} interior exterior", limit=8))
+    candidates.extend(item for item in search_pexels(
+        f"modern Indian {property_type} real estate interior exterior", limit=8,
+    ) if _allowed_visual(item))
 
     saved = download_media(candidates, destination, limit=6)
     for item in saved:
@@ -220,7 +240,7 @@ def source_property_media(job: dict, minimum: int = 3) -> list[dict]:
     return saved
 
 
-def source_property_videos(job: dict, limit: int = 4) -> list[dict]:
+def source_property_videos(job: dict, limit: int = 9) -> list[dict]:
     """Prefer advertiser-owned clips, then fetch clearly labelled stock footage."""
     video_id = job["video_id"]
     owned_folder = Path("assets/properties") / video_id
@@ -237,26 +257,27 @@ def source_property_videos(job: dict, limit: int = 4) -> list[dict]:
     property_type = str((job.get("property") or {}).get("property_type", "property")).lower()
     if any(kind in property_type for kind in ("plot", "land", "site")):
         queries = [
-            f"residential land plots aerial roads {location}",
-            "plotted development layout roads aerial India",
-            "residential land site road drone India",
+            f"residential land plots aerial road real estate {location}",
+            "plotted development layout asphalt roads aerial India",
+            "residential land site boundary drone India",
+            "vacant residential plot road survey India",
         ]
     else:
         queries = [
             f"modern Indian {property_type} exterior walkthrough {location}",
             "modern Indian house interior walkthrough",
             "residential street house exterior India",
+            "modern residential property aerial road India",
         ]
     candidates = []
     seen_sources = set()
+    per_query = max(2, math.ceil(limit / len(queries)))
     for query in queries:
-        for item in search_pexels_videos(query, limit=limit):
+        for item in search_pexels_videos(query, limit=per_query):
             identity = item.get("source_url") or item.get("download_url")
-            if identity not in seen_sources:
+            if _allowed_visual(item) and identity not in seen_sources:
                 candidates.append(item)
                 seen_sources.add(identity)
-        if len(candidates) >= limit:
-            break
     saved = download_media(candidates, Path("assets/videos") / video_id, limit=limit)
     for item in saved:
         item["actual_property"] = False
