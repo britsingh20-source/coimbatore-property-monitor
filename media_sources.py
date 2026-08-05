@@ -3,6 +3,7 @@ import json
 import math
 import os
 import re
+import shutil
 import textwrap
 from pathlib import Path
 
@@ -18,6 +19,13 @@ BLOCKED_VISUAL_TERMS = {
     "temple", "church", "mosque", "masjid", "shrine", "cathedral",
     "religious", "religion", "worship", "prayer", "deity", "god",
     "festival", "procession", "monastery", "chapel", "minaret",
+}
+SCENE_BLOCKED_TERMS = {
+    "road": {"tea", "plantation", "farm", "farmland", "agriculture", "terrace", "terraced", "mountain", "hill", "forest"},
+    "land": {"tea", "plantation", "farm", "farmland", "agriculture", "terrace", "terraced", "mountain", "hill"},
+    "location": {"tea", "plantation", "farm", "farmland", "mountain", "hill", "forest"},
+    "exterior": {"tea", "plantation", "farm", "farmland", "mountain", "hill", "forest"},
+    "interior": set(),
 }
 
 
@@ -240,8 +248,57 @@ def source_property_media(job: dict, minimum: int = 3) -> list[dict]:
     return saved
 
 
-def source_property_videos(job: dict, limit: int = 9) -> list[dict]:
-    """Prefer advertiser-owned clips, then fetch clearly labelled stock footage."""
+def _allowed_scene_visual(item: dict, scene: str) -> bool:
+    searchable = " ".join(str(item.get(key, "")) for key in (
+        "source_url", "download_url", "title", "description", "alt",
+    )).lower()
+    tokens = set(re.findall(r"[a-z]+", searchable))
+    return _allowed_visual(item) and not tokens.intersection(SCENE_BLOCKED_TERMS.get(scene, set()))
+
+
+def _scene_video_queries(job: dict) -> dict[str, list[str]]:
+    """Search each factual scene independently; never use positional clip guessing."""
+    location = str(job.get("property_location") or "Coimbatore")
+    property_type = str((job.get("property") or {}).get("property_type", "property")).lower()
+    common = {
+        "location": [
+            f"Coimbatore residential neighbourhood aerial roads",
+            f"Coimbatore city residential street drone",
+        ],
+        "road": [
+            "residential layout asphalt road drone India",
+            "new plotted development wide tar road India",
+            "residential street blacktop road aerial India",
+        ],
+    }
+    if any(kind in property_type for kind in ("plot", "land", "site")):
+        return {
+            **common,
+            "land": [
+                f"residential plotted development land boundary {location}",
+                "villa plots layout boundary aerial India",
+                "vacant residential plot survey drone India",
+            ],
+            "exterior": [
+                "gated plotted development entrance India",
+                "residential layout avenue roads India",
+            ],
+        }
+    return {
+        **common,
+        "exterior": [
+            f"modern Indian {property_type} exterior {location}",
+            "modern Indian house exterior walkthrough",
+        ],
+        "interior": [
+            "modern Indian house living room walkthrough",
+            "modern Indian modular kitchen walkthrough",
+        ],
+    }
+
+
+def source_property_videos(job: dict, per_scene: int = 2) -> list[dict]:
+    """Download labelled, deduplicated clips into strict scene-specific buckets."""
     video_id = job["video_id"]
     owned_folder = Path("assets/properties") / video_id
     owned = []
@@ -251,41 +308,41 @@ def source_property_videos(job: dict, limit: int = 9) -> list[dict]:
         return [{
             "local_file": str(path), "provider": "Advertiser supplied",
             "license": "Owner supplied", "media_kind": "video", "actual_property": True,
+            "scene": "actual",
         } for path in sorted(owned)]
 
-    location = job.get("property_location", "Coimbatore")
-    property_type = str((job.get("property") or {}).get("property_type", "property")).lower()
-    if any(kind in property_type for kind in ("plot", "land", "site")):
-        queries = [
-            f"residential land plots aerial road real estate {location}",
-            "plotted development layout asphalt roads aerial India",
-            "residential land site boundary drone India",
-            "vacant residential plot road survey India",
-        ]
-    else:
-        queries = [
-            f"modern Indian {property_type} exterior walkthrough {location}",
-            "modern Indian house interior walkthrough",
-            "residential street house exterior India",
-            "modern residential property aerial road India",
-        ]
-    candidates = []
+    destination = Path("assets/videos") / video_id
+    if destination.exists():
+        shutil.rmtree(destination)
+    destination.mkdir(parents=True, exist_ok=True)
+
+    saved = []
     seen_sources = set()
-    per_query = max(2, math.ceil(limit / len(queries)))
-    for query in queries:
-        for item in search_pexels_videos(query, limit=per_query):
-            identity = item.get("source_url") or item.get("download_url")
-            if _allowed_visual(item) and identity not in seen_sources:
-                candidates.append(item)
+    for scene, queries in _scene_video_queries(job).items():
+        candidates = []
+        for query in queries:
+            for item in search_pexels_videos(query, limit=per_scene + 1):
+                identity = item.get("source_url") or item.get("download_url")
+                if identity in seen_sources or not _allowed_scene_visual(item, scene):
+                    continue
+                candidates.append({**item, "scene": scene, "search_query": query})
                 seen_sources.add(identity)
-    saved = download_media(candidates, Path("assets/videos") / video_id, limit=limit)
-    for item in saved:
-        item["actual_property"] = False
+                if len(candidates) >= per_scene:
+                    break
+            if len(candidates) >= per_scene:
+                break
+        scene_saved = download_media(candidates, destination / scene, limit=per_scene)
+        for item in scene_saved:
+            item["actual_property"] = False
+        saved.extend(scene_saved)
 
     attribution_path = Path("data/media_attribution") / f"{video_id}.json"
     attribution_path.parent.mkdir(parents=True, exist_ok=True)
     prior = []
     if attribution_path.exists():
-        prior = json.loads(attribution_path.read_text(encoding="utf-8"))
+        prior = [
+            item for item in json.loads(attribution_path.read_text(encoding="utf-8"))
+            if item.get("media_kind") != "video"
+        ]
     attribution_path.write_text(json.dumps(prior + saved, ensure_ascii=False, indent=2), encoding="utf-8")
     return saved
