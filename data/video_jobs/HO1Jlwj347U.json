@@ -1,0 +1,42 @@
+{
+  "video_id": "HO1Jlwj347U",
+  "source_url": "https://www.youtube.com/watch?v=HO1Jlwj347U",
+  "property_location": "Pattanam, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent House / Simplex Villa",
+    "bhk": "2 BHK",
+    "land_area": "2.25 Cents",
+    "built_up_area": "870 sqft",
+    "price": "₹48 Lakhs (Negotiable)",
+    "facing": "North Facing",
+    "road_width": "30 Feet",
+    "parking": "1 Covered Car Parking (8ft x 15ft)",
+    "approval": "DTCP Approved, Plan Approved"
+  },
+  "verified_facts": "2 BHK North-facing budget house located in Pattanam, Coimbatore., Land area is 2.25 cents and built-up area is 870 sqft., Asking price is ₹48 Lakhs (negotiable) with up to 85% bank loan availability., Living hall dimensions: 16ft x 16ft; Master bedroom: 10ft x 16ft; Second bedroom: 10ft x 10ft; Kitchen: 10ft x 6ft., Includes 1 attached bathroom (7ft x 6ft) and 1 common outdoor/staircase bathroom (4ft x 4ft)., Features a 6000L water sump, 10000L septic tank, and borewell connection., Situated on a 30ft wide tar road inside a developing gated layout.",
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/HO1Jlwj347U/",
+  "optional_owned_audio": "assets/audio/HO1Jlwj347U.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary elevation with vertical wood-texture orange stripes, grey framing, terracotta decorative jali panels at upper parapet, black iron gate, paved driveway, and dedicated front tree planting.. Neighbourhood: Residential gated community layout surrounded by wide 30ft tar roads, underground drainage infrastructure, and nearby open plots in a rapidly developing suburban area of Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary elevation with vertical wood-texture orange stripes, grey framing, terracotta decorative jali panels at upper parapet, black iron gate, paved driveway, and dedicated front tree planting.. Neighbourhood: Residential gated community layout surrounded by wide 30ft tar roads, underground drainage infrastructure, and nearby open plots in a rapidly developing suburban area of Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary elevation with vertical wood-texture orange stripes, grey framing, terracotta decorative jali panels at upper parapet, black iron gate, paved driveway, and dedicated front tree planting.. Neighbourhood: Residential gated community layout surrounded by wide 30ft tar roads, underground drainage infrastructure, and nearby open plots in a rapidly developing suburban area of Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary elevation with vertical wood-texture orange stripes, grey framing, terracotta decorative jali panels at upper parapet, black iron gate, paved driveway, and dedicated front tree planting.. Neighbourhood: Residential gated community layout surrounded by wide 30ft tar roads, underground drainage infrastructure, and nearby open plots in a rapidly developing suburban area of Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
