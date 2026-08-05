@@ -4,6 +4,8 @@ import shutil
 import subprocess
 from pathlib import Path
 
+from map_assets import location_label
+
 
 PUBLIC = Path("professional_video/public/render")
 PROPS = Path("data/remotion_props")
@@ -71,7 +73,8 @@ def prepare(job_path: Path) -> Path:
 
     images = _copy(image_files, destination, "property")
     actual_videos = _copy(owned_clips, destination, "actual")
-    representative_videos = _copy(stock_clips, destination, "stock")
+    scene_media = _copy_scene_videos(stock_video_folder, destination)
+    representative_videos = [src for scene in sorted(scene_media) for src in scene_media[scene]]
     maps = _copy(map_files, destination, "map")
     audio_source = Path("assets/audio") / f"{video_id}.mp3"
     audio = None
@@ -114,7 +117,8 @@ def prepare(job_path: Path) -> Path:
     duration_frames = sum(scene_durations[scene] for scene in scene_order)
     data = {
         "videoId": video_id,
-        "location": job.get("property_location", "Coimbatore"),\n        "locationLabel": location_label(job),
+        "location": job.get("property_location", "Coimbatore"),
+        "locationLabel": location_label(job),
         "title": f"{_value(prop, 'bhk', '')} {_value(prop, 'property_type', 'Property')}".strip(),
         "price": _value(prop, "price", "Contact for price"),
         "facts": [
@@ -128,6 +132,7 @@ def prepare(job_path: Path) -> Path:
         "maps": maps,
         "actualVideos": actual_videos,
         "representativeVideos": representative_videos,
+        "sceneMedia": scene_media,
         "images": images,
         "audio": audio,
         "voiceSegments": voice_segments,
