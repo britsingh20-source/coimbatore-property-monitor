@@ -4,6 +4,8 @@ import shutil
 import subprocess
 from pathlib import Path
 
+from map_assets import location_label
+
 
 PUBLIC = Path("professional_video/public/render")
 PROPS = Path("data/remotion_props")
@@ -25,6 +27,23 @@ def _copy(files: list[Path], destination: Path, prefix: str) -> list[str]:
         shutil.copy2(source, target)
         copied.append(f"render/{destination.name}/{target.name}")
     return copied
+
+
+def _copy_scene_videos(source_root: Path, destination: Path) -> dict[str, list[str]]:
+    scene_media = {}
+    for scene_folder in sorted(path for path in source_root.glob("*") if path.is_dir()):
+        files = [
+            path for pattern in ("*.mp4", "*.mov", "*.m4v", "*.webm")
+            for path in scene_folder.glob(pattern)
+        ]
+        copied = []
+        for index, source in enumerate(sorted(files), start=1):
+            target = destination / f"stock-{scene_folder.name}-{index:02d}{source.suffix.lower()}"
+            shutil.copy2(source, target)
+            copied.append(f"render/{destination.name}/{target.name}")
+        if copied:
+            scene_media[scene_folder.name] = copied
+    return scene_media
 
 
 def _value(prop: dict, key: str, fallback: str = "Verify during visit") -> str:
@@ -49,12 +68,13 @@ def prepare(job_path: Path) -> Path:
     map_folder = Path("assets/maps") / video_id
     image_files = [path for pattern in ("*.jpg", "*.jpeg", "*.png", "*.webp") for path in property_folder.glob(pattern)]
     owned_clips = [path for pattern in ("*.mp4", "*.mov", "*.m4v", "*.webm") for path in property_folder.glob(pattern)]
-    stock_clips = [path for pattern in ("*.mp4", "*.mov", "*.m4v", "*.webm") for path in stock_video_folder.glob(pattern)]
+    stock_clips = [path for pattern in ("*.mp4", "*.mov", "*.m4v", "*.webm") for path in stock_video_folder.rglob(pattern)]
     map_files = list(map_folder.glob("map-*.jpg"))
 
     images = _copy(image_files, destination, "property")
     actual_videos = _copy(owned_clips, destination, "actual")
-    representative_videos = _copy(stock_clips, destination, "stock")
+    scene_media = _copy_scene_videos(stock_video_folder, destination)
+    representative_videos = [src for scene in sorted(scene_media) for src in scene_media[scene]]
     maps = _copy(map_files, destination, "map")
     audio_source = Path("assets/audio") / f"{video_id}.mp3"
     audio = None
@@ -98,6 +118,7 @@ def prepare(job_path: Path) -> Path:
     data = {
         "videoId": video_id,
         "location": job.get("property_location", "Coimbatore"),
+        "locationLabel": location_label(job),
         "title": f"{_value(prop, 'bhk', '')} {_value(prop, 'property_type', 'Property')}".strip(),
         "price": _value(prop, "price", "Contact for price"),
         "facts": [
@@ -111,6 +132,7 @@ def prepare(job_path: Path) -> Path:
         "maps": maps,
         "actualVideos": actual_videos,
         "representativeVideos": representative_videos,
+        "sceneMedia": scene_media,
         "images": images,
         "audio": audio,
         "voiceSegments": voice_segments,

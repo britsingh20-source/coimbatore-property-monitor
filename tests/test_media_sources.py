@@ -4,7 +4,10 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from media_sources import _allowed_visual, search_pexels_videos, source_property_media, source_property_videos
+from media_sources import (
+    _allowed_scene_visual, _allowed_visual, _scene_video_queries,
+    search_pexels_videos, source_property_media, source_property_videos,
+)
 
 
 class MediaSourceTests(unittest.TestCase):
@@ -43,18 +46,33 @@ class MediaSourceTests(unittest.TestCase):
             finally:
                 os.chdir(original)
 
+    def test_plot_broll_queries_are_split_by_scene(self):
+        queries = _scene_video_queries({
+            "property_location": "NGGO Colony, Coimbatore",
+            "property": {"property_type": "Plot"},
+        })
+        self.assertIn("land", queries)
+        self.assertIn("road", queries)
+        self.assertIn("location", queries)
+        self.assertNotEqual(queries["land"], queries["road"])
+        self.assertTrue(all("road" in query.lower() for query in queries["road"]))
+
+    def test_tea_estate_is_rejected_for_road_and_land_scenes(self):
+        item = {"source_url": "https://www.pexels.com/video/aerial-tea-plantation-123/"}
+        self.assertFalse(_allowed_scene_visual(item, "road"))
+        self.assertFalse(_allowed_scene_visual(item, "land"))
+
     @patch("media_sources.download_media", return_value=[])
     @patch("media_sources.search_pexels_videos", return_value=[])
-    def test_plot_broll_queries_request_land_and_roads(self, search, _download):
+    def test_source_calls_separate_scene_queries(self, search, _download):
         source_property_videos({
             "video_id": "plot-example",
-            "property_location": "Thudiyalur, Coimbatore",
+            "property_location": "NGGO Colony, Coimbatore",
             "property": {"property_type": "Plot"},
         })
         queries = " ".join(call.args[0] for call in search.call_args_list).lower()
-        self.assertIn("land plots", queries)
-        self.assertIn("roads", queries)
-        self.assertNotIn("house interior walkthrough thudiyalur", queries)
+        self.assertIn("plot", queries)
+        self.assertIn("tar road", queries)
 
 
 if __name__ == "__main__":

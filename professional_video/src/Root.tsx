@@ -4,8 +4,8 @@ import {PropertyReel} from './PropertyReel';
 import type {PropertyVideoProps} from './types';
 
 const defaults: PropertyVideoProps = {
-  videoId: 'preview', location: 'Coimbatore', title: 'Premium Property', price: 'Verified on request',
-  facts: [], maps: [], actualVideos: [], representativeVideos: [], images: [], audio: null,
+  videoId: 'preview', location: 'Coimbatore', locationLabel: 'Coimbatore', title: 'Premium Property', price: 'Verified on request',
+  facts: [], maps: [], actualVideos: [], representativeVideos: [], sceneMedia: {}, images: [], audio: null,
   voiceSegments: [], sceneOrder: ['location','land','builtUp','price','facing','road','approval','verify','cta'],
   sceneDurations: {location:267,land:123,builtUp:137,price:150,facing:98,road:155,approval:127,verify:150,cta:145},
   templateVariant: 'home', durationInFrames: 1615, isActualProperty: false,

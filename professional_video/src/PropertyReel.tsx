@@ -183,13 +183,14 @@ const HookScene: React.FC<{source?: VisualSource; title: string; location: strin
   );
 };
 
-const LocationJourneyScene: React.FC<{mapSource?: VisualSource; houseSource?: VisualSource; title:string; location:string}> = ({mapSource,houseSource,title,location}) => {
+const LocationJourneyScene: React.FC<{mapSources: VisualSource[]; houseSource?: VisualSource; title:string; location:string; targetLocation:string}> = ({mapSources,houseSource,title,location,targetLocation}) => {
   const frame=useCurrentFrame();
+  const mapSource = mapSources.length ? mapSources[Math.min(mapSources.length-1, Math.floor(frame/58))] : undefined;
   const mapZoom=interpolate(frame,[0,70,165],[1.05,1.75,4.8],clamp);
   const mapX=interpolate(frame,[0,70,165],[0,-45,-115],clamp);
   const mapY=interpolate(frame,[0,70,165],[0,-80,-230],clamp);
   const cityOpacity=interpolate(frame,[0,18,70,92],[0,1,1,0],clamp);
-  const pattanamOpacity=interpolate(frame,[68,95,165],[0,1,1],clamp);
+  const targetOpacity=interpolate(frame,[68,95,165],[0,1,1],clamp);
   const portal=interpolate(frame,[158,222],[0,132],clamp);
   const houseScale=interpolate(frame,[158,267],[1.48,1.02],clamp);
   const titleEnter=spring({frame:frame-205,fps:30,config:{damping:15,stiffness:180}});
@@ -206,11 +207,11 @@ const LocationJourneyScene: React.FC<{mapSource?: VisualSource; houseSource?: Vi
         <circle cx="540" cy="930" r="11" fill={cream}/>
       </svg>
       <div style={{position:'absolute',left:55,right:55,top:260,textAlign:'center',opacity:cityOpacity,transform:`translateY(${interpolate(frame,[0,30],[55,0],clamp)}px)`}}><div style={{fontSize:20,letterSpacing:8,color:cyan,fontWeight:950}}>LOCATION JOURNEY</div><div style={{fontSize:100,lineHeight:.95,fontWeight:1000,marginTop:22}}>COIMBATORE</div><div style={{fontSize:26,marginTop:20,letterSpacing:4}}>TAMIL NADU</div></div>
-      <div style={{position:'absolute',left:55,right:55,top:1080,textAlign:'center',opacity:pattanamOpacity,transform:`scale(${interpolate(frame,[70,130],[.55,1],clamp)})`}}><div style={{fontSize:20,letterSpacing:7,color:gold,fontWeight:950}}>ZOOMING INTO</div><div style={{fontSize:112,lineHeight:1,fontWeight:1000,color:cream,textShadow:`0 0 40px rgba(243,185,40,.45)`,marginTop:16}}>PATTANAM</div><div style={{display:'inline-block',marginTop:20,padding:'13px 22px',borderRadius:99,background:orange,fontSize:20,fontWeight:950,letterSpacing:2}}>TARGET LOCATION</div></div>
-      {frame<158&&<><WorldCallout x={235} y={820} label="CONNECTIVITY" value="COIMBATORE" delay={52} color={cyan}/><WorldCallout x={770} y={690} label="TARGET" value="PATTANAM" delay={78}/><WorldCallout x={720} y={1040} label="ACCESS" value="ROAD LINK" delay={98} color={orange}/></>}
+      <div style={{position:'absolute',left:55,right:55,top:1080,textAlign:'center',opacity:targetOpacity,transform:`scale(${interpolate(frame,[70,130],[.55,1],clamp)})`}}><div style={{fontSize:20,letterSpacing:7,color:gold,fontWeight:950}}>ZOOMING INTO</div><div style={{fontSize:112,lineHeight:1,fontWeight:1000,color:cream,textShadow:`0 0 40px rgba(243,185,40,.45)`,marginTop:16}}>{targetLocation.toUpperCase()}</div><div style={{display:'inline-block',marginTop:20,padding:'13px 22px',borderRadius:99,background:orange,fontSize:20,fontWeight:950,letterSpacing:2}}>TARGET LOCATION</div></div>
+      {frame<158&&<><WorldCallout x={235} y={820} label="CONNECTIVITY" value="COIMBATORE" delay={52} color={cyan}/><WorldCallout x={770} y={690} label="TARGET" value={targetLocation.toUpperCase()} delay={78}/><WorldCallout x={720} y={1040} label="ACCESS" value="ROAD LINK" delay={98} color={orange}/></>}
       <AbsoluteFill style={{clipPath:`circle(${portal}% at 50% 58%)`,transform:`scale(${houseScale})`}}><DepthParallax source={houseSource} duration={109}/><AbsoluteFill style={{background:'linear-gradient(180deg,rgba(2,11,20,.03),rgba(2,11,20,.78))'}}/></AbsoluteFill>
       {frame>=165&&<div style={{position:'absolute',left:540,top:890,width:interpolate(frame,[165,205],[8,700],clamp),height:5,transform:'translateX(-50%)',background:`linear-gradient(90deg,transparent,${gold},transparent)`,boxShadow:`0 0 24px ${gold}`}}/>}
-      <SceneCode number="01" label={frame<160?'COIMBATORE → PATTANAM':'ENTERING THE PROPERTY'}/>
+      <SceneCode number="01" label={frame<160?('COIMBATORE → '+targetLocation.toUpperCase()):'ENTERING THE PROPERTY'}/>
       <div style={{position:'absolute',left:55,right:55,bottom:225,opacity:titleEnter,transform:`translateY(${interpolate(titleEnter,[0,1],[70,0])}px)`}}><div style={{fontSize:18,letterSpacing:4,color:gold,fontWeight:950}}>LOCATION • {location.toUpperCase()}</div><div style={{fontSize:62,lineHeight:1.08,fontWeight:1000,marginTop:14}}>{title}</div><div style={{fontSize:20,letterSpacing:4,fontWeight:900,marginTop:18,color:cyan}}>MAP → LOCATION → HOME</div></div>
       <MotionStreaks color={frame<160?cyan:gold} intensity={.9}/>{(frame<8||frame>=158&&frame<168)&&<SceneFlash color={frame<8?cyan:gold}/>}<GlobalFX/>
     </AbsoluteFill>
@@ -532,24 +533,26 @@ const PersistentHUD: React.FC<{brand:string;phone:string}> = ({brand,phone}) => 
 };
 
 export const PropertyReel: React.FC<PropertyVideoProps> = (props) => {
-  const clips = props.actualVideos.length ? props.actualVideos : props.representativeVideos;
-  const media: VisualSource[] = [
-    ...clips.map(src=>({src,video:true})),
-    ...props.images.map(src=>({src,video:false})),
-  ];
-  const mediaOffset = media.length ? Array.from(props.videoId).reduce((total,char)=>total+char.charCodeAt(0),0) % media.length : 0;
-  const get = (index:number) => media.length ? media[(index + mediaOffset) % media.length] : undefined;
-  const mapVisual: VisualSource | undefined = props.maps.length ? {src:props.maps[0],video:false} : get(0);
+  const actualMedia: VisualSource[] = props.actualVideos.map(src=>({src,video:true}));
+  const sceneSources = (scene:string): VisualSource[] => {
+    if (actualMedia.length) return actualMedia;
+    return (props.sceneMedia?.[scene] || []).map(src=>({src,video:true}));
+  };
+  const sourceFor = (scene:string,index=0): VisualSource | undefined => {
+    const sources=sceneSources(scene);
+    return sources.length ? sources[index%sources.length] : undefined;
+  };
+  const mapVisuals: VisualSource[] = props.maps.map(src=>({src,video:false}));
   const facts = props.facts;
   const sceneNodes: Record<string, React.ReactNode> = {
     location: props.templateVariant === 'plot'
-      ? <LocationJourneyScene mapSource={mapVisual} houseSource={get(1)} title={props.title} location={props.location}/>
-      : <HookScene source={get(0)} title={props.title} location={props.location}/>,
-    land: <LaserPlotScene source={get(1)} fact={facts[0] || {label:'LAND',value:'VERIFY ON SITE'}}/>,
-    builtUp: <BuiltUpScanScene source={get(2)} fact={facts[1] || {label:'BUILT-UP',value:'VERIFY ON SITE'}}/>,
-    price: <PriceScene source={get(3)} price={props.price}/>,
-    facing: <FacingScene source={get(4)} fact={facts[2] || {label:'FACING',value:'VERIFY ON SITE'}}/>,
-    road: <RoadMeasureScene source={get(5)} fact={facts[3] || {label:'ROAD',value:'VERIFY ON SITE'}}/>,
+      ? <LocationJourneyScene mapSources={mapVisuals} houseSource={sourceFor('exterior') || sourceFor('land')} title={props.title} location={props.location} targetLocation={props.locationLabel}/>
+      : <HookScene source={sourceFor('exterior')} title={props.title} location={props.location}/>,
+    land: <LaserPlotScene source={sourceFor('land')} fact={facts[0] || {label:'LAND',value:'VERIFY ON SITE'}}/>,
+    builtUp: <BuiltUpScanScene source={sourceFor('exterior')} fact={facts[1] || {label:'BUILT-UP',value:'VERIFY ON SITE'}}/>,
+    price: <PriceScene source={sourceFor('exterior',1)} price={props.price}/>,
+    facing: <FacingScene source={sourceFor('exterior') || sourceFor('land',1)} fact={facts[2] || {label:'FACING',value:'VERIFY ON SITE'}}/>,
+    road: <RoadMeasureScene source={sourceFor('road')} fact={facts[3] || {label:'ROAD',value:'VERIFY ON SITE'}}/>,
     approval: <ApprovalScene fact={facts[5] || {label:'APPROVAL',value:'VERIFY DOCUMENTS'}}/>,
     verify: <VerifyScene price={props.price} location={props.location}/>,
     cta: <CTAScene brand={props.brand} cta={props.cta} phone={props.phone} location={props.location}/>,
