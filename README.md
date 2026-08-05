@@ -1,69 +1,67 @@
-# Coimbatore Property Monitor and AI Video Queue
+# Coimbatore Property Monitor and Autopilot Video Generator
 
-This project discovers recent YouTube property listings, analyzes each public
-video once with Gemini, filters configured Coimbatore localities, stores durable
-retry state, and creates reviewable vertical-video jobs. Final video rendering
-uses Remotion, OpenStreetMap and FFmpeg without a paid video-generation API.
+This project discovers recent Tamil property listings, analyzes them with Gemini,
+filters configured Coimbatore localities and automatically renders truthful
+vertical marketing videos with Remotion.
 
-## Safety and publishing rule
+## Production flow
 
-Only property/location photographs owned by the advertiser or explicitly licensed
-for reuse may be placed in `assets/properties`. Competitor footage and thumbnails
-must not be copied. The renderer displays a verification disclosure automatically.
+1. **Property Monitor** runs hourly.
+2. It checks the configured YouTube channels and processes at most three eligible videos.
+3. Gemini extracts the property type, location, land area, built-up area, price,
+   facing, road width, parking, approval and source facts.
+4. The locality matcher rejects listings outside the configured Coimbatore areas.
+5. A target listing with a property type, source facts and at least two usable
+   property facts becomes `auto_approved`.
+6. Sparse or ambiguous listings become `needs_review` and are not rendered.
+7. The monitor commits the job JSON to `data/video_jobs/`.
+8. That commit automatically triggers **Render Autopilot Property Videos**.
+9. The selector renders only auto-approved jobs changed by that commit.
+10. The MP4 and its attribution, map and narration records are uploaded as a
+    seven-day GitHub Actions artifact.
 
-No generated video is automatically uploaded to Instagram, YouTube or WhatsApp.
-A person must verify the property facts, approve the source ID and review the
-rendered artifact first.
+No manual footage upload or workflow dispatch is required for a valid listing.
+
+## Automatic media and narration
+
+- Wikimedia Commons supplies reusable location-related images.
+- Pexels supplies licensed representative portrait property clips when
+  `PEXELS_API_KEY` is configured.
+- Nominatim geocodes the locality and OpenStreetMap provides a three-stage zoom.
+- Edge TTS generates a Tamil male narration with `ta-IN-ValluvarNeural`.
+- The Remotion timeline expands automatically to fit the narration.
+- Automatically sourced property media is labelled as representative.
+
+The system never presents stock footage as the actual property. Advertiser-owned
+media is still supported and takes priority when it exists, but it is optional.
+
+## Video output
+
+- 1080 × 1920 vertical MP4
+- H.264 video with Tamil audio
+- Coimbatore → locality map journey
+- narration-synced land, built-up, price, facing, road and approval VFX
+- COIMBATOREVEEDU BUILDERS branding
+- persistent Call / WhatsApp number 9003787621
+- FFmpeg emergency fallback if Remotion fails
 
 ## Required GitHub secrets
 
 - `YOUTUBE_API_KEY`
-- `GEMINI_API_KEY` for property analysis (video rendering itself does not use it)
-- `PEXELS_API_KEY` (optional) for free licensed walkthrough clips
+- `GEMINI_API_KEY`
+- `PEXELS_API_KEY` for licensed walkthrough clips; without it the workflow
+  continues with Wikimedia and bundled representative visuals
 
-## Workflow
+## Manual recovery
 
-1. `Property Monitor` runs hourly and processes at most three eligible videos.
-2. Successful target-locality records are written to `data/properties.csv`.
-3. A storyboard is written to `data/video_jobs/<video-id>.json`.
-4. Verify the facts and add the ID to `data/approved_video_ids.txt`.
-5. Manually run `Render Professional Approved Property Videos`.
-6. The workflow searches Wikimedia Commons for exact-locality photographs and,
-   when `PEXELS_API_KEY` is configured, Pexels for licensed property walkthrough clips.
-7. Nominatim geocodes the locality once and a cached three-stage OpenStreetMap zoom
-   is rendered with required attribution. The pin is never presented as an exact
-   property coordinate unless the input has been independently verified.
-8. It writes a fact-based Tamil script and generates a male Tamil narration using
-   `ta-IN-ValluvarNeural`.
-9. Remotion creates a 1080×1920 broadcast-style reel with a hook, map animation,
-   real video clips, verified fact cards, disclosure and branded CTA.
-10. Download and review the MP4 plus its attribution file before publishing.
+`workflow_dispatch` remains available. A manually listed ID in
+`data/approved_video_ids.txt` is included during manual or pull-request runs.
+Push-triggered production renders do not rerender the historical approval list.
 
-User-owned video always takes priority, followed by user-owned photos and licensed
-stock clips. Retrieved stock/locality media is visibly labeled as representative—not
-the actual property. The timeline automatically expands to fit the Tamil narration.
-If the Chromium/Remotion render fails, the existing FFmpeg renderer produces a
-clearly identified fallback rather than losing the complete workflow run.
-
-## What “professional” means here
-
-This free GitHub Actions architecture can create polished editing, motion graphics,
-map storytelling, narration and licensed B-roll. It cannot invent an exact, truthful
-walkthrough of a house that was never filmed. Put actual portrait or landscape clips
-in `assets/properties/<video-id>/`; the workflow automatically promotes them and
-changes the footage label to `ACTUAL PROPERTY FOOTAGE`.
-
-Pexels API access is free but requires an API key. Without it, the workflow uses
-Wikimedia Commons and its per-file license/attribution metadata.
-
-## Local checks
+## Local validation
 
 ```bash
 python -m unittest discover -s tests -v
 python -m py_compile *.py
+npm --prefix professional_video run typecheck
 ```
-
-## Configuration
-
-Edit `config/channels.json` for sources and `config/locations.json` for target
-localities and aliases. Set `MAX_VIDEOS_PER_RUN` to control Gemini spend.
