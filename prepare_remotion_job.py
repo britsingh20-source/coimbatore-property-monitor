@@ -75,7 +75,7 @@ def prepare(job_path: Path) -> Path:
     minimum_frames = {
         "location": 267, "land": 123, "builtUp": 137, "price": 150,
         "facing": 98, "road": 155, "approval": 127,
-        "disclosure": 214, "verify": 179, "cta": 165,
+        "verify": 150, "cta": 145,
     }
     voice_segments = []
     scene_order = []
@@ -92,7 +92,7 @@ def prepare(job_path: Path) -> Path:
         scene_durations[scene] = duration
         voice_segments.append({"scene": scene, "src": f"render/{video_id}/{target.name}"})
     if not scene_order:
-        scene_order = ["location", "land", "builtUp", "price", "facing", "road", "approval", "disclosure", "verify", "cta"]
+        scene_order = ["location", "land", "builtUp", "price", "facing", "road", "approval", "verify", "cta"]
         scene_durations = {scene: minimum_frames[scene] for scene in scene_order}
     duration_frames = sum(scene_durations[scene] for scene in scene_order)
     data = {
