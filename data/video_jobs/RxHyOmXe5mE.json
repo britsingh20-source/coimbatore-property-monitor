@@ -1,0 +1,41 @@
+{
+  "video_id": "RxHyOmXe5mE",
+  "source_url": "https://www.youtube.com/watch?v=RxHyOmXe5mE",
+  "property_location": "Thoppampatti, Near Thudiyalur, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Duplex Independent House",
+    "bhk": "3BHK",
+    "land_area": "2.70 Cents (1,150 sq.ft. - 23x50 ft)",
+    "built_up_area": "2,300 sq.ft.",
+    "price": "₹1.10 Crore (Slightly Negotiable)",
+    "facing": "East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking Portico (21' x 11')",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "House and plot are both East facing., Total land size is 2.70 cents (1150 sqft) with dimensions 23x50 feet., Total built-up area is 2300 sqft across ground floor and first floor duplex layout., Ground floor consists of car parking (21x11 ft), living hall (16x16 ft), kitchen & dining (16x8 ft), bedroom 1 (16x10 ft) with attached bath (10x4 ft), and an outside bathroom (5x4 ft)., First floor consists of lounge (16x10 ft), bedroom 2 (16x11 ft) with attached bath (8x5 ft), master bedroom 3 (16x16 ft) with attached bath (8x4.25 ft), and a front balcony (12x4 ft)., Equipped with borewell, underground water sump, and bank loan facility., Located in Thoppampatti near Thudiyalur, Coimbatore.",
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "ffmpeg-free",
+  "required_owned_images_folder": "assets/properties/RxHyOmXe5mE/",
+  "optional_owned_audio": "assets/audio/RxHyOmXe5mE.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary elevation with vertical wood-finish fluted paneling, grey stucco walls, recessed profile lighting, glass-paneled windows, a balcony with black metal slatted railings, and a stainless steel main gate featuring wood-texture HPL filling.. Neighbourhood: Developing residential neighborhood in Thoppampatti, Coimbatore, surrounded by individual houses and adjacent under-construction properties, offering clear mountain views from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary elevation with vertical wood-finish fluted paneling, grey stucco walls, recessed profile lighting, glass-paneled windows, a balcony with black metal slatted railings, and a stainless steel main gate featuring wood-texture HPL filling.. Neighbourhood: Developing residential neighborhood in Thoppampatti, Coimbatore, surrounded by individual houses and adjacent under-construction properties, offering clear mountain views from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary elevation with vertical wood-finish fluted paneling, grey stucco walls, recessed profile lighting, glass-paneled windows, a balcony with black metal slatted railings, and a stainless steel main gate featuring wood-texture HPL filling.. Neighbourhood: Developing residential neighborhood in Thoppampatti, Coimbatore, surrounded by individual houses and adjacent under-construction properties, offering clear mountain views from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary elevation with vertical wood-finish fluted paneling, grey stucco walls, recessed profile lighting, glass-paneled windows, a balcony with black metal slatted railings, and a stainless steel main gate featuring wood-texture HPL filling.. Neighbourhood: Developing residential neighborhood in Thoppampatti, Coimbatore, surrounded by individual houses and adjacent under-construction properties, offering clear mountain views from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "approval_pending"
+}

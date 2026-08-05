@@ -235,11 +235,11 @@
       "status": "discovered"
     },
     "G8fsvbuFTZs": {
-      "attempts": 1,
+      "attempts": 2,
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
-      "last_attempt_at": "2026-08-04T23:58:07.669126+00:00",
+      "last_attempt_at": "2026-08-05T02:05:47.724909+00:00",
       "last_error": "sequence item 2: expected str instance, dict found",
-      "next_retry_at": "2026-08-05T01:58:07.669139+00:00",
+      "next_retry_at": "2026-08-05T06:05:47.724920+00:00",
       "status": "retry_pending"
     },
     "GHUm7c6Biyk": {
@@ -308,6 +308,14 @@
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
       "status": "discovered"
     },
+    "NfmIXfToToY": {
+      "attempts": 0,
+      "completed_at": "2026-08-05T02:05:33.939659+00:00",
+      "first_seen_at": "2026-08-05T02:04:39.134105+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-08-05T02:04:39.134105+00:00",
+      "status": "video_queued"
+    },
     "Ng__L_m-QVM": {
       "attempts": 0,
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
@@ -358,9 +366,11 @@
     },
     "RxHyOmXe5mE": {
       "attempts": 0,
+      "completed_at": "2026-08-05T02:06:34.332424+00:00",
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
+      "last_error": "",
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "SvHGRubvkK4": {
       "attempts": 0,

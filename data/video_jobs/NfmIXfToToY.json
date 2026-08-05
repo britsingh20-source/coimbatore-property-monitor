@@ -1,0 +1,41 @@
+{
+  "video_id": "NfmIXfToToY",
+  "source_url": "https://www.youtube.com/watch?v=NfmIXfToToY",
+  "property_location": "Kiruba Enclave, Puthur, Thondamuthur, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "plot",
+    "bhk": null,
+    "land_area": "2.75 cents (2 joint sites available; dimensions approx 20 ft x 60 ft per plot)",
+    "built_up_area": null,
+    "price": "₹8 Lakhs per cent (negotiable)",
+    "facing": "South",
+    "road_width": "NOT SPECIFIED",
+    "parking": null,
+    "approval": "RERA & DTCP Approved"
+  },
+  "verified_facts": "Property located near Puthur Bus Stop inside Kiruba Enclave layout, Thondamuthur., 2 joint sites available (2 cents and 2.75 cents)., Plot dimensions are 20 feet frontage by 60 feet length., RERA and DTCP approved layout., Asking price is 8 Lakhs per cent, slightly negotiable., Offered by COVAI REAL ESTATE (Contact: 9345425595).",
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "ffmpeg-free",
+  "required_owned_images_folder": "assets/properties/NfmIXfToToY/",
+  "optional_owned_audio": "assets/audio/NfmIXfToToY.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Vacant residential plot surrounded by existing single and double-story white and teal residential houses, coconut groves, open fields, and mountain views in the background.. Neighbourhood: Developing residential layout with unpaved inner access roads, overhead electric lines, coconut palm groves, close to main Poluvapatti road, petrol station, and public bus stop.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Vacant residential plot surrounded by existing single and double-story white and teal residential houses, coconut groves, open fields, and mountain views in the background.. Neighbourhood: Developing residential layout with unpaved inner access roads, overhead electric lines, coconut palm groves, close to main Poluvapatti road, petrol station, and public bus stop.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Vacant residential plot surrounded by existing single and double-story white and teal residential houses, coconut groves, open fields, and mountain views in the background.. Neighbourhood: Developing residential layout with unpaved inner access roads, overhead electric lines, coconut palm groves, close to main Poluvapatti road, petrol station, and public bus stop.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Vacant residential plot surrounded by existing single and double-story white and teal residential houses, coconut groves, open fields, and mountain views in the background.. Neighbourhood: Developing residential layout with unpaved inner access roads, overhead electric lines, coconut palm groves, close to main Poluvapatti road, petrol station, and public bus stop.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "approval_pending"
+}
