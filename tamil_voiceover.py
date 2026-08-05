@@ -15,8 +15,10 @@ DEFAULT_PARLER_STYLE = (
     "style. His voice is slightly low-pitched, warm, confident and energetic without sounding "
     "like an announcer. He uses smooth modulation, short natural pauses between facts, clear "
     "Tamil pronunciation, steady medium-fast pacing, and gently emphasizes location, land size, "
-    "price and road access. The recording is very clear and close-mic, with no background noise, "
-    "no music, no reverberation and consistent loudness."
+    "price and road access. He says every supplied word exactly once, finishes the complete "
+    "sentence, and keeps the same voice and a consistent pace of about two Tamil words per second. "
+    "The recording is very clear and close-mic, with no background noise, no music, no "
+    "reverberation and consistent loudness."
 )
 _PARLER_RUNTIME = None
 
@@ -114,7 +116,7 @@ def _load_parler():
     return _PARLER_RUNTIME
 
 
-def _save_indic_parler(text: str, output: Path) -> None:
+def _save_indic_parler(text: str, output: Path, attempt: int = 0) -> None:
     import soundfile as sf
 
     torch, model, tokenizer, device = _load_parler()
@@ -122,7 +124,7 @@ def _save_indic_parler(text: str, output: Path) -> None:
     prompt = tokenizer(text, return_tensors="pt").to(device)
 
     # Stable per-line sampling keeps an autopilot rerender reproducible.
-    seed = int(hashlib.sha256(text.encode("utf-8")).hexdigest()[:8], 16)
+    seed = int(hashlib.sha256(text.encode("utf-8")).hexdigest()[:8], 16) + attempt
     torch.manual_seed(seed)
     if device.startswith("cuda"):
         torch.cuda.manual_seed_all(seed)
@@ -132,7 +134,8 @@ def _save_indic_parler(text: str, output: Path) -> None:
             input_ids=description.input_ids,
             prompt_input_ids=prompt.input_ids,
             do_sample=True,
-            temperature=1.0,
+            temperature=0.72,
+            top_p=0.90,
         )
     samples = generated.detach().cpu().float().numpy().squeeze()
 
@@ -152,7 +155,7 @@ async def _save_edge(text: str, output: Path) -> None:
     import edge_tts
 
     communicator = edge_tts.Communicate(
-        text, EDGE_VOICE, rate="+8%", pitch="-1Hz", volume="+8%"
+        text, EDGE_VOICE, rate="+0%", pitch="-2Hz", volume="+6%"
     )
     await communicator.save(str(output))
 
@@ -160,21 +163,44 @@ async def _save_edge(text: str, output: Path) -> None:
 def _save_voice(text: str, output: Path, engine: str | None = None) -> str:
     selected = (engine or os.environ.get("TTS_ENGINE", "edge")).strip().lower()
     if selected == "indic-parler":
-        try:
-            _save_indic_parler(text, output)
-            return "indic-parler"
-        except Exception:
-            allow_fallback = os.environ.get("TTS_ALLOW_EDGE_FALLBACK", "false").lower() == "true"
-            if not allow_fallback:
-                raise
-            print("WARNING: Indic Parler-TTS failed; using explicit Edge fallback.")
-            asyncio.run(_save_edge(text, output))
-            return "edge-fallback"
+        attempts = max(1, int(os.environ.get("INDIC_PARLER_ATTEMPTS", "3")))
+        problems = []
+        for attempt in range(attempts):
+            try:
+                _save_indic_parler(text, output, attempt=attempt)
+                report = _quality_report(text, output)
+                if report["valid"]:
+                    _retime_to_target(output, report["target_duration_seconds"])
+                    return "indic-parler"
+                problems.append(f"attempt {attempt + 1}: {', '.join(report['issues'])}")
+            except Exception as error:
+                problems.append(f"attempt {attempt + 1}: {error}")
+            output.unlink(missing_ok=True)
+
+        allow_fallback = os.environ.get("TTS_ALLOW_EDGE_FALLBACK", "false").lower() == "true"
+        if not allow_fallback:
+            raise RuntimeError("Indic Parler quality gate failed: " + " | ".join(problems))
+
+        print("WARNING: Indic Parler quality gate failed; using the consistent Tamil male fallback.")
+        asyncio.run(_save_edge(text, output))
+        report = _quality_report(text, output)
+        if not report["valid"]:
+            output.unlink(missing_ok=True)
+            raise RuntimeError(
+                "Tamil fallback also failed the audio quality gate: " + ", ".join(report["issues"])
+            )
+        _retime_to_target(output, report["target_duration_seconds"])
+        return "edge-quality-fallback"
+
     if selected == "edge":
         asyncio.run(_save_edge(text, output))
+        report = _quality_report(text, output)
+        if not report["valid"]:
+            output.unlink(missing_ok=True)
+            raise RuntimeError("Tamil voice failed the audio quality gate: " + ", ".join(report["issues"]))
+        _retime_to_target(output, report["target_duration_seconds"])
         return "edge"
     raise ValueError(f"Unsupported TTS_ENGINE: {selected}")
-
 
 def _duration(path: Path) -> float:
     result = subprocess.run([
@@ -183,6 +209,72 @@ def _duration(path: Path) -> float:
     ], check=True, capture_output=True, text=True)
     return float(result.stdout.strip())
 
+
+
+def _duration_target(text: str) -> float:
+    words = len(re.findall(r"\S+", text))
+    numeric_values = len(re.findall(r"\d+(?:[.,]\d+)?", text))
+    pause_marks = text.count(",") + text.count(";")
+    speech_units = words + (numeric_values * 0.75) + (pause_marks * 0.15)
+    return round(min(10.0, max(1.8, speech_units / 2.0)), 3)
+
+
+def _silence_metrics(path: Path) -> tuple[float, float]:
+    result = subprocess.run([
+        "ffmpeg", "-hide_banner", "-nostats", "-i", str(path),
+        "-af", "silencedetect=noise=-40dB:d=0.30", "-f", "null", "-",
+    ], check=True, capture_output=True, text=True)
+    durations = [
+        float(value)
+        for value in re.findall(r"silence_duration:\s*([0-9.]+)", result.stderr)
+    ]
+    total = sum(durations)
+    return total, max(durations, default=0.0)
+
+
+def _quality_report(text: str, path: Path) -> dict:
+    duration = _duration(path)
+    target = _duration_target(text)
+    minimum = max(0.9, target * 0.58)
+    maximum = max(3.2, target * 1.65)
+    silent, longest_silence = _silence_metrics(path)
+    silence_ratio = silent / duration if duration else 1.0
+    issues = []
+    if duration < minimum:
+        issues.append(f"truncated ({duration:.2f}s; expected at least {minimum:.2f}s)")
+    if duration > maximum:
+        issues.append(f"abnormally slow ({duration:.2f}s; expected at most {maximum:.2f}s)")
+    if longest_silence > 1.20:
+        issues.append(f"dead gap ({longest_silence:.2f}s)")
+    if duration > 3.0 and silence_ratio > 0.42:
+        issues.append(f"excess silence ({silence_ratio:.0%})")
+    return {
+        "valid": not issues,
+        "issues": issues,
+        "duration_seconds": round(duration, 3),
+        "target_duration_seconds": target,
+        "silence_ratio": round(silence_ratio, 3),
+        "longest_silence_seconds": round(longest_silence, 3),
+    }
+
+
+def _retime_to_target(path: Path, target_duration: float) -> None:
+    current = _duration(path)
+    if not current or not target_duration:
+        return
+    tempo = current / target_duration
+    if 0.90 <= tempo <= 1.10:
+        return
+    # atempo preserves pitch. Keep correction moderate; extreme outputs are
+    # rejected by the quality gate instead of being distorted.
+    tempo = min(1.50, max(0.75, tempo))
+    adjusted = path.with_name(f"{path.stem}-paced.mp3")
+    subprocess.run([
+        "ffmpeg", "-y", "-loglevel", "error", "-i", str(path),
+        "-af", f"atempo={tempo:.5f}", "-codec:a", "libmp3lame",
+        "-b:a", "192k", str(adjusted),
+    ], check=True)
+    adjusted.replace(path)
 
 def _normalize(path: Path) -> None:
     normalized = path.with_name(f"{path.stem}-normalized.mp3")
@@ -206,10 +298,21 @@ def create_voiceover(job: dict) -> Path:
         output = output_dir / f"{index:02d}-{segment['scene']}.mp3"
         engine = _save_voice(segment["text"], output)
         _normalize(output)
+        quality = _quality_report(segment["text"], output)
+        if not quality["valid"]:
+            output.unlink(missing_ok=True)
+            raise RuntimeError(
+                f"Post-normalization voice quality failed for {segment['scene']}: "
+                + ", ".join(quality["issues"])
+            )
         manifest.append({
             **segment,
             "file": output.name,
             "duration_seconds": round(_duration(output), 3),
+            "target_duration_seconds": quality["target_duration_seconds"],
+            "silence_ratio": quality["silence_ratio"],
+            "longest_silence_seconds": quality["longest_silence_seconds"],
+            "audio_quality": "passed",
             "tts_engine": engine,
             "voice_style": _parler_style() if engine == "indic-parler" else EDGE_VOICE,
         })
