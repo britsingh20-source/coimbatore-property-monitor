@@ -46,24 +46,23 @@ def build_voice_segments(job: dict) -> list[dict]:
     title = " ".join(value for value in (bhk, property_type) if value)
     segments = [{
         "scene": "location",
-        "text": f"கோயம்புத்தூரில், {location} பகுதியில் அமைந்துள்ள இந்த {title} பற்றிய முக்கிய தகவல்களை தெளிவாகப் பார்ப்போம்.",
+        "text": f"கோயம்புத்தூரில், {location} ஏரியாவில் இருக்கும் இந்த {title} பற்றி பார்க்கலாம்.",
     }]
     fact_lines = [
-        ("land", "land_area", "இந்த சொத்தின் நில அளவு, {value}."),
-        ("builtUp", "built_up_area", "கட்டிடத்தின் மொத்த பரப்பளவு, {value}."),
-        ("price", "price", "இந்த சொத்தின் விலை, {value}."),
-        ("facing", "facing", "மனை அமைந்துள்ள திசைகள், {value}."),
-        ("road", "road_width", "இந்த மனைப்பிரிவில், {value} அமைக்கப்பட்டுள்ளன."),
-        ("approval", "approval", "இந்த சொத்தின் அங்கீகார விவரம், {value}."),
+        ("land", "land_area", "லேண்ட் ஏரியா, {value}."),
+        ("builtUp", "built_up_area", "பில்ட் அப் ஏரியா, {value}."),
+        ("price", "price", "விலை, {value}."),
+        ("facing", "facing", "ஃபேசிங், {value}."),
+        ("road", "road_width", "ரோடு வசதி, {value}."),
+        ("approval", "approval", "அப்ரூவல், {value}."),
     ]
     for scene, key, sentence in fact_lines:
         value = _spoken(prop.get(key))
         if value:
             segments.append({"scene": scene, "text": sentence.format(value=_tamilize(value))})
     segments.extend([
-        {"scene": "disclosure", "text": "இங்கே காணப்படும் வீடியோ காட்சிகள், சொத்து வகையையும் சுற்றுப்புற சூழலையும் விளக்கும் பிரதிநிதி காட்சிகள் மட்டுமே."},
-        {"scene": "verify", "text": "இடம், அளவுகள், விலை மற்றும் ஆவணங்களை நேரில் சரிபார்த்த பிறகே உங்கள் முடிவை எடுக்கவும்."},
-        {"scene": "cta", "text": "மேலும் தெளிவான விவரங்களுக்கும், நேரடி தள பார்வைக்கும், கோயம்புத்தூர் வீடு பில்டர்ஸை இப்போதே தொடர்பு கொள்ளுங்கள்."},
+        {"scene": "verify", "text": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாமே சைட் விசிட்டில் கிளியராக செக் பண்ணிக்கலாம்."},
+        {"scene": "cta", "text": "மேலும் டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு, கோயம்புத்தூர் வீடு பில்டர்ஸை இப்பவே கால் பண்ணுங்க."},
     ])
     return segments
 
@@ -75,7 +74,7 @@ def build_tamil_script(job: dict) -> str:
 async def _save(text: str, output: Path) -> None:
     import edge_tts
 
-    communicator = edge_tts.Communicate(text, VOICE, rate="-2%", pitch="-2Hz", volume="+18%")
+    communicator = edge_tts.Communicate(text, VOICE, rate="+8%", pitch="-1Hz", volume="+8%")
     await communicator.save(str(output))
 
 
@@ -91,7 +90,7 @@ def _normalize(path: Path) -> None:
     normalized = path.with_name(f"{path.stem}-normalized.mp3")
     subprocess.run([
         "ffmpeg", "-y", "-loglevel", "error", "-i", str(path),
-        "-af", "loudnorm=I=-16:TP=-1.5:LRA=9", "-codec:a", "libmp3lame",
+        "-af", "loudnorm=I=-17.5:TP=-1.5:LRA=3.5", "-codec:a", "libmp3lame",
         "-b:a", "192k", str(normalized),
     ], check=True)
     normalized.replace(path)

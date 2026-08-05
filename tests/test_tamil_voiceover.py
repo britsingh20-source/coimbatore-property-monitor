@@ -4,14 +4,18 @@ from tamil_voiceover import build_tamil_script, build_voice_segments
 
 
 class TamilVoiceoverTests(unittest.TestCase):
-    def test_script_uses_verified_fields_and_disclosure(self):
+    def test_script_uses_verified_fields_without_disclosure_scene(self):
         script = build_tamil_script({
             "property_location": "வடவள்ளி",
             "property": {"bhk": "3BHK", "property_type": "வீடு", "price": "65 லட்சம்"},
         })
         self.assertIn("வடவள்ளி", script)
         self.assertIn("65 லட்சம்", script)
-        self.assertIn("பிரதிநிதி காட்சிகள்", script)
+        self.assertNotIn("பிரதிநிதி காட்சிகள்", script)
+        self.assertNotIn("disclosure", {item["scene"] for item in build_voice_segments({
+            "property_location": "வடவள்ளி",
+            "property": {"property_type": "வீடு"},
+        })})
 
     def test_plot_voice_is_tamilized_and_skips_missing_scenes(self):
         segments = build_voice_segments({
