@@ -78,12 +78,15 @@ jobs:
           while IFS= read -r video_id; do
             [[ -z "$video_id" || "$video_id" == \#* ]] && continue
             python prepare_remotion_job.py "data/video_jobs/${video_id}.json"
+            props_file="data/remotion_props/${video_id}.json"
+            python -c 'import json,sys; data=json.load(open(sys.argv[1], encoding="utf-8")); assert data["videoId"] == sys.argv[2], (data["videoId"], sys.argv[2]); print("Rendering", data["videoId"], data["location"], data["title"])' "$props_file" "$video_id"
             mkdir -p "outputs/${video_id}"
+            props_path="$(realpath "$props_file")"
             (
               cd professional_video
               npx remotion render src/index.ts PropertyReel \
-                "../outputs/${video_id}/professional-vertical.mp4" \
-                --props="../data/remotion_props/${video_id}.json" \
+                "../outputs/${video_id}/${video_id}-professional-vertical.mp4" \
+                --props="$props_path" \
                 --codec=h264 --crf=18 --concurrency=2
             )
           done < data/render_queue.txt
@@ -107,5 +110,6 @@ jobs:
             data/media_attribution/*.json
             data/geocoding/*.json
             data/voiceover_scripts/*.txt
+            data/remotion_props/*.json
           if-no-files-found: warn
           retention-days: 7
