@@ -1,6 +1,10 @@
 import asyncio
+import json
 import os
+import re
+import subprocess
 from pathlib import Path
+
 
 VOICE = os.environ.get("TAMIL_MALE_VOICE", "ta-IN-ValluvarNeural")
 
@@ -10,40 +14,112 @@ def _spoken(value) -> str:
     return "" if not value or value.upper() == "NOT SPECIFIED" else value
 
 
-def build_tamil_script(job: dict) -> str:
+def _tamilize(value: str) -> str:
+    replacements = [
+        (r"\bNear\b", "அருகில்"), (r"\bThudiyalur\b", "துடியலூர்"),
+        (r"\bNGGO\b", "என் ஜி ஜி ஓ"), (r"\bColony\b", "காலனி"),
+        (r"\bMettupalayam Road\b", "மேட்டுப்பாளையம் சாலை"),
+        (r"\bPattanam\b", "பட்டணம்"), (r"\bCoimbatore\b", "கோயம்புத்தூர்"),
+        (r"\bTamil Nadu\b", ""), (r"\bcents?\b", "சென்ட்"),
+        (r"\bsq\.?\s*ft\.?\b|\bsqft\b", "சதுர அடி"), (r"\bft\b", "அடி"),
+        (r"\bNorth\b", "வடக்கு"), (r"\bSouth\b", "தெற்கு"),
+        (r"\bEast\b", "கிழக்கு"), (r"\bWest\b", "மேற்கு"),
+        (r"\bPlot\b", "வீட்டு மனை"), (r"\bHouse\b", "தனி வீடு"),
+        (r"\bVilla\b", "வில்லா"), (r"\bDTCP\b", "டி டி சி பி"),
+        (r"\bwide tar roads?\b", "அகல தார் சாலைகள்"),
+        (r"\bto\b", "முதல்"), (r"\band\b", "மற்றும்"),
+    ]
+    result = str(value)
+    for pattern, replacement in replacements:
+        result = re.sub(pattern, replacement, result, flags=re.IGNORECASE)
+    result = re.sub(r"(\d+\s+சென்ட்)\s+முதல்\s+(\d+\s+சென்ட்)(?!\s+வரை)", r"\1 முதல் \2 வரை", result)
+    result = result.replace("அருகில் துடியலூர்", "துடியலூர் அருகே")
+    return re.sub(r"\s+,", ",", re.sub(r"\s+", " ", result)).strip(" ,")
+
+
+def build_voice_segments(job: dict) -> list[dict]:
     prop = job.get("property", {})
-    location = _spoken(job.get("property_location")) or "கோயம்புத்தூர்"
+    location = _tamilize(_spoken(job.get("property_location")) or "கோயம்புத்தூர்")
+    location = re.sub(r",?\s*கோயம்புத்தூர்\s*$", "", location).strip(" ,") or "கோயம்புத்தூர்"
+    property_type = _tamilize(_spoken(prop.get("property_type")) or "வீடு")
     bhk = _spoken(prop.get("bhk"))
-    property_type = _spoken(prop.get("property_type")) or "வீடு"
-    sentences = [f"கோயம்புத்தூர் {location} பகுதியில் உள்ள இந்த {bhk} {property_type} பற்றிய முக்கிய தகவல்களை பார்க்கலாம்."]
-    for label, key in [
-        ("நில அளவு", "land_area"), ("கட்டிட பரப்பளவு", "built_up_area"),
-        ("விலை", "price"), ("பார்க்கும் திசை", "facing"),
-        ("சாலை அகலம்", "road_width"), ("அனுமதி", "approval"),
-    ]:
+    title = " ".join(value for value in (bhk, property_type) if value)
+    segments = [{
+        "scene": "location",
+        "text": f"கோயம்புத்தூரில், {location} பகுதியில் அமைந்துள்ள இந்த {title} பற்றிய முக்கிய தகவல்களை தெளிவாகப் பார்ப்போம்.",
+    }]
+    fact_lines = [
+        ("land", "land_area", "இந்த சொத்தின் நில அளவு, {value}."),
+        ("builtUp", "built_up_area", "கட்டிடத்தின் மொத்த பரப்பளவு, {value}."),
+        ("price", "price", "இந்த சொத்தின் விலை, {value}."),
+        ("facing", "facing", "மனை அமைந்துள்ள திசைகள், {value}."),
+        ("road", "road_width", "இந்த மனைப்பிரிவில், {value} அமைக்கப்பட்டுள்ளன."),
+        ("approval", "approval", "இந்த சொத்தின் அங்கீகார விவரம், {value}."),
+    ]
+    for scene, key, sentence in fact_lines:
         value = _spoken(prop.get(key))
         if value:
-            sentences.append(f"{label}, {value}.")
-    sentences.extend([
-        "இந்த வீடியோவில் பயன்படுத்தப்பட்ட சில காட்சிகள் அந்த பகுதியை விளக்கும் பிரதிநிதி காட்சிகள் மட்டுமே.",
-        "விலை, இடம் மற்றும் ஆவணங்களை நேரில் சரிபார்த்த பிறகே முடிவு செய்யுங்கள்.",
-        "மேலும் உறுதியான விவரங்களுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸை தொடர்பு கொள்ளுங்கள்.",
+            segments.append({"scene": scene, "text": sentence.format(value=_tamilize(value))})
+    segments.extend([
+        {"scene": "disclosure", "text": "இங்கே காணப்படும் வீடியோ காட்சிகள், சொத்து வகையையும் சுற்றுப்புற சூழலையும் விளக்கும் பிரதிநிதி காட்சிகள் மட்டுமே."},
+        {"scene": "verify", "text": "இடம், அளவுகள், விலை மற்றும் ஆவணங்களை நேரில் சரிபார்த்த பிறகே உங்கள் முடிவை எடுக்கவும்."},
+        {"scene": "cta", "text": "மேலும் தெளிவான விவரங்களுக்கும், நேரடி தள பார்வைக்கும், கோயம்புத்தூர் வீடு பில்டர்ஸை இப்போதே தொடர்பு கொள்ளுங்கள்."},
     ])
-    return " ".join(sentence for sentence in sentences if sentence)
+    return segments
 
 
-async def _save(script: str, output: Path) -> None:
+def build_tamil_script(job: dict) -> str:
+    return " ".join(segment["text"] for segment in build_voice_segments(job))
+
+
+async def _save(text: str, output: Path) -> None:
     import edge_tts
 
-    communicator = edge_tts.Communicate(script, VOICE, rate="-5%", pitch="-2Hz")
+    communicator = edge_tts.Communicate(text, VOICE, rate="-2%", pitch="-2Hz", volume="+18%")
     await communicator.save(str(output))
 
 
+def _duration(path: Path) -> float:
+    result = subprocess.run([
+        "ffprobe", "-v", "error", "-show_entries", "format=duration",
+        "-of", "default=noprint_wrappers=1:nokey=1", str(path),
+    ], check=True, capture_output=True, text=True)
+    return float(result.stdout.strip())
+
+
+def _normalize(path: Path) -> None:
+    normalized = path.with_name(f"{path.stem}-normalized.mp3")
+    subprocess.run([
+        "ffmpeg", "-y", "-loglevel", "error", "-i", str(path),
+        "-af", "loudnorm=I=-16:TP=-1.5:LRA=9", "-codec:a", "libmp3lame",
+        "-b:a", "192k", str(normalized),
+    ], check=True)
+    normalized.replace(path)
+
+
 def create_voiceover(job: dict) -> Path:
-    output = Path("assets/audio") / f"{job['video_id']}.mp3"
-    output.parent.mkdir(parents=True, exist_ok=True)
-    script = build_tamil_script(job)
-    Path("data/voiceover_scripts").mkdir(parents=True, exist_ok=True)
-    Path("data/voiceover_scripts", f"{job['video_id']}.txt").write_text(script, encoding="utf-8")
-    asyncio.run(_save(script, output))
-    return output
+    video_id = job["video_id"]
+    output_dir = Path("assets/audio") / video_id
+    output_dir.mkdir(parents=True, exist_ok=True)
+    for existing in output_dir.glob("*.mp3"):
+        existing.unlink()
+    segments = build_voice_segments(job)
+    manifest = []
+    for index, segment in enumerate(segments, start=1):
+        output = output_dir / f"{index:02d}-{segment['scene']}.mp3"
+        asyncio.run(_save(segment["text"], output))
+        _normalize(output)
+        manifest.append({
+            **segment,
+            "file": output.name,
+            "duration_seconds": round(_duration(output), 3),
+        })
+    script_dir = Path("data/voiceover_scripts")
+    script_dir.mkdir(parents=True, exist_ok=True)
+    (script_dir / f"{video_id}.txt").write_text(
+        "\n".join(f"[{item['scene']}] {item['text']}" for item in manifest), encoding="utf-8"
+    )
+    (output_dir / "manifest.json").write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    return output_dir
