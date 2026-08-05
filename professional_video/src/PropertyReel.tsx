@@ -6,7 +6,6 @@ import {
   AbsoluteFill,
   Audio,
   Img,
-  Loop,
   OffthreadVideo,
   Sequence,
   interpolate,
@@ -34,7 +33,7 @@ type VisualSource = {src: string; video: boolean};
 const Visual: React.FC<{source?: VisualSource; scale?: number; x?: number; y?: number; blur?: number}> = ({source, scale = 1, x = 0, y = 0, blur = 0}) => {
   if (!source) return <AbsoluteFill style={{background: 'linear-gradient(145deg, #163d5b, #06192d 62%)'}} />;
   const style: React.CSSProperties = {width: '100%', height: '100%', objectFit: 'cover', transform: `translate3d(${x}px, ${y}px, 0) scale(${scale})`, filter: blur ? `blur(${blur}px)` : undefined};
-  return source.video ? <Loop durationInFrames={180}><OffthreadVideo src={staticFile(source.src)} muted style={style} /></Loop> : <Img src={staticFile(source.src)} style={style} />;
+  return source.video ? <OffthreadVideo src={staticFile(source.src)} muted style={style} /> : <Img src={staticFile(source.src)} style={style} />;
 };
 
 const PhotoStage: React.FC<{source?: VisualSource; direction?: 1 | -1; dark?: number; speed?: number}> = ({source, direction = 1, dark = .48, speed = 1}) => {
@@ -534,7 +533,10 @@ const PersistentHUD: React.FC<{brand:string;phone:string}> = ({brand,phone}) => 
 
 export const PropertyReel: React.FC<PropertyVideoProps> = (props) => {
   const clips = props.actualVideos.length ? props.actualVideos : props.representativeVideos;
-  const media: VisualSource[] = clips.length ? clips.map(src=>({src,video:true})) : props.images.map(src=>({src,video:false}));
+  const media: VisualSource[] = [
+    ...clips.map(src=>({src,video:true})),
+    ...props.images.map(src=>({src,video:false})),
+  ];
   const mediaOffset = media.length ? Array.from(props.videoId).reduce((total,char)=>total+char.charCodeAt(0),0) % media.length : 0;
   const get = (index:number) => media.length ? media[(index + mediaOffset) % media.length] : undefined;
   const mapVisual: VisualSource | undefined = props.maps.length ? {src:props.maps[0],video:false} : get(0);
@@ -545,15 +547,14 @@ export const PropertyReel: React.FC<PropertyVideoProps> = (props) => {
       : <HookScene source={get(0)} title={props.title} location={props.location}/>,
     land: <LaserPlotScene source={get(1)} fact={facts[0] || {label:'LAND',value:'VERIFY ON SITE'}}/>,
     builtUp: <BuiltUpScanScene source={get(2)} fact={facts[1] || {label:'BUILT-UP',value:'VERIFY ON SITE'}}/>,
-    price: <PriceScene source={get(1)} price={props.price}/>,
-    facing: <FacingScene source={get(0)} fact={facts[2] || {label:'FACING',value:'VERIFY ON SITE'}}/>,
-    road: <RoadMeasureScene source={get(1)} fact={facts[3] || {label:'ROAD',value:'VERIFY ON SITE'}}/>,
+    price: <PriceScene source={get(3)} price={props.price}/>,
+    facing: <FacingScene source={get(4)} fact={facts[2] || {label:'FACING',value:'VERIFY ON SITE'}}/>,
+    road: <RoadMeasureScene source={get(5)} fact={facts[3] || {label:'ROAD',value:'VERIFY ON SITE'}}/>,
     approval: <ApprovalScene fact={facts[5] || {label:'APPROVAL',value:'VERIFY DOCUMENTS'}}/>,
-    disclosure: <DisclosureScene media={media}/>,
     verify: <VerifyScene price={props.price} location={props.location}/>,
     cta: <CTAScene brand={props.brand} cta={props.cta} phone={props.phone} location={props.location}/>,
   };
-  const defaultOrder = ['location','land','builtUp','price','facing','road','approval','disclosure','verify','cta'];
+  const defaultOrder = ['location','land','builtUp','price','facing','road','approval','verify','cta'];
   const order = props.sceneOrder?.length ? props.sceneOrder : defaultOrder;
   let cursor = 0;
   const starts: Record<string, number> = {};
