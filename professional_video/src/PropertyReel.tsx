@@ -533,24 +533,42 @@ const PersistentHUD: React.FC<{brand:string;phone:string}> = ({brand,phone}) => 
 };
 
 export const PropertyReel: React.FC<PropertyVideoProps> = (props) => {
-  const {durationInFrames} = useVideoConfig();
   const clips = props.actualVideos.length ? props.actualVideos : props.representativeVideos;
   const media: VisualSource[] = clips.length ? clips.map(src=>({src,video:true})) : props.images.map(src=>({src,video:false}));
-  const get = (index:number) => media.length ? media[index % media.length] : undefined;
+  const mediaOffset = media.length ? Array.from(props.videoId).reduce((total,char)=>total+char.charCodeAt(0),0) % media.length : 0;
+  const get = (index:number) => media.length ? media[(index + mediaOffset) % media.length] : undefined;
   const mapVisual: VisualSource | undefined = props.maps.length ? {src:props.maps[0],video:false} : get(0);
+  const facts = props.facts;
+  const sceneNodes: Record<string, React.ReactNode> = {
+    location: props.templateVariant === 'plot'
+      ? <LocationJourneyScene mapSource={mapVisual} houseSource={get(1)} title={props.title} location={props.location}/>
+      : <HookScene source={get(0)} title={props.title} location={props.location}/>,
+    land: <LaserPlotScene source={get(1)} fact={facts[0] || {label:'LAND',value:'VERIFY ON SITE'}}/>,
+    builtUp: <BuiltUpScanScene source={get(2)} fact={facts[1] || {label:'BUILT-UP',value:'VERIFY ON SITE'}}/>,
+    price: <PriceScene source={get(1)} price={props.price}/>,
+    facing: <FacingScene source={get(0)} fact={facts[2] || {label:'FACING',value:'VERIFY ON SITE'}}/>,
+    road: <RoadMeasureScene source={get(1)} fact={facts[3] || {label:'ROAD',value:'VERIFY ON SITE'}}/>,
+    approval: <ApprovalScene fact={facts[5] || {label:'APPROVAL',value:'VERIFY DOCUMENTS'}}/>,
+    disclosure: <DisclosureScene media={media}/>,
+    verify: <VerifyScene price={props.price} location={props.location}/>,
+    cta: <CTAScene brand={props.brand} cta={props.cta} phone={props.phone} location={props.location}/>,
+  };
+  const defaultOrder = ['location','land','builtUp','price','facing','road','approval','disclosure','verify','cta'];
+  const order = props.sceneOrder?.length ? props.sceneOrder : defaultOrder;
+  let cursor = 0;
+  const starts: Record<string, number> = {};
+  const scheduled = order.map((scene) => {
+    const from = cursor;
+    const duration = Math.max(1, props.sceneDurations?.[scene] || 120);
+    starts[scene] = from;
+    cursor += duration;
+    return {scene, from, duration};
+  });
   return (
     <AbsoluteFill style={{backgroundColor:navy}}>
-      <Sequence from={0} durationInFrames={267}><LocationJourneyScene mapSource={mapVisual} houseSource={get(1)} title={props.title} location={props.location}/></Sequence>
-      <Sequence from={267} durationInFrames={123}><LaserPlotScene source={get(1)} fact={props.facts[0] || {label:'LAND',value:'VERIFY ON SITE'}}/></Sequence>
-      <Sequence from={390} durationInFrames={137}><BuiltUpScanScene source={get(2)} fact={props.facts[1] || {label:'BUILT-UP',value:'VERIFY ON SITE'}}/></Sequence>
-      <Sequence from={527} durationInFrames={150}><PriceScene source={get(1)} price={props.price}/></Sequence>
-      <Sequence from={677} durationInFrames={98}><FacingScene source={get(0)} fact={props.facts[2] || {label:'FACING',value:'VERIFY ON SITE'}}/></Sequence>
-      <Sequence from={775} durationInFrames={155}><RoadMeasureScene source={get(1)} fact={props.facts[3] || {label:'ROAD',value:'VERIFY ON SITE'}}/></Sequence>
-      <Sequence from={930} durationInFrames={127}><ApprovalScene fact={props.facts[5] || {label:'APPROVAL',value:'VERIFY DOCUMENTS'}}/></Sequence>
-      <Sequence from={1057} durationInFrames={214}><DisclosureScene media={media}/></Sequence>
-      <Sequence from={1271} durationInFrames={179}><VerifyScene price={props.price} location={props.location}/></Sequence>
-      <Sequence from={1450} durationInFrames={Math.max(1,durationInFrames-1450)}><CTAScene brand={props.brand} cta={props.cta} phone={props.phone} location={props.location}/></Sequence>
-      {props.audio && <Audio src={staticFile(props.audio)} />}
+      {scheduled.map(({scene,from,duration}) => <Sequence key={scene} from={from} durationInFrames={duration}>{sceneNodes[scene]}</Sequence>)}
+      {props.voiceSegments?.map((segment) => <Sequence key={`voice-${segment.scene}`} from={starts[segment.scene] || 0} durationInFrames={props.sceneDurations[segment.scene] || 120}><Audio src={staticFile(segment.src)} volume={1}/></Sequence>)}
+      {!props.voiceSegments?.length && props.audio && <Audio src={staticFile(props.audio)} volume={1}/>} 
       <GlobalFX />
       <PersistentHUD brand={props.brand} phone={props.phone}/>
     </AbsoluteFill>
