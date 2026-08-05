@@ -1,0 +1,8 @@
+# Installed only when HF_TOKEN is configured in GitHub Actions.
+# The AI4Bharat model is gated; accept its Hugging Face terms before using the token.
+torch>=2.4,<3
+transformers>=4.46,<5
+accelerate>=1.0,<2
+soundfile>=0.12,<1
+safetensors>=0.4,<1
+parler-tts @ git+https://github.com/huggingface/parler-tts.git
