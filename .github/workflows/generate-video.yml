@@ -1,4 +1,4 @@
-name: Render Professional Approved Property Videos
+name: Render Autopilot Property Videos
 
 on:
   workflow_dispatch: {}
@@ -9,6 +9,9 @@ on:
       - professional_video/**
       - prepare_remotion_job.py
       - prepare_free_assets.py
+      - select_render_jobs.py
+      - video_pipeline.py
+      - render_free_approved.py
       - media_sources.py
       - map_assets.py
       - requirements.txt
@@ -33,6 +36,8 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
@@ -46,12 +51,21 @@ jobs:
       - run: pip install -r requirements.txt
       - run: npm ci
         working-directory: professional_video
+      - name: Select only new renderable jobs
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+        run: |
+          python select_render_jobs.py --output data/render_queue.txt
+          cat data/render_queue.txt
       - name: Decode bundled sample visuals
         run: python sample_assets.py
-      - name: Source licensed media and create Tamil male voice-over
+      - name: Source licensed media, maps and Tamil male voice-over
         env:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           TAMIL_MALE_VOICE: ta-IN-ValluvarNeural
+          VIDEO_IDS_FILE: data/render_queue.txt
         run: python prepare_free_assets.py
       - name: Render professional Remotion reels
         id: professional
@@ -70,9 +84,11 @@ jobs:
                 --props="../data/remotion_props/${video_id}.json" \
                 --codec=h264 --crf=18 --concurrency=2
             )
-          done < data/approved_video_ids.txt
+          done < data/render_queue.txt
       - name: Emergency FFmpeg fallback
         if: steps.professional.outcome == 'failure'
+        env:
+          VIDEO_IDS_FILE: data/render_queue.txt
         run: |
           echo "Remotion failed; rendering the reviewable FFmpeg fallback. Inspect render-mode.txt."
           python render_free_approved.py
@@ -81,10 +97,11 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: professional-approved-property-videos
+          name: autopilot-property-videos-${{ github.run_number }}
           path: |
             outputs/**/*.mp4
             outputs/render-mode.txt
+            data/render_queue.txt
             data/media_attribution/*.json
             data/geocoding/*.json
             data/voiceover_scripts/*.txt
