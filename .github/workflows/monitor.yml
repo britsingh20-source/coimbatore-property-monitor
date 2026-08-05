@@ -2,7 +2,8 @@ name: Property Monitor
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    # Offset from the top of the hour to reduce GitHub scheduled-run congestion.
+    - cron: "17 * * * *"
   workflow_dispatch: {}
 
 concurrency:
@@ -18,23 +19,73 @@ jobs:
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
           cache: pip
       - run: pip install -r requirements.txt
       - name: Run monitor
+        id: monitor
+        continue-on-error: true
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           MAX_VIDEOS_PER_RUN: "3"
         run: python main.py
       - name: Commit state, records and approval jobs
+        id: commit
         if: always()
+        shell: bash
         run: |
+          set -euo pipefail
+          : > data/new_render_ids.txt
           git config user.name "property-monitor-bot"
           git config user.email "actions@github.com"
+          before_commit="$(git rev-parse HEAD)"
           git add data/properties.csv data/state.json data/video_jobs || true
-          git diff --staged --quiet || git commit -m "Update property monitor state [automated]"
+          if git diff --staged --quiet; then
+            echo "No monitor changes to commit."
+          else
+            git commit -m "Update property monitor state [automated]"
+            after_commit="$(git rev-parse HEAD)"
+            python select_render_jobs.py \
+              --event-name push \
+              --before "$before_commit" \
+              --after "$after_commit" \
+              --output data/new_render_ids.txt
+          fi
           git pull --rebase
           git push
+      - name: Dispatch exact approved jobs to the video renderer
+        if: always() && steps.commit.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          video_ids="$(grep -vE '^\s*(#|$)' data/new_render_ids.txt | paste -sd, - || true)"
+          if [[ -z "$video_ids" ]]; then
+            echo "No newly approved property videos to dispatch."
+            exit 0
+          fi
+          payload="$(jq -nc \
+            --arg event_type "render-property-videos" \
+            --arg video_ids "$video_ids" \
+            '{event_type:$event_type,client_payload:{video_ids:$video_ids}}')"
+          gh api \
+            --method POST \
+            "repos/${GITHUB_REPOSITORY}/dispatches" \
+            --input - <<<"$payload"
+          echo "Dispatched property videos: $video_ids"
+          {
+            echo "### Autopilot render dispatched"
+            echo ""
+            echo "`$video_ids`"
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Preserve monitor failure after committing successful jobs
+        if: steps.monitor.outcome == 'failure'
+        run: |
+          echo "::error::The monitor had one or more analysis failures. Successful approved jobs were still committed and dispatched."
+          exit 1

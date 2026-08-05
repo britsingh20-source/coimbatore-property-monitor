@@ -42,14 +42,17 @@ class RenderSelectionTests(unittest.TestCase):
                 selected = select_ids("push", jobs, jobs / "approved.txt", "before", "after")
             self.assertEqual(selected, ["new"])
 
-    def test_manual_dispatch_includes_renderable_and_explicit_ids(self):
+    def test_blank_manual_dispatch_uses_only_explicit_approval_file(self):
         with tempfile.TemporaryDirectory() as tmp:
             jobs = Path(tmp)
             self._job(jobs, "auto", "auto_approved")
             self._job(jobs, "fixture", "approval_pending")
             approved = jobs / "approved.txt"
             approved.write_text("fixture\n", encoding="utf-8")
-            self.assertEqual(select_ids("workflow_dispatch", jobs, approved, "", "HEAD"), ["auto", "fixture"])
+            self.assertEqual(
+                select_ids("workflow_dispatch", jobs, approved, "", "HEAD"),
+                ["fixture"],
+            )
 
 
 if __name__ == "__main__":
