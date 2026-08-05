@@ -39,6 +39,6 @@
   ],
   "status": "auto_approved",
   "approval_mode": "automatic_fact_gate_v1",
-  "render_requested_at": "2026-08-05T11:23:15Z",
-  "render_reason": "nonrepeating_safe_broll_reference_voice_v3"
+  "render_requested_at": "2026-08-05T12:46:11Z",
+  "render_reason": "strict_nggo_scene_location_mapping_v4"
 }
