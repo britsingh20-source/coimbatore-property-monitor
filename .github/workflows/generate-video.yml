@@ -101,6 +101,7 @@ jobs:
         run: |
           set -euo pipefail
           if [[ -n "${HF_TOKEN:-}" ]]; then
+            pip install --index-url https://download.pytorch.org/whl/cpu "torch>=2.4,<3"
             pip install -r requirements-indic-parler.txt
           else
             echo "::warning::HF_TOKEN is not configured; this run will retain the Edge emergency voice."
