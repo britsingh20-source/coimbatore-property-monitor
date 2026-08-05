@@ -4,10 +4,15 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from media_sources import search_pexels_videos, source_property_media, source_property_videos
+from media_sources import _allowed_visual, search_pexels_videos, source_property_media, source_property_videos
 
 
 class MediaSourceTests(unittest.TestCase):
+    def test_religious_visual_urls_are_rejected(self):
+        self.assertFalse(_allowed_visual({"source_url": "https://example.com/temple-aerial-video"}))
+        self.assertFalse(_allowed_visual({"alt": "Road beside a church"}))
+        self.assertTrue(_allowed_visual({"source_url": "https://example.com/residential-road-drone"}))
+
     @patch.dict(os.environ, {}, clear=True)
     def test_pexels_video_search_is_optional(self):
         self.assertEqual(search_pexels_videos("house"), [])
