@@ -130,9 +130,7 @@ def _save_indic_parler(text: str, output: Path) -> None:
     with torch.inference_mode():
         generated = model.generate(
             input_ids=description.input_ids,
-            attention_mask=description.attention_mask,
             prompt_input_ids=prompt.input_ids,
-            prompt_attention_mask=prompt.attention_mask,
             do_sample=True,
             temperature=1.0,
         )
