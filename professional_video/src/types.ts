@@ -1,4 +1,5 @@
 export type Fact = {label: string; value: string};
+export type VoiceSegment = {scene: string; src: string};
 
 export type PropertyVideoProps = {
   videoId: string;
@@ -11,6 +12,10 @@ export type PropertyVideoProps = {
   representativeVideos: string[];
   images: string[];
   audio: string | null;
+  voiceSegments: VoiceSegment[];
+  sceneOrder: string[];
+  sceneDurations: Record<string, number>;
+  templateVariant: 'plot' | 'home';
   durationInFrames: number;
   isActualProperty: boolean;
   disclosure: string;
