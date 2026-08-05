@@ -38,5 +38,6 @@
     }
   ],
   "status": "auto_approved",
-  "approval_mode": "automatic_fact_gate_v1"
+  "approval_mode": "automatic_fact_gate_v1",
+  "render_requested_at": "2026-08-05T09:16:30Z"
 }
