@@ -127,7 +127,8 @@ jobs:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           INDIC_PARLER_STYLE: ${{ vars.INDIC_PARLER_STYLE }}
-          TTS_ALLOW_EDGE_FALLBACK: "false"
+          TTS_ALLOW_EDGE_FALLBACK: "true"
+          INDIC_PARLER_ATTEMPTS: "3"
           TAMIL_MALE_VOICE: ta-IN-ValluvarNeural
           VIDEO_IDS_FILE: data/render_queue.txt
           ASSET_FAILURES_FILE: outputs/asset-failure-ids.txt
@@ -136,7 +137,7 @@ jobs:
           set -euo pipefail
           if [[ -n "${HF_TOKEN:-}" ]]; then
             export TTS_ENGINE=indic-parler
-            echo "Using strict AI4Bharat Indic Parler-TTS narration."
+            echo "Using quality-gated AI4Bharat Indic Parler-TTS with stable Tamil fallback."
           else
             export TTS_ENGINE=edge
             echo "::warning::Using Edge emergency voice because HF_TOKEN is absent."
@@ -214,6 +215,7 @@ jobs:
             data/media_attribution/*.json
             data/geocoding/*.json
             data/voiceover_scripts/*.txt
+            assets/audio/**/*.mp3
             assets/audio/**/manifest.json
             data/remotion_props/*.json
           if-no-files-found: warn
