@@ -1,22 +1,38 @@
 import json
+import os
+from pathlib import Path
 
-from media_sources import source_property_media
+from map_assets import render_map_sequence
+from media_sources import source_property_media, source_property_videos
 from tamil_voiceover import create_voiceover
-from video_pipeline import JOBS, approved_ids
+from video_pipeline import JOBS
+
+
+def queued_ids() -> set[str]:
+    path = Path(os.environ.get("VIDEO_IDS_FILE", "data/render_queue.txt"))
+    if not path.exists():
+        return set()
+    return {
+        line.strip()
+        for line in path.read_text(encoding="utf-8").splitlines()
+        if line.strip() and not line.lstrip().startswith("#")
+    }
 
 
 def main() -> None:
-    approvals = approved_ids()
-    if not approvals:
-        print("No approved IDs. Nothing prepared.")
+    queue = queued_ids()
+    if not queue:
+        print("No queued IDs. Nothing prepared.")
         return
     failures = []
-    for video_id in approvals:
+    for video_id in queue:
         try:
             job = json.loads((JOBS / f"{video_id}.json").read_text(encoding="utf-8"))
             media = source_property_media(job)
+            clips = source_property_videos(job)
+            maps = render_map_sequence(job)
             voice = create_voiceover(job)
-            print(f"Prepared {video_id}: {len(media)} images, voice={voice}")
+            print(f"Prepared {video_id}: {len(media)} images, {len(clips)} clips, {len(maps)} maps, voice={voice}")
         except Exception as error:
             failures.append(f"{video_id}: {error}")
     if failures:

@@ -4,6 +4,25 @@ from pathlib import Path
 
 JOBS = Path("data/video_jobs")
 APPROVALS = Path("data/approved_video_ids.txt")
+MISSING = {"", "NOT SPECIFIED", "UNKNOWN", "N/A", "NONE"}
+
+
+def _present(value) -> bool:
+    return str(value or "").strip().upper() not in MISSING
+
+
+def automatic_approval_ready(property_data: dict) -> bool:
+    """Approve only listings with a property type and at least two usable facts.
+
+    `main.py` already limits this function to Gemini-classified property listings
+    that match a configured Coimbatore locality. This final gate prevents sparse
+    or ambiguous records from reaching the renderer automatically.
+    """
+    if not _present(property_data.get("property_type")):
+        return False
+    fact_keys = ("land_area", "built_up_area", "price", "facing", "road_width", "approval")
+    usable_facts = sum(_present(property_data.get(key)) for key in fact_keys)
+    return usable_facts >= 2 and bool(property_data.get("source_facts"))
 
 
 def build_video_job(video: dict, property_data: dict, location: dict) -> Path:
@@ -22,6 +41,7 @@ def build_video_job(video: dict, property_data: dict, location: dict) -> Path:
         {"name": "living", "prompt": base + " Interior walkthrough of a bright Indian living room matching the property type."},
         {"name": "kitchen", "prompt": base + " Smooth walkthrough of a practical premium modular kitchen and dining space."},
     ]
+    auto_approved = automatic_approval_ready(property_data)
     job = {
         "video_id": video["video_id"],
         "source_url": video["url"],
@@ -36,11 +56,12 @@ def build_video_job(video: dict, property_data: dict, location: dict) -> Path:
         "verified_facts": facts,
         "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
         "aspect_ratio": "9:16",
-        "render_engine": "ffmpeg-free",
+        "render_engine": "remotion-professional-free",
         "required_owned_images_folder": f"assets/properties/{video['video_id']}/",
         "optional_owned_audio": f"assets/audio/{video['video_id']}.mp3",
         "scenes": scenes,
-        "status": "approval_pending",
+        "status": "auto_approved" if auto_approved else "needs_review",
+        "approval_mode": "automatic_fact_gate_v1",
     }
     JOBS.mkdir(parents=True, exist_ok=True)
     path = JOBS / f"{video['video_id']}.json"
