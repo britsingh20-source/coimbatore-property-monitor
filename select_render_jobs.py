@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import re
 import subprocess
 from pathlib import Path
 
@@ -16,6 +17,24 @@ def read_ids(path: Path) -> set[str]:
         for line in path.read_text(encoding="utf-8").splitlines()
         if line.strip() and not line.lstrip().startswith("#")
     }
+
+
+def parse_requested_ids(raw: str) -> set[str]:
+    """Accept a JSON list or a comma/newline/space-separated dispatch payload."""
+    value = str(raw or "").strip()
+    if not value:
+        return set()
+    try:
+        decoded = json.loads(value)
+    except json.JSONDecodeError:
+        decoded = None
+    if isinstance(decoded, list):
+        candidates = decoded
+    elif isinstance(decoded, str):
+        candidates = re.split(r"[\s,]+", decoded)
+    else:
+        candidates = re.split(r"[\s,]+", value)
+    return {str(item).strip() for item in candidates if str(item).strip()}
 
 
 def changed_job_ids(before: str, after: str) -> set[str]:
@@ -42,16 +61,35 @@ def renderable_ids(jobs_dir: Path) -> set[str]:
     return selected
 
 
-def select_ids(event_name: str, jobs_dir: Path, approved_file: Path, before: str, after: str) -> list[str]:
+def select_ids(
+    event_name: str,
+    jobs_dir: Path,
+    approved_file: Path,
+    before: str,
+    after: str,
+    requested_ids: str = "",
+) -> list[str]:
     renderable = renderable_ids(jobs_dir)
     explicitly_approved = read_ids(approved_file)
+    requested = parse_requested_ids(requested_ids)
+
     if event_name == "push":
         selected = changed_job_ids(before, after) & renderable
+    elif event_name == "repository_dispatch":
+        # Dispatch is deliberately exact: never render historical jobs by accident.
+        selected = requested & renderable
+    elif event_name == "workflow_dispatch":
+        selected = (requested & renderable) if requested else explicitly_approved
     elif event_name == "pull_request":
         selected = explicitly_approved
     else:
-        selected = renderable | explicitly_approved
-    return sorted(video_id for video_id in selected if (jobs_dir / f"{video_id}.json").exists())
+        selected = set()
+
+    return sorted(
+        video_id
+        for video_id in selected
+        if (jobs_dir / f"{video_id}.json").exists()
+    )
 
 
 def main() -> None:
@@ -62,9 +100,21 @@ def main() -> None:
     parser.add_argument("--event-name", default=os.environ.get("EVENT_NAME", "workflow_dispatch"))
     parser.add_argument("--before", default=os.environ.get("BEFORE_SHA", ""))
     parser.add_argument("--after", default=os.environ.get("AFTER_SHA", "HEAD"))
+    parser.add_argument(
+        "--requested-ids",
+        default=os.environ.get("REQUESTED_VIDEO_IDS", ""),
+        help="JSON list or comma-separated video IDs supplied by repository/workflow dispatch",
+    )
     args = parser.parse_args()
 
-    selected = select_ids(args.event_name, args.jobs_dir, args.approved_file, args.before, args.after)
+    selected = select_ids(
+        args.event_name,
+        args.jobs_dir,
+        args.approved_file,
+        args.before,
+        args.after,
+        args.requested_ids,
+    )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text("".join(f"{video_id}\n" for video_id in selected), encoding="utf-8")
     print(f"Selected {len(selected)} render job(s): {', '.join(selected) if selected else 'none'}")
