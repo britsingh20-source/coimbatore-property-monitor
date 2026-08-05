@@ -1,0 +1,42 @@
+{
+  "video_id": "PttTiHcqT-E",
+  "source_url": "https://www.youtube.com/watch?v=PttTiHcqT-E",
+  "property_location": "Sulur, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Gated Community Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "Plots available across a 15-acre layout (275 plots starting from 1 Cent)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹10,75,000 per cent (Offer price; standard rate ₹12,000,000 per cent)",
+    "facing": "NOT SPECIFIED",
+    "road_width": "40 feet & 30 feet wide tar roads",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "The project name is Kodies Paradise Avenue located in Sulur, Coimbatore., Offer price is ₹10.75 Lakhs per cent., Special offer includes 2 grams of gold coin per cent purchased., The layout spans 15 acres containing 275 plots., Road widths inside the layout are 40 ft and 30 ft., The property holds DTCP approval.",
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/PttTiHcqT-E/",
+  "optional_owned_audio": "assets/audio/PttTiHcqT-E.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: A fully developed residential plotting project featuring wide blacktop tar roads with painted yellow-black curbs, central roundabouts, decorative entrance statues, solar street light poles, street trees, and well-demarcated plot boundary stones.. Neighbourhood: Located in Sulur, Coimbatore, a rapidly developing residential and commercial hub well-connected to major arterial roads, hospitals like KMCH, IT offices such as Zoho, and educational institutes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: A fully developed residential plotting project featuring wide blacktop tar roads with painted yellow-black curbs, central roundabouts, decorative entrance statues, solar street light poles, street trees, and well-demarcated plot boundary stones.. Neighbourhood: Located in Sulur, Coimbatore, a rapidly developing residential and commercial hub well-connected to major arterial roads, hospitals like KMCH, IT offices such as Zoho, and educational institutes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: A fully developed residential plotting project featuring wide blacktop tar roads with painted yellow-black curbs, central roundabouts, decorative entrance statues, solar street light poles, street trees, and well-demarcated plot boundary stones.. Neighbourhood: Located in Sulur, Coimbatore, a rapidly developing residential and commercial hub well-connected to major arterial roads, hospitals like KMCH, IT offices such as Zoho, and educational institutes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: A fully developed residential plotting project featuring wide blacktop tar roads with painted yellow-black curbs, central roundabouts, decorative entrance statues, solar street light poles, street trees, and well-demarcated plot boundary stones.. Neighbourhood: Located in Sulur, Coimbatore, a rapidly developing residential and commercial hub well-connected to major arterial roads, hospitals like KMCH, IT offices such as Zoho, and educational institutes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
