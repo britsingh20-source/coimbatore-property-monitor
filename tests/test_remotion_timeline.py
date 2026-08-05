@@ -20,7 +20,7 @@ class RemotionTimelineTests(unittest.TestCase):
                 audio_dir = Path("assets/audio") / video_id
                 audio_dir.mkdir(parents=True)
                 manifest = []
-                for index, scene in enumerate(("location", "land", "road", "disclosure", "verify", "cta"), start=1):
+                for index, scene in enumerate(("location", "land", "road", "verify", "cta"), start=1):
                     filename = f"{index:02d}-{scene}.mp3"
                     (audio_dir / filename).write_bytes(b"audio")
                     manifest.append({"scene": scene, "file": filename, "duration_seconds": 2.0})
