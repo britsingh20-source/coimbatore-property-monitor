@@ -1,0 +1,42 @@
+{
+  "video_id": "h2Sxt0ed38U",
+  "source_url": "https://www.youtube.com/watch?v=h2Sxt0ed38U",
+  "property_location": "Kinathukadavu, Pollachi Road, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot & Villa",
+    "bhk": "1BHK, 2BHK",
+    "land_area": "25 Acres (Total Township Area)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹6.90 Lakhs per cent (Plot starting price); 1BHK Villas from ₹21 Lakhs, 2BHK Villas from ₹32 Lakhs",
+    "facing": "North, East",
+    "road_width": "30 Feet / 33 Feet Metal Tar Road",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "25-acre DTCP-approved gated community layout project in Kinathukadavu on Pollachi Road, Coimbatore., Features 20+ amenities and internal 30/33 ft tar roads., Plot prices starting from ₹6.90 Lakhs per cent with Aadi promotional discount up to ₹2 Lakhs per cent., Offers North and East facing plot choices, commercial plots, and villa packages starting at ₹21 Lakhs (1BHK) and ₹32 Lakhs (2BHK)., Up to 90% bank loan facility available.",
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/h2Sxt0ed38U/",
+  "optional_owned_audio": "assets/audio/h2Sxt0ed38U.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Expansive leveled layout with red soil plot divisions, newly laid gravel/tar internal roads, entry archways, and palm trees under an overcast sky.. Neighbourhood: Situated off the Coimbatore-Pollachi highway near Kinathukadavu town with proximity to engineering colleges, public transit bus stands, and railway connectivity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Expansive leveled layout with red soil plot divisions, newly laid gravel/tar internal roads, entry archways, and palm trees under an overcast sky.. Neighbourhood: Situated off the Coimbatore-Pollachi highway near Kinathukadavu town with proximity to engineering colleges, public transit bus stands, and railway connectivity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Expansive leveled layout with red soil plot divisions, newly laid gravel/tar internal roads, entry archways, and palm trees under an overcast sky.. Neighbourhood: Situated off the Coimbatore-Pollachi highway near Kinathukadavu town with proximity to engineering colleges, public transit bus stands, and railway connectivity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Expansive leveled layout with red soil plot divisions, newly laid gravel/tar internal roads, entry archways, and palm trees under an overcast sky.. Neighbourhood: Situated off the Coimbatore-Pollachi highway near Kinathukadavu town with proximity to engineering colleges, public transit bus stands, and railway connectivity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

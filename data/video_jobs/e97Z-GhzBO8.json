@@ -1,0 +1,42 @@
+{
+  "video_id": "e97Z-GhzBO8",
+  "source_url": "https://www.youtube.com/watch?v=e97Z-GhzBO8",
+  "property_location": "Kiruba Enclave, Puthur, Thondamuthur, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Land / Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "2.75 Cents (Frontage: 20 ft, Length: 60 ft per site)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹8 Lakhs per Cent (Negotiable)",
+    "facing": "South",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Two joint sites of 2.75 cents available for sale near Thondamuthur main town., Site dimensions: 20 feet frontage and 60 feet length., Located in Kiruba Enclave, Puthur, within walkable distance from Puthur bus stop., DTCP approved residential plot with bank loan facility., Price is quoted at ₹8 Lakhs per cent, negotiable.",
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/e97Z-GhzBO8/",
+  "optional_owned_audio": "assets/audio/e97Z-GhzBO8.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Flat ground plot located within a developed residential layout surrounded by newly built white and painted independent houses, utility poles, and scenic coconut palm backdrop.. Neighbourhood: Serene residential layout situated close to Thondamuthur main town, featuring access roads, proximity to essential services like petrol bunks, shops, bus stops, and picturesque views of surrounding hills.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Flat ground plot located within a developed residential layout surrounded by newly built white and painted independent houses, utility poles, and scenic coconut palm backdrop.. Neighbourhood: Serene residential layout situated close to Thondamuthur main town, featuring access roads, proximity to essential services like petrol bunks, shops, bus stops, and picturesque views of surrounding hills.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Flat ground plot located within a developed residential layout surrounded by newly built white and painted independent houses, utility poles, and scenic coconut palm backdrop.. Neighbourhood: Serene residential layout situated close to Thondamuthur main town, featuring access roads, proximity to essential services like petrol bunks, shops, bus stops, and picturesque views of surrounding hills.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Flat ground plot located within a developed residential layout surrounded by newly built white and painted independent houses, utility poles, and scenic coconut palm backdrop.. Neighbourhood: Serene residential layout situated close to Thondamuthur main town, featuring access roads, proximity to essential services like petrol bunks, shops, bus stops, and picturesque views of surrounding hills.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

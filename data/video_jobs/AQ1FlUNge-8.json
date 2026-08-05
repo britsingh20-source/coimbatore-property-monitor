@@ -1,0 +1,42 @@
+{
+  "video_id": "AQ1FlUNge-8",
+  "source_url": "https://www.youtube.com/watch?v=AQ1FlUNge-8",
+  "property_location": "Kinathukadavu, Coimbatore - Pollachi Highway, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plots & Villas",
+    "bhk": "1 BHK & 2 BHK available",
+    "land_area": "25 Acres (Total Project Layout)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "Plot price from ₹6,90,000 per cent (Pre-launch rate up to ₹8,90,000 per cent); 1 BHK House from ₹21 Lakhs; 2 BHK House from ₹32 Lakhs",
+    "facing": "North, East, and Corner plots available",
+    "road_width": "30 Feet and 40 Feet Tar Roads",
+    "parking": "Available",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "The project 'Metro Kumaran Residency' is developed by Metro City Developers across 25 acres near Kinathukadavu on the Coimbatore-Pollachi highway., Pre-launch plot price starts at ₹6.90 Lakhs per cent, with regular price rising to ₹8.90 Lakhs per cent after amenities installation., Customizable house construction is offered starting at ₹21 Lakhs for 1BHK., Bank loan facilities up to 80%-90% are available through tied-up banks and NBFCs., Free cab pick-up and drop facility is provided for customer site visits.",
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/AQ1FlUNge-8/",
+  "optional_owned_audio": "assets/audio/AQ1FlUNge-8.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Extensive 25-acre flattened layout with red soil, demarcated plot boundary posts, internal gravel/tar roads, heavy excavation machinery active on site, entrance gate structures, and surrounding green coconut groves.. Neighbourhood: Rapidly developing residential and IT/industrial corridor near Kinathukadavu, surrounded by prominent engineering colleges, IT parks, highways, and residential villages like Solavampalayam and Arasampalayam.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Extensive 25-acre flattened layout with red soil, demarcated plot boundary posts, internal gravel/tar roads, heavy excavation machinery active on site, entrance gate structures, and surrounding green coconut groves.. Neighbourhood: Rapidly developing residential and IT/industrial corridor near Kinathukadavu, surrounded by prominent engineering colleges, IT parks, highways, and residential villages like Solavampalayam and Arasampalayam.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Extensive 25-acre flattened layout with red soil, demarcated plot boundary posts, internal gravel/tar roads, heavy excavation machinery active on site, entrance gate structures, and surrounding green coconut groves.. Neighbourhood: Rapidly developing residential and IT/industrial corridor near Kinathukadavu, surrounded by prominent engineering colleges, IT parks, highways, and residential villages like Solavampalayam and Arasampalayam.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Extensive 25-acre flattened layout with red soil, demarcated plot boundary posts, internal gravel/tar roads, heavy excavation machinery active on site, entrance gate structures, and surrounding green coconut groves.. Neighbourhood: Rapidly developing residential and IT/industrial corridor near Kinathukadavu, surrounded by prominent engineering colleges, IT parks, highways, and residential villages like Solavampalayam and Arasampalayam.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
