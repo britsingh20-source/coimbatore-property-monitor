@@ -24,6 +24,9 @@ def main() -> None:
     if not queue:
         print("No queued IDs. Nothing prepared.")
         return
+    failure_path = Path(os.environ.get("ASSET_FAILURES_FILE", "outputs/asset-failure-ids.txt"))
+    failure_path.parent.mkdir(parents=True, exist_ok=True)
+    failure_path.write_text("", encoding="utf-8")
     failures = []
     for video_id in queue:
         try:
@@ -35,6 +38,8 @@ def main() -> None:
             print(f"Prepared {video_id}: {len(media)} images, {len(clips)} clips, {len(maps)} maps, voice={voice}")
         except Exception as error:
             failures.append(f"{video_id}: {error}")
+            with failure_path.open("a", encoding="utf-8") as handle:
+                handle.write(f"{video_id}\n")
     if failures:
         raise RuntimeError("\n".join(failures))
 
