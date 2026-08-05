@@ -3,13 +3,15 @@ export type VoiceSegment = {scene: string; src: string};
 
 export type PropertyVideoProps = {
   videoId: string;
-  location: string;\n  locationLabel: string;
+  location: string;
+  locationLabel: string;
   title: string;
   price: string;
   facts: Fact[];
   maps: string[];
   actualVideos: string[];
-  representativeVideos: string[];\n  sceneMedia: Record<string, string[]>;
+  representativeVideos: string[];
+  sceneMedia: Record<string, string[]>;
   images: string[];
   audio: string | null;
   voiceSegments: VoiceSegment[];
