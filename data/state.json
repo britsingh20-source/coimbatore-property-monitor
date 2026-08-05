@@ -75,10 +75,12 @@
       "status": "discovered"
     },
     "4QM0yDap_Gw": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
-      "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-08-05T22:30:36.164553+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 23.855310197s.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-08-06T00:30:36.164564+00:00",
+      "status": "retry_pending"
     },
     "4VcylnH0OT8": {
       "attempts": 0,
@@ -319,10 +321,12 @@
       "status": "discovered"
     },
     "LsHrJZL5kVg": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
-      "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-08-05T22:30:32.773685+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 27.247821342s.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-08-06T00:30:32.773696+00:00",
+      "status": "retry_pending"
     },
     "NC-n3W_7KbI": {
       "attempts": 0,
@@ -697,10 +701,12 @@
       "status": "discovered"
     },
     "zoj708D0wXc": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
-      "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-08-05T22:30:29.300224+00:00",
+      "last_error": "sequence item 2: expected str instance, dict found",
+      "next_retry_at": "2026-08-06T00:30:29.300236+00:00",
+      "status": "retry_pending"
     }
   }
 }
