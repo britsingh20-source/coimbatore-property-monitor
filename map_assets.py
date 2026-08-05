@@ -1,5 +1,6 @@
 import json
 import os
+import re
 from pathlib import Path
 
 import requests
@@ -13,37 +14,75 @@ USER_AGENT = os.environ.get(
 )
 
 
+def location_label(job: dict) -> str:
+    """Return the specific locality that should appear in maps and VFX labels."""
+    raw = str(job.get("property_location") or "Coimbatore").strip()
+    parts = [part.strip() for part in raw.split(",") if part.strip()]
+    priority = ("colony", "nagar", "layout", "pattanam", "saravanampatti", "thudiyalur")
+    chosen = next((part for marker in priority for part in parts if marker in part.lower()), parts[0])
+    from_match = re.search(r"\bfrom\s+(.+)$", chosen, flags=re.IGNORECASE)
+    if from_match:
+        chosen = from_match.group(1)
+    chosen = re.sub(r"^(?:near|close to)\s+", "", chosen, flags=re.IGNORECASE)
+    chosen = re.sub(r"^\d+(?:\.\d+)?\s*(?:km|kms|kilometres?)\s+", "", chosen, flags=re.IGNORECASE)
+    return chosen.strip(" ,-") or "Coimbatore"
+
+
+def geocode_candidates(job: dict) -> list[str]:
+    """Try the most specific locality first instead of one brittle long query."""
+    raw = str(job.get("property_location") or "Coimbatore").strip()
+    label = location_label(job)
+    parts = [part.strip() for part in raw.split(",") if part.strip()]
+    candidates = [
+        f"{label}, Coimbatore, Tamil Nadu, India",
+        f"{', '.join(parts[:2])}, Coimbatore, Tamil Nadu, India",
+        f"{raw}, Tamil Nadu, India" if "coimbatore" in raw.lower() else f"{raw}, Coimbatore, Tamil Nadu, India",
+        "Coimbatore, Tamil Nadu, India",
+    ]
+    unique = []
+    for query in candidates:
+        query = re.sub(r"(?:,\s*Coimbatore){2,}", ", Coimbatore", query, flags=re.IGNORECASE)
+        if query.lower() not in {item.lower() for item in unique}:
+            unique.append(query)
+    return unique
+
+
 def geocode_query(job: dict) -> str:
-    location = str(job.get("property_location") or "Coimbatore").strip()
-    parts = [location]
-    if "coimbatore" not in location.lower():
-        parts.append("Coimbatore")
-    parts.extend(["Tamil Nadu", "India"])
-    return ", ".join(parts)
+    return geocode_candidates(job)[0]
 
 
 def geocode(job: dict) -> dict:
     video_id = job["video_id"]
+    raw_location = str(job.get("property_location") or "Coimbatore").strip()
     cache = Path("data/geocoding") / f"{video_id}.json"
     if cache.exists():
-        return json.loads(cache.read_text(encoding="utf-8"))
-    response = requests.get(
-        NOMINATIM,
-        params={"q": geocode_query(job), "format": "jsonv2", "limit": 1},
-        headers={"User-Agent": USER_AGENT},
-        timeout=30,
-    )
-    response.raise_for_status()
-    results = response.json()
-    if not results:
-        raise RuntimeError(f"Location was not found: {geocode_query(job)}")
-    result = {
-        "lat": float(results[0]["lat"]),
-        "lon": float(results[0]["lon"]),
-        "display_name": results[0].get("display_name", geocode_query(job)),
-        "query": geocode_query(job),
-        "provider": "OpenStreetMap contributors / Nominatim",
-    }
+        cached = json.loads(cache.read_text(encoding="utf-8"))
+        if cached.get("source_location") == raw_location:
+            return cached
+
+    result = None
+    for query in geocode_candidates(job):
+        response = requests.get(
+            NOMINATIM,
+            params={"q": query, "format": "jsonv2", "limit": 1},
+            headers={"User-Agent": USER_AGENT},
+            timeout=30,
+        )
+        response.raise_for_status()
+        results = response.json()
+        if results:
+            result = {
+                "lat": float(results[0]["lat"]),
+                "lon": float(results[0]["lon"]),
+                "display_name": results[0].get("display_name", query),
+                "query": query,
+                "source_location": raw_location,
+                "location_label": location_label(job),
+                "provider": "OpenStreetMap contributors / Nominatim",
+            }
+            break
+    if result is None:
+        raise RuntimeError(f"Location was not found: {geocode_candidates(job)}")
     cache.parent.mkdir(parents=True, exist_ok=True)
     cache.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     return result
@@ -60,14 +99,16 @@ def _placeholder(path: Path, title: str, subtitle: str) -> None:
     draw.rounded_rectangle((90, 950, 990, 1190), radius=40, fill="#F5F0E6")
     draw.text((140, 1000), title[:42], fill="#071A2E", font=font)
     draw.text((140, 1080), subtitle[:65], fill="#526477", font=small)
-    draw.text((140, 1150), "Map unavailable – verify location", fill="#9C6C16", font=small)
+    draw.text((140, 1150), "Map unavailable - verify location", fill="#9C6C16", font=small)
     image.save(path, quality=92)
 
 
 def render_map_sequence(job: dict) -> list[Path]:
-    """Create a three-step OSM zoom using only a handful of cached tile requests."""
+    """Create a three-step OSM zoom centered on this job's specific locality."""
     output = Path("assets/maps") / job["video_id"]
     output.mkdir(parents=True, exist_ok=True)
+    for stale in output.glob("map-*.jpg"):
+        stale.unlink()
     try:
         point = geocode(job)
         from staticmap import CircleMarker, StaticMap
@@ -91,7 +132,8 @@ def render_map_sequence(job: dict) -> list[Path]:
     except Exception as error:
         print(f"Map rendering fallback: {error}")
         paths = []
-        for index, label in enumerate(("Tamil Nadu", "Coimbatore", job.get("property_location", "Property")), start=1):
+        labels = ("Tamil Nadu", "Coimbatore", location_label(job))
+        for index, label in enumerate(labels, start=1):
             path = output / f"map-{index}.jpg"
             _placeholder(path, str(label), "OpenStreetMap location sequence")
             paths.append(path)
