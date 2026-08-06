@@ -2,6 +2,7 @@ import html
 import json
 import math
 import os
+import random
 import re
 import shutil
 import textwrap
@@ -14,7 +15,21 @@ from PIL import Image, ImageDraw, ImageFont
 COMMONS_API = "https://commons.wikimedia.org/w/api.php"
 PEXELS_PHOTO_API = "https://api.pexels.com/v1/search"
 PEXELS_VIDEO_API = "https://api.pexels.com/videos/search"
+PIXABAY_PHOTO_API = "https://pixabay.com/api/"
+PIXABAY_VIDEO_API = "https://pixabay.com/api/videos/"
 USER_AGENT = "CoimbatorePropertyMonitor/1.0 (property media attribution bot)"
+
+# Local cache of previously-approved clips, organized by scene category.
+# Checked before any API call so the pipeline converges toward a large
+# pre-vetted library over time instead of re-searching every run.
+LIBRARY_ROOT = Path("assets/library")
+SCENE_LIBRARY_CATEGORY = {
+    "location": "drone_views",
+    "road": "roads",
+    "land": "plots",
+    "exterior": "exteriors",
+    "interior": "interiors",
+}
 BLOCKED_VISUAL_TERMS = {
     "temple", "church", "mosque", "masjid", "shrine", "cathedral",
     "religious", "religion", "worship", "prayer", "deity", "god",
@@ -88,6 +103,60 @@ def search_pexels(query: str, limit: int = 8) -> list[dict]:
     } for photo in response.json().get("photos", [])] if _allowed_visual(item)]
 
 
+def search_pixabay(query: str, limit: int = 8) -> list[dict]:
+    """Primary free image source — generally stronger architecture/building hit rate than Pexels."""
+    api_key = os.environ.get("PIXABAY_API_KEY")
+    if not api_key:
+        return []
+    response = requests.get(PIXABAY_PHOTO_API, params={
+        "key": api_key, "q": query, "image_type": "photo",
+        "orientation": "vertical", "per_page": max(3, min(limit, 200)),
+        "safesearch": "true",
+    }, timeout=30)
+    response.raise_for_status()
+    items = [{
+        "download_url": hit.get("largeImageURL") or hit.get("webformatURL"),
+        "source_url": hit.get("pageURL", "https://pixabay.com/"),
+        "alt": hit.get("tags", ""),
+        "creator": hit.get("user", "Pixabay contributor"),
+        "license": "Pixabay License",
+        "provider": "Pixabay",
+        "media_kind": "image",
+        "exact_location_candidate": False,
+    } for hit in response.json().get("hits", [])]
+    return [item for item in items if item["download_url"] and _allowed_visual(item)]
+
+
+def search_pixabay_videos(query: str, limit: int = 6) -> list[dict]:
+    """Primary free video source. Pixabay has little true portrait footage, so we pick
+    the closest available resolution rather than filtering strictly by orientation."""
+    api_key = os.environ.get("PIXABAY_API_KEY")
+    if not api_key:
+        return []
+    response = requests.get(PIXABAY_VIDEO_API, params={
+        "key": api_key, "q": query, "per_page": max(3, min(limit, 200)),
+        "safesearch": "true",
+    }, timeout=30)
+    response.raise_for_status()
+    clips = []
+    for hit in response.json().get("hits", []):
+        videos = hit.get("videos", {})
+        chosen = videos.get("large") or videos.get("medium") or videos.get("small")
+        if not chosen or not chosen.get("url"):
+            continue
+        clips.append({
+            "download_url": chosen["url"],
+            "source_url": hit.get("pageURL", "https://pixabay.com/videos/"),
+            "creator": hit.get("user", "Pixabay contributor"),
+            "license": "Pixabay License",
+            "provider": "Pixabay",
+            "media_kind": "video",
+            "exact_location_candidate": False,
+            "duration_seconds": hit.get("duration"),
+        })
+    return [item for item in clips if _allowed_visual(item)]
+
+
 def search_pexels_videos(query: str, limit: int = 6) -> list[dict]:
     """Return reusable portrait property clips from the free Pexels video API."""
     api_key = os.environ.get("PEXELS_API_KEY")
@@ -138,6 +207,67 @@ def download_media(items: list[dict], destination: Path, limit: int = 6) -> list
         except requests.RequestException as error:
             print(f"Media download skipped: {error}")
     return saved
+
+
+def _library_dir(scene: str) -> Path:
+    return LIBRARY_ROOT / SCENE_LIBRARY_CATEGORY.get(scene, scene)
+
+
+def get_library_clips(scene: str, limit: int) -> list[dict]:
+    """Pull already-approved clips for this scene from the local cache, if enough exist."""
+    directory = _library_dir(scene)
+    if not directory.exists():
+        return []
+    files = [p for pattern in ("*.mp4", "*.mov", "*.webm", "*.m4v") for p in directory.glob(pattern)]
+    if not files:
+        return []
+    random.shuffle(files)
+    result = []
+    for path in files[:limit]:
+        meta_path = path.with_suffix(path.suffix + ".json")
+        meta = {}
+        if meta_path.exists():
+            try:
+                meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            except (json.JSONDecodeError, OSError):
+                meta = {}
+        result.append({
+            "local_file": str(path),
+            "provider": meta.get("provider", "Library cache"),
+            "license": meta.get("license", "See attribution"),
+            "media_kind": "video",
+            "actual_property": False,
+            "scene": scene,
+            "source_url": meta.get("source_url", ""),
+            "from_library": True,
+        })
+    return result
+
+
+def add_to_library(scene: str, items: list[dict]) -> None:
+    """Copy newly-downloaded, already-filtered clips into the cache for future reuse."""
+    if not items:
+        return
+    directory = _library_dir(scene)
+    directory.mkdir(parents=True, exist_ok=True)
+    for item in items:
+        src = Path(item.get("local_file", ""))
+        if not src.exists():
+            continue
+        dest = directory / src.name
+        try:
+            if not dest.exists():
+                shutil.copy2(src, dest)
+                meta = {
+                    "provider": item.get("provider", ""),
+                    "license": item.get("license", ""),
+                    "source_url": item.get("source_url", ""),
+                }
+                dest.with_suffix(dest.suffix + ".json").write_text(
+                    json.dumps(meta, ensure_ascii=False), encoding="utf-8"
+                )
+        except OSError as error:
+            print(f"Library cache save skipped for {src.name}: {error}")
 
 
 def _font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
@@ -218,6 +348,13 @@ def source_property_media(job: dict, minimum: int = 3) -> list[dict]:
     ]
     candidates = []
     seen_urls = set()
+
+    # Pixabay first — better hit rate for architecture/building imagery than Pexels.
+    for item in search_pixabay(f"modern Indian {property_type} real estate", limit=8):
+        if item["download_url"] not in seen_urls:
+            candidates.append(item)
+            seen_urls.add(item["download_url"])
+
     for query in queries:
         try:
             results = search_commons(query, limit=8)
@@ -228,9 +365,15 @@ def source_property_media(job: dict, minimum: int = 3) -> list[dict]:
             if _allowed_visual(item) and item["download_url"] not in seen_urls:
                 candidates.append(item)
                 seen_urls.add(item["download_url"])
-    candidates.extend(item for item in search_pexels(
-        f"modern Indian {property_type} real estate interior exterior", limit=8,
-    ) if _allowed_visual(item))
+
+    # Pexels as fallback if Pixabay + Commons didn't fill the pool.
+    if len(candidates) < 6:
+        for item in search_pexels(
+            f"modern Indian {property_type} real estate interior exterior", limit=8,
+        ):
+            if _allowed_visual(item) and item["download_url"] not in seen_urls:
+                candidates.append(item)
+                seen_urls.add(item["download_url"])
 
     saved = download_media(candidates, destination, limit=6)
     for item in saved:
@@ -319,22 +462,31 @@ def source_property_videos(job: dict, per_scene: int = 2) -> list[dict]:
     saved = []
     seen_sources = set()
     for scene, queries in _scene_video_queries(job).items():
+        # Check the local cache before hitting any API.
+        library_clips = get_library_clips(scene, per_scene)
+        if len(library_clips) >= per_scene:
+            saved.extend(library_clips)
+            continue
+        needed = per_scene - len(library_clips)
+
         candidates = []
         for query in queries:
-            for item in search_pexels_videos(query, limit=per_scene + 1):
+            # Pixabay primary, Pexels fallback per the free-source ranking.
+            for item in search_pixabay_videos(query, limit=needed + 1) or search_pexels_videos(query, limit=needed + 1):
                 identity = item.get("source_url") or item.get("download_url")
                 if identity in seen_sources or not _allowed_scene_visual(item, scene):
                     continue
                 candidates.append({**item, "scene": scene, "search_query": query})
                 seen_sources.add(identity)
-                if len(candidates) >= per_scene:
+                if len(candidates) >= needed:
                     break
-            if len(candidates) >= per_scene:
+            if len(candidates) >= needed:
                 break
-        scene_saved = download_media(candidates, destination / scene, limit=per_scene)
+        scene_saved = download_media(candidates, destination / scene, limit=needed)
         for item in scene_saved:
             item["actual_property"] = False
-        saved.extend(scene_saved)
+        add_to_library(scene, scene_saved)
+        saved.extend(library_clips + scene_saved)
 
     attribution_path = Path("data/media_attribution") / f"{video_id}.json"
     attribution_path.parent.mkdir(parents=True, exist_ok=True)
