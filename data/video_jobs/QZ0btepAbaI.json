@@ -1,0 +1,42 @@
+{
+  "video_id": "QZ0btepAbaI",
+  "source_url": "https://www.youtube.com/watch?v=QZ0btepAbaI",
+  "property_location": "Saravanampatti, Kovilpalayam, Vaiyampalayam, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent house",
+    "bhk": 3,
+    "land_area": "3.21 Cents (30'0\" × 40'0\")",
+    "built_up_area": "2300 sqft",
+    "price": "87 Lakhs",
+    "facing": "North West Corner Site, North Facing Main Door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking (30'0\" x 10'0\")",
+    "approval": "DTCP approved Site"
+  },
+  "verified_facts": "3BHK Independent house, North West Corner site with North facing main door, Land area is 3.21 Cents (30'0\" x 40'0\"), Built-up area is 2300 sqft, Price is 87 Lakhs (Aadi month offer reduced from 1 Crore), DTCP approved site with individual borewell, Ground Floor: Car parking (30'x10'), Living hall (16'x16'), Pooja room (3'x5'), Kitchen & Dining (10'x16'), 1st bedroom (10'x17') with attached bathroom (7'x7'), Outer bathroom (3'x5'), First Floor: Living Hall (8'x16'), 2nd bedroom (10'x16') with attached bathroom (5'x10') & private balcony (8'x10'), 3rd bedroom (10'x16') with attached bathroom (5'x10') and open balcony",
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/QZ0btepAbaI/",
+  "optional_owned_audio": "assets/audio/QZ0btepAbaI.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-floor building with bright yellow textured accent sections, grey painted facade, gated entrance, red sloping access driveway ramp, covered parking bay, and open rooftop terrace with metal staircase access.. Neighbourhood: Emerging residential locality with unpaved road access, low-density modern housing, green open fields nearby, and scenic hill views in the distance.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-floor building with bright yellow textured accent sections, grey painted facade, gated entrance, red sloping access driveway ramp, covered parking bay, and open rooftop terrace with metal staircase access.. Neighbourhood: Emerging residential locality with unpaved road access, low-density modern housing, green open fields nearby, and scenic hill views in the distance.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-floor building with bright yellow textured accent sections, grey painted facade, gated entrance, red sloping access driveway ramp, covered parking bay, and open rooftop terrace with metal staircase access.. Neighbourhood: Emerging residential locality with unpaved road access, low-density modern housing, green open fields nearby, and scenic hill views in the distance.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-floor building with bright yellow textured accent sections, grey painted facade, gated entrance, red sloping access driveway ramp, covered parking bay, and open rooftop terrace with metal staircase access.. Neighbourhood: Emerging residential locality with unpaved road access, low-density modern housing, green open fields nearby, and scenic hill views in the distance.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
