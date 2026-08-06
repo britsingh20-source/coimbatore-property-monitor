@@ -19,7 +19,7 @@ export type PropertyVideoProps = {
   sceneOrder: string[];
   sceneDurations: Record<string, number>;
   templateVariant: 'plot' | 'home';
-  styleVariant: StyleVariant;
+  styleVariant?: StyleVariant;
   durationInFrames: number;
   isActualProperty: boolean;
   disclosure: string;
