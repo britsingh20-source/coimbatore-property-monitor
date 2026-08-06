@@ -16,39 +16,52 @@ const replacements = [
   ],
   [
     "    location: props.templateVariant === 'plot'\n      ? <LocationJourneyScene mapSources={mapVisuals} houseSource={sourceFor('exterior') || sourceFor('land')} title={props.title} location={props.location} targetLocation={props.locationLabel}/>\n      : <HookScene source={sourceFor('exterior')} title={props.title} location={props.location}/>,",
-    "    location: style === 'fast-cut' && mixedPool.length\n      ? <GalleryScene media={mixedPool} location={props.location}/>\n      : style === 'premium' && mixedPool.length\n        ? <WalkthroughScene media={mixedPool} location={props.location}/>\n        : <HookScene source={exteriorPool[0] || mixedPool[0]} title={props.title} location={props.location}/>,",
+    "    location: <HookScene source={exteriorPool[0] || mixedPool[0] || interiorPool[0] || roadPool[0]} title={props.title} location={props.location}/>,",
   ],
   [
     "    land: <LaserPlotScene source={sourceFor('land')} fact={facts[0] || {label:'LAND',value:'VERIFY ON SITE'}}/>,",
-    "    land: style === 'fast-cut' || style === 'price-first'\n      ? <FactBurstScene source={mixedPool[1] || mixedPool[0]} facts={facts}/>\n      : <LaserPlotScene source={sourceFor('land') || exteriorPool[1] || mixedPool[0]} fact={facts[0] || {label:'LAND',value:'VERIFY ON SITE'}}/>,",
+    "    land: <LaserPlotScene source={sourceFor('land') || exteriorPool[1] || mixedPool[0]} fact={facts[0] || {label:'LAND',value:'VERIFY ON SITE'}}/>,",
   ],
   [
     "    builtUp: <BuiltUpScanScene source={sourceFor('exterior')} fact={facts[1] || {label:'BUILT-UP',value:'VERIFY ON SITE'}}/>,",
-    "    builtUp: style === 'premium' && interiorPool.length\n      ? <WalkthroughScene media={interiorPool} location={props.location}/>\n      : style === 'fast-cut' && mixedPool.length\n        ? <GalleryScene media={mixedPool} location={props.location}/>\n        : <BuiltUpScanScene source={interiorPool[0] || exteriorPool[0] || mixedPool[0]} fact={facts[1] || {label:'BUILT-UP',value:'VERIFY ON SITE'}}/>,",
+    "    builtUp: <BuiltUpScanScene source={interiorPool[0] || exteriorPool[0] || mixedPool[0]} fact={facts[1] || {label:'BUILT-UP',value:'VERIFY ON SITE'}}/>,",
   ],
   [
     "    price: <PriceScene source={sourceFor('exterior',1)} price={props.price}/>,",
-    "    price: style === 'fast-cut'\n      ? <FactBurstScene source={mixedPool[2] || mixedPool[0]} facts={facts}/>\n      : <PriceScene source={exteriorPool[1] || exteriorPool[0] || mixedPool[0]} price={props.price}/>,",
+    "    price: <PriceScene source={exteriorPool[1] || exteriorPool[0] || mixedPool[0]} price={props.price}/>,",
   ],
   [
     "    facing: <FacingScene source={sourceFor('exterior') || sourceFor('land',1)} fact={facts[2] || {label:'FACING',value:'VERIFY ON SITE'}}/>,",
-    "    facing: style === 'premium' && exteriorPool.length\n      ? <GalleryScene media={exteriorPool} location={props.location}/>\n      : <FacingScene source={exteriorPool[2] || exteriorPool[0] || mixedPool[0]} fact={facts[2] || {label:'FACING',value:'VERIFY ON SITE'}}/>,",
+    "    facing: <FacingScene source={exteriorPool[2] || exteriorPool[0] || mixedPool[0]} fact={facts[2] || {label:'FACING',value:'VERIFY ON SITE'}}/>,",
   ],
   [
     "    road: <RoadMeasureScene source={sourceFor('road')} fact={facts[3] || {label:'ROAD',value:'VERIFY ON SITE'}}/>,",
-    "    road: style === 'location-first' && roadPool.length\n      ? <GalleryScene media={roadPool} location={props.location}/>\n      : <RoadMeasureScene source={roadPool[0] || mixedPool[0]} fact={facts[3] || {label:'ROAD',value:'VERIFY ON SITE'}}/>,",
+    "    road: <RoadMeasureScene source={roadPool[0] || mixedPool[0]} fact={facts[3] || {label:'ROAD',value:'VERIFY ON SITE'}}/>,",
   ],
   [
     "    approval: <ApprovalScene fact={facts[5] || {label:'APPROVAL',value:'VERIFY DOCUMENTS'}}/>,",
-    "    approval: style === 'cinematic' || style === 'premium'\n      ? (mixedPool.length ? <GalleryScene media={mixedPool} location={props.location}/> : <ApprovalScene fact={facts[5] || {label:'APPROVAL',value:'VERIFY DOCUMENTS'}}/>)\n      : <TrustScene facts={facts} price={props.price}/>,",
+    "    approval: <ApprovalScene fact={facts[5] || {label:'APPROVAL',value:'VERIFY DOCUMENTS'}}/>,",
   ],
   [
     "    verify: <VerifyScene price={props.price} location={props.location}/>,",
-    "    verify: style === 'fast-cut'\n      ? <FactBurstScene source={mixedPool[3] || mixedPool[0]} facts={facts}/>\n      : style === 'premium' && mixedPool.length\n        ? <GalleryScene media={mixedPool} location={props.location}/>\n        : <TrustScene facts={facts} price={props.price}/>,",
+    "    verify: <VerifyScene price={props.price} location={props.location}/>,",
+  ],
+  [
+    "export const PropertyReel: React.FC<PropertyVideoProps> = (props) => {",
+    "const SyncedCaption: React.FC<{text:string}> = ({text}) => (\n  <div style={{position:'absolute',zIndex:80,left:58,right:58,bottom:125,padding:'18px 24px',borderRadius:22,background:'rgba(2,11,20,.88)',border:'1px solid rgba(255,255,255,.22)',boxShadow:'0 15px 45px rgba(0,0,0,.45)',fontFamily:typeface,fontSize:30,lineHeight:1.35,fontWeight:900,textAlign:'center',color:cream,textShadow:'0 3px 12px rgba(0,0,0,.7)'}}>{text}</div>\n);\n\nexport const PropertyReel: React.FC<PropertyVideoProps> = (props) => {",
+  ],
+  [
+    "      {scheduled.map(({scene,from,duration}) => <Sequence key={scene} from={from} durationInFrames={duration}>{sceneNodes[scene]}</Sequence>)}",
+    "      {scheduled.map(({scene,from,duration}) => <Sequence key={scene} from={from + 3} durationInFrames={Math.max(1,duration - 3)}>{sceneNodes[scene]}</Sequence>)}",
+  ],
+  [
+    "      {props.voiceSegments?.map((segment) => <Sequence key={`voice-${segment.scene}`} from={starts[segment.scene] || 0} durationInFrames={props.sceneDurations[segment.scene] || 120}><Audio src={staticFile(segment.src)} volume={1}/></Sequence>)}",
+    "      {props.voiceSegments?.map((segment) => { const start = starts[segment.scene] || 0; const speechDuration = Math.max(1, segment.durationInFrames || ((props.sceneDurations[segment.scene] || 120) - 45)); return <React.Fragment key={`voice-${segment.scene}`}><Sequence from={start} durationInFrames={speechDuration}><Audio src={staticFile(segment.src)} volume={1}/></Sequence>{segment.text && <Sequence from={start + 3} durationInFrames={Math.max(1,speechDuration - 3)}><SyncedCaption text={segment.text}/></Sequence>}</React.Fragment>; })}",
   ],
 ];
 
 for (const [before, after] of replacements) {
+  if (before === after) continue;
   if (!source.includes(before)) {
     if (source.includes(after)) continue;
     throw new Error(`Expected PropertyReel snippet not found: ${before.slice(0, 100)}`);
@@ -57,4 +70,4 @@ for (const [before, after] of replacements) {
 }
 fs.writeFileSync(target, source);
 
-console.log('Applied continuous R2 B-roll and five property video styles; original audio pacing preserved');
+console.log('Applied looping B-roll, exact factual scenes, synced captions, and 1.5-second dialogue gaps');
