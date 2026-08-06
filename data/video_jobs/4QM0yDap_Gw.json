@@ -1,0 +1,42 @@
+{
+  "video_id": "4QM0yDap_Gw",
+  "source_url": "https://www.youtube.com/watch?v=4QM0yDap_Gw",
+  "property_location": "Vadavalli, Thondamuthur Road, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent House / Duplex Villa",
+    "bhk": 3,
+    "land_area": "4.70 Cents (2,000 sq.ft / 40x50 ft)",
+    "built_up_area": "3,300 sq.ft",
+    "price": "₹2,00,00,000 (2 Crore, Negotiable)",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered parking for 2 cars (20' x 17')",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "North-facing 3 BHK duplex house on a 4.70 cent (40x50 ft) site with 3,300 sq.ft built-up area., Located in Vadavalli, Thondamuthur Road, Coimbatore within Corporation Limits., Features 3 triple master bedrooms measuring 16x16 ft each with attached bathrooms., Ground floor contains a 20x17 ft car parking, 17x16 ft living hall, 5x5 ft pooja room, 16x8 ft dining area, 11x10 ft modular kitchen with a 5x5 ft store room, and an outside bathroom., First floor includes a 17x16 ft family living area, 20x17 ft balcony, and two 16x16 ft bedrooms with attached bathrooms., Terrace includes a covered 16x6 ft laundry room., Total house price including land is ₹2 Crore (negotiable) with DTCP approval.",
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/4QM0yDap_Gw/",
+  "optional_owned_audio": "assets/audio/4QM0yDap_Gw.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-level exterior design with beige, olive, and brown accent paint, geometric projection work, decorative dual gates on a red ramp, patterned parking floor tiles, and a terrace with scenic mountain backdrop views.. Neighbourhood: Quiet residential neighborhood located off Thondamuthur Road in Vadavalli, Coimbatore, featuring low-rise residential homes, paved streets, overhead electricity lines, and surrounding greenery with hill views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-level exterior design with beige, olive, and brown accent paint, geometric projection work, decorative dual gates on a red ramp, patterned parking floor tiles, and a terrace with scenic mountain backdrop views.. Neighbourhood: Quiet residential neighborhood located off Thondamuthur Road in Vadavalli, Coimbatore, featuring low-rise residential homes, paved streets, overhead electricity lines, and surrounding greenery with hill views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-level exterior design with beige, olive, and brown accent paint, geometric projection work, decorative dual gates on a red ramp, patterned parking floor tiles, and a terrace with scenic mountain backdrop views.. Neighbourhood: Quiet residential neighborhood located off Thondamuthur Road in Vadavalli, Coimbatore, featuring low-rise residential homes, paved streets, overhead electricity lines, and surrounding greenery with hill views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-level exterior design with beige, olive, and brown accent paint, geometric projection work, decorative dual gates on a red ramp, patterned parking floor tiles, and a terrace with scenic mountain backdrop views.. Neighbourhood: Quiet residential neighborhood located off Thondamuthur Road in Vadavalli, Coimbatore, featuring low-rise residential homes, paved streets, overhead electricity lines, and surrounding greenery with hill views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
