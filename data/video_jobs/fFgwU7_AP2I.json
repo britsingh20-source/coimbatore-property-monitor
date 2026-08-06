@@ -1,0 +1,42 @@
+{
+  "video_id": "fFgwU7_AP2I",
+  "source_url": "https://www.youtube.com/watch?v=fFgwU7_AP2I",
+  "property_location": "Karamadai, Coimbatore",
+  "property": {
+    "property_type": "Duplex Independent House",
+    "bhk": "3BHK",
+    "land_area": "3.20 cent (1380 sq ft)",
+    "built_up_area": "2000 sq ft",
+    "price": "Rs. 83 Lakhs (negotiable)",
+    "facing": "East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Car Parking (17' x 16')",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "East-facing 3BHK duplex independent house for sale in Karamadai, Coimbatore., Land size is 3.20 cents (30x46 feet / 1380 sq ft) with a total built-up area of 2000 sq ft., Asking price is 83 Lakhs (negotiable)., Ground Floor features a 17' x 16' car parking, 16' x 16' living hall, 26' x 10' kitchen and dining area, 16' x 10' bedroom with attached bathroom, and an outside bathroom (8.5' x 5')., First Floor features a 16' x 16' lounge, two 16' x 10' bedrooms with attached bathrooms, and a front open balcony., Equipped with borewell, water sump, DTCP approval, and bank loan facility.",
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/fFgwU7_AP2I/",
+  "optional_owned_audio": "assets/audio/fFgwU7_AP2I.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern duplex house elevation in white, grey, and brown accents with a gated driveway, patterned tile porch, glass railing balcony, and metal stair access to the terrace.. Neighbourhood: Quiet residential street with nearby house construction, coconut trees, open farmland, and scenic mountain view from the open terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern duplex house elevation in white, grey, and brown accents with a gated driveway, patterned tile porch, glass railing balcony, and metal stair access to the terrace.. Neighbourhood: Quiet residential street with nearby house construction, coconut trees, open farmland, and scenic mountain view from the open terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern duplex house elevation in white, grey, and brown accents with a gated driveway, patterned tile porch, glass railing balcony, and metal stair access to the terrace.. Neighbourhood: Quiet residential street with nearby house construction, coconut trees, open farmland, and scenic mountain view from the open terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern duplex house elevation in white, grey, and brown accents with a gated driveway, patterned tile porch, glass railing balcony, and metal stair access to the terrace.. Neighbourhood: Quiet residential street with nearby house construction, coconut trees, open farmland, and scenic mountain view from the open terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
