@@ -255,12 +255,19 @@ def _library_dir(scene: str) -> Path:
     return LIBRARY_ROOT / SCENE_LIBRARY_CATEGORY.get(scene, scene)
 
 
-def get_library_clips(scene: str, limit: int) -> list[dict]:
-    """Pull already-approved clips for this scene from the local cache, if enough exist."""
+def get_library_media(scene: str, limit: int, kind: str = "video") -> list[dict]:
+    """Pull already-approved own-stock media for this scene from the local library, if any exist."""
     directory = _library_dir(scene)
     if not directory.exists():
         return []
-    files = [p for pattern in ("*.mp4", "*.mov", "*.webm", "*.m4v") for p in directory.glob(pattern)]
+    patterns = {
+        "video": ("*.mp4", "*.mov", "*.webm", "*.m4v"),
+        "image": ("*.jpg", "*.jpeg", "*.png", "*.webp"),
+    }[kind]
+    files = [
+        p for pattern in patterns for p in directory.glob(pattern)
+        if _allowed_scene_visual({"title": p.stem}, scene)
+    ]
     if not files:
         return []
     random.shuffle(files)
@@ -275,15 +282,23 @@ def get_library_clips(scene: str, limit: int) -> list[dict]:
                 meta = {}
         result.append({
             "local_file": str(path),
-            "provider": meta.get("provider", "Library cache"),
-            "license": meta.get("license", "See attribution"),
-            "media_kind": "video",
+            "provider": meta.get("provider", "Own stock library"),
+            "license": meta.get("license", "Owner supplied stock"),
+            "media_kind": kind,
             "actual_property": False,
             "scene": scene,
             "source_url": meta.get("source_url", ""),
             "from_library": True,
         })
     return result
+
+
+def get_library_clips(scene: str, limit: int) -> list[dict]:
+    return get_library_media(scene, limit, kind="video")
+
+
+def get_library_photos(scene: str, limit: int) -> list[dict]:
+    return get_library_media(scene, limit, kind="image")
 
 
 def add_to_library(scene: str, items: list[dict]) -> None:
@@ -381,45 +396,72 @@ def source_property_media(job: dict, minimum: int = 3) -> list[dict]:
     location = job.get("property_location", "Coimbatore")
     prop = job.get("property") or {}
     property_type = prop.get("property_type", "property")
-    queries = [
-        f"{location} Coimbatore Tamil Nadu",
-        f"{location} roads buildings",
-        f"{property_type} layout Coimbatore Tamil Nadu",
-        "Coimbatore Tamil Nadu streets architecture",
-        "Coimbatore aerial city Tamil Nadu",
-    ]
-    candidates = []
-    seen_urls = set()
+    target_pool = 6
+    scenes = list(_scene_video_queries(job).keys())  # e.g. location, road, exterior/land, interior
 
-    # Pixabay first — better hit rate for architecture/building imagery than Pexels.
-    for item in search_pixabay(f"modern Indian {property_type} real estate", limit=8):
-        if item["download_url"] not in seen_urls:
-            candidates.append(item)
-            seen_urls.add(item["download_url"])
+    saved = []
+    seen_local = set()
 
-    for query in queries:
-        try:
-            results = search_commons(query, limit=8)
-        except requests.RequestException as error:
-            print(f"Commons search skipped for {query!r}: {error}")
-            continue
-        for item in results:
-            if _allowed_visual(item) and item["download_url"] not in seen_urls:
-                candidates.append(item)
+    # 1. Our own curated stock library first — instant, always on-topic, and doesn't
+    #    depend on Pixabay's speed or noisy/irrelevant search hits. See assets/library/README.md.
+    for scene in scenes:
+        for item in get_library_photos(scene, limit=3):
+            if item["local_file"] in seen_local or len(saved) >= target_pool:
+                continue
+            saved.append({**item, "actual_property": False})
+            seen_local.add(item["local_file"])
+    if saved:
+        print(f"Used {len(saved)} own-stock library image(s) for {video_id}")
+
+    if len(saved) < target_pool:
+        candidates = []
+        seen_urls = set()
+
+        # Pixabay first — better hit rate for architecture/building imagery than Pexels.
+        for item in search_pixabay(f"modern Indian {property_type} real estate", limit=8):
+            if item["download_url"] not in seen_urls:
+                candidates.append({**item, "scene": "exterior"})
                 seen_urls.add(item["download_url"])
 
-    # Pexels as fallback if Pixabay + Commons didn't fill the pool.
-    if len(candidates) < 6:
-        for item in search_pexels(
-            f"modern Indian {property_type} real estate interior exterior", limit=8,
-        ):
-            if _allowed_visual(item) and item["download_url"] not in seen_urls:
-                candidates.append(item)
-                seen_urls.add(item["download_url"])
+        scene_queries = [
+            (f"{location} Coimbatore Tamil Nadu", "location"),
+            (f"{location} roads buildings", "road"),
+            (f"{property_type} layout Coimbatore Tamil Nadu", "exterior"),
+            ("Coimbatore Tamil Nadu streets architecture", "road"),
+            ("Coimbatore aerial city Tamil Nadu", "location"),
+        ]
+        for query, scene in scene_queries:
+            try:
+                results = search_commons(query, limit=8)
+            except requests.RequestException as error:
+                print(f"Commons search skipped for {query!r}: {error}")
+                continue
+            for item in results:
+                if _allowed_visual(item) and item["download_url"] not in seen_urls:
+                    candidates.append({**item, "scene": scene})
+                    seen_urls.add(item["download_url"])
 
-    saved = download_media(candidates, destination, limit=6)
-    for item in saved:
-        item["actual_property"] = False
+        # Pexels as fallback if Pixabay + Commons didn't fill the pool.
+        if len(candidates) < 6:
+            for item in search_pexels(
+                f"modern Indian {property_type} real estate interior exterior", limit=8,
+            ):
+                if _allowed_visual(item) and item["download_url"] not in seen_urls:
+                    candidates.append({**item, "scene": "interior"})
+                    seen_urls.add(item["download_url"])
+
+        downloaded = download_media(candidates, destination, limit=target_pool - len(saved))
+        for item in downloaded:
+            item["actual_property"] = False
+        # Cache freshly-approved downloads into the stock library, grouped by scene, so
+        # future runs across ANY property lean on our own library instead of Pixabay.
+        by_scene: dict[str, list[dict]] = {}
+        for item in downloaded:
+            by_scene.setdefault(item.get("scene", "exterior"), []).append(item)
+        for scene, items in by_scene.items():
+            add_to_library(scene, items)
+        saved.extend(downloaded)
+
     if len(saved) < minimum:
         fallback_count = minimum - len(saved)
         saved.extend(generate_fact_graphics(job, destination, fallback_count, start=len(saved) + 1))
