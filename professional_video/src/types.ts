@@ -1,5 +1,6 @@
 export type Fact = {label: string; value: string};
 export type VoiceSegment = {scene: string; src: string};
+export type StyleVariant = 'cinematic' | 'fast-cut' | 'premium' | 'location-first' | 'price-first';
 
 export type PropertyVideoProps = {
   videoId: string;
@@ -18,6 +19,7 @@ export type PropertyVideoProps = {
   sceneOrder: string[];
   sceneDurations: Record<string, number>;
   templateVariant: 'plot' | 'home';
+  styleVariant?: StyleVariant;
   durationInFrames: number;
   isActualProperty: boolean;
   disclosure: string;
