@@ -1,10 +1,8 @@
 import asyncio
-import hashlib
 import json
 import os
 import re
 import subprocess
-import tempfile
 from pathlib import Path
 
 
@@ -18,24 +16,24 @@ def _spoken(value) -> str:
 
 def _tamilize(value: str) -> str:
     replacements = [
-        (r"\bNear\b", "அருகில்"), (r"\bThudiyalur\b", "துடியலூர்"),
+        (r"\bNear\b", "பக்கத்துல"), (r"\bThudiyalur\b", "துடியலூர்"),
         (r"\bNGGO\b", "என் ஜி ஜி ஓ"), (r"\bColony\b", "காலனி"),
-        (r"\bMettupalayam Road\b", "மேட்டுப்பாளையம் சாலை"),
+        (r"\bMettupalayam Road\b", "மேட்டுப்பாளையம் ரோடு"),
         (r"\bPattanam\b", "பட்டணம்"), (r"\bCoimbatore\b", "கோயம்புத்தூர்"),
         (r"\bTamil Nadu\b", ""), (r"\bcents?\b", "சென்ட்"),
         (r"\bsq\.?\s*ft\.?\b|\bsqft\b", "சதுர அடி"), (r"\bft\b", "அடி"),
         (r"\bNorth\b", "வடக்கு"), (r"\bSouth\b", "தெற்கு"),
         (r"\bEast\b", "கிழக்கு"), (r"\bWest\b", "மேற்கு"),
-        (r"\bPlot\b", "வீட்டு மனை"), (r"\bHouse\b", "தனி வீடு"),
+        (r"\bPlot\b", "சைட்"), (r"\bHouse\b", "தனி வீடு"),
         (r"\bVilla\b", "வில்லா"), (r"\bDTCP\b", "டி டி சி பி"),
-        (r"\bwide tar roads?\b", "அகல தார் சாலைகள்"),
+        (r"\bwide tar roads?\b", "அகலமான தார் ரோடு"),
         (r"\bto\b", "முதல்"), (r"\band\b", "மற்றும்"),
     ]
     result = str(value)
     for pattern, replacement in replacements:
         result = re.sub(pattern, replacement, result, flags=re.IGNORECASE)
     result = re.sub(r"(\d+\s+சென்ட்)\s+முதல்\s+(\d+\s+சென்ட்)(?!\s+வரை)", r"\1 முதல் \2 வரை", result)
-    result = result.replace("அருகில் துடியலூர்", "துடியலூர் அருகே")
+    result = result.replace("பக்கத்துல துடியலூர்", "துடியலூர் பக்கத்துல")
     return re.sub(r"\s+,", ",", re.sub(r"\s+", " ", result)).strip(" ,")
 
 
@@ -46,25 +44,26 @@ def build_voice_segments(job: dict) -> list[dict]:
     property_type = _tamilize(_spoken(prop.get("property_type")) or "வீடு")
     bhk = _spoken(prop.get("bhk"))
     title = " ".join(value for value in (bhk, property_type) if value)
+
     segments = [{
         "scene": "location",
-        "text": f"கோயம்புத்தூரில், {location} ஏரியாவில் இருக்கும் இந்த {title} பற்றி பார்க்கலாம்.",
+        "text": f"கோயம்புத்தூர்ல {location} ஏரியாவுல இருக்கிற இந்த {title} பாருங்க, நல்ல லொக்கேஷன்ல இருக்கு.",
     }]
     fact_lines = [
-        ("land", "land_area", "லேண்ட் ஏரியா, {value}."),
-        ("builtUp", "built_up_area", "பில்ட் அப் ஏரியா, {value}."),
-        ("price", "price", "விலை, {value}."),
-        ("facing", "facing", "ஃபேசிங், {value}."),
-        ("road", "road_width", "ரோடு வசதி, {value}."),
-        ("approval", "approval", "அப்ரூவல், {value}."),
+        ("land", "land_area", "மொத்த லேண்ட் ஏரியா {value},"),
+        ("builtUp", "built_up_area", "பில்ட் அப் ஏரியா {value},"),
+        ("price", "price", "இந்த ப்ராப்பர்ட்டி விலை {value},"),
+        ("facing", "facing", "ஃபேசிங் {value},"),
+        ("road", "road_width", "முன்னாடி ரோடு வசதி {value},"),
+        ("approval", "approval", "அப்ரூவல் {value},"),
     ]
     for scene, key, sentence in fact_lines:
         value = _spoken(prop.get(key))
         if value:
             segments.append({"scene": scene, "text": sentence.format(value=_tamilize(value))})
     segments.extend([
-        {"scene": "verify", "text": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாமே சைட் விசிட்டில் கிளியராக செக் பண்ணிக்கலாம்."},
-        {"scene": "cta", "text": "மேலும் டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு, கோயம்புத்தூர் வீடு பில்டர்ஸை இப்பவே கால் பண்ணுங்க."},
+        {"scene": "verify", "text": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட் எல்லாத்தையும் சைட் விசிட்ட்ல நாம கிளியரா செக் பண்ணிக்கலாம்,"},
+        {"scene": "cta", "text": "டீட்டெயில்ஸ் வேணும்னா கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு இப்பவே கால் பண்ணுங்க."},
     ])
     return segments
 
@@ -77,7 +76,7 @@ async def _save_edge(text: str, output: Path) -> None:
     import edge_tts
 
     communicator = edge_tts.Communicate(
-        text, EDGE_VOICE, rate="+8%", pitch="-1Hz", volume="+35%"
+        text, EDGE_VOICE, rate="+14%", pitch="-2Hz", volume="+35%"
     )
     await communicator.save(str(output))
 
@@ -98,11 +97,11 @@ def _normalize(path: Path) -> None:
     normalized = path.with_name(f"{path.stem}-normalized.mp3")
     subprocess.run([
         "ffmpeg", "-y", "-loglevel", "error", "-i", str(path),
-        # -14 LUFS matches typical short-form/social video loudness (YouTube Shorts,
-        # Reels, TikTok) and reads noticeably louder than the previous -16 LUFS target,
-        # while -1dBTP true-peak still leaves safe headroom against clipping/distortion.
-        "-af", "loudnorm=I=-14:TP=-1:LRA=4", "-codec:a", "libmp3lame",
-        "-b:a", "192k", str(normalized),
+        "-af",
+        "silenceremove=start_periods=1:start_duration=0:start_threshold=-42dB:"
+        "stop_periods=1:stop_duration=0.05:stop_threshold=-42dB,"
+        "loudnorm=I=-14:TP=-1:LRA=4",
+        "-codec:a", "libmp3lame", "-b:a", "192k", str(normalized),
     ], check=True)
     normalized.replace(path)
 
