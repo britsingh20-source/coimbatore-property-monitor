@@ -31,13 +31,7 @@ def _copy(files: list[Path], destination: Path, prefix: str) -> list[str]:
 
 
 def _scene_video_files(source_root: Path) -> dict[str, list[Path]]:
-    """Collect scene-grouped clips from direct or nested folders.
-
-    API-downloaded stock is stored as assets/videos/<video-id>/<scene>/*.mp4,
-    while R2 own footage is downloaded to
-    assets/own_footage_cache/<property-type>/<scene>/*.mp4. Both layouts are
-    normalized here so Remotion receives the same sceneMedia structure.
-    """
+    """Collect scene-grouped clips from direct or nested folders."""
     grouped: dict[str, list[Path]] = {}
     if not source_root.exists():
         return grouped
@@ -154,15 +148,15 @@ def prepare(job_path: Path) -> Path:
         else []
     )
     minimum_frames = {
-        "location": 267,
-        "land": 123,
-        "builtUp": 137,
-        "price": 150,
-        "facing": 98,
-        "road": 155,
-        "approval": 127,
-        "verify": 150,
-        "cta": 145,
+        "location": 120,
+        "land": 90,
+        "builtUp": 90,
+        "price": 90,
+        "facing": 90,
+        "road": 90,
+        "approval": 90,
+        "verify": 120,
+        "cta": 120,
     }
     voice_segments = []
     scene_order = []
@@ -174,14 +168,19 @@ def prepare(job_path: Path) -> Path:
         target = destination / f"voice-{item['scene']}.mp3"
         shutil.copy2(source, target)
         scene = item["scene"]
-        duration = max(
-            minimum_frames.get(scene, 120),
-            int(float(item["duration_seconds"]) * 30) + 18,
-        )
+        speech_frames = max(1, int(round(float(item["duration_seconds"]) * 30)))
+        # Keep the matching scene/caption visible for the exact speech duration,
+        # followed by a consistent 1.5-second pause before the next sentence.
+        duration = speech_frames + 45
         scene_order.append(scene)
         scene_durations[scene] = duration
         voice_segments.append(
-            {"scene": scene, "src": f"render/{video_id}/{target.name}"}
+            {
+                "scene": scene,
+                "src": f"render/{video_id}/{target.name}",
+                "text": item.get("text", ""),
+                "durationInFrames": speech_frames,
+            }
         )
     if not scene_order:
         scene_order = [
@@ -221,6 +220,7 @@ def prepare(job_path: Path) -> Path:
         "sceneOrder": scene_order,
         "sceneDurations": scene_durations,
         "templateVariant": template_variant,
+        "styleVariant": job.get("style_variant"),
         "durationInFrames": duration_frames,
         "isActualProperty": bool(job.get("media_is_actual_property", False)),
         "disclosure": job.get(
