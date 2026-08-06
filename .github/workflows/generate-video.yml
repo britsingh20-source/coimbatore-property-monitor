@@ -22,6 +22,7 @@ on:
       - render_free_approved.py
       - media_sources.py
       - map_assets.py
+      - r2_storage.py
       - requirements.txt
       - tamil_voiceover.py
       - tests/test_select_render_jobs.py
@@ -97,6 +98,19 @@ jobs:
         if: steps.select.outputs.has_jobs == 'true'
         run: python sample_assets.py
 
+      - name: Restore stock library and owner footage from R2
+        if: steps.select.outputs.has_jobs == 'true'
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+        run: python -c "
+          import r2_storage
+          r2_storage.sync_library_down()
+          r2_storage.sync_own_footage_down()
+          "
+
       - name: Source licensed media, maps and Tamil male voice-over
         id: assets
         if: steps.select.outputs.has_jobs == 'true'
@@ -109,6 +123,15 @@ jobs:
           ASSET_FAILURES_FILE: outputs/asset-failure-ids.txt
         shell: bash
         run: python prepare_free_assets.py
+
+      - name: Persist grown stock library back to R2
+        if: always() && steps.select.outputs.has_jobs == 'true'
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+        run: python -c "import r2_storage; r2_storage.sync_library_up()"
 
       - name: Render each property independently
         id: render

@@ -14,6 +14,22 @@ image or clip.
 | `exteriors/`   | House/villa front elevation, gate, parking (scene: `exterior`) |
 | `interiors/`   | Living room, kitchen, bedroom walkthroughs (scene: `interior`) |
 
+## Two ways media ends up here
+
+1. **You add it manually** — commit files straight into these folders in git.
+   Best for a small, hand-picked set of your own real photos/clips.
+2. **R2-backed auto-cache** — every run pulls the current shared library down
+   from the `stock-cache/library` prefix in the R2 bucket (see
+   `r2_storage.py`) before touching Pixabay/Commons/Pexels, and pushes back
+   anything newly downloaded and approved after the run. This is how the
+   library grows on its own over time without bloating the git repo with
+   binary media. Run the **Seed Own-Stock Library** workflow any time you
+   want to top it up deliberately from a batch of representative property
+   types instead of waiting for it to grow run-by-run.
+
+Both sources merge locally before a run — whichever files are present in
+these folders (from git or pulled from R2) are what gets used.
+
 ## Adding files
 
 - **Photos**: `.jpg`, `.jpeg`, `.png`, or `.webp`.
