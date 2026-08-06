@@ -1,0 +1,42 @@
+{
+  "video_id": "JrplllgABI0",
+  "source_url": "https://www.youtube.com/watch?v=JrplllgABI0",
+  "property_location": "Teachers Colony, Mettupalayam Road, Karamadai, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": "3BHK",
+    "land_area": "5.5 Cents (35 ft x 67 ft)",
+    "built_up_area": "2000 sqft",
+    "price": "₹89 Lakhs (Negotiable)",
+    "facing": "South (Site), East (Main Door)",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Car Parking (47 ft x 13 ft)",
+    "approval": "DTCP approved"
+  },
+  "verified_facts": "Land area is 5.5 Cents (35 feet by 67 feet)., Build-up area is 2000 sqft., Property layout features 3 bedrooms with attached bathrooms, living hall, kitchen with dining area, external toilet, covered parking, and open terrace., Site is South-facing, main door is East-facing., Asking price is 89 Lakhs negotiable, with up to 75% bank loan support available., Property is DTCP approved.",
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/JrplllgABI0/",
+  "optional_owned_audio": "assets/audio/JrplllgABI0.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary residence with dual-tone grey and orange facade, textured green elevation section with leaf motifs, wide double gate, long covered driveway paved with black and white checkered tiles, and red-coated open terrace.. Neighbourhood: Developing residential neighborhood surrounded by individual houses, unpaved access road, and open land fields near Mettupalayam Road in Karamadai.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary residence with dual-tone grey and orange facade, textured green elevation section with leaf motifs, wide double gate, long covered driveway paved with black and white checkered tiles, and red-coated open terrace.. Neighbourhood: Developing residential neighborhood surrounded by individual houses, unpaved access road, and open land fields near Mettupalayam Road in Karamadai.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary residence with dual-tone grey and orange facade, textured green elevation section with leaf motifs, wide double gate, long covered driveway paved with black and white checkered tiles, and red-coated open terrace.. Neighbourhood: Developing residential neighborhood surrounded by individual houses, unpaved access road, and open land fields near Mettupalayam Road in Karamadai.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary residence with dual-tone grey and orange facade, textured green elevation section with leaf motifs, wide double gate, long covered driveway paved with black and white checkered tiles, and red-coated open terrace.. Neighbourhood: Developing residential neighborhood surrounded by individual houses, unpaved access road, and open land fields near Mettupalayam Road in Karamadai.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

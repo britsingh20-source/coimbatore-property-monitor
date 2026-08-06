@@ -1,0 +1,42 @@
+{
+  "video_id": "4ZCkUtfGdaE",
+  "source_url": "https://www.youtube.com/watch?v=4ZCkUtfGdaE",
+  "property_location": "Karamadai, Teachers Colony, Mettupalayam Road, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": "3BHK",
+    "land_area": "5.5 Cents (35'0\" × 67'0\")",
+    "built_up_area": "2000 sq ft",
+    "price": "₹89 Lakhs (Negotiable)",
+    "facing": "South facing site, East facing main door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking (47'0\" × 13'0\")",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "3BHK Independent Villa single-story bungalow layout, Land area is 5.5 Cents and built-up area is 2000 sq.ft, Price listed at 89 Lakhs (negotiable) with 75% bank loan facility, DTCP approved site located in Karamadai, Coimbatore, Features 3 bedrooms with attached bathrooms, kitchen, living hall, pooja room, and outer toilet",
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/4ZCkUtfGdaE/",
+  "optional_owned_audio": "assets/audio/4ZCkUtfGdaE.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story villa with orange, grey, and white exterior paint, accent wall with leaf motifs, decorative front gate, long checkerboard tiled driveway/car porch, and marble-finish side exterior wall cladding.. Neighbourhood: Residential layout with surrounding houses visible, open grounds nearby, and paved approach areas.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story villa with orange, grey, and white exterior paint, accent wall with leaf motifs, decorative front gate, long checkerboard tiled driveway/car porch, and marble-finish side exterior wall cladding.. Neighbourhood: Residential layout with surrounding houses visible, open grounds nearby, and paved approach areas.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story villa with orange, grey, and white exterior paint, accent wall with leaf motifs, decorative front gate, long checkerboard tiled driveway/car porch, and marble-finish side exterior wall cladding.. Neighbourhood: Residential layout with surrounding houses visible, open grounds nearby, and paved approach areas.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story villa with orange, grey, and white exterior paint, accent wall with leaf motifs, decorative front gate, long checkerboard tiled driveway/car porch, and marble-finish side exterior wall cladding.. Neighbourhood: Residential layout with surrounding houses visible, open grounds nearby, and paved approach areas.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
