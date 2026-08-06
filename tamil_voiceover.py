@@ -76,7 +76,7 @@ async def _save_edge(text: str, output: Path) -> None:
     import edge_tts
 
     communicator = edge_tts.Communicate(
-        text, EDGE_VOICE, rate="+14%", pitch="-2Hz", volume="+35%"
+        text, EDGE_VOICE, rate="+8%", pitch="-1Hz", volume="+50%"
     )
     await communicator.save(str(output))
 
@@ -97,10 +97,7 @@ def _normalize(path: Path) -> None:
     normalized = path.with_name(f"{path.stem}-normalized.mp3")
     subprocess.run([
         "ffmpeg", "-y", "-loglevel", "error", "-i", str(path),
-        "-af",
-        "silenceremove=start_periods=1:start_duration=0:start_threshold=-42dB:"
-        "stop_periods=1:stop_duration=0.05:stop_threshold=-42dB,"
-        "loudnorm=I=-14:TP=-1:LRA=4",
+        "-af", "loudnorm=I=-11:TP=-1:LRA=4",
         "-codec:a", "libmp3lame", "-b:a", "192k", str(normalized),
     ], check=True)
     normalized.replace(path)

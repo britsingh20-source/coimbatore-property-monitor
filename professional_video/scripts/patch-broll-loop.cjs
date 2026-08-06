@@ -57,15 +57,4 @@ for (const [before, after] of replacements) {
 }
 fs.writeFileSync(target, source);
 
-const pythonTarget = path.join(__dirname, '..', '..', 'prepare_remotion_job.py');
-let python = fs.readFileSync(pythonTarget, 'utf8');
-const oldDuration = `        duration = max(\n            minimum_frames.get(scene, 120),\n            int(float(item["duration_seconds"]) * 30) + 18,\n        )`;
-const newDuration = `        # Keep narration continuous: scene ends only a few frames after speech.\n        # The prior large fixed minimums created obvious dead-air gaps.\n        duration = max(36, int(float(item["duration_seconds"]) * 30) + 3)`;
-if (python.includes(oldDuration)) {
-  python = python.replace(oldDuration, newDuration);
-} else if (!python.includes(newDuration)) {
-  throw new Error('Expected prepare_remotion_job duration block not found');
-}
-fs.writeFileSync(pythonTarget, python);
-
-console.log('Applied continuous R2 B-roll, flowing dialogue, and five property video styles');
+console.log('Applied continuous R2 B-roll and five property video styles; original audio pacing preserved');
