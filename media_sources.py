@@ -6,6 +6,7 @@ import random
 import re
 import shutil
 import textwrap
+import time
 from pathlib import Path
 
 import requests
@@ -47,6 +48,19 @@ SCENE_BLOCKED_TERMS = {
 def _plain(value: str) -> str:
     value = html.unescape(value or "")
     return re.sub(r"<[^>]+>", "", value).strip()
+
+
+PIXABAY_QUERY_MAX_LENGTH = 100  # Pixabay's API rejects longer `q` values with 400 Bad Request.
+
+
+def _sanitize_pixabay_query(query: str, max_length: int = PIXABAY_QUERY_MAX_LENGTH) -> str:
+    """Strip characters Pixabay dislikes and truncate on a word boundary to fit its q limit."""
+    cleaned = re.sub(r"[\/,]+", " ", query or "")
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    if len(cleaned) <= max_length:
+        return cleaned
+    truncated = cleaned[:max_length].rsplit(" ", 1)[0]
+    return truncated or cleaned[:max_length]
 
 
 def _allowed_visual(item: dict) -> bool:
@@ -108,12 +122,17 @@ def search_pixabay(query: str, limit: int = 8) -> list[dict]:
     api_key = os.environ.get("PIXABAY_API_KEY")
     if not api_key:
         return []
-    response = requests.get(PIXABAY_PHOTO_API, params={
-        "key": api_key, "q": query, "image_type": "photo",
-        "orientation": "vertical", "per_page": max(3, min(limit, 200)),
-        "safesearch": "true",
-    }, timeout=30)
-    response.raise_for_status()
+    safe_query = _sanitize_pixabay_query(query)
+    try:
+        response = requests.get(PIXABAY_PHOTO_API, params={
+            "key": api_key, "q": safe_query, "image_type": "photo",
+            "orientation": "vertical", "per_page": max(3, min(limit, 200)),
+            "safesearch": "true",
+        }, timeout=30)
+        response.raise_for_status()
+    except requests.RequestException as error:
+        print(f"Pixabay photo search skipped for {query!r}: {error}")
+        return []
     items = [{
         "download_url": hit.get("largeImageURL") or hit.get("webformatURL"),
         "source_url": hit.get("pageURL", "https://pixabay.com/"),
@@ -133,11 +152,16 @@ def search_pixabay_videos(query: str, limit: int = 6) -> list[dict]:
     api_key = os.environ.get("PIXABAY_API_KEY")
     if not api_key:
         return []
-    response = requests.get(PIXABAY_VIDEO_API, params={
-        "key": api_key, "q": query, "per_page": max(3, min(limit, 200)),
-        "safesearch": "true",
-    }, timeout=30)
-    response.raise_for_status()
+    safe_query = _sanitize_pixabay_query(query)
+    try:
+        response = requests.get(PIXABAY_VIDEO_API, params={
+            "key": api_key, "q": safe_query, "per_page": max(3, min(limit, 200)),
+            "safesearch": "true",
+        }, timeout=30)
+        response.raise_for_status()
+    except requests.RequestException as error:
+        print(f"Pixabay video search skipped for {query!r}: {error}")
+        return []
     clips = []
     for hit in response.json().get("hits", []):
         videos = hit.get("videos", {})
@@ -189,13 +213,31 @@ def search_pexels_videos(query: str, limit: int = 6) -> list[dict]:
     return [item for item in clips if _allowed_visual(item)]
 
 
+def _get_with_retry(url: str, *, headers: dict, timeout: int, retries: int = 3, backoff: float = 2.0) -> requests.Response:
+    """GET with retry/backoff on 429s (Wikimedia rate-limits aggressively on shared CI IPs)."""
+    last_error = None
+    for attempt in range(retries):
+        try:
+            response = requests.get(url, headers=headers, timeout=timeout)
+            if response.status_code == 429 and attempt < retries - 1:
+                wait = float(response.headers.get("Retry-After", backoff * (attempt + 1)))
+                time.sleep(wait)
+                continue
+            response.raise_for_status()
+            return response
+        except requests.RequestException as error:
+            last_error = error
+            if attempt < retries - 1:
+                time.sleep(backoff * (attempt + 1))
+    raise last_error
+
+
 def download_media(items: list[dict], destination: Path, limit: int = 6) -> list[dict]:
     destination.mkdir(parents=True, exist_ok=True)
     saved = []
     for index, item in enumerate(items[:limit], start=1):
         try:
-            response = requests.get(item["download_url"], headers={"User-Agent": USER_AGENT}, timeout=45)
-            response.raise_for_status()
+            response = _get_with_retry(item["download_url"], headers={"User-Agent": USER_AGENT}, timeout=45)
             default_type = "video/mp4" if item.get("media_kind") == "video" else "image/jpeg"
             content_type = response.headers.get("content-type", default_type).split(";")[0]
             extension = {
