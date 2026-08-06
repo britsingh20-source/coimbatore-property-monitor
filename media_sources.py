@@ -280,8 +280,17 @@ def _r2_client():
     )
 
 
+def _r2_bucket_name() -> str:
+    """R2_BUCKET_NAME with the same 'blank counts as unset' guard as _r2_client()'s
+    other credential reads — os.environ.get(name, default) only falls back when the
+    key is entirely absent, so a present-but-empty value (e.g. a workflow reading a
+    Secret via ${{ vars.X }}, which resolves to "") would otherwise silently pass
+    Bucket="" to boto3 instead of falling back."""
+    return os.environ.get("R2_BUCKET_NAME") or "github"
+
+
 def _r2_bucket_and_prefix(scene: str) -> tuple[str, str]:
-    bucket = os.environ.get("R2_BUCKET_NAME", "github")
+    bucket = _r2_bucket_name()
     prefix = os.environ.get("R2_LIBRARY_PREFIX", "library/").rstrip("/") + "/"
     category = SCENE_LIBRARY_CATEGORY.get(scene, scene)
     return bucket, f"{prefix}{category}/"
@@ -316,7 +325,7 @@ def get_own_footage_clips(scene: str, property_type: str, limit: int) -> list[di
     prefixes = _own_footage_prefixes(property_type, scene)
     if not prefixes:
         return []
-    bucket = os.environ.get("R2_BUCKET_NAME", "github")
+    bucket = _r2_bucket_name()
     keys = []
     try:
         paginator = client.get_paginator("list_objects_v2")

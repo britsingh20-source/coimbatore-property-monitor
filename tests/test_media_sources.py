@@ -103,6 +103,33 @@ class MediaSourceTests(unittest.TestCase):
         self.assertEqual(exterior_calls, [])  # exterior fully covered by own footage, no API call
         self.assertTrue(pixabay.called)  # other scenes without own footage still search
 
+    def test_r2_bucket_name_blank_does_not_silently_pass_through(self):
+        """Regression test: the workflow previously read R2_BUCKET_NAME via
+        ${{ vars.R2_BUCKET_NAME }} while the secret actually lived under Secrets,
+        so the env var was PRESENT but EMPTY at runtime. os.environ.get(name, default)
+        only falls back to `default` when the key is entirely absent, so a blank value
+        slipped straight through to boto3 as Bucket="", and the bare except around it
+        swallowed the resulting failure silently. Confirms the fixed accessor treats
+        blank the same as unset."""
+        from media_sources import _r2_bucket_name
+
+        with patch.dict(os.environ, {"R2_BUCKET_NAME": ""}, clear=True):
+            self.assertEqual(_r2_bucket_name(), "github")  # falls back, not ""
+
+        with patch.dict(os.environ, {}, clear=True):
+            self.assertEqual(_r2_bucket_name(), "github")  # unset -> same fallback
+
+        with patch.dict(os.environ, {"R2_BUCKET_NAME": "my-real-bucket"}, clear=True):
+            self.assertEqual(_r2_bucket_name(), "my-real-bucket")
+
+    def test_generate_video_workflow_reads_r2_bucket_name_from_secrets(self):
+        """Regression test for the actual root cause: the workflow YAML must read
+        R2_BUCKET_NAME via secrets.*, matching where it's actually set in this repo
+        (Settings -> Secrets and variables -> Actions -> Secrets), not vars.*."""
+        workflow = Path(".github/workflows/generate-video.yml").read_text(encoding="utf-8")
+        self.assertIn("R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}", workflow)
+        self.assertNotIn("vars.R2_BUCKET_NAME", workflow)
+
 
 if __name__ == "__main__":
     unittest.main()
