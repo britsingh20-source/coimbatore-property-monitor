@@ -86,6 +86,37 @@ Required secrets/variables (Settings → Secrets and variables → Actions):
 - `R2_BUCKET_NAME` (repository *variable*, not secret) — defaults to
   `github` if unset
 
+## Own filmed b-roll (highest priority, no stock at all)
+
+Before touching the stock cache or any API, each scene first checks the
+advertiser's own filmed footage in the same R2 bucket, organized as
+`<property-type>/<room>/*.mp4`:
+
+```
+villas/
+  Road/
+  exterior/
+  bedroom/
+  dining & Kitchen/
+  living_room/
+```
+
+- `road` scene → `villas/Road/`
+- `exterior` scene → `villas/exterior/`
+- `interior` scene → pooled across `villas/bedroom/`, `villas/dining & Kitchen/`,
+  `villas/living_room/` for variety
+- Bare plots (no rooms to film) skip this tier entirely and go straight to the
+  stock cache/APIs
+- This tier is **read-only from the pipeline's side** — it never auto-writes
+  stock clips here, so the folders only ever contain footage the business
+  actually filmed and uploaded itself. Only `villas` exists today; more
+  property-type folders (e.g. `apartments/`) can be added later by uploading
+  clips and adding a keyword entry to `PROPERTY_TYPE_LIBRARY_FOLDERS` in
+  `media_sources.py`.
+
+Priority order per scene: **own footage → cached stock → Pixabay → Pexels**.
+Each tier only fills the shortfall left by the one before it.
+
 ## Manual recovery
 
 `workflow_dispatch` remains available. A manually listed ID in
