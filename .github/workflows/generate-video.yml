@@ -97,6 +97,64 @@ jobs:
         if: steps.select.outputs.has_jobs == 'true'
         run: python sample_assets.py
 
+      - name: Verify exact Cloudflare R2 villa B-roll folders
+        if: steps.select.outputs.has_jobs == 'true'
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import os
+          import boto3
+
+          required = (
+              "R2_ACCOUNT_ID",
+              "R2_ACCESS_KEY_ID",
+              "R2_SECRET_ACCESS_KEY",
+              "R2_BUCKET_NAME",
+          )
+          missing = [name for name in required if not os.environ.get(name, "").strip()]
+          if missing:
+              raise SystemExit("Missing R2 secrets: " + ", ".join(missing))
+
+          bucket = os.environ["R2_BUCKET_NAME"].strip()
+          account_id = os.environ["R2_ACCOUNT_ID"].strip()
+          client = boto3.client(
+              "s3",
+              endpoint_url=f"https://{account_id}.r2.cloudflarestorage.com",
+              aws_access_key_id=os.environ["R2_ACCESS_KEY_ID"].strip(),
+              aws_secret_access_key=os.environ["R2_SECRET_ACCESS_KEY"].strip(),
+              region_name="auto",
+          )
+
+          prefixes = (
+              "villas/Road/",
+              "villas/bedroom/",
+              "villas/dining & Kitchen/",
+              "villas/exterior/",
+              "villas/living_room/",
+          )
+          total = 0
+          for prefix in prefixes:
+              response = client.list_objects_v2(Bucket=bucket, Prefix=prefix, MaxKeys=1000)
+              media = [
+                  item["Key"] for item in response.get("Contents", [])
+                  if item["Key"].lower().endswith((".mp4", ".mov", ".webm", ".m4v"))
+              ]
+              total += len(media)
+              print(f"R2 folder r2://{bucket}/{prefix} -> {len(media)} video(s)")
+          if total == 0:
+              raise SystemExit(
+                  f"No video B-roll found under r2://{bucket}/villas/. "
+                  "Expected Road, bedroom, dining & Kitchen, exterior and living_room folders."
+              )
+          print(f"R2 villa B-roll verified: {total} video(s) available.")
+          PY
+
       - name: Source licensed media, maps and Tamil male voice-over
         id: assets
         if: steps.select.outputs.has_jobs == 'true'
@@ -108,6 +166,7 @@ jobs:
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          R2_OWN_FOOTAGE_ROOT: ""
           TAMIL_MALE_VOICE: ta-IN-ValluvarNeural
           VIDEO_IDS_FILE: data/render_queue.txt
           ASSET_FAILURES_FILE: outputs/asset-failure-ids.txt
