@@ -19,9 +19,11 @@ PIXABAY_PHOTO_API = "https://pixabay.com/api/"
 PIXABAY_VIDEO_API = "https://pixabay.com/api/videos/"
 USER_AGENT = "CoimbatorePropertyMonitor/1.0 (property media attribution bot)"
 
-# Local cache of previously-approved clips, organized by scene category.
-# Checked before any API call so the pipeline converges toward a large
-# pre-vetted library over time instead of re-searching every run.
+# Local cache of previously-approved STOCK clips (Pixabay/Pexels), organized by
+# scene category. Checked before any API call so the pool of pre-approved stock
+# footage grows on its own over time instead of re-searching every run. This is
+# strictly separate from the advertiser's own filmed b-roll below — stock clips
+# never get mixed into the curated own-footage folders.
 LIBRARY_ROOT = Path("assets/library")
 SCENE_LIBRARY_CATEGORY = {
     "location": "drone_views",
@@ -30,6 +32,21 @@ SCENE_LIBRARY_CATEGORY = {
     "exterior": "exteriors",
     "interior": "interiors",
 }
+
+# The advertiser's own filmed b-roll, organized in R2 as
+# <property-type-folder>/<room-folder>/*.mp4 (e.g. "villas/exterior/").
+# Read-only from the pipeline's point of view — never auto-written to, so it
+# only ever contains footage the business actually filmed and vetted itself.
+PROPERTY_TYPE_LIBRARY_FOLDERS = {
+    ("villa", "house", "duplex", "individual", "independent"): "villas",
+}
+DEFAULT_OWN_FOOTAGE_FOLDER = "villas"  # the only category filmed so far
+SCENE_ROOM_FOLDERS = {
+    "road": ["Road"],
+    "exterior": ["exterior"],
+    "interior": ["bedroom", "dining & Kitchen", "living_room"],
+}
+
 BLOCKED_VISUAL_TERMS = {
     "temple", "church", "mosque", "masjid", "shrine", "cathedral",
     "religious", "religion", "worship", "prayer", "deity", "god",
@@ -268,6 +285,74 @@ def _r2_bucket_and_prefix(scene: str) -> tuple[str, str]:
     prefix = os.environ.get("R2_LIBRARY_PREFIX", "library/").rstrip("/") + "/"
     category = SCENE_LIBRARY_CATEGORY.get(scene, scene)
     return bucket, f"{prefix}{category}/"
+
+
+def _own_footage_folder(property_type: str) -> str | None:
+    text = (property_type or "").lower()
+    for keywords, folder in PROPERTY_TYPE_LIBRARY_FOLDERS.items():
+        if any(keyword in text for keyword in keywords):
+            return folder
+    if any(kind in text for kind in ("plot", "land", "site")):
+        return None  # bare plots have no rooms to film
+    return DEFAULT_OWN_FOOTAGE_FOLDER
+
+
+def _own_footage_prefixes(property_type: str, scene: str) -> list[str]:
+    folder = _own_footage_folder(property_type)
+    rooms = SCENE_ROOM_FOLDERS.get(scene)
+    if not folder or not rooms:
+        return []
+    root = os.environ.get("R2_OWN_FOOTAGE_ROOT", "").strip("/")
+    base = f"{root}/{folder}" if root else folder
+    return [f"{base}/{room}/" for room in rooms]
+
+
+def get_own_footage_clips(scene: str, property_type: str, limit: int) -> list[dict]:
+    """Pull the advertiser's own filmed b-roll for this scene from R2, if any exists.
+    Read-only — the pipeline never writes into these folders, only the business does."""
+    client = _r2_client()
+    if client is None:
+        return []
+    prefixes = _own_footage_prefixes(property_type, scene)
+    if not prefixes:
+        return []
+    bucket = os.environ.get("R2_BUCKET_NAME", "github")
+    keys = []
+    try:
+        paginator = client.get_paginator("list_objects_v2")
+        for prefix in prefixes:
+            for page in paginator.paginate(Bucket=bucket, Prefix=prefix):
+                for obj in page.get("Contents", []):
+                    if obj["Key"].lower().endswith((".mp4", ".mov", ".webm", ".m4v")):
+                        keys.append(obj["Key"])
+    except Exception as error:
+        print(f"R2 own-footage listing skipped for {scene!r}: {error}")
+        return []
+    if not keys:
+        return []
+    random.shuffle(keys)
+    folder = _own_footage_folder(property_type) or "misc"
+    local_dir = Path("assets/own_footage_cache") / folder / scene
+    local_dir.mkdir(parents=True, exist_ok=True)
+    result = []
+    for key in keys[:limit]:
+        local_path = local_dir / Path(key).name
+        try:
+            client.download_file(bucket, key, str(local_path))
+        except Exception as error:
+            print(f"R2 own-footage download skipped for {key}: {error}")
+            continue
+        result.append({
+            "local_file": str(local_path),
+            "provider": "Advertiser supplied (own b-roll)",
+            "license": "Owner supplied",
+            "media_kind": "video",
+            "actual_property": False,
+            "scene": scene,
+            "source_url": f"r2://{bucket}/{key}",
+            "from_own_footage": True,
+        })
+    return result
 
 
 def get_library_clips(scene: str, limit: int) -> list[dict]:
@@ -602,17 +687,25 @@ def source_property_videos(job: dict, per_scene: int = 2) -> list[dict]:
 
     saved = []
     seen_sources = set()
+    property_type = str((job.get("property") or {}).get("property_type", "property"))
     for scene, queries in _scene_video_queries(job).items():
-        # Check the local cache before hitting any API.
-        library_clips = get_library_clips(scene, per_scene)
-        if len(library_clips) >= per_scene:
-            saved.extend(library_clips)
+        # 1. The advertiser's own filmed b-roll for this room, if any exists.
+        own_clips = get_own_footage_clips(scene, property_type, per_scene)
+        if len(own_clips) >= per_scene:
+            saved.extend(own_clips)
             continue
-        needed = per_scene - len(library_clips)
+        remaining = per_scene - len(own_clips)
 
+        # 2. Previously-approved stock clips cached from earlier runs.
+        library_clips = get_library_clips(scene, remaining)
+        if len(own_clips) + len(library_clips) >= per_scene:
+            saved.extend(own_clips + library_clips)
+            continue
+        needed = remaining - len(library_clips)
+
+        # 3. Only now fall back to Pixabay/Pexels.
         candidates = []
         for query in queries:
-            # Pixabay primary, Pexels fallback per the free-source ranking.
             for item in search_pixabay_videos(query, limit=needed + 1) or search_pexels_videos(query, limit=needed + 1):
                 identity = item.get("source_url") or item.get("download_url")
                 if identity in seen_sources or not _allowed_scene_visual(item, scene):
@@ -626,8 +719,8 @@ def source_property_videos(job: dict, per_scene: int = 2) -> list[dict]:
         scene_saved = download_media(candidates, destination / scene, limit=needed)
         for item in scene_saved:
             item["actual_property"] = False
-        add_to_library(scene, scene_saved)
-        saved.extend(library_clips + scene_saved)
+        add_to_library(scene, scene_saved)  # only stock gets cached, never own footage
+        saved.extend(own_clips + library_clips + scene_saved)
 
     attribution_path = Path("data/media_attribution") / f"{video_id}.json"
     attribution_path.parent.mkdir(parents=True, exist_ok=True)
