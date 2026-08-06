@@ -82,9 +82,8 @@ async def _save_edge(text: str, output: Path) -> None:
     await communicator.save(str(output))
 
 
-def _save_voice(text: str, output: Path, engine: str | None = None) -> str:
+def _save_voice(text: str, output: Path) -> None:
     asyncio.run(_save_edge(text, output))
-    return "edge"
 
 
 def _duration(path: Path) -> float:
@@ -115,13 +114,13 @@ def create_voiceover(job: dict) -> Path:
     manifest = []
     for index, segment in enumerate(segments, start=1):
         output = output_dir / f"{index:02d}-{segment['scene']}.mp3"
-        engine = _save_voice(segment["text"], output)
+        _save_voice(segment["text"], output)
         _normalize(output)
         manifest.append({
             **segment,
             "file": output.name,
             "duration_seconds": round(_duration(output), 3),
-            "tts_engine": engine,
+            "tts_engine": "edge",
             "voice_style": EDGE_VOICE,
         })
     script_dir = Path("data/voiceover_scripts")
