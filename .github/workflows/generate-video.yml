@@ -125,6 +125,7 @@ jobs:
         continue-on-error: true
         env:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           INDIC_PARLER_STYLE: ${{ vars.INDIC_PARLER_STYLE }}
           TTS_ALLOW_EDGE_FALLBACK: "false"
