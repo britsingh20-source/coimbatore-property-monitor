@@ -9,16 +9,6 @@ from pathlib import Path
 
 
 EDGE_VOICE = os.environ.get("TAMIL_MALE_VOICE", "ta-IN-ValluvarNeural")
-PARLER_MODEL = os.environ.get("INDIC_PARLER_MODEL", "ai4bharat/indic-parler-tts")
-DEFAULT_PARLER_STYLE = (
-    "A young adult male Tamil property presenter speaks in a natural Coimbatore conversational "
-    "style. His voice is slightly low-pitched, warm, confident and energetic without sounding "
-    "like an announcer. He uses smooth modulation, short natural pauses between facts, clear "
-    "Tamil pronunciation, steady medium-fast pacing, and gently emphasizes location, land size, "
-    "price and road access. The recording is very clear and close-mic, with no background noise, "
-    "no music, no reverberation and consistent loudness."
-)
-_PARLER_RUNTIME = None
 
 
 def _spoken(value) -> str:
@@ -83,71 +73,6 @@ def build_tamil_script(job: dict) -> str:
     return " ".join(segment["text"] for segment in build_voice_segments(job))
 
 
-def _parler_style() -> str:
-    return os.environ.get("INDIC_PARLER_STYLE", "").strip() or DEFAULT_PARLER_STYLE
-
-
-def _load_parler():
-    global _PARLER_RUNTIME
-    if _PARLER_RUNTIME is not None:
-        return _PARLER_RUNTIME
-
-    token = os.environ.get("HF_TOKEN") or os.environ.get("HUGGING_FACE_HUB_TOKEN")
-    if not token:
-        raise RuntimeError("HF_TOKEN is required for the gated ai4bharat/indic-parler-tts model")
-
-    import torch
-    from parler_tts import ParlerTTSForConditionalGeneration
-    from transformers import AutoTokenizer
-
-    device = "cuda:0" if torch.cuda.is_available() else "cpu"
-    model_kwargs = {"token": token, "low_cpu_mem_usage": True}
-    if device.startswith("cuda"):
-        model_kwargs["torch_dtype"] = torch.float16
-
-    model = ParlerTTSForConditionalGeneration.from_pretrained(PARLER_MODEL, **model_kwargs).to(device)
-    tokenizer = AutoTokenizer.from_pretrained(
-        model.config.text_encoder._name_or_path, token=token
-    )
-    model.eval()
-    _PARLER_RUNTIME = (torch, model, tokenizer, device)
-    return _PARLER_RUNTIME
-
-
-def _save_indic_parler(text: str, output: Path) -> None:
-    import soundfile as sf
-
-    torch, model, tokenizer, device = _load_parler()
-    description = tokenizer(_parler_style(), return_tensors="pt").to(device)
-    prompt = tokenizer(text, return_tensors="pt").to(device)
-
-    # Stable per-line sampling keeps an autopilot rerender reproducible.
-    seed = int(hashlib.sha256(text.encode("utf-8")).hexdigest()[:8], 16)
-    torch.manual_seed(seed)
-    if device.startswith("cuda"):
-        torch.cuda.manual_seed_all(seed)
-
-    with torch.inference_mode():
-        generated = model.generate(
-            input_ids=description.input_ids,
-            prompt_input_ids=prompt.input_ids,
-            do_sample=True,
-            temperature=1.0,
-        )
-    samples = generated.detach().cpu().float().numpy().squeeze()
-
-    with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as handle:
-        temp_wav = Path(handle.name)
-    try:
-        sf.write(temp_wav, samples, model.config.sampling_rate)
-        subprocess.run([
-            "ffmpeg", "-y", "-loglevel", "error", "-i", str(temp_wav),
-            "-codec:a", "libmp3lame", "-b:a", "192k", str(output),
-        ], check=True)
-    finally:
-        temp_wav.unlink(missing_ok=True)
-
-
 async def _save_edge(text: str, output: Path) -> None:
     import edge_tts
 
@@ -158,22 +83,8 @@ async def _save_edge(text: str, output: Path) -> None:
 
 
 def _save_voice(text: str, output: Path, engine: str | None = None) -> str:
-    selected = (engine or os.environ.get("TTS_ENGINE", "edge")).strip().lower()
-    if selected == "indic-parler":
-        try:
-            _save_indic_parler(text, output)
-            return "indic-parler"
-        except Exception:
-            allow_fallback = os.environ.get("TTS_ALLOW_EDGE_FALLBACK", "false").lower() == "true"
-            if not allow_fallback:
-                raise
-            print("WARNING: Indic Parler-TTS failed; using explicit Edge fallback.")
-            asyncio.run(_save_edge(text, output))
-            return "edge-fallback"
-    if selected == "edge":
-        asyncio.run(_save_edge(text, output))
-        return "edge"
-    raise ValueError(f"Unsupported TTS_ENGINE: {selected}")
+    asyncio.run(_save_edge(text, output))
+    return "edge"
 
 
 def _duration(path: Path) -> float:
@@ -211,7 +122,7 @@ def create_voiceover(job: dict) -> Path:
             "file": output.name,
             "duration_seconds": round(_duration(output), 3),
             "tts_engine": engine,
-            "voice_style": _parler_style() if engine == "indic-parler" else EDGE_VOICE,
+            "voice_style": EDGE_VOICE,
         })
     script_dir = Path("data/voiceover_scripts")
     script_dir.mkdir(parents=True, exist_ok=True)
