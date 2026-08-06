@@ -66,6 +66,26 @@ media is still supported and takes priority when it exists, but it is optional.
 - `PEXELS_API_KEY` for licensed walkthrough clips as a fallback source; without
   it the workflow continues with Wikimedia and bundled representative visuals
 
+## Persistent video-clip cache (Cloudflare R2)
+
+Every approved video clip gets cached in a Cloudflare R2 bucket, organized by
+scene (`library/exteriors/`, `library/interiors/`, `library/roads/`,
+`library/plots/`, `library/drone_views/`). Each scene checks the cache before
+calling Pixabay/Pexels at all, so the pool of pre-approved footage grows on
+its own across runs instead of researching from scratch every time. Without
+R2 credentials configured, the cache falls back to the GitHub Actions
+runner's local disk, which does **not** persist between runs — R2 is what
+makes this actually durable.
+
+Required secrets/variables (Settings → Secrets and variables → Actions):
+
+- `R2_ACCOUNT_ID` — from the R2 dashboard URL or bucket settings
+- `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` — from an R2 API token
+  (Cloudflare dashboard → R2 → Manage API Tokens → Create API Token,
+  with Object Read & Write permission scoped to the bucket)
+- `R2_BUCKET_NAME` (repository *variable*, not secret) — defaults to
+  `github` if unset
+
 ## Manual recovery
 
 `workflow_dispatch` remains available. A manually listed ID in
