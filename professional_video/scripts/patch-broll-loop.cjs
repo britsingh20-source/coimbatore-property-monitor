@@ -5,10 +5,7 @@ const target = path.join(__dirname, '..', 'src', 'PropertyReel.tsx');
 let source = fs.readFileSync(target, 'utf8');
 
 const replacements = [
-  [
-    "  OffthreadVideo,\n  Sequence,",
-    "  OffthreadVideo,\n  Loop,\n  Sequence,",
-  ],
+  ["  OffthreadVideo,\n  Sequence,", "  OffthreadVideo,\n  Loop,\n  Sequence,"],
   [
     "  return source.video ? <OffthreadVideo src={staticFile(source.src)} muted style={style} /> : <Img src={staticFile(source.src)} style={style} />;",
     "  return source.video ? <Loop durationInFrames={72}><OffthreadVideo src={staticFile(source.src)} muted style={style} /></Loop> : <Img src={staticFile(source.src)} style={style} />;",
@@ -41,12 +38,22 @@ const replacements = [
 
 for (const [before, after] of replacements) {
   if (!source.includes(before)) {
-    // Idempotent on repeated npm installs after the patch has already been applied.
     if (source.includes(after)) continue;
     throw new Error(`Expected PropertyReel snippet not found: ${before.slice(0, 100)}`);
   }
   source = source.replace(before, after);
 }
-
 fs.writeFileSync(target, source);
-console.log('Applied full-duration, first-frame R2 B-roll patch to PropertyReel.tsx');
+
+const pythonTarget = path.join(__dirname, '..', '..', 'prepare_remotion_job.py');
+let python = fs.readFileSync(pythonTarget, 'utf8');
+const oldDuration = `        duration = max(\n            minimum_frames.get(scene, 120),\n            int(float(item["duration_seconds"]) * 30) + 18,\n        )`;
+const newDuration = `        # Keep narration continuous: scene ends only a few frames after speech.\n        # The prior large fixed minimums created obvious dead-air gaps.\n        duration = max(36, int(float(item["duration_seconds"]) * 30) + 3)`;
+if (python.includes(oldDuration)) {
+  python = python.replace(oldDuration, newDuration);
+} else if (!python.includes(newDuration)) {
+  throw new Error('Expected prepare_remotion_job duration block not found');
+}
+fs.writeFileSync(pythonTarget, python);
+
+console.log('Applied first-frame R2 B-roll and continuous-dialogue timing patches');
