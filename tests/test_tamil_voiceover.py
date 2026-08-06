@@ -27,7 +27,10 @@ class TamilVoiceoverTests(unittest.TestCase):
             },
         })
         by_scene = {item["scene"]: item["text"] for item in segments}
-        self.assertIn("துடியலூர் அருகே", by_scene["location"])
+        # The narration intentionally uses colloquial Coimbatore Tamil rather than
+        # the earlier formal phrase "துடியலூர் அருகே".
+        self.assertIn("துடியலூர் பக்கத்துல", by_scene["location"])
+        self.assertIn("என் ஜி ஜி ஓ காலனி", by_scene["location"])
         self.assertIn("2 சென்ட் முதல் 4 சென்ட் வரை", by_scene["land"])
         self.assertIn("தார் சாலைகள்", by_scene["road"])
         self.assertNotIn("builtUp", by_scene)
