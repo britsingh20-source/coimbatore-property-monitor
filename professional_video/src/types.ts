@@ -1,5 +1,5 @@
 export type Fact = {label: string; value: string};
-export type VoiceSegment = {scene: string; src: string};
+export type VoiceSegment = {scene: string; src: string; text?: string; durationInFrames?: number};
 export type StyleVariant = 'cinematic' | 'fast-cut' | 'premium' | 'location-first' | 'price-first';
 
 export type PropertyVideoProps = {
