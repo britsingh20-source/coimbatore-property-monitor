@@ -49,6 +49,17 @@ def _plain(value: str) -> str:
     return re.sub(r"<[^>]+>", "", value).strip()
 
 
+def _truncate_query(query: str, max_length: int = 100) -> str:
+    """Pixabay rejects q values over 100 characters with a 400. Cut at the last
+    whole word inside the limit instead of chopping mid-word."""
+    query = query.strip()
+    if len(query) <= max_length:
+        return query
+    clipped = query[:max_length]
+    last_space = clipped.rfind(" ")
+    return (clipped[:last_space] if last_space > 0 else clipped).strip()
+
+
 def _allowed_visual(item: dict) -> bool:
     """Reject media whose searchable metadata signals religious imagery."""
     searchable = " ".join(str(item.get(key, "")) for key in (
@@ -87,10 +98,15 @@ def search_pexels(query: str, limit: int = 8) -> list[dict]:
     api_key = os.environ.get("PEXELS_API_KEY")
     if not api_key:
         return []
-    response = requests.get(PEXELS_PHOTO_API, params={
-        "query": query, "orientation": "portrait", "per_page": min(limit, 80),
-    }, headers={"Authorization": api_key}, timeout=30)
-    response.raise_for_status()
+    try:
+        response = requests.get(PEXELS_PHOTO_API, params={
+            "query": query, "orientation": "portrait", "per_page": min(limit, 80),
+        }, headers={"Authorization": api_key}, timeout=30)
+        response.raise_for_status()
+        photos = response.json().get("photos", [])
+    except requests.RequestException as error:
+        print(f"Pexels photo search skipped for {query!r}: {error}")
+        return []
     return [item for item in [{
         "download_url": photo["src"].get("large2x") or photo["src"]["large"],
         "source_url": photo["url"],
@@ -100,7 +116,7 @@ def search_pexels(query: str, limit: int = 8) -> list[dict]:
         "provider": "Pexels",
         "media_kind": "image",
         "exact_location_candidate": False,
-    } for photo in response.json().get("photos", [])] if _allowed_visual(item)]
+    } for photo in photos] if _allowed_visual(item)]
 
 
 def search_pixabay(query: str, limit: int = 8) -> list[dict]:
@@ -108,12 +124,17 @@ def search_pixabay(query: str, limit: int = 8) -> list[dict]:
     api_key = os.environ.get("PIXABAY_API_KEY")
     if not api_key:
         return []
-    response = requests.get(PIXABAY_PHOTO_API, params={
-        "key": api_key, "q": query, "image_type": "photo",
-        "orientation": "vertical", "per_page": max(3, min(limit, 200)),
-        "safesearch": "true",
-    }, timeout=30)
-    response.raise_for_status()
+    try:
+        response = requests.get(PIXABAY_PHOTO_API, params={
+            "key": api_key, "q": _truncate_query(query), "image_type": "photo",
+            "orientation": "vertical", "per_page": max(3, min(limit, 200)),
+            "safesearch": "true",
+        }, timeout=30)
+        response.raise_for_status()
+        hits = response.json().get("hits", [])
+    except requests.RequestException as error:
+        print(f"Pixabay photo search skipped for {query!r}: {error}")
+        return []
     items = [{
         "download_url": hit.get("largeImageURL") or hit.get("webformatURL"),
         "source_url": hit.get("pageURL", "https://pixabay.com/"),
@@ -123,7 +144,7 @@ def search_pixabay(query: str, limit: int = 8) -> list[dict]:
         "provider": "Pixabay",
         "media_kind": "image",
         "exact_location_candidate": False,
-    } for hit in response.json().get("hits", [])]
+    } for hit in hits]
     return [item for item in items if item["download_url"] and _allowed_visual(item)]
 
 
@@ -133,13 +154,18 @@ def search_pixabay_videos(query: str, limit: int = 6) -> list[dict]:
     api_key = os.environ.get("PIXABAY_API_KEY")
     if not api_key:
         return []
-    response = requests.get(PIXABAY_VIDEO_API, params={
-        "key": api_key, "q": query, "per_page": max(3, min(limit, 200)),
-        "safesearch": "true",
-    }, timeout=30)
-    response.raise_for_status()
+    try:
+        response = requests.get(PIXABAY_VIDEO_API, params={
+            "key": api_key, "q": _truncate_query(query), "per_page": max(3, min(limit, 200)),
+            "safesearch": "true",
+        }, timeout=30)
+        response.raise_for_status()
+        hits = response.json().get("hits", [])
+    except requests.RequestException as error:
+        print(f"Pixabay video search skipped for {query!r}: {error}")
+        return []
     clips = []
-    for hit in response.json().get("hits", []):
+    for hit in hits:
         videos = hit.get("videos", {})
         chosen = videos.get("large") or videos.get("medium") or videos.get("small")
         if not chosen or not chosen.get("url"):
@@ -162,12 +188,17 @@ def search_pexels_videos(query: str, limit: int = 6) -> list[dict]:
     api_key = os.environ.get("PEXELS_API_KEY")
     if not api_key:
         return []
-    response = requests.get(PEXELS_VIDEO_API, params={
-        "query": query, "orientation": "portrait", "per_page": min(limit, 80),
-    }, headers={"Authorization": api_key}, timeout=30)
-    response.raise_for_status()
+    try:
+        response = requests.get(PEXELS_VIDEO_API, params={
+            "query": query, "orientation": "portrait", "per_page": min(limit, 80),
+        }, headers={"Authorization": api_key}, timeout=30)
+        response.raise_for_status()
+        videos_json = response.json().get("videos", [])
+    except requests.RequestException as error:
+        print(f"Pexels video search skipped for {query!r}: {error}")
+        return []
     clips = []
-    for video in response.json().get("videos", []):
+    for video in videos_json:
         files = [item for item in video.get("video_files", []) if item.get("file_type") == "video/mp4"]
         if not files:
             continue
@@ -213,8 +244,84 @@ def _library_dir(scene: str) -> Path:
     return LIBRARY_ROOT / SCENE_LIBRARY_CATEGORY.get(scene, scene)
 
 
+def _r2_client():
+    """Cloudflare R2 is S3-compatible; boto3 talks to it via a custom endpoint.
+    Returns None (rather than raising) when R2 isn't configured, so callers can
+    fall back to the local-disk cache for local runs and tests."""
+    account_id = os.environ.get("R2_ACCOUNT_ID")
+    access_key = os.environ.get("R2_ACCESS_KEY_ID")
+    secret_key = os.environ.get("R2_SECRET_ACCESS_KEY")
+    if not (account_id and access_key and secret_key):
+        return None
+    import boto3
+    return boto3.client(
+        "s3",
+        endpoint_url=f"https://{account_id}.r2.cloudflarestorage.com",
+        aws_access_key_id=access_key,
+        aws_secret_access_key=secret_key,
+        region_name="auto",
+    )
+
+
+def _r2_bucket_and_prefix(scene: str) -> tuple[str, str]:
+    bucket = os.environ.get("R2_BUCKET_NAME", "github")
+    prefix = os.environ.get("R2_LIBRARY_PREFIX", "library/").rstrip("/") + "/"
+    category = SCENE_LIBRARY_CATEGORY.get(scene, scene)
+    return bucket, f"{prefix}{category}/"
+
+
 def get_library_clips(scene: str, limit: int) -> list[dict]:
-    """Pull already-approved clips for this scene from the local cache, if enough exist."""
+    """Pull already-approved clips for this scene from the persistent cache, if enough exist.
+    Tries Cloudflare R2 first (survives across CI runs); falls back to local disk when R2
+    isn't configured, e.g. for local development or tests."""
+    client = _r2_client()
+    if client is not None:
+        try:
+            return _get_library_clips_r2(client, scene, limit)
+        except Exception as error:
+            print(f"R2 library fetch skipped for {scene!r}: {error}")
+    return _get_library_clips_local(scene, limit)
+
+
+def _get_library_clips_r2(client, scene: str, limit: int) -> list[dict]:
+    bucket, prefix = _r2_bucket_and_prefix(scene)
+    keys = []
+    paginator = client.get_paginator("list_objects_v2")
+    for page in paginator.paginate(Bucket=bucket, Prefix=prefix):
+        for obj in page.get("Contents", []):
+            if obj["Key"].lower().endswith((".mp4", ".mov", ".webm", ".m4v")):
+                keys.append(obj["Key"])
+    if not keys:
+        return []
+    random.shuffle(keys)
+    local_dir = Path("assets/library_cache") / SCENE_LIBRARY_CATEGORY.get(scene, scene)
+    local_dir.mkdir(parents=True, exist_ok=True)
+    result = []
+    for key in keys[:limit]:
+        local_path = local_dir / Path(key).name
+        try:
+            client.download_file(bucket, key, str(local_path))
+        except Exception as error:
+            print(f"R2 download skipped for {key}: {error}")
+            continue
+        try:
+            metadata = client.head_object(Bucket=bucket, Key=key).get("Metadata", {})
+        except Exception:
+            metadata = {}
+        result.append({
+            "local_file": str(local_path),
+            "provider": metadata.get("provider", "Library cache (R2)"),
+            "license": metadata.get("license", "See attribution"),
+            "media_kind": "video",
+            "actual_property": False,
+            "scene": scene,
+            "source_url": metadata.get("source_url", ""),
+            "from_library": True,
+        })
+    return result
+
+
+def _get_library_clips_local(scene: str, limit: int) -> list[dict]:
     directory = _library_dir(scene)
     if not directory.exists():
         return []
@@ -245,9 +352,43 @@ def get_library_clips(scene: str, limit: int) -> list[dict]:
 
 
 def add_to_library(scene: str, items: list[dict]) -> None:
-    """Copy newly-downloaded, already-filtered clips into the cache for future reuse."""
+    """Copy newly-downloaded, already-filtered clips into the persistent cache for future
+    reuse. Prefers Cloudflare R2; falls back to local disk when R2 isn't configured."""
     if not items:
         return
+    client = _r2_client()
+    if client is not None:
+        try:
+            _add_to_library_r2(client, scene, items)
+            return
+        except Exception as error:
+            print(f"R2 library upload skipped for {scene!r}: {error}")
+    _add_to_library_local(scene, items)
+
+
+def _add_to_library_r2(client, scene: str, items: list[dict]) -> None:
+    bucket, prefix = _r2_bucket_and_prefix(scene)
+    for item in items:
+        src = Path(item.get("local_file", ""))
+        if not src.exists():
+            continue
+        key = f"{prefix}{src.name}"
+        try:
+            client.head_object(Bucket=bucket, Key=key)
+            continue  # already cached
+        except Exception:
+            pass
+        try:
+            client.upload_file(str(src), bucket, key, ExtraArgs={"Metadata": {
+                "provider": str(item.get("provider", "")),
+                "license": str(item.get("license", "")),
+                "source_url": str(item.get("source_url", "")),
+            }})
+        except Exception as error:
+            print(f"R2 upload skipped for {src.name}: {error}")
+
+
+def _add_to_library_local(scene: str, items: list[dict]) -> None:
     directory = _library_dir(scene)
     directory.mkdir(parents=True, exist_ok=True)
     for item in items:
