@@ -5,8 +5,9 @@ from pathlib import Path
 from unittest.mock import patch
 
 from media_sources import (
-    _allowed_scene_visual, _allowed_visual, _scene_video_queries,
-    search_pexels_videos, source_property_media, source_property_videos,
+    _allowed_scene_visual, _allowed_visual, _own_footage_folder,
+    _own_footage_prefixes, _scene_video_queries, search_pexels_videos,
+    source_property_media, source_property_videos,
 )
 
 
@@ -73,6 +74,34 @@ class MediaSourceTests(unittest.TestCase):
         queries = " ".join(call.args[0] for call in search.call_args_list).lower()
         self.assertIn("plot", queries)
         self.assertIn("tar road", queries)
+
+    def test_own_footage_folder_maps_villa_types_and_skips_plots(self):
+        self.assertEqual(_own_footage_folder("Independent House / Duplex Villa"), "villas")
+        self.assertEqual(_own_footage_folder("3BHK House"), "villas")
+        self.assertIsNone(_own_footage_folder("Residential Plot"))
+        self.assertEqual(_own_footage_prefixes("Villa", "interior"),
+                          ["villas/bedroom/", "villas/dining & Kitchen/", "villas/living_room/"])
+        self.assertEqual(_own_footage_prefixes("Villa", "road"), ["villas/Road/"])
+        self.assertEqual(_own_footage_prefixes("Villa", "location"), [])  # no filmed folder for this scene
+        self.assertEqual(_own_footage_prefixes("Plot", "exterior"), [])  # plots have no rooms
+
+    @patch("media_sources.download_media", return_value=[])
+    @patch("media_sources.search_pexels_videos")
+    @patch("media_sources.search_pixabay_videos", return_value=[])
+    @patch("media_sources.get_own_footage_clips")
+    def test_own_footage_is_preferred_over_stock_apis(self, own_footage, pixabay, pexels, _download):
+        own_footage.side_effect = lambda scene, property_type, limit: (
+            [{"local_file": "clip.mp4", "scene": scene}] * limit if scene == "exterior" else []
+        )
+        pexels.return_value = []
+        source_property_videos({
+            "video_id": "villa-example",
+            "property_location": "Vadavalli, Coimbatore",
+            "property": {"property_type": "Villa"},
+        }, per_scene=2)
+        exterior_calls = [c for c in pixabay.call_args_list if "exterior" in c.args[0].lower()]
+        self.assertEqual(exterior_calls, [])  # exterior fully covered by own footage, no API call
+        self.assertTrue(pixabay.called)  # other scenes without own footage still search
 
 
 if __name__ == "__main__":
