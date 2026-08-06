@@ -77,7 +77,7 @@ async def _save_edge(text: str, output: Path) -> None:
     import edge_tts
 
     communicator = edge_tts.Communicate(
-        text, EDGE_VOICE, rate="+8%", pitch="-1Hz", volume="+8%"
+        text, EDGE_VOICE, rate="+8%", pitch="-1Hz", volume="+35%"
     )
     await communicator.save(str(output))
 
@@ -98,7 +98,10 @@ def _normalize(path: Path) -> None:
     normalized = path.with_name(f"{path.stem}-normalized.mp3")
     subprocess.run([
         "ffmpeg", "-y", "-loglevel", "error", "-i", str(path),
-        "-af", "loudnorm=I=-16:TP=-1.5:LRA=5", "-codec:a", "libmp3lame",
+        # -14 LUFS matches typical short-form/social video loudness (YouTube Shorts,
+        # Reels, TikTok) and reads noticeably louder than the previous -16 LUFS target,
+        # while -1dBTP true-peak still leaves safe headroom against clipping/distortion.
+        "-af", "loudnorm=I=-14:TP=-1:LRA=4", "-codec:a", "libmp3lame",
         "-b:a", "192k", str(normalized),
     ], check=True)
     normalized.replace(path)

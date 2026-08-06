@@ -6,6 +6,7 @@ import random
 import re
 import shutil
 import textwrap
+import time
 from pathlib import Path
 
 import requests
@@ -47,6 +48,19 @@ SCENE_BLOCKED_TERMS = {
 def _plain(value: str) -> str:
     value = html.unescape(value or "")
     return re.sub(r"<[^>]+>", "", value).strip()
+
+
+PIXABAY_QUERY_MAX_LENGTH = 100  # Pixabay's API rejects longer `q` values with 400 Bad Request.
+
+
+def _sanitize_pixabay_query(query: str, max_length: int = PIXABAY_QUERY_MAX_LENGTH) -> str:
+    """Strip characters Pixabay dislikes and truncate on a word boundary to fit its q limit."""
+    cleaned = re.sub(r"[\/,]+", " ", query or "")
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    if len(cleaned) <= max_length:
+        return cleaned
+    truncated = cleaned[:max_length].rsplit(" ", 1)[0]
+    return truncated or cleaned[:max_length]
 
 
 def _allowed_visual(item: dict) -> bool:
@@ -108,12 +122,17 @@ def search_pixabay(query: str, limit: int = 8) -> list[dict]:
     api_key = os.environ.get("PIXABAY_API_KEY")
     if not api_key:
         return []
-    response = requests.get(PIXABAY_PHOTO_API, params={
-        "key": api_key, "q": query, "image_type": "photo",
-        "orientation": "vertical", "per_page": max(3, min(limit, 200)),
-        "safesearch": "true",
-    }, timeout=30)
-    response.raise_for_status()
+    safe_query = _sanitize_pixabay_query(query)
+    try:
+        response = requests.get(PIXABAY_PHOTO_API, params={
+            "key": api_key, "q": safe_query, "image_type": "photo",
+            "orientation": "vertical", "per_page": max(3, min(limit, 200)),
+            "safesearch": "true",
+        }, timeout=30)
+        response.raise_for_status()
+    except requests.RequestException as error:
+        print(f"Pixabay photo search skipped for {query!r}: {error}")
+        return []
     items = [{
         "download_url": hit.get("largeImageURL") or hit.get("webformatURL"),
         "source_url": hit.get("pageURL", "https://pixabay.com/"),
@@ -133,11 +152,16 @@ def search_pixabay_videos(query: str, limit: int = 6) -> list[dict]:
     api_key = os.environ.get("PIXABAY_API_KEY")
     if not api_key:
         return []
-    response = requests.get(PIXABAY_VIDEO_API, params={
-        "key": api_key, "q": query, "per_page": max(3, min(limit, 200)),
-        "safesearch": "true",
-    }, timeout=30)
-    response.raise_for_status()
+    safe_query = _sanitize_pixabay_query(query)
+    try:
+        response = requests.get(PIXABAY_VIDEO_API, params={
+            "key": api_key, "q": safe_query, "per_page": max(3, min(limit, 200)),
+            "safesearch": "true",
+        }, timeout=30)
+        response.raise_for_status()
+    except requests.RequestException as error:
+        print(f"Pixabay video search skipped for {query!r}: {error}")
+        return []
     clips = []
     for hit in response.json().get("hits", []):
         videos = hit.get("videos", {})
@@ -189,13 +213,31 @@ def search_pexels_videos(query: str, limit: int = 6) -> list[dict]:
     return [item for item in clips if _allowed_visual(item)]
 
 
+def _get_with_retry(url: str, *, headers: dict, timeout: int, retries: int = 3, backoff: float = 2.0) -> requests.Response:
+    """GET with retry/backoff on 429s (Wikimedia rate-limits aggressively on shared CI IPs)."""
+    last_error = None
+    for attempt in range(retries):
+        try:
+            response = requests.get(url, headers=headers, timeout=timeout)
+            if response.status_code == 429 and attempt < retries - 1:
+                wait = float(response.headers.get("Retry-After", backoff * (attempt + 1)))
+                time.sleep(wait)
+                continue
+            response.raise_for_status()
+            return response
+        except requests.RequestException as error:
+            last_error = error
+            if attempt < retries - 1:
+                time.sleep(backoff * (attempt + 1))
+    raise last_error
+
+
 def download_media(items: list[dict], destination: Path, limit: int = 6) -> list[dict]:
     destination.mkdir(parents=True, exist_ok=True)
     saved = []
     for index, item in enumerate(items[:limit], start=1):
         try:
-            response = requests.get(item["download_url"], headers={"User-Agent": USER_AGENT}, timeout=45)
-            response.raise_for_status()
+            response = _get_with_retry(item["download_url"], headers={"User-Agent": USER_AGENT}, timeout=45)
             default_type = "video/mp4" if item.get("media_kind") == "video" else "image/jpeg"
             content_type = response.headers.get("content-type", default_type).split(";")[0]
             extension = {
@@ -213,12 +255,19 @@ def _library_dir(scene: str) -> Path:
     return LIBRARY_ROOT / SCENE_LIBRARY_CATEGORY.get(scene, scene)
 
 
-def get_library_clips(scene: str, limit: int) -> list[dict]:
-    """Pull already-approved clips for this scene from the local cache, if enough exist."""
+def get_library_media(scene: str, limit: int, kind: str = "video") -> list[dict]:
+    """Pull already-approved own-stock media for this scene from the local library, if any exist."""
     directory = _library_dir(scene)
     if not directory.exists():
         return []
-    files = [p for pattern in ("*.mp4", "*.mov", "*.webm", "*.m4v") for p in directory.glob(pattern)]
+    patterns = {
+        "video": ("*.mp4", "*.mov", "*.webm", "*.m4v"),
+        "image": ("*.jpg", "*.jpeg", "*.png", "*.webp"),
+    }[kind]
+    files = [
+        p for pattern in patterns for p in directory.glob(pattern)
+        if _allowed_scene_visual({"title": p.stem}, scene)
+    ]
     if not files:
         return []
     random.shuffle(files)
@@ -233,15 +282,23 @@ def get_library_clips(scene: str, limit: int) -> list[dict]:
                 meta = {}
         result.append({
             "local_file": str(path),
-            "provider": meta.get("provider", "Library cache"),
-            "license": meta.get("license", "See attribution"),
-            "media_kind": "video",
+            "provider": meta.get("provider", "Own stock library"),
+            "license": meta.get("license", "Owner supplied stock"),
+            "media_kind": kind,
             "actual_property": False,
             "scene": scene,
             "source_url": meta.get("source_url", ""),
             "from_library": True,
         })
     return result
+
+
+def get_library_clips(scene: str, limit: int) -> list[dict]:
+    return get_library_media(scene, limit, kind="video")
+
+
+def get_library_photos(scene: str, limit: int) -> list[dict]:
+    return get_library_media(scene, limit, kind="image")
 
 
 def add_to_library(scene: str, items: list[dict]) -> None:
@@ -339,45 +396,72 @@ def source_property_media(job: dict, minimum: int = 3) -> list[dict]:
     location = job.get("property_location", "Coimbatore")
     prop = job.get("property") or {}
     property_type = prop.get("property_type", "property")
-    queries = [
-        f"{location} Coimbatore Tamil Nadu",
-        f"{location} roads buildings",
-        f"{property_type} layout Coimbatore Tamil Nadu",
-        "Coimbatore Tamil Nadu streets architecture",
-        "Coimbatore aerial city Tamil Nadu",
-    ]
-    candidates = []
-    seen_urls = set()
+    target_pool = 6
+    scenes = list(_scene_video_queries(job).keys())  # e.g. location, road, exterior/land, interior
 
-    # Pixabay first — better hit rate for architecture/building imagery than Pexels.
-    for item in search_pixabay(f"modern Indian {property_type} real estate", limit=8):
-        if item["download_url"] not in seen_urls:
-            candidates.append(item)
-            seen_urls.add(item["download_url"])
+    saved = []
+    seen_local = set()
 
-    for query in queries:
-        try:
-            results = search_commons(query, limit=8)
-        except requests.RequestException as error:
-            print(f"Commons search skipped for {query!r}: {error}")
-            continue
-        for item in results:
-            if _allowed_visual(item) and item["download_url"] not in seen_urls:
-                candidates.append(item)
+    # 1. Our own curated stock library first — instant, always on-topic, and doesn't
+    #    depend on Pixabay's speed or noisy/irrelevant search hits. See assets/library/README.md.
+    for scene in scenes:
+        for item in get_library_photos(scene, limit=3):
+            if item["local_file"] in seen_local or len(saved) >= target_pool:
+                continue
+            saved.append({**item, "actual_property": False})
+            seen_local.add(item["local_file"])
+    if saved:
+        print(f"Used {len(saved)} own-stock library image(s) for {video_id}")
+
+    if len(saved) < target_pool:
+        candidates = []
+        seen_urls = set()
+
+        # Pixabay first — better hit rate for architecture/building imagery than Pexels.
+        for item in search_pixabay(f"modern Indian {property_type} real estate", limit=8):
+            if item["download_url"] not in seen_urls:
+                candidates.append({**item, "scene": "exterior"})
                 seen_urls.add(item["download_url"])
 
-    # Pexels as fallback if Pixabay + Commons didn't fill the pool.
-    if len(candidates) < 6:
-        for item in search_pexels(
-            f"modern Indian {property_type} real estate interior exterior", limit=8,
-        ):
-            if _allowed_visual(item) and item["download_url"] not in seen_urls:
-                candidates.append(item)
-                seen_urls.add(item["download_url"])
+        scene_queries = [
+            (f"{location} Coimbatore Tamil Nadu", "location"),
+            (f"{location} roads buildings", "road"),
+            (f"{property_type} layout Coimbatore Tamil Nadu", "exterior"),
+            ("Coimbatore Tamil Nadu streets architecture", "road"),
+            ("Coimbatore aerial city Tamil Nadu", "location"),
+        ]
+        for query, scene in scene_queries:
+            try:
+                results = search_commons(query, limit=8)
+            except requests.RequestException as error:
+                print(f"Commons search skipped for {query!r}: {error}")
+                continue
+            for item in results:
+                if _allowed_visual(item) and item["download_url"] not in seen_urls:
+                    candidates.append({**item, "scene": scene})
+                    seen_urls.add(item["download_url"])
 
-    saved = download_media(candidates, destination, limit=6)
-    for item in saved:
-        item["actual_property"] = False
+        # Pexels as fallback if Pixabay + Commons didn't fill the pool.
+        if len(candidates) < 6:
+            for item in search_pexels(
+                f"modern Indian {property_type} real estate interior exterior", limit=8,
+            ):
+                if _allowed_visual(item) and item["download_url"] not in seen_urls:
+                    candidates.append({**item, "scene": "interior"})
+                    seen_urls.add(item["download_url"])
+
+        downloaded = download_media(candidates, destination, limit=target_pool - len(saved))
+        for item in downloaded:
+            item["actual_property"] = False
+        # Cache freshly-approved downloads into the stock library, grouped by scene, so
+        # future runs across ANY property lean on our own library instead of Pixabay.
+        by_scene: dict[str, list[dict]] = {}
+        for item in downloaded:
+            by_scene.setdefault(item.get("scene", "exterior"), []).append(item)
+        for scene, items in by_scene.items():
+            add_to_library(scene, items)
+        saved.extend(downloaded)
+
     if len(saved) < minimum:
         fallback_count = minimum - len(saved)
         saved.extend(generate_fact_graphics(job, destination, fallback_count, start=len(saved) + 1))
