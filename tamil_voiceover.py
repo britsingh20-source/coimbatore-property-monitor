@@ -97,7 +97,10 @@ def _normalize(path: Path) -> None:
     normalized = path.with_name(f"{path.stem}-normalized.mp3")
     subprocess.run([
         "ffmpeg", "-y", "-loglevel", "error", "-i", str(path),
-        "-af", "loudnorm=I=-11:TP=-1:LRA=4",
+        "-af",
+        "silenceremove=start_periods=1:start_duration=0:start_threshold=-42dB:"
+        "stop_periods=1:stop_duration=0.08:stop_threshold=-42dB,"
+        "loudnorm=I=-11:TP=-1:LRA=4",
         "-codec:a", "libmp3lame", "-b:a", "192k", str(normalized),
     ], check=True)
     normalized.replace(path)
