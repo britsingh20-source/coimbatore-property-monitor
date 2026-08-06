@@ -30,16 +30,13 @@ No manual footage upload or workflow dispatch is required for a valid listing.
 ## Automatic media and narration
 
 - Wikimedia Commons supplies reusable location-related images.
-- Pexels supplies licensed representative portrait property clips when
-  `PEXELS_API_KEY` is configured.
+- Pixabay is the primary licensed image/video source, with Pexels as a
+  fallback, when `PIXABAY_API_KEY` / `PEXELS_API_KEY` are configured.
+  Previously-approved video clips are cached locally under
+  `assets/library/<category>/` and reused across runs.
 - Nominatim geocodes the locality and OpenStreetMap provides a three-stage zoom.
-- AI4Bharat Indic Parler-TTS generates a low-pitched, conversational Tamil male
-  delivery from a configurable style prompt. The model is loaded once and reused
-  for every fact scene in the video.
-- Edge TTS is retained only as an emergency voice when `HF_TOKEN` has not been
-  configured; a configured Indic Parler failure stops the workflow instead of
-  silently publishing the wrong voice.
-- Every narration manifest records the actual TTS engine and style used.
+- Edge TTS generates the Tamil male narration for every fact scene.
+- Every narration manifest records the TTS engine and style used.
 - The Remotion timeline expands automatically to fit the narration.
 - Automatically sourced property media is labelled as representative.
 
@@ -63,16 +60,11 @@ media is still supported and takes priority when it exists, but it is optional.
 
 - `YOUTUBE_API_KEY`
 - `GEMINI_API_KEY`
-- `PEXELS_API_KEY` for licensed walkthrough clips; without it the workflow
-  continues with Wikimedia and bundled representative visuals
-- `HF_TOKEN` for AI4Bharat Indic Parler-TTS. Before adding it, accept the gated
-  model conditions at https://huggingface.co/ai4bharat/indic-parler-tts and use
-  a read-only Hugging Face access token
-
-Optional repository variable:
-
-- `INDIC_PARLER_STYLE` overrides the default Coimbatore conversational male
-  delivery prompt without a code change. Leave it unset to use the tested default.
+- `PIXABAY_API_KEY` for licensed images and video b-roll (primary source);
+  without it the workflow falls back to Pexels, Wikimedia and bundled
+  representative visuals
+- `PEXELS_API_KEY` for licensed walkthrough clips as a fallback source; without
+  it the workflow continues with Wikimedia and bundled representative visuals
 
 ## Manual recovery
 
@@ -87,7 +79,5 @@ IDs supplied by the monitor and never rerender the historical approval list.
 ```bash
 python -m unittest discover -s tests -v
 python -m py_compile *.py
-# Full Indic Parler runtime is installed conditionally in GitHub Actions:
-# pip install -r requirements-indic-parler.txt
 npm --prefix professional_video run typecheck
 ```
