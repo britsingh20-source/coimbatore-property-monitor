@@ -23,7 +23,6 @@ on:
       - media_sources.py
       - map_assets.py
       - requirements.txt
-      - requirements-indic-parler.txt
       - tamil_voiceover.py
       - tests/test_select_render_jobs.py
       - tests/test_tamil_voiceover.py
@@ -87,27 +86,6 @@ jobs:
       - name: Install base Python dependencies
         if: steps.select.outputs.has_jobs == 'true'
         run: pip install -r requirements.txt
-      - name: Cache the gated Indic Parler model
-        if: steps.select.outputs.has_jobs == 'true'
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/huggingface/hub
-          key: indic-parler-v2-${{ runner.os }}-${{ hashFiles('requirements-indic-parler.txt') }}
-          restore-keys: |
-            indic-parler-v2-${{ runner.os }}-
-      - name: Install Indic Parler-TTS when configured
-        if: steps.select.outputs.has_jobs == 'true'
-        env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          if [[ -n "${HF_TOKEN:-}" ]]; then
-            pip install --index-url https://download.pytorch.org/whl/cpu "torch>=2.4,<3" "torchaudio>=2.4,<3"
-            pip install -r requirements-indic-parler.txt
-          else
-            echo "::warning::HF_TOKEN is not configured; this run will retain the Edge emergency voice."
-          fi
       - name: Validate automation and media pipeline
         if: steps.select.outputs.has_jobs == 'true'
         run: python -m unittest discover -s tests -v
@@ -126,23 +104,11 @@ jobs:
         env:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          INDIC_PARLER_STYLE: ${{ vars.INDIC_PARLER_STYLE }}
-          TTS_ALLOW_EDGE_FALLBACK: "false"
           TAMIL_MALE_VOICE: ta-IN-ValluvarNeural
           VIDEO_IDS_FILE: data/render_queue.txt
           ASSET_FAILURES_FILE: outputs/asset-failure-ids.txt
         shell: bash
-        run: |
-          set -euo pipefail
-          if [[ -n "${HF_TOKEN:-}" ]]; then
-            export TTS_ENGINE=indic-parler
-            echo "Using strict AI4Bharat Indic Parler-TTS narration."
-          else
-            export TTS_ENGINE=edge
-            echo "::warning::Using Edge emergency voice because HF_TOKEN is absent."
-          fi
-          python prepare_free_assets.py
+        run: python prepare_free_assets.py
 
       - name: Render each property independently
         id: render
