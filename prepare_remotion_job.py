@@ -5,6 +5,7 @@ import shutil
 import subprocess
 from pathlib import Path
 
+from broll_director import build_director_media
 from map_assets import location_label
 
 
@@ -98,8 +99,6 @@ def _copy_scene_videos(
                 shutil.copy2(source, target)
                 copied.append(f"render/{destination.name}/{target.name}")
 
-    # Remotion asks for an "interior" pool. Build it from the real R2 room folders
-    # instead of falling back to unrelated exterior/road footage.
     interior = _dedupe(
         scene_media.get("living", [])
         + scene_media.get("kitchen", [])
@@ -154,6 +153,7 @@ def prepare(job_path: Path) -> Path:
     representative_videos = _dedupe(
         [src for scene in sorted(scene_media) for src in scene_media[scene]]
     )
+    director_media = build_director_media(job, scene_media, destination)
     r2_count = sum(
         1
         for clips in _scene_video_files(r2_own_footage_folder).values()
@@ -163,7 +163,7 @@ def prepare(job_path: Path) -> Path:
         f"Prepared Remotion media for {video_id}: "
         f"R2 own B-roll={r2_count}, unique scene clips={len(representative_videos)}, "
         f"images={len(images)}, actual property clips={len(actual_videos)}, "
-        f"categories={sorted(scene_media)}"
+        f"categories={sorted(scene_media)}, directed scenes={sorted(director_media)}"
     )
     if r2_count and not any("r2-own-" in src for src in representative_videos):
         raise RuntimeError("R2 clips were downloaded but not exposed to Remotion")
@@ -216,7 +216,6 @@ def prepare(job_path: Path) -> Path:
         shutil.copy2(source, target)
         scene = item["scene"]
         speech_frames = max(1, int(round(float(item["duration_seconds"]) * FPS)))
-        # Natural presenter rhythm: about 0.35s between sentences. CTA ends quickly.
         trailing = 4 if scene == "cta" else gap_frames
         duration = max(speech_frames + trailing, minimum_frames.get(scene, 60))
         scene_order.append(scene)
@@ -261,6 +260,7 @@ def prepare(job_path: Path) -> Path:
         "actualVideos": actual_videos,
         "representativeVideos": representative_videos,
         "sceneMedia": scene_media,
+        "directorMedia": director_media,
         "images": images,
         "audio": audio,
         "voiceSegments": voice_segments,
