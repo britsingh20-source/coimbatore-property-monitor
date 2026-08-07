@@ -7,20 +7,9 @@ from pathlib import Path
 
 
 EDGE_VOICE = os.environ.get("TAMIL_MALE_VOICE", "ta-IN-ValluvarNeural")
-
-# Scene-by-scene prosody prevents every sentence from having the same TTS cadence.
-# This is tuned toward a relaxed, conversational Coimbatore property-presenter feel.
-VOICE_PROFILES = {
-    "location": {"rate": "+4%", "pitch": "+0Hz"},
-    "land": {"rate": "+6%", "pitch": "-1Hz"},
-    "builtUp": {"rate": "+5%", "pitch": "+0Hz"},
-    "price": {"rate": "+2%", "pitch": "-2Hz"},
-    "facing": {"rate": "+6%", "pitch": "-1Hz"},
-    "road": {"rate": "+4%", "pitch": "-1Hz"},
-    "approval": {"rate": "+2%", "pitch": "-2Hz"},
-    "verify": {"rate": "+3%", "pitch": "-1Hz"},
-    "cta": {"rate": "+5%", "pitch": "+0Hz"},
-}
+VOICE_RATE = os.environ.get("TAMIL_VOICE_RATE", "+4%")
+VOICE_PITCH = os.environ.get("TAMIL_VOICE_PITCH", "-1Hz")
+DIALOGUE_GAP_SECONDS = 1.5
 
 
 def _spoken(value) -> str:
@@ -61,22 +50,22 @@ def build_voice_segments(job: dict) -> list[dict]:
 
     segments = [{
         "scene": "location",
-        "text": f"கோயம்புத்தூர்ல, {location} ஏரியாவுல இருக்கிற இந்த {title} பாருங்க... லொக்கேஷன் நல்லா இருக்கு.",
+        "text": f"கோயம்புத்தூர்ல {location} ஏரியாவுல இருக்கிற இந்த {title} பாருங்க, லொக்கேஷன் நல்லா இருக்கு.",
     }]
     fact_lines = [
         ("land", "land_area", "மொத்த லேண்ட் ஏரியா {value} இருக்கு."),
-        ("builtUp", "built_up_area", "பில்ட் அப் ஏரியா பாத்தீங்கனா, {value} வருது."),
-        ("price", "price", "இதோட விலை... {value}."),
+        ("builtUp", "built_up_area", "பில்ட் அப் ஏரியா பாத்தீங்கனா {value} வருது."),
+        ("price", "price", "இதோட விலை {value}."),
         ("facing", "facing", "வீடு {value} ஃபேசிங்."),
         ("road", "road_width", "முன்னாடி ரோடு வசதி {value} இருக்கு."),
-        ("approval", "approval", "அப்ரூவல் பாத்தீங்கனா, {value} இருக்கு."),
+        ("approval", "approval", "அப்ரூவல் பாத்தீங்கனா {value} இருக்கு."),
     ]
     for scene, key, sentence in fact_lines:
         value = _spoken(prop.get(key))
         if value:
             segments.append({"scene": scene, "text": sentence.format(value=_tamilize(value))})
     segments.extend([
-        {"scene": "verify", "text": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட் எல்லாத்தையும்... சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்."},
+        {"scene": "verify", "text": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்."},
         {"scene": "cta", "text": "வீடு பிடிச்சிருந்தா, இன்னும் டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க."},
     ])
     return segments
@@ -86,22 +75,23 @@ def build_tamil_script(job: dict) -> str:
     return " ".join(segment["text"] for segment in build_voice_segments(job))
 
 
-async def _save_edge(text: str, output: Path, scene: str) -> None:
+async def _save_edge(text: str, output: Path) -> None:
     import edge_tts
 
-    profile = VOICE_PROFILES.get(scene, {"rate": "+4%", "pitch": "-1Hz"})
+    # Keep one stable prosody across the entire reel. Changing rate/pitch per scene
+    # made the voice sound like separate robotic clips even with the same speaker.
     communicator = edge_tts.Communicate(
         text,
         EDGE_VOICE,
-        rate=profile["rate"],
-        pitch=profile["pitch"],
+        rate=VOICE_RATE,
+        pitch=VOICE_PITCH,
         volume="+50%",
     )
     await communicator.save(str(output))
 
 
-def _save_voice(text: str, output: Path, scene: str) -> None:
-    asyncio.run(_save_edge(text, output, scene))
+def _save_voice(text: str, output: Path) -> None:
+    asyncio.run(_save_edge(text, output))
 
 
 def _duration(path: Path) -> float:
@@ -117,14 +107,44 @@ def _normalize(path: Path) -> None:
     subprocess.run([
         "ffmpeg", "-y", "-loglevel", "error", "-i", str(path),
         "-af",
-        "silenceremove=start_periods=1:start_duration=0:start_threshold=-42dB:"
-        "stop_periods=1:stop_duration=0.08:stop_threshold=-42dB,"
         "highpass=f=70,lowpass=f=14500,"
         "acompressor=threshold=-18dB:ratio=2.2:attack=15:release=180:makeup=1.5,"
         "loudnorm=I=-11:TP=-1:LRA=5",
+        "-ar", "48000", "-ac", "1",
         "-codec:a", "libmp3lame", "-b:a", "192k", str(normalized),
     ], check=True)
     normalized.replace(path)
+
+
+def _build_master_track(video_id: str, files: list[Path]) -> Path:
+    """Create one narration file so Remotion never starts/stops the voice per scene."""
+    master = Path("assets/audio") / f"{video_id}.mp3"
+    silence = files[0].parent / "_dialogue-gap.mp3"
+    concat_file = files[0].parent / "_narration-concat.txt"
+    subprocess.run([
+        "ffmpeg", "-y", "-loglevel", "error",
+        "-f", "lavfi", "-i", "anullsrc=r=48000:cl=mono",
+        "-t", str(DIALOGUE_GAP_SECONDS),
+        "-codec:a", "libmp3lame", "-b:a", "192k", str(silence),
+    ], check=True)
+    concat_items: list[Path] = []
+    for index, source in enumerate(files):
+        concat_items.append(source)
+        if index < len(files) - 1:
+            concat_items.append(silence)
+    concat_file.write_text(
+        "\n".join(f"file '{item.resolve().as_posix()}'" for item in concat_items),
+        encoding="utf-8",
+    )
+    subprocess.run([
+        "ffmpeg", "-y", "-loglevel", "error",
+        "-f", "concat", "-safe", "0", "-i", str(concat_file),
+        "-ar", "48000", "-ac", "1",
+        "-codec:a", "libmp3lame", "-b:a", "192k", str(master),
+    ], check=True)
+    silence.unlink(missing_ok=True)
+    concat_file.unlink(missing_ok=True)
+    return master
 
 
 def create_voiceover(job: dict) -> Path:
@@ -133,22 +153,27 @@ def create_voiceover(job: dict) -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
     for existing in output_dir.glob("*.mp3"):
         existing.unlink()
+    master_existing = Path("assets/audio") / f"{video_id}.mp3"
+    master_existing.unlink(missing_ok=True)
     segments = build_voice_segments(job)
     manifest = []
+    audio_files: list[Path] = []
     for index, segment in enumerate(segments, start=1):
         output = output_dir / f"{index:02d}-{segment['scene']}.mp3"
-        _save_voice(segment["text"], output, segment["scene"])
+        _save_voice(segment["text"], output)
         _normalize(output)
-        profile = VOICE_PROFILES.get(segment["scene"], {})
+        audio_files.append(output)
         manifest.append({
             **segment,
             "file": output.name,
             "duration_seconds": round(_duration(output), 3),
             "tts_engine": "edge",
             "voice_style": EDGE_VOICE,
-            "prosody": profile,
-            "reference_style": "conversational Coimbatore Tamil; relaxed property-presenter modulation",
+            "prosody": {"rate": VOICE_RATE, "pitch": VOICE_PITCH},
+            "reference_style": "conversational Coimbatore Tamil; continuous presenter flow",
         })
+    if audio_files:
+        _build_master_track(video_id, audio_files)
     script_dir = Path("data/voiceover_scripts")
     script_dir.mkdir(parents=True, exist_ok=True)
     (script_dir / f"{video_id}.txt").write_text(
