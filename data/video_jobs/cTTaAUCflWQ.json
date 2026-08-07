@@ -1,0 +1,42 @@
+{
+  "video_id": "cTTaAUCflWQ",
+  "source_url": "https://www.youtube.com/watch?v=cTTaAUCflWQ",
+  "property_location": "Pattanam (1.5 km from Pattanam), Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Independent House / Simplex Villa",
+    "bhk": "2 BHK",
+    "land_area": "2.25 Cents",
+    "built_up_area": "870 sq.ft.",
+    "price": "₹48,000,000 (₹48 Lakhs, Negotiable)",
+    "facing": "North",
+    "road_width": "30 & 33 feet tar road",
+    "parking": "Covered Car Parking (8 ft x 15 ft)",
+    "approval": "DTCP & Plan Approved"
+  },
+  "verified_facts": "Asking price is 48 Lakhs (Negotiable) with up to 85% loan available., Located 1.5 km from Pattanam, Coimbatore., House is a North-facing 2BHK Simplex model., Land area is 2.25 cents and building area is 870 sq.ft., Includes living hall (16x16 ft), kitchen (10x6 ft), master bedroom (10x16 ft) with attached bathroom (7x6 ft), and kids bedroom (10x10 ft) with common bathroom (4x4 ft).",
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/cTTaAUCflWQ/",
+  "optional_owned_audio": "assets/audio/cTTaAUCflWQ.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary house featuring white exterior walls accented with grey frame borders and orange vertical slat panelling. Includes a gated portico with patterned floor tiles and a bright orange external staircase leading to the terrace.. Neighbourhood: Developing residential neighborhood serviced by wide 30 to 33 ft tar roads, situated close to schools and colleges near Pattanam, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary house featuring white exterior walls accented with grey frame borders and orange vertical slat panelling. Includes a gated portico with patterned floor tiles and a bright orange external staircase leading to the terrace.. Neighbourhood: Developing residential neighborhood serviced by wide 30 to 33 ft tar roads, situated close to schools and colleges near Pattanam, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary house featuring white exterior walls accented with grey frame borders and orange vertical slat panelling. Includes a gated portico with patterned floor tiles and a bright orange external staircase leading to the terrace.. Neighbourhood: Developing residential neighborhood serviced by wide 30 to 33 ft tar roads, situated close to schools and colleges near Pattanam, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary house featuring white exterior walls accented with grey frame borders and orange vertical slat panelling. Includes a gated portico with patterned floor tiles and a bright orange external staircase leading to the terrace.. Neighbourhood: Developing residential neighborhood serviced by wide 30 to 33 ft tar roads, situated close to schools and colleges near Pattanam, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

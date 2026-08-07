@@ -1,0 +1,42 @@
+{
+  "video_id": "7ezG0eLWg1I",
+  "source_url": "https://www.youtube.com/watch?v=7ezG0eLWg1I",
+  "property_location": "Teachers Colony, Karamadai, Mettupalayam Road, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": 3,
+    "land_area": "5.5 Cents (35 ft x 67 ft)",
+    "built_up_area": "2000 sq.ft.",
+    "price": "₹89 Lakhs (Negotiable)",
+    "facing": "South Facing Site, East Facing Main Door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered parking for up to 3 cars (47 ft x 13 ft)",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "3BHK independent ground-floor villa on 5.5 cents of land, Site facing South with an East-facing main teakwood door, Built-up area is 2000 sq.ft. with dimensions 35 ft x 67 ft, Driveway / Portico parking space measuring 47 ft x 13 ft, Spacious living hall (20 ft x 16 ft) with false ceiling and chandelier, Kitchen cum dining area measuring 21 ft x 8 ft with breakfast counter pass-through, Three master bedrooms (each 10 ft x 16 ft) with attached western bathrooms, Additional outer toilet measuring 3.5 ft x 6 ft",
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/7ezG0eLWg1I/",
+  "optional_owned_audio": "assets/audio/7ezG0eLWg1I.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story bungalow with a multi-colored textured elevation featuring leaf-pattern wall art, CNC laser-cut metal accent frames and gates, a long tiled car portico with checkered flooring, and a red-coated terrace equipped with two UltraTech water tanks.. Neighbourhood: Quiet, developing residential layout surrounded by independent houses, open farmland, and scenic mountain views in the background near Karamadai.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story bungalow with a multi-colored textured elevation featuring leaf-pattern wall art, CNC laser-cut metal accent frames and gates, a long tiled car portico with checkered flooring, and a red-coated terrace equipped with two UltraTech water tanks.. Neighbourhood: Quiet, developing residential layout surrounded by independent houses, open farmland, and scenic mountain views in the background near Karamadai.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story bungalow with a multi-colored textured elevation featuring leaf-pattern wall art, CNC laser-cut metal accent frames and gates, a long tiled car portico with checkered flooring, and a red-coated terrace equipped with two UltraTech water tanks.. Neighbourhood: Quiet, developing residential layout surrounded by independent houses, open farmland, and scenic mountain views in the background near Karamadai.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story bungalow with a multi-colored textured elevation featuring leaf-pattern wall art, CNC laser-cut metal accent frames and gates, a long tiled car portico with checkered flooring, and a red-coated terrace equipped with two UltraTech water tanks.. Neighbourhood: Quiet, developing residential layout surrounded by independent houses, open farmland, and scenic mountain views in the background near Karamadai.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
