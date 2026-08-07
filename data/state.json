@@ -581,9 +581,11 @@
     },
     "c1o7b5FMTHE": {
       "attempts": 0,
+      "completed_at": "2026-08-07T11:11:01.517632+00:00",
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
+      "last_error": "",
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "status": "archived_non_target"
     },
     "cTTaAUCflWQ": {
       "attempts": 0,
@@ -652,6 +654,14 @@
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
       "status": "discovered"
+    },
+    "gJoV6mI_-h0": {
+      "attempts": 1,
+      "first_seen_at": "2026-08-07T11:10:13.231229+00:00",
+      "last_attempt_at": "2026-08-07T11:10:30.083750+00:00",
+      "last_error": "sequence item 2: expected str instance, dict found",
+      "next_retry_at": "2026-08-07T13:10:30.083761+00:00",
+      "status": "retry_pending"
     },
     "h2Sxt0ed38U": {
       "attempts": 0,
@@ -755,9 +765,11 @@
     },
     "tzDuDu8EcAU": {
       "attempts": 0,
+      "completed_at": "2026-08-07T11:10:50.178851+00:00",
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
+      "last_error": "",
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "status": "archived_non_target"
     },
     "uwiLU8zPq3o": {
       "attempts": 0,
