@@ -1,5 +1,6 @@
 import argparse
 import json
+import re
 import shutil
 import subprocess
 from pathlib import Path
@@ -11,6 +12,8 @@ PUBLIC = Path("professional_video/public/render")
 PROPS = Path("data/remotion_props")
 DEFAULT_PHONE = "9003787621"
 VIDEO_PATTERNS = ("*.mp4", "*.mov", "*.m4v", "*.webm")
+DIALOGUE_GAP_SECONDS = 0.35
+FPS = 30
 
 
 def _duration(path: Path) -> float:
@@ -30,6 +33,36 @@ def _copy(files: list[Path], destination: Path, prefix: str) -> list[str]:
     return copied
 
 
+def _normalize_scene_name(name: str) -> str:
+    """Map R2/stock folder names to the semantic categories used by Remotion."""
+    token = re.sub(r"[^a-z0-9]+", " ", name.lower()).strip()
+    if any(word in token for word in ("road", "street", "access")):
+        return "road"
+    if any(word in token for word in ("bedroom", "bed room")):
+        return "bedroom"
+    if any(word in token for word in ("living", "hall")):
+        return "living"
+    if any(word in token for word in ("kitchen", "dining")):
+        return "kitchen"
+    if any(word in token for word in ("exterior", "facade", "front", "elevation", "outside")):
+        return "exterior"
+    if any(word in token for word in ("land", "plot", "site")):
+        return "land"
+    if "interior" in token:
+        return "interior"
+    return token.replace(" ", "_") or "other"
+
+
+def _dedupe(items: list[str]) -> list[str]:
+    seen: set[str] = set()
+    result: list[str] = []
+    for item in items:
+        if item not in seen:
+            seen.add(item)
+            result.append(item)
+    return result
+
+
 def _scene_video_files(source_root: Path) -> dict[str, list[Path]]:
     """Collect scene-grouped clips from direct or nested folders."""
     grouped: dict[str, list[Path]] = {}
@@ -38,7 +71,8 @@ def _scene_video_files(source_root: Path) -> dict[str, list[Path]]:
     for folder in sorted(path for path in source_root.rglob("*") if path.is_dir()):
         files = [path for pattern in VIDEO_PATTERNS for path in folder.glob(pattern)]
         if files:
-            grouped.setdefault(folder.name, []).extend(sorted(files))
+            scene = _normalize_scene_name(folder.name)
+            grouped.setdefault(scene, []).extend(sorted(files))
     return grouped
 
 
@@ -63,7 +97,18 @@ def _copy_scene_videos(
                 )
                 shutil.copy2(source, target)
                 copied.append(f"render/{destination.name}/{target.name}")
-    return {scene: clips for scene, clips in scene_media.items() if clips}
+
+    # Remotion asks for an "interior" pool. Build it from the real R2 room folders
+    # instead of falling back to unrelated exterior/road footage.
+    interior = _dedupe(
+        scene_media.get("living", [])
+        + scene_media.get("kitchen", [])
+        + scene_media.get("bedroom", [])
+        + scene_media.get("interior", [])
+    )
+    if interior:
+        scene_media["interior"] = interior
+    return {scene: _dedupe(clips) for scene, clips in scene_media.items() if clips}
 
 
 def _value(prop: dict, key: str, fallback: str = "Verify during visit") -> str:
@@ -106,9 +151,9 @@ def prepare(job_path: Path) -> Path:
         ],
         destination,
     )
-    representative_videos = [
-        src for scene in sorted(scene_media) for src in scene_media[scene]
-    ]
+    representative_videos = _dedupe(
+        [src for scene in sorted(scene_media) for src in scene_media[scene]]
+    )
     r2_count = sum(
         1
         for clips in _scene_video_files(r2_own_footage_folder).values()
@@ -116,8 +161,9 @@ def prepare(job_path: Path) -> Path:
     )
     print(
         f"Prepared Remotion media for {video_id}: "
-        f"R2 own B-roll={r2_count}, scene clips={len(representative_videos)}, "
-        f"images={len(images)}, actual property clips={len(actual_videos)}"
+        f"R2 own B-roll={r2_count}, unique scene clips={len(representative_videos)}, "
+        f"images={len(images)}, actual property clips={len(actual_videos)}, "
+        f"categories={sorted(scene_media)}"
     )
     if r2_count and not any("r2-own-" in src for src in representative_videos):
         raise RuntimeError("R2 clips were downloaded but not exposed to Remotion")
@@ -148,19 +194,20 @@ def prepare(job_path: Path) -> Path:
         else []
     )
     minimum_frames = {
-        "location": 120,
-        "land": 90,
-        "builtUp": 90,
-        "price": 90,
-        "facing": 90,
-        "road": 90,
-        "approval": 90,
-        "verify": 120,
-        "cta": 120,
+        "location": 75,
+        "land": 60,
+        "builtUp": 60,
+        "price": 60,
+        "facing": 60,
+        "road": 60,
+        "approval": 60,
+        "verify": 75,
+        "cta": 90,
     }
     voice_segments = []
     scene_order = []
     scene_durations = {}
+    gap_frames = max(1, int(round(DIALOGUE_GAP_SECONDS * FPS)))
     for item in manifest:
         source = Path("assets/audio") / video_id / item["file"]
         if not source.exists():
@@ -168,10 +215,10 @@ def prepare(job_path: Path) -> Path:
         target = destination / f"voice-{item['scene']}.mp3"
         shutil.copy2(source, target)
         scene = item["scene"]
-        speech_frames = max(1, int(round(float(item["duration_seconds"]) * 30)))
-        # Keep the matching scene/caption visible for the exact speech duration,
-        # followed by a consistent 1.5-second pause before the next sentence.
-        duration = speech_frames + 45
+        speech_frames = max(1, int(round(float(item["duration_seconds"]) * FPS)))
+        # Natural presenter rhythm: about 0.35s between sentences. CTA ends quickly.
+        trailing = 4 if scene == "cta" else gap_frames
+        duration = max(speech_frames + trailing, minimum_frames.get(scene, 60))
         scene_order.append(scene)
         scene_durations[scene] = duration
         voice_segments.append(
