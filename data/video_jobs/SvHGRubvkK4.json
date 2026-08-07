@@ -1,0 +1,145 @@
+{
+  "video_id": "SvHGRubvkK4",
+  "source_url": "https://www.youtube.com/watch?v=SvHGRubvkK4",
+  "property_location": "Vadavalli, Coimbatore",
+  "property": {
+    "property_type": "Villa",
+    "bhk": "3BHK",
+    "land_area": "3 Cents",
+    "built_up_area": "2300 Sq.Ft.",
+    "price": "NOT SPECIFIED",
+    "facing": "South Facing Site, East Facing Main Door",
+    "road_width": "40 Feet",
+    "parking": "Covered Car & Bike Parking (Space for 2 Cars)",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "3BHK new individual villa for sale located in Vadavalli main town, Coimbatore., Land area is 3 Cents with a total built-up area of 2300 Sq.Ft., Property faces South site with East-facing Teak wood main door., Located on a 40 feet wide tar road with DTCP approval., Includes 3 master bedrooms with attached western toilets, wardrobes, TV units, and dressing units., Ground floor features car parking portico, hall, dining area, modular kitchen with chimney, and 1 bedroom., First floor includes 2 master bedrooms, lobby, balcony access, and terrace staircase., Contact numbers provided: 9345425595, 7418605112.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Vadavalli சைட்ல 3BHK Villa தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 3 Cents லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 2300 Sq.Ft. இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "road",
+        "voice": "இதுல முக்கியமான விஷயம், முன்னாடி 40 Feet ரோடு வசதி இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [],
+        "vfx": "road-measure",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு South Facing Site, East Facing Main Door ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP Approved இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 14.45430156s.', 'status': 'RESOURCE_EXHAUSTED'"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/SvHGRubvkK4/",
+  "optional_owned_audio": "assets/audio/SvHGRubvkK4.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-story house featuring cream walls with brown wood-effect accent paneling, black metal compound gate, ramped driveway into a covered portico, and side setback access.. Neighbourhood: Quiet residential layout with wide 40-foot asphalt roads, surrounding independent houses, vacant residential plots, and greenery.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-story house featuring cream walls with brown wood-effect accent paneling, black metal compound gate, ramped driveway into a covered portico, and side setback access.. Neighbourhood: Quiet residential layout with wide 40-foot asphalt roads, surrounding independent houses, vacant residential plots, and greenery.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-story house featuring cream walls with brown wood-effect accent paneling, black metal compound gate, ramped driveway into a covered portico, and side setback access.. Neighbourhood: Quiet residential layout with wide 40-foot asphalt roads, surrounding independent houses, vacant residential plots, and greenery.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-story house featuring cream walls with brown wood-effect accent paneling, black metal compound gate, ramped driveway into a covered portico, and side setback access.. Neighbourhood: Quiet residential layout with wide 40-foot asphalt roads, surrounding independent houses, vacant residential plots, and greenery.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
