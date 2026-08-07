@@ -16,35 +16,43 @@ const replacements = [
   ],
   [
     "  const facts = props.facts;\n  const sceneNodes:",
-    "  const facts = props.facts;\n  const allBroll: VisualSource[] = ['exterior','interior','road','land'].flatMap(sceneSources);\n  const styleNames = ['cinematic','fast-cut','premium','location-first','price-first'] as const;\n  const automaticStyle = styleNames[Array.from(props.videoId).reduce((sum,char)=>sum+char.charCodeAt(0),0)%styleNames.length];\n  const style = props.styleVariant || automaticStyle;\n  const rotatePool = (items: VisualSource[], offset: number) => items.length ? [...items.slice(offset % items.length), ...items.slice(0, offset % items.length)] : items;\n  const styleOffset = styleNames.indexOf(style);\n  const exteriorPool = rotatePool(sceneSources('exterior'), styleOffset);\n  const interiorPool = rotatePool(sceneSources('interior'), styleOffset+1);\n  const roadPool = rotatePool(sceneSources('road'), styleOffset+2);\n  const mixedPool = rotatePool(allBroll, styleOffset+3);\n  const sceneValue = (scene:string) => ({location: props.location, land: facts[0]?.value, builtUp: facts[1]?.value, price: props.price, facing: facts[2]?.value, road: facts[3]?.value, approval: facts[5]?.value}[scene] || '');\n  const sceneNodes:",
+    "  const facts = props.facts;\n  const allBroll: VisualSource[] = ['exterior','interior','road','land'].flatMap(sceneSources);\n  const styleNames = ['cinematic','fast-cut','premium','location-first','price-first'] as const;\n  const automaticStyle = styleNames[Array.from(props.videoId).reduce((sum,char)=>sum+char.charCodeAt(0),0)%styleNames.length];\n  const style = props.styleVariant || automaticStyle;\n  const rotatePool = (items: VisualSource[], offset: number) => items.length ? [...items.slice(offset % items.length), ...items.slice(0, offset % items.length)] : items;\n  const styleOffset = styleNames.indexOf(style);\n  const exteriorPool = rotatePool(sceneSources('exterior'), styleOffset);\n  const interiorPool = rotatePool(sceneSources('interior'), styleOffset+1);\n  const roadPool = rotatePool(sceneSources('road'), styleOffset+2);\n  const landPool = rotatePool(sceneSources('land'), styleOffset+3);\n  const mixedPool = rotatePool(allBroll, styleOffset+3);\n  const locationPool = [...exteriorPool,...roadPool,...landPool,...interiorPool];\n  const landScenePool = [...landPool,...exteriorPool,...roadPool];\n  const builtScenePool = [...interiorPool,...exteriorPool];\n  const roadScenePool = [...roadPool,...exteriorPool];\n  const generalPool = mixedPool.length ? mixedPool : locationPool;\n  const sceneValue = (scene:string) => ({location: props.location, land: facts[0]?.value, builtUp: facts[1]?.value, price: props.price, facing: facts[2]?.value, road: facts[3]?.value, approval: facts[5]?.value}[scene] || '');\n  const sceneNodes:",
   ],
   [
     "    location: props.templateVariant === 'plot'\n      ? <LocationJourneyScene mapSources={mapVisuals} houseSource={sourceFor('exterior') || sourceFor('land')} title={props.title} location={props.location} targetLocation={props.locationLabel}/>\n      : <HookScene source={sourceFor('exterior')} title={props.title} location={props.location}/>,",
-    "    location: <HookScene source={exteriorPool[0] || mixedPool[0] || interiorPool[0] || roadPool[0]} title={props.title} location={props.location}/>,",
+    "    location: <RotatingBrollScene media={locationPool.length ? locationPool : generalPool}/>,",
   ],
   [
     "    land: <LaserPlotScene source={sourceFor('land')} fact={facts[0] || {label:'LAND',value:'VERIFY ON SITE'}}/>,",
-    "    land: <LaserPlotScene source={sourceFor('land') || exteriorPool[1] || mixedPool[0]} fact={facts[0] || {label:'LAND',value:'VERIFY ON SITE'}}/>,",
+    "    land: <RotatingBrollScene media={landScenePool.length ? landScenePool : generalPool}/>,",
   ],
   [
     "    builtUp: <BuiltUpScanScene source={sourceFor('exterior')} fact={facts[1] || {label:'BUILT-UP',value:'VERIFY ON SITE'}}/>,",
-    "    builtUp: <BuiltUpScanScene source={interiorPool[0] || exteriorPool[0] || mixedPool[0]} fact={facts[1] || {label:'BUILT-UP',value:'VERIFY ON SITE'}}/>,",
+    "    builtUp: <RotatingBrollScene media={builtScenePool.length ? builtScenePool : generalPool}/>,",
   ],
   [
     "    price: <PriceScene source={sourceFor('exterior',1)} price={props.price}/>,",
-    "    price: <PriceScene source={exteriorPool[1] || exteriorPool[0] || mixedPool[0]} price={props.price}/>,",
+    "    price: <RotatingBrollScene media={generalPool}/>,",
   ],
   [
     "    facing: <FacingScene source={sourceFor('exterior') || sourceFor('land',1)} fact={facts[2] || {label:'FACING',value:'VERIFY ON SITE'}}/>,",
-    "    facing: <FacingScene source={exteriorPool[2] || exteriorPool[0] || mixedPool[0]} fact={facts[2] || {label:'FACING',value:'VERIFY ON SITE'}}/>,",
+    "    facing: <RotatingBrollScene media={exteriorPool.length ? exteriorPool : generalPool}/>,",
   ],
   [
     "    road: <RoadMeasureScene source={sourceFor('road')} fact={facts[3] || {label:'ROAD',value:'VERIFY ON SITE'}}/>,",
-    "    road: <RoadMeasureScene source={roadPool[0] || mixedPool[0]} fact={facts[3] || {label:'ROAD',value:'VERIFY ON SITE'}}/>,",
+    "    road: <RotatingBrollScene media={roadScenePool.length ? roadScenePool : generalPool}/>,",
+  ],
+  [
+    "    approval: <ApprovalScene fact={facts[5] || {label:'APPROVAL',value:'VERIFY DOCUMENTS'}}/>,",
+    "    approval: <RotatingBrollScene media={generalPool}/>,",
+  ],
+  [
+    "    verify: <VerifyScene price={props.price} location={props.location}/>,",
+    "    verify: <RotatingBrollScene media={generalPool}/>,",
   ],
   [
     "export const PropertyReel: React.FC<PropertyVideoProps> = (props) => {",
-    "const SyncedCaption: React.FC<{text:string}> = ({text}) => (\n  <div style={{position:'absolute',zIndex:80,left:58,right:58,bottom:125,padding:'16px 22px',borderRadius:18,background:'linear-gradient(135deg,rgba(2,11,20,.91),rgba(6,25,45,.84))',border:'1px solid rgba(255,255,255,.2)',boxShadow:'0 18px 48px rgba(0,0,0,.48)',backdropFilter:'blur(14px)',fontFamily:typeface,fontSize:29,lineHeight:1.36,fontWeight:900,textAlign:'center',color:cream,textShadow:'0 3px 12px rgba(0,0,0,.7)'}}>{text}</div>\n);\n\nexport const PropertyReel: React.FC<PropertyVideoProps> = (props) => {",
+    "const RotatingBrollScene: React.FC<{media:VisualSource[]}> = ({media}) => {\n  const frame = useCurrentFrame();\n  if (!media.length) return <AbsoluteFill><Visual /></AbsoluteFill>;\n  const shotFrames = 84;\n  const fadeFrames = 10;\n  const slot = Math.floor(frame / shotFrames);\n  const local = frame % shotFrames;\n  const current = media[slot % media.length];\n  const next = media[(slot + 1) % media.length];\n  const fade = interpolate(local,[shotFrames-fadeFrames,shotFrames],[0,1],clamp);\n  const scale = interpolate(local,[0,shotFrames],[1.035,1.105],clamp);\n  return <AbsoluteFill style={{overflow:'hidden',backgroundColor:navy}}>\n    <AbsoluteFill><Visual source={current} scale={scale}/></AbsoluteFill>\n    {media.length > 1 && <AbsoluteFill style={{opacity:fade}}><Visual source={next} scale={1.04}/></AbsoluteFill>}\n    <AbsoluteFill style={{background:'linear-gradient(180deg,rgba(2,11,20,.05),rgba(2,11,20,.12) 55%,rgba(2,11,20,.72))'}}/>\n  </AbsoluteFill>;\n};\n\nconst SyncedCaption: React.FC<{text:string}> = ({text}) => (\n  <div style={{position:'absolute',zIndex:80,left:58,right:58,bottom:125,padding:'16px 22px',borderRadius:18,background:'linear-gradient(135deg,rgba(2,11,20,.91),rgba(6,25,45,.84))',border:'1px solid rgba(255,255,255,.2)',boxShadow:'0 18px 48px rgba(0,0,0,.48)',backdropFilter:'blur(14px)',fontFamily:typeface,fontSize:29,lineHeight:1.36,fontWeight:900,textAlign:'center',color:cream,textShadow:'0 3px 12px rgba(0,0,0,.7)'}}>{text}</div>\n);\n\nexport const PropertyReel: React.FC<PropertyVideoProps> = (props) => {",
   ],
   [
     "      {scheduled.map(({scene,from,duration}) => <Sequence key={scene} from={from} durationInFrames={duration}>{sceneNodes[scene]}</Sequence>)}",
@@ -70,4 +78,4 @@ for (const [before, after] of replacements) {
 }
 fs.writeFileSync(target, source);
 
-console.log('Applied cinematic grading, contextual 3D property VFX, style-aware transitions, looping B-roll, synced captions, and 1.5-second dialogue gaps');
+console.log('Applied cinematic VFX, 2.8-second B-roll rotation, synced captions, and natural dialogue timing');
