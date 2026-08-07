@@ -1,5 +1,6 @@
 import hashlib
 import json
+import re
 import shutil
 from pathlib import Path
 
@@ -26,56 +27,123 @@ DEFAULT_PER_CATEGORY = 4
 
 SCENE_QUERIES = {
     "location": [
-        "South India residential neighbourhood vertical video",
-        "Indian residential street modern houses vertical",
-        "Coimbatore residential neighbourhood road",
+        "Coimbatore Tamil Nadu residential neighbourhood road",
+        "South India residential neighbourhood modern houses",
+        "Indian residential street independent houses",
+        "Tamil Nadu residential street houses",
     ],
     "road": [
-        "India residential asphalt road vertical",
-        "South India residential street road",
-        "Indian villa layout road vertical",
+        "Coimbatore Tamil Nadu residential road",
+        "South India residential street asphalt road",
+        "India residential layout tar road",
+        "Indian villa layout road",
     ],
     "land": [
-        "India residential plot land aerial",
-        "Indian plotted development vacant land",
+        "Tamil Nadu residential plot land aerial",
+        "India residential plotted development vacant land",
         "residential plots layout India drone",
+        "South India house plot layout",
     ],
     "exterior": [
-        "modern Indian villa exterior vertical",
-        "South India independent house exterior",
+        "Tamil Nadu modern independent house exterior",
+        "South India independent villa exterior",
         "modern Indian house facade residential",
+        "Indian independent house exterior",
     ],
     "living": [
-        "modern Indian living room vertical walkthrough",
-        "Indian villa living room interior",
-        "South India modern home living room",
+        "modern Indian home living room walkthrough",
+        "South India house living room interior",
+        "Indian villa living room empty interior",
+        "Tamil Nadu modern home living room",
     ],
     "kitchen": [
-        "modern Indian modular kitchen vertical",
-        "Indian house kitchen interior walkthrough",
-        "South India modular kitchen home",
+        "modern Indian modular kitchen empty walkthrough",
+        "South India house modular kitchen interior",
+        "Indian home kitchen interior no people",
+        "Tamil Nadu modular kitchen home",
     ],
     "bedroom": [
-        "modern Indian bedroom vertical interior",
-        "Indian villa bedroom walkthrough",
-        "South India modern home bedroom",
+        "modern Indian home bedroom empty interior",
+        "South India house bedroom walkthrough",
+        "Indian villa bedroom no people",
+        "Tamil Nadu modern home bedroom",
     ],
 }
 
 
+# Metadata-based hard rejects. These are intentionally conservative: stock
+# footage is representative, so a clearly foreign/commercial/lifestyle shot is
+# worse than using a later fallback that actually looks residential.
+GLOBAL_REJECT_TERMS = {
+    "church", "temple", "mosque", "cathedral", "chapel", "shrine",
+    "mountain", "mountains", "alps", "snow", "ski", "forest",
+    "tea plantation", "coffee plantation",
+    "woman", "women", "man ", " men ", "person", "people", "couple",
+    "family", "girl", "boy", "child", "children", "model", "portrait",
+    "holding", "cooking", "chef", "dancing", "fitness", "selfie",
+    "office", "coworking", "restaurant", "hotel", "resort", "hospital",
+    "shopping", "store", "mall", "bar ", "cafe", "warehouse", "factory",
+}
+
 SCENE_REJECT_TERMS = {
-    "location": {"mountain", "mountains", "alps", "snow", "forest", "tea", "plantation", "europe", "american"},
-    "road": {"mountain", "mountains", "forest", "tea", "plantation", "highway", "freeway", "europe"},
-    "land": {"mountain", "mountains", "forest", "tea", "plantation", "farm", "farmland"},
-    "exterior": {"castle", "mansion", "europe", "american", "snow", "mountain"},
-    "living": {"office", "hotel", "restaurant", "church", "temple", "mosque"},
-    "kitchen": {"restaurant", "commercial", "hotel", "office"},
-    "bedroom": {"hotel", "resort", "hospital", "hostel"},
+    "location": {"highway", "freeway", "downtown", "city skyline", "europe", "american", "usa"},
+    "road": {"highway", "freeway", "motorway", "race", "traffic jam", "europe", "american", "usa"},
+    "land": {"farm", "farmland", "agriculture", "rice field", "paddy field", "desert"},
+    "exterior": {"castle", "palace", "mansion", "apartment", "condo", "skyscraper", "europe", "american", "usa"},
+    "living": {"conference", "lobby", "reception", "apartment tour"},
+    "kitchen": {"commercial kitchen", "restaurant kitchen", "industrial kitchen"},
+    "bedroom": {"dormitory", "hostel", "hotel room", "resort room"},
+}
+
+REGIONAL_TERMS = {
+    "coimbatore": 14,
+    "tamil nadu": 12,
+    "tamilnadu": 12,
+    "south india": 10,
+    "south indian": 10,
+    "india": 7,
+    "indian": 7,
+}
+
+SCENE_PREFER_TERMS = {
+    "location": {"residential": 8, "neighbourhood": 8, "neighborhood": 8, "street": 5, "houses": 5, "villa": 4},
+    "road": {"residential": 8, "road": 8, "street": 7, "asphalt": 5, "tar": 5, "layout": 5, "paved": 4},
+    "land": {"residential": 7, "plot": 9, "plots": 9, "land": 7, "layout": 6, "vacant": 4, "site": 4},
+    "exterior": {"independent": 9, "house": 8, "villa": 8, "exterior": 7, "facade": 7, "residential": 5, "home": 4},
+    "living": {"living room": 10, "living": 7, "home": 5, "house": 5, "interior": 4, "empty": 4},
+    "kitchen": {"modular kitchen": 12, "kitchen": 9, "home": 5, "house": 5, "interior": 4, "empty": 4},
+    "bedroom": {"bedroom": 10, "home": 5, "house": 5, "interior": 4, "empty": 4},
+}
+
+# Soft penalties: these do not automatically reject a useful clip, but push it
+# below footage that looks like an ordinary Indian independent home.
+SOFT_PENALTY_TERMS = {
+    "luxury": 2,
+    "penthouse": 8,
+    "apartment": 7,
+    "condo": 9,
+    "loft": 6,
+    "studio": 5,
+    "western": 8,
+    "european": 10,
+    "american": 12,
+    "new york": 12,
+    "london": 12,
 }
 
 
 def _source_identity(item: dict) -> str:
     return str(item.get("source_url") or item.get("download_url") or item.get("local_file") or "").strip()
+
+
+def _metadata_text(item: dict) -> str:
+    # search_query is deliberately excluded. A provider returning a result for an
+    # India query does not prove the clip itself depicts India. We only reward
+    # regional words that exist in provider metadata/URL.
+    return " ".join(
+        str(item.get(key, ""))
+        for key in ("source_url", "title", "description", "alt", "tags")
+    ).lower()
 
 
 def _historical_sources() -> set[str]:
@@ -99,14 +167,74 @@ def _historical_sources() -> set[str]:
     return result
 
 
+def _contains_term(text: str, term: str) -> bool:
+    if " " in term:
+        return term in text
+    return re.search(rf"\b{re.escape(term)}\b", text) is not None
+
+
 def _stock_allowed(item: dict, scene: str) -> bool:
-    if not _allowed_scene_visual(item, scene if scene in {"location", "road", "land", "exterior", "interior"} else "interior"):
+    mapped_scene = scene if scene in {"location", "road", "land", "exterior", "interior"} else "interior"
+    if not _allowed_scene_visual(item, mapped_scene):
         return False
-    searchable = " ".join(
-        str(item.get(key, ""))
-        for key in ("source_url", "title", "description", "alt", "search_query")
-    ).lower()
-    return not any(term in searchable for term in SCENE_REJECT_TERMS.get(scene, set()))
+    searchable = _metadata_text(item)
+    if any(_contains_term(searchable, term.strip()) for term in GLOBAL_REJECT_TERMS):
+        return False
+    return not any(_contains_term(searchable, term) for term in SCENE_REJECT_TERMS.get(scene, set()))
+
+
+def _quality_score(item: dict, scene: str) -> int:
+    """Rank stock by Indian-residential fit, scene relevance and reel usability."""
+    text = _metadata_text(item)
+    score = 0
+
+    for term, value in REGIONAL_TERMS.items():
+        if term in text:
+            score += value
+    for term, value in SCENE_PREFER_TERMS.get(scene, {}).items():
+        if term in text:
+            score += value
+    for term, value in SOFT_PENALTY_TERMS.items():
+        if term in text:
+            score -= value
+
+    width = item.get("width") or item.get("video_width") or 0
+    height = item.get("height") or item.get("video_height") or 0
+    try:
+        width = int(width)
+        height = int(height)
+    except (TypeError, ValueError):
+        width = height = 0
+    if width and height:
+        if height > width:
+            score += 6
+        elif height == width:
+            score += 1
+        else:
+            score -= 2
+        if min(width, height) >= 720:
+            score += 2
+
+    duration = item.get("duration_seconds")
+    try:
+        duration = float(duration)
+    except (TypeError, ValueError):
+        duration = None
+    if duration is not None:
+        if 4 <= duration <= 20:
+            score += 4
+        elif duration < 2:
+            score -= 5
+        elif duration > 45:
+            score -= 2
+
+    # Earlier query variants are more geographically/property-specific. Keep
+    # this modest so actual provider metadata can still outrank query order.
+    query_index = item.get("query_index")
+    if isinstance(query_index, int):
+        score += max(0, 4 - query_index)
+
+    return score
 
 
 def _category_queries(job: dict) -> dict[str, list[str]]:
@@ -123,14 +251,13 @@ def _category_queries(job: dict) -> dict[str, list[str]]:
     for category in categories:
         base = list(SCENE_QUERIES[category])
         if category in {"location", "road", "exterior"} and location:
-            # Exact locality search goes first. Providers may not have that exact
-            # place, so broader South-India/India searches remain behind it.
             prefix = {
-                "location": f"{location} Coimbatore residential neighbourhood",
-                "road": f"{location} Coimbatore residential road",
-                "exterior": f"{location} Coimbatore modern house exterior",
+                "location": f"{location} Coimbatore Tamil Nadu residential neighbourhood",
+                "road": f"{location} Coimbatore Tamil Nadu residential road",
+                "exterior": f"{location} Coimbatore Tamil Nadu independent house exterior",
             }[category]
-            base.insert(0, prefix)
+            if not base or base[0] != prefix:
+                base.insert(0, prefix)
         result[category] = base
     return result
 
@@ -147,12 +274,16 @@ def _unique_candidates(items: list[dict], scene: str, used: set[str]) -> list[di
         local_seen.add(identity)
         if not _stock_allowed(item, scene):
             continue
+        scored = {**item, "quality_score": _quality_score(item, scene)}
         if identity in historical:
-            old.append(item)
+            old.append(scored)
         else:
-            fresh.append(item)
-    # Previously used stock is only considered after genuinely fresh provider
-    # results have been exhausted.
+            fresh.append(scored)
+
+    # Quality is the primary ordering inside each freshness tier. Previously
+    # used stock remains a last resort even if it scores highly.
+    fresh.sort(key=lambda row: (-int(row.get("quality_score", 0)), int(row.get("query_index", 99))))
+    old.sort(key=lambda row: (-int(row.get("quality_score", 0)), int(row.get("query_index", 99))))
     return fresh + old
 
 
@@ -161,15 +292,23 @@ def _provider_candidates(job: dict, scene: str, queries: list[str], provider: st
         return []
     collected: list[dict] = []
     search = search_pexels_videos if provider == "pexels" else search_pixabay_videos
-    for query in queries:
-        # Search a larger pool than we consume so the no-repeat/blocked filters
-        # have room to reject weak results.
-        results = search(query, limit=max(8, wanted * 3))
-        annotated = [{**item, "scene": scene, "search_query": query} for item in results]
-        for item in _unique_candidates(annotated, scene, used | {_source_identity(x) for x in collected}):
-            collected.append(item)
-            if len(collected) >= wanted:
-                return collected
+
+    # Search all targeted variants, then rank globally. This avoids taking four
+    # mediocre clips from the first broad query while a later South-India query
+    # contains a much better house/road/interior result.
+    raw: list[dict] = []
+    for query_index, query in enumerate(queries):
+        results = search(query, limit=max(10, wanted * 4))
+        raw.extend({**item, "scene": scene, "search_query": query, "query_index": query_index} for item in results)
+
+    ranked = _unique_candidates(raw, scene, used)
+    for item in ranked:
+        identity = _source_identity(item)
+        if identity in {_source_identity(x) for x in collected}:
+            continue
+        collected.append(item)
+        if len(collected) >= wanted:
+            break
     return collected
 
 
@@ -195,25 +334,24 @@ def _stable_download_names(items: list[dict]) -> list[dict]:
 
 
 def _take_fallback(items: list[dict], scene: str, wanted: int, used: set[str]) -> list[dict]:
-    chosen = []
+    eligible = []
     for item in items:
         identity = _source_identity(item)
         if not identity or identity in used:
             continue
         if not _stock_allowed(item, scene):
             continue
-        chosen.append(item)
-        if len(chosen) >= wanted:
-            break
-    return chosen
+        eligible.append({**item, "quality_score": _quality_score(item, scene)})
+    eligible.sort(key=lambda row: -int(row.get("quality_score", 0)))
+    return eligible[:wanted]
 
 
 def source_property_videos_free_first(job: dict, per_scene: int = DEFAULT_PER_CATEGORY) -> list[dict]:
     """Source diverse B-roll with R2 as the last retrieval option.
 
     Priority for each semantic category:
-      1. Pexels fresh portrait video
-      2. Pixabay fresh video
+      1. Pexels fresh portrait video, ranked for Indian residential relevance
+      2. Pixabay fresh video, ranked the same way
       3. persistent stock library from R2/local cache
       4. advertiser-owned R2 B-roll as final fallback
 
@@ -278,7 +416,7 @@ def source_property_videos_free_first(job: dict, per_scene: int = DEFAULT_PER_CA
         missing = per_scene - len(scene_items)
         if missing > 0:
             library_scene = scene if scene in {"location", "road", "land", "exterior"} else "interior"
-            library = _take_fallback(get_library_clips(library_scene, missing * 2), scene, missing, used)
+            library = _take_fallback(get_library_clips(library_scene, missing * 3), scene, missing, used)
             for item in library:
                 item.update({"scene": scene, "source_priority": 3})
             scene_items.extend(library)
@@ -289,7 +427,7 @@ def source_property_videos_free_first(job: dict, per_scene: int = DEFAULT_PER_CA
         missing = per_scene - len(scene_items)
         if missing > 0:
             own_scene = "interior" if scene in {"living", "kitchen", "bedroom"} else scene
-            own = _take_fallback(get_own_footage_clips(own_scene, property_type, missing * 2), scene, missing, used)
+            own = _take_fallback(get_own_footage_clips(own_scene, property_type, missing * 3), scene, missing, used)
             for item in own:
                 item.update({"scene": scene, "source_priority": 4})
             scene_items.extend(own)
@@ -297,7 +435,8 @@ def source_property_videos_free_first(job: dict, per_scene: int = DEFAULT_PER_CA
 
         print(
             f"B-roll {video_id}/{scene}: {len(scene_items)} clips; "
-            f"providers={[item.get('provider') for item in scene_items]}"
+            f"providers={[item.get('provider') for item in scene_items]}; "
+            f"scores={[item.get('quality_score') for item in scene_items]}"
         )
         saved.extend(scene_items)
 
