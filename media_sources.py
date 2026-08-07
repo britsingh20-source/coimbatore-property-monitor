@@ -19,11 +19,6 @@ PIXABAY_PHOTO_API = "https://pixabay.com/api/"
 PIXABAY_VIDEO_API = "https://pixabay.com/api/videos/"
 USER_AGENT = "CoimbatorePropertyMonitor/1.0 (property media attribution bot)"
 
-# Local cache of previously-approved STOCK clips (Pixabay/Pexels), organized by
-# scene category. Checked before any API call so the pool of pre-approved stock
-# footage grows on its own over time instead of re-searching every run. This is
-# strictly separate from the advertiser's own filmed b-roll below — stock clips
-# never get mixed into the curated own-footage folders.
 LIBRARY_ROOT = Path("assets/library")
 SCENE_LIBRARY_CATEGORY = {
     "location": "drone_views",
@@ -33,14 +28,10 @@ SCENE_LIBRARY_CATEGORY = {
     "interior": "interiors",
 }
 
-# The advertiser's own filmed b-roll, organized in R2 as
-# <property-type-folder>/<room-folder>/*.mp4 (e.g. "villas/exterior/").
-# Read-only from the pipeline's point of view — never auto-written to, so it
-# only ever contains footage the business actually filmed and vetted itself.
 PROPERTY_TYPE_LIBRARY_FOLDERS = {
     ("villa", "house", "duplex", "individual", "independent"): "villas",
 }
-DEFAULT_OWN_FOOTAGE_FOLDER = "villas"  # the only category filmed so far
+DEFAULT_OWN_FOOTAGE_FOLDER = "villas"
 SCENE_ROOM_FOLDERS = {
     "road": ["Road"],
     "exterior": ["exterior"],
@@ -67,8 +58,6 @@ def _plain(value: str) -> str:
 
 
 def _truncate_query(query: str, max_length: int = 100) -> str:
-    """Pixabay rejects q values over 100 characters with a 400. Cut at the last
-    whole word inside the limit instead of chopping mid-word."""
     query = query.strip()
     if len(query) <= max_length:
         return query
@@ -78,7 +67,6 @@ def _truncate_query(query: str, max_length: int = 100) -> str:
 
 
 def _allowed_visual(item: dict) -> bool:
-    """Reject media whose searchable metadata signals religious imagery."""
     searchable = " ".join(str(item.get(key, "")) for key in (
         "source_url", "download_url", "title", "description", "alt",
     )).lower()
@@ -137,7 +125,6 @@ def search_pexels(query: str, limit: int = 8) -> list[dict]:
 
 
 def search_pixabay(query: str, limit: int = 8) -> list[dict]:
-    """Primary free image source — generally stronger architecture/building hit rate than Pexels."""
     api_key = os.environ.get("PIXABAY_API_KEY")
     if not api_key:
         return []
@@ -166,8 +153,6 @@ def search_pixabay(query: str, limit: int = 8) -> list[dict]:
 
 
 def search_pixabay_videos(query: str, limit: int = 6) -> list[dict]:
-    """Primary free video source. Pixabay has little true portrait footage, so we pick
-    the closest available resolution rather than filtering strictly by orientation."""
     api_key = os.environ.get("PIXABAY_API_KEY")
     if not api_key:
         return []
@@ -196,12 +181,15 @@ def search_pixabay_videos(query: str, limit: int = 6) -> list[dict]:
             "media_kind": "video",
             "exact_location_candidate": False,
             "duration_seconds": hit.get("duration"),
+            "tags": hit.get("tags", ""),
+            "title": hit.get("tags", ""),
+            "width": chosen.get("width") or 0,
+            "height": chosen.get("height") or 0,
         })
     return [item for item in clips if _allowed_visual(item)]
 
 
 def search_pexels_videos(query: str, limit: int = 6) -> list[dict]:
-    """Return reusable portrait property clips from the free Pexels video API."""
     api_key = os.environ.get("PEXELS_API_KEY")
     if not api_key:
         return []
@@ -224,15 +212,21 @@ def search_pexels_videos(query: str, limit: int = 6) -> list[dict]:
         candidates.sort(key=lambda item: abs((item.get("height") or 0) - 1920) + abs((item.get("width") or 0) - 1080))
         chosen = candidates[0]
         user = video.get("user") or {}
+        source_url = video.get("url", "https://www.pexels.com/videos/")
+        slug = source_url.rstrip("/").rsplit("/", 1)[-1].replace("-", " ")
         clips.append({
             "download_url": chosen["link"],
-            "source_url": video.get("url", "https://www.pexels.com/videos/"),
+            "source_url": source_url,
             "creator": user.get("name", "Pexels contributor"),
             "license": "Pexels License",
             "provider": "Pexels",
             "media_kind": "video",
             "exact_location_candidate": False,
             "duration_seconds": video.get("duration"),
+            "title": slug,
+            "description": slug,
+            "width": chosen.get("width") or video.get("width") or 0,
+            "height": chosen.get("height") or video.get("height") or 0,
         })
     return [item for item in clips if _allowed_visual(item)]
 
@@ -246,9 +240,7 @@ def download_media(items: list[dict], destination: Path, limit: int = 6) -> list
             response.raise_for_status()
             default_type = "video/mp4" if item.get("media_kind") == "video" else "image/jpeg"
             content_type = response.headers.get("content-type", default_type).split(";")[0]
-            extension = {
-                "image/png": ".png", "image/webp": ".webp", "video/mp4": ".mp4",
-            }.get(content_type, ".jpg")
+            extension = {"image/png": ".png", "image/webp": ".webp", "video/mp4": ".mp4"}.get(content_type, ".jpg")
             path = destination / f"{index:02d}-{item['provider'].lower().replace(' ', '-')}{extension}"
             path.write_bytes(response.content)
             saved.append({**item, "local_file": str(path)})
@@ -262,9 +254,6 @@ def _library_dir(scene: str) -> Path:
 
 
 def _r2_client():
-    """Cloudflare R2 is S3-compatible; boto3 talks to it via a custom endpoint.
-    Returns None (rather than raising) when R2 isn't configured, so callers can
-    fall back to the local-disk cache for local runs and tests."""
     account_id = os.environ.get("R2_ACCOUNT_ID")
     access_key = os.environ.get("R2_ACCESS_KEY_ID")
     secret_key = os.environ.get("R2_SECRET_ACCESS_KEY")
@@ -281,11 +270,6 @@ def _r2_client():
 
 
 def _r2_bucket_name() -> str:
-    """R2_BUCKET_NAME with the same 'blank counts as unset' guard as _r2_client()'s
-    other credential reads — os.environ.get(name, default) only falls back when the
-    key is entirely absent, so a present-but-empty value (e.g. a workflow reading a
-    Secret via ${{ vars.X }}, which resolves to "") would otherwise silently pass
-    Bucket="" to boto3 instead of falling back."""
     return os.environ.get("R2_BUCKET_NAME") or "github"
 
 
@@ -302,7 +286,7 @@ def _own_footage_folder(property_type: str) -> str | None:
         if any(keyword in text for keyword in keywords):
             return folder
     if any(kind in text for kind in ("plot", "land", "site")):
-        return None  # bare plots have no rooms to film
+        return None
     return DEFAULT_OWN_FOOTAGE_FOLDER
 
 
@@ -317,8 +301,6 @@ def _own_footage_prefixes(property_type: str, scene: str) -> list[str]:
 
 
 def get_own_footage_clips(scene: str, property_type: str, limit: int) -> list[dict]:
-    """Pull the advertiser's own filmed b-roll for this scene from R2, if any exists.
-    Read-only — the pipeline never writes into these folders, only the business does."""
     client = _r2_client()
     if client is None:
         return []
@@ -365,9 +347,6 @@ def get_own_footage_clips(scene: str, property_type: str, limit: int) -> list[di
 
 
 def get_library_clips(scene: str, limit: int) -> list[dict]:
-    """Pull already-approved clips for this scene from the persistent cache, if enough exist.
-    Tries Cloudflare R2 first (survives across CI runs); falls back to local disk when R2
-    isn't configured, e.g. for local development or tests."""
     client = _r2_client()
     if client is not None:
         try:
@@ -410,6 +389,8 @@ def _get_library_clips_r2(client, scene: str, limit: int) -> list[dict]:
             "actual_property": False,
             "scene": scene,
             "source_url": metadata.get("source_url", ""),
+            "title": metadata.get("title", ""),
+            "tags": metadata.get("tags", ""),
             "from_library": True,
         })
     return result
@@ -440,14 +421,14 @@ def _get_library_clips_local(scene: str, limit: int) -> list[dict]:
             "actual_property": False,
             "scene": scene,
             "source_url": meta.get("source_url", ""),
+            "title": meta.get("title", ""),
+            "tags": meta.get("tags", ""),
             "from_library": True,
         })
     return result
 
 
 def add_to_library(scene: str, items: list[dict]) -> None:
-    """Copy newly-downloaded, already-filtered clips into the persistent cache for future
-    reuse. Prefers Cloudflare R2; falls back to local disk when R2 isn't configured."""
     if not items:
         return
     client = _r2_client()
@@ -469,7 +450,7 @@ def _add_to_library_r2(client, scene: str, items: list[dict]) -> None:
         key = f"{prefix}{src.name}"
         try:
             client.head_object(Bucket=bucket, Key=key)
-            continue  # already cached
+            continue
         except Exception:
             pass
         try:
@@ -477,6 +458,8 @@ def _add_to_library_r2(client, scene: str, items: list[dict]) -> None:
                 "provider": str(item.get("provider", "")),
                 "license": str(item.get("license", "")),
                 "source_url": str(item.get("source_url", "")),
+                "title": str(item.get("title", ""))[:1000],
+                "tags": str(item.get("tags", ""))[:1000],
             }})
         except Exception as error:
             print(f"R2 upload skipped for {src.name}: {error}")
@@ -497,10 +480,10 @@ def _add_to_library_local(scene: str, items: list[dict]) -> None:
                     "provider": item.get("provider", ""),
                     "license": item.get("license", ""),
                     "source_url": item.get("source_url", ""),
+                    "title": item.get("title", ""),
+                    "tags": item.get("tags", ""),
                 }
-                dest.with_suffix(dest.suffix + ".json").write_text(
-                    json.dumps(meta, ensure_ascii=False), encoding="utf-8"
-                )
+                dest.with_suffix(dest.suffix + ".json").write_text(json.dumps(meta, ensure_ascii=False), encoding="utf-8")
         except OSError as error:
             print(f"Library cache save skipped for {src.name}: {error}")
 
@@ -517,7 +500,6 @@ def _font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont | ImageFont.I
 
 
 def generate_fact_graphics(job: dict, destination: Path, count: int, start: int = 1) -> list[dict]:
-    """Create honest branded VFX plates when free location media is insufficient."""
     destination.mkdir(parents=True, exist_ok=True)
     prop = job.get("property") or {}
     location = job.get("property_location", "Coimbatore")
@@ -537,7 +519,7 @@ def generate_fact_graphics(job: dict, destination: Path, count: int, start: int 
         accent = (35, 231, 190)
         draw.rounded_rectangle((70, 120, 1010, 1800), radius=48, outline=accent, width=5)
         for radius in (130, 230, 330):
-            draw.ellipse((540-radius, 510-radius, 540+radius, 510+radius), outline=(*accent, 110), width=4)
+            draw.ellipse((540-radius, 510-radius, 540+radius, 510+radius), outline=accent, width=4)
         draw.line((175, 1130, 410, 900, 665, 1050, 900, 780), fill=accent, width=18)
         for x, y in ((175, 1130), (410, 900), (665, 1050), (900, 780)):
             draw.ellipse((x-24, y-24, x+24, y+24), fill=(255, 190, 45), outline="white", width=5)
@@ -549,12 +531,7 @@ def generate_fact_graphics(job: dict, destination: Path, count: int, start: int 
         draw.text((100, 1760), "SOURCE-BASED DETAILS • SITE VISIT AVAILABLE", font=_font(28), fill=(205, 215, 225))
         path = destination / f"{start + offset:02d}-autopilot-vfx.jpg"
         image.save(path, quality=92)
-        output.append({
-            "local_file": str(path), "provider": "CoimbatoreVeedu Builders Autopilot",
-            "license": "Original generated graphic", "media_kind": "image",
-            "actual_property": False, "exact_location_candidate": False,
-            "source_url": job.get("source_url", ""),
-        })
+        output.append({"local_file": str(path), "provider": "CoimbatoreVeedu Builders Autopilot", "license": "Original generated graphic", "media_kind": "image", "actual_property": False, "exact_location_candidate": False, "source_url": job.get("source_url", "")})
     return output
 
 
@@ -566,178 +543,94 @@ def source_property_media(job: dict, minimum: int = 3) -> list[dict]:
         for pattern in ("*.jpg", "*.jpeg", "*.png", "*.webp"):
             existing.extend(destination.glob(pattern))
     if len(existing) >= minimum:
-        return [{
-            "local_file": str(path), "provider": "Advertiser supplied",
-            "license": "Owner supplied", "media_kind": "image", "actual_property": True,
-        } for path in sorted(existing)]
+        return [{"local_file": str(path), "provider": "Advertiser supplied", "license": "Owner supplied", "media_kind": "image", "actual_property": True} for path in sorted(existing)]
 
     location = job.get("property_location", "Coimbatore")
     prop = job.get("property") or {}
     property_type = prop.get("property_type", "property")
-    queries = [
-        f"{location} Coimbatore Tamil Nadu",
-        f"{location} roads buildings",
-        f"{property_type} layout Coimbatore Tamil Nadu",
-        "Coimbatore Tamil Nadu streets architecture",
-        "Coimbatore aerial city Tamil Nadu",
-    ]
+    queries = [f"{location} Coimbatore Tamil Nadu", f"{location} roads buildings", f"{property_type} layout Coimbatore Tamil Nadu", "Coimbatore Tamil Nadu streets architecture", "Coimbatore aerial city Tamil Nadu"]
     candidates = []
     seen_urls = set()
-
-    # Pixabay first — better hit rate for architecture/building imagery than Pexels.
     for item in search_pixabay(f"modern Indian {property_type} real estate", limit=8):
         if item["download_url"] not in seen_urls:
-            candidates.append(item)
-            seen_urls.add(item["download_url"])
-
+            candidates.append(item); seen_urls.add(item["download_url"])
     for query in queries:
-        try:
-            results = search_commons(query, limit=8)
-        except requests.RequestException as error:
-            print(f"Commons search skipped for {query!r}: {error}")
-            continue
-        for item in results:
-            if _allowed_visual(item) and item["download_url"] not in seen_urls:
-                candidates.append(item)
-                seen_urls.add(item["download_url"])
-
-    # Pexels as fallback if Pixabay + Commons didn't fill the pool.
-    if len(candidates) < 6:
-        for item in search_pexels(
-            f"modern Indian {property_type} real estate interior exterior", limit=8,
-        ):
-            if _allowed_visual(item) and item["download_url"] not in seen_urls:
-                candidates.append(item)
-                seen_urls.add(item["download_url"])
-
-    saved = download_media(candidates, destination, limit=6)
-    for item in saved:
-        item["actual_property"] = False
+        for item in search_commons(query, limit=6):
+            if item["download_url"] not in seen_urls:
+                candidates.append(item); seen_urls.add(item["download_url"])
+        for item in search_pixabay(query, limit=6):
+            if item["download_url"] not in seen_urls:
+                candidates.append(item); seen_urls.add(item["download_url"])
+        for item in search_pexels(query, limit=6):
+            if item["download_url"] not in seen_urls:
+                candidates.append(item); seen_urls.add(item["download_url"])
+        if len(candidates) >= minimum:
+            break
+    saved = download_media(candidates, destination, limit=max(minimum, 5))
     if len(saved) < minimum:
-        fallback_count = minimum - len(saved)
-        saved.extend(generate_fact_graphics(job, destination, fallback_count, start=len(saved) + 1))
-        print(f"Used {fallback_count} autopilot VFX fallback plate(s) for {video_id}")
-
+        saved.extend(generate_fact_graphics(job, destination, minimum - len(saved), start=len(saved) + 1))
     attribution = Path("data/media_attribution")
     attribution.mkdir(parents=True, exist_ok=True)
-    (attribution / f"{video_id}.json").write_text(
-        json.dumps(saved, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
+    (attribution / f"{video_id}.json").write_text(json.dumps(saved, ensure_ascii=False, indent=2), encoding="utf-8")
     return saved
 
 
 def _allowed_scene_visual(item: dict, scene: str) -> bool:
-    searchable = " ".join(str(item.get(key, "")) for key in (
-        "source_url", "download_url", "title", "description", "alt",
-    )).lower()
+    searchable = " ".join(str(item.get(key, "")) for key in ("source_url", "download_url", "title", "description", "alt")).lower()
     tokens = set(re.findall(r"[a-z]+", searchable))
     return _allowed_visual(item) and not tokens.intersection(SCENE_BLOCKED_TERMS.get(scene, set()))
 
 
 def _scene_video_queries(job: dict) -> dict[str, list[str]]:
-    """Search each factual scene independently; never use positional clip guessing."""
     location = str(job.get("property_location") or "Coimbatore")
     property_type = str((job.get("property") or {}).get("property_type", "property")).lower()
-    common = {
-        "location": [
-            f"Coimbatore residential neighbourhood aerial roads",
-            f"Coimbatore city residential street drone",
-        ],
-        "road": [
-            "residential layout asphalt road drone India",
-            "new plotted development wide tar road India",
-            "residential street blacktop road aerial India",
-        ],
-    }
+    common = {"location": ["Coimbatore residential neighbourhood aerial roads", "Coimbatore city residential street drone"], "road": ["residential layout asphalt road drone India", "new plotted development wide tar road India", "residential street blacktop road aerial India"]}
     if any(kind in property_type for kind in ("plot", "land", "site")):
-        return {
-            **common,
-            "land": [
-                f"residential plotted development land boundary {location}",
-                "villa plots layout boundary aerial India",
-                "vacant residential plot survey drone India",
-            ],
-            "exterior": [
-                "gated plotted development entrance India",
-                "residential layout avenue roads India",
-            ],
-        }
-    return {
-        **common,
-        "exterior": [
-            f"modern Indian {property_type} exterior {location}",
-            "modern Indian house exterior walkthrough",
-        ],
-        "interior": [
-            "modern Indian house living room walkthrough",
-            "modern Indian modular kitchen walkthrough",
-        ],
-    }
+        return {**common, "land": [f"residential plotted development land boundary {location}", "villa plots layout boundary aerial India", "vacant residential plot survey drone India"], "exterior": ["gated plotted development entrance India", "residential layout avenue roads India"]}
+    return {**common, "exterior": [f"modern Indian {property_type} exterior {location}", "modern Indian house exterior walkthrough"], "interior": ["modern Indian house living room walkthrough", "modern Indian modular kitchen walkthrough"]}
 
 
 def source_property_videos(job: dict, per_scene: int = 2) -> list[dict]:
-    """Download labelled, deduplicated clips into strict scene-specific buckets."""
     video_id = job["video_id"]
     owned_folder = Path("assets/properties") / video_id
     owned = []
     for pattern in ("*.mp4", "*.mov", "*.webm", "*.m4v"):
         owned.extend(owned_folder.glob(pattern))
     if owned:
-        return [{
-            "local_file": str(path), "provider": "Advertiser supplied",
-            "license": "Owner supplied", "media_kind": "video", "actual_property": True,
-            "scene": "actual",
-        } for path in sorted(owned)]
+        return [{"local_file": str(path), "provider": "Advertiser supplied", "license": "Owner supplied", "media_kind": "video", "actual_property": True, "scene": "actual"} for path in sorted(owned)]
 
     destination = Path("assets/videos") / video_id
-    if destination.exists():
-        shutil.rmtree(destination)
+    if destination.exists(): shutil.rmtree(destination)
     destination.mkdir(parents=True, exist_ok=True)
-
     saved = []
     seen_sources = set()
     property_type = str((job.get("property") or {}).get("property_type", "property"))
     for scene, queries in _scene_video_queries(job).items():
-        # 1. The advertiser's own filmed b-roll for this room, if any exists.
         own_clips = get_own_footage_clips(scene, property_type, per_scene)
         if len(own_clips) >= per_scene:
-            saved.extend(own_clips)
-            continue
+            saved.extend(own_clips); continue
         remaining = per_scene - len(own_clips)
-
-        # 2. Previously-approved stock clips cached from earlier runs.
         library_clips = get_library_clips(scene, remaining)
         if len(own_clips) + len(library_clips) >= per_scene:
-            saved.extend(own_clips + library_clips)
-            continue
+            saved.extend(own_clips + library_clips); continue
         needed = remaining - len(library_clips)
-
-        # 3. Only now fall back to Pixabay/Pexels.
         candidates = []
         for query in queries:
             for item in search_pixabay_videos(query, limit=needed + 1) or search_pexels_videos(query, limit=needed + 1):
                 identity = item.get("source_url") or item.get("download_url")
-                if identity in seen_sources or not _allowed_scene_visual(item, scene):
-                    continue
-                candidates.append({**item, "scene": scene, "search_query": query})
-                seen_sources.add(identity)
-                if len(candidates) >= needed:
-                    break
-            if len(candidates) >= needed:
-                break
+                if identity in seen_sources or not _allowed_scene_visual(item, scene): continue
+                candidates.append({**item, "scene": scene, "search_query": query}); seen_sources.add(identity)
+                if len(candidates) >= needed: break
+            if len(candidates) >= needed: break
         scene_saved = download_media(candidates, destination / scene, limit=needed)
-        for item in scene_saved:
-            item["actual_property"] = False
-        add_to_library(scene, scene_saved)  # only stock gets cached, never own footage
+        for item in scene_saved: item["actual_property"] = False
+        add_to_library(scene, scene_saved)
         saved.extend(own_clips + library_clips + scene_saved)
 
     attribution_path = Path("data/media_attribution") / f"{video_id}.json"
     attribution_path.parent.mkdir(parents=True, exist_ok=True)
     prior = []
     if attribution_path.exists():
-        prior = [
-            item for item in json.loads(attribution_path.read_text(encoding="utf-8"))
-            if item.get("media_kind") != "video"
-        ]
+        prior = [item for item in json.loads(attribution_path.read_text(encoding="utf-8")) if item.get("media_kind") != "video"]
     attribution_path.write_text(json.dumps(prior + saved, ensure_ascii=False, indent=2), encoding="utf-8")
     return saved
