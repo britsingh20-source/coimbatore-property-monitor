@@ -36,8 +36,14 @@ class FreeBrollPriorityTests(unittest.TestCase):
         self.temp.cleanup()
 
     def _download_passthrough(self, items, destination, limit=6):
-        Path(destination).mkdir(parents=True, exist_ok=True)
-        return list(items[:limit])
+        destination = Path(destination)
+        destination.mkdir(parents=True, exist_ok=True)
+        saved = []
+        for index, row in enumerate(items[:limit], start=1):
+            path = destination / f"{index:02d}.mp4"
+            path.write_bytes(b"test")
+            saved.append({**row, "local_file": str(path)})
+        return saved
 
     @patch.object(broll, "add_to_library")
     @patch.object(broll, "get_own_footage_clips")
