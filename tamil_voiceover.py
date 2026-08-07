@@ -7,9 +7,9 @@ from pathlib import Path
 
 
 EDGE_VOICE = os.environ.get("TAMIL_MALE_VOICE", "ta-IN-ValluvarNeural")
-VOICE_RATE = os.environ.get("TAMIL_VOICE_RATE", "+4%")
+VOICE_RATE = os.environ.get("TAMIL_VOICE_RATE", "+2%")
 VOICE_PITCH = os.environ.get("TAMIL_VOICE_PITCH", "-1Hz")
-DIALOGUE_GAP_SECONDS = 1.5
+DIALOGUE_GAP_SECONDS = 0.35
 
 
 def _spoken(value) -> str:
@@ -50,10 +50,10 @@ def build_voice_segments(job: dict) -> list[dict]:
 
     segments = [{
         "scene": "location",
-        "text": f"கோயம்புத்தூர்ல {location} ஏரியாவுல இருக்கிற இந்த {title} பாருங்க, லொக்கேஷன் நல்லா இருக்கு.",
+        "text": f"கோயம்புத்தூர்ல {location} ஏரியாவுல இருக்கிற இந்த {title} பாருங்க. லொக்கேஷன் நல்லா இருக்கு.",
     }]
     fact_lines = [
-        ("land", "land_area", "மொத்த லேண்ட் ஏரியா {value} இருக்கு."),
+        ("land", "land_area", "இதுல மொத்த லேண்ட் ஏரியா {value} இருக்கு."),
         ("builtUp", "built_up_area", "பில்ட் அப் ஏரியா பாத்தீங்கனா {value} வருது."),
         ("price", "price", "இதோட விலை {value}."),
         ("facing", "facing", "வீடு {value} ஃபேசிங்."),
@@ -78,8 +78,6 @@ def build_tamil_script(job: dict) -> str:
 async def _save_edge(text: str, output: Path) -> None:
     import edge_tts
 
-    # Keep one stable prosody across the entire reel. Changing rate/pitch per scene
-    # made the voice sound like separate robotic clips even with the same speaker.
     communicator = edge_tts.Communicate(
         text,
         EDGE_VOICE,
@@ -108,8 +106,8 @@ def _normalize(path: Path) -> None:
         "ffmpeg", "-y", "-loglevel", "error", "-i", str(path),
         "-af",
         "highpass=f=70,lowpass=f=14500,"
-        "acompressor=threshold=-18dB:ratio=2.2:attack=15:release=180:makeup=1.5,"
-        "loudnorm=I=-11:TP=-1:LRA=5",
+        "acompressor=threshold=-18dB:ratio=2.0:attack=18:release=220:makeup=1.4,"
+        "loudnorm=I=-11:TP=-1:LRA=6",
         "-ar", "48000", "-ac", "1",
         "-codec:a", "libmp3lame", "-b:a", "192k", str(normalized),
     ], check=True)
@@ -117,7 +115,7 @@ def _normalize(path: Path) -> None:
 
 
 def _build_master_track(video_id: str, files: list[Path]) -> Path:
-    """Create one narration file so Remotion never starts/stops the voice per scene."""
+    """Create one continuous narration file with a short natural breathing pause."""
     master = Path("assets/audio") / f"{video_id}.mp3"
     silence = files[0].parent / "_dialogue-gap.mp3"
     concat_file = files[0].parent / "_narration-concat.txt"
@@ -170,7 +168,7 @@ def create_voiceover(job: dict) -> Path:
             "tts_engine": "edge",
             "voice_style": EDGE_VOICE,
             "prosody": {"rate": VOICE_RATE, "pitch": VOICE_PITCH},
-            "reference_style": "conversational Coimbatore Tamil; continuous presenter flow",
+            "reference_style": "conversational Coimbatore Tamil; short natural pauses; continuous presenter flow",
         })
     if audio_files:
         _build_master_track(video_id, audio_files)
