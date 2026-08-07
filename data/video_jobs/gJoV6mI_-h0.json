@@ -1,0 +1,42 @@
+{
+  "video_id": "gJoV6mI_-h0",
+  "source_url": "https://www.youtube.com/watch?v=gJoV6mI_-h0",
+  "property_location": "Vadavalli, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "3BHK Independent Duplex House",
+    "bhk": "3BHK",
+    "land_area": "5 Cents (2000 sq.ft, 40 x 50 ft)",
+    "built_up_area": "2300 sq.ft",
+    "price": "₹1.90 Crore (Negotiable)",
+    "facing": "West Facing Site, North Facing Main Door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Portico Car Parking (400 sq.ft, fits 2 cars)",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "5 cent land area (40x50 ft) and 2300 sq.ft built-up area stated in video narration and metadata description., West facing site with North facing main door confirmed in narration at 01:00., Price ₹1.90 Crore (negotiable) stated in narration at 09:53 and video metadata., Property location Vadavalli, Coimbatore mentioned at 09:41 in audio., DTCP approval, borewell, and water sump listed in video description.",
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/gJoV6mI_-h0/",
+  "optional_owned_audio": "assets/audio/gJoV6mI_-h0.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story modern architectural facade featuring large white cantilever slabs, exposed terracotta brick paneling, grey granite compound wall with Jali work, covered portico with pitched filler slab ceiling, and a spacious open balcony on the first floor.. Neighbourhood: Residential urban neighborhood in Vadavalli, Coimbatore, situated within 100 feet of Thondamuthur Main Road, near local amenities and commercial establishments.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story modern architectural facade featuring large white cantilever slabs, exposed terracotta brick paneling, grey granite compound wall with Jali work, covered portico with pitched filler slab ceiling, and a spacious open balcony on the first floor.. Neighbourhood: Residential urban neighborhood in Vadavalli, Coimbatore, situated within 100 feet of Thondamuthur Main Road, near local amenities and commercial establishments.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story modern architectural facade featuring large white cantilever slabs, exposed terracotta brick paneling, grey granite compound wall with Jali work, covered portico with pitched filler slab ceiling, and a spacious open balcony on the first floor.. Neighbourhood: Residential urban neighborhood in Vadavalli, Coimbatore, situated within 100 feet of Thondamuthur Main Road, near local amenities and commercial establishments.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story modern architectural facade featuring large white cantilever slabs, exposed terracotta brick paneling, grey granite compound wall with Jali work, covered portico with pitched filler slab ceiling, and a spacious open balcony on the first floor.. Neighbourhood: Residential urban neighborhood in Vadavalli, Coimbatore, situated within 100 feet of Thondamuthur Main Road, near local amenities and commercial establishments.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
