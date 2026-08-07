@@ -14,13 +14,14 @@ JOB = {
 }
 
 
-def item(provider: str, identity: str) -> dict:
+def item(provider: str, identity: str, **extra) -> dict:
     return {
         "provider": provider,
         "source_url": f"https://example.com/{identity}",
         "download_url": f"https://cdn.example.com/{identity}.mp4",
         "license": f"{provider} License",
         "media_kind": "video",
+        **extra,
     }
 
 
@@ -110,6 +111,59 @@ class FreeBrollPriorityTests(unittest.TestCase):
         self.assertIn("bedroom", queries)
         self.assertIn("road", queries)
         self.assertIn("exterior", queries)
+
+    def test_indian_independent_house_ranks_above_foreign_generic_house(self):
+        indian = item(
+            "Pexels",
+            "coimbatore-independent-house",
+            alt="Modern Indian independent house exterior Tamil Nadu residential",
+            width=1080,
+            height=1920,
+            duration_seconds=8,
+        )
+        generic = item(
+            "Pexels",
+            "generic-house",
+            alt="Luxury European apartment exterior",
+            width=1920,
+            height=1080,
+            duration_seconds=8,
+        )
+        self.assertGreater(broll._quality_score(indian, "exterior"), broll._quality_score(generic, "exterior"))
+
+    def test_people_dominant_lifestyle_clip_is_rejected(self):
+        lifestyle = item(
+            "Pexels",
+            "woman-holding-keys",
+            alt="Woman holding house keys smiling in kitchen",
+        )
+        self.assertFalse(broll._stock_allowed(lifestyle, "kitchen"))
+
+    def test_empty_modular_kitchen_is_preferred(self):
+        empty_kitchen = item(
+            "Pixabay",
+            "indian-modular-kitchen",
+            alt="Indian modular kitchen empty home interior",
+            width=1080,
+            height=1920,
+            duration_seconds=10,
+        )
+        apartment = item(
+            "Pixabay",
+            "apartment-kitchen",
+            alt="Luxury apartment kitchen interior",
+            width=1920,
+            height=1080,
+            duration_seconds=10,
+        )
+        self.assertGreater(broll._quality_score(empty_kitchen, "kitchen"), broll._quality_score(apartment, "kitchen"))
+
+    def test_search_query_does_not_fake_india_metadata_score(self):
+        row = item("Pexels", "generic", search_query="Coimbatore Tamil Nadu residential road")
+        self.assertEqual(0, sum(
+            value for term, value in broll.REGIONAL_TERMS.items()
+            if term in broll._metadata_text(row)
+        ))
 
 
 if __name__ == "__main__":
