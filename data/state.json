@@ -154,11 +154,12 @@
     },
     "61letGCd-qw": {
       "attempts": 1,
+      "completed_at": "2026-08-07T09:18:13.222071+00:00",
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
       "last_attempt_at": "2026-08-07T05:53:10.700964+00:00",
-      "last_error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 49.320974591s.', 'code': 'too_many_requests'}}",
+      "last_error": "",
       "next_retry_at": "2026-08-07T07:53:10.700974+00:00",
-      "status": "retry_pending"
+      "status": "archived_non_target"
     },
     "64vy6PCFpIM": {
       "attempts": 0,
@@ -292,9 +293,11 @@
     },
     "G4vveTRplv4": {
       "attempts": 0,
+      "completed_at": "2026-08-07T09:19:43.760507+00:00",
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
+      "last_error": "",
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "status": "archived_non_target"
     },
     "G8fsvbuFTZs": {
       "attempts": 2,
@@ -526,9 +529,11 @@
     },
     "Xz-MxcDBVXk": {
       "attempts": 0,
+      "completed_at": "2026-08-07T09:18:53.612118+00:00",
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
+      "last_error": "",
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "status": "archived_non_target"
     },
     "YFY0X-zeRCI": {
       "attempts": 0,
