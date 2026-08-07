@@ -75,11 +75,11 @@
       "status": "discovered"
     },
     "1WrspKExMjQ": {
-      "attempts": 1,
+      "attempts": 2,
       "first_seen_at": "2026-08-06T15:30:52.634663+00:00",
-      "last_attempt_at": "2026-08-07T04:06:03.938622+00:00",
-      "last_error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 56.085307039s.', 'code': 'too_many_requests'}}",
-      "next_retry_at": "2026-08-07T06:06:03.938632+00:00",
+      "last_attempt_at": "2026-08-07T07:45:29.517328+00:00",
+      "last_error": "sequence item 2: expected str instance, dict found",
+      "next_retry_at": "2026-08-07T11:45:29.517338+00:00",
       "status": "retry_pending"
     },
     "1xfrfTWlyqk": {
@@ -567,11 +567,11 @@
       "status": "archived_non_target"
     },
     "aettwe-WfoA": {
-      "attempts": 1,
+      "attempts": 2,
       "first_seen_at": "2026-08-06T15:30:52.634663+00:00",
-      "last_attempt_at": "2026-08-07T04:06:07.911862+00:00",
-      "last_error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 52.107346042s.', 'code': 'too_many_requests'}}",
-      "next_retry_at": "2026-08-07T06:06:07.911876+00:00",
+      "last_attempt_at": "2026-08-07T07:45:49.823235+00:00",
+      "last_error": "sequence item 2: expected str instance, dict found",
+      "next_retry_at": "2026-08-07T11:45:49.823245+00:00",
       "status": "retry_pending"
     },
     "c1o7b5FMTHE": {
@@ -770,9 +770,11 @@
     },
     "vpFGa6DtOpI": {
       "attempts": 0,
+      "completed_at": "2026-08-07T07:46:21.072329+00:00",
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
+      "last_error": "",
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "status": "archived_non_target"
     },
     "w4mIuz4PETA": {
       "attempts": 0,
