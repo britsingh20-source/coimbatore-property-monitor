@@ -1,0 +1,42 @@
+{
+  "video_id": "aettwe-WfoA",
+  "source_url": "https://www.youtube.com/watch?v=aettwe-WfoA",
+  "property_location": "Amman Nagar, Vadavalli, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Plot",
+    "bhk": null,
+    "land_area": "5.75 cents (40 ft x 64 ft)",
+    "built_up_area": null,
+    "price": "NOT SPECIFIED",
+    "facing": "North",
+    "road_width": "30 feet",
+    "parking": null,
+    "approval": "DTCP approved"
+  },
+  "verified_facts": "Land size is 5.75 cents with dimensions 40x64 feet., Property is North-facing., Located in Amman Nagar layout, opposite Chinmaya School in Vadavalli, Coimbatore., DTCP approved plot with 30 ft road and underground drainage (UGD) completed., Contact number provided is 97875 90000.",
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/aettwe-WfoA/",
+  "optional_owned_audio": "assets/audio/aettwe-WfoA.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: A open, level residential land plot bounded by existing compound walls, trees, and residential houses, accessible via a paved neighborhood street.. Neighbourhood: A developed residential layout (Amman Nagar) in Vadavalli, Coimbatore, situated within walking distance of the main road, schools, markets, and showrooms.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: A open, level residential land plot bounded by existing compound walls, trees, and residential houses, accessible via a paved neighborhood street.. Neighbourhood: A developed residential layout (Amman Nagar) in Vadavalli, Coimbatore, situated within walking distance of the main road, schools, markets, and showrooms.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: A open, level residential land plot bounded by existing compound walls, trees, and residential houses, accessible via a paved neighborhood street.. Neighbourhood: A developed residential layout (Amman Nagar) in Vadavalli, Coimbatore, situated within walking distance of the main road, schools, markets, and showrooms.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: A open, level residential land plot bounded by existing compound walls, trees, and residential houses, accessible via a paved neighborhood street.. Neighbourhood: A developed residential layout (Amman Nagar) in Vadavalli, Coimbatore, situated within walking distance of the main road, schools, markets, and showrooms.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
