@@ -41,6 +41,25 @@ def _tamilize(value: str) -> str:
 
 
 def build_voice_segments(job: dict) -> list[dict]:
+    planned = job.get("content_plan", {}).get("scenes", [])
+    if planned:
+        segments = []
+        for item in planned:
+            scene = str(item.get("name", "")).strip()
+            text = str(item.get("voice", "")).strip()
+            if not scene or not text:
+                continue
+            segments.append({
+                "scene": scene,
+                "text": text,
+                "broll": list(item.get("broll", [])),
+                "avoid_broll": list(item.get("avoid_broll", [])),
+                "vfx": str(item.get("vfx", "")),
+                "purpose": str(item.get("purpose", "fact")),
+            })
+        if segments:
+            return segments
+
     prop = job.get("property", {})
     location = _tamilize(_spoken(job.get("property_location")) or "கோயம்புத்தூர்")
     location = re.sub(r",?\s*கோயம்புத்தூர்\s*$", "", location).strip(" ,") or "கோயம்புத்தூர்"
@@ -51,22 +70,23 @@ def build_voice_segments(job: dict) -> list[dict]:
     segments = [{
         "scene": "location",
         "text": f"கோயம்புத்தூர்ல {location} ஏரியாவுல இருக்கிற இந்த {title} பாருங்க. லொக்கேஷன் நல்லா இருக்கு.",
+        "broll": ["exterior", "road"],
     }]
     fact_lines = [
-        ("land", "land_area", "இதுல மொத்த லேண்ட் ஏரியா {value} இருக்கு."),
-        ("builtUp", "built_up_area", "பில்ட் அப் ஏரியா பாத்தீங்கனா {value} வருது."),
-        ("price", "price", "இதோட விலை {value}."),
-        ("facing", "facing", "வீடு {value} ஃபேசிங்."),
-        ("road", "road_width", "முன்னாடி ரோடு வசதி {value} இருக்கு."),
-        ("approval", "approval", "அப்ரூவல் பாத்தீங்கனா {value} இருக்கு."),
+        ("land", "land_area", "இதுல மொத்த லேண்ட் ஏரியா {value} இருக்கு.", ["land", "exterior"]),
+        ("builtUp", "built_up_area", "பில்ட் அப் ஏரியா பாத்தீங்கனா {value} வருது.", ["living_room", "kitchen", "bedroom"]),
+        ("price", "price", "இதோட விலை {value}.", ["exterior", "living_room"]),
+        ("facing", "facing", "வீடு {value} ஃபேசிங்.", ["exterior", "land"]),
+        ("road", "road_width", "முன்னாடி ரோடு வசதி {value} இருக்கு.", ["road"]),
+        ("approval", "approval", "அப்ரூவல் பாத்தீங்கனா {value} இருக்கு.", ["exterior"]),
     ]
-    for scene, key, sentence in fact_lines:
+    for scene, key, sentence, broll in fact_lines:
         value = _spoken(prop.get(key))
         if value:
-            segments.append({"scene": scene, "text": sentence.format(value=_tamilize(value))})
+            segments.append({"scene": scene, "text": sentence.format(value=_tamilize(value)), "broll": broll})
     segments.extend([
-        {"scene": "verify", "text": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்."},
-        {"scene": "cta", "text": "வீடு பிடிச்சிருந்தா, இன்னும் டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க."},
+        {"scene": "verify", "text": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.", "broll": ["exterior", "living_room", "kitchen", "bedroom"]},
+        {"scene": "cta", "text": "வீடு பிடிச்சிருந்தா, இன்னும் டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.", "broll": ["exterior", "living_room"]},
     ])
     return segments
 

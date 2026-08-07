@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+from develop_property_script import develop_property_script
+
 
 JOBS = Path("data/video_jobs")
 APPROVALS = Path("data/approved_video_ids.txt")
@@ -42,6 +44,7 @@ def build_video_job(video: dict, property_data: dict, location: dict) -> Path:
         {"name": "kitchen", "prompt": base + " Smooth walkthrough of a practical premium modular kitchen and dining space."},
     ]
     auto_approved = automatic_approval_ready(property_data)
+    content_plan = develop_property_script(property_data, location)
     job = {
         "video_id": video["video_id"],
         "source_url": video["url"],
@@ -54,6 +57,7 @@ def build_video_job(video: dict, property_data: dict, location: dict) -> Path:
             )
         },
         "verified_facts": facts,
+        "content_plan": content_plan,
         "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
         "aspect_ratio": "9:16",
         "render_engine": "remotion-professional-free",
