@@ -1,5 +1,6 @@
 export type Fact = {label: string; value: string};
 export type VoiceSegment = {scene: string; src: string; text?: string; durationInFrames?: number};
+export type DirectedShot = {src: string; startFrom?: number; category?: string};
 export type StyleVariant = 'cinematic' | 'fast-cut' | 'premium' | 'location-first' | 'price-first';
 
 export type PropertyVideoProps = {
@@ -13,6 +14,7 @@ export type PropertyVideoProps = {
   actualVideos: string[];
   representativeVideos: string[];
   sceneMedia: Record<string, string[]>;
+  directorMedia?: Record<string, DirectedShot[]>;
   images: string[];
   audio: string | null;
   voiceSegments: VoiceSegment[];
