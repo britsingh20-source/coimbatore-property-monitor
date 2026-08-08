@@ -1,5 +1,7 @@
 import hashlib
 import json
+import os
+import re
 import shutil
 from pathlib import Path
 
@@ -12,65 +14,128 @@ from media_sources import (
     search_pexels_videos,
     search_pixabay_videos,
 )
+from visual_broll_validator import validate_downloaded_clips
 
 
-# This process-level set prevents the same stock URL being selected for two
-# different properties during one GitHub Actions run.
 SESSION_USED_SOURCES: set[str] = set()
-
-# We deliberately ask for more footage than the renderer strictly needs. The
-# semantic/subclip director can then choose unique shots instead of recycling
-# two files throughout an entire reel.
 DEFAULT_PER_CATEGORY = 4
+LIVE_CANDIDATE_MULTIPLIER = 2
 
 
 SCENE_QUERIES = {
     "location": [
-        "South India residential neighbourhood vertical video",
-        "Indian residential street modern houses vertical",
-        "Coimbatore residential neighbourhood road",
+        "Coimbatore Tamil Nadu residential neighbourhood road",
+        "South India residential neighbourhood modern houses",
+        "Indian residential street independent houses",
+        "Tamil Nadu residential street houses",
     ],
     "road": [
-        "India residential asphalt road vertical",
-        "South India residential street road",
-        "Indian villa layout road vertical",
+        "Coimbatore Tamil Nadu residential road",
+        "South India residential street asphalt road",
+        "India residential layout tar road",
+        "Indian villa layout road",
     ],
     "land": [
-        "India residential plot land aerial",
-        "Indian plotted development vacant land",
+        "Tamil Nadu residential plot land aerial",
+        "India residential plotted development vacant land",
         "residential plots layout India drone",
+        "South India house plot layout",
     ],
     "exterior": [
-        "modern Indian villa exterior vertical",
-        "South India independent house exterior",
+        "Tamil Nadu modern independent house exterior",
+        "South India independent villa exterior",
         "modern Indian house facade residential",
+        "Indian independent house exterior",
     ],
     "living": [
-        "modern Indian living room vertical walkthrough",
-        "Indian villa living room interior",
-        "South India modern home living room",
+        "modern Indian home living room walkthrough",
+        "South India house living room interior",
+        "Indian villa living room empty interior",
+        "Tamil Nadu modern home living room",
     ],
     "kitchen": [
-        "modern Indian modular kitchen vertical",
-        "Indian house kitchen interior walkthrough",
-        "South India modular kitchen home",
+        "modern Indian modular kitchen empty walkthrough",
+        "South India house modular kitchen interior",
+        "Indian home kitchen interior no people",
+        "Tamil Nadu modular kitchen home",
     ],
     "bedroom": [
-        "modern Indian bedroom vertical interior",
-        "Indian villa bedroom walkthrough",
-        "South India modern home bedroom",
+        "modern Indian home bedroom empty interior",
+        "South India house bedroom walkthrough",
+        "Indian villa bedroom no people",
+        "Tamil Nadu modern home bedroom",
     ],
 }
 
 
+GLOBAL_REJECT_TERMS = {
+    "church", "temple", "mosque", "cathedral", "chapel", "shrine",
+    "flag", "national flag", "patriotic", "political", "parliament", "rally",
+    "mountain", "mountains", "alps", "snow", "ski", "forest",
+    "tea plantation", "coffee plantation",
+    "food", "meal", "cooking", "cook", "chef", "restaurant", "recipe", "jar", "spice",
+    "woman", "women", "man", "men", "person", "people", "couple",
+    "family", "girl", "boy", "child", "children", "model", "selfie",
+    "holding", "dancing", "fitness", "camera", "photographer",
+    "office", "coworking", "hotel", "resort", "hospital",
+    "shopping", "store", "mall", "bar", "cafe", "warehouse", "factory",
+    "tourism", "tourist", "beach", "festival",
+}
+
 SCENE_REJECT_TERMS = {
-    "location": {"mountain", "mountains", "alps", "snow", "forest", "tea", "plantation", "europe", "american"},
-    "road": {"mountain", "mountains", "forest", "tea", "plantation", "highway", "freeway", "europe"},
-    "land": {"mountain", "mountains", "forest", "tea", "plantation", "farm", "farmland"},
-    "exterior": {"castle", "mansion", "europe", "american", "snow", "mountain"},
-    "living": {"office", "hotel", "restaurant", "church", "temple", "mosque"},
-    "kitchen": {"restaurant", "commercial", "hotel", "office"},
-    "bedroom": {"hotel", "resort", "hospital", "hostel"},
+    "location": {"highway", "freeway", "flyover", "overpass", "metro", "downtown", "city skyline", "traffic", "europe", "american", "usa"},
+    "road": {"highway", "freeway", "motorway", "flyover", "overpass", "metro", "race", "traffic jam", "arterial", "europe", "american", "usa"},
+    "land": {"farm", "farmland", "agriculture", "rice field", "paddy field", "desert"},
+    "exterior": {"castle", "palace", "mansion", "apartment", "condo", "skyscraper", "europe", "american", "usa"},
+    "living": {"conference", "lobby", "reception", "apartment tour"},
+    "kitchen": {"commercial kitchen", "restaurant kitchen", "industrial kitchen"},
+    "bedroom": {"dormitory", "hostel", "hotel room", "resort room"},
+}
+
+# A free-provider result must describe the requested property category in its
+# own provider metadata/URL. The search query itself is deliberately excluded.
+SCENE_REQUIRED_TERMS = {
+    "location": {"residential", "neighbourhood", "neighborhood", "street", "houses", "house", "villa", "home"},
+    "road": {"residential", "road", "street", "asphalt", "paved", "layout", "villa"},
+    "land": {"plot", "plots", "land", "layout", "vacant", "site", "residential"},
+    "exterior": {"house", "villa", "home", "residential", "exterior", "facade", "independent"},
+    "living": {"living", "living room", "interior", "home", "house"},
+    "kitchen": {"kitchen", "modular kitchen", "interior", "home", "house"},
+    "bedroom": {"bedroom", "bed room", "interior", "home", "house"},
+}
+
+REGIONAL_TERMS = {
+    "coimbatore": 14,
+    "tamil nadu": 12,
+    "tamilnadu": 12,
+    "south india": 10,
+    "south indian": 10,
+    "india": 7,
+    "indian": 7,
+}
+
+SCENE_PREFER_TERMS = {
+    "location": {"residential": 8, "neighbourhood": 8, "neighborhood": 8, "street": 5, "houses": 5, "villa": 4},
+    "road": {"residential": 8, "road": 8, "street": 7, "asphalt": 5, "tar": 5, "layout": 5, "paved": 4},
+    "land": {"residential": 7, "plot": 9, "plots": 9, "land": 7, "layout": 6, "vacant": 4, "site": 4},
+    "exterior": {"independent": 9, "house": 8, "villa": 8, "exterior": 7, "facade": 7, "residential": 5, "home": 4},
+    "living": {"living room": 10, "living": 7, "home": 5, "house": 5, "interior": 4, "empty": 4},
+    "kitchen": {"modular kitchen": 12, "kitchen": 9, "home": 5, "house": 5, "interior": 4, "empty": 4},
+    "bedroom": {"bedroom": 10, "home": 5, "house": 5, "interior": 4, "empty": 4},
+}
+
+SOFT_PENALTY_TERMS = {
+    "luxury": 2,
+    "penthouse": 8,
+    "apartment": 7,
+    "condo": 9,
+    "loft": 6,
+    "studio": 5,
+    "western": 8,
+    "european": 10,
+    "american": 12,
+    "new york": 12,
+    "london": 12,
 }
 
 
@@ -78,8 +143,14 @@ def _source_identity(item: dict) -> str:
     return str(item.get("source_url") or item.get("download_url") or item.get("local_file") or "").strip()
 
 
+def _metadata_text(item: dict) -> str:
+    return " ".join(
+        str(item.get(key, ""))
+        for key in ("source_url", "title", "description", "alt", "tags")
+    ).lower()
+
+
 def _historical_sources() -> set[str]:
-    """Use committed attribution records as a soft global no-repeat memory."""
     result: set[str] = set()
     directory = Path("data/media_attribution")
     if not directory.exists():
@@ -99,14 +170,73 @@ def _historical_sources() -> set[str]:
     return result
 
 
+def _contains_term(text: str, term: str) -> bool:
+    if " " in term:
+        return term in text
+    return re.search(rf"\b{re.escape(term)}\b", text) is not None
+
+
 def _stock_allowed(item: dict, scene: str) -> bool:
-    if not _allowed_scene_visual(item, scene if scene in {"location", "road", "land", "exterior", "interior"} else "interior"):
+    mapped_scene = scene if scene in {"location", "road", "land", "exterior", "interior"} else "interior"
+    if not _allowed_scene_visual(item, mapped_scene):
         return False
-    searchable = " ".join(
-        str(item.get(key, ""))
-        for key in ("source_url", "title", "description", "alt", "search_query")
-    ).lower()
-    return not any(term in searchable for term in SCENE_REJECT_TERMS.get(scene, set()))
+    searchable = _metadata_text(item)
+    if any(_contains_term(searchable, term) for term in GLOBAL_REJECT_TERMS):
+        return False
+    if any(_contains_term(searchable, term) for term in SCENE_REJECT_TERMS.get(scene, set())):
+        return False
+    required = SCENE_REQUIRED_TERMS.get(scene, set())
+    return not required or any(_contains_term(searchable, term) for term in required)
+
+
+def _quality_score(item: dict, scene: str) -> int:
+    text = _metadata_text(item)
+    score = 0
+
+    for term, value in REGIONAL_TERMS.items():
+        if term in text:
+            score += value
+    for term, value in SCENE_PREFER_TERMS.get(scene, {}).items():
+        if term in text:
+            score += value
+    for term, value in SOFT_PENALTY_TERMS.items():
+        if term in text:
+            score -= value
+
+    width = item.get("width") or item.get("video_width") or 0
+    height = item.get("height") or item.get("video_height") or 0
+    try:
+        width = int(width)
+        height = int(height)
+    except (TypeError, ValueError):
+        width = height = 0
+    if width and height:
+        if height > width:
+            score += 6
+        elif height == width:
+            score += 1
+        else:
+            score -= 2
+        if min(width, height) >= 720:
+            score += 2
+
+    duration = item.get("duration_seconds")
+    try:
+        duration = float(duration)
+    except (TypeError, ValueError):
+        duration = None
+    if duration is not None:
+        if 4 <= duration <= 20:
+            score += 4
+        elif duration < 2:
+            score -= 5
+        elif duration > 45:
+            score -= 2
+
+    query_index = item.get("query_index")
+    if isinstance(query_index, int):
+        score += max(0, 4 - query_index)
+    return score
 
 
 def _category_queries(job: dict) -> dict[str, list[str]]:
@@ -123,14 +253,13 @@ def _category_queries(job: dict) -> dict[str, list[str]]:
     for category in categories:
         base = list(SCENE_QUERIES[category])
         if category in {"location", "road", "exterior"} and location:
-            # Exact locality search goes first. Providers may not have that exact
-            # place, so broader South-India/India searches remain behind it.
             prefix = {
-                "location": f"{location} Coimbatore residential neighbourhood",
-                "road": f"{location} Coimbatore residential road",
-                "exterior": f"{location} Coimbatore modern house exterior",
+                "location": f"{location} Coimbatore Tamil Nadu residential neighbourhood",
+                "road": f"{location} Coimbatore Tamil Nadu residential road",
+                "exterior": f"{location} Coimbatore Tamil Nadu independent house exterior",
             }[category]
-            base.insert(0, prefix)
+            if not base or base[0] != prefix:
+                base.insert(0, prefix)
         result[category] = base
     return result
 
@@ -147,38 +276,50 @@ def _unique_candidates(items: list[dict], scene: str, used: set[str]) -> list[di
         local_seen.add(identity)
         if not _stock_allowed(item, scene):
             continue
+        scored = {**item, "quality_score": _quality_score(item, scene)}
         if identity in historical:
-            old.append(item)
+            old.append(scored)
         else:
-            fresh.append(item)
-    # Previously used stock is only considered after genuinely fresh provider
-    # results have been exhausted.
+            fresh.append(scored)
+    fresh.sort(key=lambda row: (-int(row.get("quality_score", 0)), int(row.get("query_index", 99))))
+    old.sort(key=lambda row: (-int(row.get("quality_score", 0)), int(row.get("query_index", 99))))
     return fresh + old
 
 
-def _provider_candidates(job: dict, scene: str, queries: list[str], provider: str, wanted: int, used: set[str]) -> list[dict]:
-    if wanted <= 0:
-        return []
-    collected: list[dict] = []
+def _search_provider(scene: str, queries: list[str], provider: str, used: set[str], pool_limit: int) -> list[dict]:
     search = search_pexels_videos if provider == "pexels" else search_pixabay_videos
-    for query in queries:
-        # Search a larger pool than we consume so the no-repeat/blocked filters
-        # have room to reject weak results.
-        results = search(query, limit=max(8, wanted * 3))
-        annotated = [{**item, "scene": scene, "search_query": query} for item in results]
-        for item in _unique_candidates(annotated, scene, used | {_source_identity(x) for x in collected}):
-            collected.append(item)
-            if len(collected) >= wanted:
-                return collected
-    return collected
+    raw: list[dict] = []
+    for query_index, query in enumerate(queries):
+        results = search(query, limit=max(10, pool_limit * 2))
+        raw.extend(
+            {
+                **item,
+                "scene": scene,
+                "search_query": query,
+                "query_index": query_index,
+                "live_provider": provider,
+            }
+            for item in results
+        )
+    return _unique_candidates(raw, scene, used)
+
+
+def _combined_live_candidates(scene: str, queries: list[str], used: set[str], pool_limit: int) -> list[dict]:
+    # Both free providers are searched before selection. Provider identity is not
+    # a ranking advantage: the best property-relevant clip wins.
+    combined = [
+        *_search_provider(scene, queries, "pexels", used, pool_limit),
+        *_search_provider(scene, queries, "pixabay", used, pool_limit),
+    ]
+    ranked = _unique_candidates(combined, scene, used)
+    return ranked[:pool_limit]
 
 
 def _stable_download_names(items: list[dict]) -> list[dict]:
-    """Rename generic 01-pexels.mp4 files before R2 caching to avoid collisions."""
     output = []
     for item in items:
         path = Path(item.get("local_file", ""))
-        if not path.exists():
+        if not path.exists() or not path.name:
             output.append(item)
             continue
         identity = _source_identity(item) or str(path)
@@ -194,32 +335,64 @@ def _stable_download_names(items: list[dict]) -> list[dict]:
     return output
 
 
+def _visually_select(scene: str, items: list[dict], wanted: int) -> tuple[list[dict], list[dict]]:
+    validated = validate_downloaded_clips(scene, items)
+    visual_enabled = bool(os.environ.get("GEMINI_API_KEY", "").strip())
+    if visual_enabled:
+        accepted = [item for item in validated if item.get("visual_accepted") is True]
+        rejected = [item for item in validated if item.get("visual_accepted") is not True]
+    else:
+        # Backward-compatible mode for local/test environments without Gemini.
+        accepted = validated
+        rejected = []
+    accepted.sort(
+        key=lambda row: (
+            -int(row.get("visual_score", 0) or 0),
+            -int(row.get("quality_score", 0) or 0),
+        )
+    )
+    chosen = accepted[:wanted]
+    overflow = accepted[wanted:]
+    rejected.extend(overflow)
+    return chosen, rejected
+
+
+def _remove_rejected_files(items: list[dict]) -> None:
+    for item in items:
+        path = Path(str(item.get("local_file", "")))
+        try:
+            if path.exists() and "assets/videos" in path.as_posix():
+                path.unlink()
+        except OSError:
+            pass
+
+
 def _take_fallback(items: list[dict], scene: str, wanted: int, used: set[str]) -> list[dict]:
-    chosen = []
+    eligible = []
     for item in items:
         identity = _source_identity(item)
         if not identity or identity in used:
             continue
         if not _stock_allowed(item, scene):
             continue
-        chosen.append(item)
-        if len(chosen) >= wanted:
-            break
-    return chosen
+        eligible.append({**item, "quality_score": _quality_score(item, scene)})
+    eligible.sort(key=lambda row: -int(row.get("quality_score", 0)))
+    return eligible[: max(wanted * 2, wanted)]
 
 
 def source_property_videos_free_first(job: dict, per_scene: int = DEFAULT_PER_CATEGORY) -> list[dict]:
-    """Source diverse B-roll with R2 as the last retrieval option.
+    """Source free B-roll with actual-frame QA and R2 only as fallback.
 
-    Priority for each semantic category:
-      1. Pexels fresh portrait video
-      2. Pixabay fresh video
-      3. persistent stock library from R2/local cache
-      4. advertiser-owned R2 B-roll as final fallback
+    Order:
+      1. Search Pexels + Pixabay together.
+      2. Metadata hard-filter and rank a candidate pool.
+      3. Download candidates and inspect real frames with Gemini Vision.
+      4. Keep only visually approved residential scene matches.
+      5. Use visually checked cached stock only if live providers are short.
+      6. Use advertiser-owned R2 B-roll last.
 
-    Actual property video files already bundled under assets/properties/<id>/ are
-    still used directly because they are not an R2 fallback and are the most
-    truthful representation of that listing.
+    Actual property files bundled with a job remain first because they are the
+    truthful listing media rather than representative stock.
     """
     video_id = str(job["video_id"])
     owned_folder = Path("assets/properties") / video_id
@@ -247,57 +420,77 @@ def source_property_videos_free_first(job: dict, per_scene: int = DEFAULT_PER_CA
 
     for scene, queries in _category_queries(job).items():
         scene_items: list[dict] = []
+        pool_limit = max(per_scene * LIVE_CANDIDATE_MULTIPLIER, 8)
 
-        # 1. Pexels first: portrait results are especially useful for 9:16 reels.
-        pexels = _provider_candidates(job, scene, queries, "pexels", per_scene, used)
-        pexels_saved = _stable_download_names(
-            download_media(pexels, destination / scene, limit=per_scene)
+        # Search Pexels and Pixabay before choosing anything. This fixes the old
+        # behaviour where four mediocre Pexels clips could prevent a much better
+        # Pixabay match from ever being considered.
+        live_candidates = _combined_live_candidates(scene, queries, used, pool_limit)
+        live_downloaded = _stable_download_names(
+            download_media(live_candidates, destination / scene, limit=pool_limit)
         )
-        for item in pexels_saved:
-            item.update({"actual_property": False, "scene": scene, "source_priority": 1})
-        scene_items.extend(pexels_saved)
-        used.update(_source_identity(item) for item in pexels_saved if _source_identity(item))
+        live_selected, live_rejected = _visually_select(scene, live_downloaded, per_scene)
+        _remove_rejected_files(live_rejected)
+        for item in live_selected:
+            item.update({
+                "actual_property": False,
+                "scene": scene,
+                "source_priority": 1,
+                "selection_layer": "live-free-provider-visual-qa",
+            })
+        scene_items.extend(live_selected)
+        used.update(_source_identity(item) for item in live_selected if _source_identity(item))
 
-        # 2. Pixabay fills only what Pexels could not supply.
+        # Cache ONLY visually accepted provider footage. Rejected clips never
+        # contaminate the persistent library.
+        library_scene = scene if scene in {"location", "road", "land", "exterior"} else "interior"
+        add_to_library(library_scene, live_selected)
+
+        # Cached stock is still before owner R2, but it also passes the same frame
+        # inspection so bad clips cached by older runs are not resurrected.
         missing = per_scene - len(scene_items)
         if missing > 0:
-            pixabay = _provider_candidates(job, scene, queries, "pixabay", missing, used)
-            pixabay_saved = _stable_download_names(
-                download_media(pixabay, destination / scene, limit=missing)
+            library_candidates = _take_fallback(
+                get_library_clips(library_scene, max(missing * 4, 8)),
+                scene,
+                missing,
+                used,
             )
-            for item in pixabay_saved:
-                item.update({"actual_property": False, "scene": scene, "source_priority": 2})
-            scene_items.extend(pixabay_saved)
-            used.update(_source_identity(item) for item in pixabay_saved if _source_identity(item))
+            library_selected, _library_rejected = _visually_select(scene, library_candidates, missing)
+            for item in library_selected:
+                item.update({
+                    "scene": scene,
+                    "source_priority": 2,
+                    "selection_layer": "cached-stock-visual-qa",
+                })
+            scene_items.extend(library_selected)
+            used.update(_source_identity(item) for item in library_selected if _source_identity(item))
 
-        # Cache successful free-provider results for resilience, but do NOT read
-        # that cache until both live free providers have failed to fill the pool.
-        add_to_library(scene if scene in {"location", "road", "land", "exterior", "interior"} else "interior", scene_items)
-
-        # 3. R2/local stock cache is a late fallback, not the normal first source.
-        missing = per_scene - len(scene_items)
-        if missing > 0:
-            library_scene = scene if scene in {"location", "road", "land", "exterior"} else "interior"
-            library = _take_fallback(get_library_clips(library_scene, missing * 2), scene, missing, used)
-            for item in library:
-                item.update({"scene": scene, "source_priority": 3})
-            scene_items.extend(library)
-            used.update(_source_identity(item) for item in library if _source_identity(item))
-
-        # 4. Advertiser-owned R2 clips are deliberately the final retrieval
-        # option, per current pipeline policy.
+        # Advertiser-owned R2 remains the final retrieval fallback. It is trusted
+        # owner-supplied footage and does not consume Gemini validation calls.
         missing = per_scene - len(scene_items)
         if missing > 0:
             own_scene = "interior" if scene in {"living", "kitchen", "bedroom"} else scene
-            own = _take_fallback(get_own_footage_clips(own_scene, property_type, missing * 2), scene, missing, used)
+            own = _take_fallback(
+                get_own_footage_clips(own_scene, property_type, max(missing * 3, 6)),
+                scene,
+                missing,
+                used,
+            )[:missing]
             for item in own:
-                item.update({"scene": scene, "source_priority": 4})
+                item.update({
+                    "scene": scene,
+                    "source_priority": 3,
+                    "selection_layer": "owner-r2-last-fallback",
+                })
             scene_items.extend(own)
             used.update(_source_identity(item) for item in own if _source_identity(item))
 
         print(
             f"B-roll {video_id}/{scene}: {len(scene_items)} clips; "
-            f"providers={[item.get('provider') for item in scene_items]}"
+            f"providers={[item.get('provider') for item in scene_items]}; "
+            f"metadata_scores={[item.get('quality_score') for item in scene_items]}; "
+            f"visual_scores={[item.get('visual_score') for item in scene_items]}"
         )
         saved.extend(scene_items)
 

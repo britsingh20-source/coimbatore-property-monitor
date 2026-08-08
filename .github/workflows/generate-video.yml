@@ -21,9 +21,13 @@ on:
       - video_pipeline.py
       - render_free_approved.py
       - media_sources.py
+      - free_broll_sources.py
+      - visual_broll_validator.py
       - map_assets.py
       - requirements.txt
       - tamil_voiceover.py
+      - tests/test_free_broll_sources.py
+      - tests/test_visual_broll_validator.py
       - tests/test_select_render_jobs.py
       - tests/test_tamil_voiceover.py
       - data/video_jobs/**
@@ -162,6 +166,9 @@ jobs:
         env:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_BROLL_MODEL: gemini-3.6-flash
+          BROLL_VISUAL_MIN_SCORE: "72"
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
