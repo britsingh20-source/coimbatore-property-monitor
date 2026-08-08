@@ -42,9 +42,11 @@
     },
     "0V4ZnDcb7p8": {
       "attempts": 0,
+      "completed_at": "2026-08-08T15:49:38.254969+00:00",
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
+      "last_error": "",
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "status": "archived_non_target"
     },
     "0g4DuxNaUbw": {
       "attempts": 0,
@@ -305,10 +307,12 @@
       "status": "retry_pending"
     },
     "EWtCDdLGAZE": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
-      "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-08-08T15:49:41.941396+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 18.083325681s.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-08-08T17:49:41.941405+00:00",
+      "status": "retry_pending"
     },
     "FEin2rHW1WU": {
       "attempts": 0,
@@ -545,11 +549,12 @@
     },
     "QAYF23lj54o": {
       "attempts": 1,
+      "completed_at": "2026-08-08T15:49:25.755975+00:00",
       "first_seen_at": "2026-08-08T13:14:49.097793+00:00",
       "last_attempt_at": "2026-08-08T13:15:33.895298+00:00",
-      "last_error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 26.12633628s.', 'code': 'too_many_requests'}}",
+      "last_error": "",
       "next_retry_at": "2026-08-08T15:15:33.895308+00:00",
-      "status": "retry_pending"
+      "status": "archived_non_target"
     },
     "QB-wD-3YD_8": {
       "attempts": 0,
