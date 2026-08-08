@@ -107,9 +107,11 @@
     },
     "2E2vk14hxHU": {
       "attempts": 0,
+      "completed_at": "2026-08-08T09:57:19.005965+00:00",
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
+      "last_error": "",
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "2dmrqPHzh6s": {
       "attempts": 0,
@@ -218,10 +220,12 @@
       "status": "discovered"
     },
     "87uFw3SsJKs": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
-      "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-08-08T09:57:30.608979+00:00",
+      "last_error": "sequence item 2: expected str instance, dict found",
+      "next_retry_at": "2026-08-08T11:57:30.608988+00:00",
+      "status": "retry_pending"
     },
     "9QsBL5dwykA": {
       "attempts": 2,
@@ -291,10 +295,12 @@
       "status": "discovered"
     },
     "E6dib-fIFts": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
-      "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-08-08T09:56:52.949325+00:00",
+      "last_error": "sequence item 2: expected str instance, dict found",
+      "next_retry_at": "2026-08-08T11:56:52.949335+00:00",
+      "status": "retry_pending"
     },
     "EWtCDdLGAZE": {
       "attempts": 0,
