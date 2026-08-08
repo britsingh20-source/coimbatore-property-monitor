@@ -82,10 +82,10 @@ jobs:
           {
             echo "### Autopilot render dispatched"
             echo ""
-            echo "`$video_ids`"
+            printf '`%s`\n' "$video_ids"
           } >> "$GITHUB_STEP_SUMMARY"
       - name: Preserve monitor failure after committing successful jobs
         if: steps.monitor.outcome == 'failure'
         run: |
-          echo "::error::The monitor had one or more analysis failures. Successful approved jobs were still committed and dispatched."
+          echo "::error::The monitor had one or more non-retryable analysis failures. Successful approved jobs were still committed and dispatched."
           exit 1
