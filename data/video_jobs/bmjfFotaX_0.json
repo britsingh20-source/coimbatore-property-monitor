@@ -1,0 +1,162 @@
+{
+  "video_id": "bmjfFotaX_0",
+  "source_url": "https://www.youtube.com/watch?v=bmjfFotaX_0",
+  "property_location": "Pattanam, Coimbatore",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": 3,
+    "land_area": "2 cents",
+    "built_up_area": "1300 sqft",
+    "price": "₹52 Lakhs (Negotiable)",
+    "facing": "East",
+    "road_width": "30 & 33 feet",
+    "parking": "Covered parking (9x16 ft)",
+    "approval": "DTCP approval, Plan approval"
+  },
+  "verified_facts": "Location is Pattanam, Coimbatore, Property is a 3BHK East facing house, Land area is 2 cents and building built-up area is 1300 sqft, Asking price is ₹52 Lakhs (negotiable), Contact number for booking is +91 8122873894, Ground floor consists of parking (9*16), living hall (10*16), kitchen (10*8), kids bedroom (10*10), and attached bathroom (4*4), First floor consists of hall (5*8), master bedroom (10*16) with attached bathroom (5*4), and second master bedroom (10*16) with attached bathroom (3.5*10)",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local Tamil property presenter speaking directly to camera.",
+    "hook_strategy": "Lead with key value proposition: A 3BHK independent house in Pattanam for 52 Lakhs.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Pattanam location-ல ஒரு 3BHK independent house பாக்கலாம் வாங்க!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-text-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதுல முக்கியமான விஷயம், இதோட asking price 52 Lakhs தான், அதுவும் negotiable!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "price-badge",
+        "purpose": "price_highlight"
+      },
+      {
+        "name": "land",
+        "voice": "2 cents land area-ல 1300 sqft built-up area கொடுத்திருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "area-graphic",
+        "purpose": "land_and_structure_info"
+      },
+      {
+        "name": "facing",
+        "voice": "பாத்தீங்கனா, இது East facing house.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_info"
+      },
+      {
+        "name": "road",
+        "voice": "வீட்டுக்கு முன்னாடி 30 and 33 feet tar road வசதி இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior",
+          "kitchen"
+        ],
+        "vfx": "road-width-graphic",
+        "purpose": "road_access_info"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Ground floor-ல living hall, kitchen, kids bedroom, 9x16 covered parking இருக்கு. First floor-ல ரெண்டு master bedrooms இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "exterior",
+          "road"
+        ],
+        "vfx": "floor-plan-popup",
+        "purpose": "interior_details"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approval மற்றும் Plan approval வாங்குன house. Sump, borewell, septic tank வசதிகளும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_building"
+      },
+      {
+        "name": "cta",
+        "voice": "Direct site visit மற்றும் details-க்கு 8122873894 எண்ல call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "contact-card",
+        "purpose": "action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/bmjfFotaX_0/",
+  "optional_owned_audio": "assets/audio/bmjfFotaX_0.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone exterior with vertical decorative wall paneling on the upper facade, an open balcony frame, covered porch area, and a metal main gate.. Neighbourhood: Located in a developing residential area with paved streets and surrounding individual houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone exterior with vertical decorative wall paneling on the upper facade, an open balcony frame, covered porch area, and a metal main gate.. Neighbourhood: Located in a developing residential area with paved streets and surrounding individual houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone exterior with vertical decorative wall paneling on the upper facade, an open balcony frame, covered porch area, and a metal main gate.. Neighbourhood: Located in a developing residential area with paved streets and surrounding individual houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone exterior with vertical decorative wall paneling on the upper facade, an open balcony frame, covered porch area, and a metal main gate.. Neighbourhood: Located in a developing residential area with paved streets and surrounding individual houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
