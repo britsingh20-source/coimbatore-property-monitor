@@ -1,7 +1,7 @@
 import os
 
 from location_matcher import match_location
-from property_analyzer import analyze_property
+from property_analyzer import RetryableAnalysisError, analyze_property
 from records import legacy_retry_videos, upsert_record
 from state_store import (
     eligible,
@@ -34,7 +34,8 @@ def run() -> None:
         f"| Eligible now: {len(queue)}"
     )
 
-    failures = 0
+    hard_failures = 0
+    retryable_failures = 0
     for video in queue:
         video_id = video["video_id"]
         try:
@@ -50,15 +51,21 @@ def run() -> None:
                 build_video_job(video, result, location)
             mark_success(state, video_id, bool(location["is_target_location"]))
             print(f"Processed {video_id}: target={location['is_target_location']}")
+        except RetryableAnalysisError as error:
+            retryable_failures += 1
+            mark_failure(state, video_id, error)
+            print(f"RETRY {video_id}: {error}")
         except Exception as error:
-            failures += 1
+            hard_failures += 1
             mark_failure(state, video_id, error)
             print(f"ERROR {video_id}: {error}")
         finally:
             save_state(state)
 
-    if failures:
-        raise RuntimeError(f"{failures} video(s) failed and were scheduled for retry")
+    if retryable_failures:
+        print(f"Deferred {retryable_failures} video(s) because of transient API/quota conditions; state backoff will retry them automatically.")
+    if hard_failures:
+        raise RuntimeError(f"{hard_failures} video(s) failed with non-retryable errors")
 
 
 if __name__ == "__main__":
