@@ -689,9 +689,11 @@
     },
     "_F0wCRKb9wk": {
       "attempts": 0,
+      "completed_at": "2026-08-08T21:48:50.344578+00:00",
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
+      "last_error": "",
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "status": "archived_non_target"
     },
     "_Nh9JG5n0qk": {
       "attempts": 0,
@@ -797,10 +799,12 @@
       "status": "video_queued"
     },
     "g90KGHop344": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
-      "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-08-08T21:48:57.687146+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 2.329227106s.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-08-08T23:48:57.687159+00:00",
+      "status": "retry_pending"
     },
     "gJoV6mI_-h0": {
       "attempts": 1,
@@ -920,10 +924,12 @@
       "status": "video_queued"
     },
     "rnDvWTY7jH4": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
-      "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-08-08T21:48:54.048181+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 5.971480895s.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-08-08T23:48:54.048193+00:00",
+      "status": "retry_pending"
     },
     "sucZKA4h_oA": {
       "attempts": 3,
