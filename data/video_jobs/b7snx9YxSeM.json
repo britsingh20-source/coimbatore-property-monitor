@@ -1,0 +1,111 @@
+{
+  "video_id": "b7snx9YxSeM",
+  "source_url": "https://www.youtube.com/watch?v=b7snx9YxSeM",
+  "property_location": "Pattiyannan Nagar 2nd Cross, Vadavalli, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Land",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "5.37 Cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "NOT SPECIFIED",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "5.37 Cents North-facing land available for sale in Vadavalli, Coimbatore., Located within 1 km of Vadavalli main town, near HDFC Bank off Thondamuthur Main Road at Pattiyannan Nagar 2nd Cross., Situated approximately 200 meters inside from the Pattiyannan Nagar street turn-off., Walking distance to schools, colleges, hospitals, and commercial stores., Contact numbers provided: 9043002309 / 9042575274.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local Coimbatore property presenter speaking directly to camera in conversational spoken Tamil with natural real-estate English words.",
+    "hook_strategy": "Lead with prime land availability within 1 km of Vadavalli main town to capture immediate local interest.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோயம்பத்தூர் Vadavalli main town-ல இருந்து வெறும் 1 km தொலையில ஒரு சூப்பரான land location பாக்கப்போறோம்!",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-text-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இங்க Pattiyannan Nagar 2nd Cross-ல 5.37 Cents land விற்பனைக்கு இருக்குங்க.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "property_area"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், இந்த plot பாத்தீங்கனா கரெக்ட்டா North facing-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "compass-north",
+        "purpose": "facing_direction"
+      },
+      {
+        "name": "cta",
+        "voice": "நேரடியா வந்து site visit பண்ணி details தெரிஞ்சுக்க 9043002309 இல்லனா 9042575274 எண்ணுக்கு உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "contact-number-overlay",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/b7snx9YxSeM/",
+  "optional_owned_audio": "assets/audio/b7snx9YxSeM.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: A rectangular plot surrounded by existing multi-storey residential buildings, featuring a small tiled-roof shed at the rear end and enclosed front entrance gate.. Neighbourhood: Fully developed residential and commercial area with paved access roads, close proximity to major banks, retail outlets, and main arterial roads.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: A rectangular plot surrounded by existing multi-storey residential buildings, featuring a small tiled-roof shed at the rear end and enclosed front entrance gate.. Neighbourhood: Fully developed residential and commercial area with paved access roads, close proximity to major banks, retail outlets, and main arterial roads.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: A rectangular plot surrounded by existing multi-storey residential buildings, featuring a small tiled-roof shed at the rear end and enclosed front entrance gate.. Neighbourhood: Fully developed residential and commercial area with paved access roads, close proximity to major banks, retail outlets, and main arterial roads.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: A rectangular plot surrounded by existing multi-storey residential buildings, featuring a small tiled-roof shed at the rear end and enclosed front entrance gate.. Neighbourhood: Fully developed residential and commercial area with paved access roads, close proximity to major banks, retail outlets, and main arterial roads.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
