@@ -1,6 +1,7 @@
 import os
 
 from location_matcher import match_location
+from metadata_prefilter import build_analysis_queue
 from property_analyzer import RetryableAnalysisError, analyze_property
 from records import legacy_retry_videos, upsert_record
 from state_store import (
@@ -28,10 +29,11 @@ def run() -> None:
     ]
     register_videos(state, videos)
 
-    queue = [video for video in videos if eligible(state, video)][:MAX_PER_RUN]
+    eligible_videos = [video for video in videos if eligible(state, video)]
+    queue = build_analysis_queue(eligible_videos, recent_ids, MAX_PER_RUN)
     print(
         f"Recent: {len(recent)} | Including legacy retries: {len(videos)} "
-        f"| Eligible now: {len(queue)}"
+        f"| Eligible before metadata filter: {len(eligible_videos)} | Gemini queue: {len(queue)}"
     )
 
     hard_failures = 0
@@ -55,6 +57,9 @@ def run() -> None:
             retryable_failures += 1
             mark_failure(state, video_id, error)
             print(f"RETRY {video_id}: {error}")
+            save_state(state)
+            print("Stopping further Gemini calls for this run after a transient API/quota error.")
+            break
         except Exception as error:
             hard_failures += 1
             mark_failure(state, video_id, error)
@@ -63,7 +68,7 @@ def run() -> None:
             save_state(state)
 
     if retryable_failures:
-        print(f"Deferred {retryable_failures} video(s) because of transient API/quota conditions; state backoff will retry them automatically.")
+        print(f"Deferred {retryable_failures} video(s); state backoff will retry them automatically.")
     if hard_failures:
         raise RuntimeError(f"{hard_failures} video(s) failed with non-retryable errors")
 
