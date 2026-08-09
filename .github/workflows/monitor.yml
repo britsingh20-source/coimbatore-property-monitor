@@ -33,6 +33,7 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           MAX_VIDEOS_PER_RUN: "3"
+          MAX_EXPLORATORY_PER_RUN: "1"
         run: python main.py
       - name: Commit state, records and approval jobs
         id: commit
