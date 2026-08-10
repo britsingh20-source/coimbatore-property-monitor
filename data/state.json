@@ -988,9 +988,11 @@
     },
     "lB3idO0JO-A": {
       "attempts": 0,
+      "completed_at": "2026-08-10T21:05:15.027298+00:00",
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
+      "last_error": "",
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "lIgS6JgbJqM": {
       "attempts": 1,

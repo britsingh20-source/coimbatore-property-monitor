@@ -1,0 +1,130 @@
+{
+  "video_id": "lB3idO0JO-A",
+  "source_url": "https://www.youtube.com/watch?v=lB3idO0JO-A",
+  "property_location": "Keeranatham, near Saravanampatti, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Duplex House",
+    "bhk": "3BHK",
+    "land_area": "2.9 Cents (1250 sq.ft.)",
+    "built_up_area": "2500 sq.ft.",
+    "price": "₹1.30 Crore (Negotiable)",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Car Parking (24 ft x 14 ft)",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "The plot area is 2.9 cents (1250 sq.ft.), with plot dimensions of 25 ft x 50 ft., The built-up area is 2500 sq.ft. designed as a duplex house., Both the plot and the main entrance are North-facing., Features a 16 ft x 16 ft double-height ceiling living hall with a tall chandelier light and TV unit wall decoration., Ground floor includes a car parking area (24x14 ft), living hall (16x16 ft), modular kitchen cum dining (16x10 ft), and one bedroom (16x10 ft) with attached bathroom (8x4 ft)., First floor includes a lounge (16x8 ft), master bedroom (16x16 ft) with attached dressing room (6x5 ft) and bathroom (9x5 ft), and a third bedroom (16x11 ft) with attached bathroom (14x4 ft) and front balcony (16x4 ft)., The property is located in Keeranatham near Saravanampatti, Coimbatore, with an asking price of ₹1.30 Crore (negotiable).",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local Tamil property presenter, conversational and engaging",
+    "hook_strategy": "Highlight key location Keeranatham near Saravanampatti with a 3BHK Duplex house entry",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை Saravanampatti பக்கத்துல இருக்கற Keeranatham location-ல, ஒரு செம 3BHK Duplex House விற்பனைக்கு வந்திருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல land area பாத்தீங்கனா 2.9 Cents, அதாவது 1250 sq.ft plot size வருது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "property_specs"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல plot மற்றும் main entrance ரெண்டுமே North facing-ல அமைச்சிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass-north",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Built-up area 2500 sq.ft! Double-height ceiling living hall, chandelier light, modular kitchen-ன்னு வீடு ரொம்ப spacious-ஆ இருக்கும்.",
+        "broll": [
+          "living_room",
+          "interior",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "amenities_walkthrough"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த வீடோட price பாத்தீங்கனா ₹1.30 Crore சொல்றாங்க, இது negotiable தான்.",
+        "broll": [
+          "interior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த property-ய நேர்ல பாக்க site visit வரணும்னா, details-க்கு உடனே contact பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/lB3idO0JO-A/",
+  "optional_owned_audio": "assets/audio/lB3idO0JO-A.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary duplex elevation featuring beige wall tiles with geometric texture, glass balcony handrails, wooden finish soffit panels, and a brown wooden-finish main entrance gate.. Neighbourhood: Suburban residential neighborhood in Keeranatham with nearby houses, open green plots, coconut trees, and clear skyline visible from the balcony and rooftop terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary duplex elevation featuring beige wall tiles with geometric texture, glass balcony handrails, wooden finish soffit panels, and a brown wooden-finish main entrance gate.. Neighbourhood: Suburban residential neighborhood in Keeranatham with nearby houses, open green plots, coconut trees, and clear skyline visible from the balcony and rooftop terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary duplex elevation featuring beige wall tiles with geometric texture, glass balcony handrails, wooden finish soffit panels, and a brown wooden-finish main entrance gate.. Neighbourhood: Suburban residential neighborhood in Keeranatham with nearby houses, open green plots, coconut trees, and clear skyline visible from the balcony and rooftop terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary duplex elevation featuring beige wall tiles with geometric texture, glass balcony handrails, wooden finish soffit panels, and a brown wooden-finish main entrance gate.. Neighbourhood: Suburban residential neighborhood in Keeranatham with nearby houses, open green plots, coconut trees, and clear skyline visible from the balcony and rooftop terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
