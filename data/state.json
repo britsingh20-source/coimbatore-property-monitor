@@ -205,11 +205,12 @@
     },
     "64vy6PCFpIM": {
       "attempts": 1,
+      "completed_at": "2026-08-10T22:01:19.457305+00:00",
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
       "last_attempt_at": "2026-08-10T19:19:51.946057+00:00",
-      "last_error": "sequence item 2: expected str instance, dict found",
+      "last_error": "",
       "next_retry_at": "2026-08-10T21:19:51.946068+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "6FIyUEAEgFA": {
       "attempts": 1,
