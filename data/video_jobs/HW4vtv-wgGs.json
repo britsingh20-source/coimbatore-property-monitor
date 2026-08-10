@@ -1,0 +1,132 @@
+{
+  "video_id": "HW4vtv-wgGs",
+  "source_url": "https://www.youtube.com/watch?v=HW4vtv-wgGs",
+  "property_location": "Saravanampatti, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Duplex House",
+    "bhk": 3,
+    "land_area": "3.10 Cents (1350 sq.ft., 30 ft x 45 ft)",
+    "built_up_area": "2300 sq.ft.",
+    "price": "₹1.25 Crore (Negotiable)",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking (23 ft x 17 ft, space for 2 cars)",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "The total land area is 3.10 Cents (1350 sq.ft.) with dimensions of 30 ft width by 45 ft length., The house is a duplex model with a total built-up area of 2300 sq.ft., The site, house structure, and teak main door are all North-facing., The ground floor features a 23 ft x 17 ft parking area, a 6x4 ft outside bathroom, a 6x4 ft laundry room, a 16x16 ft living hall, an East-facing pooja cabinet, a 16x8 ft kitchen with dining space, and a 16x8 ft bedroom with an attached bathroom (7.5x5 ft)., The first floor features a 16x8 ft lounge, two 16x16 ft master bedrooms with separate dressing rooms and attached bathrooms, and a 16x6 ft front balcony., Borewell is installed in the North-East corner along with a underground water sump., The total asking price is ₹1.25 Crore, which is negotiable., The property is located near Saravanampatti IT Park in Coimbatore.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking to camera in natural conversational spoken Tamil",
+    "hook_strategy": "Highlight key location advantage near Saravanampatti IT Park paired with a 3 BHK Duplex House callout",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Saravanampatti IT Park பக்கத்துல ஒரு அருமையான 3 BHK Duplex House பாக்கப்போறோம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "text-overlay-location",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இதுல 2300 sq.ft built-up area வருது. Modular kitchen, false ceiling, balcony-னு Interior வேலைகள் எல்லாம் ரொம்ப அழகா பண்ணிருக்காங்க.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "text-overlay-builtup",
+        "purpose": "showcase house layout and interior quality"
+      },
+      {
+        "name": "land",
+        "voice": "Land area பாத்தீங்கனா 3.10 Cents. 2 கார்கள் park பண்ற அளவுக்கு Spacious Covered Car Parking வசதியும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "text-overlay-landarea",
+        "purpose": "highlight plot size and parking feature"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், Site, House structure, Teak main door எல்லாமே North facing தான்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "compass-north",
+        "purpose": "highlight facing direction"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட asking price 1.25 Crore. அப்புறம் இது கண்டிப்பா Negotiable தான்.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay-price",
+        "purpose": "display pricing and negotiation"
+      },
+      {
+        "name": "cta",
+        "voice": "Direct-ஆ site visit போகணும்னாலோ இல்ல details வேணும்னாலோ உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "land"
+        ],
+        "vfx": "call-to-action-banner",
+        "purpose": "drive site visit inquiries"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/HW4vtv-wgGs/",
+  "optional_owned_audio": "assets/audio/HW4vtv-wgGs.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story modern villa with beige, grey, and brown wood-texture exterior panels, decorative multi-fold metal main entrance gate, checkerboard tiled parking apron, and open top terrace with parapet wall.. Neighbourhood: Developing residential locality in Saravanampatti, Coimbatore, surrounded by newly constructed residential homes, open plots, and views of distant IT park buildings.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story modern villa with beige, grey, and brown wood-texture exterior panels, decorative multi-fold metal main entrance gate, checkerboard tiled parking apron, and open top terrace with parapet wall.. Neighbourhood: Developing residential locality in Saravanampatti, Coimbatore, surrounded by newly constructed residential homes, open plots, and views of distant IT park buildings.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story modern villa with beige, grey, and brown wood-texture exterior panels, decorative multi-fold metal main entrance gate, checkerboard tiled parking apron, and open top terrace with parapet wall.. Neighbourhood: Developing residential locality in Saravanampatti, Coimbatore, surrounded by newly constructed residential homes, open plots, and views of distant IT park buildings.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story modern villa with beige, grey, and brown wood-texture exterior panels, decorative multi-fold metal main entrance gate, checkerboard tiled parking apron, and open top terrace with parapet wall.. Neighbourhood: Developing residential locality in Saravanampatti, Coimbatore, surrounded by newly constructed residential homes, open plots, and views of distant IT park buildings.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

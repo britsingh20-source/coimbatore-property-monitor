@@ -316,11 +316,11 @@
       "status": "archived_non_target"
     },
     "BoWMLEvalrw": {
-      "attempts": 3,
+      "attempts": 4,
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
-      "last_attempt_at": "2026-08-09T21:50:37.710959+00:00",
-      "last_error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 22.317433453s.', 'code': 'too_many_requests'}}",
-      "next_retry_at": "2026-08-10T05:50:37.710969+00:00",
+      "last_attempt_at": "2026-08-10T06:45:13.164952+00:00",
+      "last_error": "sequence item 2: expected str instance, dict found",
+      "next_retry_at": "2026-08-10T22:45:13.164960+00:00",
       "status": "retry_pending"
     },
     "DLn9_0Ote80": {
@@ -437,11 +437,12 @@
     },
     "HW4vtv-wgGs": {
       "attempts": 2,
+      "completed_at": "2026-08-10T06:45:44.532007+00:00",
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
       "last_attempt_at": "2026-08-10T02:37:56.924245+00:00",
-      "last_error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 3.102984567s.', 'code': 'too_many_requests'}}",
+      "last_error": "",
       "next_retry_at": "2026-08-10T06:37:56.924255+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "I9C3zLma9t0": {
       "attempts": 0,
