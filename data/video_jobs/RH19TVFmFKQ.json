@@ -1,0 +1,141 @@
+{
+  "video_id": "RH19TVFmFKQ",
+  "source_url": "https://www.youtube.com/watch?v=RH19TVFmFKQ",
+  "property_location": "Karamadai, Mettupalayam Road, Coimbatore",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": "3 BHK",
+    "land_area": "3.25 Cents",
+    "built_up_area": "2000 sqft",
+    "price": "83 Lakhs",
+    "facing": "East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Car parking (17'0\" x 16'0\")",
+    "approval": "DTCP approved"
+  },
+  "verified_facts": "3BHK East facing independent house with 3.25 cents land area and 2000 sqft built-up area., Features 3 master bedrooms with attached bathrooms, plus an outer toilet., Ground floor includes car parking, living hall (16'x16'), kitchen cum dining (26'x10'), pooja cabinet, 1 bedroom with attached bathroom, and an outer bathroom., First floor consists of a second living hall (16'x16'), 2 bedrooms with attached bathrooms, and a balcony with terrace access., Equipped with borewell, 7000L sump, DTCP approval, and asking price of 83 Lakhs (negotiable).",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local Tamil presenter",
+    "hook_strategy": "Highlighting prime location in Karamadai on Mettupalayam Road near Savitha Hospital",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோயம்புத்தூர் மேட்டுப்பாளையம் ரோடு, காரமடையில் சவிதா ஹாஸ்பிட்டல் பக்கத்துல ஒரு அருமையான 3 BHK இண்டிபெண்டன்ட் வில்லா பார்க்கப்போறோம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல 3.25 cents land area இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "property-detail"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு பார்த்தீங்கனா East facing-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "property-detail"
+      },
+      {
+        "name": "builtUp",
+        "voice": "2000 sqft built-up area-ல 3 மாஸ்டர் பெட்ரூம்ஸ், மாடுலர் கிச்சன், ஃபால்ஸ் சீலிங் மற்றும் கார் பார்க்கிங் வசதி இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "exterior"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "feature-highlight"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், இது DTCP approval பெற்றது. ஆழ்துளை கிணறு மற்றும் 7000 லிட்டர் வாட்டர் சம்ப் வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "badge-pop",
+        "purpose": "trust-building"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த சொத்தின் விலை 83 Lakhs, negotiable.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "land"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "Site visit பண்ணவோ, மேலும் details தெரிஞ்சுக்கவோ உடனே கால் பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "call-animation",
+        "purpose": "call-to-action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/RH19TVFmFKQ/",
+  "optional_owned_audio": "assets/audio/RH19TVFmFKQ.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-color elevation featuring red, blue, and ivory accents with CNC laser-cut metal main gate, tiled car parking, utility side path, and a terrace with twin 1000L water tanks.. Neighbourhood: Located in a developed residential layout in Karamadai with paved tar roads, street drainage, electricity infrastructure, and surrounding residential homes near natural greenery.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-color elevation featuring red, blue, and ivory accents with CNC laser-cut metal main gate, tiled car parking, utility side path, and a terrace with twin 1000L water tanks.. Neighbourhood: Located in a developed residential layout in Karamadai with paved tar roads, street drainage, electricity infrastructure, and surrounding residential homes near natural greenery.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-color elevation featuring red, blue, and ivory accents with CNC laser-cut metal main gate, tiled car parking, utility side path, and a terrace with twin 1000L water tanks.. Neighbourhood: Located in a developed residential layout in Karamadai with paved tar roads, street drainage, electricity infrastructure, and surrounding residential homes near natural greenery.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-color elevation featuring red, blue, and ivory accents with CNC laser-cut metal main gate, tiled car parking, utility side path, and a terrace with twin 1000L water tanks.. Neighbourhood: Located in a developed residential layout in Karamadai with paved tar roads, street drainage, electricity infrastructure, and surrounding residential homes near natural greenery.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
