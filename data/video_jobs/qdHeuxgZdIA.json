@@ -1,0 +1,143 @@
+{
+  "video_id": "qdHeuxgZdIA",
+  "source_url": "https://www.youtube.com/watch?v=qdHeuxgZdIA",
+  "property_location": "Shanthi Medu, Mettupalayam Road, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent Duplex Villa",
+    "bhk": 3,
+    "land_area": "2 Cents",
+    "built_up_area": "1350 sqft",
+    "price": "₹52 Lakhs",
+    "facing": "East facing main door (South West corner site)",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking area (11'0\" x 15'0\")",
+    "approval": "DTCP approved"
+  },
+  "verified_facts": "Located in Shanthi Medu near Mettupalayam Road, Coimbatore., 3 BHK duplex independent villa with built-up area of 1350 sqft on a 2 cent plot., Price quoted as 52 Lakhs (negotiable) with 75% bank loan availability., East-facing main entrance door with South West corner plot alignment., DTCP approved site with dedicated borewell., Includes 3 bedrooms with attached bathrooms, living hall, modular kitchen, car parking, balcony, and terrace with staircase access.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, authentic local property walkthrough speaking directly to camera with clear visuals.",
+    "hook_strategy": "Highlight an affordable 3 BHK Independent Duplex Villa in Shanthi Medu, Mettupalayam Road.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை மேட்டுப்பாளையம் ரோடு, சாந்தி மேடு பக்கத்துல ஒரு அருமையான 3 BHK Independent Duplex Villa பாக்கப்போறோம்!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 2 Cent land-ல தெளிவா அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "land-boundary-highlight",
+        "purpose": "land_details"
+      },
+      {
+        "name": "facing",
+        "voice": "South West corner site-ல, East facing main door கொடுத்திருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பாத்தீங்கனா 1350 sqft built-up area! உள்ள Modular kitchen, TV wall unit, Living hall, 3 bedrooms வித் attached bathrooms, Balcony அப்புறம் covered car parking இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-callout-specs",
+        "purpose": "interior_tour"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approved site. அதே மாதிரி dedicated borewell வசதியும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "approval-badge-overlay",
+        "purpose": "trust_and_legality"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price 52 Lakhs. இதுல 75% bank loan availability-யும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag-card",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல site visit பண்ணவோ, மேலும் details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "contact-details-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/qdHeuxgZdIA/",
+  "optional_owned_audio": "assets/audio/qdHeuxgZdIA.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-color facade painted in vibrant yellow, grey, white, and dark charcoal. Features a brown slatted metal gate, a covered car parking area clad in beige polished wall tiles, and red-surfaced terrace balcony areas with metal staircase access.. Neighbourhood: Newly developing suburban residential layout surrounded by independent houses, open plots, and clear blue sky views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-color facade painted in vibrant yellow, grey, white, and dark charcoal. Features a brown slatted metal gate, a covered car parking area clad in beige polished wall tiles, and red-surfaced terrace balcony areas with metal staircase access.. Neighbourhood: Newly developing suburban residential layout surrounded by independent houses, open plots, and clear blue sky views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-color facade painted in vibrant yellow, grey, white, and dark charcoal. Features a brown slatted metal gate, a covered car parking area clad in beige polished wall tiles, and red-surfaced terrace balcony areas with metal staircase access.. Neighbourhood: Newly developing suburban residential layout surrounded by independent houses, open plots, and clear blue sky views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-color facade painted in vibrant yellow, grey, white, and dark charcoal. Features a brown slatted metal gate, a covered car parking area clad in beige polished wall tiles, and red-surfaced terrace balcony areas with metal staircase access.. Neighbourhood: Newly developing suburban residential layout surrounded by independent houses, open plots, and clear blue sky views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

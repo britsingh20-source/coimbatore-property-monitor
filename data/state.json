@@ -494,6 +494,12 @@
       "next_retry_at": "2026-08-08T16:01:23.861136+00:00",
       "status": "video_queued"
     },
+    "KGW7Y8w_PE8": {
+      "attempts": 0,
+      "first_seen_at": "2026-08-10T13:48:09.568513+00:00",
+      "next_retry_at": "2026-08-10T13:48:09.568513+00:00",
+      "status": "discovered"
+    },
     "L9GyD_HPyaA": {
       "attempts": 0,
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
@@ -549,6 +555,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-09T09:05:25.216096+00:00",
       "status": "video_queued"
+    },
+    "MqLzVXH9WJc": {
+      "attempts": 0,
+      "first_seen_at": "2026-08-10T13:48:09.568513+00:00",
+      "next_retry_at": "2026-08-10T13:48:09.568513+00:00",
+      "status": "discovered"
     },
     "Mu8GyCLLBtY": {
       "attempts": 0,
@@ -933,6 +945,14 @@
       "next_retry_at": "2026-08-05T15:55:48.520012+00:00",
       "status": "video_queued"
     },
+    "hv8z3FZL-hY": {
+      "attempts": 1,
+      "first_seen_at": "2026-08-10T13:48:09.568513+00:00",
+      "last_attempt_at": "2026-08-10T13:49:39.836895+00:00",
+      "last_error": "sequence item 2: expected str instance, dict found",
+      "next_retry_at": "2026-08-10T15:49:39.836905+00:00",
+      "status": "retry_pending"
+    },
     "iPZArXSDI4Q": {
       "attempts": 0,
       "completed_at": "2026-08-05T20:41:22.675834+00:00",
@@ -1028,6 +1048,14 @@
       "last_error": "",
       "next_retry_at": "2026-08-09T19:50:27.512014+00:00",
       "status": "archived_non_target"
+    },
+    "qdHeuxgZdIA": {
+      "attempts": 0,
+      "completed_at": "2026-08-10T13:48:33.729384+00:00",
+      "first_seen_at": "2026-08-10T13:48:09.568513+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-08-10T13:48:09.568513+00:00",
+      "status": "video_queued"
     },
     "rIKERC5GAGo": {
       "attempts": 0,
@@ -1153,6 +1181,14 @@
       "last_error": "",
       "next_retry_at": "2026-08-06T15:30:52.634663+00:00",
       "status": "archived_non_target"
+    },
+    "xjQm5VFcq8w": {
+      "attempts": 0,
+      "completed_at": "2026-08-10T13:49:09.369850+00:00",
+      "first_seen_at": "2026-08-10T13:48:09.568513+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-08-10T13:48:09.568513+00:00",
+      "status": "video_queued"
     },
     "zD15I0_n2B0": {
       "attempts": 0,
