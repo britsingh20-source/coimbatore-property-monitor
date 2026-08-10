@@ -1,0 +1,133 @@
+{
+  "video_id": "QCl0-Bfh6pQ",
+  "source_url": "https://www.youtube.com/watch?v=QCl0-Bfh6pQ",
+  "property_location": "Idigarai, Thudiyalur to Kovilpalayam Road, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Duplex House",
+    "bhk": 3,
+    "land_area": "3 Cents (1,300 sq.ft.)",
+    "built_up_area": "2,200 sq.ft.",
+    "price": "₹1.05 Crore (Negotiable)",
+    "facing": "South (Site), East (Main Door)",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Double Car Parking (32 ft x 10 ft)",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "Plot size is 3 Cents (1300 sq.ft.) with 40 ft frontage and 32.5 ft depth., Built-up area is 2200 sq.ft. duplex construction., South-facing site with East-facing main door., 3 Bedrooms with 3 attached bathrooms (1 on ground floor, 2 on first floor)., Price is 1 Crore 5 Lakhs (Negotiable)., Located at Idigarai on Thudiyalur to Kovilpalayam Road, Coimbatore.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local property presenter walking through key features.",
+    "hook_strategy": "Direct location and property type hook targeting home buyers in the Thudiyalur-Kovilpalayam stretch.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோயம்புத்தூர் துடியலூர் to கோவில்பாளையம் ரோட்ல, இடிங்கரை பகுதியில ஒரு 3 BHK Duplex House விற்பனைக்கு வந்திருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தம் 3 Cents நிலத்துல, 40 அடி ஃபிரண்டேஜ்ோட அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "",
+        "purpose": "land details"
+      },
+      {
+        "name": "facing",
+        "voice": "Facing பாத்தீங்கனா site South facing, வீடோட main door East facing-ல இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "",
+        "purpose": "facing direction"
+      },
+      {
+        "name": "builtUp",
+        "voice": "2,200 sq.ft built-up area-ல, 3 attached bathrooms-ோட 3 Bedrooms, modular kitchen, false ceiling அப்புறம் double car parking வசதியோட வீடு அருமையா கட்டிருக்காங்க.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "",
+        "purpose": "house features"
+      },
+      {
+        "name": "price",
+        "voice": "இதுல முக்கியமான விஷயம், இந்த வீடோட price 1 Crore 5 Lakhs, இது negotiable தான்.",
+        "broll": [
+          "interior",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details தெரிஞ்சுக்க அப்புறம் site visit பண்ண உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "",
+        "purpose": "call to action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/QCl0-Bfh6pQ/",
+  "optional_owned_audio": "assets/audio/QCl0-Bfh6pQ.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story duplex elevation finished in light blue and grey tone panels, accent wooden texture tiles, white/brown metal gate with HPL sheet panels, and a covered portico with checkerboard floor tiles.. Neighbourhood: Suburban residential neighborhood with paved streets, adjacent individual homes, overhead utility lines, and scenic mountain views visible from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story duplex elevation finished in light blue and grey tone panels, accent wooden texture tiles, white/brown metal gate with HPL sheet panels, and a covered portico with checkerboard floor tiles.. Neighbourhood: Suburban residential neighborhood with paved streets, adjacent individual homes, overhead utility lines, and scenic mountain views visible from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story duplex elevation finished in light blue and grey tone panels, accent wooden texture tiles, white/brown metal gate with HPL sheet panels, and a covered portico with checkerboard floor tiles.. Neighbourhood: Suburban residential neighborhood with paved streets, adjacent individual homes, overhead utility lines, and scenic mountain views visible from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story duplex elevation finished in light blue and grey tone panels, accent wooden texture tiles, white/brown metal gate with HPL sheet panels, and a covered portico with checkerboard floor tiles.. Neighbourhood: Suburban residential neighborhood with paved streets, adjacent individual homes, overhead utility lines, and scenic mountain views visible from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

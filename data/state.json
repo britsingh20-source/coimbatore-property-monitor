@@ -648,11 +648,12 @@
     },
     "QCl0-Bfh6pQ": {
       "attempts": 2,
+      "completed_at": "2026-08-10T04:57:45.269981+00:00",
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
       "last_attempt_at": "2026-08-09T22:53:16.915969+00:00",
-      "last_error": "sequence item 2: expected str instance, dict found",
+      "last_error": "",
       "next_retry_at": "2026-08-10T02:53:16.915982+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "QZ0btepAbaI": {
       "attempts": 0,
