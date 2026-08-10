@@ -1,0 +1,156 @@
+{
+  "video_id": "KGW7Y8w_PE8",
+  "source_url": "https://www.youtube.com/watch?v=KGW7Y8w_PE8",
+  "property_location": "Pattanam, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent Duplex House",
+    "bhk": "2 BHK",
+    "land_area": "3 cents (36 ft x 36 ft)",
+    "built_up_area": "1600 sqft",
+    "price": "₹65 Lakhs (Negotiable)",
+    "facing": "West-facing plot with North-facing main door",
+    "road_width": "30 & 33 feet tar road",
+    "parking": "Covered Car Parking (16 ft x 16 ft)",
+    "approval": "DTCP Approved, Plan Approved"
+  },
+  "verified_facts": "Property is a 2BHK duplex house built on a 3-cent plot (36x36 ft dimensions)., Total built-up area is 1600 sqft covering Ground and First floor., Ground Floor includes Car Parking (16x16 ft), Living Hall (16x16 ft), Kitchen (10x8 ft), and Master Bedroom (10x16 ft) with attached bathroom (5x5 ft)., First Floor includes Master Bedroom (10x16 ft) with attached bathroom (5x5 ft) accessed via external balcony entry, and an open balcony/terrace., Includes an additional outside common toilet near the parking area measuring 3.5x5 ft., Property features a west-facing plot with a north-facing teak wood main entrance door., Equipped with 6000L water sump, 10000L septic tank, borewell, and two 750L overhead water tanks., Asking price is 65 Lakhs (Negotiable) with up to 85% home loan availability.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Conversational, local property presenter speaking directly to camera with smooth audio-visual alignment.",
+    "hook_strategy": "Highlight key Coimbatore location (Pattanam near L&T Bypass) paired with independent duplex house feature.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை பட்டணம் area-ல, L&T Bypass Road மற்றும் Trichy Road பக்கத்துல ஒரு அருமையான 2 BHK independent duplex house விற்பனைக்கு வந்திருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 3 cent land area-ல, 36 by 36 feet dimension-ல அமைஞ்சிருக்கு. 16 by 16 feet-ல covered car parking வசதியும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "interior"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இதோட built-up area 1600 sqft. Ground floor-ல living hall, kitchen, master bedroom இருக்கு. First floor-ல external balcony entry-யோட master bedroom மற்றும் open terrace அமைச்சிருக்காங்க.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "floor-plan-highlight",
+        "purpose": "property_overview"
+      },
+      {
+        "name": "facing",
+        "voice": "Facing பாத்தீங்கனா West-facing plot, அப்புறம் main door North-facing teak wood door-ஆ கொடுத்திருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "road",
+        "voice": "வீட்டுக்கு முன்னாடி 30 மற்றும் 33 feet wide tar road access இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "road_details"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approved மற்றும் plan approved property. Borewell, 6000L sump, 10000L septic tank நு எல்லா basic requirements-உம் ready-ஆ இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "badge-check",
+        "purpose": "trust_and_amenities"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price 65 Lakhs, negotiable-தான். 85% வரைக்கும் home loan availability-யும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த வீட்டை நேர்ல வந்து பாக்கவோ, site visit arrangement-க்கு details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "call-button",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/KGW7Y8w_PE8/",
+  "optional_owned_audio": "assets/audio/KGW7Y8w_PE8.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+1 duplex structure painted in white with yellow and brown geometric stripe accent wall designs, a metallic laser-cut front gate, covered car parking with marble-look wall tiles, and an iron staircase leading to the roof terrace.. Neighbourhood: Developing residential neighborhood in Pattanam, Coimbatore, surrounded by independent residential houses, vacant plots, and open views towards the L&T Bypass corridor.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+1 duplex structure painted in white with yellow and brown geometric stripe accent wall designs, a metallic laser-cut front gate, covered car parking with marble-look wall tiles, and an iron staircase leading to the roof terrace.. Neighbourhood: Developing residential neighborhood in Pattanam, Coimbatore, surrounded by independent residential houses, vacant plots, and open views towards the L&T Bypass corridor.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+1 duplex structure painted in white with yellow and brown geometric stripe accent wall designs, a metallic laser-cut front gate, covered car parking with marble-look wall tiles, and an iron staircase leading to the roof terrace.. Neighbourhood: Developing residential neighborhood in Pattanam, Coimbatore, surrounded by independent residential houses, vacant plots, and open views towards the L&T Bypass corridor.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+1 duplex structure painted in white with yellow and brown geometric stripe accent wall designs, a metallic laser-cut front gate, covered car parking with marble-look wall tiles, and an iron staircase leading to the roof terrace.. Neighbourhood: Developing residential neighborhood in Pattanam, Coimbatore, surrounded by independent residential houses, vacant plots, and open views towards the L&T Bypass corridor.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

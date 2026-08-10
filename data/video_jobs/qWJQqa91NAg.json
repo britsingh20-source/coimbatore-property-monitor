@@ -1,0 +1,142 @@
+{
+  "video_id": "qWJQqa91NAg",
+  "source_url": "https://www.youtube.com/watch?v=qWJQqa91NAg",
+  "property_location": "Shanthi medu, Mettupalayam road, Coimbatore",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": "3 BHK",
+    "land_area": "2 Cents",
+    "built_up_area": "1350 sqft",
+    "price": "52 Lakhs",
+    "facing": "East facing main door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "1 Covered Car Parking",
+    "approval": "DTCP approved"
+  },
+  "verified_facts": "3BHK Independent Villa located at Shanthi medu, Mettupalayam road, Coimbatore, Price is 52 Lakhs (negotiable) with 75% bank loan availability, Land area is 2 Cents and built-up area is 1350 sqft, South West corner site with East facing main door, DTCP approved site with borewell facility",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking direct-to-camera in conversational spoken Tamil",
+    "hook_strategy": "Direct visual hook highlighting a 3BHK Independent Villa on Mettupalayam Road",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Mettupalayam road, Shanthi medu-ல ஒரு 3 BHK Independent Villa விற்பனைக்கு வந்திருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price 52 Lakhs, negotiable. அப்புறம் 75% bank loan availability-யும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "land"
+        ],
+        "vfx": "price-tag",
+        "purpose": "value_proposition"
+      },
+      {
+        "name": "land",
+        "voice": "2 Cents land area-ல 1350 sqft built-up area அமைச்சிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "property_specs"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இதுல 1 covered car parking, utility area, balcony, terrace அப்புறம் borewell facility-யும் இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "feature-list",
+        "purpose": "amenities"
+      },
+      {
+        "name": "facing",
+        "voice": "இது ஒரு South West corner site, East facing main door-ோட வருது.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "compass",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "approval",
+        "voice": "முக்கியமான விஷயம், இது DTCP approved site.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "verified-badge",
+        "purpose": "trust_building"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details தெரிஞ்சுக்க இல்ல site visit வர உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "call-to-action",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/qWJQqa91NAg/",
+  "optional_owned_audio": "assets/audio/qWJQqa91NAg.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story modern independent house painted in grey and yellow accents, featuring a secure front gate, tiled covered car parking area, and an open terrace.. Neighbourhood: Residential layout setting in Shanthi Medu with open ground surroundings and scattered houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story modern independent house painted in grey and yellow accents, featuring a secure front gate, tiled covered car parking area, and an open terrace.. Neighbourhood: Residential layout setting in Shanthi Medu with open ground surroundings and scattered houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story modern independent house painted in grey and yellow accents, featuring a secure front gate, tiled covered car parking area, and an open terrace.. Neighbourhood: Residential layout setting in Shanthi Medu with open ground surroundings and scattered houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story modern independent house painted in grey and yellow accents, featuring a secure front gate, tiled covered car parking area, and an open terrace.. Neighbourhood: Residential layout setting in Shanthi Medu with open ground surroundings and scattered houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

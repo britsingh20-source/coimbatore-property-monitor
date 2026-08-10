@@ -1,0 +1,96 @@
+{
+  "video_id": "MqLzVXH9WJc",
+  "source_url": "https://www.youtube.com/watch?v=MqLzVXH9WJc",
+  "property_location": "Saravanampatti to Thudiyalur Main Road, Saravanampatti, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Commercial Land / Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "22 Cents (65 x 145 ft)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "NOT SPECIFIED",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "22 Cents commercial plot available for sale on Saravanampatti to Thudiyalur Main Road., Frontage dimension is 65 feet and length is 145 feet., Features road access on two sides (south side road at the back)., Located near Kumaraguru College of Technology, Sankara College, CHIL-SEZ, and KCT Tech Park., Contact phone numbers provided: 904 2575 274 and 904 300 2309.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, energetic local property presenter talking directly to camera with natural spoken Tamil",
+    "hook_strategy": "Highlighting a prime commercial land opportunity on Saravanampatti to Thudiyalur Main Road right in the opening line",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Saravanampatti to Thudiyalur Main Road-ல ஒரு முக்கியமான Commercial Plot விற்பனைக்கு வந்திருக்கு!",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-pin-highlight",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தம் 22 Cents Commercial Plot. இதோட Frontage பார்த்தீங்கனா 65 feet, அப்புறம் நீளம் 145 feet இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "dimension-overlay-65x145",
+        "purpose": "property_dimensions"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல Site visit வர இல்லனா மேலும் details தெரிஞ்சுக்க 904 2575 274 அல்லது 904 300 2309-க்கு call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "phone-number-graphic",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/MqLzVXH9WJc/",
+  "optional_owned_audio": "assets/audio/MqLzVXH9WJc.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Vacant rectangular land plot surrounded by residential and commercial structures on a paved main road.. Neighbourhood: Active commercial and institutional corridor in Saravanampatti featuring colleges, tech parks, hostels, apartments, and retail stores.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Vacant rectangular land plot surrounded by residential and commercial structures on a paved main road.. Neighbourhood: Active commercial and institutional corridor in Saravanampatti featuring colleges, tech parks, hostels, apartments, and retail stores.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Vacant rectangular land plot surrounded by residential and commercial structures on a paved main road.. Neighbourhood: Active commercial and institutional corridor in Saravanampatti featuring colleges, tech parks, hostels, apartments, and retail stores.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Vacant rectangular land plot surrounded by residential and commercial structures on a paved main road.. Neighbourhood: Active commercial and institutional corridor in Saravanampatti featuring colleges, tech parks, hostels, apartments, and retail stores.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "needs_review",
+  "approval_mode": "automatic_fact_gate_v1"
+}
