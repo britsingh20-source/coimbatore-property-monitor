@@ -7,6 +7,11 @@ on:
         description: "Optional comma-separated property video IDs; blank uses the manual approval file"
         required: false
         type: string
+      publish_to_meta:
+        description: "After a successful manual render, publish to Instagram and Facebook"
+        required: false
+        default: false
+        type: boolean
   repository_dispatch:
     types: [render-property-videos]
   pull_request:
@@ -23,6 +28,9 @@ on:
       - media_sources.py
       - free_broll_sources.py
       - visual_broll_validator.py
+      - meta_publisher.py
+      - publish_render_queue.py
+      - social_caption.py
       - map_assets.py
       - requirements.txt
       - tamil_voiceover.py
@@ -30,6 +38,7 @@ on:
       - tests/test_visual_broll_validator.py
       - tests/test_select_render_jobs.py
       - tests/test_tamil_voiceover.py
+      - tests/test_social_caption.py
       - data/video_jobs/**
   push:
     branches: [main]
@@ -115,16 +124,10 @@ jobs:
           import os
           import boto3
 
-          required = (
-              "R2_ACCOUNT_ID",
-              "R2_ACCESS_KEY_ID",
-              "R2_SECRET_ACCESS_KEY",
-              "R2_BUCKET_NAME",
-          )
+          required = ("R2_ACCOUNT_ID", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_BUCKET_NAME")
           missing = [name for name in required if not os.environ.get(name, "").strip()]
           if missing:
               raise SystemExit("Missing R2 secrets: " + ", ".join(missing))
-
           bucket = os.environ["R2_BUCKET_NAME"].strip()
           account_id = os.environ["R2_ACCOUNT_ID"].strip()
           client = boto3.client(
@@ -134,7 +137,6 @@ jobs:
               aws_secret_access_key=os.environ["R2_SECRET_ACCESS_KEY"].strip(),
               region_name="auto",
           )
-
           prefixes = (
               "villas/Road/",
               "villas/bedroom/",
@@ -145,17 +147,11 @@ jobs:
           total = 0
           for prefix in prefixes:
               response = client.list_objects_v2(Bucket=bucket, Prefix=prefix, MaxKeys=1000)
-              media = [
-                  item["Key"] for item in response.get("Contents", [])
-                  if item["Key"].lower().endswith((".mp4", ".mov", ".webm", ".m4v"))
-              ]
+              media = [item["Key"] for item in response.get("Contents", []) if item["Key"].lower().endswith((".mp4", ".mov", ".webm", ".m4v"))]
               total += len(media)
               print(f"R2 folder r2://{bucket}/{prefix} -> {len(media)} video(s)")
           if total == 0:
-              raise SystemExit(
-                  f"No video B-roll found under r2://{bucket}/villas/. "
-                  "Expected Road, bedroom, dining & Kitchen, exterior and living_room folders."
-              )
+              raise SystemExit(f"No video B-roll found under r2://{bucket}/villas/.")
           print(f"R2 villa B-roll verified: {total} video(s) available.")
           PY
 
@@ -190,20 +186,16 @@ jobs:
           mkdir -p outputs
           : > outputs/failed-render-ids.txt
           : > outputs/fallback-render-ids.txt
-
           while IFS= read -r video_id; do
             [[ -z "$video_id" || "$video_id" == \#* ]] && continue
             mkdir -p "outputs/$video_id"
-
             if [[ -f outputs/asset-failure-ids.txt ]] && grep -Fxq "$video_id" outputs/asset-failure-ids.txt; then
               echo "$video_id" >> outputs/failed-render-ids.txt
               echo "ASSET_OR_VOICE_FAILED" > "outputs/$video_id/render-mode.txt"
               echo "::error::Skipping $video_id because fresh media or voice preparation failed; stale assets are prohibited."
               continue
             fi
-
             printf '%s\n' "$video_id" > data/single-render-queue.txt
-
             if (
               set -euo pipefail
               python prepare_remotion_job.py "data/video_jobs/${video_id}.json"
@@ -220,7 +212,6 @@ jobs:
               echo "Rendered $video_id with Remotion."
               continue
             fi
-
             echo "::warning::Remotion failed for $video_id; attempting its isolated FFmpeg fallback."
             if VIDEO_IDS_FILE=data/single-render-queue.txt python render_free_approved.py; then
               echo "$video_id" >> outputs/fallback-render-ids.txt
@@ -231,11 +222,30 @@ jobs:
               echo "::error::Both render engines failed for $video_id."
             fi
           done < data/render_queue.txt
-
           if [[ -s outputs/failed-render-ids.txt ]]; then
             echo "::error::Some property videos failed. See failed-render-ids.txt."
             exit 1
           fi
+
+      - name: Publish completed Reels to Meta
+        id: meta_publish
+        if: >-
+          steps.select.outputs.has_jobs == 'true' &&
+          steps.render.outcome == 'success' &&
+          github.event_name != 'pull_request' &&
+          (github.event_name == 'repository_dispatch' || (github.event_name == 'workflow_dispatch' && inputs.publish_to_meta == true))
+        env:
+          META_GRAPH_VERSION: v26.0
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
+          META_PLATFORMS: instagram,facebook
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          VIDEO_IDS_FILE: data/render_queue.txt
+        run: python publish_render_queue.py
 
       - uses: actions/upload-artifact@v4
         if: always() && steps.select.outputs.has_jobs == 'true'
@@ -244,6 +254,7 @@ jobs:
           path: |
             outputs/**/*.mp4
             outputs/**/render-mode.txt
+            outputs/social_publish/*.json
             outputs/failed-render-ids.txt
             outputs/fallback-render-ids.txt
             outputs/asset-failure-ids.txt
@@ -257,7 +268,7 @@ jobs:
           retention-days: 7
 
       - name: Fail incomplete autopilot run after uploading diagnostics
-        if: always() && steps.select.outputs.has_jobs == 'true' && (steps.assets.outcome == 'failure' || steps.render.outcome == 'failure')
+        if: always() && steps.select.outputs.has_jobs == 'true' && (steps.assets.outcome == 'failure' || steps.render.outcome == 'failure' || steps.meta_publish.outcome == 'failure')
         run: |
-          echo "::error::At least one requested property did not complete the strict media, voice and render pipeline."
+          echo "::error::At least one requested property did not complete the strict media, voice, render or requested Meta publish pipeline."
           exit 1
