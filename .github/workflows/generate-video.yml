@@ -233,7 +233,7 @@ jobs:
           steps.select.outputs.has_jobs == 'true' &&
           steps.render.outcome == 'success' &&
           github.event_name != 'pull_request' &&
-          ((github.event_name == 'workflow_dispatch' && inputs.publish_to_meta == true) || vars.META_AUTOPUBLISH_ENABLED == 'true')
+          (github.event_name == 'repository_dispatch' || (github.event_name == 'workflow_dispatch' && inputs.publish_to_meta == true))
         env:
           META_GRAPH_VERSION: v26.0
           META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
