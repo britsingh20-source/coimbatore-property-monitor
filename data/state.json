@@ -715,11 +715,12 @@
     },
     "UEgyfYTQN9c": {
       "attempts": 1,
+      "completed_at": "2026-08-10T18:06:21.027929+00:00",
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
       "last_attempt_at": "2026-08-10T12:02:38.483392+00:00",
-      "last_error": "sequence item 2: expected str instance, dict found",
+      "last_error": "",
       "next_retry_at": "2026-08-10T14:02:38.483403+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "Ufc3QPUTKYQ": {
       "attempts": 2,
