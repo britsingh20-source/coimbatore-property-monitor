@@ -698,10 +698,12 @@
       "status": "video_queued"
     },
     "UEgyfYTQN9c": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
-      "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-08-10T12:02:38.483392+00:00",
+      "last_error": "sequence item 2: expected str instance, dict found",
+      "next_retry_at": "2026-08-10T14:02:38.483403+00:00",
+      "status": "retry_pending"
     },
     "Ufc3QPUTKYQ": {
       "attempts": 2,
