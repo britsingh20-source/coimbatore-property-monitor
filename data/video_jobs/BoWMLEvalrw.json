@@ -1,0 +1,130 @@
+{
+  "video_id": "BoWMLEvalrw",
+  "source_url": "https://www.youtube.com/watch?v=BoWMLEvalrw",
+  "property_location": "Saravanampatti, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Villa Plots & Villas in Gated Community Layout",
+    "bhk": "2 BHK / 3 BHK",
+    "land_area": "1.5 Cents to 6 Cents (Total Project: 13 Acres)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "Plots starting from ₹21 Lakhs per cent; 2 BHK Villa starting from ₹85 Lakhs; 3 BHK Villa starting from ₹1.5 Crores",
+    "facing": "NOT SPECIFIED",
+    "road_width": "30 feet, 33 feet, 40 feet blacktop roads",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP & RERA Approved"
+  },
+  "verified_facts": "Project Name: Balaji's Parcelaa Urbanaa, Location: Opposite CHIL SEZ IT Park, Saravanampatti, Coimbatore, Approvals: DTCP & RERA Approved, Loan Support: 80% to 90% bank loan available, Total Project Scale: 13 Acres (10 Acres plot land, 3 Acres villa/gated project), Plot Dimensions: From 1.5 Cents up to 6 Cents, Pricing: Land starting from ₹21 Lakhs per cent; 2 BHK Villa starting from ₹85 Lakhs; 3 BHK Villa starting from ₹1.5 Crores, Internal Roads: 30 ft, 33 ft, and 40 ft wide highway-specification tar roads",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, conversational local Coimbatore property presenter speaking directly to camera.",
+    "hook_strategy": "Highlighting prime location directly opposite CHIL SEZ IT Park in Saravanampatti.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோயம்புத்தூர் சரவணம்பட்டியில CHIL SEZ IT Park-க்கு அப்படியே ஆப்போசிட்ல இருக்குற Balaji's Parcelaa Urbanaa பத்தி தான் பார்க்க போறோம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தமா 13 ஏக்கர்ல அமையுற இந்த கேட்டட் கம்யூனிட்டில, 1.5 சென்ட்ல இருந்து 6 சென்ட் வரைக்கும் லேண்ட் பிளாட்ஸ் அண்ட் வில்லாஸ் அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "living_room"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "overview"
+      },
+      {
+        "name": "road",
+        "voice": "இதுல பாத்தீங்கனா 30 அடி, 33 அடி, மற்றும் 40 அடி பிளாக் டாப் தார் ரோட்ஸ் கொடுத்திருக்காங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "road-measurement-overlay",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், இது DTCP மற்றும் RERA அப்ரூவ்ட் ப்ராஜெக்ட்! 80% லிருந்து 90% வரைக்கும் பேங்க் லோன் வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "approval-stamp",
+        "purpose": "trust_building"
+      },
+      {
+        "name": "price",
+        "voice": "பிரைசிங் பாத்தீங்கனா, லேண்ட் ஒரு சென்ட் 21 லட்சத்துல இருந்தும், 2 BHK வில்லா 85 லட்சத்துல இருந்தும், 3 BHK வில்லா 1.5 கோடியில இருந்தும் ஸ்டார்ட் ஆகுது.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-card-overlay",
+        "purpose": "value_proposition"
+      },
+      {
+        "name": "cta",
+        "voice": "டைரக்டா சைட்டுக்கு வந்து site visit பண்ணவோ இல்ல மேலதிக details தெரிஞ்சுக்கவோ உடனே கால் பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "contact-details-overlay",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/BoWMLEvalrw/",
+  "optional_owned_audio": "assets/audio/BoWMLEvalrw.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: A 13-acre master-planned residential layout featuring blacktop wide internal roads, street light poles lined with project banners, underground drainage channels, individual plot demarcation markers, an overhead water tank, and a multi-arch entrance gate currently under construction.. Neighbourhood: Located directly across CHIL SEZ IT Park in Saravanampatti, an IT and educational hub in Coimbatore, surrounded by major IT parks, engineering colleges, international schools, commercial centers, and dining establishments.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: A 13-acre master-planned residential layout featuring blacktop wide internal roads, street light poles lined with project banners, underground drainage channels, individual plot demarcation markers, an overhead water tank, and a multi-arch entrance gate currently under construction.. Neighbourhood: Located directly across CHIL SEZ IT Park in Saravanampatti, an IT and educational hub in Coimbatore, surrounded by major IT parks, engineering colleges, international schools, commercial centers, and dining establishments.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: A 13-acre master-planned residential layout featuring blacktop wide internal roads, street light poles lined with project banners, underground drainage channels, individual plot demarcation markers, an overhead water tank, and a multi-arch entrance gate currently under construction.. Neighbourhood: Located directly across CHIL SEZ IT Park in Saravanampatti, an IT and educational hub in Coimbatore, surrounded by major IT parks, engineering colleges, international schools, commercial centers, and dining establishments.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: A 13-acre master-planned residential layout featuring blacktop wide internal roads, street light poles lined with project banners, underground drainage channels, individual plot demarcation markers, an overhead water tank, and a multi-arch entrance gate currently under construction.. Neighbourhood: Located directly across CHIL SEZ IT Park in Saravanampatti, an IT and educational hub in Coimbatore, surrounded by major IT parks, engineering colleges, international schools, commercial centers, and dining establishments.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
