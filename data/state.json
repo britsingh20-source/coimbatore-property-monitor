@@ -204,10 +204,12 @@
       "status": "archived_non_target"
     },
     "64vy6PCFpIM": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
-      "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-08-10T19:19:51.946057+00:00",
+      "last_error": "sequence item 2: expected str instance, dict found",
+      "next_retry_at": "2026-08-10T21:19:51.946068+00:00",
+      "status": "retry_pending"
     },
     "6FIyUEAEgFA": {
       "attempts": 1,
