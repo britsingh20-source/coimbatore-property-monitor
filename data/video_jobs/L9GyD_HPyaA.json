@@ -1,0 +1,148 @@
+{
+  "video_id": "L9GyD_HPyaA",
+  "source_url": "https://www.youtube.com/watch?v=L9GyD_HPyaA",
+  "property_location": "Annai Nagar, Co-operative Colony, Kavundampalayam, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "4.5 Cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹18 Lakhs per cent",
+    "facing": "East",
+    "road_width": "30 Feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP & RERA Approved"
+  },
+  "verified_facts": "Located in Kavundampalayam, Co-operative Colony near Corporation Water Tank, named Annai Nagar., Project size is 1.5 acres divided into 24 sites., 23 sites are sold out, 8 houses are under construction, and 1 house is completed and occupied., Only 1 site is available for sale: Plot #1, East facing, measuring 4.5 cents., Offered price is ₹18 Lakhs per cent (Market price in the area exceeds ₹20 Lakhs per cent)., Bank loan assistance and custom construction services are provided by the developer.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking naturally to camera in conversational spoken Tamil",
+    "hook_strategy": "Highlight scarcity of the last remaining plot in a prime Kavundampalayam gated community near RS Puram",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கவுண்டம்பாளையம் Co-operative Colony-ல, RS Puram பக்கத்துல அமைஞ்சிருக்கிற அன்னை நகர் location-க்கு தான் இப்போ வந்திருக்கோம்.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "1.5 acre gated community-ல மொத்தம் 24 plots. அதுல 23 sold out, இப்போ கடைசியா 4.5 cents அளவுள்ள Plot #1 மட்டும் தான் available-ஆ இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "land_details"
+      },
+      {
+        "name": "facing",
+        "voice": "இந்த plot பாத்தீங்கனா நல்லா East facing-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_info"
+      },
+      {
+        "name": "road",
+        "voice": "இங்க 30 feet wide tar road, drainage, street lights, EB, water connection அப்புறம் park வசதிகள் எல்லாம் ready-ஆ இருக்கு.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "road-width-tag",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், இந்த layout DTCP மற்றும் RERA approval பெற்றது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price ஒரு சென்ட் ₹18 Lakhs. Bank loan assistance அப்புறம் custom construction support-உம் தராங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேரடியா site visit போகணும்னா இல்ல details வேணும்னா உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "call-button",
+        "purpose": "action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/L9GyD_HPyaA/",
+  "optional_owned_audio": "assets/audio/L9GyD_HPyaA.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in RS Puram, Coimbatore, Tamil Nadu. Architecture consistent with: A gated plot layout featuring a 30-foot tar road with side drainages, vacant East-facing 4.5 cent plot surrounded by boundary walls and active residential construction projects.. Neighbourhood: Established residential neighborhood in Coimbatore Corporation limits with excellent connectivity to major bus stands, railway stations, prominent schools, and colleges.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in RS Puram, Coimbatore, Tamil Nadu. Architecture consistent with: A gated plot layout featuring a 30-foot tar road with side drainages, vacant East-facing 4.5 cent plot surrounded by boundary walls and active residential construction projects.. Neighbourhood: Established residential neighborhood in Coimbatore Corporation limits with excellent connectivity to major bus stands, railway stations, prominent schools, and colleges.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in RS Puram, Coimbatore, Tamil Nadu. Architecture consistent with: A gated plot layout featuring a 30-foot tar road with side drainages, vacant East-facing 4.5 cent plot surrounded by boundary walls and active residential construction projects.. Neighbourhood: Established residential neighborhood in Coimbatore Corporation limits with excellent connectivity to major bus stands, railway stations, prominent schools, and colleges.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in RS Puram, Coimbatore, Tamil Nadu. Architecture consistent with: A gated plot layout featuring a 30-foot tar road with side drainages, vacant East-facing 4.5 cent plot surrounded by boundary walls and active residential construction projects.. Neighbourhood: Established residential neighborhood in Coimbatore Corporation limits with excellent connectivity to major bus stands, railway stations, prominent schools, and colleges.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

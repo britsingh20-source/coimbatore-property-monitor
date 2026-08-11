@@ -539,9 +539,11 @@
     },
     "L9GyD_HPyaA": {
       "attempts": 0,
+      "completed_at": "2026-08-11T22:08:12.522235+00:00",
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
+      "last_error": "",
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "LGbDKA8KnEE": {
       "attempts": 0,
