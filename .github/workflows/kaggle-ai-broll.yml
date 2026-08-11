@@ -48,16 +48,27 @@ jobs:
           printf '%s\n' "${{ inputs.video_id }}" > data/kaggle-broll-queue.txt
           python prepare_free_assets.py
 
-      - name: Build offline LTX source bundle for Kaggle
+      - name: Build lightweight offline LTX source bundle for Kaggle
         shell: bash
         run: |
           set -euxo pipefail
           rm -rf /tmp/LTX-Video .cache/ltx-video-src.tar.gz
-          git clone --depth 1 https://github.com/Lightricks/LTX-Video.git /tmp/LTX-Video
-          rm -rf /tmp/LTX-Video/.git
           mkdir -p .cache
+          # The previous clone downloaded ~350 MB of Git-LFS payloads and made the
+          # Kaggle SaveKernel request fail during upload. We only need source/config
+          # files here, so keep LFS objects as tiny pointer files.
+          GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/Lightricks/LTX-Video.git /tmp/LTX-Video
+          rm -rf /tmp/LTX-Video/.git
           tar -C /tmp -czf .cache/ltx-video-src.tar.gz LTX-Video
           ls -lh .cache/ltx-video-src.tar.gz
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('.cache/ltx-video-src.tar.gz')
+          size = p.stat().st_size
+          print(f'LTX source bundle bytes={size}')
+          if size > 25 * 1024 * 1024:
+              raise SystemExit(f'LTX source bundle is still too large for reliable kernel upload: {size} bytes')
+          PY
 
       - name: Generate one AI B-roll clip on Kaggle free GPU
         env:
