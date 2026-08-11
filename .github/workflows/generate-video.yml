@@ -247,12 +247,16 @@ jobs:
           VIDEO_IDS_FILE: data/render_queue.txt
         run: python publish_render_queue.py
 
-      - uses: actions/upload-artifact@v4
-        if: always() && steps.select.outputs.has_jobs == 'true'
+      - name: Upload compact failure diagnostics
+        uses: actions/upload-artifact@v4
+        continue-on-error: true
+        if: >-
+          always() &&
+          steps.select.outputs.has_jobs == 'true' &&
+          (steps.assets.outcome == 'failure' || steps.render.outcome == 'failure' || steps.meta_publish.outcome == 'failure')
         with:
-          name: autopilot-property-videos-${{ github.run_number }}
+          name: autopilot-diagnostics-${{ github.run_number }}
           path: |
-            outputs/**/*.mp4
             outputs/**/render-mode.txt
             outputs/social_publish/*.json
             outputs/failed-render-ids.txt
@@ -265,7 +269,7 @@ jobs:
             assets/audio/**/manifest.json
             data/remotion_props/*.json
           if-no-files-found: warn
-          retention-days: 7
+          retention-days: 3
 
       - name: Fail incomplete autopilot run after uploading diagnostics
         if: always() && steps.select.outputs.has_jobs == 'true' && (steps.assets.outcome == 'failure' || steps.render.outcome == 'failure' || steps.meta_publish.outcome == 'failure')
