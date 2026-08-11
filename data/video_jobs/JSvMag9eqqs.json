@@ -1,0 +1,151 @@
+{
+  "video_id": "JSvMag9eqqs",
+  "source_url": "https://www.youtube.com/watch?v=JSvMag9eqqs",
+  "property_location": "Karamadai, Mettupalayam Road, Coimbatore",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": 5,
+    "land_area": "3 Cents",
+    "built_up_area": "2850 sqft",
+    "price": "1.10 Crore",
+    "facing": "East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "1 Car Parking (12'0\" x 20'0\")",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "5 BHK Independent Villa, Price: 1.10 Crore (negotiable), Land Area: 3 Cents, Built-up Area: 2850 sqft, North site with East facing main door, DTCP approved site with 75% bank loan availability, Private Swimming Pool and Party Area on upper level, Located in Karamadai, Mettupalayam Road, Coimbatore",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local Tamil real estate presenter speaking directly to camera with natural speech patterns.",
+    "hook_strategy": "Lead with key location and standout property features: 5 BHK Independent Villa in Karamadai with Private Swimming Pool.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை காரமடை, மேட்டுப்பாளையம் ரோடுல இருக்குற ஒரு 5 BHK Independent Villa தான் இன்னைக்கு பாக்க போறோம்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "living_room"
+        ],
+        "vfx": "location-pin-highlight",
+        "purpose": "hook_and_location"
+      },
+      {
+        "name": "facing",
+        "voice": "இது North site-ல, East facing main door-ோட அமைச்சிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "compass-facing-overlay",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல Land Area பாத்தீங்கனா 3 Cents இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "plot-boundary-outline",
+        "purpose": "land_area_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Built-up area 2850 sqft. 5 BHK Semi Furnished-ஆ இருக்கு. மேல Private Swimming Pool மற்றும் Party Area-வும் கொடுத்திருக்காங்க.",
+        "broll": [
+          "living_room",
+          "interior",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "text-specs-overlay",
+        "purpose": "builtup_and_amenities"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approved site. 75% வரைக்கும் Bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom",
+          "living_room"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "approval_and_loan_info"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட Price 1.10 Crore, negotiable தான்.",
+        "broll": [
+          "interior",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag-reveal",
+        "purpose": "pricing_details"
+      },
+      {
+        "name": "cta",
+        "voice": "Direct-ஆ Site visit வரணும்னாலோ இல்ல மேலும் Details வேணும்னாலோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "call-now-button",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/JSvMag9eqqs/",
+  "optional_owned_audio": "assets/audio/JSvMag9eqqs.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-story independent villa with a white and olive-green exterior, accent wood-like panels, geometric patterned gate, checkered floor tiles in the porch/car parking, and a glass-paneled balcony.. Neighbourhood: Residential neighborhood in Karamadai featuring adjoining independent homes, unpaved approach road, and surrounding green trees.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-story independent villa with a white and olive-green exterior, accent wood-like panels, geometric patterned gate, checkered floor tiles in the porch/car parking, and a glass-paneled balcony.. Neighbourhood: Residential neighborhood in Karamadai featuring adjoining independent homes, unpaved approach road, and surrounding green trees.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-story independent villa with a white and olive-green exterior, accent wood-like panels, geometric patterned gate, checkered floor tiles in the porch/car parking, and a glass-paneled balcony.. Neighbourhood: Residential neighborhood in Karamadai featuring adjoining independent homes, unpaved approach road, and surrounding green trees.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-story independent villa with a white and olive-green exterior, accent wood-like panels, geometric patterned gate, checkered floor tiles in the porch/car parking, and a glass-paneled balcony.. Neighbourhood: Residential neighborhood in Karamadai featuring adjoining independent homes, unpaved approach road, and surrounding green trees.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

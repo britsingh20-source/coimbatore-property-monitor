@@ -1,0 +1,141 @@
+{
+  "video_id": "lZFuyur7sCE",
+  "source_url": "https://www.youtube.com/watch?v=lZFuyur7sCE",
+  "property_location": "Karamadai, Mettupalayam Road, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": 5,
+    "land_area": "3 Cents",
+    "built_up_area": "2850 sqft",
+    "price": "₹1.10 Crore",
+    "facing": "North site, East facing main door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking (12 ft x 20 ft)",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "5 BHK Triplex Independent Villa built on a 3 Cents plot with 2850 sqft built-up area., Located in Karamadai, Mettupalayam Road, Coimbatore., Priced at ₹1.10 Crore (negotiable) with 75% bank loan facility available., Features 5 bedrooms, 6 bathrooms, private indoor swimming pool, modular kitchen, pooja room, balcony, terrace party area, and covered car parking., North facing site with East facing main teak door., DTCP approved site with borewell and water sump.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera in casual conversational Tamil",
+    "hook_strategy": "Highlighting location and key highlight of 5 BHK Triplex Independent Villa with Swimming Pool",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore, Karamadai-ல Mettupalayam Road பக்கத்துல ஒரு 5 BHK Triplex Independent Villa பாக்கப்போறோம்!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "2850 sqft built-up area-ல 5 bedrooms, 6 bathrooms, modular kitchen, TV unit, terrace party area, அப்புறம் private swimming pool-உம் இருக்கு!",
+        "broll": [
+          "living_room",
+          "interior",
+          "bedroom",
+          "kitchen"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "feature-text-overlay",
+        "purpose": "key-features"
+      },
+      {
+        "name": "land",
+        "voice": "3 Cents plot-ல 12 ft x 20 ft covered car parking, borewell, water sump வசதியோட அமைச்சிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "land-and-utility-details"
+      },
+      {
+        "name": "facing",
+        "voice": "இது North site, அதே மாதிரி main door East facing-ல teak wood-ல பண்ணிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing-details"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approval வாங்குன property. 75% bank loan facility-யும் இருக்கு!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust-building"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த villa-வோட price ₹1.10 Crore, இது negotiable-தான்.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து பாக்க site visit வரணும்னா இல்ல details வேணும்னா உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "call-to-action-overlay",
+        "purpose": "conversion"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/lZFuyur7sCE/",
+  "optional_owned_audio": "assets/audio/lZFuyur7sCE.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern three-storey (G+2) triplex villa with a beige and brown accent facade, balcony with glass railing, CNC decorative panels, gated front entrance, tiled car parking bay, and an open terrace with a built-in party seating booth.. Neighbourhood: Peaceful residential neighborhood with views of surrounding greenery and mountain hills near Mettupalayam Road in Karamadai.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern three-storey (G+2) triplex villa with a beige and brown accent facade, balcony with glass railing, CNC decorative panels, gated front entrance, tiled car parking bay, and an open terrace with a built-in party seating booth.. Neighbourhood: Peaceful residential neighborhood with views of surrounding greenery and mountain hills near Mettupalayam Road in Karamadai.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern three-storey (G+2) triplex villa with a beige and brown accent facade, balcony with glass railing, CNC decorative panels, gated front entrance, tiled car parking bay, and an open terrace with a built-in party seating booth.. Neighbourhood: Peaceful residential neighborhood with views of surrounding greenery and mountain hills near Mettupalayam Road in Karamadai.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern three-storey (G+2) triplex villa with a beige and brown accent facade, balcony with glass railing, CNC decorative panels, gated front entrance, tiled car parking bay, and an open terrace with a built-in party seating booth.. Neighbourhood: Peaceful residential neighborhood with views of surrounding greenery and mountain hills near Mettupalayam Road in Karamadai.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
