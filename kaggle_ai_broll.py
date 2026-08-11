@@ -79,24 +79,14 @@ def upload_source_image(path: Path, video_id: str) -> tuple[str, str]:
     client = r2_client()
     bucket = required("R2_BUCKET_NAME")
     key = f"ai-broll-input/{video_id}/{path.name}"
-    content_type = {
-        ".png": "image/png",
-        ".webp": "image/webp",
-        ".jpg": "image/jpeg",
-        ".jpeg": "image/jpeg",
-    }.get(path.suffix.lower(), "application/octet-stream")
+    content_type = {".png": "image/png", ".webp": "image/webp", ".jpg": "image/jpeg", ".jpeg": "image/jpeg"}.get(path.suffix.lower(), "application/octet-stream")
     client.upload_file(str(path), bucket, key, ExtraArgs={"ContentType": content_type})
-    url = client.generate_presigned_url(
-        "get_object",
-        Params={"Bucket": bucket, "Key": key},
-        ExpiresIn=R2_TTL_SECONDS,
-    )
+    url = client.generate_presigned_url("get_object", Params={"Bucket": bucket, "Key": key}, ExpiresIn=R2_TTL_SECONDS)
     return key, url
 
 
 def kernel_script(source_url: str, prompt: str, video_id: str) -> str:
-    return f'''import os
-import shutil
+    return f'''import shutil
 import subprocess
 from pathlib import Path
 import requests
@@ -104,33 +94,18 @@ import requests
 SOURCE_URL = {source_url!r}
 PROMPT = {prompt!r}
 VIDEO_ID = {video_id!r}
-
 work = Path("/kaggle/working")
 image_path = work / "source.jpg"
 response = requests.get(SOURCE_URL, timeout=120)
 response.raise_for_status()
 image_path.write_bytes(response.content)
-
 subprocess.run(["git", "clone", "--depth", "1", "https://github.com/Lightricks/LTX-Video.git", "/kaggle/working/LTX-Video"], check=True)
 repo = Path("/kaggle/working/LTX-Video")
 subprocess.run(["python", "-m", "pip", "install", "-q", "-e", ".[inference]"], cwd=repo, check=True)
-
 before = set(repo.rglob("*.mp4"))
-cmd = [
-    "python", "inference.py",
-    "--prompt", PROMPT,
-    "--conditioning_media_paths", str(image_path),
-    "--conditioning_start_frames", "0",
-    "--height", "736",
-    "--width", "480",
-    "--num_frames", "81",
-    "--seed", "42",
-    "--pipeline_config", "configs/ltxv-2b-0.9.8-distilled.yaml",
-]
+cmd = ["python", "inference.py", "--prompt", PROMPT, "--conditioning_media_paths", str(image_path), "--conditioning_start_frames", "0", "--height", "736", "--width", "480", "--num_frames", "81", "--seed", "42", "--pipeline_config", "configs/ltxv-2b-0.9.8-distilled.yaml"]
 subprocess.run(cmd, cwd=repo, check=True)
-after = [p for p in repo.rglob("*.mp4") if p not in before]
-if not after:
-    after = list(repo.rglob("*.mp4"))
+after = [p for p in repo.rglob("*.mp4") if p not in before] or list(repo.rglob("*.mp4"))
 if not after:
     raise RuntimeError("LTX-Video completed but no MP4 output was found")
 latest = max(after, key=lambda p: p.stat().st_mtime)
@@ -141,30 +116,17 @@ print(f"OUTPUT={{out}} size={{out.stat().st_size}}")
 
 
 def write_kernel(folder: Path, username: str, video_id: str, source_url: str, prompt: str) -> str:
-    slug = "coimbatore-property-ai-broll"
+    # Kaggle derives the actual notebook slug from the title. Keep title and id aligned.
+    slug = "coimbatore-property-ai-b-roll"
     kernel_id = f"{username}/{slug}"
     (folder / "ai_broll_kernel.py").write_text(kernel_script(source_url, prompt, video_id), encoding="utf-8")
-    metadata = {
-        "id": kernel_id,
-        "title": "Coimbatore Property AI B-roll",
-        "code_file": "ai_broll_kernel.py",
-        "language": "python",
-        "kernel_type": "script",
-        "is_private": True,
-        "enable_gpu": True,
-        "enable_internet": True,
-        "keywords": ["ltx-video", "image-to-video", "real-estate"],
-        "dataset_sources": [],
-        "kernel_sources": [],
-        "competition_sources": [],
-        "model_sources": [],
-    }
+    metadata = {"id": kernel_id, "title": "Coimbatore Property AI B-roll", "code_file": "ai_broll_kernel.py", "language": "python", "kernel_type": "script", "is_private": True, "enable_gpu": True, "enable_internet": True, "keywords": ["real-estate"], "dataset_sources": [], "kernel_sources": [], "competition_sources": [], "model_sources": []}
     (folder / "kernel-metadata.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
     return kernel_id
 
 
 def run_command(args: list[str], *, check: bool = True) -> subprocess.CompletedProcess:
-    print("+", " ".join(args))
+    print("+", " ".join(args), flush=True)
     return subprocess.run(args, text=True, capture_output=True, check=check)
 
 
@@ -174,9 +136,11 @@ def wait_for_kernel(kernel_id: str) -> None:
         proc = run_command(["kaggle", "kernels", "status", kernel_id], check=False)
         text = (proc.stdout + "\n" + proc.stderr).strip()
         if text != last:
-            print(text)
+            print(text, flush=True)
             last = text
         low = text.lower()
+        if proc.returncode != 0 and ("permission" in low or "cannot access kernel" in low or "wrong kernel slug" in low):
+            raise RuntimeError(f"Cannot poll Kaggle kernel {kernel_id}: {text}")
         if any(term in low for term in ("complete", "completed", "success")) and not any(term in low for term in ("error", "failed", "cancel")):
             return
         if any(term in low for term in ("error", "failed", "cancel")):
@@ -210,7 +174,6 @@ def main() -> None:
     parser.add_argument("--job", default="")
     parser.add_argument("--output-dir", default="outputs/kaggle-ai-broll")
     args = parser.parse_args()
-
     username = required("KAGGLE_USERNAME")
     required("KAGGLE_API_TOKEN")
     video_id = args.video_id.strip()
@@ -221,7 +184,6 @@ def main() -> None:
     source_key, source_url = upload_source_image(source_image, video_id)
     print(f"Source image: {source_image}; temporary R2 key: {source_key}")
     print(f"Prompt: {prompt}")
-
     with tempfile.TemporaryDirectory(prefix="kaggle-ai-broll-") as tmp:
         kernel_dir = Path(tmp)
         kernel_id = write_kernel(kernel_dir, username, video_id, source_url, prompt)
@@ -235,15 +197,7 @@ def main() -> None:
         if result.stat().st_size < 100_000:
             raise RuntimeError(f"Generated B-roll is suspiciously small: {result.stat().st_size} bytes")
         r2_key = persist_to_r2(result, video_id)
-        summary = {
-            "video_id": video_id,
-            "source_image": str(source_image),
-            "prompt": prompt,
-            "kernel_id": kernel_id,
-            "output": str(result),
-            "r2_key": r2_key,
-            "bytes": result.stat().st_size,
-        }
+        summary = {"video_id": video_id, "source_image": str(source_image), "prompt": prompt, "kernel_id": kernel_id, "output": str(result), "r2_key": r2_key, "bytes": result.stat().st_size}
         summary_path = Path(args.output_dir) / video_id / "manifest.json"
         summary_path.write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
         print(json.dumps(summary, indent=2, ensure_ascii=False))
