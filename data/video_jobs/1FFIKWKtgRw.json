@@ -1,0 +1,130 @@
+{
+  "video_id": "1FFIKWKtgRw",
+  "source_url": "https://www.youtube.com/watch?v=1FFIKWKtgRw",
+  "property_location": "Vadavalli, Thondamuthur Road, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Triplex Villa",
+    "bhk": "3BHK",
+    "land_area": "4.13 Cents (1,800 sq.ft.)",
+    "built_up_area": "3,200 sq.ft.",
+    "price": "₹2,49,000,000 (Negotiable)",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Double Covered Car Parking",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "3BHK Triplex villa built on 4.13 cents (1800 sq ft) land area with 3200 sq ft built-up area., North-facing site and North-facing main entrance door with digital smart lock., Located near Vadavalli, Thondamuthur Road main road, Coimbatore., Asking price is 2 Crores 49 Lakhs (Negotiable)., Double car parking space of size 26 ft x 17 ft., High floor-to-ceiling height of 11 ft for a spacious feel., First floor includes 2 master bedrooms (one 20 ft x 16 ft), lounge area, and study space., Second floor features an 18.5 ft x 10 ft hall suitable for gym/yoga and access to terrace.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, authentic local real estate presenter speaking directly to camera in conversational Tamil.",
+    "hook_strategy": "Highlight the 3BHK Triplex Villa structure in prime Vadavalli, Thondamuthur Road in the first 3 seconds.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை வடவள்ளி, தொண்டாமுத்தூர் மெயின் ரோட் பக்கத்துல ஒரு பிரம்மாண்டமான 3BHK Triplex Villa விற்பனைக்கு வந்திருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "location-text-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது பாத்தீங்கனா, 4.13 Cents land area-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "மொத்தம் 3,200 sq.ft. built-up area. 11 feet ceiling height, modular kitchen, double car parking, அப்புறம் gym and yoga lounge space-ன்னு செம்மயா பண்ணிருக்காங்க.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-counter",
+        "purpose": "property_features"
+      },
+      {
+        "name": "facing",
+        "voice": "அதே மாதிரி, North facing site அப்புறம் digital smart lock-ஓட North facing main door கொடுத்திருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass-north",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட asking price 2 Crores 49 Lakhs, கண்டிப்பா negotiable-தான்.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல site visit பண்ணவோ, மேலும் details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "contact-overlay",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/1FFIKWKtgRw/",
+  "optional_owned_audio": "assets/audio/1FFIKWKtgRw.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary elevation with clay tile accents, red terracotta clay jaali design, dark grey textured wall paneling, rich wood-finish ceiling soffits, and a black folding metal gate.. Neighbourhood: Established residential neighborhood in Vadavalli close to Thondamuthur Main Road, offering clear views of surrounding hills from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary elevation with clay tile accents, red terracotta clay jaali design, dark grey textured wall paneling, rich wood-finish ceiling soffits, and a black folding metal gate.. Neighbourhood: Established residential neighborhood in Vadavalli close to Thondamuthur Main Road, offering clear views of surrounding hills from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary elevation with clay tile accents, red terracotta clay jaali design, dark grey textured wall paneling, rich wood-finish ceiling soffits, and a black folding metal gate.. Neighbourhood: Established residential neighborhood in Vadavalli close to Thondamuthur Main Road, offering clear views of surrounding hills from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary elevation with clay tile accents, red terracotta clay jaali design, dark grey textured wall paneling, rich wood-finish ceiling soffits, and a black folding metal gate.. Neighbourhood: Established residential neighborhood in Vadavalli close to Thondamuthur Main Road, offering clear views of surrounding hills from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

@@ -93,11 +93,12 @@
     },
     "1FFIKWKtgRw": {
       "attempts": 1,
+      "completed_at": "2026-08-11T04:43:50.402986+00:00",
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
       "last_attempt_at": "2026-08-10T23:53:15.058390+00:00",
-      "last_error": "sequence item 2: expected str instance, dict found",
+      "last_error": "",
       "next_retry_at": "2026-08-11T01:53:15.058398+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "1H6eIdAeax0": {
       "attempts": 0,
