@@ -13,6 +13,7 @@ GRAPH = f"https://graph.facebook.com/{GRAPH_VERSION}"
 POLL_SECONDS = int(os.environ.get("META_POLL_SECONDS", "8"))
 POLL_ATTEMPTS = int(os.environ.get("META_POLL_ATTEMPTS", "30"))
 PRESIGNED_SECONDS = int(os.environ.get("META_MEDIA_URL_TTL", "21600"))
+IG_THUMB_OFFSET_MS = int(os.environ.get("META_IG_THUMB_OFFSET_MS", "2000"))
 
 
 def _required(name: str) -> str:
@@ -68,6 +69,7 @@ def publish_instagram_reel(video_url: str, caption: str) -> dict:
             "video_url": video_url,
             "caption": caption,
             "share_to_feed": "true",
+            "thumb_offset": str(max(0, IG_THUMB_OFFSET_MS)),
             "access_token": token,
         },
         timeout=60,
@@ -100,15 +102,21 @@ def publish_instagram_reel(video_url: str, caption: str) -> dict:
         timeout=60,
     )
     result = _response_json(publish)
-    return {"creation_id": creation_id, "media_id": result.get("id"), "processing": last}
+    return {
+        "creation_id": creation_id,
+        "media_id": result.get("id"),
+        "processing": last,
+        "thumb_offset_ms": max(0, IG_THUMB_OFFSET_MS),
+    }
 
 
 def publish_facebook_reel(video_path: Path, caption: str) -> dict:
     token = _required("META_PAGE_ACCESS_TOKEN")
-    page_id = _required("META_PAGE_ID")
+    _required("META_PAGE_ID")
 
+    # Meta's official Page Reels flow uses /me/video_reels with a Page access token.
     start = requests.post(
-        f"{GRAPH}/{page_id}/video_reels",
+        f"{GRAPH}/me/video_reels",
         data={"upload_phase": "start", "access_token": token},
         timeout=60,
     )
@@ -134,7 +142,7 @@ def publish_facebook_reel(video_path: Path, caption: str) -> dict:
     uploaded = _response_json(upload)
 
     finish = requests.post(
-        f"{GRAPH}/{page_id}/video_reels",
+        f"{GRAPH}/me/video_reels",
         data={
             "upload_phase": "finish",
             "video_id": video_id,
@@ -145,6 +153,9 @@ def publish_facebook_reel(video_path: Path, caption: str) -> dict:
         timeout=60,
     )
     finished = _response_json(finish)
+    if finished.get("success") is not True:
+        raise RuntimeError(f"Facebook Reel finish did not confirm success: {json.dumps(finished, ensure_ascii=False)}")
+
     return {"video_id": video_id, "upload": uploaded, "finish": finished}
 
 
@@ -160,10 +171,12 @@ def publish(video_path: Path, video_id: str, caption: str, platforms: set[str]) 
         "caption": caption,
         "platforms": {},
     }
-    if "instagram" in platforms:
-        result["platforms"]["instagram"] = publish_instagram_reel(video_url, caption)
+
+    # Publish Facebook first. If Facebook fails, do not create an Instagram-only post.
     if "facebook" in platforms:
         result["platforms"]["facebook"] = publish_facebook_reel(video_path, caption)
+    if "instagram" in platforms:
+        result["platforms"]["instagram"] = publish_instagram_reel(video_url, caption)
     return result
 
 
