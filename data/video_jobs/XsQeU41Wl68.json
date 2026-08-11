@@ -1,0 +1,136 @@
+{
+  "video_id": "XsQeU41Wl68",
+  "source_url": "https://www.youtube.com/watch?v=XsQeU41Wl68",
+  "property_location": "Karamadai, Gandhi Nagar, near Teachers Colony, Mettupalayam Road, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2BHK",
+    "land_area": "3 Cents (1300 sq ft)",
+    "built_up_area": "1150 sq ft",
+    "price": "57 Lakhs",
+    "facing": "West facing site, North facing main door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "1 Car Parking",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "3 Cents land area (1300 sq ft, 26 ft x 50 ft dimensions), 1150 sq ft single storey built-up area on ground floor, West facing site with North facing Teak wood main door, Car parking area size 17 ft x 10 ft, Living hall size 14 ft x 16 ft with TV unit, Pooja cabinet and false ceiling with spot/strip lights, Master Bedroom (South-West) size 14 ft x 10 ft with attached bathroom (11 ft x 4 ft, Western toilet), Second Bedroom (North-East) size 10 ft x 10 ft with attached bathroom (6 ft x 4.5 ft, Western toilet), Modular kitchen (South-East) size 10 ft x 10 ft with L-shaped granite table top and PVC cabinets",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Karamadai சைட்ல 2BHK Independent House தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை 57 Lakhs.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 3 Cents (1300 sq ft) லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 1150 sq ft இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு West facing site, North facing main door ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 13.275668128s.', 'status': 'RESOURCE_EXHAUSTED"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/XsQeU41Wl68/",
+  "optional_owned_audio": "assets/audio/XsQeU41Wl68.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house elevation painted in multi-color pastel shades (pink, beige, grey, brown) with decorative vertical texture panels, laser-cut metal main gate, tiled car parking porch, external staircase with orange handrails leading to an open terrace with parapet walls.. Neighbourhood: Residential neighborhood in Karamadai near Teachers Colony, Mettupalayam Road, featuring surrounding independent residential houses and ongoing construction activity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house elevation painted in multi-color pastel shades (pink, beige, grey, brown) with decorative vertical texture panels, laser-cut metal main gate, tiled car parking porch, external staircase with orange handrails leading to an open terrace with parapet walls.. Neighbourhood: Residential neighborhood in Karamadai near Teachers Colony, Mettupalayam Road, featuring surrounding independent residential houses and ongoing construction activity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house elevation painted in multi-color pastel shades (pink, beige, grey, brown) with decorative vertical texture panels, laser-cut metal main gate, tiled car parking porch, external staircase with orange handrails leading to an open terrace with parapet walls.. Neighbourhood: Residential neighborhood in Karamadai near Teachers Colony, Mettupalayam Road, featuring surrounding independent residential houses and ongoing construction activity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house elevation painted in multi-color pastel shades (pink, beige, grey, brown) with decorative vertical texture panels, laser-cut metal main gate, tiled car parking porch, external staircase with orange handrails leading to an open terrace with parapet walls.. Neighbourhood: Residential neighborhood in Karamadai near Teachers Colony, Mettupalayam Road, featuring surrounding independent residential houses and ongoing construction activity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
