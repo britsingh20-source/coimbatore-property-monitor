@@ -48,6 +48,17 @@ jobs:
           printf '%s\n' "${{ inputs.video_id }}" > data/kaggle-broll-queue.txt
           python prepare_free_assets.py
 
+      - name: Build offline LTX source bundle for Kaggle
+        shell: bash
+        run: |
+          set -euxo pipefail
+          rm -rf /tmp/LTX-Video .cache/ltx-video-src.tar.gz
+          git clone --depth 1 https://github.com/Lightricks/LTX-Video.git /tmp/LTX-Video
+          rm -rf /tmp/LTX-Video/.git
+          mkdir -p .cache
+          tar -C /tmp -czf .cache/ltx-video-src.tar.gz LTX-Video
+          ls -lh .cache/ltx-video-src.tar.gz
+
       - name: Generate one AI B-roll clip on Kaggle free GPU
         env:
           KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
@@ -57,7 +68,9 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
         run: |
-          python kaggle_ai_broll.py --video-id "${{ inputs.video_id }}"
+          python kaggle_ai_broll.py \
+            --video-id "${{ inputs.video_id }}" \
+            --ltx-bundle .cache/ltx-video-src.tar.gz
 
       - name: Show result location
         if: success()
