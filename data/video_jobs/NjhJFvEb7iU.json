@@ -1,0 +1,117 @@
+{
+  "video_id": "NjhJFvEb7iU",
+  "source_url": "https://www.youtube.com/watch?v=NjhJFvEb7iU",
+  "property_location": "Vadavalli, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot / Land",
+    "bhk": null,
+    "land_area": "1,500 sq.ft (30 x 50 ft)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹21 Lakhs per cent",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": null,
+    "approval": "DTCP & RERA Approved"
+  },
+  "verified_facts": "Location is Vadavalli, Coimbatore near Vadavalli Bus Stand (approx. 1 km)., Project name is Ananya's Garden., Only 2 plots are available: Plot No. 3 and Plot No. 4., Each plot size is 1500 sq.ft (30 x 50 ft dimension)., Land price is ₹21 Lakhs per cent., Project has DTCP and RERA approval., Layout includes wide tar roads, solar street lights, water supply pipeline to each plot, and overhead water tank.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera on-site, fast-paced and natural conversational Tamil.",
+    "hook_strategy": "Highlighting prime Vadavalli location near Vadavalli Bus Stand with limited availability of just 2 plots.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை Vadavalli-ல, Vadavalli Bus Stand-க்கு வெறும் ஒரு kilometer பக்கத்துல ஒரு முக்கியமான location பாக்கப்போறோம்!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "Ananya's Garden project-ல இப்போ Plot No 3 மற்றும் 4 - இந்த ரெண்டு plot தான் available-ஆ இருக்கு. 1,500 sq.ft area, 30 by 50 dimension. Layout-ல tar road, solar street lights, individual water connection-லாம் ready-ஆ இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "dimension-text-highlight",
+        "purpose": "property_details"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், இந்த layout DTCP மற்றும் RERA approval வாங்குன site.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_building"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price பாத்தீங்கனா, ஒரு cent-க்கு 21 Lakhs வருது.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "price-tag-callout",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "உங்களுக்கு இந்த plot பற்றிய மேலும் details வேணும்னாலோ இல்ல direct-ஆ site visit பண்ணனும்னாலோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "contact-details-overlay",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/NjhJFvEb7iU/",
+  "optional_owned_audio": "assets/audio/NjhJFvEb7iU.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Gated residential land development titled Ananya's Garden featuring a grand entrance arch, well-paved blacktop roads with center dividing lines, solar street lights, demarcated plot boundary stones (Plots 3 & 4), overhead water storage tank, and concrete drainage.. Neighbourhood: Well-connected residential layout in Vadavalli, Coimbatore, surrounded by newly constructed modern independent houses, schools, bus stand, and scenic mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Gated residential land development titled Ananya's Garden featuring a grand entrance arch, well-paved blacktop roads with center dividing lines, solar street lights, demarcated plot boundary stones (Plots 3 & 4), overhead water storage tank, and concrete drainage.. Neighbourhood: Well-connected residential layout in Vadavalli, Coimbatore, surrounded by newly constructed modern independent houses, schools, bus stand, and scenic mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Gated residential land development titled Ananya's Garden featuring a grand entrance arch, well-paved blacktop roads with center dividing lines, solar street lights, demarcated plot boundary stones (Plots 3 & 4), overhead water storage tank, and concrete drainage.. Neighbourhood: Well-connected residential layout in Vadavalli, Coimbatore, surrounded by newly constructed modern independent houses, schools, bus stand, and scenic mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Gated residential land development titled Ananya's Garden featuring a grand entrance arch, well-paved blacktop roads with center dividing lines, solar street lights, demarcated plot boundary stones (Plots 3 & 4), overhead water storage tank, and concrete drainage.. Neighbourhood: Well-connected residential layout in Vadavalli, Coimbatore, surrounded by newly constructed modern independent houses, schools, bus stand, and scenic mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
