@@ -112,11 +112,13 @@ def publish_instagram_reel(video_url: str, caption: str) -> dict:
 
 def publish_facebook_reel(video_path: Path, caption: str) -> dict:
     token = _required("META_PAGE_ACCESS_TOKEN")
-    _required("META_PAGE_ID")
+    page_id = _required("META_PAGE_ID")
 
-    # Meta's official Page Reels flow uses /me/video_reels with a Page access token.
+    # Target the configured Facebook Page explicitly. Using /me here can resolve
+    # to the token owner instead of the Page and Meta then returns OAuth error
+    # (#200) "Subject does not have permission to post videos on this target".
     start = requests.post(
-        f"{GRAPH}/me/video_reels",
+        f"{GRAPH}/{page_id}/video_reels",
         data={"upload_phase": "start", "access_token": token},
         timeout=60,
     )
@@ -142,7 +144,7 @@ def publish_facebook_reel(video_path: Path, caption: str) -> dict:
     uploaded = _response_json(upload)
 
     finish = requests.post(
-        f"{GRAPH}/me/video_reels",
+        f"{GRAPH}/{page_id}/video_reels",
         data={
             "upload_phase": "finish",
             "video_id": video_id,
