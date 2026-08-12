@@ -93,6 +93,20 @@ jobs:
               raise SystemExit(f'LTX source bundle is still too large for reliable kernel upload: {size} bytes')
           PY
 
+      - name: Disable online prompt enhancer for offline Kaggle run
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('kaggle_ai_broll.py')
+          text = p.read_text(encoding='utf-8')
+          needle = '    cfg["text_encoder_model_name_or_path"] = str(text_model_root)\n'
+          replacement = needle + '    cfg["prompt_enhancement_words_threshold"] = 0\n    mark("prompt_enhancer=disabled_offline")\n'
+          if needle not in text:
+              raise SystemExit('Could not locate LTX config patch point in kaggle_ai_broll.py')
+          p.write_text(text.replace(needle, replacement, 1), encoding='utf-8')
+          PY
+
       - name: Generate one AI B-roll clip on Kaggle free GPU
         env:
           KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
