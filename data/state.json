@@ -152,11 +152,12 @@
     },
     "31tNVLHZQWw": {
       "attempts": 1,
+      "completed_at": "2026-08-12T18:12:03.849928+00:00",
       "first_seen_at": "2026-08-12T15:17:20.663143+00:00",
       "last_attempt_at": "2026-08-12T15:17:41.646719+00:00",
-      "last_error": "sequence item 2: expected str instance, dict found",
+      "last_error": "",
       "next_retry_at": "2026-08-12T17:17:41.646729+00:00",
-      "status": "retry_pending"
+      "status": "archived_non_target"
     },
     "4QM0yDap_Gw": {
       "attempts": 1,
