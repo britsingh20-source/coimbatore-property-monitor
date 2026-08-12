@@ -31,6 +31,32 @@ jobs:
           pip install -r requirements.txt
           pip install "kaggle>=2,<3"
 
+      - name: Pull known-good Kaggle LTX 2B input metadata
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        shell: bash
+        run: |
+          set -euxo pipefail
+          rm -rf .cache/ltx-reference
+          mkdir -p .cache/ltx-reference
+          kaggle kernels pull datnguyentien204/ltx-2b -p .cache/ltx-reference -m
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('.cache/ltx-reference/kernel-metadata.json')
+          data = json.loads(p.read_text(encoding='utf-8'))
+          summary = {
+              'dataset_sources': data.get('dataset_sources', []),
+              'kernel_sources': data.get('kernel_sources', []),
+              'model_sources': data.get('model_sources', []),
+          }
+          print('Known-good Kaggle input sources:')
+          print(json.dumps(summary, indent=2))
+          if not any(summary.values()):
+              raise SystemExit('Reference LTX notebook exposes no reusable Kaggle input sources')
+          PY
+
       - name: Prepare normal property media first
         env:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
@@ -54,9 +80,6 @@ jobs:
           set -euxo pipefail
           rm -rf /tmp/LTX-Video .cache/ltx-video-src.tar.gz
           mkdir -p .cache
-          # The previous clone downloaded ~350 MB of Git-LFS payloads and made the
-          # Kaggle SaveKernel request fail during upload. We only need source/config
-          # files here, so keep LFS objects as tiny pointer files.
           GIT_LFS_SKIP_SMUDGE=1 git clone --depth 1 https://github.com/Lightricks/LTX-Video.git /tmp/LTX-Video
           rm -rf /tmp/LTX-Video/.git
           tar -C /tmp -czf .cache/ltx-video-src.tar.gz LTX-Video
@@ -81,7 +104,8 @@ jobs:
         run: |
           python kaggle_ai_broll.py \
             --video-id "${{ inputs.video_id }}" \
-            --ltx-bundle .cache/ltx-video-src.tar.gz
+            --ltx-bundle .cache/ltx-video-src.tar.gz \
+            --source-metadata .cache/ltx-reference/kernel-metadata.json
 
       - name: Show result location
         if: success()
