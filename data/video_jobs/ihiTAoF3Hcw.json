@@ -1,0 +1,142 @@
+{
+  "video_id": "ihiTAoF3Hcw",
+  "source_url": "https://www.youtube.com/watch?v=ihiTAoF3Hcw",
+  "property_location": "Near IT Park, Saravanampatti, Coimbatore",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": "3BHK",
+    "land_area": "3.5 Cents",
+    "built_up_area": "1850 sqft",
+    "price": "Rs. 1.20 Crore (negotiable)",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "30'0\" x 16'0\" (Fits 3 cars)",
+    "approval": "DTCP approved"
+  },
+  "verified_facts": "3BHK Independent Villa located near Saravanampatti IT Park, Coimbatore., Land area is 3.5 Cents and Built-up area is 1850 sqft., Asking price is Rs. 1.20 Crore (negotiable)., North facing site with a North facing main teakwood door., DTCP approved site with 75% bank loan availability., Features 3 master bedrooms with attached bathrooms, plus an outer Indian toilet., Includes a 30'x16' car parking space, borewell, and 8000 Liters water sump.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and engaging local property walk-through presenter speaking directly to camera with high retention visual cuts.",
+    "hook_strategy": "Start directly with the high-demand location near Saravanampatti IT Park and highlight it as an independent 3BHK villa.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore, Saravanampatti IT Park பக்கத்துல அமைஞ்சிருக்கற ஒரு 3BHK Independent Villa பாக்கலாம் வாங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 3.5 Cents land area-ல கட்டப்பட்டுருக்கு. 30 by 16 feet-ல 3 cars park பண்ற அளவுக்கு spacious car parking இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "land-area-highlight",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Built-up area 1850 sqft! உள்ள 3 master bedrooms with attached bathrooms, modular kitchen, chimney, pooja cabinet அப்புறம் private utility area-வும் இருக்கு.",
+        "broll": [
+          "living_room",
+          "interior",
+          "bedroom",
+          "kitchen"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "interior-feature-popups",
+        "purpose": "interior_highlights"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், இது North facing site! Main door-உம் North facing teakwood door-ஆ அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "compass-north-indicator",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approved property! 75% bank loan வசதியும் இருக்கு. சொந்த borewell மற்றும் 8000 Liters water sump கொடுத்துருக்காங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "dtcp-approved-stamp",
+        "purpose": "approval_and_utilities"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட asking price பாத்தீங்கனா 1.20 Crore, negotiable-தான்!",
+        "broll": [
+          "living_room",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag-text",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணவோ, further details அறியவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "call-now-button",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/ihiTAoF3Hcw/",
+  "optional_owned_audio": "assets/audio/ihiTAoF3Hcw.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-storey house featuring an ivory and brown exterior theme with texture paint, CNC laser-cut design panels, spotlight illumination, a folding metal gate, and a large checked-tile car parking bay.. Neighbourhood: Situated in a developing residential community with wide tar roads, street lamps, surrounding vacant plots, ongoing residential constructions, and distant hill views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-storey house featuring an ivory and brown exterior theme with texture paint, CNC laser-cut design panels, spotlight illumination, a folding metal gate, and a large checked-tile car parking bay.. Neighbourhood: Situated in a developing residential community with wide tar roads, street lamps, surrounding vacant plots, ongoing residential constructions, and distant hill views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-storey house featuring an ivory and brown exterior theme with texture paint, CNC laser-cut design panels, spotlight illumination, a folding metal gate, and a large checked-tile car parking bay.. Neighbourhood: Situated in a developing residential community with wide tar roads, street lamps, surrounding vacant plots, ongoing residential constructions, and distant hill views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-storey house featuring an ivory and brown exterior theme with texture paint, CNC laser-cut design panels, spotlight illumination, a folding metal gate, and a large checked-tile car parking bay.. Neighbourhood: Situated in a developing residential community with wide tar roads, street lamps, surrounding vacant plots, ongoing residential constructions, and distant hill views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
