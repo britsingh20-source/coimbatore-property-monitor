@@ -1,0 +1,147 @@
+{
+  "video_id": "Y-EY53Lpnsg",
+  "source_url": "https://www.youtube.com/watch?v=Y-EY53Lpnsg",
+  "property_location": "Shanthi Medu, Mettupalayam Road, Veerapandi, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent House / Villa",
+    "bhk": "2BHK",
+    "land_area": "3.25 Cents",
+    "built_up_area": "1200 sqft",
+    "price": "₹55,000,000 (55 Lakhs, negotiable)",
+    "facing": "West facing site, North facing main door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered/Paved Car Parking (10'0\" x 30'0\")",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Land area is 3.25 cents with 1200 sq.ft. built-up area., Property layout features 2 bedrooms with attached bathrooms, 1 outer bathroom, living room (16'x16'), kitchen & dining (8'x16'), pooja space, and parking space (10'x30')., Quoted price is 55 Lakhs (negotiable)., Located in Shanthi Medu, near Veerapandi Pirivu on Mettupalayam Road, Coimbatore., Site is DTCP approved and has borewell facility.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, conversational local Coimbatore property presenter speaking directly to camera with smooth property visual transitions.",
+    "hook_strategy": "Highlight the highly sought-after location near Veerapandi Pirivu on Mettupalayam Road paired with a 2BHK property offer.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை மேட்டுப்பாளையம் ரோடு, வீராபாண்டி பிரிவு பக்கத்துல இருக்குற சாந்தி மேடு location-ல ஒரு 2BHK house விற்பனைக்கு வந்திருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தம் 3.25 Cents land area-ல அமைஞ்சிருக்குங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "land-details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இதுல built-up area 1200 sqft. 16 by 16 living room, kitchen dining, attached bathrooms கூட 2 bedrooms, pooja space, borewell அப்புறம் car parking வசதியும் இருக்கு.",
+        "broll": [
+          "living_room",
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "interior-layout"
+      },
+      {
+        "name": "facing",
+        "voice": "இந்த property West facing site, அதே மாதிரி main door North facing-ல அமைச்சிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "orientation"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், இது DTCP approval பெற்ற site!",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "legality"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட quoted price 55 Lakhs, negotiable-தான்!",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details தெரிஞ்சுக்கவோ, direct site visit வரவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "call-animation",
+        "purpose": "call-to-action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/Y-EY53Lpnsg/",
+  "optional_owned_audio": "assets/audio/Y-EY53Lpnsg.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story home featuring light yellow exterior walls, bright orange accent trim, paver block driveway/parking area, dark blue compound gate, and an external staircase leading to the terrace.. Neighbourhood: Suburban residential neighborhood with surrounding open plots and clear sky view located off Mettupalayam Road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story home featuring light yellow exterior walls, bright orange accent trim, paver block driveway/parking area, dark blue compound gate, and an external staircase leading to the terrace.. Neighbourhood: Suburban residential neighborhood with surrounding open plots and clear sky view located off Mettupalayam Road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story home featuring light yellow exterior walls, bright orange accent trim, paver block driveway/parking area, dark blue compound gate, and an external staircase leading to the terrace.. Neighbourhood: Suburban residential neighborhood with surrounding open plots and clear sky view located off Mettupalayam Road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story home featuring light yellow exterior walls, bright orange accent trim, paver block driveway/parking area, dark blue compound gate, and an external staircase leading to the terrace.. Neighbourhood: Suburban residential neighborhood with surrounding open plots and clear sky view located off Mettupalayam Road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
