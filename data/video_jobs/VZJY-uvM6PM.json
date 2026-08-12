@@ -1,0 +1,139 @@
+{
+  "video_id": "VZJY-uvM6PM",
+  "source_url": "https://www.youtube.com/watch?v=VZJY-uvM6PM",
+  "property_location": "Shanthi medu, Mettupalayam road, Veerapandi, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": 3,
+    "land_area": "3.25 Cents",
+    "built_up_area": "1200 sqft",
+    "price": "₹55 Lakhs (negotiable)",
+    "facing": "West facing site, North facing main door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Car parking (10'0\" x 30'0\")",
+    "approval": "DTCP approved site"
+  },
+  "verified_facts": "Title mentions house for sale in Coimbatore, Veerapandi, Description confirms 3BHK Independent Villa, Land area is 3.25 Cents and build-up area is 1200 sqft, DTCP approved site with 75% bank loan availability, House price specified as 55 Lakhs (negotiable), Site facing is West and main door facing is North",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and authentic local real-estate presenter speaking directly to camera with smooth Tamil transitions.",
+    "hook_strategy": "Highlight the prime Mettupalayam road location and the attractive 3BHK Independent villa offering right in the first 3 seconds.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Mettupalayam road, Veerapandi Shanthi medu location-ல ஒரு அழகான 3BHK Independent Villa விற்பனைக்கு வந்திருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price பாத்தீங்கனா வெறும் 55 Lakhs, negotiable-தான்! இதுல 75% bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing_and_loan"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1200 sqft built-up area-ல Pooja Room, Outer Bathroom, Terrace Access-ோட இந்த 3BHK villa அருமையா அமைஞ்சிருக்கு.",
+        "broll": [
+          "living_room",
+          "interior",
+          "kitchen"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "property_overview"
+      },
+      {
+        "name": "land",
+        "voice": "3.25 Cents land area-ல 10 feet by 30 feet size-ல Car parking space மற்றும் சொந்த Borewell வசதியும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "dimension-overlay",
+        "purpose": "land_and_parking"
+      },
+      {
+        "name": "facing",
+        "voice": "அதே மாதிரி, இது West facing site, main door பாத்தீங்கனா North facing-ல கட்டிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், இது முழுசா DTCP approved site.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_building"
+      },
+      {
+        "name": "cta",
+        "voice": "Site visit வரவோ, மேலும் details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "call-to-action-overlay",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/VZJY-uvM6PM/",
+  "optional_owned_audio": "assets/audio/VZJY-uvM6PM.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary villa painted in light yellow with bright orange and red accents, featuring a blue metal entrance gate, paver-tiled driveway, red exterior staircase to rooftop, and perimeter wall.. Neighbourhood: Semi-urban residential plot located off Mettupalayam road in Veerapandi/Shanthi Medu, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary villa painted in light yellow with bright orange and red accents, featuring a blue metal entrance gate, paver-tiled driveway, red exterior staircase to rooftop, and perimeter wall.. Neighbourhood: Semi-urban residential plot located off Mettupalayam road in Veerapandi/Shanthi Medu, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary villa painted in light yellow with bright orange and red accents, featuring a blue metal entrance gate, paver-tiled driveway, red exterior staircase to rooftop, and perimeter wall.. Neighbourhood: Semi-urban residential plot located off Mettupalayam road in Veerapandi/Shanthi Medu, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary villa painted in light yellow with bright orange and red accents, featuring a blue metal entrance gate, paver-tiled driveway, red exterior staircase to rooftop, and perimeter wall.. Neighbourhood: Semi-urban residential plot located off Mettupalayam road in Veerapandi/Shanthi Medu, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

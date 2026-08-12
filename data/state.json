@@ -462,10 +462,12 @@
       "status": "video_queued"
     },
     "G9HFXKPGDAw": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-08-12T15:17:20.663143+00:00",
-      "next_retry_at": "2026-08-12T15:17:20.663143+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-08-12T16:16:59.157489+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 861.114581ms.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-08-12T18:16:59.157499+00:00",
+      "status": "retry_pending"
     },
     "GHUm7c6Biyk": {
       "attempts": 0,
@@ -659,11 +661,12 @@
     },
     "NFe3Ng3T7Ac": {
       "attempts": 1,
+      "completed_at": "2026-08-12T16:15:17.215631+00:00",
       "first_seen_at": "2026-08-12T13:51:19.378507+00:00",
       "last_attempt_at": "2026-08-12T13:51:47.011185+00:00",
-      "last_error": "sequence item 2: expected str instance, dict found",
+      "last_error": "",
       "next_retry_at": "2026-08-12T15:51:47.011196+00:00",
-      "status": "retry_pending"
+      "status": "archived_non_target"
     },
     "NfmIXfToToY": {
       "attempts": 0,
@@ -843,11 +846,12 @@
     },
     "VZJY-uvM6PM": {
       "attempts": 1,
+      "completed_at": "2026-08-12T16:15:05.807765+00:00",
       "first_seen_at": "2026-08-12T13:51:19.378507+00:00",
       "last_attempt_at": "2026-08-12T13:51:33.236427+00:00",
-      "last_error": "sequence item 2: expected str instance, dict found",
+      "last_error": "",
       "next_retry_at": "2026-08-12T15:51:33.236436+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "WUYXWxA4-3c": {
       "attempts": 3,
