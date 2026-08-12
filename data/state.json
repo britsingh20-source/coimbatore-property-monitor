@@ -209,6 +209,12 @@
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
       "status": "video_queued"
     },
+    "5piqYYVprGc": {
+      "attempts": 0,
+      "first_seen_at": "2026-08-12T13:51:19.378507+00:00",
+      "next_retry_at": "2026-08-12T13:51:19.378507+00:00",
+      "status": "discovered"
+    },
     "61letGCd-qw": {
       "attempts": 1,
       "completed_at": "2026-08-07T09:18:13.222071+00:00",
@@ -294,6 +300,14 @@
       "last_error": "",
       "next_retry_at": "2026-08-08T01:05:15.966490+00:00",
       "status": "archived_non_target"
+    },
+    "AGBuTk2Wdzc": {
+      "attempts": 0,
+      "completed_at": "2026-08-12T13:53:05.341644+00:00",
+      "first_seen_at": "2026-08-12T13:51:19.378507+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-08-12T13:51:19.378507+00:00",
+      "status": "video_queued"
     },
     "AQ1FlUNge-8": {
       "attempts": 0,
@@ -627,6 +641,14 @@
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
       "status": "video_queued"
     },
+    "NFe3Ng3T7Ac": {
+      "attempts": 1,
+      "first_seen_at": "2026-08-12T13:51:19.378507+00:00",
+      "last_attempt_at": "2026-08-12T13:51:47.011185+00:00",
+      "last_error": "sequence item 2: expected str instance, dict found",
+      "next_retry_at": "2026-08-12T15:51:47.011196+00:00",
+      "status": "retry_pending"
+    },
     "NfmIXfToToY": {
       "attempts": 0,
       "completed_at": "2026-08-05T02:05:33.939659+00:00",
@@ -802,6 +824,14 @@
       "last_error": "",
       "next_retry_at": "2026-08-05T07:39:46.394415+00:00",
       "status": "archived_non_target"
+    },
+    "VZJY-uvM6PM": {
+      "attempts": 1,
+      "first_seen_at": "2026-08-12T13:51:19.378507+00:00",
+      "last_attempt_at": "2026-08-12T13:51:33.236427+00:00",
+      "last_error": "sequence item 2: expected str instance, dict found",
+      "next_retry_at": "2026-08-12T15:51:33.236436+00:00",
+      "status": "retry_pending"
     },
     "WUYXWxA4-3c": {
       "attempts": 3,
