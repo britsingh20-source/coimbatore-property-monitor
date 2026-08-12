@@ -1,0 +1,129 @@
+{
+  "video_id": "FEin2rHW1WU",
+  "source_url": "https://www.youtube.com/watch?v=FEin2rHW1WU",
+  "property_location": "Keeranatham, Saravanampatti, Coimbatore",
+  "property": {
+    "property_type": "Duplex House",
+    "bhk": 3,
+    "land_area": "2.3 cents / 1000 sq.ft (25 ft x 40 ft)",
+    "built_up_area": "2000 sq.ft",
+    "price": "₹1.27 Crore",
+    "facing": "South (Plot), East (Main Door)",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking Portico (18.5 ft x 11 ft)",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "Land Area: 2.3 Cents (1000 Sq Ft) - Dimensions: 25 ft x 40 ft, Built-up Area: 2000 Sq Ft G+1 Duplex, Orientation: South facing plot with East facing teak wood main door, Price: ₹1.27 Crore (Negotiable), Location: Keeranatham, Saravanampatti, Coimbatore, Portico Size: 18.5 x 11 ft, Living Room Size: 22 x 11 ft, Kitchen & Dining Size: 16 x 11 ft",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, conversational local property walkthrough with fast-paced highlights for visual retention",
+    "hook_strategy": "Lead directly with the popular Saravanampatti location combined with a 2000 sq.ft 3 BHK duplex callout",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை சரவணம்பட்டி கீரநத்தம் location-ல ஒரு அருமையான 3 BHK Duplex House விற்பனைக்கு வந்துருக்குங்க!",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "2.3 cents site area... 25 to 40 dimensions-ல 18.5 by 11 feet spacious car parking portico-வோட அமைச்சிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "dimension-overlay",
+        "purpose": "land_and_parking"
+      },
+      {
+        "name": "facing",
+        "voice": "இது South facing plot... main door பாத்தீங்கனா East facing-ல teak wood-ல கொடுத்திருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Total built-up 2000 sq.ft! Interior-ல modular kitchen, false ceiling, attached bathrooms-ஓட 3 bedrooms, அப்புறம் terrace-ல gazebo setup-உம் இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-highlight",
+        "purpose": "interior_highlights"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price பாத்தீங்கனா 1.27 Crore... negotiable-தான்!",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணவோ, மேலும் details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "contact-details",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/FEin2rHW1WU/",
+  "optional_owned_audio": "assets/audio/FEin2rHW1WU.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story modern architectural elevation painted in white and off-white with vertical charcoal grooved panels, red terracotta tile framing around the balcony, glass balcony railing, a planter box near the entrance gate, and a covered steel-structure gazebo on the terrace.. Neighbourhood: Residential area in Saravanampatti/Keeranatham, Coimbatore, surrounded by independent homes and residential construction plots.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story modern architectural elevation painted in white and off-white with vertical charcoal grooved panels, red terracotta tile framing around the balcony, glass balcony railing, a planter box near the entrance gate, and a covered steel-structure gazebo on the terrace.. Neighbourhood: Residential area in Saravanampatti/Keeranatham, Coimbatore, surrounded by independent homes and residential construction plots.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story modern architectural elevation painted in white and off-white with vertical charcoal grooved panels, red terracotta tile framing around the balcony, glass balcony railing, a planter box near the entrance gate, and a covered steel-structure gazebo on the terrace.. Neighbourhood: Residential area in Saravanampatti/Keeranatham, Coimbatore, surrounded by independent homes and residential construction plots.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story modern architectural elevation painted in white and off-white with vertical charcoal grooved panels, red terracotta tile framing around the balcony, glass balcony railing, a planter box near the entrance gate, and a covered steel-structure gazebo on the terrace.. Neighbourhood: Residential area in Saravanampatti/Keeranatham, Coimbatore, surrounded by independent homes and residential construction plots.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

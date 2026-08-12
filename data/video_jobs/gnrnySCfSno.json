@@ -1,0 +1,154 @@
+{
+  "video_id": "gnrnySCfSno",
+  "source_url": "https://www.youtube.com/watch?v=gnrnySCfSno",
+  "property_location": "Kurumbapalayam, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "5.5 Cents (2,400 sq ft)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "NOT SPECIFIED",
+    "facing": "East",
+    "road_width": "30 feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Location is Kurumbapalayam off Sathyamangalam road, Coimbatore, Land area is 5.5 Cents (40 x 60 ft / 2,400 sq.ft), DTCP approved plot, East facing plot situated on a 30 feet wide road, Located near The Indian Public School, Adithya Group of Institutions, Kumaran Medical Center, and SVV Tech Park",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and direct local presenter introducing a plot off Sathy Road in Coimbatore",
+    "hook_strategy": "Highlighting location advantage off Sathyamangalam road in Kurumbapalayam",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை சத்தியமங்கலம் ரோட்டுல இருக்குற குறும்ப்பாளையம் location-ல ஒரு அருமையான plot பாக்கப்போறோம்.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-text-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தம் 5.5 Cents கொண்ட plot. பாத்தீங்கனா, 2,400 sq ft, 40-க்கு 60 dimensions-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "living_room",
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "dimension-overlay",
+        "purpose": "property_size"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம் என்னனா, இது முழுமையா DTCP approval வாங்குன plot.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "legality"
+      },
+      {
+        "name": "facing",
+        "voice": "அதே மாதிரி, இது ஒரு East facing plot.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "living_room"
+        ],
+        "vfx": "compass-east",
+        "purpose": "orientation"
+      },
+      {
+        "name": "road",
+        "voice": "இந்த plot-க்கு முன்னாடி நல்ல 30 feet wide road வசதியும் இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "road-width-tag",
+        "purpose": "accessibility"
+      },
+      {
+        "name": "verify",
+        "voice": "பக்கத்துலயே The Indian Public School, Adithya Group of Institutions, Kumaran Medical Center, அப்புறம் SVV Tech Park எல்லாமே அமைஞ்சிருக்கு.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "landmarks-popup",
+        "purpose": "surrounding_amenities"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த plot பத்தின மேலும் details பெறவும் site visit வரவும் கீழே இருக்கிற எண்ணுக்கு call பண்ணுங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "living_room"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/gnrnySCfSno/",
+  "optional_owned_audio": "assets/audio/gnrnySCfSno.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Open residential plot measuring 40x60 feet, situated along a 30-foot road in a developing residential area.. Neighbourhood: Developing residential locality in Kurumbapalayam, Coimbatore, with nearby schools, colleges, medical facilities, and IT tech parks.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Open residential plot measuring 40x60 feet, situated along a 30-foot road in a developing residential area.. Neighbourhood: Developing residential locality in Kurumbapalayam, Coimbatore, with nearby schools, colleges, medical facilities, and IT tech parks.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Open residential plot measuring 40x60 feet, situated along a 30-foot road in a developing residential area.. Neighbourhood: Developing residential locality in Kurumbapalayam, Coimbatore, with nearby schools, colleges, medical facilities, and IT tech parks.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Open residential plot measuring 40x60 feet, situated along a 30-foot road in a developing residential area.. Neighbourhood: Developing residential locality in Kurumbapalayam, Coimbatore, with nearby schools, colleges, medical facilities, and IT tech parks.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
