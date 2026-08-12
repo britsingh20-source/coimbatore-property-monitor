@@ -1,0 +1,145 @@
+{
+  "video_id": "GHUm7c6Biyk",
+  "source_url": "https://www.youtube.com/watch?v=GHUm7c6Biyk",
+  "property_location": "Vadavalli, Thondamuthur Road, opposite Parambariya Hotel, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent Duplex House",
+    "bhk": "3 BHK",
+    "land_area": "5 Cents (2000 sq ft, 40 ft x 50 ft)",
+    "built_up_area": "2300 sq ft",
+    "price": "₹1.80 Crore (Negotiable)",
+    "facing": "Site: East, Main Door: North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking (20 ft x 19 ft, fits 2 cars)",
+    "approval": "Coimbatore Corporation Limits"
+  },
+  "verified_facts": "Site facing is East, main entry door faces North., Land area is 5 cents (2,000 sq ft) measuring 40 ft width by 50 ft length., Total built-up area is 2,300 sq ft built as a G+1 duplex house., House features a curvilinear geometric architectural design built using Porotherm terracotta blocks and filler slab roofing for heat reduction., Car parking area measures 20 ft x 19 ft accommodating up to 2 cars., Living hall measures 14 ft x 14 ft with a dome-shaped filler slab ceiling and a real black granite cladding TV feature wall., Modular kitchen measures 17 ft x 10.25 ft with granite countertops, wooden cabinets, electric chimney, multi-function sink, and rear utility exit., Ground floor contains 1 bedroom (16 ft x 16 ft) with an attached bathroom (25 sq ft).",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local Coimbatore real estate video presentation",
+    "hook_strategy": "Highlighting prime location in Vadavalli on Thondamuthur Road opposite Parambariya Hotel paired with the 3 BHK duplex property",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை வடவள்ளி, தொண்டாமுத்தூர் ரோட்ல பரம்பரியா ஹோட்டல் எதிர்த்தாப்புல ஒரு 3 BHK Independent Duplex House விற்பனைக்கு வந்திருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது பாத்தீங்கனா மொத்தமா 5 சென்ட் லேண்ட் ஏரியால, 2 கார் பார்க் பண்ற அளவுக்கு கவர்ட் பார்க்கிங் வசதியோட அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "2300 sq ft built-up area! உள்ள Porotherm blocks, Modular kitchen, அப்புறம் 520 sq ft-ல பெரிய open balcony-யும் இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "interior",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "interior_highlights"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், site facing கிழக்கு, main door வடக்கு பார்த்து அமைச்சிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "approval",
+        "voice": "அதே மாதிரி, இந்த வீடு கோயம்புத்தூர் கார்ப்பரேஷன் லிமிட்ஸ்ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட quoted price 1.80 Crore, இது Negotiable தான்.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல site visit பார்க்கணும்னா இல்ல details வேணும்னா உடனே இந்த நம்பருக்கு call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/GHUm7c6Biyk/",
+  "optional_owned_audio": "assets/audio/GHUm7c6Biyk.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern curvilinear duplex structure finished in terracotta red Porotherm blocks and crisp white accents, featuring a curved porch overhang, wave-patterned granite compound wall, folding metal gate, and an exterior steel spiral staircase leading to the upper terrace.. Neighbourhood: Established urban residential neighborhood within Coimbatore Corporation limits, situated close to main commercial roads with independent residential homes nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern curvilinear duplex structure finished in terracotta red Porotherm blocks and crisp white accents, featuring a curved porch overhang, wave-patterned granite compound wall, folding metal gate, and an exterior steel spiral staircase leading to the upper terrace.. Neighbourhood: Established urban residential neighborhood within Coimbatore Corporation limits, situated close to main commercial roads with independent residential homes nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern curvilinear duplex structure finished in terracotta red Porotherm blocks and crisp white accents, featuring a curved porch overhang, wave-patterned granite compound wall, folding metal gate, and an exterior steel spiral staircase leading to the upper terrace.. Neighbourhood: Established urban residential neighborhood within Coimbatore Corporation limits, situated close to main commercial roads with independent residential homes nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern curvilinear duplex structure finished in terracotta red Porotherm blocks and crisp white accents, featuring a curved porch overhang, wave-patterned granite compound wall, folding metal gate, and an exterior steel spiral staircase leading to the upper terrace.. Neighbourhood: Established urban residential neighborhood within Coimbatore Corporation limits, situated close to main commercial roads with independent residential homes nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
