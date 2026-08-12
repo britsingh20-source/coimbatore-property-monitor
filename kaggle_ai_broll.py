@@ -4,7 +4,6 @@ import json
 import os
 import re
 import subprocess
-import tarfile
 import tempfile
 import time
 from pathlib import Path
@@ -58,6 +57,7 @@ def build_prompt(job: dict) -> str:
 
 def kernel_script(image_b64: str, image_suffix: str, ltx_b64: str, prompt: str, video_id: str) -> str:
     return f'''import base64
+import os
 import shutil
 import subprocess
 import tarfile
@@ -94,12 +94,6 @@ try:
     if not (repo / "inference.py").exists():
         raise RuntimeError("Embedded LTX source unpacked but inference.py is missing")
 
-    mark("stage=install_ltx_offline_no_deps")
-    install = subprocess.run(["python", "-m", "pip", "install", "--no-deps", "-e", "."], cwd=repo, text=True, capture_output=True)
-    mark(f"install_rc={{install.returncode}}")
-    if install.returncode != 0:
-        raise RuntimeError("Offline LTX install failed: " + install.stderr[-3000:])
-
     mark("stage=dependency_probe")
     probe_code = "import torch, transformers, diffusers, PIL, safetensors; print('deps-ok')"
     probe = subprocess.run(["python", "-c", probe_code], cwd=repo, text=True, capture_output=True)
@@ -107,11 +101,19 @@ try:
     if probe.returncode != 0:
         raise RuntimeError("Kaggle image is missing LTX runtime dependencies: " + probe.stderr[-3000:])
 
+    mark("stage=source_import_probe")
+    env = os.environ.copy()
+    env["PYTHONPATH"] = str(repo) + os.pathsep + env.get("PYTHONPATH", "")
+    src_probe = subprocess.run(["python", "-c", "import ltx_video; print('ltx-source-ok')"], cwd=repo, env=env, text=True, capture_output=True)
+    mark(f"source_import_probe_rc={{src_probe.returncode}}")
+    if src_probe.returncode != 0:
+        raise RuntimeError("LTX source import failed without pip install: " + src_probe.stderr[-3000:])
+
     mark("stage=run_inference_offline")
     before = set(repo.rglob("*.mp4"))
     cmd = ["python", "inference.py", "--prompt", PROMPT, "--conditioning_media_paths", str(image_path), "--conditioning_start_frames", "0", "--height", "512", "--width", "320", "--num_frames", "49", "--seed", "42", "--pipeline_config", "configs/ltxv-2b-0.9.8-distilled.yaml"]
     mark("command=" + " ".join(cmd))
-    proc = subprocess.run(cmd, cwd=repo, text=True, capture_output=True)
+    proc = subprocess.run(cmd, cwd=repo, env=env, text=True, capture_output=True)
     (work / "inference-stdout.txt").write_text(proc.stdout or "", encoding="utf-8")
     (work / "inference-stderr.txt").write_text(proc.stderr or "", encoding="utf-8")
     mark(f"inference_rc={{proc.returncode}}")
@@ -161,7 +163,8 @@ def run(args: list[str]) -> subprocess.CompletedProcess:
 def download_kernel_output(kernel_id: str, dest: Path) -> None:
     dest.mkdir(parents=True, exist_ok=True)
     proc = run(["kaggle", "kernels", "output", kernel_id, "-p", str(dest), "-o"])
-    print(proc.stdout, flush=True); print(proc.stderr, flush=True)
+    print(proc.stdout, flush=True)
+    print(proc.stderr, flush=True)
 
 
 def print_diagnostics(dest: Path) -> None:
@@ -178,15 +181,18 @@ def wait_for_kernel(kernel_id: str, diag_dir: Path) -> None:
         proc = run(["kaggle", "kernels", "status", kernel_id])
         text = (proc.stdout + "\n" + proc.stderr).strip()
         if text != last:
-            print(text, flush=True); last = text
+            print(text, flush=True)
+            last = text
         low = text.lower()
         if "error" in low or "failed" in low or "cancel" in low:
-            download_kernel_output(kernel_id, diag_dir); print_diagnostics(diag_dir)
+            download_kernel_output(kernel_id, diag_dir)
+            print_diagnostics(diag_dir)
             raise RuntimeError(f"Kaggle kernel failed: {text}")
         if "complete" in low or "success" in low:
             return
         time.sleep(POLL_SECONDS)
-    download_kernel_output(kernel_id, diag_dir); print_diagnostics(diag_dir)
+    download_kernel_output(kernel_id, diag_dir)
+    print_diagnostics(diag_dir)
     raise TimeoutError(f"Timed out waiting for Kaggle kernel {kernel_id}")
 
 
@@ -204,7 +210,8 @@ def main() -> None:
     parser.add_argument("--output-dir", default="outputs/kaggle-ai-broll")
     args = parser.parse_args()
 
-    username = required("KAGGLE_USERNAME"); required("KAGGLE_API_TOKEN")
+    username = required("KAGGLE_USERNAME")
+    required("KAGGLE_API_TOKEN")
     video_id = args.video_id.strip()
     job_path = Path(args.job) if args.job else Path("data/video_jobs") / f"{video_id}.json"
     ltx_bundle = Path(args.ltx_bundle)
@@ -221,11 +228,13 @@ def main() -> None:
     with tempfile.TemporaryDirectory(prefix="kaggle-ai-broll-") as tmp:
         kernel_id = write_kernel(Path(tmp), username, source_image, ltx_bundle, prompt, video_id)
         proc = run(["kaggle", "kernels", "push", "-p", tmp, "--accelerator", "NvidiaTeslaP100", "--timeout", "3600"])
-        print(proc.stdout, flush=True); print(proc.stderr, flush=True)
+        print(proc.stdout, flush=True)
+        print(proc.stderr, flush=True)
         if proc.returncode != 0:
             raise RuntimeError("Kaggle kernel push failed")
         wait_for_kernel(kernel_id, diag_dir)
-        download_kernel_output(kernel_id, diag_dir); print_diagnostics(diag_dir)
+        download_kernel_output(kernel_id, diag_dir)
+        print_diagnostics(diag_dir)
         videos = list(diag_dir.rglob(f"{video_id}-ai-broll.mp4")) or list(diag_dir.rglob("*.mp4"))
         if not videos:
             raise RuntimeError("Kaggle completed but no MP4 was downloaded")
@@ -234,7 +243,7 @@ def main() -> None:
             raise RuntimeError(f"Generated B-roll is suspiciously small: {result.stat().st_size} bytes")
         r2_key = persist_to_r2(result, video_id)
         out_dir.mkdir(parents=True, exist_ok=True)
-        summary = {"video_id": video_id, "source_image": str(source_image), "kernel_id": kernel_id, "output": str(result), "r2_key": r2_key, "bytes": result.stat().st_size, "input_delivery": "embedded_base64", "ltx_delivery": "embedded_tarball", "kaggle_internet": False}
+        summary = {"video_id": video_id, "source_image": str(source_image), "kernel_id": kernel_id, "output": str(result), "r2_key": r2_key, "bytes": result.stat().st_size, "input_delivery": "embedded_base64", "ltx_delivery": "embedded_tarball", "kaggle_internet": False, "ltx_execution": "source_via_pythonpath"}
         (out_dir / "manifest.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
         print(json.dumps(summary, indent=2, ensure_ascii=False), flush=True)
 
