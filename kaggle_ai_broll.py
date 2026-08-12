@@ -90,14 +90,46 @@ def choose_file(patterns):
         return None
     return max(hits, key=lambda p: p.stat().st_size)
 
-def choose_text_encoder_dir():
+def choose_encoder_dir():
     candidates = []
-    for tok in inputs.rglob("tokenizer_config.json"):
-        parent = tok.parent
-        low = str(parent).lower()
-        if any(key in low for key in ("pixart", "t5", "text_encoder", "text-encoder")):
-            candidates.append(parent)
-    return candidates[0] if candidates else None
+    for config in inputs.rglob("config.json"):
+        parent = config.parent
+        files = list(parent.glob("*.safetensors")) + list(parent.glob("pytorch_model*.bin"))
+        if files:
+            score = (10 if "text-encoder" in str(parent).lower() or "text_encoder" in str(parent).lower() else 0) + max((p.stat().st_size for p in files), default=0)
+            candidates.append((score, parent))
+    return max(candidates, key=lambda x: x[0])[1] if candidates else None
+
+def choose_tokenizer_dir():
+    candidates = []
+    markers = ["tokenizer_config.json", "spiece.model", "tokenizer.json"]
+    seen = set()
+    for marker in markers:
+        for hit in inputs.rglob(marker):
+            parent = hit.parent
+            if parent in seen:
+                continue
+            seen.add(parent)
+            low = str(parent).lower()
+            score = (10 if "tokenizer" in low else 0) + len(list(parent.iterdir()))
+            candidates.append((score, parent))
+    return max(candidates, key=lambda x: x[0])[1] if candidates else None
+
+def assemble_text_model_root():
+    encoder = choose_encoder_dir()
+    tokenizer = choose_tokenizer_dir()
+    mark(f"encoder_source={{encoder if encoder else 'not_found'}}")
+    mark(f"tokenizer_source={{tokenizer if tokenizer else 'not_found'}}")
+    if encoder is None or tokenizer is None:
+        inv = [str(p) for p in inputs.rglob("*") if p.is_file() and p.name in {{"config.json", "tokenizer_config.json", "spiece.model", "tokenizer.json"}}][:120]
+        raise RuntimeError("Kaggle text model inputs are incomplete. markers=" + repr(inv))
+    root = work / "local-pixart-text-model"
+    if root.exists():
+        shutil.rmtree(root)
+    root.mkdir(parents=True)
+    os.symlink(str(encoder), str(root / "text_encoder"), target_is_directory=True)
+    os.symlink(str(tokenizer), str(root / "tokenizer"), target_is_directory=True)
+    return root
 
 try:
     mark("stage=decode_embedded_source")
@@ -123,7 +155,6 @@ try:
     mark("stage=discover_kaggle_model_inputs")
     checkpoint = choose_file(["ltxv-2b-0.9.8-distilled.safetensors", "*2b*0.9.8*distilled*.safetensors"])
     upscaler = choose_file(["ltxv-spatial-upscaler-0.9.8.safetensors", "*spatial*upscaler*0.9.8*.safetensors"])
-    encoder_dir = choose_text_encoder_dir()
     if checkpoint is None:
         inventory = [str(p) for p in inputs.rglob("*.safetensors")][:80]
         raise RuntimeError("No LTX 2B checkpoint found in attached Kaggle inputs. safetensors=" + repr(inventory))
@@ -132,15 +163,17 @@ try:
         mark(f"upscaler={{upscaler}} bytes={{upscaler.stat().st_size}}")
     else:
         mark("upscaler=not_found")
-    mark(f"text_encoder_dir={{encoder_dir if encoder_dir else 'not_found'}}")
+
+    mark("stage=assemble_local_text_model")
+    text_model_root = assemble_text_model_root()
+    mark(f"text_model_root={{text_model_root}}")
 
     config_path = repo / "configs" / "ltxv-2b-0.9.8-distilled.yaml"
     cfg = yaml.safe_load(config_path.read_text(encoding="utf-8"))
     cfg["checkpoint_path"] = str(checkpoint)
     if upscaler:
         cfg["spatial_upscaler_model_path"] = str(upscaler)
-    if encoder_dir:
-        cfg["text_encoder_model_name_or_path"] = str(encoder_dir)
+    cfg["text_encoder_model_name_or_path"] = str(text_model_root)
     config_path.write_text(yaml.safe_dump(cfg, sort_keys=False), encoding="utf-8")
     mark("local_model_paths_patched=true")
 
@@ -235,7 +268,7 @@ def print_diagnostics(dest: Path) -> None:
         matches = list(dest.rglob(name))
         if matches:
             print(f"===== KAGGLE {name} =====", flush=True)
-            print(matches[0].read_text(encoding="utf-8", errors="replace")[-16000:], flush=True)
+            print(matches[0].read_text(encoding="utf-8", errors="replace")[-12000:], flush=True)
 
 
 def wait_for_kernel(kernel_id: str, diag_dir: Path) -> None:
@@ -265,12 +298,18 @@ def persist_to_r2(path: Path, video_id: str) -> str:
     return key
 
 
+def load_reference_metadata(path: Path) -> dict:
+    if not path.exists():
+        raise RuntimeError(f"Reference Kaggle kernel metadata missing: {path}")
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--video-id", required=True)
     parser.add_argument("--job", default="")
     parser.add_argument("--ltx-bundle", default=".cache/ltx-video-src.tar.gz")
-    parser.add_argument("--source-metadata", required=True)
+    parser.add_argument("--reference-metadata", default=".cache/ltx-reference/kernel-metadata.json")
     parser.add_argument("--output-dir", default="outputs/kaggle-ai-broll")
     args = parser.parse_args()
 
@@ -279,13 +318,10 @@ def main() -> None:
     video_id = args.video_id.strip()
     job_path = Path(args.job) if args.job else Path("data/video_jobs") / f"{video_id}.json"
     ltx_bundle = Path(args.ltx_bundle)
-    source_metadata_path = Path(args.source_metadata)
     if not ltx_bundle.exists():
         raise RuntimeError(f"Offline LTX bundle missing: {ltx_bundle}")
-    if not source_metadata_path.exists():
-        raise RuntimeError(f"Kaggle source metadata missing: {source_metadata_path}")
+    source_metadata = load_reference_metadata(Path(args.reference_metadata))
     job = json.loads(job_path.read_text(encoding="utf-8"))
-    source_metadata = json.loads(source_metadata_path.read_text(encoding="utf-8"))
     source_image = find_source_image(video_id)
     prompt = build_prompt(job)
     print(f"Source image embedded: {source_image} ({source_image.stat().st_size} bytes)", flush=True)
@@ -311,7 +347,7 @@ def main() -> None:
             raise RuntimeError(f"Generated B-roll is suspiciously small: {result.stat().st_size} bytes")
         r2_key = persist_to_r2(result, video_id)
         out_dir.mkdir(parents=True, exist_ok=True)
-        summary = {"video_id": video_id, "source_image": str(source_image), "kernel_id": kernel_id, "output": str(result), "r2_key": r2_key, "bytes": result.stat().st_size, "input_delivery": "embedded_base64", "ltx_delivery": "embedded_tarball", "kaggle_internet": False, "ltx_execution": "source_via_pythonpath", "pyav_mode": "bypassed_identity_crf", "model_delivery": "reused_public_kaggle_inputs"}
+        summary = {"video_id": video_id, "source_image": str(source_image), "kernel_id": kernel_id, "output": str(result), "r2_key": r2_key, "bytes": result.stat().st_size, "input_delivery": "embedded_base64", "ltx_delivery": "embedded_tarball", "kaggle_internet": False, "ltx_execution": "source_via_pythonpath", "pyav_mode": "bypassed_identity_crf", "model_delivery": "kaggle_dataset_sources", "text_model_delivery": "synthetic_local_root"}
         (out_dir / "manifest.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
         print(json.dumps(summary, indent=2, ensure_ascii=False), flush=True)
 
