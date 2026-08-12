@@ -94,6 +94,15 @@ try:
     if not (repo / "inference.py").exists():
         raise RuntimeError("Embedded LTX source unpacked but inference.py is missing")
 
+    # LTX imports PyAV only to apply a CRF round-trip to the conditioning image.
+    # PyAV is absent in Kaggle's offline image. For this POC, replace that optional
+    # preprocessing helper with an identity function so inference can continue
+    # without network/package installation.
+    mark("stage=patch_optional_pyav")
+    crf_file = repo / "ltx_video" / "pipelines" / "crf_compressor.py"
+    crf_file.write_text("import torch\\n\\ndef compress(image: torch.Tensor, crf=29):\\n    return image\\n", encoding="utf-8")
+    mark("pyav_bypass=identity_crf")
+
     mark("stage=dependency_probe")
     probe_code = "import torch, transformers, diffusers, PIL, safetensors; print('deps-ok')"
     probe = subprocess.run(["python", "-c", probe_code], cwd=repo, text=True, capture_output=True)
@@ -104,7 +113,7 @@ try:
     mark("stage=source_import_probe")
     env = os.environ.copy()
     env["PYTHONPATH"] = str(repo) + os.pathsep + env.get("PYTHONPATH", "")
-    src_probe = subprocess.run(["python", "-c", "import ltx_video; print('ltx-source-ok')"], cwd=repo, env=env, text=True, capture_output=True)
+    src_probe = subprocess.run(["python", "-c", "import ltx_video; import ltx_video.inference; print('ltx-source-ok')"], cwd=repo, env=env, text=True, capture_output=True)
     mark(f"source_import_probe_rc={{src_probe.returncode}}")
     if src_probe.returncode != 0:
         raise RuntimeError("LTX source import failed without pip install: " + src_probe.stderr[-3000:])
@@ -243,7 +252,7 @@ def main() -> None:
             raise RuntimeError(f"Generated B-roll is suspiciously small: {result.stat().st_size} bytes")
         r2_key = persist_to_r2(result, video_id)
         out_dir.mkdir(parents=True, exist_ok=True)
-        summary = {"video_id": video_id, "source_image": str(source_image), "kernel_id": kernel_id, "output": str(result), "r2_key": r2_key, "bytes": result.stat().st_size, "input_delivery": "embedded_base64", "ltx_delivery": "embedded_tarball", "kaggle_internet": False, "ltx_execution": "source_via_pythonpath"}
+        summary = {"video_id": video_id, "source_image": str(source_image), "kernel_id": kernel_id, "output": str(result), "r2_key": r2_key, "bytes": result.stat().st_size, "input_delivery": "embedded_base64", "ltx_delivery": "embedded_tarball", "kaggle_internet": False, "ltx_execution": "source_via_pythonpath", "pyav_mode": "bypassed_identity_crf"}
         (out_dir / "manifest.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
         print(json.dumps(summary, indent=2, ensure_ascii=False), flush=True)
 
