@@ -105,7 +105,7 @@ jobs:
           python kaggle_ai_broll.py \
             --video-id "${{ inputs.video_id }}" \
             --ltx-bundle .cache/ltx-video-src.tar.gz \
-            --source-metadata .cache/ltx-reference/kernel-metadata.json
+            --reference-metadata .cache/ltx-reference/kernel-metadata.json
 
       - name: Show result location
         if: success()
