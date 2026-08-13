@@ -1,0 +1,215 @@
+name: Engaging AI Property Videos
+
+on:
+  workflow_dispatch:
+    inputs:
+      video_ids:
+        description: "Comma-separated property video IDs; blank uses approval file"
+        required: false
+        type: string
+      publish_to_meta:
+        description: "Publish completed Reel to Facebook and Instagram"
+        required: false
+        default: false
+        type: boolean
+      ai_animated_scenes:
+        description: "Number of scene stills to animate with LTX ZeroGPU; remaining scenes use cinematic motion from AI stills"
+        required: false
+        default: "3"
+        type: string
+
+concurrency:
+  group: engaging-ai-property-video
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Select requested property jobs
+        id: select
+        env:
+          EVENT_NAME: workflow_dispatch
+          REQUESTED_VIDEO_IDS: ${{ inputs.video_ids || '' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python select_render_jobs.py --output data/render_queue.txt
+          cat data/render_queue.txt
+          if [[ -s data/render_queue.txt ]]; then
+            echo "has_jobs=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_jobs=false" >> "$GITHUB_OUTPUT"
+            echo "No renderable jobs selected." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - uses: actions/setup-python@v6
+        if: steps.select.outputs.has_jobs == 'true'
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - uses: actions/setup-node@v6
+        if: steps.select.outputs.has_jobs == 'true'
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: professional_video/package-lock.json
+
+      - name: Install render and AI dependencies
+        if: steps.select.outputs.has_jobs == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-noto-core
+          pip install -r requirements.txt
+          pip install -r requirements-ai.txt
+
+      - name: Validate repository tests
+        if: steps.select.outputs.has_jobs == 'true'
+        run: python -m unittest discover -s tests -v
+
+      - name: Install Remotion dependencies
+        if: steps.select.outputs.has_jobs == 'true'
+        run: npm ci
+        working-directory: professional_video
+
+      - name: Decode bundled sample visuals
+        if: steps.select.outputs.has_jobs == 'true'
+        run: python sample_assets.py
+
+      - name: Generate engaging Tamil Nadu representative visuals, maps and Tamil voice
+        id: assets
+        if: steps.select.outputs.has_jobs == 'true'
+        continue-on-error: true
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_IMAGE_SPACE_ID: black-forest-labs/FLUX.1-schnell
+          HF_VIDEO_SPACE_ID: ShaundeOoO/ltx-2.3-fast
+          AI_BROLL_MAX_ANIMATED: ${{ inputs.ai_animated_scenes || '3' }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_BROLL_MODEL: gemini-3.6-flash
+          BROLL_VISUAL_MIN_SCORE: "72"
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          R2_OWN_FOOTAGE_ROOT: ""
+          TAMIL_MALE_VOICE: ta-IN-ValluvarNeural
+          VIDEO_IDS_FILE: data/render_queue.txt
+          ASSET_FAILURES_FILE: outputs/asset-failure-ids.txt
+        run: python prepare_engaging_assets.py
+
+      - name: Render engaging vertical Reel
+        id: render
+        if: steps.select.outputs.has_jobs == 'true'
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -uo pipefail
+          mkdir -p outputs
+          : > outputs/failed-render-ids.txt
+          : > outputs/fallback-render-ids.txt
+          while IFS= read -r video_id; do
+            [[ -z "$video_id" || "$video_id" == \#* ]] && continue
+            mkdir -p "outputs/$video_id"
+            if [[ -f outputs/asset-failure-ids.txt ]] && grep -Fxq "$video_id" outputs/asset-failure-ids.txt; then
+              echo "$video_id" >> outputs/failed-render-ids.txt
+              echo "ASSET_OR_VOICE_FAILED" > "outputs/$video_id/render-mode.txt"
+              continue
+            fi
+            printf '%s\n' "$video_id" > data/single-render-queue.txt
+            if (
+              set -euo pipefail
+              python prepare_remotion_job.py "data/video_jobs/${video_id}.json"
+              props_file="data/remotion_props/${video_id}.json"
+              props_path="$(realpath "$props_file")"
+              cd professional_video
+              npx remotion render src/index.ts PropertyReel \
+                "../outputs/${video_id}/${video_id}-professional-vertical.mp4" \
+                --props="$props_path" \
+                --codec=h264 --crf=18 --concurrency=2
+            ); then
+              echo "REMOTION_AI_ENGAGING" > "outputs/$video_id/render-mode.txt"
+              echo "Rendered $video_id with AI-first Remotion pipeline."
+              continue
+            fi
+            echo "::warning::Remotion failed for $video_id; trying isolated FFmpeg fallback."
+            if VIDEO_IDS_FILE=data/single-render-queue.txt python render_free_approved.py; then
+              echo "$video_id" >> outputs/fallback-render-ids.txt
+              echo "FFMPEG_FALLBACK" > "outputs/$video_id/render-mode.txt"
+            else
+              echo "$video_id" >> outputs/failed-render-ids.txt
+              echo "FAILED" > "outputs/$video_id/render-mode.txt"
+            fi
+          done < data/render_queue.txt
+          if [[ -s outputs/failed-render-ids.txt ]]; then
+            exit 1
+          fi
+
+      - name: Publish completed Reel to Meta
+        id: meta_publish
+        if: >-
+          steps.select.outputs.has_jobs == 'true' &&
+          steps.render.outcome == 'success' &&
+          inputs.publish_to_meta == true
+        env:
+          META_GRAPH_VERSION: v26.0
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
+          META_PLATFORMS: instagram,facebook
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          VIDEO_IDS_FILE: data/render_queue.txt
+        run: python publish_render_queue.py
+
+      - name: Upload finished Reel and AI scene pack
+        uses: actions/upload-artifact@v4
+        if: always() && steps.select.outputs.has_jobs == 'true'
+        with:
+          name: engaging-ai-property-videos-${{ github.run_number }}
+          path: |
+            outputs/**/*.mp4
+            outputs/**/render-mode.txt
+            outputs/social_publish/*.json
+            outputs/failed-render-ids.txt
+            outputs/fallback-render-ids.txt
+            outputs/asset-failure-ids.txt
+            assets/ai_broll/**/manifest.json
+            assets/ai_broll/**/*.jpg
+            assets/ai_broll/**/*.mp4
+            data/remotion_props/*.json
+            data/render_queue.txt
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Build workflow summary
+        if: always() && steps.select.outputs.has_jobs == 'true'
+        shell: bash
+        run: |
+          {
+            echo "### Engaging AI property video"
+            echo ""
+            echo "- Custom Tamil Nadu / Coimbatore-style representative visuals are generated first."
+            echo "- Other sellers' listing media is not used by the AI visual stage."
+            echo "- Pexels/Pixabay are emergency fallback only if no AI scene pack is usable."
+            echo "- The final Reel and individual AI scenes are available in the workflow artifact."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Fail incomplete run after artifact upload
+        if: always() && steps.select.outputs.has_jobs == 'true' && (steps.assets.outcome == 'failure' || steps.render.outcome == 'failure' || steps.meta_publish.outcome == 'failure')
+        run: |
+          echo "::error::At least one requested property did not complete the AI visual, voice, render or requested publish stage."
+          exit 1
