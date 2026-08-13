@@ -13,9 +13,9 @@ on:
         default: false
         type: boolean
       ai_animated_scenes:
-        description: "Number of scene stills to animate with LTX ZeroGPU; remaining scenes use cinematic motion from AI stills"
+        description: "Number of AI stills to animate with LTX ZeroGPU; remaining AI stills use cinematic local motion"
         required: false
-        default: "3"
+        default: "1"
         type: string
 
 concurrency:
@@ -85,25 +85,15 @@ jobs:
         if: steps.select.outputs.has_jobs == 'true'
         run: python sample_assets.py
 
-      - name: Generate engaging Tamil Nadu representative visuals, maps and Tamil voice
+      - name: Generate AI-only Tamil Nadu representative visuals, maps and Tamil voice
         id: assets
         if: steps.select.outputs.has_jobs == 'true'
         continue-on-error: true
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          HF_IMAGE_SPACE_ID: black-forest-labs/FLUX.1-schnell
+          HF_IMAGE_MODEL: black-forest-labs/FLUX.1-schnell
           HF_VIDEO_SPACE_ID: ShaundeOoO/ltx-2.3-fast
-          AI_BROLL_MAX_ANIMATED: ${{ inputs.ai_animated_scenes || '3' }}
-          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
-          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_BROLL_MODEL: gemini-3.6-flash
-          BROLL_VISUAL_MIN_SCORE: "72"
-          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
-          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
-          R2_OWN_FOOTAGE_ROOT: ""
+          AI_BROLL_MAX_ANIMATED: ${{ inputs.ai_animated_scenes || '1' }}
           TAMIL_MALE_VOICE: ta-IN-ValluvarNeural
           VIDEO_IDS_FILE: data/render_queue.txt
           ASSET_FAILURES_FILE: outputs/asset-failure-ids.txt
@@ -124,10 +114,9 @@ jobs:
             mkdir -p "outputs/$video_id"
             if [[ -f outputs/asset-failure-ids.txt ]] && grep -Fxq "$video_id" outputs/asset-failure-ids.txt; then
               echo "$video_id" >> outputs/failed-render-ids.txt
-              echo "ASSET_OR_VOICE_FAILED" > "outputs/$video_id/render-mode.txt"
+              echo "AI_ASSET_FAILED" > "outputs/$video_id/render-mode.txt"
               continue
             fi
-            printf '%s\n' "$video_id" > data/single-render-queue.txt
             if (
               set -euo pipefail
               python prepare_remotion_job.py "data/video_jobs/${video_id}.json"
@@ -139,14 +128,8 @@ jobs:
                 --props="$props_path" \
                 --codec=h264 --crf=18 --concurrency=2
             ); then
-              echo "REMOTION_AI_ENGAGING" > "outputs/$video_id/render-mode.txt"
-              echo "Rendered $video_id with AI-first Remotion pipeline."
-              continue
-            fi
-            echo "::warning::Remotion failed for $video_id; trying isolated FFmpeg fallback."
-            if VIDEO_IDS_FILE=data/single-render-queue.txt python render_free_approved.py; then
-              echo "$video_id" >> outputs/fallback-render-ids.txt
-              echo "FFMPEG_FALLBACK" > "outputs/$video_id/render-mode.txt"
+              echo "REMOTION_AI_ONLY" > "outputs/$video_id/render-mode.txt"
+              echo "Rendered $video_id with AI-only representative visuals."
             else
               echo "$video_id" >> outputs/failed-render-ids.txt
               echo "FAILED" > "outputs/$video_id/render-mode.txt"
@@ -202,10 +185,11 @@ jobs:
           {
             echo "### Engaging AI property video"
             echo ""
-            echo "- Custom Tamil Nadu / Coimbatore-style representative visuals are generated first."
-            echo "- Other sellers' listing media is not used by the AI visual stage."
-            echo "- Pexels/Pixabay are emergency fallback only if no AI scene pack is usable."
-            echo "- The final Reel and individual AI scenes are available in the workflow artifact."
+            echo "- AI stills use Hugging Face Inference Providers, so they do not consume ZeroGPU daily minutes."
+            echo "- LTX ZeroGPU is reserved for only the requested high-impact animated scenes."
+            echo "- Remaining scenes use cinematic motion from newly generated AI stills."
+            echo "- Pexels/Pixabay fallback is disabled in this workflow."
+            echo "- If the AI scene pack cannot be generated, the run fails instead of producing an old stock-style Reel."
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Fail incomplete run after artifact upload
