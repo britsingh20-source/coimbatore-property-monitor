@@ -34,7 +34,10 @@ def has_complete_ai(video_id: str) -> bool:
         return False
     for row in scenes:
         video = Path(str(row.get("video") or ""))
+        still = Path(str(row.get("still") or ""))
         if not video.exists() or video.stat().st_size < 100_000:
+            return False
+        if not still.exists() or still.stat().st_size < 50_000:
             return False
     return True
 
@@ -53,10 +56,14 @@ def main() -> None:
     for video_id in queue:
         try:
             job = json.loads((JOBS / f"{video_id}.json").read_text(encoding="utf-8"))
-            if not os.environ.get("HF_TOKEN", "").strip():
-                raise RuntimeError("HF_TOKEN is required for the AI-only engaging visual workflow")
 
-            generate_for_job(job)
+            if has_complete_ai(video_id):
+                print(f"Reusing complete cached AI scene pack for {video_id}; no HF image credits consumed.")
+            else:
+                if not os.environ.get("HF_TOKEN", "").strip():
+                    raise RuntimeError("HF_TOKEN is required when a complete cached AI scene pack is unavailable")
+                generate_for_job(job)
+
             if not has_complete_ai(video_id):
                 raise RuntimeError(f"AI scene pack is incomplete for {video_id}; refusing stock fallback")
 
