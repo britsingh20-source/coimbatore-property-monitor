@@ -24,6 +24,7 @@ concurrency:
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   generate:
@@ -49,6 +50,31 @@ jobs:
           else
             echo "has_jobs=false" >> "$GITHUB_OUTPUT"
             echo "No renderable jobs selected." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Restore prior AI scene packs
+        if: steps.select.outputs.has_jobs == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/ai_broll /tmp/ai-artifacts
+          mapfile -t artifact_ids < <(
+            gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts?per_page=20" \
+              --jq '.artifacts[] | select(.expired == false and (.name | startswith("engaging-ai-property-videos-"))) | .id' \
+              | head -n 6
+          )
+          if [[ ${#artifact_ids[@]} -eq 0 ]]; then
+            echo "No previous AI artifacts found; generation will create a fresh scene pack."
+          else
+            for artifact_id in "${artifact_ids[@]}"; do
+              zip="/tmp/ai-artifacts/${artifact_id}.zip"
+              if gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${artifact_id}/zip" > "$zip"; then
+                unzip -oq "$zip" 'assets/ai_broll/*' -d . || true
+                echo "Restored AI assets from artifact ${artifact_id}."
+              fi
+            done
           fi
 
       - uses: actions/setup-python@v6
@@ -185,11 +211,11 @@ jobs:
           {
             echo "### Engaging AI property video"
             echo ""
-            echo "- AI stills use Hugging Face Inference Providers, so they do not consume ZeroGPU daily minutes."
+            echo "- Complete AI scene packs from recent artifacts are reused before any new image generation."
+            echo "- Hugging Face credits are consumed only when a required AI scene pack does not already exist."
             echo "- LTX ZeroGPU is reserved for only the requested high-impact animated scenes."
-            echo "- Remaining scenes use cinematic motion from newly generated AI stills."
             echo "- Pexels/Pixabay fallback is disabled in this workflow."
-            echo "- If the AI scene pack cannot be generated, the run fails instead of producing an old stock-style Reel."
+            echo "- If neither a complete cached pack nor fresh AI generation is available, the run fails instead of producing an old stock-style Reel."
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Fail incomplete run after artifact upload
