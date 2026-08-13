@@ -464,11 +464,12 @@
     },
     "G9HFXKPGDAw": {
       "attempts": 2,
+      "completed_at": "2026-08-13T00:00:56.391563+00:00",
       "first_seen_at": "2026-08-12T15:17:20.663143+00:00",
       "last_attempt_at": "2026-08-12T19:30:20.469939+00:00",
-      "last_error": "sequence item 2: expected str instance, dict found",
+      "last_error": "",
       "next_retry_at": "2026-08-12T23:30:20.469951+00:00",
-      "status": "retry_pending"
+      "status": "archived_non_target"
     },
     "GHUm7c6Biyk": {
       "attempts": 0,
