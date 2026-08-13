@@ -140,7 +140,8 @@ def main() -> None:
     print(f"Prompt: {prompt}", flush=True)
     print(f"Profile: {args.resolution}, {args.duration}s, audio=false", flush=True)
 
-    client = Client(args.space_id, token=hf_token)
+    # gradio_client 1.x (Gradio 5 generation) uses hf_token. Gradio 6 renamed it to token.
+    client = Client(args.space_id, hf_token=hf_token)
     result = client.predict(
         image_url=image_data_uri(source_image),
         prompt=prompt,
