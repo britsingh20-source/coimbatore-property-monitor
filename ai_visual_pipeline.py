@@ -2,6 +2,7 @@ import argparse
 import base64
 import json
 import os
+import re
 import shutil
 import subprocess
 from pathlib import Path
@@ -40,33 +41,109 @@ def locality(job: dict) -> str:
     return value.split(",")[0].strip() or "Coimbatore"
 
 
+def property_kind(job: dict) -> str:
+    ptype = str((job.get("property") or {}).get("property_type") or "property").lower()
+    if any(word in ptype for word in ("flat", "apartment")):
+        return "flat"
+    if any(word in ptype for word in ("villa", "house", "independent")):
+        return "house"
+    if any(word in ptype for word in ("plot", "land", "site")):
+        return "land"
+    return "home"
+
+
+def compact_size(job: dict) -> str:
+    prop = job.get("property") or {}
+    area = str(prop.get("built_up_area") or "").strip()
+    return area if present(area) else "compact realistic size"
+
+
+def floor_hint(job: dict) -> str:
+    facts = str(job.get("verified_facts") or "")
+    match = re.search(r"\b(\d+)(?:st|nd|rd|th)\s+floor\b", facts, flags=re.I)
+    return f"The listed unit is on the {match.group(1)} floor, but do not highlight one exact window or imply the generated building is the actual property. " if match else ""
+
+
 def common_prompt(job: dict) -> str:
     prop = job.get("property") or {}
     ptype = str(prop.get("property_type") or "residential property")
     bhk = str(prop.get("bhk") or "") if present(prop.get("bhk")) else ""
     loc = locality(job)
     title = " ".join(x for x in (bhk, ptype) if x).strip()
+    area = compact_size(job)
     return (
-        f"Photorealistic representative real-estate advertising visual for {title} in the style of {loc}, Coimbatore, Tamil Nadu, India. "
-        "Authentic contemporary South Indian residential design, believable Tamil Nadu materials and proportions, tropical climate, realistic Indian detailing. "
-        "Vertical 9:16 composition, premium property photography, natural daylight, visually engaging but believable. "
-        "No people, no text, no logos, no watermarks, no religious buildings, no flags, no mountains, no tea estates, no foreign suburban architecture. "
+        f"Photorealistic representative real-estate advertising visual for a {title} in {loc}, Coimbatore, Tamil Nadu, India. "
+        f"The listed built-up size is {area}; keep all spaces and architecture proportionate to that market segment. "
+        "Use authentic contemporary Tamil Nadu residential design, realistic Indian construction details, tropical daylight and believable local proportions. "
+        "Create an engaging premium property-marketing composition with foreground depth, leading lines, natural shadows and a clean focal point, while remaining physically plausible. "
+        "Vertical 9:16 composition. No people, no text, no logos, no watermarks, no religious buildings, no flags, no mountains, no tea estates and no foreign suburban architecture. "
+        "Do not create impossible cantilevers, floating rooms, buildings spanning over a public road, roads passing through a building, duplicate doors/windows, warped railings, fantasy geometry or luxury scale inconsistent with the property. "
         "Representative visual only; do not recreate or copy any real listing image. "
     )
 
 
 def build_prompt(job: dict, scene: str) -> str:
     base = common_prompt(job)
-    details = {
-        "exterior": "Strong cinematic hero exterior of a newly constructed Tamil Nadu independent home or locally plausible residential building, clean frontage, compound wall, practical covered parking, flat-roof South Indian architecture, ordinary Coimbatore residential context.",
-        "location": "Calm Coimbatore residential neighbourhood with locally plausible independent houses and small apartment buildings, trees, utility poles and a realistic local road; no famous landmark and do not imply this is the exact street.",
-        "road": "Believable Tamil Nadu residential access road with houses on both sides, local tar road, modest setbacks, realistic utility poles and greenery, no highway, no flyover, no heavy traffic.",
-        "living": "Engaging modern Indian living room suitable for a Coimbatore home, practical TV wall, sofa, vitrified tile or stone floor, warm wood accents, realistic room size, uncluttered, no people.",
-        "kitchen": "Practical premium Indian modular kitchen suitable for a Coimbatore home, realistic countertop, overhead and base cabinets, chimney, tiled backsplash and efficient compact layout, no food preparation, no people.",
-        "bedroom": "Comfortable modern Indian bedroom suitable for a Coimbatore residence, realistic wardrobe, cot, side table, curtains and warm neutral materials, believable room proportions, no people.",
-        "land": "Believable residential house-site layout in Tamil Nadu, vacant plotted land with local road access and modest surrounding houses, no farmland, no plantation, no mountains, no fake boundary measurements.",
-    }[scene]
-    return base + details
+    kind = property_kind(job)
+    area = compact_size(job)
+    hint = floor_hint(job)
+
+    if kind == "flat":
+        details = {
+            "exterior": (
+                "Show one coherent mid-rise Coimbatore apartment building, approximately ground/stilt plus 3 to 5 residential floors, set completely behind the road edge. "
+                "Use a practical entrance, compound/gate, realistic stilt or ground-level parking, balconies aligned vertically, normal structural columns and a believable blue/white/neutral South Indian facade. "
+                "The building must NOT bridge across the road, straddle the street, float above another house or narrow unrealistically into a tower. "
+                + hint
+                + "Use a low three-quarter cinematic camera angle with a foreground wall/tree edge for depth."
+            ),
+            "location": (
+                "Show a realistic Saravanampatti-style residential neighbourhood with a normal-width local tar road continuing unobstructed through the frame. "
+                "Place apartment buildings and independent houses only on the sides of the road, with utility poles, compound walls and tropical greenery. "
+                "No building may sit in, bridge over or block the road. Use a cinematic street-level establishing composition with leading lines."
+            ),
+            "road": (
+                "Show a believable Coimbatore residential access road as the main subject, with modest apartment buildings and houses safely set back on both sides. "
+                "Keep the road continuous, physically usable and correctly scaled; include realistic utility poles and greenery. No highway, flyover, impossible structures or property spanning over the carriageway."
+            ),
+            "living": (
+                f"Show a compact furnished 1 BHK Indian apartment living room consistent with about {area}, not a villa-sized hall. "
+                "Use a practical two/three-seat sofa, TV wall, compact dining transition if space permits, vitrified flooring, warm laminate accents and realistic circulation. "
+                "Use a cinematic corner composition with foreground depth and natural window light."
+            ),
+            "kitchen": (
+                f"Show a compact practical Indian modular kitchen appropriate to a {area} 1 BHK flat. "
+                "Use a straight or small L-shaped layout, realistic counter depth, upper/base cabinets, chimney, tiled backsplash and sensible appliance clearance. "
+                "No oversized island, luxury villa kitchen or impossible cabinet geometry. Use a clean diagonal composition with depth."
+            ),
+            "bedroom": (
+                f"Show a compact furnished Indian bedroom appropriate to a {area} 1 BHK flat. "
+                "Use one realistic cot, a practical wardrobe, one small side table and simple curtains with believable walking clearance. "
+                "No oversized hotel suite, extra beds or impossible room proportions. Use warm natural light and a premium but relatable composition."
+            ),
+            "land": "Show only a normal urban residential site context if required; never imply the flat owns vacant land.",
+        }
+    elif kind == "house":
+        details = {
+            "exterior": "Show one coherent contemporary Tamil Nadu independent house or villa entirely within its plot, flat-roof South Indian architecture, compound wall, gate and practical car parking. Use a cinematic three-quarter reveal with foreground depth; no impossible cantilevers or foreign suburban styling.",
+            "location": "Show a realistic Coimbatore residential neighbourhood with independent houses on both sides of an unobstructed local road, tropical greenery and utility poles. Use a cinematic street-level establishing composition.",
+            "road": "Show a believable Tamil Nadu residential access road with houses set back on both sides, realistic utility poles and greenery, no highway, flyover or blocked carriageway.",
+            "living": "Show a realistic modern Indian living room proportionate to the property, practical sofa and TV wall, warm wood accents, believable circulation and premium natural daylight.",
+            "kitchen": "Show a practical premium Indian modular kitchen with realistic counters, cabinets, chimney and backsplash, no oversized foreign-style island unless the property scale supports it.",
+            "bedroom": "Show a comfortable modern Tamil Nadu bedroom with realistic cot, wardrobe, side table and curtains, believable proportions and warm natural light.",
+            "land": "Show a believable residential house-site context in Tamil Nadu without fake measurements or survey markings.",
+        }
+    else:
+        details = {
+            "exterior": "Show one coherent, physically plausible Tamil Nadu residential building appropriate to the stated property type and scale, with clean frontage and realistic local construction.",
+            "location": "Show a realistic Coimbatore residential neighbourhood with an unobstructed local road and buildings only on the roadside plots.",
+            "road": "Show a believable Tamil Nadu residential access road, correctly scaled and unobstructed, with local houses and greenery.",
+            "living": "Show a realistic modern Indian living area proportionate to the stated property size.",
+            "kitchen": "Show a practical Indian modular kitchen proportionate to the stated property size.",
+            "bedroom": "Show a realistic Indian bedroom proportionate to the stated property size.",
+            "land": "Show believable residential plotted land in Tamil Nadu with local road access and modest surrounding houses, no plantation, mountain or fake measurements.",
+        }
+    return base + details[scene]
 
 
 def generate_still(client: InferenceClient, prompt: str, destination: Path, seed: int) -> None:
@@ -107,7 +184,7 @@ def animate_still(client: Client, still: Path, prompt: str, destination: Path, s
     result = client.predict(
         image_url=image_data_uri(still),
         prompt=prompt + " Add subtle professional stabilized camera movement, gentle push-in or lateral parallax, preserve architecture and geometry, no morphing.",
-        negative_prompt="people, text, watermark, logo, warped architecture, extra doors, extra windows, fantasy, religious building, foreign suburban house",
+        negative_prompt="people, text, watermark, logo, warped architecture, extra doors, extra windows, fantasy, religious building, foreign suburban house, building over road, blocked road, impossible cantilever",
         resolution="720p",
         duration=5,
         seed=seed,
@@ -123,7 +200,7 @@ def still_motion_fallback(still: Path, destination: Path) -> None:
     subprocess.run(
         [
             "ffmpeg", "-y", "-loglevel", "error", "-loop", "1", "-i", str(still),
-            "-vf", "scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280,zoompan=z='min(zoom+0.0008,1.06)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d=121:s=720x1280:fps=24,format=yuv420p",
+            "-vf", "scale=720:1280:force_original_aspect_ratio=increase,crop=720:1280,zoompan=z='min(zoom+0.00125,1.09)':x='iw/2-(iw/zoom/2)+sin(on/17)*4':y='ih/2-(ih/zoom/2)+cos(on/23)*3':d=121:s=720x1280:fps=24,format=yuv420p",
             "-t", "5.05", "-an", "-c:v", "libx264", "-preset", "medium", "-crf", "18", str(destination),
         ],
         check=True,
@@ -141,8 +218,6 @@ def generate_for_job(job: dict, max_animated: int = DEFAULT_ANIMATED) -> dict:
         shutil.rmtree(root)
     root.mkdir(parents=True, exist_ok=True)
 
-    # IMPORTANT: still images use HF Inference Providers, not a ZeroGPU Space.
-    # This prevents six image generations from consuming the user's 5-minute daily ZeroGPU quota.
     image_client = InferenceClient(provider="auto", api_key=token)
     video_client = Client(VIDEO_SPACE, hf_token=token) if max_animated > 0 else None
     scenes = scene_names(job)
@@ -175,7 +250,6 @@ def generate_for_job(job: dict, max_animated: int = DEFAULT_ANIMATED) -> dict:
                 animate_still(video_client, still, prompt, clip, 2000 + index)
                 entry["animated_backend"] = "ltx-2.3-zerogpu"
             except Exception as error:
-                # A video-quota failure must never send us back to Pexels. We keep the new AI still and animate it locally.
                 entry["video_error"] = str(error)[:700]
                 still_motion_fallback(still, clip)
         else:
