@@ -14,7 +14,7 @@ permissions:
 jobs:
   generate-ai-broll:
     runs-on: ubuntu-24.04
-    timeout-minutes: 90
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v5
 
@@ -93,18 +93,27 @@ jobs:
               raise SystemExit(f'LTX source bundle is still too large for reliable kernel upload: {size} bytes')
           PY
 
-      - name: Disable online prompt enhancer for offline Kaggle run
+      - name: Tune offline POC for P100 runtime
         shell: bash
         run: |
           python - <<'PY'
           from pathlib import Path
           p = Path('kaggle_ai_broll.py')
           text = p.read_text(encoding='utf-8')
-          needle = '    cfg["text_encoder_model_name_or_path"] = str(text_model_root)\n'
-          replacement = needle + '    cfg["prompt_enhancement_words_threshold"] = 0\n    mark("prompt_enhancer=disabled_offline")\n'
-          if needle not in text:
+
+          config_needle = '    cfg["text_encoder_model_name_or_path"] = str(text_model_root)\n'
+          config_replacement = config_needle + '    cfg["prompt_enhancement_words_threshold"] = 0\n    mark("prompt_enhancer=disabled_offline")\n'
+          if config_needle not in text:
               raise SystemExit('Could not locate LTX config patch point in kaggle_ai_broll.py')
-          p.write_text(text.replace(needle, replacement, 1), encoding='utf-8')
+          text = text.replace(config_needle, config_replacement, 1)
+
+          profile_old = '\"--height\", \"512\", \"--width\", \"320\", \"--num_frames\", \"49\"'
+          profile_new = '\"--height\", \"384\", \"--width\", \"256\", \"--num_frames\", \"33\"'
+          if profile_old not in text:
+              raise SystemExit('Could not locate POC inference profile in kaggle_ai_broll.py')
+          text = text.replace(profile_old, profile_new, 1)
+          text = text.replace('    mark("stage=run_inference_offline")\n', '    mark("stage=run_inference_offline")\n    mark("poc_profile=384x256x33")\n', 1)
+          p.write_text(text, encoding='utf-8')
           PY
 
       - name: Generate one AI B-roll clip on Kaggle free GPU
@@ -115,6 +124,7 @@ jobs:
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          KAGGLE_BROLL_MAX_POLLS: "300"
         run: |
           python kaggle_ai_broll.py \
             --video-id "${{ inputs.video_id }}" \
