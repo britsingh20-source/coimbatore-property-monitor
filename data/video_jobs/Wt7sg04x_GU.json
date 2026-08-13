@@ -1,0 +1,130 @@
+{
+  "video_id": "Wt7sg04x_GU",
+  "source_url": "https://www.youtube.com/watch?v=Wt7sg04x_GU",
+  "property_location": "Vadavalli to Edayarpalayam Road, near Jaycee Higher Secondary School, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Land / Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "5.5 cents (40 ft x 60 ft)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹23 Lakhs per cent",
+    "facing": "North",
+    "road_width": "30 feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "Location: Vadavalli to Idayarpalayam road near Jaycee school, Land area: 5.5 cents, Measurement: 40x60 feet, Facing: North facing, Road width: 30 feet tar road, Price: 23 lakhs per cent, Contact: 9345425595",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, conversational local presenter talking directly to camera with clear dynamic visuals",
+    "hook_strategy": "Highlight key prime location in Vadavalli to Edayarpalayam road near landmark school",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை வடவள்ளி - இடையர்பாளையம் ரோடுல, Jaycee School பக்கத்துல ஒரு Prime Location-ல Plot தேடுறீங்களா?",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தம் 5.5 Cents அளவுள்ள Plot. இதோட Measurement பாத்தீங்கனா 40 feet by 60 feet.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "kitchen"
+        ],
+        "vfx": "dimension-overlay",
+        "purpose": "property-size"
+      },
+      {
+        "name": "road",
+        "voice": "இந்த Plot-க்கு முன்னாடி 30 feet அகலமான நல்ல Tar Road வசதியும் இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "road-width-graphic",
+        "purpose": "access-details"
+      },
+      {
+        "name": "facing",
+        "voice": "அதே மாதிரி, இந்த Plot ஓட Facing பாத்தீங்கனா North facing.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "compass-north-highlight",
+        "purpose": "facing-details"
+      },
+      {
+        "name": "price",
+        "voice": "இங்க இடத்தோட Price ஒரு Cent-க்கு 23 Lakhs வருது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "price-tag-callout",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல போயிட்டு Site visit பண்ணவோ, மத்த Details தெரிஞ்சுக்கவோ 9345425595-க்கு Call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "contact-card-pop",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/Wt7sg04x_GU/",
+  "optional_owned_audio": "assets/audio/Wt7sg04x_GU.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Vacant plot site located within walkable distance from the main road, accessible via a 30-foot wide road near Jaycee School.. Neighbourhood: Prominent road-facing commercial and residential locality with shops, overhead electrical lines, schools, and well-connected asphalt roads nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Vacant plot site located within walkable distance from the main road, accessible via a 30-foot wide road near Jaycee School.. Neighbourhood: Prominent road-facing commercial and residential locality with shops, overhead electrical lines, schools, and well-connected asphalt roads nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Vacant plot site located within walkable distance from the main road, accessible via a 30-foot wide road near Jaycee School.. Neighbourhood: Prominent road-facing commercial and residential locality with shops, overhead electrical lines, schools, and well-connected asphalt roads nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Vacant plot site located within walkable distance from the main road, accessible via a 30-foot wide road near Jaycee School.. Neighbourhood: Prominent road-facing commercial and residential locality with shops, overhead electrical lines, schools, and well-connected asphalt roads nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
