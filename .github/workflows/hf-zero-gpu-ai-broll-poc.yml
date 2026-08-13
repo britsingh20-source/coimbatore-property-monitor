@@ -1,0 +1,83 @@
+name: HF ZeroGPU AI B-roll POC
+
+on:
+  workflow_dispatch:
+    inputs:
+      video_id:
+        description: "Property video ID to animate with Hugging Face ZeroGPU"
+        required: true
+        type: string
+      duration:
+        description: "Video duration in seconds (5-10 supported by current Space)"
+        required: false
+        default: "5"
+        type: string
+      resolution:
+        description: "Output resolution"
+        required: false
+        default: "720p"
+        type: choice
+        options:
+          - 720p
+          - 1080p
+
+permissions:
+  contents: read
+
+jobs:
+  generate-hf-ai-broll:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install media dependencies
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install "gradio_client>=1.13,<2"
+
+      - name: Prepare property media
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          TAMIL_MALE_VOICE: ta-IN-ValluvarNeural
+          VIDEO_IDS_FILE: data/hf-zero-gpu-broll-queue.txt
+          ASSET_FAILURES_FILE: outputs/hf-zero-gpu-broll-asset-failures.txt
+        shell: bash
+        run: |
+          printf '%s\n' "${{ inputs.video_id }}" > data/hf-zero-gpu-broll-queue.txt
+          python prepare_free_assets.py
+
+      - name: Generate AI B-roll on Hugging Face ZeroGPU
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_SPACE_ID: ShaundeOoO/ltx-2.3-fast
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+        run: |
+          python hf_zero_gpu_broll.py \
+            --video-id "${{ inputs.video_id }}" \
+            --duration "${{ inputs.duration }}" \
+            --resolution "${{ inputs.resolution }}"
+
+      - name: Show result
+        if: success()
+        run: |
+          cat "outputs/hf-zero-gpu-ai-broll/${{ inputs.video_id }}/manifest.json"
+          echo "HF ZeroGPU AI B-roll uploaded to R2 under ai-broll/${{ inputs.video_id }}/"
