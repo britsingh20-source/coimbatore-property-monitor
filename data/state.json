@@ -386,11 +386,11 @@
       "status": "video_queued"
     },
     "E4pLFLR2lDc": {
-      "attempts": 3,
+      "attempts": 4,
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
-      "last_attempt_at": "2026-08-12T17:20:13.814120+00:00",
-      "last_error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 46.216670767s.', 'code': 'too_many_requests'}}",
-      "next_retry_at": "2026-08-13T01:20:13.814129+00:00",
+      "last_attempt_at": "2026-08-13T03:04:00.158866+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 59.855419912s.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-08-13T19:04:00.158876+00:00",
       "status": "retry_pending"
     },
     "E6dib-fIFts": {
@@ -435,6 +435,14 @@
       "last_error": "",
       "next_retry_at": "2026-08-08T09:59:53.691612+00:00",
       "status": "archived_non_target"
+    },
+    "FrJfqAQAmk0": {
+      "attempts": 1,
+      "first_seen_at": "2026-08-13T03:02:26.533034+00:00",
+      "last_attempt_at": "2026-08-13T03:02:54.213268+00:00",
+      "last_error": "sequence item 2: expected str instance, dict found",
+      "next_retry_at": "2026-08-13T05:02:54.213278+00:00",
+      "status": "retry_pending"
     },
     "Fv6rN8-vfC0": {
       "attempts": 5,
