@@ -5,7 +5,6 @@ from pathlib import Path
 from ai_visual_pipeline import generate_for_job
 from engaging_broll_pool import source_engaging_broll
 from map_assets import render_map_sequence
-from media_sources import source_property_media
 from tamil_voiceover import create_voiceover
 from video_pipeline import JOBS
 
@@ -21,9 +20,23 @@ def queued_ids() -> set[str]:
     }
 
 
-def has_ai(video_id: str) -> bool:
+def has_complete_ai(video_id: str) -> bool:
     root = Path("assets/ai_broll") / video_id
-    return root.exists() and any(path.stat().st_size >= 100_000 for path in root.rglob("*.mp4"))
+    manifest_path = root / "manifest.json"
+    if not manifest_path.exists():
+        return False
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return False
+    scenes = manifest.get("scenes") or []
+    if not scenes:
+        return False
+    for row in scenes:
+        video = Path(str(row.get("video") or ""))
+        if not video.exists() or video.stat().st_size < 100_000:
+            return False
+    return True
 
 
 def main() -> None:
@@ -31,30 +44,32 @@ def main() -> None:
     if not queue:
         print("No queued IDs. Nothing prepared.")
         return
+
     failure_path = Path(os.environ.get("ASSET_FAILURES_FILE", "outputs/asset-failure-ids.txt"))
     failure_path.parent.mkdir(parents=True, exist_ok=True)
     failure_path.write_text("", encoding="utf-8")
     failures = []
+
     for video_id in queue:
         try:
             job = json.loads((JOBS / f"{video_id}.json").read_text(encoding="utf-8"))
-            if os.environ.get("HF_TOKEN", "").strip():
-                try:
-                    generate_for_job(job)
-                except Exception as error:
-                    print(f"AI visual generation unavailable for {video_id}; using emergency licensed fallback: {error}")
-            else:
-                print("HF_TOKEN not configured; using emergency licensed fallback")
+            if not os.environ.get("HF_TOKEN", "").strip():
+                raise RuntimeError("HF_TOKEN is required for the AI-only engaging visual workflow")
 
-            media = [] if has_ai(video_id) else source_property_media(job)
+            generate_for_job(job)
+            if not has_complete_ai(video_id):
+                raise RuntimeError(f"AI scene pack is incomplete for {video_id}; refusing stock fallback")
+
             clips = source_engaging_broll(job)
             maps = render_map_sequence(job)
             voice = create_voiceover(job)
-            print(f"Prepared {video_id}: {len(media)} fallback images, {len(clips)} clips, {len(maps)} maps, voice={voice}")
+            print(f"Prepared {video_id}: AI-only clips={len(clips)}, maps={len(maps)}, voice={voice}")
         except Exception as error:
             failures.append(f"{video_id}: {error}")
             with failure_path.open("a", encoding="utf-8") as handle:
                 handle.write(f"{video_id}\n")
+            print(f"AI-ONLY ASSET FAILURE {video_id}: {error}")
+
     if failures:
         raise RuntimeError("\n".join(failures))
 
