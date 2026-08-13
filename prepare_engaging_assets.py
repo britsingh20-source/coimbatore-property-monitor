@@ -58,10 +58,16 @@ def main() -> None:
             job = json.loads((JOBS / f"{video_id}.json").read_text(encoding="utf-8"))
 
             if has_complete_ai(video_id):
-                print(f"Reusing complete cached AI scene pack for {video_id}; no HF image credits consumed.")
+                print(f"Reusing complete cached AI scene pack for {video_id}; no image-generation credits consumed.")
             else:
-                if not os.environ.get("HF_TOKEN", "").strip():
-                    raise RuntimeError("HF_TOKEN is required when a complete cached AI scene pack is unavailable")
+                has_pollinations = bool(os.environ.get("POLLINATIONS_API_KEY", "").strip())
+                has_hf = bool(os.environ.get("HF_TOKEN", "").strip())
+                if not has_pollinations and not has_hf:
+                    raise RuntimeError(
+                        "A fresh AI scene pack is required. Configure POLLINATIONS_API_KEY (preferred) or HF_TOKEN."
+                    )
+                backend = "Pollinations Flux" if has_pollinations else "Hugging Face fallback"
+                print(f"Generating fresh AI scene pack for {video_id} with {backend}.")
                 generate_for_job(job)
 
             if not has_complete_ai(video_id):
