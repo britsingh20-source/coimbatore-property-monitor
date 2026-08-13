@@ -13,9 +13,9 @@ on:
         default: false
         type: boolean
       ai_animated_scenes:
-        description: "Number of AI stills to animate with LTX ZeroGPU; remaining AI stills use cinematic local motion"
+        description: "Optional LTX animated scenes; 0 keeps the workflow image-first"
         required: false
-        default: "1"
+        default: "0"
         type: string
 
 concurrency:
@@ -116,10 +116,12 @@ jobs:
         if: steps.select.outputs.has_jobs == 'true'
         continue-on-error: true
         env:
+          POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
+          POLLINATIONS_IMAGE_MODEL: flux
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HF_IMAGE_MODEL: black-forest-labs/FLUX.1-schnell
           HF_VIDEO_SPACE_ID: ShaundeOoO/ltx-2.3-fast
-          AI_BROLL_MAX_ANIMATED: ${{ inputs.ai_animated_scenes || '1' }}
+          AI_BROLL_MAX_ANIMATED: ${{ inputs.ai_animated_scenes || '0' }}
           TAMIL_MALE_VOICE: ta-IN-ValluvarNeural
           VIDEO_IDS_FILE: data/render_queue.txt
           ASSET_FAILURES_FILE: outputs/asset-failure-ids.txt
@@ -212,10 +214,11 @@ jobs:
             echo "### Engaging AI property video"
             echo ""
             echo "- Complete AI scene packs from recent artifacts are reused before any new image generation."
-            echo "- Hugging Face credits are consumed only when a required AI scene pack does not already exist."
-            echo "- LTX ZeroGPU is reserved for only the requested high-impact animated scenes."
+            echo "- Fresh images use Pollinations Flux first when POLLINATIONS_API_KEY is configured."
+            echo "- Hugging Face image generation remains a secondary fallback only."
+            echo "- The default is image-first: LTX animation is disabled unless explicitly requested."
             echo "- Pexels/Pixabay fallback is disabled in this workflow."
-            echo "- If neither a complete cached pack nor fresh AI generation is available, the run fails instead of producing an old stock-style Reel."
+            echo "- If neither cached AI assets nor an AI image backend is available, the run fails instead of producing stock footage."
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Fail incomplete run after artifact upload
