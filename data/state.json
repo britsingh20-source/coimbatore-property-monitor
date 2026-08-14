@@ -748,11 +748,12 @@
     },
     "OiZovpBodm4": {
       "attempts": 2,
+      "completed_at": "2026-08-14T19:17:44.942059+00:00",
       "first_seen_at": "2026-08-14T11:59:36.277229+00:00",
       "last_attempt_at": "2026-08-14T15:09:56.341316+00:00",
-      "last_error": "sequence item 2: expected str instance, dict found",
+      "last_error": "",
       "next_retry_at": "2026-08-14T19:09:56.341327+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "P9NPquna880": {
       "attempts": 0,

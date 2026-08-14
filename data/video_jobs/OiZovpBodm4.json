@@ -1,0 +1,141 @@
+{
+  "video_id": "OiZovpBodm4",
+  "source_url": "https://www.youtube.com/watch?v=OiZovpBodm4",
+  "property_location": "Mondipalayam, Annur, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot / Independent House / Villa",
+    "bhk": "1 BHK, 2 BHK, 3 BHK available",
+    "land_area": "1.65 Cents to 2.75 Cents (in an 18-acre township layout)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "Plot: ₹4.90 Lakhs per cent (EMI from ₹5,000/month); Villa: ₹17 Lakhs (1 BHK, EMI ₹12,000/month), ₹25 - ₹28 Lakhs (2 BHK), ₹37.50 Lakhs (3 BHK)",
+    "facing": "North, East",
+    "road_width": "23 ft, 30 ft, 33 ft",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP & RERA Approved"
+  },
+  "verified_facts": "Project name: Maduram in Annur / Mondipalayam, Coimbatore., 18-acre layout containing 384 DTCP & RERA approved plots., Land rate is ₹4.90 Lakhs per cent with EMI options starting at ₹5,000/month., House constructions available: 1 BHK from ₹17 Lakhs (EMI ₹12,000/month), 2 BHK from ₹25-28 Lakhs, and 3 BHK at ₹37.50 Lakhs., Bank loan facility available up to 80-95% for plot and construction.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera with smooth, high-retention transitions",
+    "hook_strategy": "Highlight the massive 18-acre township layout in Mondipalayam near Saravanampatti with affordable plots starting from ₹4.90 Lakhs per cent",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை அண்ணூர் மொண்டிபாளையத்துல, சரவணம்பட்டி பக்கத்துல அமைஞ்சிருக்கற ஒரு 18-acre township layout பத்திதான் பாக்க போறோம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல 1.65 சென்ட்ல இருந்து 2.75 சென்ட் வரைக்கும் அழகான plots பிரிச்சிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "plot-boundary-highlight",
+        "purpose": "land_details"
+      },
+      {
+        "name": "road",
+        "voice": "பாத்தீங்கனா layout-க்குள்ள 23 அடி, 30 அடி, மற்றும் 33 அடி அகலமான blacktop tar roads அமைச்சிருக்காங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room"
+        ],
+        "vfx": "text-overlay-road-width",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "facing",
+        "voice": "அதே மாதிரி, இங்க உங்களுக்கு North மற்றும் East facing plots தேர்வு பண்ணிக்க முடியும்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "compass-direction-badge",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "approval",
+        "voice": "இது முழுமையா DTCP மற்றும் RERA approved site. 80-லிருந்து 95% வரைக்கும் bank loan facility-யும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "approval-stamp-badge",
+        "purpose": "trust_factor"
+      },
+      {
+        "name": "price",
+        "voice": "Plot rate ஒரு சென்ட் ₹4.90 Lakhs தான், EMI ₹5,000-ல இருந்து ஸ்டார்ட் ஆகுது! 1 BHK வீடு ₹17 Lakhs-லிருந்தும், 2 BHK ₹25 to ₹28 Lakhs, 3 BHK ₹37.50 Lakhs-லயும் கிடைக்குது.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag-pop",
+        "purpose": "pricing_and_options"
+      },
+      {
+        "name": "cta",
+        "voice": "உடனே call பண்ணி details தெரிஞ்சுக்கோங்க, நேர்ல வந்து site visit பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "call-now-button",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/OiZovpBodm4/",
+  "optional_owned_audio": "assets/audio/OiZovpBodm4.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Gated residential layout named 'Maduram' featuring a grand white entrance arch, wide asphalt roads with painted white lane markings, boundary wall, street lights, green landscaping, individual water tap outlets, overhead water tank, and a dedicated children's play area.. Neighbourhood: Developing residential township area located near Annur - Sathyamangalam Highway in Mondipalayam, Coimbatore, surrounded by open greenery and coconut palm trees.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Gated residential layout named 'Maduram' featuring a grand white entrance arch, wide asphalt roads with painted white lane markings, boundary wall, street lights, green landscaping, individual water tap outlets, overhead water tank, and a dedicated children's play area.. Neighbourhood: Developing residential township area located near Annur - Sathyamangalam Highway in Mondipalayam, Coimbatore, surrounded by open greenery and coconut palm trees.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Gated residential layout named 'Maduram' featuring a grand white entrance arch, wide asphalt roads with painted white lane markings, boundary wall, street lights, green landscaping, individual water tap outlets, overhead water tank, and a dedicated children's play area.. Neighbourhood: Developing residential township area located near Annur - Sathyamangalam Highway in Mondipalayam, Coimbatore, surrounded by open greenery and coconut palm trees.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Gated residential layout named 'Maduram' featuring a grand white entrance arch, wide asphalt roads with painted white lane markings, boundary wall, street lights, green landscaping, individual water tap outlets, overhead water tank, and a dedicated children's play area.. Neighbourhood: Developing residential township area located near Annur - Sathyamangalam Highway in Mondipalayam, Coimbatore, surrounded by open greenery and coconut palm trees.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
