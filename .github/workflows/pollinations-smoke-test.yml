@@ -1,0 +1,64 @@
+name: Pollinations Fresh Image Smoke Test
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/pollinations-smoke-test.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          pip install -r requirements.txt
+          pip install -r requirements-ai.txt
+
+      - name: Generate fresh Pollinations image pack
+        env:
+          POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
+          POLLINATIONS_IMAGE_MODEL: flux
+          AI_BROLL_MAX_ANIMATED: '0'
+        run: |
+          set -euo pipefail
+          test -n "$POLLINATIONS_API_KEY" || { echo '::error::POLLINATIONS_API_KEY is missing'; exit 1; }
+          printf '2jHws5Fg5Ac\n' > /tmp/pollinations-queue.txt
+          rm -rf assets/ai_broll/2jHws5Fg5Ac
+          python ai_visual_pipeline.py --queue /tmp/pollinations-queue.txt --max-animated 0
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('assets/ai_broll/2jHws5Fg5Ac/manifest.json')
+          data = json.loads(p.read_text())
+          if data.get('image_backend') != 'pollinations':
+              raise SystemExit(f"Expected Pollinations backend, got {data.get('image_backend')}")
+          print('Pollinations backend verified.')
+          for row in data.get('scenes', []):
+              print(row.get('scene'), row.get('image_backend'), row.get('still'))
+          PY
+
+      - name: Upload fresh Pollinations images
+        uses: actions/upload-artifact@v4
+        with:
+          name: pollinations-fresh-images-${{ github.run_number }}
+          path: |
+            assets/ai_broll/2jHws5Fg5Ac/manifest.json
+            assets/ai_broll/2jHws5Fg5Ac/**/*.jpg
+            assets/ai_broll/2jHws5Fg5Ac/**/*.mp4
+          if-no-files-found: error
+          retention-days: 3
