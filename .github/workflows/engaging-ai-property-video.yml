@@ -17,6 +17,11 @@ on:
         required: false
         default: "0"
         type: string
+      force_regenerate_ai:
+        description: "Ignore cached AI scenes and generate a fresh Pollinations image pack"
+        required: false
+        default: false
+        type: boolean
 
 concurrency:
   group: engaging-ai-property-video
@@ -53,7 +58,7 @@ jobs:
           fi
 
       - name: Restore prior AI scene packs
-        if: steps.select.outputs.has_jobs == 'true'
+        if: steps.select.outputs.has_jobs == 'true' && inputs.force_regenerate_ai != true
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
@@ -122,6 +127,7 @@ jobs:
           HF_IMAGE_MODEL: black-forest-labs/FLUX.1-schnell
           HF_VIDEO_SPACE_ID: ShaundeOoO/ltx-2.3-fast
           AI_BROLL_MAX_ANIMATED: ${{ inputs.ai_animated_scenes || '0' }}
+          FORCE_REGENERATE_AI: ${{ inputs.force_regenerate_ai || false }}
           TAMIL_MALE_VOICE: ta-IN-ValluvarNeural
           VIDEO_IDS_FILE: data/render_queue.txt
           ASSET_FAILURES_FILE: outputs/asset-failure-ids.txt
@@ -213,7 +219,7 @@ jobs:
           {
             echo "### Engaging AI property video"
             echo ""
-            echo "- Complete AI scene packs from recent artifacts are reused before any new image generation."
+            echo "- Complete AI scene packs from recent artifacts are reused unless force_regenerate_ai is enabled."
             echo "- Fresh images use Pollinations Flux first when POLLINATIONS_API_KEY is configured."
             echo "- Hugging Face image generation remains a secondary fallback only."
             echo "- The default is image-first: LTX animation is disabled unless explicitly requested."
