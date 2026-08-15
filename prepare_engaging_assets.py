@@ -2,7 +2,7 @@ import json
 import os
 from pathlib import Path
 
-from ai_visual_pipeline import generate_for_job
+from cloudflare_ai_visual_pipeline import generate_for_job
 from engaging_broll_pool import source_engaging_broll
 from map_assets import render_map_sequence
 from tamil_voiceover import create_voiceover
@@ -65,13 +65,23 @@ def main() -> None:
             if has_complete_ai(video_id) and not force_regenerate:
                 print(f"Reusing complete cached AI scene pack for {video_id}; no image-generation credits consumed.")
             else:
+                has_cloudflare = bool(
+                    (os.environ.get("CLOUDFLARE_ACCOUNT_ID", "").strip() or os.environ.get("R2_ACCOUNT_ID", "").strip())
+                    and os.environ.get("CLOUDFLARE_API_TOKEN", "").strip()
+                )
                 has_pollinations = bool(os.environ.get("POLLINATIONS_API_KEY", "").strip())
                 has_hf = bool(os.environ.get("HF_TOKEN", "").strip())
-                if not has_pollinations and not has_hf:
+                if not has_cloudflare and not has_pollinations and not has_hf:
                     raise RuntimeError(
-                        "A fresh AI scene pack is required. Configure POLLINATIONS_API_KEY (preferred) or HF_TOKEN."
+                        "A fresh AI scene pack is required. Configure Cloudflare Workers AI credentials "
+                        "(preferred), POLLINATIONS_API_KEY, or HF_TOKEN."
                     )
-                backend = "Pollinations Flux" if has_pollinations else "Hugging Face fallback"
+                if has_cloudflare:
+                    backend = "Cloudflare Workers AI FLUX.1-schnell"
+                elif has_pollinations:
+                    backend = "Pollinations Flux fallback"
+                else:
+                    backend = "Hugging Face fallback"
                 reason = "forced fresh test" if force_regenerate else "cache miss"
                 print(f"Generating fresh AI scene pack for {video_id} with {backend} ({reason}).")
                 generate_for_job(job)
