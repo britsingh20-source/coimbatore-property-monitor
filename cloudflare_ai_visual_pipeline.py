@@ -1,14 +1,10 @@
-"""Cloudflare Workers AI primary image backend for the property visual pipeline.
-
-This module wraps ai_visual_pipeline without duplicating the property prompt logic.
-Cloudflare FLUX.1-schnell is tried first. Existing Pollinations/Hugging Face
-backends remain secondary fallbacks inside ai_visual_pipeline.
-"""
+"""Cloudflare Workers AI primary image backend for the property visual pipeline."""
 
 import base64
 import io
 import json
 import os
+import re
 from pathlib import Path
 
 import requests
@@ -34,13 +30,6 @@ def _credentials() -> tuple[str, str]:
 
 
 def _portrait_jpeg(image_bytes: bytes, destination: Path) -> None:
-    """Keep the complete generated image while packaging it as a 9:16 JPEG.
-
-    FLUX.1-schnell on Workers AI currently exposes prompt/steps through its
-    REST input schema rather than reliable portrait-size parameters. We avoid
-    destructive cropping: a blurred copy fills the portrait canvas and the
-    complete generated frame is fitted on top.
-    """
     image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
     canvas_size = (768, 1344)
 
@@ -67,6 +56,59 @@ def _portrait_jpeg(image_bytes: bytes, destination: Path) -> None:
         raise RuntimeError(f"Cloudflare image is suspiciously small: {destination.stat().st_size} bytes")
 
 
+def _extract_context(prompt: str) -> tuple[str, str, str]:
+    first = re.search(r"visual for a (.+?) in (.+?), Coimbatore", prompt, flags=re.I)
+    title = first.group(1).strip() if first else "compact residential property"
+    locality = first.group(2).strip() if first else "Coimbatore"
+    area_match = re.search(r"built-up size is ([^;]+)", prompt, flags=re.I)
+    area = area_match.group(1).strip() if area_match else "compact realistic size"
+    return title, locality, area
+
+
+def _cloudflare_prompt(prompt: str, destination: Path) -> str:
+    """Use short, scene-first prompts because FLUX schnell overweights long shared prefixes."""
+    scene = destination.parent.name.lower()
+    title, locality, area = _extract_context(prompt)
+    common = (
+        f"Property context: {title}, {area}, {locality}, Coimbatore, Tamil Nadu, India. "
+        "Photorealistic, realistic South Indian proportions, natural tropical daylight, vertical property-ad composition. "
+        "No people, text, logo, watermark, religious building, fantasy geometry, foreign suburban style or impossible structures. "
+        "Representative AI visual only, not the actual listing."
+    )
+    scene_prompts = {
+        "exterior": (
+            "EXTERIOR BUILDING ONLY. Show one coherent mid-rise Coimbatore apartment building, ground/stilt plus 3 to 5 floors, "
+            "entirely behind the road edge, practical compound gate, realistic parking, aligned balconies and normal structural columns. "
+            "Do not show an interior room. "
+        ),
+        "location": (
+            f"LOCATION STREET ONLY. Show a realistic {locality} residential neighbourhood with an unobstructed local tar road, "
+            "modest apartments and independent houses only on both sides, utility poles, compound walls and tropical greenery. "
+            "Do not show an interior room. "
+        ),
+        "road": (
+            "ACCESS ROAD ONLY. The road must be the main subject: a believable Coimbatore residential road, continuous and usable, "
+            "with modest buildings safely set back on both sides, utility poles and greenery. No highway or flyover. "
+        ),
+        "living": (
+            f"INTERIOR LIVING ROOM ONLY. Show a compact furnished Indian apartment living room appropriate to {area}. "
+            "Include a practical 2-3 seat sofa, TV wall, vitrified floor, simple warm laminate details and believable walking clearance. "
+            "Absolutely no building exterior, facade, street, road or outdoor house view as the main subject. "
+        ),
+        "kitchen": (
+            f"INTERIOR KITCHEN ONLY. Show a compact practical Indian modular kitchen appropriate to {area}. "
+            "Use a straight or small L-shaped counter, upper and base cabinets, chimney, tiled backsplash, sink and realistic appliance clearance. "
+            "Absolutely no building exterior, facade, street or house front. No oversized island. "
+        ),
+        "bedroom": (
+            f"INTERIOR BEDROOM ONLY. Show a compact furnished Indian apartment bedroom appropriate to {area}. "
+            "Include one realistic cot, practical wardrobe, one small side table, simple curtains and believable walking clearance. "
+            "Absolutely no building exterior, facade, road or street as the main subject. "
+        ),
+    }
+    return (scene_prompts.get(scene, "REALISTIC RESIDENTIAL PROPERTY SCENE. ") + common)[:1800]
+
+
 def generate_still_cloudflare(prompt: str, destination: Path, seed: int) -> None:
     account_id, token = _credentials()
     if not account_id or not token:
@@ -80,7 +122,7 @@ def generate_still_cloudflare(prompt: str, destination: Path, seed: int) -> None
             "Content-Type": "application/json",
         },
         json={
-            "prompt": prompt[:2048],
+            "prompt": _cloudflare_prompt(prompt, destination),
             "steps": 4,
         },
         timeout=180,
@@ -112,7 +154,6 @@ def generate_still_cloudflare(prompt: str, destination: Path, seed: int) -> None
 
 
 def generate_still(prompt: str, destination: Path, seed: int) -> str:
-    """Cloudflare first, then the existing Pollinations/HF chain."""
     account_id, token = _credentials()
     errors: list[str] = []
 
