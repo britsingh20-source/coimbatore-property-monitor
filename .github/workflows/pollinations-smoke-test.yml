@@ -1,10 +1,11 @@
-name: Pollinations Fresh Image Smoke Test
+name: Cloudflare Fresh Image Smoke Test
 
 on:
   push:
     branches: [main]
     paths:
       - '.github/workflows/pollinations-smoke-test.yml'
+      - 'cloudflare_ai_visual_pipeline.py'
   workflow_dispatch:
 
 permissions:
@@ -29,33 +30,42 @@ jobs:
           pip install -r requirements.txt
           pip install -r requirements-ai.txt
 
-      - name: Generate fresh Pollinations image pack
+      - name: Generate fresh Cloudflare image pack
         env:
-          POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
-          POLLINATIONS_IMAGE_MODEL: flux
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_IMAGE_MODEL: '@cf/black-forest-labs/flux-1-schnell'
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           AI_BROLL_MAX_ANIMATED: '0'
+          POLLINATIONS_API_KEY: ''
+          HF_TOKEN: ''
         run: |
           set -euo pipefail
-          test -n "$POLLINATIONS_API_KEY" || { echo '::error::POLLINATIONS_API_KEY is missing'; exit 1; }
-          printf '2jHws5Fg5Ac\n' > /tmp/pollinations-queue.txt
+          test -n "$CLOUDFLARE_ACCOUNT_ID" || { echo '::error::CLOUDFLARE_ACCOUNT_ID or existing R2_ACCOUNT_ID is missing'; exit 1; }
+          test -n "$CLOUDFLARE_API_TOKEN" || { echo '::error::CLOUDFLARE_API_TOKEN is missing'; exit 1; }
+          printf '2jHws5Fg5Ac\n' > /tmp/cloudflare-queue.txt
           rm -rf assets/ai_broll/2jHws5Fg5Ac
-          python ai_visual_pipeline.py --queue /tmp/pollinations-queue.txt --max-animated 0
+          python cloudflare_ai_visual_pipeline.py --queue /tmp/cloudflare-queue.txt --max-animated 0
           python - <<'PY'
           import json
           from pathlib import Path
           p = Path('assets/ai_broll/2jHws5Fg5Ac/manifest.json')
           data = json.loads(p.read_text())
-          if data.get('image_backend') != 'pollinations':
-              raise SystemExit(f"Expected Pollinations backend, got {data.get('image_backend')}")
-          print('Pollinations backend verified.')
-          for row in data.get('scenes', []):
+          rows = data.get('scenes', [])
+          if not rows:
+              raise SystemExit('No generated scenes found')
+          bad = [r for r in rows if not str(r.get('image_backend', '')).startswith('cloudflare:')]
+          if bad:
+              raise SystemExit(f"Expected Cloudflare-only image pack, got {[r.get('image_backend') for r in bad]}")
+          print('Cloudflare Workers AI backend verified.')
+          for row in rows:
               print(row.get('scene'), row.get('image_backend'), row.get('still'))
           PY
 
-      - name: Upload fresh Pollinations images
+      - name: Upload fresh Cloudflare images
         uses: actions/upload-artifact@v4
         with:
-          name: pollinations-fresh-images-${{ github.run_number }}
+          name: cloudflare-fresh-images-${{ github.run_number }}
           path: |
             assets/ai_broll/2jHws5Fg5Ac/manifest.json
             assets/ai_broll/2jHws5Fg5Ac/**/*.jpg
