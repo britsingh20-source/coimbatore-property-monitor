@@ -1,0 +1,145 @@
+{
+  "video_id": "NyKlyMvgcPA",
+  "source_url": "https://www.youtube.com/watch?v=NyKlyMvgcPA",
+  "property_location": "Karamadai, Mettupalayam Road, Coimbatore",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": "3BHK",
+    "land_area": "4.5 Cents",
+    "built_up_area": "1550 sqft",
+    "price": "75 Lakhs",
+    "facing": "West facing site, North facing main door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Portico (16'0\" x 17'0\")",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "4.5 Cents land area, 1550 sqft build-up area, Ground floor single story house with 3BHK layout, Portico dimensions: 16 x 17 ft, Living Hall dimensions: 16 x 17 ft, Dining area dimensions: 10 x 11 ft, Kitchen dimensions: 8 x 11 ft, 1st Master Bedroom: 10 x 16 ft with Attached Bathroom (8 x 4 ft)",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local property presenter speaking directly to camera with natural Tamil real estate terminology.",
+    "hook_strategy": "Highlight the 3BHK Independent Villa offer right at Mettupalayam Road Karamadai location.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை மேட்டுப்பாளையம் ரோடு காரமடை வேளாங்கண்ணி சர்ச் பஸ் ஸ்டாப் பக்கத்துல ஒரு 3BHK Independent Villa விற்பனைக்கு வந்திருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-tag",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தம் 4.5 Cents லேண்ட் ஏரியால அமைஞ்சிருக்குங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "highlight-overlay",
+        "purpose": "land-details"
+      },
+      {
+        "name": "facing",
+        "voice": "இது West facing site, அதே மாதிரி main door பாத்தீங்கனா North facing-ல அமைச்சிருக்காங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "compass-rose",
+        "purpose": "facing-details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1550 sqft built-up area-ல 3BHK layout, spacious living hall, dining, modern kitchen அப்புறம் 16x17 covered portico-வோட ரொம்ப நல்லா கட்டிருக்காங்க.",
+        "broll": [
+          "living_room",
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "text-card",
+        "purpose": "layout-details"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், இந்த property DTCP approval பெற்றது.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "verified-badge",
+        "purpose": "trust-building"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த வீடோட விலை 75 Lakhs, இது negotiable கூட.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "உடனே site visit வரவும், மேல details தெரிஞ்சுக்கவும் கீழ இருக்கிற நம்பருக்கு call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "contact-details",
+        "purpose": "call-to-action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/NyKlyMvgcPA/",
+  "optional_owned_audio": "assets/audio/NyKlyMvgcPA.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story contemporary house with a dual-tone beige and brown exterior, compound wall with dark grey sliding/swinging gates, covered spacious portico with tiled floor, and a full open terrace on the upper level.. Neighbourhood: Developing residential neighborhood with newly built individual houses, paved internal access roads, overhead power lines, and distant mountain/hill views visible from the rooftop terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story contemporary house with a dual-tone beige and brown exterior, compound wall with dark grey sliding/swinging gates, covered spacious portico with tiled floor, and a full open terrace on the upper level.. Neighbourhood: Developing residential neighborhood with newly built individual houses, paved internal access roads, overhead power lines, and distant mountain/hill views visible from the rooftop terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story contemporary house with a dual-tone beige and brown exterior, compound wall with dark grey sliding/swinging gates, covered spacious portico with tiled floor, and a full open terrace on the upper level.. Neighbourhood: Developing residential neighborhood with newly built individual houses, paved internal access roads, overhead power lines, and distant mountain/hill views visible from the rooftop terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story contemporary house with a dual-tone beige and brown exterior, compound wall with dark grey sliding/swinging gates, covered spacious portico with tiled floor, and a full open terrace on the upper level.. Neighbourhood: Developing residential neighborhood with newly built individual houses, paved internal access roads, overhead power lines, and distant mountain/hill views visible from the rooftop terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
