@@ -42,12 +42,17 @@ def has_complete_ai(video_id: str) -> bool:
     return True
 
 
+def env_true(name: str) -> bool:
+    return os.environ.get(name, "").strip().lower() in {"1", "true", "yes", "on"}
+
+
 def main() -> None:
     queue = queued_ids()
     if not queue:
         print("No queued IDs. Nothing prepared.")
         return
 
+    force_regenerate = env_true("FORCE_REGENERATE_AI")
     failure_path = Path(os.environ.get("ASSET_FAILURES_FILE", "outputs/asset-failure-ids.txt"))
     failure_path.parent.mkdir(parents=True, exist_ok=True)
     failure_path.write_text("", encoding="utf-8")
@@ -57,7 +62,7 @@ def main() -> None:
         try:
             job = json.loads((JOBS / f"{video_id}.json").read_text(encoding="utf-8"))
 
-            if has_complete_ai(video_id):
+            if has_complete_ai(video_id) and not force_regenerate:
                 print(f"Reusing complete cached AI scene pack for {video_id}; no image-generation credits consumed.")
             else:
                 has_pollinations = bool(os.environ.get("POLLINATIONS_API_KEY", "").strip())
@@ -67,7 +72,8 @@ def main() -> None:
                         "A fresh AI scene pack is required. Configure POLLINATIONS_API_KEY (preferred) or HF_TOKEN."
                     )
                 backend = "Pollinations Flux" if has_pollinations else "Hugging Face fallback"
-                print(f"Generating fresh AI scene pack for {video_id} with {backend}.")
+                reason = "forced fresh test" if force_regenerate else "cache miss"
+                print(f"Generating fresh AI scene pack for {video_id} with {backend} ({reason}).")
                 generate_for_job(job)
 
             if not has_complete_ai(video_id):
