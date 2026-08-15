@@ -36,11 +36,10 @@ def _credentials() -> tuple[str, str]:
 def _portrait_jpeg(image_bytes: bytes, destination: Path) -> None:
     """Keep the complete generated image while packaging it as a 9:16 JPEG.
 
-    FLUX.1-schnell on Workers AI currently exposes prompt/steps rather than a
-    reliable portrait-size parameter. We therefore avoid destructive cropping:
-    a blurred copy fills the portrait canvas and the complete generated frame is
-    fitted on top. This can be replaced later if Cloudflare exposes portrait
-    dimensions for the model.
+    FLUX.1-schnell on Workers AI currently exposes prompt/steps through its
+    REST input schema rather than reliable portrait-size parameters. We avoid
+    destructive cropping: a blurred copy fills the portrait canvas and the
+    complete generated frame is fitted on top.
     """
     image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
     canvas_size = (768, 1344)
@@ -83,7 +82,6 @@ def generate_still_cloudflare(prompt: str, destination: Path, seed: int) -> None
         json={
             "prompt": prompt[:2048],
             "steps": 4,
-            "seed": int(seed),
         },
         timeout=180,
     )
