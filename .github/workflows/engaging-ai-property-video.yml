@@ -18,7 +18,7 @@ on:
         default: "0"
         type: string
       force_regenerate_ai:
-        description: "Ignore cached AI scenes and generate a fresh Pollinations image pack"
+        description: "Ignore cached AI scenes and generate a fresh AI image pack"
         required: false
         default: false
         type: boolean
@@ -121,6 +121,10 @@ jobs:
         if: steps.select.outputs.has_jobs == 'true'
         continue-on-error: true
         env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_IMAGE_MODEL: '@cf/black-forest-labs/flux-1-schnell'
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
           POLLINATIONS_IMAGE_MODEL: flux
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
@@ -220,8 +224,8 @@ jobs:
             echo "### Engaging AI property video"
             echo ""
             echo "- Complete AI scene packs from recent artifacts are reused unless force_regenerate_ai is enabled."
-            echo "- Fresh images use Pollinations Flux first when POLLINATIONS_API_KEY is configured."
-            echo "- Hugging Face image generation remains a secondary fallback only."
+            echo "- Fresh images use Cloudflare Workers AI FLUX.1-schnell first when Cloudflare credentials are configured."
+            echo "- Pollinations and Hugging Face remain secondary fallbacks only."
             echo "- The default is image-first: LTX animation is disabled unless explicitly requested."
             echo "- Pexels/Pixabay fallback is disabled in this workflow."
             echo "- If neither cached AI assets nor an AI image backend is available, the run fails instead of producing stock footage."
