@@ -8,7 +8,7 @@ import re
 from pathlib import Path
 
 import requests
-from PIL import Image, ImageFilter
+from PIL import Image
 
 import ai_visual_pipeline as base
 
@@ -30,28 +30,25 @@ def _credentials() -> tuple[str, str]:
 
 
 def _portrait_jpeg(image_bytes: bytes, destination: Path) -> None:
-    image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
-    canvas_size = (768, 1344)
+    """Package Cloudflare's generated frame as a clean 9:16 reel image.
 
-    background = image.copy()
-    scale = max(canvas_size[0] / background.width, canvas_size[1] / background.height)
-    background = background.resize(
-        (max(1, int(background.width * scale)), max(1, int(background.height * scale))),
+    Cloudflare FLUX can return a squarer frame. We use a centered cover crop rather
+    than blurred letterboxing so the final reel has no soft top/bottom bands.
+    Prompts keep the main subject centered to make this crop safe.
+    """
+    image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
+    target = (768, 1344)
+    scale = max(target[0] / image.width, target[1] / image.height)
+    resized = image.resize(
+        (max(1, int(image.width * scale)), max(1, int(image.height * scale))),
         Image.Resampling.LANCZOS,
     )
-    left = (background.width - canvas_size[0]) // 2
-    top = (background.height - canvas_size[1]) // 2
-    background = background.crop((left, top, left + canvas_size[0], top + canvas_size[1]))
-    background = background.filter(ImageFilter.GaussianBlur(radius=28))
-
-    foreground = image.copy()
-    foreground.thumbnail((768, 1120), Image.Resampling.LANCZOS)
-    x = (canvas_size[0] - foreground.width) // 2
-    y = (canvas_size[1] - foreground.height) // 2
-    background.paste(foreground, (x, y))
+    left = max(0, (resized.width - target[0]) // 2)
+    top = max(0, (resized.height - target[1]) // 2)
+    portrait = resized.crop((left, top, left + target[0], top + target[1]))
 
     destination.parent.mkdir(parents=True, exist_ok=True)
-    background.save(destination, "JPEG", quality=94, optimize=True)
+    portrait.save(destination, "JPEG", quality=94, optimize=True)
     if destination.stat().st_size < 50_000:
         raise RuntimeError(f"Cloudflare image is suspiciously small: {destination.stat().st_size} bytes")
 
@@ -66,44 +63,44 @@ def _extract_context(prompt: str) -> tuple[str, str, str]:
 
 
 def _cloudflare_prompt(prompt: str, destination: Path) -> str:
-    """Use short, scene-first prompts because FLUX schnell overweights long shared prefixes."""
     scene = destination.parent.name.lower()
     title, locality, area = _extract_context(prompt)
     common = (
         f"Property context: {title}, {area}, {locality}, Coimbatore, Tamil Nadu, India. "
-        "Photorealistic, realistic South Indian proportions, natural tropical daylight, vertical property-ad composition. "
-        "No people, text, logo, watermark, religious building, fantasy geometry, foreign suburban style or impossible structures. "
+        "Photorealistic, realistic South Indian proportions, natural tropical daylight, centered main subject, vertical property-ad composition. "
+        "No people, text, logo, watermark, temple, church, mosque, shrine, religious tower, religious dome, religious statue, religious landmark, fantasy geometry, foreign suburban style or impossible structures, including in the distant background. "
         "Representative AI visual only, not the actual listing."
     )
     scene_prompts = {
         "exterior": (
             "EXTERIOR BUILDING ONLY. Show one coherent mid-rise Coimbatore apartment building, ground/stilt plus 3 to 5 floors, "
             "entirely behind the road edge, practical compound gate, realistic parking, aligned balconies and normal structural columns. "
-            "Do not show an interior room. "
+            "Keep the building centered for a portrait crop. Do not show an interior room. "
         ),
         "location": (
             f"LOCATION STREET ONLY. Show a realistic {locality} residential neighbourhood with an unobstructed local tar road, "
             "modest apartments and independent houses only on both sides, utility poles, compound walls and tropical greenery. "
-            "Do not show an interior room. "
+            "Keep the vanishing point centered. No temple, church, mosque, shrine or religious landmark anywhere. Do not show an interior room. "
         ),
         "road": (
             "ACCESS ROAD ONLY. The road must be the main subject: a believable Coimbatore residential road, continuous and usable, "
-            "with modest buildings safely set back on both sides, utility poles and greenery. No highway or flyover. "
+            "with modest buildings safely set back on both sides, utility poles and greenery. Keep the road and vanishing point centered. "
+            "No highway, flyover, temple, church, mosque, shrine, religious tower, dome or religious landmark anywhere, even far in the background. "
         ),
         "living": (
             f"INTERIOR LIVING ROOM ONLY. Show a compact furnished Indian apartment living room appropriate to {area}. "
             "Include a practical 2-3 seat sofa, TV wall, vitrified floor, simple warm laminate details and believable walking clearance. "
-            "Absolutely no building exterior, facade, street, road or outdoor house view as the main subject. "
+            "Keep the room focal area centered. Absolutely no building exterior, facade, street, road or outdoor house view as the main subject. "
         ),
         "kitchen": (
             f"INTERIOR KITCHEN ONLY. Show a compact practical Indian modular kitchen appropriate to {area}. "
             "Use a straight or small L-shaped counter, upper and base cabinets, chimney, tiled backsplash, sink and realistic appliance clearance. "
-            "Absolutely no building exterior, facade, street or house front. No oversized island. "
+            "Keep the working counter centered. Absolutely no building exterior, facade, street or house front. No oversized island. "
         ),
         "bedroom": (
             f"INTERIOR BEDROOM ONLY. Show a compact furnished Indian apartment bedroom appropriate to {area}. "
             "Include one realistic cot, practical wardrobe, one small side table, simple curtains and believable walking clearance. "
-            "Absolutely no building exterior, facade, road or street as the main subject. "
+            "Keep the cot and wardrobe composition centered. Absolutely no building exterior, facade, road or street as the main subject. "
         ),
     }
     return (scene_prompts.get(scene, "REALISTIC RESIDENTIAL PROPERTY SCENE. ") + common)[:1800]
@@ -121,10 +118,7 @@ def generate_still_cloudflare(prompt: str, destination: Path, seed: int) -> None
             "Authorization": f"Bearer {token}",
             "Content-Type": "application/json",
         },
-        json={
-            "prompt": _cloudflare_prompt(prompt, destination),
-            "steps": 4,
-        },
+        json={"prompt": _cloudflare_prompt(prompt, destination), "steps": 4},
         timeout=180,
     )
 
