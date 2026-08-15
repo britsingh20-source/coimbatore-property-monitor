@@ -1,0 +1,141 @@
+{
+  "video_id": "TA3f6lyAMTk",
+  "source_url": "https://www.youtube.com/watch?v=TA3f6lyAMTk",
+  "property_location": "Karamadai, Mettupalayam Road, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": "3BHK",
+    "land_area": "4.5 Cents",
+    "built_up_area": "1550 sqft",
+    "price": "₹75 Lakhs (Negotiable)",
+    "facing": "West Facing site, North facing main door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking (17'0\" × 16'0\") suitable for 2 cars",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "3BHK Independent Villa built on 4.5 Cents of land., Total built-up area is 1550 sqft., West-facing plot with a North-facing teakwood main entrance door., Property price is ₹75 Lakhs (negotiable) with up to 75% bank loan availability., DTCP approved plot with independent borewell and a 7,000-liter underground sump., Ground floor includes car parking, living hall, kitchen, dining area, pooja space, 3 bedrooms, 2 attached bathrooms, and 1 external toilet., Located near Velanganni Church Bus Stop on Mettupalayam Road, Karamadai, Coimbatore.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera, conversational Tamil with standard English real-estate terms",
+    "hook_strategy": "Highlight key location and property type on Mettupalayam Road in the first 3 seconds",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோயம்புத்தூர் Mettupalayam Road, Karamadai-ல Velanganni Church Bus Stop பக்கத்துல ஒரு 3BHK Independent Villa சேல்ஸ்க்கு வந்திருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தம் 4.5 Cents land-ல அமைச்சிருக்காங்க. சொந்தமா borewell மற்றும் 7000 Litre underground water sump வசதியும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "land-boundary-highlight",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Built-up area 1550 sqft. உள்ள modular kitchen, 3 bedrooms, அப்புறம் 2 கார்கள் நிறுத்துற அளவுக்கு பெரிய covered parking வசதியும் இருக்கு.",
+        "broll": [
+          "interior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "area-counter",
+        "purpose": "builtUp_details"
+      },
+      {
+        "name": "facing",
+        "voice": "Site பாத்தீங்கனா West facing, teakwood-ல செஞ்ச main door North facing-ல வச்சிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approved property. 75% வரைக்கும் bank loan எடுக்குற வாய்ப்பும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "badge-overlay",
+        "purpose": "approval_details"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த Villa-வோட price 75 Lakhs, இது negotiable தான்.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து பார்க்க site visit arrange பண்ணவோ, details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/TA3f6lyAMTk/",
+  "optional_owned_audio": "assets/audio/TA3f6lyAMTk.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story villa with a contemporary geometric elevation in beige, dark brown, and white tones. Features a gated front compound, covered porch with tiled car parking, exterior staircase with stainless steel handrails, setback walkways, and a spacious open terrace.. Neighbourhood: Located in a quiet residential area in Karamadai, near Mettupalayam Road, surrounded by independent residential houses, paved roads, and scenic mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story villa with a contemporary geometric elevation in beige, dark brown, and white tones. Features a gated front compound, covered porch with tiled car parking, exterior staircase with stainless steel handrails, setback walkways, and a spacious open terrace.. Neighbourhood: Located in a quiet residential area in Karamadai, near Mettupalayam Road, surrounded by independent residential houses, paved roads, and scenic mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story villa with a contemporary geometric elevation in beige, dark brown, and white tones. Features a gated front compound, covered porch with tiled car parking, exterior staircase with stainless steel handrails, setback walkways, and a spacious open terrace.. Neighbourhood: Located in a quiet residential area in Karamadai, near Mettupalayam Road, surrounded by independent residential houses, paved roads, and scenic mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story villa with a contemporary geometric elevation in beige, dark brown, and white tones. Features a gated front compound, covered porch with tiled car parking, exterior staircase with stainless steel handrails, setback walkways, and a spacious open terrace.. Neighbourhood: Located in a quiet residential area in Karamadai, near Mettupalayam Road, surrounded by independent residential houses, paved roads, and scenic mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
