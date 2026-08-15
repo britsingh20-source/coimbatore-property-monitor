@@ -1,0 +1,140 @@
+{
+  "video_id": "RwicCx91SWg",
+  "source_url": "https://www.youtube.com/watch?v=RwicCx91SWg",
+  "property_location": "Athipalayam, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "10 Cents (5.5 Cents + 4.5 Cents joint plots)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "NOT SPECIFIED",
+    "facing": "North / North-West Corner",
+    "road_width": "30 feet and 40 feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "Two resale joint sites available in Mayons Vriksham Grande, Athipalayam., One plot is North-facing (5.5 Cents) and the adjacent is North-West Corner facing (4.5 Cents)., Infrastructure includes 30 ft and 40 ft wide roads, streetlights, overhead water tank, entrance arch, and children's park., Walkable distance to Einstein Public School and Narayana Schools; 1 km from Ranganathan Engineering and Polytechnic Colleges., Contact phone number displayed throughout the video is 93452 18231.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking naturally to camera with conversational Tamil mixed with common real estate terms.",
+    "hook_strategy": "Lead with key location advantage—Athipalayam near Saravanampatti IT hub—and highlight the rare 10-cent joint plot option.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை அதிபாளையத்துல, சரவணம்பட்டி CHIL SEZ IT Park பக்கத்துல ஒரு அருமையான residential plot location பார்க்க போறோம்.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-tag",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "Mayons Vriksham Grande-ல மொத்தம் 10 Cents land வருது. இதுல 5.5 Cents மற்றும் 4.5 Cents-ன்னு ரெண்டு joint plots இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "land-area-highlight",
+        "purpose": "property-overview"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், 5.5 Cents plot North facing, அடுத்த 4.5 Cents plot North-West Corner facing-ல வருது.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing-details"
+      },
+      {
+        "name": "road",
+        "voice": "அதே மாதிரி இங்க 30 feet மற்றும் 40 feet blacktop roads, entrance arch, security, water tank, park மற்றும் walking track வசதிகள் இருக்கு.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "road-width-badge",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "verify",
+        "voice": "பாத்தீங்கனா, Einstein Public School, Narayana School, 1 km-ல Ranganathan Colleges, அப்புறம் 4 km-ல CHIL SEZ IT Park அமைஞ்சிருக்கு.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "distance-callout",
+        "purpose": "landmark-verification"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த plot details தெரிஞ்சுக்கவோ, site visit போகவோ 93452 18231 எண்ணுக்கு call பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "contact-number-pop",
+        "purpose": "call-to-action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/RwicCx91SWg/",
+  "optional_owned_audio": "assets/audio/RwicCx91SWg.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Well-planned residential layout featuring blacktop asphalt roads with clear white lane markings, curbing, street light poles, overhead water tower, gated entrance archway, landscaped park, and vacant plots bounded by walls and palm trees.. Neighbourhood: Semi-urban residential zone near industrial and educational hubs in Athipalayam, Coimbatore, surrounded by farmland, coconut groves, and newly constructed homes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Well-planned residential layout featuring blacktop asphalt roads with clear white lane markings, curbing, street light poles, overhead water tower, gated entrance archway, landscaped park, and vacant plots bounded by walls and palm trees.. Neighbourhood: Semi-urban residential zone near industrial and educational hubs in Athipalayam, Coimbatore, surrounded by farmland, coconut groves, and newly constructed homes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Well-planned residential layout featuring blacktop asphalt roads with clear white lane markings, curbing, street light poles, overhead water tower, gated entrance archway, landscaped park, and vacant plots bounded by walls and palm trees.. Neighbourhood: Semi-urban residential zone near industrial and educational hubs in Athipalayam, Coimbatore, surrounded by farmland, coconut groves, and newly constructed homes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Well-planned residential layout featuring blacktop asphalt roads with clear white lane markings, curbing, street light poles, overhead water tower, gated entrance archway, landscaped park, and vacant plots bounded by walls and palm trees.. Neighbourhood: Semi-urban residential zone near industrial and educational hubs in Athipalayam, Coimbatore, surrounded by farmland, coconut groves, and newly constructed homes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
