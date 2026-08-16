@@ -903,11 +903,12 @@
     },
     "UAMtU52eMag": {
       "attempts": 2,
+      "completed_at": "2026-08-16T13:03:39.948450+00:00",
       "first_seen_at": "2026-08-16T05:46:32.964810+00:00",
       "last_attempt_at": "2026-08-16T07:48:17.296124+00:00",
-      "last_error": "sequence item 2: expected str instance, dict found",
+      "last_error": "",
       "next_retry_at": "2026-08-16T11:48:17.296133+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "UEgyfYTQN9c": {
       "attempts": 1,

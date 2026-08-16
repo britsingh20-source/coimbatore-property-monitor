@@ -1,0 +1,145 @@
+{
+  "video_id": "UAMtU52eMag",
+  "source_url": "https://www.youtube.com/watch?v=UAMtU52eMag",
+  "property_location": "Vaiyampalayam, Kovilpalayam to Thudiyalur Road, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Duplex House",
+    "bhk": "3BHK",
+    "land_area": "2.90 Cents (1,270 sq.ft.)",
+    "built_up_area": "1,850 sq.ft.",
+    "price": "₹94 Lakhs (Negotiable)",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking (18' x 15')",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Land area is 2.90 cents (1,270 sq.ft.) and built-up area is 1,850 sq.ft., House and site are North-facing., Property configuration includes 3 bedrooms with attached bathrooms, 1 outside bathroom, living hall, dedicated pooja room, kitchen with dining, lounge, sitout, and gazebo balcony., Features a bathtub in the upper-floor attached bathroom., DTCP approved site with borewell, water sump, and bank loan facilities.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and engaging local property walk-through with natural spoken Tamil",
+    "hook_strategy": "Highlight the prime location on Kovilpalayam to Thudiyalur Road with key property type immediately",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை Kovilpalayam to Thudiyalur Road-ல Vaiyampalayam-ல ஒரு சூப்பரான 3BHK Duplex House விற்பனைக்கு வந்துருக்கு!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல Land Area பாத்தீங்கனா 2.90 Cents, அதாவது 1,270 sq.ft. Spacious-ஆ 18' x 15' Covered Car Parking-ம் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "property_specs"
+      },
+      {
+        "name": "facing",
+        "voice": "முக்கியமான விஷயம், இந்த House மற்றும் Site ரெண்டுமே North Facing.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "kitchen"
+        ],
+        "vfx": "compass-north",
+        "purpose": "orientation"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Built-up area 1,850 sq.ft. Interior-ல Modular Kitchen, Lounge, Bathtub மற்றும் Gazebo Balcony-னு நல்ல அம்சங்கள் கொடுத்துருக்காங்க.",
+        "broll": [
+          "living_room",
+          "interior",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "exterior"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "interior_highlights"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP Approved property. Borewell, Water Sump வசதியோட Bank Loan Facilities-ம் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "badge-approval",
+        "purpose": "trust_builder"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட Price பாத்தீங்கனா 94 Lakhs, Negotiable தான்.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து Site Visit பண்ணனும்னாலோ, Details வேணும்னாலோ உடனே Call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "call-to-action",
+        "purpose": "conversion"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/UAMtU52eMag/",
+  "optional_owned_audio": "assets/audio/UAMtU52eMag.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern duplex facade painted in grey and off-white tones, featuring a textured exterior, gated entry, covered car park, ground floor sitout with artificial turf, and a first-floor balcony/gazebo with a steel pergola frame.. Neighbourhood: Residential street layout in Vaiyampalayam with contemporary single and multi-storey independent homes and ongoing construction in the vicinity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern duplex facade painted in grey and off-white tones, featuring a textured exterior, gated entry, covered car park, ground floor sitout with artificial turf, and a first-floor balcony/gazebo with a steel pergola frame.. Neighbourhood: Residential street layout in Vaiyampalayam with contemporary single and multi-storey independent homes and ongoing construction in the vicinity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern duplex facade painted in grey and off-white tones, featuring a textured exterior, gated entry, covered car park, ground floor sitout with artificial turf, and a first-floor balcony/gazebo with a steel pergola frame.. Neighbourhood: Residential street layout in Vaiyampalayam with contemporary single and multi-storey independent homes and ongoing construction in the vicinity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern duplex facade painted in grey and off-white tones, featuring a textured exterior, gated entry, covered car park, ground floor sitout with artificial turf, and a first-floor balcony/gazebo with a steel pergola frame.. Neighbourhood: Residential street layout in Vaiyampalayam with contemporary single and multi-storey independent homes and ongoing construction in the vicinity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
