@@ -1,0 +1,152 @@
+{
+  "video_id": "fhDOusNbbA0",
+  "source_url": "https://www.youtube.com/watch?v=fhDOusNbbA0",
+  "property_location": "Pattanam, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Duplex House",
+    "bhk": "2 BHK",
+    "land_area": "3 Cents (36 x 36 ft)",
+    "built_up_area": "1600 sq.ft.",
+    "price": "₹65 Lakhs (Negotiable)",
+    "facing": "North",
+    "road_width": "30 & 33 Feet",
+    "parking": "1 Covered Car Parking space (16x16 ft)",
+    "approval": "DTCP Approved, Plan Approved"
+  },
+  "verified_facts": "3 cents land area (36ft x 36ft) with 1600 sq.ft built-up area, 2 BHK Duplex individual house located in Pattanam, Coimbatore, Asking price is ₹65 Lakhs (Negotiable) including interior works, North facing layout with G+1 structure, Features 6000L water sump, 10000L septic tank, and borewell with motor, DTCP and Plan approved property, Up to 85% home loan available",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter, fast-paced, high retention",
+    "hook_strategy": "Highlight 2 BHK individual Duplex house in Pattanam location immediately",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Pattanam-ல ஒரு அழகான 2 BHK Duplex house விற்பனைக்கு வந்திருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1600 sq.ft built-up area-ல interior works-ோட G+1 structure-ல பண்ணிருக்காங்க.",
+        "broll": [
+          "living_room",
+          "interior",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "property_overview"
+      },
+      {
+        "name": "land",
+        "voice": "3 cent land area-ல 6000 liters water sump, borewell, septic tank-னு எல்லாமே அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "dimension-tag",
+        "purpose": "space_details"
+      },
+      {
+        "name": "facing",
+        "voice": "இது North facing property. 16x16 feet-ல 1 covered car parking space இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_and_parking"
+      },
+      {
+        "name": "road",
+        "voice": "ரோடு பாத்தீங்கனா 30 மற்றும் 33 feet wide road access கொடுத்திருக்காங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "road-width-tag",
+        "purpose": "road_details"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approved மற்றும் plan approved property. Up to 85% home loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_factor"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price 65 Lakhs, negotiable!",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-highlight",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "Direct-ஆ site visit போகவோ, details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "contact-card",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/fhDOusNbbA0/",
+  "optional_owned_audio": "assets/audio/fhDOusNbbA0.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone white facade with yellow and brown accent stripes, yellow ramp leading to a patterned wooden entrance gate, covered porch/car park, and access stairs leading to an open rooftop terrace with perimeter parapet walls.. Neighbourhood: Developing residential neighborhood in Pattanam, Coimbatore, featuring surrounding individual houses, open plots, clear sky, and access via 30 & 33 feet wide tar roads.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone white facade with yellow and brown accent stripes, yellow ramp leading to a patterned wooden entrance gate, covered porch/car park, and access stairs leading to an open rooftop terrace with perimeter parapet walls.. Neighbourhood: Developing residential neighborhood in Pattanam, Coimbatore, featuring surrounding individual houses, open plots, clear sky, and access via 30 & 33 feet wide tar roads.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone white facade with yellow and brown accent stripes, yellow ramp leading to a patterned wooden entrance gate, covered porch/car park, and access stairs leading to an open rooftop terrace with perimeter parapet walls.. Neighbourhood: Developing residential neighborhood in Pattanam, Coimbatore, featuring surrounding individual houses, open plots, clear sky, and access via 30 & 33 feet wide tar roads.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone white facade with yellow and brown accent stripes, yellow ramp leading to a patterned wooden entrance gate, covered porch/car park, and access stairs leading to an open rooftop terrace with perimeter parapet walls.. Neighbourhood: Developing residential neighborhood in Pattanam, Coimbatore, featuring surrounding individual houses, open plots, clear sky, and access via 30 & 33 feet wide tar roads.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
