@@ -1,0 +1,159 @@
+{
+  "video_id": "nxjHpYLPZb4",
+  "source_url": "https://www.youtube.com/watch?v=nxjHpYLPZb4",
+  "property_location": "Papampatti, Coimbatore",
+  "property": {
+    "property_type": "Independent House / Simplex House",
+    "bhk": "2 BHK",
+    "land_area": "3 cents",
+    "built_up_area": "1150 sqft",
+    "price": "Rs. 53 Lakhs (Negotiable)",
+    "facing": "North",
+    "road_width": "30 feet",
+    "parking": "Covered Car Parking (14x18 ft)",
+    "approval": "DTCP Approved & Plan Approved"
+  },
+  "verified_facts": "North facing land and North facing main door, Land area is 3 cents, Building size is 1150 sqft, Price is 53 Lakhs negotiable (including land), Located at Papampatti, Coimbatore, Up to 85% home loan facility available, Includes 6,000 Ltr water sump and 10,000 Ltr septic tank, DTCP and Plan approved",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and engaging local property presenter speaking directly to camera with natural conversational Tamil.",
+    "hook_strategy": "Highlighting a 2 BHK independent house in Papampatti, Coimbatore at an attractive 53 Lakhs negotiable price point.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Papampatti-ல 53 Lakhs-க்கு ஒரு 2 BHK Independent House பாக்கலாமா!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 3 cents land area-ல, compound wall அப்புறம் 14x18 feet covered car parking-ோட வருது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "property-spec"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Built-up area பாத்தீங்கனா 1150 sqft. நல்ல spacious-ஆன simplex house.",
+        "broll": [
+          "living_room",
+          "interior",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road",
+          "exterior"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "interior-highlight"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், land and main door ரெண்டுமே North facing.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "kitchen"
+        ],
+        "vfx": "compass-icon",
+        "purpose": "feature-highlight"
+      },
+      {
+        "name": "road",
+        "voice": "Front-ல 30 feet road இருக்கு. அதே மாதிரி nearby schools and colleges-ம் பக்கத்துலயே இருக்கு.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "accessibility"
+      },
+      {
+        "name": "approval",
+        "voice": "DTCP and Plan approval இருக்கு. Up to 85% home loan facility-யும் available. Borewell, motor, water sump, septic tank எல்லாமே ready-ஆ இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room"
+        ],
+        "vfx": "badge",
+        "purpose": "trust-building"
+      },
+      {
+        "name": "price",
+        "voice": "Land சேர்த்து இதோட price 53 Lakhs, negotiable தான்!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "value-offer"
+      },
+      {
+        "name": "cta",
+        "voice": "Direct site visit வரவோ, details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "call-button",
+        "purpose": "action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/nxjHpYLPZb4/",
+  "optional_owned_audio": "assets/audio/nxjHpYLPZb4.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story exterior design featuring a white exterior with warm brown tile accents, recessed exterior ceiling LED lights, decorative wall lamps, a gated entrance with a covered car parking porch, and an exterior staircase leading to the roof terrace.. Neighbourhood: Residential development in Papampatti, Coimbatore connected by a 30-foot wide road with proximity to local schools and colleges.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story exterior design featuring a white exterior with warm brown tile accents, recessed exterior ceiling LED lights, decorative wall lamps, a gated entrance with a covered car parking porch, and an exterior staircase leading to the roof terrace.. Neighbourhood: Residential development in Papampatti, Coimbatore connected by a 30-foot wide road with proximity to local schools and colleges.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story exterior design featuring a white exterior with warm brown tile accents, recessed exterior ceiling LED lights, decorative wall lamps, a gated entrance with a covered car parking porch, and an exterior staircase leading to the roof terrace.. Neighbourhood: Residential development in Papampatti, Coimbatore connected by a 30-foot wide road with proximity to local schools and colleges.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story exterior design featuring a white exterior with warm brown tile accents, recessed exterior ceiling LED lights, decorative wall lamps, a gated entrance with a covered car parking porch, and an exterior staircase leading to the roof terrace.. Neighbourhood: Residential development in Papampatti, Coimbatore connected by a 30-foot wide road with proximity to local schools and colleges.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

@@ -1394,6 +1394,14 @@
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
       "status": "discovered"
     },
+    "nxjHpYLPZb4": {
+      "attempts": 0,
+      "completed_at": "2026-08-16T13:47:33.018140+00:00",
+      "first_seen_at": "2026-08-16T13:47:07.679419+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-08-16T13:47:07.679419+00:00",
+      "status": "video_queued"
+    },
     "pmed9DnHN9Q": {
       "attempts": 0,
       "first_seen_at": "2026-08-11T17:15:19.796976+00:00",
