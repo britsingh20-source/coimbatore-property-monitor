@@ -180,6 +180,10 @@ jobs:
         id: render
         if: steps.select.outputs.has_jobs == 'true'
         continue-on-error: true
+        env:
+          REQUIRE_REAL_VIDEO_BROLL: 'true'
+          MIN_REAL_VIDEO_CLIPS: '4'
+          MIN_REAL_VIDEO_CATEGORIES: '3'
         shell: bash
         run: |
           set -uo pipefail
