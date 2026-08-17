@@ -1,7 +1,7 @@
 import React from 'react';
 import {Composition} from 'remotion';
 import type {PropertyVideoProps} from './types';
-import {CleanPropertyReel} from './CleanPropertyReel';
+import {LayeredReelV2} from './LayeredReelV2';
 
 const defaults: PropertyVideoProps = {
   videoId: 'preview', location: 'Coimbatore', locationLabel: 'Coimbatore', title: 'Premium Property', price: 'Verified on request',
@@ -14,14 +14,12 @@ const defaults: PropertyVideoProps = {
 export const RemotionRoot: React.FC = () => (
   <Composition
     id="PropertyReel"
-    component={CleanPropertyReel}
+    component={LayeredReelV2}
     width={1080}
     height={1920}
     fps={30}
     durationInFrames={548}
     defaultProps={defaults}
-    calculateMetadata={({props}) => ({
-      durationInFrames: Math.max(1, Number((props as PropertyVideoProps).durationInFrames || 548)),
-    })}
+    calculateMetadata={({props}) => ({durationInFrames: Math.max(1, Number((props as PropertyVideoProps).durationInFrames || 548))})}
   />
 );
