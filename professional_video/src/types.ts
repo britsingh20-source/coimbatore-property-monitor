@@ -2,6 +2,7 @@ export type Fact = {label: string; value: string};
 export type VoiceSegment = {scene: string; src: string; text?: string; durationInFrames?: number};
 export type DirectedShot = {src: string; startFrom?: number; category?: string};
 export type StyleVariant = 'cinematic' | 'fast-cut' | 'premium' | 'location-first' | 'price-first';
+export type LayerMedia = {background?: string; foreground?: string; stills?: string[]};
 
 export type PropertyVideoProps = {
   videoId: string;
@@ -14,9 +15,11 @@ export type PropertyVideoProps = {
   actualVideos: string[];
   representativeVideos: string[];
   sceneMedia: Record<string, string[]>;
+  layerMedia?: Record<string, LayerMedia>;
   directorMedia?: Record<string, DirectedShot[]>;
   images: string[];
   audio: string | null;
+  bgm?: string | null;
   voiceSegments: VoiceSegment[];
   sceneOrder: string[];
   sceneDurations: Record<string, number>;
