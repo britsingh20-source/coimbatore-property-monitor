@@ -19,7 +19,7 @@ def location_label(job: dict) -> str:
     raw = str(job.get("property_location") or "Coimbatore").strip()
     parts = [part.strip() for part in raw.split(",") if part.strip()]
     priority = (
-        "street", "road", "colony", "nagar", "layout", "hudco", "pattanam",
+        "colony", "hudco", "nagar", "layout", "pattanam", "street", "road",
         "saravanampatti", "thudiyalur",
     )
     chosen = next((part for marker in priority for part in parts if marker in part.lower()), parts[0])
