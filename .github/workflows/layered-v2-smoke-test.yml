@@ -1,0 +1,94 @@
+name: Layered Reel V2 Smoke Test
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/layered-v2-smoke-test.yml'
+      - 'professional_video/src/LayeredReelV2.tsx'
+      - 'professional_video/src/Root.tsx'
+      - 'professional_video/src/types.ts'
+      - 'prepare_layered_assets.py'
+      - 'requirements-ai.txt'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Restore latest AI scene pack
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/ai_broll /tmp/ai
+          artifact_id="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts?per_page=40" --jq '.artifacts[] | select(.expired == false and (.name | startswith("engaging-ai-property-videos-"))) | .id' | head -n 1)"
+          test -n "$artifact_id"
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${artifact_id}/zip" > /tmp/ai/latest.zip
+          unzip -oq /tmp/ai/latest.zip 'assets/ai_broll/*' -d .
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: professional_video/package-lock.json
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg fonts-noto-core
+          pip install -r requirements.txt
+          pip install -r requirements-ai.txt
+          npm ci --prefix professional_video
+
+      - name: Prepare voice maps and AI clips
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          AI_BROLL_MAX_ANIMATED: '0'
+          TAMIL_MALE_VOICE: ta-IN-ValluvarNeural
+          VIDEO_IDS_FILE: /tmp/layered-v2-queue.txt
+          ASSET_FAILURES_FILE: outputs/asset-failure-ids.txt
+        run: |
+          printf '2jHws5Fg5Ac\n' > /tmp/layered-v2-queue.txt
+          python prepare_engaging_assets.py
+
+      - name: Render Layered Reel V2
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p outputs/2jHws5Fg5Ac
+          python prepare_remotion_job.py data/video_jobs/2jHws5Fg5Ac.json
+          python prepare_layered_assets.py 2jHws5Fg5Ac
+          props_path="$(realpath data/remotion_props/2jHws5Fg5Ac.json)"
+          cd professional_video
+          npx remotion render src/index.ts PropertyReel ../outputs/2jHws5Fg5Ac/2jHws5Fg5Ac-layered-v2.mp4 --props="$props_path" --codec=h264 --crf=18 --concurrency=2
+
+      - name: Upload Layered Reel V2
+        uses: actions/upload-artifact@v4
+        with:
+          name: layered-reel-v2-${{ github.run_number }}
+          path: |
+            outputs/2jHws5Fg5Ac/2jHws5Fg5Ac-layered-v2.mp4
+            professional_video/public/render/2jHws5Fg5Ac/layer-*.jpg
+            professional_video/public/render/2jHws5Fg5Ac/layer-*.png
+            professional_video/public/render/2jHws5Fg5Ac/bgm.wav
+          if-no-files-found: error
+          retention-days: 5
