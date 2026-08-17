@@ -1,5 +1,6 @@
 import argparse
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -167,6 +168,34 @@ def prepare(job_path: Path) -> Path:
     )
     if r2_count and not any("r2-own-" in src for src in representative_videos):
         raise RuntimeError("R2 clips were downloaded but not exposed to Remotion")
+
+    # A green Actions run must mean that the output contains genuine moving
+    # footage, not merely that Remotion managed to animate cached AI stills.
+    if os.environ.get("REQUIRE_REAL_VIDEO_BROLL", "").strip().lower() in {"1", "true", "yes", "on"}:
+        non_ai_videos = actual_videos + [
+            src for src in representative_videos
+            if "/ai-" not in src.lower() and not src.lower().endswith("-representative.mp4")
+        ]
+        moving_categories = {
+            scene for scene, clips in scene_media.items()
+            if any("/ai-" not in src.lower() for src in clips)
+        }
+        minimum_clips = int(os.environ.get("MIN_REAL_VIDEO_CLIPS", "4"))
+        minimum_categories = int(os.environ.get("MIN_REAL_VIDEO_CATEGORIES", "3"))
+        if len(non_ai_videos) < minimum_clips:
+            raise RuntimeError(
+                f"Quality gate failed for {video_id}: only {len(non_ai_videos)} non-AI moving clips; "
+                f"{minimum_clips} required. Refusing slideshow render."
+            )
+        if not actual_videos and len(moving_categories) < minimum_categories:
+            raise RuntimeError(
+                f"Quality gate failed for {video_id}: moving footage covers only "
+                f"{len(moving_categories)} categories; {minimum_categories} required."
+            )
+        print(
+            f"Video quality gate passed for {video_id}: {len(non_ai_videos)} non-AI clips "
+            f"across {len(moving_categories)} categories."
+        )
 
     maps = _copy(map_files, destination, "map")
     audio_source = Path("assets/audio") / f"{video_id}.mp3"
