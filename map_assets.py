@@ -19,7 +19,7 @@ def location_label(job: dict) -> str:
     raw = str(job.get("property_location") or "Coimbatore").strip()
     parts = [part.strip() for part in raw.split(",") if part.strip()]
     priority = (
-        "street", "road", "colony", "nagar", "layout", "hudco", "pattanam",
+        "colony", "hudco", "nagar", "layout", "pattanam", "street", "road",
         "saravanampatti", "thudiyalur",
     )
     chosen = next((part for marker in priority for part in parts if marker in part.lower()), parts[0])
@@ -37,9 +37,9 @@ def geocode_candidates(job: dict) -> list[str]:
     label = location_label(job)
     parts = [part.strip() for part in raw.split(",") if part.strip()]
     candidates = [
+        f"{label}, Coimbatore, Tamil Nadu, India",
         f"{raw}, Tamil Nadu, India" if "coimbatore" in raw.lower() else f"{raw}, Coimbatore, Tamil Nadu, India",
         f"{', '.join(parts[:2])}, Coimbatore, Tamil Nadu, India" if len(parts) >= 2 else "",
-        f"{label}, Coimbatore, Tamil Nadu, India",
     ]
     unique = []
     for query in candidates:

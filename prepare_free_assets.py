@@ -2,7 +2,7 @@ import json
 import os
 from pathlib import Path
 
-from engaging_broll_pool import source_engaging_broll
+from strict_broll_pool import source_property_videos_strict
 from map_assets import render_map_sequence
 from media_sources import source_property_media
 from tamil_voiceover import create_voiceover
@@ -33,7 +33,7 @@ def main() -> None:
         try:
             job = json.loads((JOBS / f"{video_id}.json").read_text(encoding="utf-8"))
             media = source_property_media(job)
-            clips = source_engaging_broll(job)
+            clips = source_property_videos_strict(job)
             maps = render_map_sequence(job)
             voice = create_voiceover(job)
             print(f"Prepared {video_id}: {len(media)} images, {len(clips)} clips, {len(maps)} maps, voice={voice}")
