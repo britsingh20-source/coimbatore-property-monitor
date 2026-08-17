@@ -15,10 +15,13 @@ USER_AGENT = os.environ.get(
 
 
 def location_label(job: dict) -> str:
-    """Return the specific locality that should appear in maps and VFX labels."""
+    """Return the most specific usable locality/street label available in the job."""
     raw = str(job.get("property_location") or "Coimbatore").strip()
     parts = [part.strip() for part in raw.split(",") if part.strip()]
-    priority = ("colony", "nagar", "layout", "pattanam", "saravanampatti", "thudiyalur")
+    priority = (
+        "street", "road", "colony", "nagar", "layout", "hudco", "pattanam",
+        "saravanampatti", "thudiyalur",
+    )
     chosen = next((part for marker in priority for part in parts if marker in part.lower()), parts[0])
     from_match = re.search(r"\bfrom\s+(.+)$", chosen, flags=re.IGNORECASE)
     if from_match:
@@ -29,20 +32,19 @@ def location_label(job: dict) -> str:
 
 
 def geocode_candidates(job: dict) -> list[str]:
-    """Try the most specific locality first instead of one brittle long query."""
+    """Try only specific property/locality queries; never silently fall back to all-Coimbatore."""
     raw = str(job.get("property_location") or "Coimbatore").strip()
     label = location_label(job)
     parts = [part.strip() for part in raw.split(",") if part.strip()]
     candidates = [
-        f"{label}, Coimbatore, Tamil Nadu, India",
-        f"{', '.join(parts[:2])}, Coimbatore, Tamil Nadu, India",
         f"{raw}, Tamil Nadu, India" if "coimbatore" in raw.lower() else f"{raw}, Coimbatore, Tamil Nadu, India",
-        "Coimbatore, Tamil Nadu, India",
+        f"{', '.join(parts[:2])}, Coimbatore, Tamil Nadu, India" if len(parts) >= 2 else "",
+        f"{label}, Coimbatore, Tamil Nadu, India",
     ]
     unique = []
     for query in candidates:
-        query = re.sub(r"(?:,\s*Coimbatore){2,}", ", Coimbatore", query, flags=re.IGNORECASE)
-        if query.lower() not in {item.lower() for item in unique}:
+        query = re.sub(r"(?:,\s*Coimbatore){2,}", ", Coimbatore", query, flags=re.IGNORECASE).strip(" ,")
+        if query and query.lower() not in {item.lower() for item in unique}:
             unique.append(query)
     return unique
 
@@ -51,38 +53,52 @@ def geocode_query(job: dict) -> str:
     return geocode_candidates(job)[0]
 
 
+def _specific_enough(display_name: str, label: str) -> bool:
+    text = display_name.lower()
+    wanted = [token for token in re.split(r"[^a-z0-9]+", label.lower()) if len(token) >= 4]
+    return not wanted or any(token in text for token in wanted)
+
+
 def geocode(job: dict) -> dict:
     video_id = job["video_id"]
     raw_location = str(job.get("property_location") or "Coimbatore").strip()
+    label = location_label(job)
     cache = Path("data/geocoding") / f"{video_id}.json"
     if cache.exists():
         cached = json.loads(cache.read_text(encoding="utf-8"))
-        if cached.get("source_location") == raw_location:
+        if (
+            cached.get("source_location") == raw_location
+            and _specific_enough(str(cached.get("display_name") or ""), label)
+        ):
             return cached
 
     result = None
     for query in geocode_candidates(job):
         response = requests.get(
             NOMINATIM,
-            params={"q": query, "format": "jsonv2", "limit": 1},
+            params={"q": query, "format": "jsonv2", "limit": 5, "countrycodes": "in"},
             headers={"User-Agent": USER_AGENT},
             timeout=30,
         )
         response.raise_for_status()
         results = response.json()
-        if results:
+        chosen = next(
+            (item for item in results if _specific_enough(str(item.get("display_name") or ""), label)),
+            None,
+        )
+        if chosen:
             result = {
-                "lat": float(results[0]["lat"]),
-                "lon": float(results[0]["lon"]),
-                "display_name": results[0].get("display_name", query),
+                "lat": float(chosen["lat"]),
+                "lon": float(chosen["lon"]),
+                "display_name": chosen.get("display_name", query),
                 "query": query,
                 "source_location": raw_location,
-                "location_label": location_label(job),
+                "location_label": label,
                 "provider": "OpenStreetMap contributors / Nominatim",
             }
             break
     if result is None:
-        raise RuntimeError(f"Location was not found: {geocode_candidates(job)}")
+        raise RuntimeError(f"Specific location was not found: {geocode_candidates(job)}")
     cache.parent.mkdir(parents=True, exist_ok=True)
     cache.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     return result
@@ -99,12 +115,12 @@ def _placeholder(path: Path, title: str, subtitle: str) -> None:
     draw.rounded_rectangle((90, 950, 990, 1190), radius=40, fill="#F5F0E6")
     draw.text((140, 1000), title[:42], fill="#071A2E", font=font)
     draw.text((140, 1080), subtitle[:65], fill="#526477", font=small)
-    draw.text((140, 1150), "Map unavailable - verify location", fill="#9C6C16", font=small)
+    draw.text((140, 1150), "Exact street not available - verify location", fill="#9C6C16", font=small)
     image.save(path, quality=92)
 
 
 def render_map_sequence(job: dict) -> list[Path]:
-    """Create a three-step OSM zoom centered on this job's specific locality."""
+    """Create locality/street-level OSM views; never render state/country-wide maps."""
     output = Path("assets/maps") / job["video_id"]
     output.mkdir(parents=True, exist_ok=True)
     for stale in output.glob("map-*.jpg"):
@@ -114,7 +130,8 @@ def render_map_sequence(job: dict) -> list[Path]:
         from staticmap import CircleMarker, StaticMap
 
         paths = []
-        for index, zoom in enumerate((7, 12, 15), start=1):
+        # Reel maps should start close and get closer: neighbourhood -> streets -> immediate block.
+        for index, zoom in enumerate((14, 16, 18), start=1):
             canvas = StaticMap(
                 1080,
                 1350,
@@ -132,9 +149,9 @@ def render_map_sequence(job: dict) -> list[Path]:
     except Exception as error:
         print(f"Map rendering fallback: {error}")
         paths = []
-        labels = ("Tamil Nadu", "Coimbatore", location_label(job))
-        for index, label in enumerate(labels, start=1):
+        label = location_label(job)
+        for index, detail in enumerate(("Neighbourhood", "Street area", "Immediate area"), start=1):
             path = output / f"map-{index}.jpg"
-            _placeholder(path, str(label), "OpenStreetMap location sequence")
+            _placeholder(path, label, detail)
             paths.append(path)
         return paths
