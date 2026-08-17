@@ -55,22 +55,27 @@ jobs:
           pip install -r requirements-ai.txt
           npm ci --prefix professional_video
 
-      - name: Prepare voice maps and AI clips
+      - name: Prepare strict moving B-roll, voice and maps
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
-          POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          AI_BROLL_MAX_ANIMATED: '0'
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
           TAMIL_MALE_VOICE: ta-IN-ValluvarNeural
           VIDEO_IDS_FILE: /tmp/layered-v2-queue.txt
           ASSET_FAILURES_FILE: outputs/asset-failure-ids.txt
         run: |
           printf '2jHws5Fg5Ac\n' > /tmp/layered-v2-queue.txt
-          python prepare_engaging_assets.py
+          python prepare_free_assets.py
 
       - name: Render Layered Reel V2
+        env:
+          REQUIRE_REAL_VIDEO_BROLL: 'true'
+          MIN_REAL_VIDEO_CLIPS: '4'
+          MIN_REAL_VIDEO_CATEGORIES: '3'
         shell: bash
         run: |
           set -euo pipefail
