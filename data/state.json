@@ -144,9 +144,11 @@
     },
     "2Dc29bon2po": {
       "attempts": 0,
+      "completed_at": "2026-08-18T14:02:03.969985+00:00",
       "first_seen_at": "2026-08-18T13:11:18.332814+00:00",
+      "last_error": "",
       "next_retry_at": "2026-08-18T13:11:18.332814+00:00",
-      "status": "discovered"
+      "status": "archived_non_target"
     },
     "2E2vk14hxHU": {
       "attempts": 0,
@@ -883,9 +885,11 @@
     },
     "QUYaLMRh7MQ": {
       "attempts": 0,
+      "completed_at": "2026-08-18T14:01:29.850111+00:00",
       "first_seen_at": "2026-08-18T13:11:18.332814+00:00",
+      "last_error": "",
       "next_retry_at": "2026-08-18T13:11:18.332814+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "QZ0btepAbaI": {
       "attempts": 0,
