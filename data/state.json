@@ -142,6 +142,12 @@
       "next_retry_at": "2026-08-07T13:52:59.664146+00:00",
       "status": "archived_non_target"
     },
+    "2Dc29bon2po": {
+      "attempts": 0,
+      "first_seen_at": "2026-08-18T13:11:18.332814+00:00",
+      "next_retry_at": "2026-08-18T13:11:18.332814+00:00",
+      "status": "discovered"
+    },
     "2E2vk14hxHU": {
       "attempts": 0,
       "completed_at": "2026-08-08T09:57:19.005965+00:00",
@@ -400,6 +406,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-10T22:45:13.164960+00:00",
       "status": "video_queued"
+    },
+    "BuJPw72h-nQ": {
+      "attempts": 0,
+      "first_seen_at": "2026-08-18T13:11:18.332814+00:00",
+      "next_retry_at": "2026-08-18T13:11:18.332814+00:00",
+      "status": "discovered"
     },
     "C-dsowCuNs0": {
       "attempts": 0,
@@ -861,6 +873,20 @@
       "next_retry_at": "2026-08-10T02:53:16.915982+00:00",
       "status": "video_queued"
     },
+    "QKRgt81EXjo": {
+      "attempts": 0,
+      "completed_at": "2026-08-18T13:12:27.372995+00:00",
+      "first_seen_at": "2026-08-18T13:11:18.332814+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-08-18T13:11:18.332814+00:00",
+      "status": "video_queued"
+    },
+    "QUYaLMRh7MQ": {
+      "attempts": 0,
+      "first_seen_at": "2026-08-18T13:11:18.332814+00:00",
+      "next_retry_at": "2026-08-18T13:11:18.332814+00:00",
+      "status": "discovered"
+    },
     "QZ0btepAbaI": {
       "attempts": 0,
       "completed_at": "2026-08-06T12:21:49.988292+00:00",
@@ -899,6 +925,14 @@
       "first_seen_at": "2026-08-04T21:03:07.993508+00:00",
       "last_error": "",
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
+      "status": "video_queued"
+    },
+    "S7lv4VP4ym8": {
+      "attempts": 0,
+      "completed_at": "2026-08-18T13:16:20.757984+00:00",
+      "first_seen_at": "2026-08-18T13:11:18.332814+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-08-18T13:11:18.332814+00:00",
       "status": "video_queued"
     },
     "SuKL_B7c-EQ": {
@@ -1052,6 +1086,14 @@
       "first_seen_at": "2026-08-05T08:21:48.515156+00:00",
       "last_error": "",
       "next_retry_at": "2026-08-05T08:21:48.515156+00:00",
+      "status": "video_queued"
+    },
+    "Yw7KSXJcAUY": {
+      "attempts": 0,
+      "completed_at": "2026-08-18T13:14:46.095509+00:00",
+      "first_seen_at": "2026-08-18T13:11:18.332814+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-08-18T13:11:18.332814+00:00",
       "status": "video_queued"
     },
     "ZOlzkDAKjNo": {

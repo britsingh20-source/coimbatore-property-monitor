@@ -1,0 +1,138 @@
+{
+  "video_id": "Yw7KSXJcAUY",
+  "source_url": "https://www.youtube.com/watch?v=Yw7KSXJcAUY",
+  "property_location": "Karamadai, Coimbatore",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": "2 BHK",
+    "land_area": "3 Cents",
+    "built_up_area": "1150 sqft",
+    "price": "49 Lakhs",
+    "facing": "West Facing site (North facing main door)",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Car parking (12'0\" x 21'0\")",
+    "approval": "DTCP approved"
+  },
+  "verified_facts": "2BHK Independent Villa in Karamadai, Coimbatore, Land area: 3 Cents, Built-up area: 1150 sqft, Price: 49 Lakhs (negotiable), West facing site, North facing main door, DTCP approved site with 75% bank loan available, Borewell and 6,000 Liters Sump available",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking naturally to camera with casual Tamil speech and common English real estate terms.",
+    "hook_strategy": "Lead directly with the location, property type, and attractive price point of 49 Lakhs in Karamadai.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை காரமடையில 49 Lakhs-க்கு ஒரு அருமையான 2 BHK Independent Villa பாக்கப்போறோம்!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 3 Cents land area-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Built-up area பாத்தீங்கனா 1150 sqft. உள்ள Modular Kitchen Cabinets, TV Wall Unit எல்லாமே பண்ணிருக்காங்க.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "interior_details"
+      },
+      {
+        "name": "facing",
+        "voice": "இது West facing site, main door North facing-ல இருக்கு. அதே மாதிரி 12 by 21 feet Car Parking-ம் கொடுத்திருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass",
+        "purpose": "facing_and_parking"
+      },
+      {
+        "name": "approval",
+        "voice": "தண்ணீர் வசதிக்கு Borewell, 6,000 Liters Sump இருக்கு. இது DTCP approved site, 75% bank loan வசதியும் கிடைக்கும்.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "badge",
+        "purpose": "approval_and_water"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட விலை 49 Lakhs, negotiable தான்.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details தெரிஞ்சுக்கவோ, site visit வரவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "call-now",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/Yw7KSXJcAUY/",
+  "optional_owned_audio": "assets/audio/Yw7KSXJcAUY.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary house with grey, white, and yellow accents, wooden slat gate, and patterned exterior tiled porch.. Neighbourhood: Residential locality with surrounding residential houses and open sky.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary house with grey, white, and yellow accents, wooden slat gate, and patterned exterior tiled porch.. Neighbourhood: Residential locality with surrounding residential houses and open sky.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary house with grey, white, and yellow accents, wooden slat gate, and patterned exterior tiled porch.. Neighbourhood: Residential locality with surrounding residential houses and open sky.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary house with grey, white, and yellow accents, wooden slat gate, and patterned exterior tiled porch.. Neighbourhood: Residential locality with surrounding residential houses and open sky.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

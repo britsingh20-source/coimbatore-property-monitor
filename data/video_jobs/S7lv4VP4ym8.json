@@ -1,0 +1,145 @@
+{
+  "video_id": "S7lv4VP4ym8",
+  "source_url": "https://www.youtube.com/watch?v=S7lv4VP4ym8",
+  "property_location": "Vadavalli, Thondamuthur Road, Coimbatore",
+  "property": {
+    "property_type": "Independent Duplex House",
+    "bhk": "3BHK",
+    "land_area": "3 Cents (1300 Sq.Ft.)",
+    "built_up_area": "2300 Sq.Ft.",
+    "price": "₹1.40 Crore",
+    "facing": "East (House) / South (Site)",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Car Parking",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "3 Cents land area (23x55 ft / 1300 sq.ft.), 2300 sq.ft. built-up duplex house, House is East facing and site is South facing, Price is ₹1.40 Crore (negotiable), Located in Vadavalli, Thondamuthur Road, Coimbatore (Corporation limit), 3 BHK with attached bathrooms in all bedrooms, DTCP approved site with bank loan availability",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and authentic local property presenter speaking directly to camera with high visual correlation.",
+    "hook_strategy": "Lead directly with prime Coimbatore location (Vadavalli, Thondamuthur Road) and 3BHK independent duplex offering.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை வடவள்ளி, Thondamuthur Road-ல ஒரு அழகான 3BHK independent duplex house விற்பனைக்கு வந்திருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-text-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தம் 3 Cents land, அதாவது 1300 sq.ft site-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Built-up area பாத்தீங்கனா 2300 sq.ft. 3 bedrooms-லயும் attached bathrooms இருக்கு. Modular kitchen, false ceiling, wardrobes, balcony-ன்னு எல்லாமே இருக்கு.",
+        "broll": [
+          "living_room",
+          "interior",
+          "bedroom",
+          "kitchen"
+        ],
+        "avoid_broll": [
+          "road",
+          "exterior"
+        ],
+        "vfx": "interior-feature-callouts",
+        "purpose": "property_specs"
+      },
+      {
+        "name": "facing",
+        "voice": "House East facing, site South facing. Garden space, car parking, borewell மற்றும் water sump வசதிகளும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_and_amenities"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approved site, Coimbatore Corporation limit-ல வருது. Bank loan facility-யும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "legality_trust"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த வீட்டின் விலை 1.40 Crore, negotiable.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "price-tag-animation",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ண அல்லது மேலும் details தெரிஞ்சுக்க உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "contact-card",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/S7lv4VP4ym8/",
+  "optional_owned_audio": "assets/audio/S7lv4VP4ym8.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern architectural elevation with brown and dark grey box projection highlights, black steel gate, paved car parking driveway, and a front garden setup.. Neighbourhood: Residential locality in Vadavalli, Coimbatore, surrounded by independent homes, trees, and open green views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern architectural elevation with brown and dark grey box projection highlights, black steel gate, paved car parking driveway, and a front garden setup.. Neighbourhood: Residential locality in Vadavalli, Coimbatore, surrounded by independent homes, trees, and open green views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern architectural elevation with brown and dark grey box projection highlights, black steel gate, paved car parking driveway, and a front garden setup.. Neighbourhood: Residential locality in Vadavalli, Coimbatore, surrounded by independent homes, trees, and open green views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern architectural elevation with brown and dark grey box projection highlights, black steel gate, paved car parking driveway, and a front garden setup.. Neighbourhood: Residential locality in Vadavalli, Coimbatore, surrounded by independent homes, trees, and open green views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
