@@ -260,11 +260,12 @@
     },
     "5zBKIFsQd_E": {
       "attempts": 1,
+      "completed_at": "2026-08-19T15:49:02.666587+00:00",
       "first_seen_at": "2026-08-19T13:12:40.866578+00:00",
       "last_attempt_at": "2026-08-19T13:22:28.444593+00:00",
-      "last_error": "sequence item 2: expected str instance, dict found",
+      "last_error": "",
       "next_retry_at": "2026-08-19T15:22:28.444603+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "61letGCd-qw": {
       "attempts": 1,
