@@ -1,0 +1,156 @@
+{
+  "video_id": "VqP-0KSc1Uw",
+  "source_url": "https://www.youtube.com/watch?v=VqP-0KSc1Uw",
+  "property_location": "Pattanam Pudur, Coimbatore",
+  "property": {
+    "property_type": "Duplex House",
+    "bhk": 2,
+    "land_area": "2.50 cents",
+    "built_up_area": "1400 sqft",
+    "price": "₹65 Lakhs (Negotiable)",
+    "facing": "East",
+    "road_width": "30 & 33 feet",
+    "parking": "12 x 14 ft Covered Parking",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Price: 65 Lakhs (Negotiable, includes land), Up to 85% loan available, Located in Pattanam Pudur, Coimbatore, Land Area: 2.50 cents, South East Corner Site, Main Door Facing: East, Building Area: 1400 sqft, Ground Floor: Parking (12*14), Living Hall (16*16), Kitchen (11*8), Dining (6*10), Kids Bedroom (10*11), Attached Bathroom (4*10)",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Pattanam சைட்ல 2 Duplex House தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹65 Lakhs (Negotiable).",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 2.50 cents லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 1400 sqft இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "road",
+        "voice": "இதுல முக்கியமான விஷயம், முன்னாடி 30 & 33 feet ரோடு வசதி இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [],
+        "vfx": "road-measure",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு East ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP Approved இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "Script invented numeric facts in land: ['2.5']"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/VqP-0KSc1Uw/",
+  "optional_owned_audio": "assets/audio/VqP-0KSc1Uw.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-color painted 2-story duplex home featuring light yellow walls, blue and maroon architectural accents, front gate, covered car portico, and top terrace.. Neighbourhood: Quiet residential neighborhood in Pattanam Pudur, Coimbatore with tar roads and open surroundings.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-color painted 2-story duplex home featuring light yellow walls, blue and maroon architectural accents, front gate, covered car portico, and top terrace.. Neighbourhood: Quiet residential neighborhood in Pattanam Pudur, Coimbatore with tar roads and open surroundings.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-color painted 2-story duplex home featuring light yellow walls, blue and maroon architectural accents, front gate, covered car portico, and top terrace.. Neighbourhood: Quiet residential neighborhood in Pattanam Pudur, Coimbatore with tar roads and open surroundings.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-color painted 2-story duplex home featuring light yellow walls, blue and maroon architectural accents, front gate, covered car portico, and top terrace.. Neighbourhood: Quiet residential neighborhood in Pattanam Pudur, Coimbatore with tar roads and open surroundings.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
