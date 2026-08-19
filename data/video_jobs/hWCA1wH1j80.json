@@ -1,0 +1,155 @@
+{
+  "video_id": "hWCA1wH1j80",
+  "source_url": "https://www.youtube.com/watch?v=hWCA1wH1j80",
+  "property_location": "Mondipalayam, near Annur, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plots & Independent Houses",
+    "bhk": "1 BHK / 2 BHK / 3 BHK",
+    "land_area": "1.65 Cents to 2.75 Cents (18 Acres Total Township)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "Land: ₹4.90 Lakhs per Cent (EMI from ₹5,000/month); 1 BHK House: ₹17 Lakhs (EMI from ₹12,000/month); 2 BHK House: ₹25 Lakhs - ₹28 Lakhs",
+    "facing": "North & East facing plots available",
+    "road_width": "23 ft / 30 ft / 33 ft Tar Roads",
+    "parking": "Available",
+    "approval": "DTCP & RERA Approved"
+  },
+  "verified_facts": "18-acre township layout split into 384 DTCP & RERA approved plot units., Land available on EMI starting at ₹5,000/month for 1.65 Cents and ₹10,000/month for 2.75 Cents., Houses constructed using red brick and pillar foundation with 100% custom plan options at ₹2,100 per sq. ft., Up to 95% bank loan facility available for plot purchase and up to 100% loan for plot plus construction.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and authentic local real-estate presenter speaking directly to camera in natural conversational Tamil.",
+    "hook_strategy": "Lead with location convenience near Saravanampatti and Annur combined with the starting plot price.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore-ல Annur Mondipalayam, Saravanampatti-க்கு பக்கத்துல, ஒரு 18-acre grand township-ல plots மற்றும் independent houses விற்பனைக்கு வந்திருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல 1.65 Cents-லிருந்து 2.75 Cents வரை 384 plot units இருக்கு. 24/7 security, compound wall-ோட அமைஞ்ச அழகான gated community layout.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "layout-highlight",
+        "purpose": "land-details"
+      },
+      {
+        "name": "price",
+        "voice": "Land பாத்தீங்கனா Cent வெறும் 4.90 Lakhs தான், EMI starting at 5,000. 1 BHK house 17 Lakhs-லிருந்தும், 2 BHK house 25 Lakhs to 28 Lakhs-லேயும் கிடைக்குது.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1 BHK, 2 BHK, 3 BHK வீடுகள் red brick construction-ல, custom plan-படி sq.ft 2,100-க்கு கட்டி தர்றாங்க. 100% வரை bank loan facility-யும் இருக்கு.",
+        "broll": [
+          "interior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "construction-details"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல North மற்றும் East facing plots available-ஆ இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass",
+        "purpose": "orientation"
+      },
+      {
+        "name": "road",
+        "voice": "Layout உள்ள 23 ft, 30 ft மற்றும் 33 ft wide blacktop tar roads அமைச்சிருக்காங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "road-width-graphic",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "approval",
+        "voice": "முக்கியமான விஷயம், இது முழுமையா DTCP மற்றும் RERA approval பெற்ற layout.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "Direct site visit போகவும், மேலும் details தெரிஞ்சுக்கவும் உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "contact-card",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/hWCA1wH1j80/",
+  "optional_owned_audio": "assets/audio/hWCA1wH1j80.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Large 18-acre master-planned residential layout featuring wide blacktop roads with white lane markings, concrete drainage gutters, streetlights, fenced boundary, a tall overhead water tank labeled 'MADURAM', a gated entrance arch, and a colorful children's playground named 'Happy Trails'.. Neighbourhood: Suburban residential development set amidst fertile red soil farmland (semman bhoomi) near Annur along the Sathyamangalam Highway, offering quiet green surroundings with easy road access to schools, colleges, department stores, and KMCH Kovilpalayam Hospital.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Large 18-acre master-planned residential layout featuring wide blacktop roads with white lane markings, concrete drainage gutters, streetlights, fenced boundary, a tall overhead water tank labeled 'MADURAM', a gated entrance arch, and a colorful children's playground named 'Happy Trails'.. Neighbourhood: Suburban residential development set amidst fertile red soil farmland (semman bhoomi) near Annur along the Sathyamangalam Highway, offering quiet green surroundings with easy road access to schools, colleges, department stores, and KMCH Kovilpalayam Hospital.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Large 18-acre master-planned residential layout featuring wide blacktop roads with white lane markings, concrete drainage gutters, streetlights, fenced boundary, a tall overhead water tank labeled 'MADURAM', a gated entrance arch, and a colorful children's playground named 'Happy Trails'.. Neighbourhood: Suburban residential development set amidst fertile red soil farmland (semman bhoomi) near Annur along the Sathyamangalam Highway, offering quiet green surroundings with easy road access to schools, colleges, department stores, and KMCH Kovilpalayam Hospital.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Large 18-acre master-planned residential layout featuring wide blacktop roads with white lane markings, concrete drainage gutters, streetlights, fenced boundary, a tall overhead water tank labeled 'MADURAM', a gated entrance arch, and a colorful children's playground named 'Happy Trails'.. Neighbourhood: Suburban residential development set amidst fertile red soil farmland (semman bhoomi) near Annur along the Sathyamangalam Highway, offering quiet green surroundings with easy road access to schools, colleges, department stores, and KMCH Kovilpalayam Hospital.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

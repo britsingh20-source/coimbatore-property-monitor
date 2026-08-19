@@ -183,6 +183,14 @@
       "next_retry_at": "2026-08-12T17:17:41.646729+00:00",
       "status": "archived_non_target"
     },
+    "346_GlJK_i0": {
+      "attempts": 0,
+      "completed_at": "2026-08-19T14:01:09.885127+00:00",
+      "first_seen_at": "2026-08-19T14:00:10.882868+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-08-19T14:00:10.882868+00:00",
+      "status": "video_queued"
+    },
     "4QM0yDap_Gw": {
       "attempts": 1,
       "completed_at": "2026-08-06T04:19:52.075129+00:00",
@@ -1380,9 +1388,11 @@
     },
     "hWCA1wH1j80": {
       "attempts": 0,
+      "completed_at": "2026-08-19T14:02:20.877218+00:00",
       "first_seen_at": "2026-08-19T13:12:40.866578+00:00",
+      "last_error": "",
       "next_retry_at": "2026-08-19T13:12:40.866578+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "hv8z3FZL-hY": {
       "attempts": 1,
