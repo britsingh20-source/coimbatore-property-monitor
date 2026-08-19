@@ -1,0 +1,144 @@
+{
+  "video_id": "swzao8YnE4s",
+  "source_url": "https://www.youtube.com/watch?v=swzao8YnE4s",
+  "property_location": "Vadavalli, Coimbatore",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3BHK",
+    "land_area": "2.5 Cents",
+    "built_up_area": "1950 sqft",
+    "price": "1.10 Crore (Negotiable)",
+    "facing": "West facing site, North facing main door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Car parking (16'0\" × 23'0\")",
+    "approval": "DTCP approved"
+  },
+  "verified_facts": "3BHK Independent house in Vadavalli, Coimbatore, West face site with North facing main door, Land area: 2.5 Cents, Built-up area: 1950 sqft, Price: 1.10 Crore (Negotiable), 75% Bank loan available, DTCP approved property with drinking water sump, Ground floor contains car parking, living hall, kitchen & dining, 1 master bedroom with attached bathroom, First floor contains living hall, 2 bedrooms, 1 attached bathroom, and 1 common bathroom",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and engaging local presenter style, speaking natural conversational Tamil with mixed real-estate keywords",
+    "hook_strategy": "Highlight the desirable 3BHK independent house in a prime Coimbatore location right in the first 3 seconds",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை Vadavalli-ல ஒரு அருமையான 3BHK Independent House விற்பனைக்கு வந்துருக்குங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-text-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இதுல 1950 sqft built-up area இருக்கு. Ground floor-ல living hall, modular kitchen, master bedroom... First floor-ல extra living hall கூடவே 2 bedrooms இருக்குங்க.",
+        "broll": [
+          "interior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "exterior",
+          "land"
+        ],
+        "vfx": "text-highlight",
+        "purpose": "property layout and interior details"
+      },
+      {
+        "name": "land",
+        "voice": "Land area பாத்தீங்கனா 2.5 Cents. Spacious car parking வசதியும் இதுல இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "dimension-overlay",
+        "purpose": "land area and parking specification"
+      },
+      {
+        "name": "facing",
+        "voice": "West facing site, North facing main door கொடுத்துருக்காங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "directional orientation"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், DTCP approved property. கூடவே drinking water sump வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "badge-overlay",
+        "purpose": "approval and utility highlight"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price 1.10 Crore negotiable. 75% bank loan support கூட இருக்குங்க.",
+        "broll": [
+          "interior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag-overlay",
+        "purpose": "pricing and financing facts"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து பாக்க site visit வரணும்னா உடனே call பண்ணுங்க, full details வாங்கிக்கோங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "contact-card-overlay",
+        "purpose": "call to action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/swzao8YnE4s/",
+  "optional_owned_audio": "assets/audio/swzao8YnE4s.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story elevation featuring a white facade with dark grey accents, wooden paneling, large modern windows, a secure front gate, and tiled car parking space.. Neighbourhood: Residential neighborhood setting with adjacent individual residential houses and paved street access.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story elevation featuring a white facade with dark grey accents, wooden paneling, large modern windows, a secure front gate, and tiled car parking space.. Neighbourhood: Residential neighborhood setting with adjacent individual residential houses and paved street access.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story elevation featuring a white facade with dark grey accents, wooden paneling, large modern windows, a secure front gate, and tiled car parking space.. Neighbourhood: Residential neighborhood setting with adjacent individual residential houses and paved street access.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story elevation featuring a white facade with dark grey accents, wooden paneling, large modern windows, a secure front gate, and tiled car parking space.. Neighbourhood: Residential neighborhood setting with adjacent individual residential houses and paved street access.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
