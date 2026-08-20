@@ -120,7 +120,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: assets/ai_broll
-          key: ai-scenes-${{ runner.os }}-${{ hashFiles('data/video_jobs/**', 'ai_visual_pipeline.py', 'cloudflare_ai_visual_pipeline.py') }}
+          key: ai-scenes-${{ runner.os }}-${{ hashFiles('data/approved_video_ids.txt', 'ai_visual_pipeline.py', 'cloudflare_ai_visual_pipeline.py') }}
 
       - name: Generate AI images, maps and Tamil male voice-over
         id: assets
