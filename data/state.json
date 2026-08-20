@@ -1342,6 +1342,14 @@
       "next_retry_at": "2026-08-15T01:52:25.933751+00:00",
       "status": "discovered"
     },
+    "eYhQKqZZngA": {
+      "attempts": 0,
+      "completed_at": "2026-08-20T14:59:15.794181+00:00",
+      "first_seen_at": "2026-08-20T14:58:06.439775+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-08-20T14:58:06.439775+00:00",
+      "status": "video_queued"
+    },
     "ebi6hkrJ_Vk": {
       "attempts": 0,
       "completed_at": "2026-08-05T20:42:37.917769+00:00",
