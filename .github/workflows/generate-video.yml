@@ -22,6 +22,9 @@ on:
       - professional_video/**
       - prepare_remotion_job.py
       - prepare_free_assets.py
+      - prepare_engaging_assets.py
+      - prepare_layered_assets.py
+      - requirements-ai.txt
       - select_render_jobs.py
       - video_pipeline.py
       - render_free_approved.py
@@ -96,9 +99,11 @@ jobs:
       - name: Install system render dependencies
         if: steps.select.outputs.has_jobs == 'true'
         run: sudo apt-get update && sudo apt-get install -y ffmpeg fonts-noto-core
-      - name: Install base Python dependencies
+      - name: Install Python dependencies
         if: steps.select.outputs.has_jobs == 'true'
-        run: pip install -r requirements.txt
+        run: |
+          pip install -r requirements.txt
+          pip install -r requirements-ai.txt
       - name: Validate automation and media pipeline
         if: steps.select.outputs.has_jobs == 'true'
         run: python -m unittest discover -s tests -v
@@ -110,80 +115,34 @@ jobs:
         if: steps.select.outputs.has_jobs == 'true'
         run: python sample_assets.py
 
-      - name: Verify exact Cloudflare R2 villa B-roll folders
+      - name: Restore generated AI scene cache
         if: steps.select.outputs.has_jobs == 'true'
-        env:
-          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
-          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          python - <<'PY'
-          import os
-          import boto3
+        uses: actions/cache@v4
+        with:
+          path: assets/ai_broll
+          key: ai-scenes-${{ runner.os }}-${{ hashFiles('data/video_jobs/**', 'ai_visual_pipeline.py', 'cloudflare_ai_visual_pipeline.py') }}
 
-          required = ("R2_ACCOUNT_ID", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY", "R2_BUCKET_NAME")
-          missing = [name for name in required if not os.environ.get(name, "").strip()]
-          if missing:
-              raise SystemExit("Missing R2 secrets: " + ", ".join(missing))
-          bucket = os.environ["R2_BUCKET_NAME"].strip()
-          account_id = os.environ["R2_ACCOUNT_ID"].strip()
-          client = boto3.client(
-              "s3",
-              endpoint_url=f"https://{account_id}.r2.cloudflarestorage.com",
-              aws_access_key_id=os.environ["R2_ACCESS_KEY_ID"].strip(),
-              aws_secret_access_key=os.environ["R2_SECRET_ACCESS_KEY"].strip(),
-              region_name="auto",
-          )
-          prefixes = (
-              "villas/Road/",
-              "villas/bedroom/",
-              "villas/dining & Kitchen/",
-              "villas/exterior/",
-              "villas/living_room/",
-          )
-          total = 0
-          for prefix in prefixes:
-              response = client.list_objects_v2(Bucket=bucket, Prefix=prefix, MaxKeys=1000)
-              media = [item["Key"] for item in response.get("Contents", []) if item["Key"].lower().endswith((".mp4", ".mov", ".webm", ".m4v"))]
-              total += len(media)
-              print(f"R2 folder r2://{bucket}/{prefix} -> {len(media)} video(s)")
-          if total == 0:
-              raise SystemExit(f"No video B-roll found under r2://{bucket}/villas/.")
-          print(f"R2 villa B-roll verified: {total} video(s) available.")
-          PY
-
-      - name: Source licensed media, maps and Tamil male voice-over
+      - name: Generate AI images, maps and Tamil male voice-over
         id: assets
         if: steps.select.outputs.has_jobs == 'true'
         continue-on-error: true
         env:
-          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
-          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_BROLL_MODEL: gemini-3.6-flash
-          BROLL_VISUAL_MIN_SCORE: "72"
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
-          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
-          R2_OWN_FOOTAGE_ROOT: ""
+          POLLINATIONS_API_KEY: ${{ secrets.POLLINATIONS_API_KEY }}
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          AI_BROLL_MAX_ANIMATED: "0"
           TAMIL_MALE_VOICE: ta-IN-ValluvarNeural
           VIDEO_IDS_FILE: data/render_queue.txt
           ASSET_FAILURES_FILE: outputs/asset-failure-ids.txt
         shell: bash
-        run: python prepare_free_assets.py
+        run: python prepare_engaging_assets.py
 
       - name: Render each property independently
         id: render
         if: steps.select.outputs.has_jobs == 'true'
         continue-on-error: true
-        env:
-          REQUIRE_REAL_VIDEO_BROLL: 'true'
-          MIN_REAL_VIDEO_CLIPS: '4'
-          MIN_REAL_VIDEO_CATEGORIES: '3'
         shell: bash
         run: |
           set -uo pipefail
@@ -203,6 +162,7 @@ jobs:
             if (
               set -euo pipefail
               python prepare_remotion_job.py "data/video_jobs/${video_id}.json"
+              python prepare_layered_assets.py "${video_id}"
               props_file="data/remotion_props/${video_id}.json"
               python -c 'import json,sys; data=json.load(open(sys.argv[1], encoding="utf-8")); assert data["videoId"] == sys.argv[2], (data["videoId"], sys.argv[2]); print("Rendering", data["videoId"], data["location"], data["title"])' "$props_file" "$video_id"
               props_path="$(realpath "$props_file")"
@@ -216,40 +176,22 @@ jobs:
               echo "Rendered $video_id with Remotion."
               continue
             fi
-            echo "::warning::Remotion failed for $video_id; attempting its isolated FFmpeg fallback."
-            if VIDEO_IDS_FILE=data/single-render-queue.txt python render_free_approved.py; then
-              echo "$video_id" >> outputs/fallback-render-ids.txt
-              echo "FFMPEG_FALLBACK" > "outputs/$video_id/render-mode.txt"
-            else
-              echo "$video_id" >> outputs/failed-render-ids.txt
-              echo "FAILED" > "outputs/$video_id/render-mode.txt"
-              echo "::error::Both render engines failed for $video_id."
-            fi
+            echo "$video_id" >> outputs/failed-render-ids.txt
+            echo "FAILED" > "outputs/$video_id/render-mode.txt"
+            echo "::error::Remotion AI/VFX render failed for $video_id; no basic fallback will be substituted."
           done < data/render_queue.txt
           if [[ -s outputs/failed-render-ids.txt ]]; then
             echo "::error::Some property videos failed. See failed-render-ids.txt."
             exit 1
           fi
 
-      - name: Upload completed property videos
-        uses: actions/upload-artifact@v4
-        if: always() && steps.select.outputs.has_jobs == 'true' && steps.render.outcome == 'success'
-        with:
-          name: autopilot-property-videos-${{ github.run_number }}
-          path: |
-            outputs/**/*.mp4
-            outputs/**/render-mode.txt
-            data/render_queue.txt
-          if-no-files-found: error
-          retention-days: 7
-
       - name: Publish completed Reels to Meta
         id: meta_publish
         if: >-
           steps.select.outputs.has_jobs == 'true' &&
           steps.render.outcome == 'success' &&
-          github.event_name == 'workflow_dispatch' &&
-          inputs.publish_to_meta == true
+          github.event_name != 'pull_request' &&
+          (github.event_name == 'repository_dispatch' || (github.event_name == 'workflow_dispatch' && inputs.publish_to_meta == true))
         env:
           META_GRAPH_VERSION: v26.0
           META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
@@ -262,6 +204,17 @@ jobs:
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
           VIDEO_IDS_FILE: data/render_queue.txt
         run: python publish_render_queue.py
+
+      - name: Upload rendered AI/VFX videos
+        uses: actions/upload-artifact@v4
+        if: steps.select.outputs.has_jobs == 'true' && steps.render.outcome == 'success'
+        with:
+          name: ai-vfx-property-videos-${{ github.run_number }}
+          path: |
+            outputs/**/*-professional-vertical.mp4
+            outputs/**/render-mode.txt
+          if-no-files-found: error
+          retention-days: 7
 
       - name: Upload compact failure diagnostics
         uses: actions/upload-artifact@v4

@@ -57,6 +57,8 @@ def build_video_job(video: dict, property_data: dict, location: dict) -> Path:
             )
         },
         "verified_facts": facts,
+        "visual_blueprint": property_data.get("visual_blueprint") or {},
+        "visual_reference_policy": "source-video-analysis-only; generate similar-but-distinct representative visuals; never copy source frames",
         "content_plan": content_plan,
         "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
         "aspect_ratio": "9:16",
