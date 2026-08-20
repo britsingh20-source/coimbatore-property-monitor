@@ -1,0 +1,146 @@
+{
+  "video_id": "DGpbPdcpqo4",
+  "source_url": "https://www.youtube.com/watch?v=DGpbPdcpqo4",
+  "property_location": "Veerapandi Pirivu, Coimbatore",
+  "property": {
+    "property_type": "Duplex Independent Villa",
+    "bhk": "2 BHK",
+    "land_area": "2.75 Cents",
+    "built_up_area": "1400 sqft",
+    "price": "Rs. 65 Lakhs",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "1 Covered Car Parking (10'0\" x 16'0\")",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Audio mentions asking price of 65 Lakhs, Property is a 2BHK duplex villa built on 2.75 cents land with 1400 sqft built-up area, North facing main door and site location, DTCP approved plot in Veerapandi pirivu, Coimbatore",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Thudiyalur சைட்ல 2 BHK Duplex Independent Villa தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை Rs. 65 Lakhs.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 2.75 Cents லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 1400 sqft இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு North ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP Approved இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/DGpbPdcpqo4/",
+  "optional_owned_audio": "assets/audio/DGpbPdcpqo4.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: A single-story style duplex elevation with geometric yellow, grey, and brown exterior paint, metal gate, paved parking area, and an open rooftop balcony space.. Neighbourhood: Quiet residential neighborhood in Veerapandi Pirivu, Coimbatore with surrounding residential houses and distant hill views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: A single-story style duplex elevation with geometric yellow, grey, and brown exterior paint, metal gate, paved parking area, and an open rooftop balcony space.. Neighbourhood: Quiet residential neighborhood in Veerapandi Pirivu, Coimbatore with surrounding residential houses and distant hill views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: A single-story style duplex elevation with geometric yellow, grey, and brown exterior paint, metal gate, paved parking area, and an open rooftop balcony space.. Neighbourhood: Quiet residential neighborhood in Veerapandi Pirivu, Coimbatore with surrounding residential houses and distant hill views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: A single-story style duplex elevation with geometric yellow, grey, and brown exterior paint, metal gate, paved parking area, and an open rooftop balcony space.. Neighbourhood: Quiet residential neighborhood in Veerapandi Pirivu, Coimbatore with surrounding residential houses and distant hill views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
