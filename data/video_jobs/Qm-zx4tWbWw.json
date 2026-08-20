@@ -1,0 +1,133 @@
+{
+  "video_id": "Qm-zx4tWbWw",
+  "source_url": "https://www.youtube.com/watch?v=Qm-zx4tWbWw",
+  "property_location": "Karamadai, Mettupalayam Road, Coimbatore",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": 2,
+    "land_area": "3.5 Cents",
+    "built_up_area": "1300 sqft",
+    "price": "₹67 Lakhs",
+    "facing": "East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking (21'0\" × 14'0\")",
+    "approval": "DTCP approved"
+  },
+  "verified_facts": "2BHK Ground floor independent house built on 3.5 cents land with 1300 sqft built-up area., East facing site and East facing main teak wood double door., Living hall measuring 16'0\" × 16'0\" with decorative false ceiling, chandelier, and louver panel TV unit., Kitchen cum dining measuring 8'0\" × 16'0\" with U-shaped granite countertop, quartz sink, and modular cabinets., Two master bedrooms measuring 10'0\" × 16'0\" each with attached bathrooms (5'0\" × 4'0\")., Outer Indian toilet under staircase area measuring 4'0\" × 5'0\"., Terrace floor treated with terracotta weathering paint and twin 1000L water tanks., Asking price is ₹67 Lakhs (negotiable) with 75% bank loan facility available.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera in natural spoken Tamil mixed with key English real-estate terms.",
+    "hook_strategy": "Highlight an independent 2BHK villa located just 1 km off Mettupalayam Road in Karamadai.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை காரமடை, மேட்டுப்பாளையம் ரோட்ல இருந்து வெறும் 1 km தொலைவுல ஒரு சூப்பரான 2BHK Independent Villa பாக்கலாம்!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-tag-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 3.5 Cents land-ல, DTCP approval-ஓட அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "text-highlight-approval",
+        "purpose": "land_and_approval_details"
+      },
+      {
+        "name": "facing",
+        "voice": "பாத்தீங்கனா, site அண்ட் main door ரெண்டுமே East facing-ல teak wood door-ஓட குடுத்திருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "compass-east-graphic",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1300 sqft built-up area! உள்ள ஃபால்ஸ் சீலிங் அண்ட் சாண்டலியர் இருக்குற living hall, modular kitchen, அப்புறம் 2 master bedrooms வித் attached bathrooms இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "dimension-text-overlay",
+        "purpose": "interior_tour"
+      },
+      {
+        "name": "price",
+        "voice": "இதுல முக்கியமான விஷயம், இதோட price 67 Lakhs, negotiable! 75% bank loan facility-யும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-badge-overlay",
+        "purpose": "pricing_and_loan"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து பார்க்க site visit பண்ணவோ, details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "call-now-button",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/Qm-zx4tWbWw/",
+  "optional_owned_audio": "assets/audio/Qm-zx4tWbWw.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story elevation painted in multi-color combination (grey, mustard yellow, and maroon) with texture finishes, spot lights, a wide black and wooden-finish metal gate, paved driveway parking, and an external granite staircase with stainless steel handrails leading to the terrace.. Neighbourhood: Residential layout surrounded by newly built independent houses, paved access road, overhead electricity lines, street lighting, and scenic views of distant hills under a cloudy sky.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story elevation painted in multi-color combination (grey, mustard yellow, and maroon) with texture finishes, spot lights, a wide black and wooden-finish metal gate, paved driveway parking, and an external granite staircase with stainless steel handrails leading to the terrace.. Neighbourhood: Residential layout surrounded by newly built independent houses, paved access road, overhead electricity lines, street lighting, and scenic views of distant hills under a cloudy sky.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story elevation painted in multi-color combination (grey, mustard yellow, and maroon) with texture finishes, spot lights, a wide black and wooden-finish metal gate, paved driveway parking, and an external granite staircase with stainless steel handrails leading to the terrace.. Neighbourhood: Residential layout surrounded by newly built independent houses, paved access road, overhead electricity lines, street lighting, and scenic views of distant hills under a cloudy sky.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story elevation painted in multi-color combination (grey, mustard yellow, and maroon) with texture finishes, spot lights, a wide black and wooden-finish metal gate, paved driveway parking, and an external granite staircase with stainless steel handrails leading to the terrace.. Neighbourhood: Residential layout surrounded by newly built independent houses, paved access road, overhead electricity lines, street lighting, and scenic views of distant hills under a cloudy sky.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
