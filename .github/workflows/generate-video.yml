@@ -231,13 +231,25 @@ jobs:
             exit 1
           fi
 
+      - name: Upload completed property videos
+        uses: actions/upload-artifact@v4
+        if: always() && steps.select.outputs.has_jobs == 'true' && steps.render.outcome == 'success'
+        with:
+          name: autopilot-property-videos-${{ github.run_number }}
+          path: |
+            outputs/**/*.mp4
+            outputs/**/render-mode.txt
+            data/render_queue.txt
+          if-no-files-found: error
+          retention-days: 7
+
       - name: Publish completed Reels to Meta
         id: meta_publish
         if: >-
           steps.select.outputs.has_jobs == 'true' &&
           steps.render.outcome == 'success' &&
-          github.event_name != 'pull_request' &&
-          (github.event_name == 'repository_dispatch' || (github.event_name == 'workflow_dispatch' && inputs.publish_to_meta == true))
+          github.event_name == 'workflow_dispatch' &&
+          inputs.publish_to_meta == true
         env:
           META_GRAPH_VERSION: v26.0
           META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
