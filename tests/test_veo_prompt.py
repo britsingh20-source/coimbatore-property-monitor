@@ -24,6 +24,10 @@ def test_prompt_contains_dynamic_facts_and_fixed_contact():
     assert "9003787621" in prompt
     assert "exactly 10-second" in prompt
     assert "never invent room connections" in prompt
+    assert "PRICE: ₹67 Lakhs  |  LAND: 3.5 Cents" in prompt
+    assert "Karamadai  |  SITE VISIT: 9003787621" in prompt
+    assert "0.3 TO 10 SECONDS" in prompt
+    assert "without covering, altering or imitating any provider provenance mark" in prompt
     assert telegram_filename(job) == "abc123-gemini-veo-prompt.txt"
 
 
