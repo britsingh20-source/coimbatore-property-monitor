@@ -57,14 +57,17 @@ Use a clean hard cut to the strongest clearly verified interior area in the sour
 SHOT 4 — 7.5 TO 9 SECONDS
 Use a clean hard cut to the second-strongest clearly verified property feature. Preserve its exact visible layout, colours, materials and dimensions. If no second interior is clear, use another verified exterior, parking, staircase or terrace angle. Never invent a kitchen, bedroom, bathroom or amenity.
 
-ENDING — 9 TO 10 SECONDS
-Hard cut back to the reconstructed exterior. Display a clean, stable footer:
-“{location} • {bhk} BHK {property_type}”
-“{land} • {built_up}”
-“{price}”
-“SITE VISIT: {CONTACT_NUMBER}”
+PROPERTY INFORMATION FOOTER — 0.3 TO 10 SECONDS
+Display one slim, professional, completely opaque lower-third information footer continuously from 0.3 seconds until the video ends. Keep it upright, sharp, stationary and identical across every shot. Place it immediately above the platform watermark/safe area without covering, altering or imitating any provider provenance mark.
 
-Keep the footer upright, sharp and stationary. Use a solid white or brand-coloured footer covering the bottom area.
+Use a premium deep-navy or charcoal background with high-contrast white text and one restrained gold accent. Maximum height: 14% of the frame. No rotation, animation, bouncing, perspective tilt or large caption card. Use compact separators and exactly these verified details:
+“PRICE: {price}  |  LAND: {land}”
+“{location}  |  SITE VISIT: {CONTACT_NUMBER}”
+
+If price or land area is unavailable, omit that label and value completely; never display “Not specified”. Keep the location and contact number visible. Reserve enough lower safe-area space so the footer remains readable without colliding with player controls or the Gemini sparkle/provenance mark.
+
+ENDING — 9 TO 10 SECONDS
+Hard cut back to the reconstructed exterior while the same persistent footer remains unchanged. Do not introduce a second end card or another caption.
 
 VOICEOVER
 Generate a natural, conversational Coimbatore Tamil male voice that mentions only the strongest verified property facts and ends exactly with:
@@ -73,7 +76,7 @@ Generate a natural, conversational Coimbatore Tamil male voice that mentions onl
 Use subtle neighbourhood ambience, footsteps, distant traffic and low-volume professional music. Keep speech clear.
 
 FIXED RULES
-Exactly 10 seconds; vertical 9:16; photorealistic smartphone footage; preserve the source property identity; hard cuts between separate physical areas; never invent room connections; never reveal a kitchen through the entrance unless proven; never change floor count, exterior, room dimensions, furniture or amenities; no religious imagery; no people; no CGI appearance; no floating camera; no morphing architecture; no repeated shots; no rotating captions; no oversized graphics; no distorted doors, windows or cabinets; no spelling errors; no third-party phone numbers; no generated logos.
+Exactly 10 seconds; vertical 9:16; photorealistic smartphone footage; preserve the source property identity; hard cuts between separate physical areas; never invent room connections; never reveal a kitchen through the entrance unless proven; never change floor count, exterior, room dimensions, furniture or amenities; no religious imagery; no people; no CGI appearance; no floating camera; no morphing architecture; no repeated shots; no rotating captions; no oversized graphics; one persistent professional information footer only; no distorted doors, windows or cabinets; no spelling errors; no third-party phone numbers; no generated logos.
 
 When source information is unclear, exclude it. A simpler accurate reconstruction is always preferable to an attractive invented feature.
 
