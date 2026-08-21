@@ -1,0 +1,146 @@
+{
+  "video_id": "WboKxtprYis",
+  "source_url": "https://www.youtube.com/watch?v=WboKxtprYis",
+  "property_location": "Koundampalayam, Coimbatore",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": 3,
+    "land_area": "2.20 Cents (30'0\" x 32'0\")",
+    "built_up_area": "1900 sq.ft",
+    "price": "1.26 Crore",
+    "facing": "North-facing site, East-facing main door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking (Portico: 11' x 18')",
+    "approval": "DTCP approved"
+  },
+  "verified_facts": "Located in Koundampalayam, Coimbatore Corporation Limits., Built on a North-facing site of 2.20/2.25 cents measuring 30' x 32'., Total built-up area is 1900 sq.ft., East-facing main door., Car portico size is 11' x 18' with false ceiling and wall tiling., Living hall size is 16' x 16' featuring a high-roof design with ceiling skylight., Kitchen size is 10' x 11' situated in Agni corner (South-East)., Ground floor bedroom (Kids) size is 9' x 11' with attached bathroom (6' x 4').",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera in natural spoken Tamil",
+    "hook_strategy": "Lead with 3 BHK Independent House feature in Koundampalayam locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை கவுண்டம்பாளையத்துல ஒரு 3 BHK Independent House பாக்க போறோம்.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இதுல 1900 sq.ft built-up area வருது. High-roof skylight living hall, modular kitchen, அப்புறம் 3 bedrooms வித் attached bathrooms இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "exterior"
+        ],
+        "vfx": "text-overlay-built-up",
+        "purpose": "feature_highlight"
+      },
+      {
+        "name": "land",
+        "voice": "2.20 Cents site-ல, 11x18 feet-ல spacious car parking-உம் அமைச்சிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "text-overlay-dimensions",
+        "purpose": "property_specs"
+      },
+      {
+        "name": "facing",
+        "voice": "இது North-facing site, main door பாத்தீங்கனா East-facing-ல வருது.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "interior"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "orientation"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approval வாங்குன property, 75% bank loan support-உம் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_factor"
+      },
+      {
+        "name": "price",
+        "voice": "இதுல முக்கியமான விஷயம், இதோட price 1.26 Crore, negotiable-ல சொல்றாங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "Site visit வரவோ அல்லது details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "call-button",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/WboKxtprYis/",
+  "optional_owned_audio": "assets/audio/WboKxtprYis.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary 2-storey house elevation finished in white and dark grey accents with timber paneling, glass balcony railing, and a wooden gate entrance.. Neighbourhood: Established residential neighborhood with neighboring homes, mobile connectivity towers visible nearby, and clear suburban environment.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary 2-storey house elevation finished in white and dark grey accents with timber paneling, glass balcony railing, and a wooden gate entrance.. Neighbourhood: Established residential neighborhood with neighboring homes, mobile connectivity towers visible nearby, and clear suburban environment.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary 2-storey house elevation finished in white and dark grey accents with timber paneling, glass balcony railing, and a wooden gate entrance.. Neighbourhood: Established residential neighborhood with neighboring homes, mobile connectivity towers visible nearby, and clear suburban environment.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary 2-storey house elevation finished in white and dark grey accents with timber paneling, glass balcony railing, and a wooden gate entrance.. Neighbourhood: Established residential neighborhood with neighboring homes, mobile connectivity towers visible nearby, and clear suburban environment.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
