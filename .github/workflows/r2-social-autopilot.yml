@@ -3,6 +3,13 @@ name: R2 Social Publishing Autopilot
 on:
   schedule:
     - cron: "*/15 * * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/r2-social-autopilot.yml"
+      - "r2_social_autopilot.py"
+      - "social_content.py"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -41,7 +48,7 @@ jobs:
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
           R2_SOCIAL_PREFIX: social-ready/
           SOCIAL_MAX_PER_RUN: "1"
-          SOCIAL_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || 'false' }}
+          SOCIAL_DRY_RUN: ${{ github.event_name == 'push' && 'true' || (github.event_name == 'workflow_dispatch' && inputs.dry_run || 'false') }}
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
           META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
           META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
