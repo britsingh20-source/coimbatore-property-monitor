@@ -79,6 +79,8 @@ def main() -> None:
     chat_id = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
     if not bot_token or not chat_id:
         raise SystemExit("TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID are required")
+    if not chat_id.lstrip("-").isdigit():
+        raise SystemExit("TELEGRAM_CHAT_ID must be the numeric chat id returned by getUpdates")
 
     video_ids = _ids(args.ids_file)
     if not video_ids:
