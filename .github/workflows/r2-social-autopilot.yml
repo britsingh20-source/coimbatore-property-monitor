@@ -1,0 +1,79 @@
+name: R2 Social Publishing Autopilot
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/r2-social-autopilot.yml"
+      - "r2_social_autopilot.py"
+      - "social_content.py"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Scan and prepare metadata without publishing
+        required: true
+        default: true
+        type: boolean
+
+concurrency:
+  group: r2-social-publishing
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Scan R2 and publish new property videos
+        id: autopilot
+        continue-on-error: true
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          R2_SOCIAL_PREFIX: social-ready/
+          SOCIAL_MAX_PER_RUN: "1"
+          SOCIAL_DRY_RUN: ${{ github.event_name == 'push' && 'true' || (github.event_name == 'workflow_dispatch' && inputs.dry_run || 'false') }}
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_PRIVACY_STATUS: public
+        run: python r2_social_autopilot.py
+      - name: Commit publishing state
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "property-social-bot"
+          git config user.email "actions@github.com"
+          git add data/social_publish_state.json
+          if git diff --staged --quiet; then
+            echo "No social publishing state changes."
+          else
+            git commit -m "Update social publishing state [automated]"
+            git pull --rebase
+            git push
+          fi
+      - name: Preserve publishing failure
+        if: steps.autopilot.outcome == 'failure'
+        run: |
+          echo "::error::One or more social publishing destinations failed. Successful destinations were recorded and will not be duplicated."
+          exit 1

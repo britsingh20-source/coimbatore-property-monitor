@@ -132,3 +132,52 @@ python -m unittest discover -s tests -v
 python -m py_compile *.py
 npm --prefix professional_video run typecheck
 ```
+
+## R2 social publishing autopilot
+
+Upload each completed 9:16 MP4 to the configured R2 bucket using this exact key:
+
+```text
+social-ready/<video-id>.mp4
+```
+
+`<video-id>` must match an approved job in `data/video_jobs/<video-id>.json`. The video ID is also present in the Telegram prompt filename. The scheduled **R2 Social Publishing Autopilot** workflow scans every 15 minutes and processes at most one new video per run.
+
+For each R2 upload it generates:
+
+- a hook-led YouTube title;
+- a property caption and YouTube description using only verified job facts;
+- exactly three hashtags;
+- the fixed site-visit number `9003787621`.
+
+Destinations are tracked separately in `data/social_publish_state.json`:
+
+- Instagram Reel;
+- Facebook Page Reel;
+- Instagram Story;
+- Facebook Page Story;
+- YouTube Short.
+
+If one destination fails, completed destinations remain recorded and are not posted again. Only the failed or unconfigured destination is retried.
+
+### Required GitHub Actions secrets
+
+Existing R2 and Meta publishing secrets:
+
+- `R2_ACCOUNT_ID`
+- `R2_ACCESS_KEY_ID`
+- `R2_SECRET_ACCESS_KEY`
+- `R2_BUCKET_NAME`
+- `META_PAGE_ACCESS_TOKEN`
+- `META_PAGE_ID`
+- `META_IG_USER_ID`
+
+YouTube uploads require OAuth credentials with the `youtube.upload` scope:
+
+- `YOUTUBE_CLIENT_ID`
+- `YOUTUBE_CLIENT_SECRET`
+- `YOUTUBE_REFRESH_TOKEN`
+
+The existing `YOUTUBE_API_KEY` cannot upload videos. When the YouTube OAuth secrets are absent, Meta destinations can still publish and YouTube remains in `waiting_for_secrets` for a later retry.
+
+Use **Run workflow** with `dry_run=true` to scan and preview state without publishing. Scheduled runs publish automatically.
