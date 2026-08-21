@@ -1,0 +1,141 @@
+{
+  "video_id": "aRyr_bAsTdc",
+  "source_url": "https://www.youtube.com/watch?v=aRyr_bAsTdc",
+  "property_location": "Koundampalayam, Coimbatore",
+  "property": {
+    "property_type": "3BHK Independent House",
+    "bhk": 3,
+    "land_area": "2.20 Cents (30'0\" × 32'0\")",
+    "built_up_area": "1900 sq.ft",
+    "price": "₹1.26 Crore (Negotiable)",
+    "facing": "North site facing, East main door facing",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking",
+    "approval": "DTCP approved"
+  },
+  "verified_facts": "3BHK Independent House for sale in Koundampalayam, Coimbatore., Land area is 2.20 Cents measuring 30'0\" x 32'0\"., Built-up area is 1900 sq.ft across G+2 structure., Property features North facing plot with East facing teak main door., Asking price is ₹1.26 Crore (Negotiable) with 75% bank loan availability., DTCP approved property in Coimbatore Corporation limits.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera in natural conversational Spoken Tamil",
+    "hook_strategy": "Lead with the location Koundampalayam and 3BHK independent house within the first 3 seconds",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore, Koundampalayam-ல ஒரு 3BHK independent house விற்பனைக்கு வந்திருக்கு!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இது 1900 sq.ft built-up area கொண்ட G+2 structure. உள்ள modular kitchen, false ceiling, OTS skylight-னு ரொம்ப அழகா பண்ணிருக்காங்க.",
+        "broll": [
+          "interior",
+          "living_room",
+          "kitchen"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "feature_highlight"
+      },
+      {
+        "name": "land",
+        "voice": "நிலப்பரப்பு பாத்தீங்கனா 2.20 Cents, 30-க்கு 32 அளவுல இருக்கு. கூடவே covered car parking, borewell, sump வசதியும் உண்டு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "dimension-overlay",
+        "purpose": "property_specs"
+      },
+      {
+        "name": "facing",
+        "voice": "இந்த வீடு North site facing, அப்புறம் East பார்த்து teak wood main door அமைச்சிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "compass-icon",
+        "purpose": "facing_info"
+      },
+      {
+        "name": "approval",
+        "voice": "Coimbatore Corporation limits-ல இருக்குற இந்த property DTCP approved பண்ணப்பட்டது.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "badge-overlay",
+        "purpose": "legal_trust"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட asking price 1.26 Crore, negotiable! 75% bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "living_room",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேரடியா site visit போகணும்னா இல்ல details வேணும்னா உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "call-button",
+        "purpose": "action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/aRyr_bAsTdc/",
+  "optional_owned_audio": "assets/audio/aRyr_bAsTdc.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+2 elevation featuring white and dark grey paint finish with wooden-textured wall tiles, glass balcony railing, CNC laser-cut wooden-style metal main gate, and covered parking with wooden panel false ceiling.. Neighbourhood: Established residential locality in Koundampalayam, Coimbatore, surrounded by individual houses and asphalt access road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+2 elevation featuring white and dark grey paint finish with wooden-textured wall tiles, glass balcony railing, CNC laser-cut wooden-style metal main gate, and covered parking with wooden panel false ceiling.. Neighbourhood: Established residential locality in Koundampalayam, Coimbatore, surrounded by individual houses and asphalt access road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+2 elevation featuring white and dark grey paint finish with wooden-textured wall tiles, glass balcony railing, CNC laser-cut wooden-style metal main gate, and covered parking with wooden panel false ceiling.. Neighbourhood: Established residential locality in Koundampalayam, Coimbatore, surrounded by individual houses and asphalt access road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+2 elevation featuring white and dark grey paint finish with wooden-textured wall tiles, glass balcony railing, CNC laser-cut wooden-style metal main gate, and covered parking with wooden panel false ceiling.. Neighbourhood: Established residential locality in Koundampalayam, Coimbatore, surrounded by individual houses and asphalt access road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

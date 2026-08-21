@@ -1229,6 +1229,14 @@
       "next_retry_at": "2026-08-14T08:39:53.714928+00:00",
       "status": "archived_non_target"
     },
+    "aRyr_bAsTdc": {
+      "attempts": 0,
+      "completed_at": "2026-08-21T08:02:17.357095+00:00",
+      "first_seen_at": "2026-08-21T08:00:18.425040+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-08-21T08:00:18.425040+00:00",
+      "status": "video_queued"
+    },
     "aettwe-WfoA": {
       "attempts": 2,
       "completed_at": "2026-08-07T12:00:53.815486+00:00",
