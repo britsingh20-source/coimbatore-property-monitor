@@ -141,7 +141,7 @@ After generating a 9:16 MP4 in Gemini mobile, upload it to the configured R2 buc
 social-ready/GeminiGeneratedVideo.mp4
 ```
 
-Every successfully delivered Telegram prompt is added to `data/telegram_prompt_queue.json`. The scheduled **R2 Social Publishing Autopilot** pairs the oldest unpaired Telegram prompt with the oldest new mobile upload, scans every 15 minutes, and processes at most one video per run. For reliable matching, generate and upload one property at a time in the same order the prompts arrive.
+Every successfully delivered Telegram prompt is added to `data/telegram_prompt_queue.json`. The scheduled **R2 Social Publishing Autopilot** scans every 15 minutes and processes at most one video per run. For arbitrary mobile filenames, Gemini analyses the uploaded video footer, visible property details and audio, then compares price, land area, location, BHK and other facts against every pending prompt. Publishing starts only for a unique match at or above 0.85 confidence; ambiguous uploads remain unpublished. This allows some Telegram prompts to remain ungenerated while later completed videos are still matched correctly.
 
 For each R2 upload it generates:
 
