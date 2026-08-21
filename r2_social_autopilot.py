@@ -24,6 +24,7 @@ from meta_publisher import (
     validate_page_token,
 )
 from social_content import build_social_content
+from video_property_matcher import match_uploaded_video
 
 
 PREFIX = os.environ.get("R2_SOCIAL_PREFIX", "social-ready/").strip().lstrip("/")
@@ -67,39 +68,62 @@ def _save_queue(queue: dict) -> None:
     QUEUE_PATH.write_text(json.dumps(queue, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def _resolve_video_id(key: str, etag: str, state: dict, queue: dict) -> str:
+def _resolve_video_id(key: str, etag: str, video_url: str, state: dict, queue: dict) -> str:
     record = state["objects"].get(key)
     if record and record.get("video_id"):
         return str(record["video_id"])
 
     filename_id = Path(key).stem
     filename_job = Path("data/video_jobs") / f"{filename_id}.json"
+    match_result = None
     if filename_job.exists():
         video_id = filename_id
-        prompt = next((item for item in queue.get("prompts", []) if item.get("video_id") == video_id), None)
     else:
-        pending = [
-            item for item in queue.get("prompts", [])
+        pending_ids = [
+            str(item.get("video_id") or "").strip()
+            for item in queue.get("prompts", [])
             if item.get("status") == "pending_mobile_upload"
         ]
-        pending.sort(key=lambda item: str(item.get("sent_at", "")))
-        if not pending:
-            raise RuntimeError(
-                f"No pending Telegram property prompt is available to pair with mobile upload {key}"
+        pending_ids = [
+            video_id for video_id in pending_ids
+            if video_id and (Path("data/video_jobs") / f"{video_id}.json").exists()
+        ]
+        match_result = match_uploaded_video(video_url, pending_ids)
+        video_id = str(match_result.get("video_id") or "").strip()
+        if not video_id:
+            state["objects"][key] = {
+                "etag": etag,
+                "status": "unmatched",
+                "match_analysis": match_result,
+                "platforms": {},
+            }
+            _save_state(state)
+            print(
+                f"UNMATCHED {key}: confidence={match_result.get('confidence', 0)}; "
+                f"no publishing attempted"
             )
-        prompt = pending[0]
-        video_id = str(prompt.get("video_id") or "").strip()
+            return ""
 
-    if not video_id or not (Path("data/video_jobs") / f"{video_id}.json").exists():
-        raise RuntimeError(f"Resolved property job is missing for mobile upload {key}: {video_id}")
-
-    state["objects"][key] = {"etag": etag, "video_id": video_id, "platforms": {}}
+    prompt = next(
+        (item for item in queue.get("prompts", []) if item.get("video_id") == video_id),
+        None,
+    )
+    state["objects"][key] = {
+        "etag": etag,
+        "video_id": video_id,
+        "status": "matched",
+        "match_analysis": match_result or {
+            "method": "exact_filename",
+            "confidence": 1.0,
+        },
+        "platforms": {},
+    }
     if prompt is not None:
         prompt["status"] = "assigned_to_r2_upload"
         prompt["r2_key"] = key
     _save_state(state)
     _save_queue(queue)
-    print(f"PAIRED mobile upload {key} -> property {video_id}")
+    print(f"CONTENT-MATCHED mobile upload {key} -> property {video_id}")
     return video_id
 
 
@@ -230,7 +254,14 @@ def _available(platform: str) -> bool:
 
 
 def _publish_one(key: str, etag: str, client, bucket: str, state: dict, queue: dict) -> bool:
-    video_id = _resolve_video_id(key, etag, state, queue)
+    video_url = client.generate_presigned_url(
+        "get_object",
+        Params={"Bucket": bucket, "Key": key},
+        ExpiresIn=21600,
+    )
+    video_id = _resolve_video_id(key, etag, video_url, state, queue)
+    if not video_id:
+        return False
     job_path = Path("data/video_jobs") / f"{video_id}.json"
     record = state["objects"][key]
     if record.get("etag") != etag:
@@ -243,12 +274,6 @@ def _publish_one(key: str, etag: str, client, bucket: str, state: dict, queue: d
         client.download_file(bucket, key, str(video_path))
         if video_path.stat().st_size < 100_000:
             raise RuntimeError(f"R2 video is too small: {key}")
-        video_url = client.generate_presigned_url(
-            "get_object",
-            Params={"Bucket": bucket, "Key": key},
-            ExpiresIn=21600,
-        )
-
         publishers: dict[str, Callable[[], dict]] = {
             "instagram_reel": lambda: publish_instagram_reel(video_url, str(content["caption"])),
             "facebook_reel": lambda: publish_facebook_reel(video_path, str(content["caption"])),
