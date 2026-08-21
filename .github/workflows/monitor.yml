@@ -59,34 +59,26 @@ jobs:
           fi
           git pull --rebase
           git push
-      - name: Dispatch exact approved jobs to the video renderer
+      - name: Send exact Gemini/Veo prompts to Telegram
         if: always() && steps.commit.outcome == 'success'
         env:
-          GH_TOKEN: ${{ github.token }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         shell: bash
         run: |
           set -euo pipefail
-          video_ids="$(grep -vE '^\s*(#|$)' data/new_render_ids.txt | paste -sd, - || true)"
-          if [[ -z "$video_ids" ]]; then
-            echo "No newly approved property videos to dispatch."
+          if [[ ! -s data/new_render_ids.txt ]]; then
+            echo "No newly approved property prompts to send."
             exit 0
           fi
-          payload="$(jq -nc \
-            --arg event_type "render-property-videos" \
-            --arg video_ids "$video_ids" \
-            '{event_type:$event_type,client_payload:{video_ids:$video_ids}}')"
-          gh api \
-            --method POST \
-            "repos/${GITHUB_REPOSITORY}/dispatches" \
-            --input - <<<"$payload"
-          echo "Dispatched property videos: $video_ids"
+          python send_telegram_prompts.py --ids-file data/new_render_ids.txt
           {
-            echo "### Autopilot render dispatched"
+            echo "### Gemini/Veo prompts sent to Telegram"
             echo ""
-            printf '`%s`\n' "$video_ids"
+            grep -vE '^\s*(#|$)' data/new_render_ids.txt | sed 's/^/- `/' | sed 's/$/`/'
           } >> "$GITHUB_STEP_SUMMARY"
       - name: Preserve monitor failure after committing successful jobs
         if: steps.monitor.outcome == 'failure'
         run: |
-          echo "::error::The monitor had one or more non-retryable analysis failures. Successful approved jobs were still committed and dispatched."
+          echo "::error::The monitor had one or more non-retryable analysis failures. Successful approved jobs were still committed and sent to Telegram."
           exit 1
