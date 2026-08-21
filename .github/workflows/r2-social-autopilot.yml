@@ -10,6 +10,7 @@ on:
       - ".github/workflows/r2-social-autopilot.yml"
       - "r2_social_autopilot.py"
       - "social_content.py"
+      - "send_telegram_prompts.py"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -64,9 +65,9 @@ jobs:
           set -euo pipefail
           git config user.name "property-social-bot"
           git config user.email "actions@github.com"
-          git add data/social_publish_state.json
+          git add data/social_publish_state.json data/telegram_prompt_queue.json
           if git diff --staged --quiet; then
-            echo "No social publishing state changes."
+            echo "No social publishing or prompt-pairing state changes."
           else
             git commit -m "Update social publishing state [automated]"
             git pull --rebase
