@@ -1,0 +1,145 @@
+{
+  "video_id": "kFXef71ldiY",
+  "source_url": "https://www.youtube.com/watch?v=kFXef71ldiY",
+  "property_location": "Amman Nagar, Vadavalli, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": null,
+    "land_area": "5.75 cents (40 ft x 64 ft)",
+    "built_up_area": null,
+    "price": "NOT SPECIFIED",
+    "facing": "North",
+    "road_width": "30 feet",
+    "parking": null,
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Plot size is 5.75 cents measuring 40 feet by 64 feet., The plot is north-facing., It is DTCP approved and located in Amman Nagar layout, Vadavalli, Coimbatore., Located within corporation limits with UGD work completed in front of the site., Situated walkable distance from Vadavalli main road, opposite Chinmaya School and near Hyundai showroom., Contact phone number provided is 97875 90000.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking to camera",
+    "hook_strategy": "Highlight prime location in Vadavalli opposite Chinmaya School with immediate land size reveal",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை வடவள்ளி அம்மன் நகர்ல, மெயின் ரோட்டுக்கு ரொம்பவே பக்கத்துல ஒரு அருமையான residential plot பார்க்கப்போறோம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior",
+          "living_room",
+          "kitchen"
+        ],
+        "vfx": "location-pin-highlight",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "சின்மயா ஸ்கூல் எதிர்பக்கத்துல இருக்குற இந்த site மொத்தமா 5.75 cents, அதாவது 40 by 64 feet அளவுகள் கொண்டது.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior",
+          "living_room",
+          "kitchen"
+        ],
+        "vfx": "plot-boundary-overlay",
+        "purpose": "land_details"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம் பாத்தீங்கனா, இந்த plot கரெக்டா North facing-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior",
+          "living_room",
+          "kitchen"
+        ],
+        "vfx": "compass-north-indicator",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "road",
+        "voice": "நல்ல 30 feet road வசதியோட, Front-ல UGD work முடிஞ்சு Corporation water limit-ல வரக்கூடிய இடம் இது.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior",
+          "living_room",
+          "kitchen",
+          "land"
+        ],
+        "vfx": "road-width-overlay",
+        "purpose": "road_and_infrastructure"
+      },
+      {
+        "name": "approval",
+        "voice": "அதே மாதிரி, இது ஒரு தெளிவான DTCP approved plot.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior",
+          "living_room",
+          "kitchen"
+        ],
+        "vfx": "approval-badge-overlay",
+        "purpose": "approval_verification"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த plot-ல site visit வரணும்னா இல்ல details வேணும்னா, 97875 90000 நம்பருக்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior",
+          "living_room",
+          "kitchen"
+        ],
+        "vfx": "phone-number-pop",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/kFXef71ldiY/",
+  "optional_owned_audio": "assets/audio/kFXef71ldiY.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Vacant cleared land plot bordered by concrete boundary walls and wire fencing, situated alongside an asphalt interior layout road with electric utility poles.. Neighbourhood: Well-connected residential layout in Vadavalli featuring asphalt roads, street lights, existing residential houses, coconut trees, and easy access to schools, supermarkets, banks, and public transport.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Vacant cleared land plot bordered by concrete boundary walls and wire fencing, situated alongside an asphalt interior layout road with electric utility poles.. Neighbourhood: Well-connected residential layout in Vadavalli featuring asphalt roads, street lights, existing residential houses, coconut trees, and easy access to schools, supermarkets, banks, and public transport.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Vacant cleared land plot bordered by concrete boundary walls and wire fencing, situated alongside an asphalt interior layout road with electric utility poles.. Neighbourhood: Well-connected residential layout in Vadavalli featuring asphalt roads, street lights, existing residential houses, coconut trees, and easy access to schools, supermarkets, banks, and public transport.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Vacant cleared land plot bordered by concrete boundary walls and wire fencing, situated alongside an asphalt interior layout road with electric utility poles.. Neighbourhood: Well-connected residential layout in Vadavalli featuring asphalt roads, street lights, existing residential houses, coconut trees, and easy access to schools, supermarkets, banks, and public transport.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
