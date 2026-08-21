@@ -85,6 +85,21 @@ jobs:
             echo "No renderable property jobs were requested." >> "$GITHUB_STEP_SUMMARY"
           fi
 
+      - name: Verify Cloudflare Workers AI account
+        if: steps.select.outputs.has_jobs == 'true'
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID || secrets.R2_ACCOUNT_ID }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          actual_hash="$(printf '%s' "$CLOUDFLARE_ACCOUNT_ID" | sha256sum | cut -d' ' -f1)"
+          expected_hash="2105a89fb1c325ef85fd00398e590e3225b996d59971a4ea18edce501c08fe91"
+          if [[ "$actual_hash" != "$expected_hash" ]]; then
+            echo "::error::CLOUDFLARE_ACCOUNT_ID does not match the Cloudflare account selected in the dashboard."
+            exit 1
+          fi
+          echo "Cloudflare Workers AI account selection verified."
+
       - uses: actions/setup-python@v6
         if: steps.select.outputs.has_jobs == 'true'
         with:
