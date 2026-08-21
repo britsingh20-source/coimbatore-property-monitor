@@ -11,6 +11,7 @@ on:
       - "r2_social_autopilot.py"
       - "social_content.py"
       - "send_telegram_prompts.py"
+      - "video_property_matcher.py"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -49,6 +50,9 @@ jobs:
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
           R2_SOCIAL_PREFIX: social-ready/
           SOCIAL_MAX_PER_RUN: "1"
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_SOCIAL_MATCH_MODEL: gemini-3.6-flash
+          SOCIAL_MATCH_MIN_CONFIDENCE: "0.85"
           SOCIAL_DRY_RUN: ${{ github.event_name == 'push' && 'true' || (github.event_name == 'workflow_dispatch' && inputs.dry_run || 'false') }}
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
           META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
