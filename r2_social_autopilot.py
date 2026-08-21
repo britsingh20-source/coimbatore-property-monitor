@@ -247,6 +247,7 @@ def main() -> None:
     ]
     objects.sort(key=lambda item: item.get("LastModified"))
     processed = 0
+    processed_keys: list[str] = []
     for item in objects:
         key = str(item["Key"])
         etag = str(item.get("ETag", "")).strip('"')
@@ -255,10 +256,19 @@ def main() -> None:
             continue
         if _publish_one(key, etag, client, bucket, state):
             processed += 1
+            processed_keys.append(key)
         if processed >= MAX_PER_RUN:
             break
     _save_state(state)
     print(f"R2 social scan complete: {len(objects)} video(s), processed {processed}")
+    failures = [
+        f"{key}: {platform}: {details.get('error', 'unknown error')}"
+        for key in processed_keys
+        for platform, details in state["objects"][key]["platforms"].items()
+        if details.get("status") == "failed"
+    ]
+    if failures:
+        raise RuntimeError("Social publishing failures:\\n" + "\\n".join(failures))
 
 
 if __name__ == "__main__":
