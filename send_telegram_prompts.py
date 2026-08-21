@@ -25,6 +25,14 @@ def _ids(path: Path) -> list[str]:
     ]
 
 
+def _telegram_error(response: requests.Response) -> str:
+    try:
+        body = response.json()
+    except ValueError:
+        return response.text.strip()[:500] or "No response body"
+    return str(body.get("description") or body)[:500]
+
+
 def send_prompt(job: dict, bot_token: str, chat_id: str) -> None:
     prompt = build_veo_prompt(job)
     prop = job.get("property") or {}
@@ -52,10 +60,14 @@ def send_prompt(job: dict, bot_token: str, chat_id: str) -> None:
         files={"document": (payload.name, payload, "text/plain; charset=utf-8")},
         timeout=60,
     )
-    response.raise_for_status()
+    if not response.ok:
+        raise RuntimeError(
+            f"Telegram sendDocument failed for {job.get('video_id')} "
+            f"(HTTP {response.status_code}): {_telegram_error(response)}"
+        )
     body = response.json()
     if not body.get("ok"):
-        raise RuntimeError(f"Telegram rejected prompt for {job.get('video_id')}: {body}")
+        raise RuntimeError(f"Telegram rejected prompt for {job.get('video_id')}: {_telegram_error(response)}")
 
 
 def main() -> None:
