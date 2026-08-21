@@ -88,6 +88,21 @@ jobs:
             echo ""
             grep -vE '^\s*(#|$)' data/new_render_ids.txt | sed 's/^/- `/' | sed 's/$/`/'
           } >> "$GITHUB_STEP_SUMMARY"
+      - name: Commit Telegram mobile-upload queue
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "property-monitor-bot"
+          git config user.email "actions@github.com"
+          git add data/telegram_prompt_queue.json || true
+          if git diff --staged --quiet; then
+            echo "No Telegram prompt queue changes."
+          else
+            git commit -m "Queue Telegram property prompt for mobile upload [automated]"
+            git pull --rebase
+            git push
+          fi
       - name: Preserve monitor failure after committing successful jobs
         if: steps.monitor.outcome == 'failure'
         run: |
