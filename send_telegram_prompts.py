@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
 import html
 import io
 import json
@@ -13,6 +14,7 @@ from veo_prompt import build_veo_prompt, telegram_filename
 
 
 JOBS = Path("data/video_jobs")
+DEFAULT_QUEUE = Path("data/telegram_prompt_queue.json")
 
 
 def _ids(path: Path) -> list[str]:
@@ -33,6 +35,29 @@ def _telegram_error(response: requests.Response) -> str:
     return str(body.get("description") or body)[:500]
 
 
+def _queue_prompt(queue_path: Path, job: dict) -> None:
+    queue = {"prompts": []}
+    if queue_path.exists():
+        queue = json.loads(queue_path.read_text(encoding="utf-8"))
+    prompts = queue.setdefault("prompts", [])
+    video_id = str(job.get("video_id") or "").strip()
+    existing = next((item for item in prompts if item.get("video_id") == video_id), None)
+    if existing is None:
+        prompts.append({
+            "video_id": video_id,
+            "sent_at": datetime.now(timezone.utc).isoformat(),
+            "status": "pending_mobile_upload",
+        })
+    elif existing.get("status") != "published":
+        existing.update({
+            "sent_at": datetime.now(timezone.utc).isoformat(),
+            "status": "pending_mobile_upload",
+        })
+        existing.pop("r2_key", None)
+    queue_path.parent.mkdir(parents=True, exist_ok=True)
+    queue_path.write_text(json.dumps(queue, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
 def send_prompt(job: dict, bot_token: str, chat_id: str) -> None:
     prompt = build_veo_prompt(job)
     prop = job.get("property") or {}
@@ -50,7 +75,7 @@ def send_prompt(job: dict, bot_token: str, chat_id: str) -> None:
         f"<b>Location:</b> {html.escape(location)}\n"
         f"<b>Video ID:</b> <code>{html.escape(str(job.get('video_id', '')))}</code>\n"
         f"<b>Site visit:</b> 9003787621\n\n"
-        "Upload the original source video to Gemini, then paste the attached prompt."
+        "Generate this video on Gemini mobile, then upload the downloaded MP4 to the R2 social-ready folder. The mobile filename can remain unchanged."
     )
     payload = io.BytesIO(prompt.encode("utf-8"))
     payload.name = telegram_filename(job)
@@ -73,6 +98,7 @@ def send_prompt(job: dict, bot_token: str, chat_id: str) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--ids-file", type=Path, default=Path("data/new_render_ids.txt"))
+    parser.add_argument("--queue-file", type=Path, default=DEFAULT_QUEUE)
     args = parser.parse_args()
 
     bot_token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
@@ -93,7 +119,8 @@ def main() -> None:
             raise FileNotFoundError(f"Missing video job: {path}")
         job = json.loads(path.read_text(encoding="utf-8"))
         send_prompt(job, bot_token, chat_id)
-        print(f"Sent Gemini/Veo prompt to Telegram: {video_id}")
+        _queue_prompt(args.queue_file, job)
+        print(f"Sent Gemini/Veo prompt to Telegram and queued mobile upload: {video_id}")
 
 
 if __name__ == "__main__":

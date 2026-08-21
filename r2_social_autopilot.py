@@ -28,6 +28,7 @@ from social_content import build_social_content
 
 PREFIX = os.environ.get("R2_SOCIAL_PREFIX", "social-ready/").strip().lstrip("/")
 STATE_PATH = Path(os.environ.get("SOCIAL_STATE_PATH", "data/social_publish_state.json"))
+QUEUE_PATH = Path(os.environ.get("TELEGRAM_PROMPT_QUEUE", "data/telegram_prompt_queue.json"))
 MAX_PER_RUN = max(1, int(os.environ.get("SOCIAL_MAX_PER_RUN", "1")))
 DRY_RUN = os.environ.get("SOCIAL_DRY_RUN", "false").lower() == "true"
 PUBLIC_PLATFORMS = ("instagram_reel", "facebook_reel", "instagram_story", "facebook_story", "youtube_short")
@@ -53,6 +54,53 @@ def _load_state() -> dict:
 def _save_state(state: dict) -> None:
     STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
     STATE_PATH.write_text(json.dumps(state, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def _load_queue() -> dict:
+    if not QUEUE_PATH.exists():
+        return {"prompts": []}
+    return json.loads(QUEUE_PATH.read_text(encoding="utf-8"))
+
+
+def _save_queue(queue: dict) -> None:
+    QUEUE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    QUEUE_PATH.write_text(json.dumps(queue, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def _resolve_video_id(key: str, etag: str, state: dict, queue: dict) -> str:
+    record = state["objects"].get(key)
+    if record and record.get("video_id"):
+        return str(record["video_id"])
+
+    filename_id = Path(key).stem
+    filename_job = Path("data/video_jobs") / f"{filename_id}.json"
+    if filename_job.exists():
+        video_id = filename_id
+        prompt = next((item for item in queue.get("prompts", []) if item.get("video_id") == video_id), None)
+    else:
+        pending = [
+            item for item in queue.get("prompts", [])
+            if item.get("status") == "pending_mobile_upload"
+        ]
+        pending.sort(key=lambda item: str(item.get("sent_at", "")))
+        if not pending:
+            raise RuntimeError(
+                f"No pending Telegram property prompt is available to pair with mobile upload {key}"
+            )
+        prompt = pending[0]
+        video_id = str(prompt.get("video_id") or "").strip()
+
+    if not video_id or not (Path("data/video_jobs") / f"{video_id}.json").exists():
+        raise RuntimeError(f"Resolved property job is missing for mobile upload {key}: {video_id}")
+
+    state["objects"][key] = {"etag": etag, "video_id": video_id, "platforms": {}}
+    if prompt is not None:
+        prompt["status"] = "assigned_to_r2_upload"
+        prompt["r2_key"] = key
+    _save_state(state)
+    _save_queue(queue)
+    print(f"PAIRED mobile upload {key} -> property {video_id}")
+    return video_id
 
 
 def _wait_instagram(creation_id: str, token: str) -> dict:
@@ -181,14 +229,10 @@ def _available(platform: str) -> bool:
     return all(os.environ.get(name, "").strip() for name in required)
 
 
-def _publish_one(key: str, etag: str, client, bucket: str, state: dict) -> bool:
-    video_id = Path(key).stem
+def _publish_one(key: str, etag: str, client, bucket: str, state: dict, queue: dict) -> bool:
+    video_id = _resolve_video_id(key, etag, state, queue)
     job_path = Path("data/video_jobs") / f"{video_id}.json"
-    if not job_path.exists():
-        print(f"SKIP {key}: expected property job {job_path}")
-        return False
-
-    record = state["objects"].setdefault(key, {"etag": etag, "video_id": video_id, "platforms": {}})
+    record = state["objects"][key]
     if record.get("etag") != etag:
         record.update({"etag": etag, "platforms": {}})
     content = build_social_content(json.loads(job_path.read_text(encoding="utf-8")))
@@ -233,6 +277,13 @@ def _publish_one(key: str, etag: str, client, bucket: str, state: dict) -> bool:
                 print(f"FAILED {video_id} -> {platform}: {error}")
             finally:
                 _save_state(state)
+
+    if all(record["platforms"].get(p, {}).get("status") == "published" for p in PUBLIC_PLATFORMS):
+        prompt = next((item for item in queue.get("prompts", []) if item.get("video_id") == video_id), None)
+        if prompt is not None:
+            prompt["status"] = "published"
+            prompt["r2_key"] = key
+            _save_queue(queue)
     return True
 
 
@@ -240,6 +291,7 @@ def main() -> None:
     bucket = _required("R2_BUCKET_NAME")
     client = _r2()
     state = _load_state()
+    queue = _load_queue()
     response = client.list_objects_v2(Bucket=bucket, Prefix=PREFIX)
     objects = [
         item for item in response.get("Contents", [])
@@ -254,12 +306,13 @@ def main() -> None:
         platforms = state.get("objects", {}).get(key, {}).get("platforms", {})
         if all(platforms.get(p, {}).get("status") == "published" for p in PUBLIC_PLATFORMS):
             continue
-        if _publish_one(key, etag, client, bucket, state):
+        if _publish_one(key, etag, client, bucket, state, queue):
             processed += 1
             processed_keys.append(key)
         if processed >= MAX_PER_RUN:
             break
     _save_state(state)
+    _save_queue(queue)
     print(f"R2 social scan complete: {len(objects)} video(s), processed {processed}")
     failures = [
         f"{key}: {platform}: {details.get('error', 'unknown error')}"

@@ -135,13 +135,13 @@ npm --prefix professional_video run typecheck
 
 ## R2 social publishing autopilot
 
-Upload each completed 9:16 MP4 to the configured R2 bucket using this exact key:
+After generating a 9:16 MP4 in Gemini mobile, upload it to the configured R2 bucket inside the `social-ready` folder. Keep the phone's original filename; renaming is not required.
 
 ```text
-social-ready/<video-id>.mp4
+social-ready/GeminiGeneratedVideo.mp4
 ```
 
-`<video-id>` must match an approved job in `data/video_jobs/<video-id>.json`. The video ID is also present in the Telegram prompt filename. The scheduled **R2 Social Publishing Autopilot** workflow scans every 15 minutes and processes at most one new video per run.
+Every successfully delivered Telegram prompt is added to `data/telegram_prompt_queue.json`. The scheduled **R2 Social Publishing Autopilot** pairs the oldest unpaired Telegram prompt with the oldest new mobile upload, scans every 15 minutes, and processes at most one video per run. For reliable matching, generate and upload one property at a time in the same order the prompts arrive.
 
 For each R2 upload it generates:
 
