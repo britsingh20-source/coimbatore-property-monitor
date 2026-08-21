@@ -1,0 +1,146 @@
+{
+  "video_id": "s-h1PybIiJM",
+  "source_url": "https://www.youtube.com/watch?v=s-h1PybIiJM",
+  "property_location": "Veerapandi, Shanthi Medu, Mettupalayam Road, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": "2BHK",
+    "land_area": "2.25 Cents",
+    "built_up_area": "980 Sq.ft",
+    "price": "Rs. 46 Lakhs (Negotiable)",
+    "facing": "West Facing Site, North Facing Main Door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "1 Covered Car Parking (12'0\" x 12'0\")",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Property is a 2BHK independent house in Coimbatore, Veerapandi / Shanthi Medu off Mettupalayam Road., Land size is 2.25 Cents with a built-up area of 980 Sq.ft., Asking price is 46 Lakhs Indian Rupees, negotiable, with up to 75% bank loan availability., Features include 2 bedrooms with attached bathrooms, 1 outer bathroom, 1 living hall, kitchen, pooja room, covered parking, borewell, and terrace.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Thudiyalur சைட்ல 2BHK Independent Villa தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை Rs. 46 Lakhs (Negotiable).",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 2.25 Cents லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 980 Sq.ft இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு West Facing Site, North Facing Main Door ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP Approved இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/s-h1PybIiJM/",
+  "optional_owned_audio": "assets/audio/s-h1PybIiJM.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey villa painted in white, gray, and vibrant yellow accents, featuring a stylized side elevation with geometric patterns, a brown slatted metal entrance gate, covered parking, and red exterior stairs leading up to an open terrace.. Neighbourhood: Suburban residential neighborhood in Veerapandi/Shanthi Medu with open landscape views, scenic mountain backdrop visible from the terrace, and nearby newly built independent houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey villa painted in white, gray, and vibrant yellow accents, featuring a stylized side elevation with geometric patterns, a brown slatted metal entrance gate, covered parking, and red exterior stairs leading up to an open terrace.. Neighbourhood: Suburban residential neighborhood in Veerapandi/Shanthi Medu with open landscape views, scenic mountain backdrop visible from the terrace, and nearby newly built independent houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey villa painted in white, gray, and vibrant yellow accents, featuring a stylized side elevation with geometric patterns, a brown slatted metal entrance gate, covered parking, and red exterior stairs leading up to an open terrace.. Neighbourhood: Suburban residential neighborhood in Veerapandi/Shanthi Medu with open landscape views, scenic mountain backdrop visible from the terrace, and nearby newly built independent houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey villa painted in white, gray, and vibrant yellow accents, featuring a stylized side elevation with geometric patterns, a brown slatted metal entrance gate, covered parking, and red exterior stairs leading up to an open terrace.. Neighbourhood: Suburban residential neighborhood in Veerapandi/Shanthi Medu with open landscape views, scenic mountain backdrop visible from the terrace, and nearby newly built independent houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

@@ -1,0 +1,131 @@
+{
+  "video_id": "lm6MwopAksw",
+  "source_url": "https://www.youtube.com/watch?v=lm6MwopAksw",
+  "property_location": "Nadupalayam, Coimbatore",
+  "property": {
+    "property_type": "Duplex Villa",
+    "bhk": "2 BHK",
+    "land_area": "2 Cents",
+    "built_up_area": "1400 sq.ft",
+    "price": "₹45 Lakhs (base 700 sq.ft option) / ₹58 Lakhs (for 1400 sq.ft house shown)",
+    "facing": "North facing house on West facing plot",
+    "road_width": "30 Feet",
+    "parking": "Car Parking",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Base 2BHK option is offered at ₹45 Lakhs for 700 sq.ft building on 800 sq.ft land with interior works included., The house demonstrated in the video is a 1400 sq.ft G+1 duplex villa priced at ₹58 Lakhs on 2.25 cents land., Individual contract construction cost starts at ₹2300/sq.ft for fly ash brick and ₹2400/sq.ft for red brick including water sump and septic tank., Located in Nadupalayam, Coimbatore, 2.5 km from Trichy Road / Pappampatti Pirivu.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local Tamil property presenter speaking directly to camera with natural real-estate English terms mixed in.",
+    "hook_strategy": "Highlighting key location convenience (2.5 km from Trichy Road) paired with a modern 2 BHK duplex villa option in Nadupalayam.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை திருச்சி ரோட் பாப்பம்பட்டி பிரிவுல இருந்து ஜஸ்ட் 2.5 km-ல நடுப்பாளையம்-ல இருக்குற ஒரு 2 BHK duplex villa தான் பாக்கப்போறோம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approval வாங்குன gated community site-ங்க. 30 feet tar road, street light அப்புறம் EB line வசதியோட அமைஞ்சிருக்கு.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "kitchen"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "details"
+      },
+      {
+        "name": "facing",
+        "voice": "இது West facing plot-ல அமைஞ்சிருக்க North facing house! Car parking அப்புறம் compound wall வசதியும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "facing-compass",
+        "purpose": "details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "வீடு பாத்தீங்கனா 2.25 cent land-ல 1400 sq.ft built-up area-ல அமைஞ்சிருக்கு. Borewell, water sump அப்புறம் septic tank வசதியும் பண்ணிருக்காங்க.",
+        "broll": [
+          "living_room",
+          "interior",
+          "bedroom",
+          "kitchen"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "floorplan-overlay",
+        "purpose": "details"
+      },
+      {
+        "name": "price",
+        "voice": "இதுல base 700 sq.ft option 45 Lakhs-ல இருந்தும், இந்த 1400 sq.ft duplex villa 58 Lakhs-க்கும் கிடைக்கும்.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "details"
+      },
+      {
+        "name": "cta",
+        "voice": "பக்கத்துலயே KIT College, SBIOA School-லாம் இருக்கு. நேர்ல site visit வர விரும்புனா உடனே details-க்கு call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "contact-number",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/lm6MwopAksw/",
+  "optional_owned_audio": "assets/audio/lm6MwopAksw.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-colored elevation featuring spotlighting, dark blue and brown accent panels, pattern-cut metal compound gate, and fully tiled parking porch.. Neighbourhood: Developing residential layout in a gated community environment with blacktop tar roads, streetlights, power lines, and open green fields nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-colored elevation featuring spotlighting, dark blue and brown accent panels, pattern-cut metal compound gate, and fully tiled parking porch.. Neighbourhood: Developing residential layout in a gated community environment with blacktop tar roads, streetlights, power lines, and open green fields nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-colored elevation featuring spotlighting, dark blue and brown accent panels, pattern-cut metal compound gate, and fully tiled parking porch.. Neighbourhood: Developing residential layout in a gated community environment with blacktop tar roads, streetlights, power lines, and open green fields nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-colored elevation featuring spotlighting, dark blue and brown accent panels, pattern-cut metal compound gate, and fully tiled parking porch.. Neighbourhood: Developing residential layout in a gated community environment with blacktop tar roads, streetlights, power lines, and open green fields nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
