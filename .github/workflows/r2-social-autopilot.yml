@@ -15,6 +15,7 @@ on:
       - "social_content.py"
       - "send_telegram_prompts.py"
       - "video_property_matcher.py"
+      - "meta_publisher.py"
   workflow_dispatch:
     inputs:
       dry_run:
