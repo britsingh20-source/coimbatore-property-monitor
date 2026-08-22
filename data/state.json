@@ -1894,6 +1894,14 @@
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
       "status": "archived_non_target"
     },
+    "uAJus2hXLTo": {
+      "attempts": 0,
+      "completed_at": "2026-08-22T13:47:13.757956+00:00",
+      "first_seen_at": "2026-08-22T13:46:25.839386+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-08-22T13:46:25.839386+00:00",
+      "status": "video_queued"
+    },
     "uwiLU8zPq3o": {
       "attempts": 2,
       "completed_at": "2026-08-08T23:49:05.967565+00:00",
