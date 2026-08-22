@@ -94,7 +94,8 @@
         }
       },
       "status": "matched",
-      "video_id": "s7YHYZe6Bvs"
+      "video_id": "s7YHYZe6Bvs",
+      "correction_pending": true
     },
     "social-ready/YeuCzhxC-j0.mp4": {
       "content": {
