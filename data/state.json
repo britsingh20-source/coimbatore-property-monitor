@@ -694,11 +694,10 @@
     },
     "KiJEPqoUCTw": {
       "attempts": 0,
-      "completed_at": "2026-08-22T04:52:58.082297+00:00",
       "first_seen_at": "2026-08-22T04:52:35.350020+00:00",
       "last_error": "",
-      "next_retry_at": "2026-08-22T04:52:35.350020+00:00",
-      "status": "archived_non_target"
+      "next_retry_at": "2026-08-22T00:00:00+00:00",
+      "status": "discovered"
     },
     "L9GyD_HPyaA": {
       "attempts": 0,
