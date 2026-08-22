@@ -31,9 +31,10 @@ def match_location(*values: str) -> dict:
     city_match = any(
         normalize(alias) in text for alias in config.get("city_aliases", [])
     )
-    score = 1.0 if matched else (0.45 if city_match else 0.0)
+    is_target = bool(matched or city_match)
+    score = 1.0 if matched else (0.75 if city_match else 0.0)
     return {
-        "is_target_location": bool(matched),
+        "is_target_location": is_target,
         "matched_localities": matched,
         "city_match": city_match,
         "location_score": score,
