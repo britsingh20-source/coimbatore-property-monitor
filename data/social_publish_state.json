@@ -2,16 +2,23 @@
   "objects": {
     "social-ready/KiJEPqoUCTw.mp4": {
       "content": {
-        "caption": "🏠 ₹55 Lakhs 2 BHK Independent House in Othakalmandapam, Coimbatore\n\n📍 Near Pollachi NH and Karpagam College\n🏡 Property: 2 BHK Independent House\n💰 Price: ₹55 Lakhs including registration\n📐 Land: 2.5 Cents\n🏗️ Built-up: 1,400 sq.ft.\n🧭 Facing: North\n🚗 Parking: Covered car parking (11' × 17')\n✅ DTCP Approved | Up to 75% bank loan\n\n📞 Site visit: 9003787621\nAvailability, documents, measurements and final terms must be verified during the site visit.\n\n#CoimbatoreProperty #OthakalmandapamProperty #CoimbatoreRealEstate",
+        "caption": "🏠 ₹55 Lakhs 2BHK BHK Independent House in Othakalmandapam, Coimbatore, Tamil Nadu — would you visit this property?\n\n📍 Location: Othakalmandapam, Coimbatore, Tamil Nadu\n🏡 Property: 2BHK BHK Independent House\n💰 Price: ₹55 Lakhs\n📐 Land: 2.5 Cents\n🏗️ Built-up: 1400 sqft\n🧭 Facing: North\n🚗 Parking: Car parking (11' × 17')\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #OthakalmandapamCoimbatoreTamilNaduProperty #CoimbatoreRealEstate",
         "hashtags": [
           "#CoimbatoreProperty",
-          "#OthakalmandapamProperty",
+          "#OthakalmandapamCoimbatoreTamilNaduProperty",
           "#CoimbatoreRealEstate"
         ],
-        "title": "₹55 Lakhs 2 BHK Independent House in Othakalmandapam, Coimbatore | Site Visit",
-        "youtube_description": "₹55 Lakhs 2 BHK Independent House in Othakalmandapam, Coimbatore.\n\n📍 Near Pollachi NH and Karpagam College\n📐 2.5 Cents | 1,400 sq.ft.\n🧭 North facing\n🚗 Covered car parking\n✅ DTCP Approved | Up to 75% bank loan\n💰 Price includes registration\n\nFor details and a site visit, call 9003787621.\nVerify availability, documents, measurements and final terms before purchase.\n\n#CoimbatoreProperty #OthakalmandapamProperty #CoimbatoreRealEstate"
+        "title": "₹55 Lakhs 2BHK BHK Independent House in Othakalmandapam, Coimbatore, Tamil Nadu | Site Visit 9003787",
+        "youtube_description": "₹55 Lakhs 2BHK BHK Independent House in Othakalmandapam, Coimbatore, Tamil Nadu. Watch the complete 10-second walkthrough.\n\n📍 Location: Othakalmandapam, Coimbatore, Tamil Nadu\n🏡 Property: 2BHK BHK Independent House\n💰 Price: ₹55 Lakhs\n📐 Land: 2.5 Cents\n🏗️ Built-up: 1400 sqft\n🧭 Facing: North\n🚗 Parking: Car parking (11' × 17')\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#CoimbatoreProperty #OthakalmandapamCoimbatoreTamilNaduProperty #CoimbatoreRealEstate"
       },
+      "correction_deletions": {},
+      "correction_errors": [
+        "instagram_reel: Meta API HTTP 400: {\"error\": {\"message\": \"(#10) Insufficient permissions to access this data\", \"code\": 10, \"type\": \"OAuthException\", \"fbtrace_id\": \"Ay95I-nJ1dsVUbOR8vgQJdc\"}}",
+        "instagram_story: Meta API HTTP 400: {\"error\": {\"message\": \"(#10) Insufficient permissions to access this data\", \"code\": 10, \"type\": \"OAuthException\", \"fbtrace_id\": \"Ac3usbu5_L3aDtfsu0KsnEd\"}}",
+        "youtube_short: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/videos?id=ziz8eT7rpkE returned \"Request had insufficient authentication scopes.\". Details: \"[{'message': 'Insufficient Permission', 'domain': 'global', 'reason': 'insufficientPermissions'}]\">"
+      ],
       "correction_pending": true,
+      "correction_status": "deletion_failed",
       "etag": "c84444fc5694f223d52e1a3c06de9302-3",
       "match_analysis": {
         "confidence": 1,
