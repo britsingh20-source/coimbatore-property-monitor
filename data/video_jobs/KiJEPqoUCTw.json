@@ -1,0 +1,144 @@
+{
+  "video_id": "KiJEPqoUCTw",
+  "source_url": "https://www.youtube.com/watch?v=KiJEPqoUCTw",
+  "property_location": "Pogalur, Annur to Mettupalayam NH Road, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "2BHK Duplex Independent House",
+    "bhk": "2BHK",
+    "land_area": "3 Cents (1,300 sq.ft.)",
+    "built_up_area": "1,250 sq.ft.",
+    "price": "₹54.50 Lakhs (Negotiable)",
+    "facing": "North Facing Site, East Facing Main Door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking (20' x 12')",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "3 Cent plot area with 1250 sq.ft. G+1 duplex layout., Ground floor contains car parking, living hall (16'x16'), pooja room (4'x4'), kitchen & dining (16'x8'), master bedroom (16'x10') with attached bathroom (8'x4')., First floor contains second bedroom (16'x10') with attached bathroom (8'x4') and open balcony., Car parking featured custom fabrication ceiling with clay jali tiles and glass cover., Located in Sri Ram Nagar layout in Pogalur on Mettupalayam-Annur NH Road.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera with natural conversational Tamil",
+    "hook_strategy": "Highlight the attractive 2BHK duplex independent house option in Pogalur on the Annur-Mettupalayam NH Road",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை அன்னூர் - மேட்டுப்பாளையம் NH ரோடுல இருக்குற போகலூர் ஸ்ரீ ராம் நகர்ல, ஒரு சூப்பரான 2BHK டுப்ளக்ஸ் வீடு சேல்ஸ்க்கு வந்திருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது பாத்தீங்கனா, 3 சென்ட் லேண்ட் ஏரியால 1,250 sq.ft. built-up ஏரியாவோட அமைச்சிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "கிரவுண்ட் ஃப்ளோர்ல லிவிங் ஹால், கிச்சன், மாஸ்டர் பெட்ரூம் இருக்கு. ஃபர்ஸ்ட் ஃப்ளோர்ல செகண்ட் பெட்ரூம் அப்புறம் ஓபன் பால்கனியும் வருது.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "",
+        "purpose": "layout_tour"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், இது North facing site அண்ட் East facing main door அமைப்போட வருது.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "approval",
+        "voice": "அதே மாதிரி, இது DTCP approved கேட்டட் கம்யூனிட்டி அட்வாண்டேஜோட அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "approval_info"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட பிரைஸ் பாத்தீங்கனா ₹54.50 Lakhs சொல்றாங்க, அண்ட் இது negotiable தான்.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணி பார்க்கவோ, extra details தெரிஞ்சுக்கவோ உடனே கால் பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "contact-card",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/KiJEPqoUCTw/",
+  "optional_owned_audio": "assets/audio/KiJEPqoUCTw.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Pogalur, Annur to Mettupalayam NH Road, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Modern duplex villa with a dual-tone beige and taupe elevation, brick tile wall accents, glass balcony railing, laser-cut main gate, and checkerboard paved car parking area.. Neighbourhood: A semi-gated residential township featuring over 60 completed houses, landscaped park area, kids playground, shuttle court, internal tar roads, overhead tank, and temple.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Pogalur, Annur to Mettupalayam NH Road, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Modern duplex villa with a dual-tone beige and taupe elevation, brick tile wall accents, glass balcony railing, laser-cut main gate, and checkerboard paved car parking area.. Neighbourhood: A semi-gated residential township featuring over 60 completed houses, landscaped park area, kids playground, shuttle court, internal tar roads, overhead tank, and temple.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Pogalur, Annur to Mettupalayam NH Road, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Modern duplex villa with a dual-tone beige and taupe elevation, brick tile wall accents, glass balcony railing, laser-cut main gate, and checkerboard paved car parking area.. Neighbourhood: A semi-gated residential township featuring over 60 completed houses, landscaped park area, kids playground, shuttle court, internal tar roads, overhead tank, and temple.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Pogalur, Annur to Mettupalayam NH Road, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Modern duplex villa with a dual-tone beige and taupe elevation, brick tile wall accents, glass balcony railing, laser-cut main gate, and checkerboard paved car parking area.. Neighbourhood: A semi-gated residential township featuring over 60 completed houses, landscaped park area, kids playground, shuttle court, internal tar roads, overhead tank, and temple.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
