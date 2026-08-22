@@ -18,11 +18,11 @@
       },
       "platforms": {
         "facebook_reel": {
-          "error": "META_PAGE_ACCESS_TOKEN is not acting as the configured Facebook Page: token resolves to id=1447027054146952, configured META_PAGE_ID=793294563876999. Use the Page access token returned for this Page by /me/accounts, not the User access token.",
+          "error": "Meta API HTTP 403: {\"error\": {\"message\": \"(#200) Subject does not have permission to post videos on this target\", \"type\": \"OAuthException\", \"code\": 200, \"fbtrace_id\": \"Anm56oB9t2vKnWqeAsGiReJ\"}}",
           "status": "failed"
         },
         "facebook_story": {
-          "error": "META_PAGE_ACCESS_TOKEN is not acting as the configured Facebook Page: token resolves to id=1447027054146952, configured META_PAGE_ID=793294563876999. Use the Page access token returned for this Page by /me/accounts, not the User access token.",
+          "error": "Meta API HTTP 400: {\"error\": {\"message\": \"Unsupported post request. Object with ID 'me' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api\", \"type\": \"GraphMethodException\", \"code\": 100, \"error_subcode\": 33, \"fbtrace_id\": \"AJKDrayw46FOZ0DGWkoSp-_\"}}",
           "status": "failed"
         },
         "instagram_reel": {
