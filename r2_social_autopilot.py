@@ -383,7 +383,10 @@ def main() -> None:
         key = str(item["Key"])
         etag = str(item.get("ETag", "")).strip('"')
         platforms = state.get("objects", {}).get(key, {}).get("platforms", {})
-        if all(platforms.get(p, {}).get("status") == "published" for p in PUBLIC_PLATFORMS):
+        correction_pending = bool(state.get("objects", {}).get(key, {}).get("correction_pending"))
+        if not correction_pending and all(
+            platforms.get(p, {}).get("status") == "published" for p in PUBLIC_PLATFORMS
+        ):
             continue
         if _publish_one(key, etag, client, bucket, state, queue):
             processed += 1
