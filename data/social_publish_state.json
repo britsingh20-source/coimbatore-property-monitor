@@ -19,7 +19,82 @@
         "corrected_from": "tTgkkQPNeCo",
         "method": "user_confirmed_property_location"
       },
-      "platforms": {},
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "creation_id": "17894119014599708",
+            "media_id": "18107443241329179",
+            "processing": {
+              "id": "17894119014599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "thumb_offset_ms": 2000
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17894119194599708",
+            "media_id": "17975929448913903",
+            "processing": {
+              "id": "17894119194599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "₹55 Lakhs 2BHK BHK Independent House in Othakalmandapam, Coimbatore, Tamil Nadu. Watch the complete 10-second walkthrough.\n\n📍 Location: Othakalmandapam, Coimbatore, Tamil Nadu\n🏡 Property: 2BHK BHK Independent House\n💰 Price: ₹55 Lakhs\n📐 Land: 2.5 Cents\n🏗️ Built-up: 1400 sqft\n🧭 Facing: North\n🚗 Parking: Car parking (11' × 17')\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#CoimbatoreProperty #OthakalmandapamCoimbatoreTamilNaduProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "₹55 Lakhs 2BHK BHK Independent House in Othakalmandapam, Coimbatore, Tamil Nadu. Watch the complete 10-second walkthrough.\n\n📍 Location: Othakalmandapam, Coimbatore, Tamil Nadu\n🏡 Property: 2BHK BHK Independent House\n💰 Price: ₹55 Lakhs\n📐 Land: 2.5 Cents\n🏗️ Built-up: 1400 sqft\n🧭 Facing: North\n🚗 Parking: Car parking (11' × 17')\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#CoimbatoreProperty #OthakalmandapamCoimbatoreTamilNaduProperty #CoimbatoreRealEstate",
+                "title": "₹55 Lakhs 2BHK BHK Independent House in Othakalmandapam, Coimbatore, Tamil Nadu | Site Visit 9003787"
+              },
+              "publishedAt": "2026-08-22T16:24:06Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/lgFplQTzpjE/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/lgFplQTzpjE/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/lgFplQTzpjE/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "₹55 Lakhs 2BHK BHK Independent House in Othakalmandapam, Coimbatore, Tamil Nadu | Site Visit 9003787"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "lgFplQTzpjE"
+          },
+          "status": "published"
+        }
+      },
       "status": "matched",
       "video_id": "s7YHYZe6Bvs"
     },
