@@ -30,7 +30,8 @@ def build_social_content(job: dict) -> dict[str, str | list[str]]:
     parking = _clean(prop.get("parking"))
     approval = _clean(prop.get("approval"))
 
-    subject = " ".join(part for part in (bhk and f"{bhk} BHK", kind) if part)
+    bhk_label = bhk if re.search(r"\\bBHK\\b", bhk, flags=re.IGNORECASE) else (f"{bhk} BHK" if bhk else "")
+    subject = " ".join(part for part in (bhk_label, kind) if part)
     hook = f"{price} {subject} in {location}" if price else f"{subject} in {location}"
     title = f"{hook} | Site Visit {CONTACT_NUMBER}"[:100]
 
