@@ -7,7 +7,12 @@
       "update_id": 789574030,
       "uploaded_at": "2026-08-22T04:03:16.634294+00:00",
       "video_id": "YeuCzhxC-j0"
+    },
+    "AgADISAAAl8jSVQ": {
+      "received_at": "2026-08-22T04:23:10.845828+00:00",
+      "status": "ignored_no_pending_prompt",
+      "update_id": 789574031
     }
   },
-  "last_update_id": 789574030
+  "last_update_id": 789574031
 }
