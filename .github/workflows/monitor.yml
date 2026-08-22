@@ -12,6 +12,7 @@ on:
       - ".github/workflows/monitor.yml"
       - "veo_prompt.py"
       - "send_telegram_prompts.py"
+      - "location_matcher.py"
 
 concurrency:
   group: property-monitor-main
