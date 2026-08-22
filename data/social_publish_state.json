@@ -18,11 +18,11 @@
       },
       "platforms": {
         "facebook_reel": {
-          "error": "Meta API HTTP 403: {\"error\": {\"message\": \"(#200) Subject does not have permission to post videos on this target\", \"type\": \"OAuthException\", \"code\": 200, \"fbtrace_id\": \"AfkHL55MZCv60WKEIimfqM2\"}}",
+          "error": "Meta API HTTP 403: {\"error\": {\"message\": \"(#200) Subject does not have permission to post videos on this target\", \"type\": \"OAuthException\", \"code\": 200, \"fbtrace_id\": \"ABFgiYCjXRAE_LMRR_hO8gn\"}}",
           "status": "failed"
         },
         "facebook_story": {
-          "error": "Meta API HTTP 400: {\"error\": {\"message\": \"Unsupported post request. Object with ID 'me' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api\", \"type\": \"GraphMethodException\", \"code\": 100, \"error_subcode\": 33, \"fbtrace_id\": \"ApHlaYw1EalrtjyFzVVIIZ4\"}}",
+          "error": "Meta API HTTP 400: {\"error\": {\"message\": \"Unsupported post request. Object with ID 'me' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api\", \"type\": \"GraphMethodException\", \"code\": 100, \"error_subcode\": 33, \"fbtrace_id\": \"A1Zy9qGZXvSJ9zLtUP0DubV\"}}",
           "status": "failed"
         },
         "instagram_reel": {
@@ -51,7 +51,53 @@
           "status": "published"
         },
         "youtube_short": {
-          "status": "waiting_for_secrets"
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "₹67 Lakhs 2 BHK Independent Villa in Karamadai, Mettupalayam Road, Coimbatore, Tamil Nadu, India. Watch the complete 10-second walkthrough.\n\n📍 Location: Karamadai, Mettupalayam Road, Coimbatore, Tamil Nadu, India\n🏡 Property: 2 BHK Independent Villa\n💰 Price: ₹67 Lakhs\n📐 Land: 3.5 Cents\n🏗️ Built-up: 1,300 sq.ft.\n🧭 Facing: East\n🚗 Parking: Covered Car & Two-Wheeler Parking (21'0\" x 14'0\")\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#CoimbatoreProperty #KaramadaiMettupalayamRoadCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "₹67 Lakhs 2 BHK Independent Villa in Karamadai, Mettupalayam Road, Coimbatore, Tamil Nadu, India. Watch the complete 10-second walkthrough.\n\n📍 Location: Karamadai, Mettupalayam Road, Coimbatore, Tamil Nadu, India\n🏡 Property: 2 BHK Independent Villa\n💰 Price: ₹67 Lakhs\n📐 Land: 3.5 Cents\n🏗️ Built-up: 1,300 sq.ft.\n🧭 Facing: East\n🚗 Parking: Covered Car & Two-Wheeler Parking (21'0\" x 14'0\")\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#CoimbatoreProperty #KaramadaiMettupalayamRoadCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
+                "title": "₹67 Lakhs 2 BHK Independent Villa in Karamadai, Mettupalayam Road, Coimbatore, Tamil Nadu, India | S"
+              },
+              "publishedAt": "2026-08-22T07:44:45Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/wqFthIYQMBo/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/wqFthIYQMBo/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/wqFthIYQMBo/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "₹67 Lakhs 2 BHK Independent Villa in Karamadai, Mettupalayam Road, Coimbatore, Tamil Nadu, India | S"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "wqFthIYQMBo"
+          },
+          "status": "published"
         }
       },
       "status": "matched",
