@@ -1,8 +1,11 @@
 {
   "prompts": [
     {
+      "r2_key": "social-ready/YeuCzhxC-j0.mp4",
       "sent_at": "2026-08-22T03:05:31.936312+00:00",
-      "status": "pending_mobile_upload",
+      "status": "assigned_to_r2_upload",
+      "telegram_file_unique_id": "AgADESAAAl8jSVQ",
+      "uploaded_at": "2026-08-22T04:03:16.634294+00:00",
       "video_id": "YeuCzhxC-j0"
     }
   ]
