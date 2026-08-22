@@ -12,7 +12,15 @@
       "received_at": "2026-08-22T04:23:10.845828+00:00",
       "status": "ignored_no_pending_prompt",
       "update_id": 789574031
+    },
+    "AgADwR8AAl8jUVQ": {
+      "r2_key": "social-ready/KiJEPqoUCTw.mp4",
+      "size": 19435519,
+      "status": "uploaded",
+      "update_id": 789574032,
+      "uploaded_at": "2026-08-22T13:00:19.075320+00:00",
+      "video_id": "KiJEPqoUCTw"
     }
   },
-  "last_update_id": 789574031
+  "last_update_id": 789574032
 }
