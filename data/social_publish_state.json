@@ -13,7 +13,7 @@
       },
       "etag": "0ebd100a3346630f07d76601d688e1b0-2",
       "match_analysis": {
-        "confidence": 1.0,
+        "confidence": 1,
         "method": "exact_filename"
       },
       "platforms": {
@@ -26,17 +26,7 @@
           "status": "failed"
         },
         "instagram_reel": {
-          "result": {
-            "creation_id": "17894042412599708",
-            "media_id": "17904931116491219",
-            "processing": {
-              "id": "17894042412599708",
-              "status": "Finished: Media has been uploaded and it is ready to be published.",
-              "status_code": "FINISHED"
-            },
-            "thumb_offset_ms": 2000
-          },
-          "status": "published"
+          "status": "test_republish_requested"
         },
         "instagram_story": {
           "result": {
