@@ -37,19 +37,17 @@ def validate_page_token() -> dict:
     token = _required("META_PAGE_ACCESS_TOKEN")
     configured_page_id = _required("META_PAGE_ID")
     response = requests.get(
-        f"{GRAPH}/me",
+        f"{GRAPH}/{configured_page_id}",
         params={"fields": "id,name", "access_token": token},
         timeout=30,
     )
     identity = _response_json(response)
     resolved_page_id = str(identity.get("id", "")).strip()
-    if not resolved_page_id:
-        raise RuntimeError("Meta Page token identity did not return an id")
     if resolved_page_id != configured_page_id:
         raise RuntimeError(
-            "META_PAGE_ACCESS_TOKEN is not acting as the configured Facebook Page: "
-            f"token resolves to id={resolved_page_id}, configured META_PAGE_ID={configured_page_id}. "
-            "Use the Page access token returned for this Page by /me/accounts, not the User access token."
+            "META_PAGE_ACCESS_TOKEN cannot access the configured Facebook Page: "
+            f"resolved id={resolved_page_id or 'missing'}, configured META_PAGE_ID={configured_page_id}. "
+            "Assign the Page asset and content permissions to this System User token."
         )
     return {"id": resolved_page_id, "name": identity.get("name")}
 
@@ -135,11 +133,11 @@ def publish_facebook_reel(video_path: Path, caption: str) -> dict:
     token = _required("META_PAGE_ACCESS_TOKEN")
     page_identity = validate_page_token()
 
-    # Meta's Page Reels flow uses /me/video_reels with a Page access token.
-    # The explicit identity check above guarantees that /me resolves to the
-    # configured Facebook Page before we attempt any upload.
+    configured_page_id = page_identity["id"]
+    # Use the explicit Page endpoint so both Page access tokens and assigned
+    # System User tokens work without relying on /me identity resolution.
     start = requests.post(
-        f"{GRAPH}/me/video_reels",
+        f"{GRAPH}/{configured_page_id}/video_reels",
         data={"upload_phase": "start", "access_token": token},
         timeout=60,
     )
@@ -165,7 +163,7 @@ def publish_facebook_reel(video_path: Path, caption: str) -> dict:
     uploaded = _response_json(upload)
 
     finish = requests.post(
-        f"{GRAPH}/me/video_reels",
+        f"{GRAPH}/{configured_page_id}/video_reels",
         data={
             "upload_phase": "finish",
             "video_id": video_id,
