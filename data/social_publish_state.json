@@ -18,11 +18,11 @@
       },
       "platforms": {
         "facebook_reel": {
-          "error": "Meta API HTTP 403: {\"error\": {\"message\": \"(#200) Subject does not have permission to post videos on this target\", \"type\": \"OAuthException\", \"code\": 200, \"fbtrace_id\": \"AYYiul3hf9st3EqB3M3aq4d\"}}",
+          "error": "Meta API HTTP 403: {\"error\": {\"message\": \"(#200) Subject does not have permission to post videos on this target\", \"type\": \"OAuthException\", \"code\": 200, \"fbtrace_id\": \"A4aFPCvjeydrgLYWCqCJK2h\"}}",
           "status": "failed"
         },
         "facebook_story": {
-          "error": "Meta API HTTP 400: {\"error\": {\"message\": \"Unsupported post request. Object with ID 'me' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api\", \"type\": \"GraphMethodException\", \"code\": 100, \"error_subcode\": 33, \"fbtrace_id\": \"ArnN5_BAMggEP4uzd6LpdQq\"}}",
+          "error": "Meta API HTTP 400: {\"error\": {\"message\": \"Unsupported post request. Object with ID 'me' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api\", \"type\": \"GraphMethodException\", \"code\": 100, \"error_subcode\": 33, \"fbtrace_id\": \"AtTh06YDe0JxOYoLlCyZsBs\"}}",
           "status": "failed"
         },
         "instagram_reel": {
