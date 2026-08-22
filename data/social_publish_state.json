@@ -1,5 +1,15 @@
 {
   "objects": {
+    "social-ready/KiJEPqoUCTw.mp4": {
+      "etag": "",
+      "match_analysis": {
+        "confidence": 1,
+        "method": "corrected_telegram_assignment"
+      },
+      "platforms": {},
+      "status": "matched",
+      "video_id": "tTgkkQPNeCo"
+    },
     "social-ready/YeuCzhxC-j0.mp4": {
       "content": {
         "caption": "🏠 ₹67 Lakhs 2 BHK Independent Villa in Karamadai, Mettupalayam Road, Coimbatore, Tamil Nadu, India — would you visit this property?\n\n📍 Location: Karamadai, Mettupalayam Road, Coimbatore, Tamil Nadu, India\n🏡 Property: 2 BHK Independent Villa\n💰 Price: ₹67 Lakhs\n📐 Land: 3.5 Cents\n🏗️ Built-up: 1,300 sq.ft.\n🧭 Facing: East\n🚗 Parking: Covered Car & Two-Wheeler Parking (21'0\" x 14'0\")\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #KaramadaiMettupalayamRoadCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
@@ -18,12 +28,10 @@
       },
       "platforms": {
         "facebook_reel": {
-          "error": "Meta API HTTP 403: {\"error\": {\"message\": \"(#200) Subject does not have permission to post videos on this target\", \"type\": \"OAuthException\", \"code\": 200, \"fbtrace_id\": \"APWlzmQ5Q3_IXT9NLD8Sd50\"}}",
-          "status": "failed"
+          "status": "dry_run"
         },
         "facebook_story": {
-          "error": "Meta API HTTP 400: {\"error\": {\"message\": \"Unsupported post request. Object with ID 'me' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api\", \"type\": \"GraphMethodException\", \"code\": 100, \"error_subcode\": 33, \"fbtrace_id\": \"A1NWj4_2bioXrZMYHC6LxEV\"}}",
-          "status": "failed"
+          "status": "dry_run"
         },
         "instagram_reel": {
           "result": {
@@ -102,16 +110,6 @@
       },
       "status": "matched",
       "video_id": "YeuCzhxC-j0"
-    },
-    "social-ready/KiJEPqoUCTw.mp4": {
-      "etag": "",
-      "video_id": "tTgkkQPNeCo",
-      "status": "matched",
-      "match_analysis": {
-        "method": "corrected_telegram_assignment",
-        "confidence": 1
-      },
-      "platforms": {}
     }
   }
 }
