@@ -1,12 +1,97 @@
 {
   "objects": {
     "social-ready/KiJEPqoUCTw.mp4": {
-      "etag": "",
+      "content": {
+        "caption": "🏠 54.50 Lakhs (negotiable) 2 BHK Independent House in Pogalur, Mtp to Annur Road, Coimbatore — would you visit this property?\n\n📍 Location: Pogalur, Mtp to Annur Road, Coimbatore\n🏡 Property: 2 BHK Independent House\n💰 Price: 54.50 Lakhs (negotiable)\n📐 Land: 3 Cent\n🏗️ Built-up: 1250 sqft\n🧭 Facing: East Facing (House), North Facing (Site)\n🚗 Parking: Covered Car Parking (20' x 12')\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #PogalurMtptoAnnurRoadCoimbatoreProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#CoimbatoreProperty",
+          "#PogalurMtptoAnnurRoadCoimbatoreProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "54.50 Lakhs (negotiable) 2 BHK Independent House in Pogalur, Mtp to Annur Road, Coimbatore | Site Vi",
+        "youtube_description": "54.50 Lakhs (negotiable) 2 BHK Independent House in Pogalur, Mtp to Annur Road, Coimbatore. Watch the complete 10-second walkthrough.\n\n📍 Location: Pogalur, Mtp to Annur Road, Coimbatore\n🏡 Property: 2 BHK Independent House\n💰 Price: 54.50 Lakhs (negotiable)\n📐 Land: 3 Cent\n🏗️ Built-up: 1250 sqft\n🧭 Facing: East Facing (House), North Facing (Site)\n🚗 Parking: Covered Car Parking (20' x 12')\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#CoimbatoreProperty #PogalurMtptoAnnurRoadCoimbatoreProperty #CoimbatoreRealEstate"
+      },
+      "etag": "c84444fc5694f223d52e1a3c06de9302-3",
       "match_analysis": {
         "confidence": 1,
         "method": "corrected_telegram_assignment"
       },
-      "platforms": {},
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "creation_id": "17894115771599708",
+            "media_id": "18132253681627167",
+            "processing": {
+              "id": "17894115771599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "thumb_offset_ms": 2000
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17894115987599708",
+            "media_id": "17894432760667072",
+            "processing": {
+              "id": "17894115987599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "54.50 Lakhs (negotiable) 2 BHK Independent House in Pogalur, Mtp to Annur Road, Coimbatore. Watch the complete 10-second walkthrough.\n\n📍 Location: Pogalur, Mtp to Annur Road, Coimbatore\n🏡 Property: 2 BHK Independent House\n💰 Price: 54.50 Lakhs (negotiable)\n📐 Land: 3 Cent\n🏗️ Built-up: 1250 sqft\n🧭 Facing: East Facing (House), North Facing (Site)\n🚗 Parking: Covered Car Parking (20' x 12')\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#CoimbatoreProperty #PogalurMtptoAnnurRoadCoimbatoreProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "54.50 Lakhs (negotiable) 2 BHK Independent House in Pogalur, Mtp to Annur Road, Coimbatore. Watch the complete 10-second walkthrough.\n\n📍 Location: Pogalur, Mtp to Annur Road, Coimbatore\n🏡 Property: 2 BHK Independent House\n💰 Price: 54.50 Lakhs (negotiable)\n📐 Land: 3 Cent\n🏗️ Built-up: 1250 sqft\n🧭 Facing: East Facing (House), North Facing (Site)\n🚗 Parking: Covered Car Parking (20' x 12')\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#CoimbatoreProperty #PogalurMtptoAnnurRoadCoimbatoreProperty #CoimbatoreRealEstate",
+                "title": "54.50 Lakhs (negotiable) 2 BHK Independent House in Pogalur, Mtp to Annur Road, Coimbatore | Site Vi"
+              },
+              "publishedAt": "2026-08-22T15:59:00Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/ziz8eT7rpkE/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/ziz8eT7rpkE/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/ziz8eT7rpkE/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "54.50 Lakhs (negotiable) 2 BHK Independent House in Pogalur, Mtp to Annur Road, Coimbatore | Site Vi"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "ziz8eT7rpkE"
+          },
+          "status": "published"
+        }
+      },
       "status": "matched",
       "video_id": "tTgkkQPNeCo"
     },
