@@ -18,12 +18,10 @@
       },
       "platforms": {
         "facebook_reel": {
-          "error": "META_PAGE_ACCESS_TOKEN is not acting as the configured Facebook Page: token resolves to id=1447027054146952, configured META_PAGE_ID=793294563876999. Use the Page access token returned for this Page by /me/accounts, not the User access token.",
-          "status": "failed"
+          "status": "dry_run"
         },
         "facebook_story": {
-          "error": "META_PAGE_ACCESS_TOKEN is not acting as the configured Facebook Page: token resolves to id=1447027054146952, configured META_PAGE_ID=793294563876999. Use the Page access token returned for this Page by /me/accounts, not the User access token.",
-          "status": "failed"
+          "status": "dry_run"
         },
         "instagram_reel": {
           "result": {
