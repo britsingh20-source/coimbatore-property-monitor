@@ -18,15 +18,25 @@
       },
       "platforms": {
         "facebook_reel": {
-          "error": "Meta API HTTP 403: {\"error\": {\"message\": \"(#200) Subject does not have permission to post videos on this target\", \"type\": \"OAuthException\", \"code\": 200, \"fbtrace_id\": \"AwmDgfqETHlA19pRAkhb_CA\"}}",
+          "error": "Meta API HTTP 403: {\"error\": {\"message\": \"(#200) Subject does not have permission to post videos on this target\", \"type\": \"OAuthException\", \"code\": 200, \"fbtrace_id\": \"AvUExcmthu2oxZm4v6k0PQo\"}}",
           "status": "failed"
         },
         "facebook_story": {
-          "error": "Meta API HTTP 400: {\"error\": {\"message\": \"Unsupported post request. Object with ID 'me' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api\", \"type\": \"GraphMethodException\", \"code\": 100, \"error_subcode\": 33, \"fbtrace_id\": \"Ahp8KBYjw3BHBYv53Gem-SL\"}}",
+          "error": "Meta API HTTP 400: {\"error\": {\"message\": \"Unsupported post request. Object with ID 'me' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api\", \"type\": \"GraphMethodException\", \"code\": 100, \"error_subcode\": 33, \"fbtrace_id\": \"AylHxLxXy4SeUxoCQhlIKmo\"}}",
           "status": "failed"
         },
         "instagram_reel": {
-          "status": "test_republish_requested"
+          "result": {
+            "creation_id": "17894059956599708",
+            "media_id": "18606506455016192",
+            "processing": {
+              "id": "17894059956599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "thumb_offset_ms": 2000
+          },
+          "status": "published"
         },
         "instagram_story": {
           "result": {
