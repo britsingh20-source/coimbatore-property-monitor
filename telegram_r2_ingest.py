@@ -3,6 +3,7 @@ from __future__ import annotations
 from datetime import datetime, timezone
 import json
 import os
+import re
 from pathlib import Path
 import tempfile
 
@@ -118,8 +119,12 @@ def ingest() -> int:
             print(f"Duplicate Telegram video ignored: {unique_id}")
             continue
 
-        pending = _oldest_pending(queue)
-        if pending is None:
+        pending_ids = [
+            str(item.get("video_id") or "").strip()
+            for item in queue.get("prompts", [])
+            if item.get("status") == "pending_mobile_upload" and item.get("video_id")
+        ]
+        if not pending_ids:
             state["files"][unique_id] = {
                 "status": "ignored_no_pending_prompt",
                 "update_id": update_id,
@@ -143,7 +148,6 @@ def ingest() -> int:
             )
             continue
 
-        video_id = str(pending["video_id"]).strip()
         file_info = _telegram("getFile", token, data={"file_id": str(attachment["file_id"])})
         file_path = str((file_info.get("result") or {}).get("file_path") or "")
         if not file_path:
@@ -154,7 +158,8 @@ def ingest() -> int:
         if len(response.content) > MAX_BYTES:
             raise RuntimeError(f"Downloaded Telegram video exceeds {MAX_BYTES} bytes")
 
-        key = f"{PREFIX.rstrip('/')}/{video_id}.mp4"
+        safe_unique_id = re.sub(r"[^A-Za-z0-9_-]+", "-", unique_id).strip("-")
+        key = f"{PREFIX.rstrip('/')}/telegram-{safe_unique_id}.mp4"
         with tempfile.NamedTemporaryFile(prefix="telegram-property-", suffix=".mp4") as handle:
             handle.write(response.content)
             handle.flush()
@@ -166,15 +171,9 @@ def ingest() -> int:
             )
 
         now = datetime.now(timezone.utc).isoformat()
-        pending.update({
-            "status": "assigned_to_r2_upload",
-            "r2_key": key,
-            "telegram_file_unique_id": unique_id,
-            "uploaded_at": now,
-        })
         state["files"][unique_id] = {
-            "status": "uploaded",
-            "video_id": video_id,
+            "status": "uploaded_awaiting_content_match",
+            "candidate_video_ids": pending_ids,
             "r2_key": key,
             "size": len(response.content),
             "update_id": update_id,
@@ -184,9 +183,9 @@ def ingest() -> int:
         _send(
             token,
             chat_id,
-            f"✅ Property video received\nMatched prompt: {video_id}\nUploaded to R2: {key}\nSocial publishing will run automatically.",
+            f"✅ Property video received\nUploaded to R2: {key}\nMatching the video content against pending property prompts.\nSocial publishing will run automatically after a confident match.",
         )
-        print(f"Telegram video {unique_id} -> {key}")
+        print(f"Telegram video {unique_id} -> {key}; awaiting content-based prompt match")
 
     _save(STATE_PATH, state)
     _save(QUEUE_PATH, queue)
