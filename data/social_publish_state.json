@@ -17,8 +17,8 @@
         "instagram_story: Meta API HTTP 400: {\"error\": {\"message\": \"(#10) Insufficient permissions to access this data\", \"code\": 10, \"type\": \"OAuthException\", \"fbtrace_id\": \"Ac3usbu5_L3aDtfsu0KsnEd\"}}",
         "youtube_short: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/videos?id=ziz8eT7rpkE returned \"Request had insufficient authentication scopes.\". Details: \"[{'message': 'Insufficient Permission', 'domain': 'global', 'reason': 'insufficientPermissions'}]\">"
       ],
-      "correction_pending": true,
-      "correction_status": "deletion_failed",
+      "correction_pending": false,
+      "correction_status": "manual_deletion_required",
       "etag": "c84444fc5694f223d52e1a3c06de9302-3",
       "match_analysis": {
         "confidence": 1,
