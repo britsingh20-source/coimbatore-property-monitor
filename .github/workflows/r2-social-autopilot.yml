@@ -1,5 +1,7 @@
 name: R2 Social Publishing Autopilot
 
+# 2026-08-22 Facebook Page credential verification
+
 on:
   schedule:
     - cron: "*/15 * * * *"
