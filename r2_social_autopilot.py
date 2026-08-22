@@ -32,7 +32,7 @@ STATE_PATH = Path(os.environ.get("SOCIAL_STATE_PATH", "data/social_publish_state
 QUEUE_PATH = Path(os.environ.get("TELEGRAM_PROMPT_QUEUE", "data/telegram_prompt_queue.json"))
 MAX_PER_RUN = max(1, int(os.environ.get("SOCIAL_MAX_PER_RUN", "1")))
 DRY_RUN = os.environ.get("SOCIAL_DRY_RUN", "false").lower() == "true"
-PUBLIC_PLATFORMS = ("instagram_reel", "facebook_reel", "instagram_story", "facebook_story", "youtube_short")
+PUBLIC_PLATFORMS = ("instagram_reel", "facebook_reel", "facebook_story", "youtube_short")
 
 
 def _r2():
