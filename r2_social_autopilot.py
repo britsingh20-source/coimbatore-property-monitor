@@ -170,6 +170,30 @@ def publish_instagram_story(video_url: str) -> dict:
     return {"creation_id": creation_id, "media_id": result.get("id"), "processing": processing}
 
 
+def delete_instagram_media(media_id: str) -> dict:
+    token = _required("META_PAGE_ACCESS_TOKEN")
+    response = requests.delete(
+        f"{GRAPH}/{media_id}",
+        params={"access_token": token},
+        timeout=60,
+    )
+    return _response_json(response)
+
+
+def delete_youtube_video(video_id: str) -> dict:
+    credentials = Credentials(
+        token=None,
+        refresh_token=_required("YOUTUBE_REFRESH_TOKEN"),
+        token_uri="https://oauth2.googleapis.com/token",
+        client_id=_required("YOUTUBE_CLIENT_ID"),
+        client_secret=_required("YOUTUBE_CLIENT_SECRET"),
+        scopes=["https://www.googleapis.com/auth/youtube.upload"],
+    )
+    youtube = build("youtube", "v3", credentials=credentials, cache_discovery=False)
+    youtube.videos().delete(id=video_id).execute()
+    return {"video_id": video_id, "deleted": True}
+
+
 def publish_facebook_story(video_path: Path) -> dict:
     token = _required("META_PAGE_ACCESS_TOKEN")
     page = validate_page_token()
@@ -268,6 +292,36 @@ def _publish_one(key: str, etag: str, client, bucket: str, state: dict, queue: d
         record.update({"etag": etag, "platforms": {}})
     content = build_social_content(json.loads(job_path.read_text(encoding="utf-8")))
     record["content"] = content
+
+    if record.get("correction_pending"):
+        deletion_results: dict[str, dict] = {}
+        deletion_failures: list[str] = []
+        for platform in ("instagram_reel", "instagram_story"):
+            media_id = str(record.get("platforms", {}).get(platform, {}).get("result", {}).get("media_id") or "")
+            if not media_id:
+                continue
+            try:
+                deletion_results[platform] = delete_instagram_media(media_id)
+                print(f"DELETED incorrect {platform}: {media_id}")
+            except Exception as error:
+                deletion_failures.append(f"{platform}: {error}")
+        youtube_id = str(record.get("platforms", {}).get("youtube_short", {}).get("result", {}).get("video_id") or "")
+        if youtube_id:
+            try:
+                deletion_results["youtube_short"] = delete_youtube_video(youtube_id)
+                print(f"DELETED incorrect youtube_short: {youtube_id}")
+            except Exception as error:
+                deletion_failures.append(f"youtube_short: {error}")
+        record["correction_deletions"] = deletion_results
+        if deletion_failures:
+            record["correction_status"] = "deletion_failed"
+            record["correction_errors"] = deletion_failures
+            _save_state(state)
+            raise RuntimeError("Correction deletion failed; republish blocked: " + " | ".join(deletion_failures))
+        record["platforms"] = {}
+        record["correction_pending"] = False
+        record["correction_status"] = "deleted_awaiting_republish"
+        _save_state(state)
 
     with tempfile.TemporaryDirectory(prefix="property-social-") as temp_dir:
         video_path = Path(temp_dir) / f"{video_id}.mp4"
