@@ -9,6 +9,7 @@ on:
     paths:
       - ".github/workflows/r2-social-autopilot.yml"
       - "r2_social_autopilot.py"
+      - "telegram_r2_ingest.py"
       - "social_content.py"
       - "send_telegram_prompts.py"
       - "video_property_matcher.py"
@@ -40,6 +41,19 @@ jobs:
           python-version: "3.11"
           cache: pip
       - run: pip install -r requirements.txt
+      - name: Import new Telegram property videos to R2
+        id: telegram_ingest
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          R2_SOCIAL_PREFIX: social-ready/
+          TELEGRAM_MAX_VIDEO_BYTES: "20971520"
+        run: python telegram_r2_ingest.py
       - name: Scan R2 and publish new property videos
         id: autopilot
         continue-on-error: true
@@ -62,21 +76,26 @@ jobs:
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
           YOUTUBE_PRIVACY_STATUS: public
         run: python r2_social_autopilot.py
-      - name: Commit publishing state
+      - name: Commit ingestion and publishing state
         if: always()
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "property-social-bot"
           git config user.email "actions@github.com"
-          git add data/social_publish_state.json data/telegram_prompt_queue.json
+          git add data/telegram_ingest_state.json data/social_publish_state.json data/telegram_prompt_queue.json
           if git diff --staged --quiet; then
-            echo "No social publishing or prompt-pairing state changes."
+            echo "No Telegram ingestion, social publishing or prompt-pairing state changes."
           else
-            git commit -m "Update social publishing state [automated]"
+            git commit -m "Update Telegram ingestion and social publishing state [automated]"
             git pull --rebase
             git push
           fi
+      - name: Preserve Telegram ingestion failure
+        if: steps.telegram_ingest.outcome == 'failure'
+        run: |
+          echo "::error::Telegram video ingestion failed. No unconfirmed upload will be published."
+          exit 1
       - name: Preserve publishing failure
         if: steps.autopilot.outcome == 'failure'
         run: |
