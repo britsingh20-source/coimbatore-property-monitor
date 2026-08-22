@@ -1,0 +1,146 @@
+{
+  "video_id": "6RCA3cUaZ2Y",
+  "source_url": "https://www.youtube.com/watch?v=6RCA3cUaZ2Y",
+  "property_location": "Othakalmandapam, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2 BHK",
+    "land_area": "2.5 Cents",
+    "built_up_area": "1400 sq.ft.",
+    "price": "₹55 Lakhs (with free registration)",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "11' x 17' Covered Car Parking",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "2 BHK North-facing independent house for sale at Othakalmandapam, Coimbatore., Land area is 2.5 Cents and built-up area is 1400 sq.ft., Property features a North-facing main teakwood door., Includes individual borewell, water sump, 11'x17' car parking, 11'x20' living hall, open kitchen & dining (10'x16'), pooja room (4'x10'), kids bedroom (10'x11') with attached bathroom (4'x6'), family living (10'x16'), master bedroom (10'x16') with attached bathroom (5'x10'), outer bathroom (4'x7'), front balcony, and terrace., Special offer price of ₹55 Lakhs including registration costs., 75% bank loan facility available., Located within walkable distance to Pollachi NH Highway and Karpagam College.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and authentic local real-estate presenter speaking directly to camera in natural conversational Tamil",
+    "hook_strategy": "Highlight key location advantages (near Karpagam College & Pollachi NH Highway) along with the complete price value offer in Othakalmandapam",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Othakalmandapam-ல, Karpagam College மற்றும் Pollachi NH highway-க்கு walkable distance-ல ஒரு 2 BHK independent house விற்பனைக்கு வந்துருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 2.5 Cents land area-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "text-land-area",
+        "purpose": "land_details"
+      },
+      {
+        "name": "facing",
+        "voice": "House-ோட facing North, அப்புறம் North-facing main door-க்கு teakwood பயன்படுத்திருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "compass-north-facing",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1400 sq.ft. built-up area-ல living hall, open kitchen, 2 bedrooms with attached bathrooms, balcony, terrace, 11'x17' covered car parking, borewell மற்றும் water sump வசதிகள் இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "builtup-size-overlay",
+        "purpose": "builtup_details"
+      },
+      {
+        "name": "approval",
+        "voice": "இந்த property DTCP approval பெற்றது.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "approval-badge-overlay",
+        "purpose": "trust"
+      },
+      {
+        "name": "price",
+        "voice": "Free registration-ோட சேர்த்து இதோட price 55 Lakhs. இதுமட்டுமில்லாம 75% bank loan facility-யும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag-overlay",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணவோ, மேலும் details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "contact-card-overlay",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/6RCA3cUaZ2Y/",
+  "optional_owned_audio": "assets/audio/6RCA3cUaZ2Y.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Othakalmandapam, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story elevation with grey, orange, and charcoal accent painting, gated entrance with a red-painted ramp, tiled parking area, and spacious open balcony/terrace.. Neighbourhood: Developing residential locality in Othakalmandapam, Coimbatore, situated close to Pollachi NH Highway with nearby educational institutions like Karpagam College and surrounding green landscapes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Othakalmandapam, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story elevation with grey, orange, and charcoal accent painting, gated entrance with a red-painted ramp, tiled parking area, and spacious open balcony/terrace.. Neighbourhood: Developing residential locality in Othakalmandapam, Coimbatore, situated close to Pollachi NH Highway with nearby educational institutions like Karpagam College and surrounding green landscapes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Othakalmandapam, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story elevation with grey, orange, and charcoal accent painting, gated entrance with a red-painted ramp, tiled parking area, and spacious open balcony/terrace.. Neighbourhood: Developing residential locality in Othakalmandapam, Coimbatore, situated close to Pollachi NH Highway with nearby educational institutions like Karpagam College and surrounding green landscapes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Othakalmandapam, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story elevation with grey, orange, and charcoal accent painting, gated entrance with a red-painted ramp, tiled parking area, and spacious open balcony/terrace.. Neighbourhood: Developing residential locality in Othakalmandapam, Coimbatore, situated close to Pollachi NH Highway with nearby educational institutions like Karpagam College and surrounding green landscapes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

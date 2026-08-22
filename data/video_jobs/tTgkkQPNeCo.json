@@ -1,0 +1,141 @@
+{
+  "video_id": "tTgkkQPNeCo",
+  "source_url": "https://www.youtube.com/watch?v=tTgkkQPNeCo",
+  "property_location": "Pogalur, Mtp to Annur Road, Coimbatore",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": 2,
+    "land_area": "3 Cent",
+    "built_up_area": "1250 sqft",
+    "price": "54.50 Lakhs (negotiable)",
+    "facing": "East Facing (House), North Facing (Site)",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking (20' x 12')",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "2BHK House in Pogalur, Coimbatore listed for 54.50 Lakhs, Land size is 3 Cent and built-up area is 1250 sqft, East facing house with north facing site, DTCP approved site with bank loan facility available, Ground Floor includes Car Parking (20'x12'), Living Hall (16'x16'), Pooja Room (4'x4'), Kitchen & Dining (16'x8'), First Bedroom (16'x10'), and Attached Bathroom (8'x4'), First Floor includes Second Bedroom (16'x10') and Attached Bathroom (8'x4'), Property features borewell and water sump",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and authentic local Coimbatore property presenter speaking directly to camera with clear dynamic visual callouts.",
+    "hook_strategy": "Lead directly with the popular location on Mtp to Annur Road and highlight the complete 2BHK house offer.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Pogalur, Mtp to Annur road-ல ஒரு 2BHK independent house விற்பனைக்கு வந்திருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-text-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1250 sqft built-up area-ல spacious 16x16 living hall, kitchen, pooja room, அப்புறம் attached bathroom-ஓட 2 bedrooms இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "floorplan-dimensions-overlay",
+        "purpose": "interior_details"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தம் 3 cent land! கூடவே 20x12 size-ல covered car parking வசதியும் பண்ணியிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "land-boundary-highlight",
+        "purpose": "property_dimensions"
+      },
+      {
+        "name": "facing",
+        "voice": "Facing பாத்தீங்கனா, house East facing, site North facing-ஆ அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "compass-direction-badge",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approved site. Borewell, water sump வசதியோட bank loan facility-யும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "dtcp-approval-badge",
+        "purpose": "trust_and_amenities"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த வீட்டின் விலை 54.50 Lakhs, negotiable-தான்!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "price-tag-pop",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "Site visit போக இல்ல மேலும் details அறிய உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "contact-card-graphic",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/tTgkkQPNeCo/",
+  "optional_owned_audio": "assets/audio/tTgkkQPNeCo.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Pogalur, Mtp to Annur Road, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-storey residence with cream and light grey painted walls, vertical wooden element accents, geometric grey line patterns on the compound wall, sliding main gate with yellow entrance ramp, and a semi-covered carport with glass/wood ceiling panels.. Neighbourhood: Suburban residential neighborhood in Pogalur, Coimbatore, featuring paved roads, modern independent houses of similar architectural design, and green trees nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Pogalur, Mtp to Annur Road, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-storey residence with cream and light grey painted walls, vertical wooden element accents, geometric grey line patterns on the compound wall, sliding main gate with yellow entrance ramp, and a semi-covered carport with glass/wood ceiling panels.. Neighbourhood: Suburban residential neighborhood in Pogalur, Coimbatore, featuring paved roads, modern independent houses of similar architectural design, and green trees nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Pogalur, Mtp to Annur Road, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-storey residence with cream and light grey painted walls, vertical wooden element accents, geometric grey line patterns on the compound wall, sliding main gate with yellow entrance ramp, and a semi-covered carport with glass/wood ceiling panels.. Neighbourhood: Suburban residential neighborhood in Pogalur, Coimbatore, featuring paved roads, modern independent houses of similar architectural design, and green trees nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Pogalur, Mtp to Annur Road, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-storey residence with cream and light grey painted walls, vertical wooden element accents, geometric grey line patterns on the compound wall, sliding main gate with yellow entrance ramp, and a semi-covered carport with glass/wood ceiling panels.. Neighbourhood: Suburban residential neighborhood in Pogalur, Coimbatore, featuring paved roads, modern independent houses of similar architectural design, and green trees nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
