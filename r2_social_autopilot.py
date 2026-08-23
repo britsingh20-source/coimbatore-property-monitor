@@ -88,7 +88,19 @@ def _resolve_video_id(key: str, etag: str, video_url: str, state: dict, queue: d
             video_id for video_id in pending_ids
             if video_id and (Path("data/video_jobs") / f"{video_id}.json").exists()
         ]
-        match_result = match_uploaded_video(video_url, pending_ids)
+        try:
+            match_result = match_uploaded_video(video_url, pending_ids)
+        except Exception as error:
+            state["objects"][key] = {
+                "etag": etag,
+                "status": "match_error",
+                "match_error": str(error)[:3000],
+                "candidate_video_ids": pending_ids,
+                "platforms": {},
+            }
+            _save_state(state)
+            print(f"MATCH ERROR {key}: {error}")
+            return ""
         video_id = str(match_result.get("video_id") or "").strip()
         if not video_id:
             state["objects"][key] = {
