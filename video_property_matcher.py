@@ -8,7 +8,7 @@ from pathlib import Path
 from google import genai
 
 
-MODEL = os.environ.get("GEMINI_SOCIAL_MATCH_MODEL", "gemini-2.5-flash-lite")
+MODEL = os.environ.get("GEMINI_SOCIAL_MATCH_MODEL", "gemini-3.5-flash-lite")
 MIN_CONFIDENCE = float(os.environ.get("SOCIAL_MATCH_MIN_CONFIDENCE", "0.85"))
 
 
