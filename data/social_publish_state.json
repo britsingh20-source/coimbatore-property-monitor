@@ -209,7 +209,7 @@
         "icWK1jhUiU0"
       ],
       "etag": "badcac8c0280e429d5a2329f555ff7e4-3",
-      "match_error": "Error code: 404 - {'error': {'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements.', 'code': 'not_found'}}",
+      "match_error": "Error code: 429 - {'error': {'message': 'Resource has been exhausted (e.g. check quota).', 'code': 'too_many_requests'}}",
       "platforms": {},
       "status": "match_error"
     }
