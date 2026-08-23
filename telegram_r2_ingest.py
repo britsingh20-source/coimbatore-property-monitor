@@ -76,6 +76,21 @@ def _video_attachment(message: dict) -> dict | None:
     return None
 
 
+def _explicit_video_id(message: dict) -> str:
+    text = str(message.get("caption") or message.get("text") or "").strip()
+    match = re.search(r"(?:video[\\s_-]*id|id)\\s*[:=\\-]\\s*([A-Za-z0-9_-]{6,32})", text, flags=re.I)
+    if match:
+        return match.group(1)
+    if re.fullmatch(r"[A-Za-z0-9_-]{11}", text):
+        return text
+
+    replied = message.get("reply_to_message") or {}
+    replied_document = replied.get("document") or {}
+    filename = str(replied_document.get("file_name") or "")
+    match = re.match(r"([A-Za-z0-9_-]{11})-gemini-veo-prompt\\.txt$", filename, flags=re.I)
+    return match.group(1) if match else ""
+
+
 def _oldest_pending(queue: dict) -> dict | None:
     pending = [
         item for item in queue.get("prompts", [])
@@ -124,6 +139,21 @@ def ingest() -> int:
             for item in queue.get("prompts", [])
             if item.get("status") == "pending_mobile_upload" and item.get("video_id")
         ]
+        explicit_video_id = _explicit_video_id(message)
+        if explicit_video_id and explicit_video_id not in pending_ids:
+            state["files"][unique_id] = {
+                "status": "rejected_invalid_video_id",
+                "provided_video_id": explicit_video_id,
+                "update_id": update_id,
+                "received_at": datetime.now(timezone.utc).isoformat(),
+            }
+            _send(
+                token,
+                chat_id,
+                f"Video ID {explicit_video_id} is not a pending property prompt. Nothing was uploaded or published. Please resend with the exact VIDEO_ID from the prompt.",
+            )
+            continue
+
         if not pending_ids:
             state["files"][unique_id] = {
                 "status": "ignored_no_pending_prompt",
@@ -159,7 +189,8 @@ def ingest() -> int:
             raise RuntimeError(f"Downloaded Telegram video exceeds {MAX_BYTES} bytes")
 
         safe_unique_id = re.sub(r"[^A-Za-z0-9_-]+", "-", unique_id).strip("-")
-        key = f"{PREFIX.rstrip('/')}/telegram-{safe_unique_id}.mp4"
+        key_name = explicit_video_id if explicit_video_id else f"telegram-{safe_unique_id}"
+        key = f"{PREFIX.rstrip('/')}/{key_name}.mp4"
         with tempfile.NamedTemporaryFile(prefix="telegram-property-", suffix=".mp4") as handle:
             handle.write(response.content)
             handle.flush()
@@ -171,21 +202,44 @@ def ingest() -> int:
             )
 
         now = datetime.now(timezone.utc).isoformat()
-        state["files"][unique_id] = {
-            "status": "uploaded_awaiting_content_match",
-            "candidate_video_ids": pending_ids,
-            "r2_key": key,
-            "size": len(response.content),
-            "update_id": update_id,
-            "uploaded_at": now,
-        }
+        if explicit_video_id:
+            state["files"][unique_id] = {
+                "status": "uploaded_exact_video_id",
+                "video_id": explicit_video_id,
+                "r2_key": key,
+                "size": len(response.content),
+                "update_id": update_id,
+                "uploaded_at": now,
+            }
+            prompt = next(item for item in queue.get("prompts", []) if item.get("video_id") == explicit_video_id)
+            prompt.update({
+                "status": "assigned_to_r2_upload",
+                "r2_key": key,
+                "telegram_file_unique_id": unique_id,
+                "uploaded_at": now,
+            })
+            confirmation = (
+                f"✅ Property video received and exactly matched\n"
+                f"VIDEO_ID: {explicit_video_id}\nUploaded to R2: {key}\n"
+                "Social publishing will run automatically without Gemini matching."
+            )
+            print(f"Telegram video {unique_id} -> {key}; exact VIDEO_ID {explicit_video_id}")
+        else:
+            state["files"][unique_id] = {
+                "status": "uploaded_awaiting_content_match",
+                "candidate_video_ids": pending_ids,
+                "r2_key": key,
+                "size": len(response.content),
+                "update_id": update_id,
+                "uploaded_at": now,
+            }
+            confirmation = (
+                f"✅ Property video received\nUploaded to R2: {key}\n"
+                "No VIDEO_ID was supplied. Matching against pending prompts; publishing will wait for a confident match."
+            )
+            print(f"Telegram video {unique_id} -> {key}; awaiting content-based prompt match")
         uploaded += 1
-        _send(
-            token,
-            chat_id,
-            f"✅ Property video received\nUploaded to R2: {key}\nMatching the video content against pending property prompts.\nSocial publishing will run automatically after a confident match.",
-        )
-        print(f"Telegram video {unique_id} -> {key}; awaiting content-based prompt match")
+        _send(token, chat_id, confirmation)
 
     _save(STATE_PATH, state)
     _save(QUEUE_PATH, queue)
