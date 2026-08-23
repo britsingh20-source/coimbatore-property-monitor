@@ -200,18 +200,17 @@
       "video_id": "YeuCzhxC-j0"
     },
     "social-ready/telegram-AgADdyEAAiU0WFQ.mp4": {
-      "candidate_video_ids": [
-        "KiJEPqoUCTw",
-        "6RCA3cUaZ2Y",
-        "tTgkkQPNeCo",
-        "uAJus2hXLTo",
-        "6jJtYT4MA_E",
-        "icWK1jhUiU0"
-      ],
       "etag": "badcac8c0280e429d5a2329f555ff7e4-3",
-      "match_error": "Error code: 429 - {'error': {'message': 'Resource has been exhausted (e.g. check quota).', 'code': 'too_many_requests'}}",
-      "platforms": {},
-      "status": "match_error"
+      "video_id": "tTgkkQPNeCo",
+      "status": "matched",
+      "match_analysis": {
+        "method": "user_confirmed_location",
+        "confidence": 1,
+        "evidence": [
+          "User confirmed uploaded video is Pogalur property"
+        ]
+      },
+      "platforms": {}
     }
   }
 }
