@@ -18,6 +18,21 @@
       "status": "rejected_too_large",
       "update_id": 789574033
     },
+    "AgADdyEAAiU0WFQ": {
+      "candidate_video_ids": [
+        "KiJEPqoUCTw",
+        "6RCA3cUaZ2Y",
+        "tTgkkQPNeCo",
+        "uAJus2hXLTo",
+        "6jJtYT4MA_E",
+        "icWK1jhUiU0"
+      ],
+      "r2_key": "social-ready/telegram-AgADdyEAAiU0WFQ.mp4",
+      "size": 19394877,
+      "status": "uploaded_awaiting_content_match",
+      "update_id": 789574034,
+      "uploaded_at": "2026-08-23T04:52:04.830947+00:00"
+    },
     "AgADwR8AAl8jUVQ": {
       "corrected_from_video_id": "KiJEPqoUCTw",
       "r2_key": "social-ready/KiJEPqoUCTw.mp4",
@@ -28,5 +43,5 @@
       "video_id": "tTgkkQPNeCo"
     }
   },
-  "last_update_id": 789574033
+  "last_update_id": 789574034
 }
