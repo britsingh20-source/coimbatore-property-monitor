@@ -84,12 +84,37 @@ def _resolve_video_id(key: str, etag: str, video_url: str, state: dict, queue: d
             for item in queue.get("prompts", [])
             if item.get("status") == "pending_mobile_upload"
         ]
+        ingest_path = Path(os.environ.get("TELEGRAM_INGEST_STATE", "data/telegram_ingest_state.json"))
+        if ingest_path.exists():
+            ingest_state = json.loads(ingest_path.read_text(encoding="utf-8"))
+            upload_record = next(
+                (
+                    item for item in ingest_state.get("files", {}).values()
+                    if item.get("r2_key") == key and item.get("candidate_video_ids")
+                ),
+                None,
+            )
+            if upload_record:
+                allowed_at_upload = set(upload_record.get("candidate_video_ids") or [])
+                pending_ids = [video_id for video_id in pending_ids if video_id in allowed_at_upload]
         pending_ids = [
             video_id for video_id in pending_ids
             if video_id and (Path("data/video_jobs") / f"{video_id}.json").exists()
         ]
         try:
-            match_result = match_uploaded_video(video_url, pending_ids)
+            match_result = None
+            for attempt in range(3):
+                try:
+                    match_result = match_uploaded_video(video_url, pending_ids)
+                    break
+                except Exception as retry_error:
+                    if "429" not in str(retry_error) or attempt == 2:
+                        raise
+                    wait_seconds = 15 * (attempt + 1)
+                    print(f"Gemini matcher rate-limited; retrying in {wait_seconds}s")
+                    time.sleep(wait_seconds)
+            if match_result is None:
+                raise RuntimeError("Gemini matcher returned no result")
         except Exception as error:
             state["objects"][key] = {
                 "etag": etag,
