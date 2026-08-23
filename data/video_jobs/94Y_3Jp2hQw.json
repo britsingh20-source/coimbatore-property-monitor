@@ -1,0 +1,142 @@
+{
+  "video_id": "94Y_3Jp2hQw",
+  "source_url": "https://www.youtube.com/watch?v=94Y_3Jp2hQw",
+  "property_location": "Karamadai, Mettupalayam Road, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": 3,
+    "land_area": "3.5 Cents",
+    "built_up_area": "1850 sqft",
+    "price": "Rs. 1.05 Crore (negotiable)",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "16 x 17 ft Car Parking Space",
+    "approval": "DTCP approved site"
+  },
+  "verified_facts": "3BHK Independent Villa for sale in Karamadai, Mettupalayam Road, Coimbatore., Land area is 3.5 Cents and built-up area is 1850 sqft., Car parking dimensions are 16 ft by 17 ft with false ceiling and CNC design window., Features a 7,000 Liters water sump and an independent borewell., Living hall dimensions are 16 ft by 20 ft., Kitchen dimensions are 8 ft by 16 ft with modern cabinets and hanging lights., Master bedroom is 10 ft by 16 ft with an attached 4 ft by 10 ft bathroom., Ground floor second bedroom is 10 ft by 8 ft with an attached 4 ft by 5.5 ft bathroom.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking natural Tamil directly to camera",
+    "hook_strategy": "Highlighting walkable distance location to Mettupalayam Road in Karamadai",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை மேட்டுப்பாளையம் ரோடு கரமடையில, நடந்து போற தூரத்துல ஒரு 3BHK Independent Villa விற்பனைக்கு வந்திருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 3.5 Cents land area-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "property_land_details"
+      },
+      {
+        "name": "facing",
+        "voice": "பாத்தீங்கனா இது North facing villa. 16/17 feet car parking, 7000 Liters water sump, borewell வசதியும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass",
+        "purpose": "facing_and_exterior_amenities"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1850 sqft built-up area-ல 16/20 living hall, modular kitchen, அப்புறம் attached bathrooms-ோட 3 bedrooms கொடுத்திருக்காங்க.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "measure-overlay",
+        "purpose": "interior_highlights"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், இது DTCP approved site. 75% bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "approved-badge",
+        "purpose": "trust_and_financing"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price 1.05 Crore, negotiable தான்.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "Direct site visit வரணும்னா இல்ல details வேணும்னா உடனே contact பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "call-animation",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/94Y_3Jp2hQw/",
+  "optional_owned_audio": "assets/audio/94Y_3Jp2hQw.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story white structure with brown/wooden accent paneling, main entrance gate, covered car parking with a circular laser-cut CNC metal grill, glass-railing balcony, and tiled terrace.. Neighbourhood: Suburban residential area located within walkable distance from the main Coimbatore-Mettupalayam Road, featuring open plots, mountain vistas, and clear skies.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story white structure with brown/wooden accent paneling, main entrance gate, covered car parking with a circular laser-cut CNC metal grill, glass-railing balcony, and tiled terrace.. Neighbourhood: Suburban residential area located within walkable distance from the main Coimbatore-Mettupalayam Road, featuring open plots, mountain vistas, and clear skies.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story white structure with brown/wooden accent paneling, main entrance gate, covered car parking with a circular laser-cut CNC metal grill, glass-railing balcony, and tiled terrace.. Neighbourhood: Suburban residential area located within walkable distance from the main Coimbatore-Mettupalayam Road, featuring open plots, mountain vistas, and clear skies.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story white structure with brown/wooden accent paneling, main entrance gate, covered car parking with a circular laser-cut CNC metal grill, glass-railing balcony, and tiled terrace.. Neighbourhood: Suburban residential area located within walkable distance from the main Coimbatore-Mettupalayam Road, featuring open plots, mountain vistas, and clear skies.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
