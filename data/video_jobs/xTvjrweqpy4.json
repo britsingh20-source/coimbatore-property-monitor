@@ -1,0 +1,145 @@
+{
+  "video_id": "xTvjrweqpy4",
+  "source_url": "https://www.youtube.com/watch?v=xTvjrweqpy4",
+  "property_location": "Nadupalayam, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": 2,
+    "land_area": "2 Cents (800 sq.ft.)",
+    "built_up_area": "700 sq.ft.",
+    "price": "₹45 Lakhs",
+    "facing": "NOT SPECIFIED",
+    "road_width": "30 & 33 Feet",
+    "parking": "Covered Car Parking",
+    "approval": "DTCP Approved / Plan Approved"
+  },
+  "verified_facts": "2BHK villa with interior work priced at ₹45 Lakhs including land and construction., Property built on 800 sq.ft. (2 cents) plot with 700 sq.ft. built-up area., Located in Nadupalayam, 200m from Nadupalayam bus stop and 2.5 km from Papampatti Pirivu., Gated community project with 61 total plots/sites by Raj Builders (Mr. Prabhu)., Up to 80% home loan available for house purchase and 70% for land.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local property presenter, high-retention reel tone",
+    "hook_strategy": "Highlighting a budget 2BHK independent villa in Nadupalayam close to bus stop",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Nadupalayam-ல, bus stop-ல இருந்து வெறும் 200 meter-ல ஒரு அருமையான 2BHK Independent Villa location பாக்கலாம்.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "Land அப்புறம் construction ரெண்டும் சேர்த்து இதுவோட மொத்த price வெறும் 45 Lakhs தான்! 80% வரைக்கும் home loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "price-tag",
+        "purpose": "value_proposition"
+      },
+      {
+        "name": "land",
+        "voice": "இது 2 Cents, அதாவது 800 sq.ft. land area-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "kitchen"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "land_dimension"
+      },
+      {
+        "name": "builtUp",
+        "voice": "700 sq.ft. built-up area-ல interior work, false ceiling, modular kitchen அப்புறம் covered car parking-ஓட ரெடியா இருக்கு.",
+        "broll": [
+          "interior",
+          "living_room",
+          "kitchen"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "property_tour"
+      },
+      {
+        "name": "road",
+        "voice": "பார்த்தீங்கன்னா 30 மற்றும் 33 feet wide roads, drainage, water connection அப்புறம் solar street lights-னு எல்லாமே பண்ணிருக்காங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "road-width",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approved மற்றும் plan approved gated community project.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_building"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணி பார்க்கவும் details தெரிஞ்சுக்கவும் உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "contact-card",
+        "purpose": "conversion"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/xTvjrweqpy4/",
+  "optional_owned_audio": "assets/audio/xTvjrweqpy4.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+1 elevation with beige, grey, and dark brown accent paint, exterior LED panel lighting, glass-balustrade balcony, tile-clad porch walls, tiled parking area, and gated entry.. Neighbourhood: Developing residential gated community layout featuring open plot plots, coconut trees nearby, wide internal roads, and views of surrounding greenery.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+1 elevation with beige, grey, and dark brown accent paint, exterior LED panel lighting, glass-balustrade balcony, tile-clad porch walls, tiled parking area, and gated entry.. Neighbourhood: Developing residential gated community layout featuring open plot plots, coconut trees nearby, wide internal roads, and views of surrounding greenery.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+1 elevation with beige, grey, and dark brown accent paint, exterior LED panel lighting, glass-balustrade balcony, tile-clad porch walls, tiled parking area, and gated entry.. Neighbourhood: Developing residential gated community layout featuring open plot plots, coconut trees nearby, wide internal roads, and views of surrounding greenery.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+1 elevation with beige, grey, and dark brown accent paint, exterior LED panel lighting, glass-balustrade balcony, tile-clad porch walls, tiled parking area, and gated entry.. Neighbourhood: Developing residential gated community layout featuring open plot plots, coconut trees nearby, wide internal roads, and views of surrounding greenery.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
