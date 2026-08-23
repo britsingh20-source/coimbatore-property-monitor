@@ -24,12 +24,14 @@ def build_veo_prompt(job: dict) -> str:
     approval = _value(prop.get("approval"))
     price = _value(prop.get("price"))
     facts = _value(job.get("verified_facts"), "Use only facts confirmed in the source video")
+    source_url = _value(job.get("source_url"), "Source video supplied separately")
 
-    return f"""Create a completely original property walkthrough using the verified information below. If property-only reference images or a property-only reference video are attached, use them only to understand architectural features. The attached media must be owned by the user or used with permission. Do not open, analyse or copy an external YouTube link. Do not reproduce source frames, presenters, people, faces, logos, watermarks or channel branding.
+    return f"""Open and analyse this public YouTube property-tour video directly as the architectural reference: {source_url}
 
-Identify only visually confirmed architectural details from any attached property-only references: exterior elevation, floor count, building colours and materials, gate, parking, entrance, hall, false ceiling, kitchen, bedrooms, bathrooms, staircase, terrace, doors, windows, flooring, neighbourhood and visible connections between areas. If no reference file is attached, rely only on the verified written information. Never infer a feature or room connection that is not clearly established.
+Study the property frame-by-frame and identify only the visible exterior elevation, floor count, colours, materials, gate, parking, entrance, hall, false ceiling, kitchen, bedrooms, bathrooms, staircase, terrace, doors, windows, flooring, neighbourhood and verified room connections. Use the source only to understand the property architecture. Generate completely new footage; do not reproduce source frames, presenters, people, faces, speech, music, logos, watermarks, captions or channel branding. Never infer a feature or room connection that is not clearly visible.
 
 VERIFIED PROPERTY INFORMATION
+Source reference: {source_url}
 Location: {location}
 Property type: {property_type}
 Bedrooms: {bhk}
