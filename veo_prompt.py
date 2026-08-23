@@ -23,15 +23,13 @@ def build_veo_prompt(job: dict) -> str:
     parking = _value(prop.get("parking"))
     approval = _value(prop.get("approval"))
     price = _value(prop.get("price"))
-    source_url = _value(job.get("source_url"), "Source video supplied separately")
     facts = _value(job.get("verified_facts"), "Use only facts confirmed in the source video")
 
-    return f"""First analyse the uploaded original property video frame-by-frame.
+    return f"""Create a completely original property walkthrough using the verified information below. If property-only reference images or a property-only reference video are attached, use them only to understand architectural features. The attached media must be owned by the user or used with permission. Do not open, analyse or copy an external YouTube link. Do not reproduce source frames, presenters, people, faces, logos, watermarks or channel branding.
 
-Identify only visually confirmed details: the exact exterior elevation, floor count, building colours and materials, gate, parking, entrance, hall, false ceiling, kitchen, bedrooms, bathrooms, staircase, terrace, doors, windows, flooring, neighbourhood and visible connections between areas. Never infer a feature or room connection that is not clearly visible.
+Identify only visually confirmed architectural details from any attached property-only references: exterior elevation, floor count, building colours and materials, gate, parking, entrance, hall, false ceiling, kitchen, bedrooms, bathrooms, staircase, terrace, doors, windows, flooring, neighbourhood and visible connections between areas. If no reference file is attached, rely only on the verified written information. Never infer a feature or room connection that is not clearly established.
 
 VERIFIED PROPERTY INFORMATION
-Source: {source_url}
 Location: {location}
 Property type: {property_type}
 Bedrooms: {bhk}
