@@ -75,7 +75,9 @@ def send_prompt(job: dict, bot_token: str, chat_id: str) -> None:
         f"<b>Location:</b> {html.escape(location)}\n"
         f"<b>Video ID:</b> <code>{html.escape(str(job.get('video_id', '')))}</code>\n"
         f"<b>Site visit:</b> 9003787621\n\n"
-        "Generate this video on Gemini mobile, then upload the downloaded MP4 to the R2 social-ready folder. The mobile filename can remain unchanged."
+        "Generate this video on Gemini mobile, then send the downloaded MP4 to this bot as a file. "
+        f"Add this exact caption to the video: <code>VIDEO_ID: {html.escape(str(job.get('video_id', '')))}</code>. "
+        "The mobile filename can remain unchanged."
     )
     payload = io.BytesIO(prompt.encode("utf-8"))
     payload.name = telegram_filename(job)
