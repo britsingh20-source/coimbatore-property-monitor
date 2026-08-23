@@ -1,0 +1,92 @@
+{
+  "video_id": "gieIQ9wpTYQ",
+  "source_url": "https://www.youtube.com/watch?v=gieIQ9wpTYQ",
+  "property_location": "Vellakinar, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "New Construction Project / Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "NOT SPECIFIED",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "Video text announces 'NEW CONSTRUCTION PROJECT' and 'BOMMI POOJAI'., Location specified in video text as Vellakinar, Covai (Coimbatore)., Contact number displayed on screen: 9345425595., Title mentions Boomi Pooja in Coimbatore Velakinar land.",
+  "content_plan": {
+    "target_duration_seconds": 35,
+    "style": "Relaxed local real-estate presenter speaking directly to camera with natural conversational Tamil",
+    "hook_strategy": "Announce the new construction project launch and boomi pooja directly at the prime Vellakinar location",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை வெள்ளக்கிணர் location-ல ஒரு புதிய கன்ஸ்ட்ரக்ஷன் ப்ராஜெக்ட் இப்போ ஸ்டார்ட் ஆகியிருக்குங்க.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "location-text-highlight",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "பாத்தீங்கனா, இந்த லேண்ட்ல இப்போதான் புதுசா பூமி பூஜை பண்ணி வொர்க் ஸ்டார்ட் பண்ணியிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "project-title-overlay",
+        "purpose": "property-intro"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராஜெக்ட் பத்தின மேலும் details தெரிஞ்சுக்க அப்புறம் site visit போக 9345425595 இந்த நம்பருக்கு உடனே கால் பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "contact-card-overlay",
+        "purpose": "call-to-action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/gieIQ9wpTYQ/",
+  "optional_owned_audio": "assets/audio/gieIQ9wpTYQ.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vellakinar, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Vacant land plot surrounded by a precast concrete boundary wall, prepared for construction.. Neighbourhood: Residential neighborhood with paved access roads, existing two-story houses, and surrounding greenery.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vellakinar, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Vacant land plot surrounded by a precast concrete boundary wall, prepared for construction.. Neighbourhood: Residential neighborhood with paved access roads, existing two-story houses, and surrounding greenery.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vellakinar, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Vacant land plot surrounded by a precast concrete boundary wall, prepared for construction.. Neighbourhood: Residential neighborhood with paved access roads, existing two-story houses, and surrounding greenery.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vellakinar, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Vacant land plot surrounded by a precast concrete boundary wall, prepared for construction.. Neighbourhood: Residential neighborhood with paved access roads, existing two-story houses, and surrounding greenery.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+    }
+  ],
+  "status": "needs_review",
+  "approval_mode": "automatic_fact_gate_v1"
+}
