@@ -69,7 +69,7 @@ SHOT 7 — 8.5 TO 10 SECONDS — FINAL VERIFIED FEATURE
 Hard cut to one final distinct verified feature or a different exterior elevation angle. Use a short controlled reveal, then hold the final 0.3 seconds nearly motionless in the source so the slowed VN edit has a clean ending. Never repeat an earlier shot.
 
 PROPERTY INFORMATION FOOTER — 0.3 TO 10 SECONDS
-Display one slim, professional, completely opaque lower-third information footer continuously from 0.3 seconds until the source clip ends. It must remain upright, sharp, stationary and identical across all five shots so it stays readable after slowing. Place it immediately above the platform watermark/safe area without covering, altering or imitating any provider provenance mark.
+Display one slim, professional, completely opaque lower-third information footer continuously from 0.3 seconds until the source clip ends. It must remain upright, sharp, stationary and identical across all seven shots so it stays readable after slowing. Place it immediately above the platform watermark/safe area without covering, altering or imitating any provider provenance mark.
 
 Use a premium deep-navy or charcoal background with high-contrast white text and one restrained gold accent. Maximum height: 14% of the frame. No rotation, animation, bouncing, perspective tilt or large caption card. Use compact separators and exactly these verified details:
 “PRICE: {price}  |  LAND: {land}”
