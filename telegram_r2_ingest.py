@@ -137,8 +137,72 @@ def ingest() -> int:
         state["last_update_id"] = max(int(state.get("last_update_id") or 0), update_id)
         message = update.get("message") or {}
         incoming_chat_id = str((message.get("chat") or {}).get("id") or "")
+        if incoming_chat_id != chat_id:
+            continue
+
         attachment = _video_attachment(message)
-        if incoming_chat_id != chat_id or attachment is None:
+        if attachment is None:
+            standalone_video_id = _explicit_video_id(message)
+            if not standalone_video_id:
+                continue
+            prompt = next(
+                (
+                    item
+                    for item in queue.get("prompts", [])
+                    if item.get("video_id") == standalone_video_id
+                    and item.get("status") == "pending_mobile_upload"
+                ),
+                None,
+            )
+            candidates = [
+                (unique_id, item)
+                for unique_id, item in state.setdefault("files", {}).items()
+                if item.get("status") == "uploaded_awaiting_content_match"
+                and standalone_video_id in (item.get("candidate_video_ids") or [])
+                and item.get("r2_key")
+            ]
+            candidates.sort(
+                key=lambda pair: int(pair[1].get("update_id") or 0),
+                reverse=True,
+            )
+            if prompt is None or not candidates:
+                _send(
+                    token,
+                    chat_id,
+                    f"Could not pair VIDEO_ID {standalone_video_id}. "
+                    "Reply to the prompt with the ID or include VIDEO_ID in the video caption.",
+                )
+                continue
+
+            paired_unique_id, paired = candidates[0]
+            now = datetime.now(timezone.utc).isoformat()
+            paired.update(
+                {
+                    "status": "uploaded_exact_video_id",
+                    "video_id": standalone_video_id,
+                    "paired_at": now,
+                    "paired_by": "next_telegram_message",
+                }
+            )
+            paired.pop("candidate_video_ids", None)
+            prompt.update(
+                {
+                    "status": "assigned_to_r2_upload",
+                    "r2_key": paired["r2_key"],
+                    "telegram_file_unique_id": paired_unique_id,
+                    "uploaded_at": paired.get("uploaded_at") or now,
+                }
+            )
+            _send(
+                token,
+                chat_id,
+                f"✅ Previous video paired exactly\nVIDEO_ID: {standalone_video_id}\n"
+                f"R2: {paired['r2_key']}\nSocial publishing can now continue.",
+            )
+            print(
+                f"Standalone VIDEO_ID {standalone_video_id} paired to "
+                f"Telegram file {paired_unique_id}"
+            )
             continue
 
         unique_id = str(attachment.get("file_unique_id") or attachment.get("file_id") or "")
