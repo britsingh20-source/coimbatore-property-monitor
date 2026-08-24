@@ -72,11 +72,11 @@
     },
     {
       "video_id": "3HCxfx5DoJs",
-      "sent_at": "2026-08-24T01:52:05.767460+00:00",
+      "sent_at": "2026-08-24T01:54:05.953109+00:00",
       "status": "pending_mobile_upload",
       "reference_frame_count": 0,
       "reference_status": "failed",
-      "reference_error": "YouTube reference download failed after client fallbacks: ookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extract | youtube:player_client=web_safari: ERROR: [youtube] 3HCxfx5DoJs: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#h"
+      "reference_error": "YouTube video and storyboard extraction both failed: See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extract | youtube:player_client=web_safari: ERROR: [youtube] 3HCxfx5DoJs: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cooki"
     }
   ]
 }
