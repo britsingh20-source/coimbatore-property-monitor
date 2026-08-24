@@ -96,6 +96,15 @@ def _explicit_video_id(message: dict) -> str:
     if re.fullmatch(r"[A-Za-z0-9_-]{11}", text):
         return text
 
+    # Mobile keyboards may insert spaces into a pasted YouTube VIDEO_ID.
+    # Accept whitespace-only separation when the normalized value is exactly 11 characters.
+    compact_text = re.sub(r"\\s+", "", text)
+    if (
+        re.fullmatch(r"[A-Za-z0-9_-]+(?:\\s+[A-Za-z0-9_-]+)+", text)
+        and re.fullmatch(r"[A-Za-z0-9_-]{11}", compact_text)
+    ):
+        return compact_text
+
     replied = message.get("reply_to_message") or {}
     replied_document = replied.get("document") or {}
     filename = str(replied_document.get("file_name") or "")
