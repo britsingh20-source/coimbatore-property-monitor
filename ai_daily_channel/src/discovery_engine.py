@@ -3,6 +3,7 @@ import hashlib, json, os, re
 from datetime import datetime, timedelta, timezone
 from urllib import parse, request
 from xml.etree import ElementTree
+from pathlib import Path
 
 UA = "Aibros-Discovery/0.2"
 
@@ -65,6 +66,7 @@ def discover(output):
         x["identity"]=identity(x["title"]); x["score"]=score(x)
         if x["identity"] not in best or x["score"]>best[x["identity"]]["score"]: best[x["identity"]]=x
     ranked=sorted(best.values(),key=lambda x:x["score"],reverse=True)[:50]
+    Path(output).parent.mkdir(parents=True, exist_ok=True)
     with open(output,"w",encoding="utf-8") as f: json.dump({"generated_at":datetime.now(timezone.utc).isoformat(),"errors":errors,"candidates":ranked},f,ensure_ascii=False,indent=2)
     print(f"Saved {len(ranked)} candidates")
     for x in ranked[:10]: print(x["score"],x["source_type"],x["title"])
