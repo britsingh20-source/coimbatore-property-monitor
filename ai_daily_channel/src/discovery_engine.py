@@ -52,7 +52,7 @@ def arxiv():
         title=" ".join((e.findtext("a:title",default="",namespaces=ns)).split())
         summary=" ".join((e.findtext("a:summary",default="",namespaces=ns)).split())
         link=e.findtext("a:id",default="",namespaces=ns)
-        out.append({"source":"arXiv","source_type":"research_paper","title":title,"url":link,"summary":summary[:700],"published_at":e.findtext("a:published",default="",namespaces=ns),"primary_source":True,"popularity":.2,"free_signal":1.0,"freshness":.85})
+        out.append({"source":"arXiv","source_type":"research_paper","title":title,"url":link,"summary":summary[:700],"published_at":e.findtext("a:published",default="",namespaces=ns),"primary_source":True,"popularity":.1,"free_signal":.35,"freshness":.7})
     return out
 
 def discover(output):
