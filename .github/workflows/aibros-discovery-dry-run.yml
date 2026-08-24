@@ -1,0 +1,49 @@
+name: Aibros discovery dry run
+
+on:
+  workflow_dispatch:
+    inputs:
+      deliver_to_telegram:
+        description: Send the validated production pack to Telegram
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  discover-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      GITHUB_TOKEN: ${{ github.token }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      PYTHONPATH: .
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run unit tests
+        run: python -m unittest discover -s ai_daily_channel/tests -v
+      - name: Collect and rank candidates
+        run: python -m ai_daily_channel.src.discovery_engine ai_daily_channel/output/discovery_candidates.json
+      - name: Generate one production job
+        run: python -m ai_daily_channel.src.generate_production_job ai_daily_channel/output/discovery_candidates.json ai_daily_channel/output/production_job.json
+      - name: Validate production job
+        run: python -m ai_daily_channel.src.job_validation ai_daily_channel/output/production_job.json
+      - name: Send Telegram production pack
+        if: ${{ inputs.deliver_to_telegram }}
+        run: python -m ai_daily_channel.src.telegram_pack ai_daily_channel/output/production_job.json
+      - name: Upload review artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: aibros-production-pack
+          path: |
+            ai_daily_channel/output/discovery_candidates.json
+            ai_daily_channel/output/production_job.json
+          retention-days: 14
