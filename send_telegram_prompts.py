@@ -52,7 +52,7 @@ def _queue_prompt(queue_path: Path, job: dict, delivery: dict) -> None:
     }
     error = str(delivery.get("reference_error") or "").strip()
     if error:
-        update["reference_error"] = error[:500]
+        update["reference_error"] = error[-500:]
     if existing is None:
         prompts.append({"video_id": video_id, **update})
     elif existing.get("status") != "published":
