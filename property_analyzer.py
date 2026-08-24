@@ -33,6 +33,13 @@ parking, approval, amenities (array), nearby_landmarks (array),
 contact_details, missing_fields (array), source_facts (array),
 visual_style, exterior_description, neighbourhood_description.
 
+Classification rules:
+- property_type must describe one primary listing only. Never combine categories such as "House / Villa / Plot".
+- Use "Residential Plot" or "Vacant Land" when land/sites are being sold, even when an optional house-construction package is advertised.
+- Use "Independent House", "Villa" or "Apartment" only when that completed or under-construction dwelling itself is the listing.
+- For a plot listing, never place house-construction package pricing in the price field. Use the confirmed plot price or "NOT SPECIFIED", and put the separate construction offer in source_facts.
+- For plots, interiors, BHK and built-up area must be "NOT SPECIFIED" unless the listing is actually selling a dwelling.
+
 Title: {video.get('title', '')}
 Description: {video.get('description', '')}
 Channel: {video.get('channel_title', '')}
