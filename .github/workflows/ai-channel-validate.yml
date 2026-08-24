@@ -23,8 +23,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-          cache: npm
-          cache-dependency-path: ai_daily_channel/motion/package-lock.json
       - name: Install motion dependencies
         working-directory: ai_daily_channel/motion
         run: npm install
