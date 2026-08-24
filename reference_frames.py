@@ -243,6 +243,74 @@ def extract_reference_frames(job: dict, output_dir: Path, target_count: int = 5)
     return selected
 
 
+def extract_frames_from_local_video(
+    video_path: Path,
+    output_dir: Path,
+    target_count: int = 5,
+) -> list[Path]:
+    """Select sharp, low-face-count reference frames from an uploaded source tour."""
+    output_dir.mkdir(parents=True, exist_ok=True)
+    capture = cv2.VideoCapture(str(video_path))
+    if not capture.isOpened():
+        raise RuntimeError("OpenCV could not open the uploaded reference video")
+
+    total_frames = int(capture.get(cv2.CAP_PROP_FRAME_COUNT))
+    if total_frames < target_count:
+        capture.release()
+        raise RuntimeError("Uploaded reference video contains too few readable frames")
+
+    face_detector = cv2.CascadeClassifier(
+        cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
+    )
+    selected: list[Path] = []
+    try:
+        for group in range(target_count):
+            candidates: list[tuple[int, float, object]] = []
+            for offset in (0.20, 0.50, 0.80):
+                fraction = (group + offset) / target_count
+                frame_number = min(
+                    total_frames - 1,
+                    max(0, int(total_frames * fraction)),
+                )
+                capture.set(cv2.CAP_PROP_POS_FRAMES, frame_number)
+                ok, frame = capture.read()
+                if not ok or frame is None:
+                    continue
+                height, width = frame.shape[:2]
+                scale = min(1.0, 720.0 / max(width, 1))
+                if scale < 1.0:
+                    frame = cv2.resize(
+                        frame,
+                        (int(width * scale), int(height * scale)),
+                        interpolation=cv2.INTER_AREA,
+                    )
+                gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+                faces = face_detector.detectMultiScale(
+                    gray,
+                    scaleFactor=1.15,
+                    minNeighbors=5,
+                    minSize=(40, 40),
+                )
+                sharpness = float(cv2.Laplacian(gray, cv2.CV_64F).var())
+                candidates.append((len(faces), -sharpness, frame))
+
+            if not candidates:
+                continue
+            candidates.sort(key=lambda item: (item[0], item[1]))
+            chosen = candidates[0][2]
+            path = output_dir / f"reference-{group + 1}.jpg"
+            if cv2.imwrite(str(path), chosen, [int(cv2.IMWRITE_JPEG_QUALITY), 92]):
+                selected.append(path)
+    finally:
+        capture.release()
+
+    if len(selected) != target_count:
+        raise RuntimeError(
+            f"Uploaded reference video produced only {len(selected)} usable frames"
+        )
+    return selected
+
+
 def send_reference_frames(
     frame_paths: list[Path],
     bot_token: str,
