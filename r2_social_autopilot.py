@@ -73,10 +73,26 @@ def _resolve_video_id(key: str, etag: str, video_url: str, state: dict, queue: d
     if record and record.get("video_id"):
         return str(record["video_id"])
 
+    assigned_prompt = next(
+        (
+            item for item in queue.get("prompts", [])
+            if item.get("r2_key") == key and item.get("video_id")
+        ),
+        None,
+    )
     filename_id = Path(key).stem
     filename_job = Path("data/video_jobs") / f"{filename_id}.json"
     match_result = None
-    if filename_job.exists():
+    if assigned_prompt is not None:
+        video_id = str(assigned_prompt["video_id"]).strip()
+        assigned_job = Path("data/video_jobs") / f"{video_id}.json"
+        if not assigned_job.exists():
+            raise RuntimeError(f"Assigned VIDEO_ID has no property job: {video_id}")
+        match_result = {
+            "method": "telegram_exact_video_id",
+            "confidence": 1.0,
+        }
+    elif filename_job.exists():
         video_id = filename_id
     else:
         pending_ids = [
