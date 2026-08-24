@@ -25,7 +25,9 @@ def generate(discovery_path,output_path):
     candidates=json.loads(Path(discovery_path).read_text())["candidates"][:15]
     shape={"job_id":"lowercase-hyphenated-id","language":"ta","status":"pack_ready","tool":{"name":"","official_url":"https://","free_claim":"unknown","verified_at":datetime.now(timezone.utc).isoformat(),"evidence":[{"url":"https://","claim":""}],"limitations":[],"card_required":None,"watermark":None,"commercial_use":"unknown"},"script":{"exact_text":"","pronunciation":[],"segments":[{"start_hint":0,"end_hint":3,"text":"","delivery":"energetic"}]},"prompts":{"cinematic_hook":"","ai_broll":""},"production":{"screen_demo":[],"motion_graphics":[],"edit_reference":[]},"publishing":{"destinations":{},"title":"","caption":"","hashtags":["#Aibros","#FreeAITools","#AIUpdates"]}}
     prompt="Candidates:\n"+json.dumps(candidates,ensure_ascii=False,indent=2)+"\nReturn the exact structure, filling every field:\n"+json.dumps(shape,ensure_ascii=False,indent=2)
-    job=json.loads(gemini(prompt)); errors=validate_job(job)
+    job=json.loads(gemini(prompt))
+    job.setdefault("publishing", {})["hashtags"]=["#Aibros","#FreeAITools","#AIUpdates"]
+    errors=validate_job(job)
     if errors: raise ValueError("; ".join(errors))
     Path(output_path).write_text(json.dumps(job,ensure_ascii=False,indent=2),encoding="utf-8")
     print("Generated",job["job_id"])
