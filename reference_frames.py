@@ -6,6 +6,7 @@ import subprocess
 from urllib.parse import parse_qs, urlparse
 
 import cv2
+import numpy as np
 import requests
 
 
@@ -57,14 +58,7 @@ def _storyboard_reference_frames(
                 continue
 
             sheet = cv2.imdecode(
-                cv2.UMat(
-                    cv2.imdecode(
-                        __import__("numpy").frombuffer(response.content, dtype="uint8"),
-                        cv2.IMREAD_COLOR,
-                    )
-                ).get()
-                if False
-                else __import__("numpy").frombuffer(response.content, dtype="uint8"),
+                np.frombuffer(response.content, dtype=np.uint8),
                 cv2.IMREAD_COLOR,
             )
             if sheet is None:
