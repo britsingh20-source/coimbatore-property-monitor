@@ -1,0 +1,62 @@
+name: Resend Property Prompt
+
+on:
+  workflow_dispatch:
+    inputs:
+      video_id:
+        description: Existing property VIDEO_ID to regenerate and send
+        required: true
+        default: xTvjrweqpy4
+        type: string
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/resend-property-prompt.yml"
+
+concurrency:
+  group: resend-property-prompt
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  resend:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - name: Regenerate and send prompt
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          REQUESTED_VIDEO_ID: ${{ inputs.video_id || 'xTvjrweqpy4' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f "data/video_jobs/${REQUESTED_VIDEO_ID}.json"
+          printf '%s\n' "${REQUESTED_VIDEO_ID}" > /tmp/requested_prompt_id.txt
+          python send_telegram_prompts.py \
+            --ids-file /tmp/requested_prompt_id.txt \
+            --queue-file data/telegram_prompt_queue.json
+      - name: Commit refreshed queue
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "property-monitor-bot"
+          git config user.email "actions@github.com"
+          git add data/telegram_prompt_queue.json
+          if git diff --staged --quiet; then
+            echo "No queue change."
+          else
+            git commit -m "Refresh requested Telegram property prompt [automated]"
+            git pull --rebase
+            git push
+          fi
