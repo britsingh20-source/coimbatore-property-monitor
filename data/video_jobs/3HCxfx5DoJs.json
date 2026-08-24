@@ -3,17 +3,17 @@
   "source_url": "https://www.youtube.com/watch?v=3HCxfx5DoJs",
   "property_location": "Sulur, Kandampadi Junction, Coimbatore, Tamil Nadu",
   "property": {
-    "property_type": "House / Villa / Plot (Gated Community)",
+    "property_type": "Residential Plots / Gated Community",
     "bhk": "NOT SPECIFIED",
     "land_area": "NOT SPECIFIED",
     "built_up_area": "NOT SPECIFIED",
-    "price": "₹27 Lakhs",
+    "price": "NOT SPECIFIED",
     "facing": "NOT SPECIFIED",
     "road_width": "33, 40 FEET ROAD",
     "parking": "NOT SPECIFIED",
     "approval": "NOT SPECIFIED"
   },
-  "verified_facts": "Located at Kandampadi Junction, Sulur, House construction offer available starting at ₹27 Lakhs in a gated community, 4 km from Sulur New Stand, 3 km from KMCH Hospital, and 1 km from Airforce Station road, Features cricket turf, yoga center, water supply, electricity connection, and 33/40-ft wide roads, Free registration offer for the first 10 customers",
+  "verified_facts": "Residential plotted gated community at Kandampadi Junction, Sulur; 4 km from Sulur New Bus Stand, 3 km from KMCH Hospital, and 1 km from Air Force Station Road. Visible/advertised infrastructure includes 33-ft and 40-ft internal roads, water supply and electricity connections. Amenities advertised include a cricket turf and yoga centre. A separate house-construction offer starts from ₹27 Lakhs; this is not confirmed as the plot price. Free registration is advertised for the first 10 customers.",
   "content_plan": {
     "target_duration_seconds": 40,
     "style": "Relaxed and conversational local property presenter, direct to camera with smooth visuals",
@@ -98,20 +98,20 @@
   "optional_owned_audio": "assets/audio/3HCxfx5DoJs.mp3",
   "scenes": [
     {
-      "name": "street",
-      "prompt": "Photorealistic contemporary residential property in Sulur, Kandampadi Junction, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Under-construction two-story modern houses with green accents and balconies, surrounding plotted layout plots with boundary markers, paved internal blacktop roads, and an enclosed green turf area for cricket.. Neighbourhood: Semi-urban residential plot community near major roads, healthcare facilities, and military air base infrastructure in the Sulur area of Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+      "name": "approach_road",
+      "prompt": "Actual plotted gated-community approach at Kandampadi Junction, Sulur; preserve the visible local road and surroundings; no completed villa showcase and no interiors."
     },
     {
-      "name": "exterior",
-      "prompt": "Photorealistic contemporary residential property in Sulur, Kandampadi Junction, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Under-construction two-story modern houses with green accents and balconies, surrounding plotted layout plots with boundary markers, paved internal blacktop roads, and an enclosed green turf area for cricket.. Neighbourhood: Semi-urban residential plot community near major roads, healthcare facilities, and military air base infrastructure in the Sulur area of Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+      "name": "layout_plots",
+      "prompt": "Actual residential layout plots and boundary markers visible in the source; preserve terrain, road alignment and neighbouring context; no invented buildings."
     },
     {
-      "name": "living",
-      "prompt": "Photorealistic contemporary residential property in Sulur, Kandampadi Junction, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Under-construction two-story modern houses with green accents and balconies, surrounding plotted layout plots with boundary markers, paved internal blacktop roads, and an enclosed green turf area for cricket.. Neighbourhood: Semi-urban residential plot community near major roads, healthcare facilities, and military air base infrastructure in the Sulur area of Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough of a bright Indian living room matching the property type."
+      "name": "internal_roads",
+      "prompt": "Verified 33-ft and 40-ft internal layout roads with realistic Sulur surroundings; show only infrastructure visible in the source."
     },
     {
-      "name": "kitchen",
-      "prompt": "Photorealistic contemporary residential property in Sulur, Kandampadi Junction, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Under-construction two-story modern houses with green accents and balconies, surrounding plotted layout plots with boundary markers, paved internal blacktop roads, and an enclosed green turf area for cricket.. Neighbourhood: Semi-urban residential plot community near major roads, healthcare facilities, and military air base infrastructure in the Sulur area of Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth walkthrough of a practical premium modular kitchen and dining space."
+      "name": "amenities_context",
+      "prompt": "Only source-verified plotted-development amenities or infrastructure; no hall, kitchen, bedroom or completed-house walkthrough."
     }
   ],
   "status": "auto_approved",
