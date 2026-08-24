@@ -1,0 +1,140 @@
+{
+  "video_id": "3a9e9fO19uM",
+  "source_url": "https://www.youtube.com/watch?v=3a9e9fO19uM",
+  "property_location": "Shanthi Medu, Mettupalayam Road, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "NOT SPECIFIED",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP approved"
+  },
+  "verified_facts": "Project Name: Shree Gaarden by SIPL, Location: 2 minutes from Shanthimedu bus stand on Mettupalayam Main Road, Coimbatore, DTCP approved residential layout launching on August 26 (Onam day), Launch offer: Free registration worth 2 Lakhs for spot bookings on launch day, Land plus building option with special offers available, 24/7 transport facilities and commercial facilities within walking distance",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local property presentation in spoken Tamil mixed with English real-estate terms.",
+    "hook_strategy": "Highlighting prime location advantage right next to Shanthimedu bus stand on Mettupalayam Main Road.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore மேட்டுப்பாளையம் ரோடு, சாந்திமேடு பஸ் ஸ்டாண்ட்ல இருந்து ரெண்டே நிமிஷத்துல ஒரு சூப்பர் location பாக்கலாம் வாங்க!",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "approval",
+        "voice": "இது SIPL-ன் Shree Gaarden project. முழுசா DTCP approval பெற்ற residential plot layout.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல grand entrance arch, water facility, drainage system, avenue trees அப்புறம் street light poles எல்லாமே அமைச்சு குடுக்குறாங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "living_room"
+        ],
+        "vfx": "amenity-highlights",
+        "purpose": "features"
+      },
+      {
+        "name": "road",
+        "voice": "உள்ள tar road வசதி இருக்கு. Mettupalayam main road 1.5 KM-லயும், Thambu Higher Secondary School 1.6 KM-லயும் பக்கத்துலயே இருக்கு.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "distance-overlay",
+        "purpose": "connectivity"
+      },
+      {
+        "name": "price",
+        "voice": "இதுல முக்கிய விஷயம், launch day அன்னைக்கு spot booking பண்றவங்களுக்கு 2 Lakhs worth free registration offer குடுக்குறாங்க! Land plus building option-உம் இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "living_room"
+        ],
+        "vfx": "offer-badge",
+        "purpose": "value"
+      },
+      {
+        "name": "cta",
+        "voice": "மேல இருக்கிற details தெரிஞ்சுக்க அப்புறம் site visit வர உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "living_room"
+        ],
+        "vfx": "contact-details",
+        "purpose": "action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/3a9e9fO19uM/",
+  "optional_owned_audio": "assets/audio/3a9e9fO19uM.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Thudiyalur, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Plotted development site featuring newly laid asphalt tar roads, open concrete side drainage channels, street lights, roadside plantation saplings, and surrounding double-story modern houses.. Neighbourhood: Rapidly developing residential area in Shanthi Medu along Mettupalayam Road corridor, featuring mountain views, close access to public transport, schools, hospitals, and industrial hubs.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Thudiyalur, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Plotted development site featuring newly laid asphalt tar roads, open concrete side drainage channels, street lights, roadside plantation saplings, and surrounding double-story modern houses.. Neighbourhood: Rapidly developing residential area in Shanthi Medu along Mettupalayam Road corridor, featuring mountain views, close access to public transport, schools, hospitals, and industrial hubs.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Thudiyalur, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Plotted development site featuring newly laid asphalt tar roads, open concrete side drainage channels, street lights, roadside plantation saplings, and surrounding double-story modern houses.. Neighbourhood: Rapidly developing residential area in Shanthi Medu along Mettupalayam Road corridor, featuring mountain views, close access to public transport, schools, hospitals, and industrial hubs.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Thudiyalur, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Plotted development site featuring newly laid asphalt tar roads, open concrete side drainage channels, street lights, roadside plantation saplings, and surrounding double-story modern houses.. Neighbourhood: Rapidly developing residential area in Shanthi Medu along Mettupalayam Road corridor, featuring mountain views, close access to public transport, schools, hospitals, and industrial hubs.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "needs_review",
+  "approval_mode": "automatic_fact_gate_v1"
+}
