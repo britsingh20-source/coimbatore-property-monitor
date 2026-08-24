@@ -81,12 +81,17 @@ Hard cut to a verified bedroom, staircase, bathroom, balcony or parking detail. 
 SHOT 7 — 8.5 TO 10 SECONDS — FINAL VERIFIED FEATURE
 Hard cut to one final distinct verified feature or a different exterior angle. Use a short reveal and keep the final 0.3 seconds almost motionless for a clean ending."""
 
-    return f"""First analyse the uploaded original property video frame-by-frame.
+    return f"""REFERENCE-FIRST INSTRUCTION
+Open and use this exact YouTube property video as the visual reference before generating:
+{source_url}
+
+First analyse that linked YouTube property video frame-by-frame. Base the reconstruction on the property actually shown in that video, not on a generic property or only on the written listing details. If the link cannot be opened or visually analysed, do not generate a substitute property; ask the user to retry the reference.
 
 Identify only visually confirmed details: the exact exterior elevation, floor count, building colours and materials, gate, parking, entrance, hall, false ceiling, kitchen, bedrooms, bathrooms, staircase, terrace, doors, windows, flooring, neighbourhood and visible connections between areas. Never infer a feature or room connection that is not clearly visible.
 
 VERIFIED PROPERTY INFORMATION
 Source: {source_url}
+Reference requirement: The generated property must retain the same visible architectural identity, layout type and local setting shown in this exact source.
 Location: {location}
 Property type: {property_type}
 Bedrooms: {bhk}
