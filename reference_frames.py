@@ -117,6 +117,112 @@ def _storyboard_reference_frames(
     return selected
 
 
+def _browser_reference_frames(
+    source_url: str,
+    output_dir: Path,
+    target_count: int,
+) -> list[Path]:
+    """Capture source frames through the YouTube HTML5 player without downloading the video."""
+    from selenium import webdriver
+    from selenium.webdriver.chrome.options import Options
+    from selenium.webdriver.support.ui import WebDriverWait
+
+    video_id = _youtube_video_id(source_url)
+    if not video_id:
+        raise RuntimeError("Could not parse YouTube ID for browser capture")
+
+    options = Options()
+    options.add_argument("--headless=new")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--mute-audio")
+    options.add_argument("--autoplay-policy=no-user-gesture-required")
+    options.add_argument("--window-size=1280,720")
+    options.add_argument("--lang=en-US")
+
+    driver = webdriver.Chrome(options=options)
+    face_detector = cv2.CascadeClassifier(
+        cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
+    )
+    selected: list[Path] = []
+    try:
+        driver.get(
+            f"https://www.youtube.com/embed/{video_id}"
+            "?autoplay=1&mute=1&controls=0&playsinline=1"
+        )
+        wait = WebDriverWait(driver, 30)
+        duration = float(
+            wait.until(
+                lambda browser: browser.execute_script(
+                    "const v=document.querySelector('video');"
+                    "return v && Number.isFinite(v.duration) && v.duration > 1"
+                    " ? v.duration : 0;"
+                )
+            )
+        )
+        video_element = wait.until(
+            lambda browser: browser.find_element("css selector", "video")
+        )
+
+        for group in range(target_count):
+            candidates: list[tuple[int, float, object]] = []
+            for candidate_index, offset in enumerate((0.20, 0.50, 0.80)):
+                timestamp = min(
+                    duration - 0.5,
+                    max(0.5, duration * (group + offset) / target_count),
+                )
+                driver.execute_script(
+                    "const v=document.querySelector('video');"
+                    "v.muted=true; v.pause(); v.currentTime=arguments[0];",
+                    timestamp,
+                )
+                wait.until(
+                    lambda browser: bool(
+                        browser.execute_script(
+                            "const v=document.querySelector('video');"
+                            "return v && v.readyState >= 2 && "
+                            "Math.abs(v.currentTime-arguments[0]) < 1.0;",
+                            timestamp,
+                        )
+                    )
+                )
+                candidate_path = output_dir / (
+                    f"browser-{group + 1}-{candidate_index + 1}.png"
+                )
+                video_element.screenshot(str(candidate_path))
+                frame = cv2.imread(str(candidate_path))
+                if frame is None or min(frame.shape[:2]) < 180:
+                    continue
+                gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+                if float(gray.std()) < 8.0:
+                    continue
+                faces = face_detector.detectMultiScale(
+                    gray,
+                    scaleFactor=1.15,
+                    minNeighbors=5,
+                    minSize=(40, 40),
+                )
+                sharpness = float(cv2.Laplacian(gray, cv2.CV_64F).var())
+                candidates.append((len(faces), -sharpness, frame))
+
+            if not candidates:
+                continue
+            candidates.sort(key=lambda item: (item[0], item[1]))
+            chosen = candidates[0][2]
+            path = output_dir / f"reference-{group + 1}.jpg"
+            if cv2.imwrite(str(path), chosen, [int(cv2.IMWRITE_JPEG_QUALITY), 92]):
+                selected.append(path)
+    finally:
+        driver.quit()
+
+    if len(selected) != target_count:
+        raise RuntimeError(
+            f"Browser player produced only {len(selected)} usable frames"
+        )
+    return selected
+
+
 def extract_reference_frames(job: dict, output_dir: Path, target_count: int = 5) -> list[Path]:
     """Download a source tour and select sharp, low-face-count frames across its timeline."""
     source_url = str(job.get("source_url") or "").strip()
@@ -177,10 +283,14 @@ def extract_reference_frames(job: dict, output_dir: Path, target_count: int = 5)
             return _storyboard_reference_frames(source_url, output_dir, target_count)
         except Exception as storyboard_exc:
             errors.append(f"storyboard: {storyboard_exc}")
+        try:
+            return _browser_reference_frames(source_url, output_dir, target_count)
+        except Exception as browser_exc:
+            errors.append(f"browser: {browser_exc}")
             raise RuntimeError(
-                "YouTube video and storyboard extraction both failed: "
+                "YouTube automatic reference extraction failed: "
                 + " | ".join(errors)[-900:]
-            ) from storyboard_exc
+            ) from browser_exc
 
     sources = sorted(output_dir.glob("source.*"))
     if not sources:
