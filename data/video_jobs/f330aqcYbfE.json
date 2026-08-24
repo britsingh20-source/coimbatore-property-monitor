@@ -1,0 +1,138 @@
+{
+  "video_id": "f330aqcYbfE",
+  "source_url": "https://www.youtube.com/watch?v=f330aqcYbfE",
+  "property_location": "Sulur, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹5.80 Lakhs per cent (Pre-launch offer till September 13th; ₹6.30 Lakhs per cent regular price)",
+    "facing": "NOT SPECIFIED",
+    "road_width": "40 ft, 30 ft, and 33 ft internal roads",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP and RERA approved"
+  },
+  "verified_facts": "The project 'Olivia Phase 2' by RR Builders & Developers spans across a total of 36 acres., Pre-launch plot price is ₹5.80 Lakhs per cent if booked on or before September 13th, with a ₹50,000 per cent discount off the ₹6.30 Lakhs per cent regular price., Optional ready-to-move house and villa construction packages are available starting from ₹48 Lakhs to ₹68 Lakhs (e.g., 1000 sq. ft. house on 1500 sq. ft. land)., Plots/villas are approved for home loans by 10 to 13 major banks., An adjacent 18-acre project named 'Iconic City' is also available at ₹6.50 Lakhs per cent.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera on-site, using natural spoken Tamil mixed with key English real-estate terms.",
+    "hook_strategy": "Highlight the Prime Sulur location on Trichy-Sulur road combined with the time-sensitive pre-launch price offer.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை சுலூர், Trichy - Sulur Main Road பக்கத்துல ஒரு அட்டகாசமான Location-ல 'Olivia Phase 2' Plot project வந்திருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதுல முக்கியமான விஷயம், September 13 வரைக்கும் Cent ₹5.80 Lakhs-க்கு Pre-launch offer-ல தர்றாங்க.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "price-tag",
+        "purpose": "offer_highlight"
+      },
+      {
+        "name": "land",
+        "voice": "RR Builders & Developers-ஓட இந்த 36 Acres Gated Community-ல Grand Entrance Arch, 1 Lakh Liter Overhead Water Tank, 3-Phase Power-னு எல்லா Facilities-மும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "project_overview"
+      },
+      {
+        "name": "road",
+        "voice": "Layout-க்குள்ள 40 ft, 30 ft, மற்றும் 33 ft Blacktop Roads அமைச்சிருக்காங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "road_infrastructure"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Plots மட்டுமில்லாம, Ready-to-move Villa construction packages-ம் ₹48 Lakhs-லிருந்து ₹68 Lakhs வரைக்கும் available-ஆ இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "builtup_options"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP மற்றும் RERA Approved project, 10-லிருந்து 13 Major Banks-ல Home Loan வசதியும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_and_legality"
+      },
+      {
+        "name": "cta",
+        "voice": "Site visit வரணும்னாலோ, Details வேணும்னாலோ உடனே Call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/f330aqcYbfE/",
+  "optional_owned_audio": "assets/audio/f330aqcYbfE.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Large gated layout featuring wide blacktop roads with white line markings, curbs, street lights, side drainage, young trees, an elevated overhead tank, a children's play park, and a stone-clad security entrance arch.. Neighbourhood: Located in the fast-developing town of Sulur near Coimbatore along the Trichy main highway, featuring proximity to schools, colleges, and commercial connectivity.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Large gated layout featuring wide blacktop roads with white line markings, curbs, street lights, side drainage, young trees, an elevated overhead tank, a children's play park, and a stone-clad security entrance arch.. Neighbourhood: Located in the fast-developing town of Sulur near Coimbatore along the Trichy main highway, featuring proximity to schools, colleges, and commercial connectivity.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Large gated layout featuring wide blacktop roads with white line markings, curbs, street lights, side drainage, young trees, an elevated overhead tank, a children's play park, and a stone-clad security entrance arch.. Neighbourhood: Located in the fast-developing town of Sulur near Coimbatore along the Trichy main highway, featuring proximity to schools, colleges, and commercial connectivity.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Large gated layout featuring wide blacktop roads with white line markings, curbs, street lights, side drainage, young trees, an elevated overhead tank, a children's play park, and a stone-clad security entrance arch.. Neighbourhood: Located in the fast-developing town of Sulur near Coimbatore along the Trichy main highway, featuring proximity to schools, colleges, and commercial connectivity.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
