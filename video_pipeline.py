@@ -30,19 +30,42 @@ def automatic_approval_ready(property_data: dict) -> bool:
 def build_video_job(video: dict, property_data: dict, location: dict) -> Path:
     locality = (location.get("matched_localities") or [property_data.get("location", "Coimbatore")])[0]
     facts = ", ".join(str(x) for x in property_data.get("source_facts", [])[:8])
-    base = (
-        f"Photorealistic contemporary residential property in {locality}, Coimbatore, Tamil Nadu. "
-        f"Architecture consistent with: {property_data.get('exterior_description', 'the verified listing facts')}. "
-        f"Neighbourhood: {property_data.get('neighbourhood_description', 'a realistic Coimbatore residential street')}. "
-        "Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, "
-        "no logos, no visible phone numbers, no misleading text, vertical composition."
+    property_type = str(property_data.get("property_type") or "").lower()
+    bhk_present = _present(property_data.get("bhk"))
+    built_up_present = _present(property_data.get("built_up_area"))
+    is_plot_listing = (
+        any(word in property_type for word in ("plot", "vacant land", "residential land", "site"))
+        and not bhk_present
+        and not built_up_present
     )
-    scenes = [
-        {"name": "street", "prompt": base + " Smooth establishing gimbal shot from the approach road, ambient city sounds."},
-        {"name": "exterior", "prompt": base + " Slow premium reveal of the front elevation and parking, realistic shadows."},
-        {"name": "living", "prompt": base + " Interior walkthrough of a bright Indian living room matching the property type."},
-        {"name": "kitchen", "prompt": base + " Smooth walkthrough of a practical premium modular kitchen and dining space."},
-    ]
+    if is_plot_listing:
+        base = (
+            f"Photorealistic residential plotted development in {locality}, Coimbatore, Tamil Nadu. "
+            f"Visible land and infrastructure consistent with: {property_data.get('exterior_description', 'the verified plotted-layout facts')}. "
+            f"Neighbourhood: {property_data.get('neighbourhood_description', 'a realistic Coimbatore semi-urban layout')}. "
+            "Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, "
+            "no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition."
+        )
+        scenes = [
+            {"name": "approach_road", "prompt": base + " Gimbal approach along the verified local access road."},
+            {"name": "layout_entrance", "prompt": base + " Reveal the actual layout entrance or frontage without redesigning it."},
+            {"name": "plots", "prompt": base + " Show vacant plots, boundary markers and real terrain; do not place houses on the plots."},
+            {"name": "internal_road", "prompt": base + " Show verified internal roads, drainage, utilities and plot edges only."},
+        ]
+    else:
+        base = (
+            f"Photorealistic contemporary residential property in {locality}, Coimbatore, Tamil Nadu. "
+            f"Architecture consistent with: {property_data.get('exterior_description', 'the verified listing facts')}. "
+            f"Neighbourhood: {property_data.get('neighbourhood_description', 'a realistic Coimbatore residential street')}. "
+            "Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, "
+            "no logos, no visible phone numbers, no misleading text, vertical composition."
+        )
+        scenes = [
+            {"name": "street", "prompt": base + " Smooth establishing gimbal shot from the approach road, ambient city sounds."},
+            {"name": "exterior", "prompt": base + " Slow premium reveal of the front elevation and parking, realistic shadows."},
+            {"name": "living", "prompt": base + " Interior walkthrough only when a living room is verified in the source."},
+            {"name": "kitchen", "prompt": base + " Kitchen walkthrough only when a kitchen is verified in the source."},
+        ]
     auto_approved = automatic_approval_ready(property_data)
     content_plan = develop_property_script(property_data, location)
     job = {
