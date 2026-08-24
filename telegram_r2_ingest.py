@@ -10,6 +10,8 @@ import tempfile
 import boto3
 import requests
 
+from reference_frames import extract_frames_from_local_video, send_reference_frames
+
 
 STATE_PATH = Path(os.environ.get("TELEGRAM_INGEST_STATE", "data/telegram_ingest_state.json"))
 QUEUE_PATH = Path(os.environ.get("TELEGRAM_PROMPT_QUEUE", "data/telegram_prompt_queue.json"))
@@ -76,6 +78,16 @@ def _video_attachment(message: dict) -> dict | None:
     return None
 
 
+def _reference_video_id(message: dict) -> str:
+    text = str(message.get("caption") or message.get("text") or "").strip()
+    match = re.search(
+        r"reference[\\s_-]*id\\s*[:=\\-]\\s*([A-Za-z0-9_-]{6,32})",
+        text,
+        flags=re.I,
+    )
+    return match.group(1) if match else ""
+
+
 def _explicit_video_id(message: dict) -> str:
     text = str(message.get("caption") or message.get("text") or "").strip()
     match = re.search(r"(?:video[\\s_-]*id|id)\\s*[:=\\-]\\s*([A-Za-z0-9_-]{6,32})", text, flags=re.I)
@@ -134,12 +146,28 @@ def ingest() -> int:
             print(f"Duplicate Telegram video ignored: {unique_id}")
             continue
 
+        reference_video_id = _reference_video_id(message)
+        reference_job = Path("data/video_jobs") / f"{reference_video_id}.json"
+        if reference_video_id and not reference_job.exists():
+            state["files"][unique_id] = {
+                "status": "rejected_invalid_reference_id",
+                "provided_reference_id": reference_video_id,
+                "update_id": update_id,
+                "received_at": datetime.now(timezone.utc).isoformat(),
+            }
+            _send(
+                token,
+                chat_id,
+                f"REFERENCE_ID {reference_video_id} has no property job. Nothing was uploaded or published.",
+            )
+            continue
+
         pending_ids = [
             str(item.get("video_id") or "").strip()
             for item in queue.get("prompts", [])
             if item.get("status") == "pending_mobile_upload" and item.get("video_id")
         ]
-        explicit_video_id = _explicit_video_id(message)
+        explicit_video_id = "" if reference_video_id else _explicit_video_id(message)
         if explicit_video_id and explicit_video_id not in pending_ids:
             state["files"][unique_id] = {
                 "status": "rejected_invalid_video_id",
@@ -154,7 +182,7 @@ def ingest() -> int:
             )
             continue
 
-        if not pending_ids:
+        if not reference_video_id and not pending_ids:
             state["files"][unique_id] = {
                 "status": "ignored_no_pending_prompt",
                 "update_id": update_id,
@@ -187,6 +215,62 @@ def ingest() -> int:
         response.raise_for_status()
         if len(response.content) > MAX_BYTES:
             raise RuntimeError(f"Downloaded Telegram video exceeds {MAX_BYTES} bytes")
+
+        if reference_video_id:
+            with tempfile.TemporaryDirectory(
+                prefix=f"telegram-reference-{reference_video_id}-"
+            ) as temp_dir:
+                source_path = Path(temp_dir) / "source.mp4"
+                source_path.write_bytes(response.content)
+                frame_paths = extract_frames_from_local_video(
+                    source_path,
+                    Path(temp_dir),
+                    target_count=5,
+                )
+                send_reference_frames(
+                    frame_paths,
+                    token,
+                    chat_id,
+                    reference_video_id,
+                )
+
+            now = datetime.now(timezone.utc).isoformat()
+            state["files"][unique_id] = {
+                "status": "reference_frames_sent",
+                "video_id": reference_video_id,
+                "size": len(response.content),
+                "update_id": update_id,
+                "processed_at": now,
+            }
+            prompt = next(
+                (
+                    item
+                    for item in queue.get("prompts", [])
+                    if item.get("video_id") == reference_video_id
+                ),
+                None,
+            )
+            if prompt is not None:
+                prompt.update(
+                    {
+                        "reference_frame_count": 5,
+                        "reference_status": "sent_from_telegram_source",
+                        "reference_sent_at": now,
+                    }
+                )
+                prompt.pop("reference_error", None)
+            _send(
+                token,
+                chat_id,
+                f"✅ Five reference frames extracted for {reference_video_id}. "
+                "The source tour was not uploaded to R2 and will not be published. "
+                "Attach all five images in Gemini → Videos, then paste the matching prompt file.",
+            )
+            print(
+                f"Telegram source video {unique_id} -> five reference frames; "
+                f"REFERENCE_ID {reference_video_id}"
+            )
+            continue
 
         safe_unique_id = re.sub(r"[^A-Za-z0-9_-]+", "-", unique_id).strip("-")
         key_name = explicit_video_id if explicit_video_id else f"telegram-{safe_unique_id}"
