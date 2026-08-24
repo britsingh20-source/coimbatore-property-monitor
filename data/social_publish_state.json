@@ -296,6 +296,25 @@
       },
       "status": "matched",
       "video_id": "tTgkkQPNeCo"
+    },
+    "social-ready/telegram-AgADkCIAArd1WFQ.mp4": {
+      "candidate_video_ids": [
+        "KiJEPqoUCTw",
+        "6RCA3cUaZ2Y",
+        "uAJus2hXLTo",
+        "6jJtYT4MA_E",
+        "icWK1jhUiU0",
+        "7bj_axUSMmM",
+        "OEul0dWNXSU",
+        "94Y_3Jp2hQw",
+        "twP0glR4EyU",
+        "xTvjrweqpy4",
+        "3HCxfx5DoJs"
+      ],
+      "etag": "5c184faed8a57efcc72bf5265ee820dd-3",
+      "match_error": "Error code: 429 - {'error': {'message': 'Resource has been exhausted (e.g. check quota).', 'code': 'too_many_requests'}}",
+      "platforms": {},
+      "status": "match_error"
     }
   }
 }
