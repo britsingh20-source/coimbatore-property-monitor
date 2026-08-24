@@ -10,8 +10,11 @@ Choose one candidate with freshness, practical value, technical depth, free acce
 Never invent pricing, licence, commercial use, watermark, card or limits: use unknown when evidence is missing.
 Write a natural advanced Tamil-English 45-60 second Reel script covering what changed, why it matters,
 how it works, how an ordinary person can use it, its exact free classification, requirements and one honest limitation.
-Return only JSON. Hook prompt: preserve the supplied presenter identity, choose scene-specific clothing, forbid text/logos/watermarks.
-B-roll prompt: visualize the actual mechanism, not generic robots or server rooms."""
+Return only JSON.
+Hook prompt rules: the Telegram pack will include a real presenter reference photograph. Begin every hook prompt with:
+"Use the uploaded presenter photograph as the mandatory identity reference. The generated presenter must be the exact same person. Preserve facial structure, skin tone, hairstyle, beard, body proportions and recognisable identity. Do not create a substitute presenter."
+Then design a topic-specific 6-8 second vertical 9:16 cinematic action with a three-quarter camera angle, natural hand anatomy, scene-specific clothing, camera movement, lighting and a strong visual reveal. Do not request dialogue. Forbid captions, readable text, logos and watermarks.
+B-roll prompt: create a separate 6-8 second vertical 9:16 visualization of the actual mechanism or transformation. Do not include the presenter unless essential. Avoid generic robots, server rooms, readable text, logos and watermarks."""
 
 def gemini(prompt):
     key=os.environ["GEMINI_API_KEY"]; model=os.getenv("GEMINI_MODEL","gemini-2.5-flash")
