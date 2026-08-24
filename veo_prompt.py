@@ -26,26 +26,39 @@ def build_veo_prompt(job: dict) -> str:
     source_url = _value(job.get("source_url"), "Source video supplied separately")
     facts = _value(job.get("verified_facts"), "Use only facts confirmed in the source video")
 
-    return f"""First analyse the uploaded original property video frame-by-frame.
+    classification = f"{property_type} {bhk} {built_up}".lower()
+    is_plot_listing = (
+        any(word in classification for word in ("plot", "vacant land", "residential land"))
+        and not bhk
+        and built_up.upper() in MISSING.union({"NOT SPECIFIED — OMIT FROM VIDEO"})
+    )
+    if is_plot_listing:
+        shot_plan = """THIS IS A RESIDENTIAL PLOT/LAYOUT LISTING. Show only the actual land, plotted layout, roads, boundaries, infrastructure, amenities and neighbourhood confirmed by the source. Do not generate a completed house, villa elevation, portico, hall, kitchen, bedroom, bathroom or any invented interior.
 
-Identify only visually confirmed details: the exact exterior elevation, floor count, building colours and materials, gate, parking, entrance, hall, false ceiling, kitchen, bedrooms, bathrooms, staircase, terrace, doors, windows, flooring, neighbourhood and visible connections between areas. Never infer a feature or room connection that is not clearly visible.
+Create seven distinct, consistent plot-tour shots of approximately 1.4 seconds each using clean hard cuts.
 
-VERIFIED PROPERTY INFORMATION
-Source: {source_url}
-Location: {location}
-Property type: {property_type}
-Bedrooms: {bhk}
-Land area: {land}
-Built-up area: {built_up}
-Facing: {facing}
-Parking: {parking}
-Approval: {approval}
-Price: {price}
-Verified facts: {facts}
+SHOT 1 — 0 TO 1.4 SECONDS — LOCATION APPROACH
+Moderately brisk gimbal approach along the verified local Sulur road toward the plotted development. Preserve the actual road surface, neighbouring buildings, EB poles and surroundings visible in the source.
 
-Generate one completely new, highly photorealistic, exactly 10-second vertical 9:16 property walkthrough source clip at 60 fps. This clip will be slowed to 33.3% speed in VN Editor to create a smooth 30-second final video. Camera movement must be moderately brisk, stable and clear so it becomes natural after slowing. Do not reuse source frames directly. Reconstruct the property using only its visually confirmed architectural identity. It must resemble genuine smartphone footage recorded with a professional gimbal by a local Coimbatore property broker, not an architectural render, slideshow or AI-image animation.
+SHOT 2 — 1.4 TO 2.8 SECONDS — LAYOUT ENTRANCE
+Hard cut to the verified entrance or frontage of the layout. Show its real width, gate or boundary treatment and immediate surroundings without redesigning or beautifying it.
 
-Create seven clearly different, architecturally consistent shots of approximately 1.4 seconds each. Use clean hard cuts only. All seven shots must show the same property with identical elevation, tiles, wall colours, ceiling design, doors, windows, fixtures and room proportions.
+SHOT 3 — 2.8 TO 4.2 SECONDS — PLOTS
+Hard cut to the actual vacant residential plots and visible boundary markers. Use a controlled lateral move showing the real terrain, plot arrangement and scale. Do not place a house on the plots.
+
+SHOT 4 — 4.2 TO 5.6 SECONDS — INTERNAL ROAD
+Hard cut to a verified internal road. Show the advertised 33-ft or 40-ft road only when its scale is supported by the source. Preserve drainage, shoulders and plot edges.
+
+SHOT 5 — 5.6 TO 7.0 SECONDS — UTILITIES
+Hard cut to visible water, electricity or other layout infrastructure. If it is not visible, use another distinct verified plot or road angle instead of inventing equipment.
+
+SHOT 6 — 7.0 TO 8.5 SECONDS — AMENITY OR SURROUNDINGS
+Hard cut to a cricket turf, yoga centre or neighbourhood feature only when visibly confirmed. Otherwise show a different genuine layout-wide angle.
+
+SHOT 7 — 8.5 TO 10 SECONDS — FINAL LAYOUT VIEW
+Hard cut to the strongest verified wide view of the plotted community. Hold the final 0.3 seconds almost motionless. No house walkthrough and no repeated angle."""
+    else:
+        shot_plan = """Create seven clearly different, architecturally consistent shots of approximately 1.4 seconds each. Use clean hard cuts only. All seven shots must show the same property with identical elevation, tiles, wall colours, ceiling design, doors, windows, fixtures and room proportions.
 
 SHOT 1 — 0 TO 1.4 SECONDS — EXTERIOR
 Moderately brisk forward gimbal reveal from the verified local residential road. Preserve the visible elevation, floor count, colours, gate, windows, parking and neighbourhood. Do not redesign or enlarge the property.
@@ -66,7 +79,28 @@ SHOT 6 — 7.0 TO 8.5 SECONDS — NEXT VERIFIED FEATURE
 Hard cut to a verified bedroom, staircase, bathroom, balcony or parking detail. Use one concise push-in or lateral move and do not repeat an earlier angle.
 
 SHOT 7 — 8.5 TO 10 SECONDS — FINAL VERIFIED FEATURE
-Hard cut to one final distinct verified feature or a different exterior angle. Use a short reveal and keep the final 0.3 seconds almost motionless for a clean ending.
+Hard cut to one final distinct verified feature or a different exterior angle. Use a short reveal and keep the final 0.3 seconds almost motionless for a clean ending."""
+
+    return f"""First analyse the uploaded original property video frame-by-frame.
+
+Identify only visually confirmed details: the exact exterior elevation, floor count, building colours and materials, gate, parking, entrance, hall, false ceiling, kitchen, bedrooms, bathrooms, staircase, terrace, doors, windows, flooring, neighbourhood and visible connections between areas. Never infer a feature or room connection that is not clearly visible.
+
+VERIFIED PROPERTY INFORMATION
+Source: {source_url}
+Location: {location}
+Property type: {property_type}
+Bedrooms: {bhk}
+Land area: {land}
+Built-up area: {built_up}
+Facing: {facing}
+Parking: {parking}
+Approval: {approval}
+Price: {price}
+Verified facts: {facts}
+
+Generate one completely new, highly photorealistic, exactly 10-second vertical 9:16 property walkthrough source clip at 60 fps. This clip will be slowed to 33.3% speed in VN Editor to create a smooth 30-second final video. Camera movement must be moderately brisk, stable and clear so it becomes natural after slowing. Do not reuse source frames directly. Reconstruct the property using only its visually confirmed architectural identity. It must resemble genuine smartphone footage recorded with a professional gimbal by a local Coimbatore property broker, not an architectural render, slideshow or AI-image animation.
+
+{shot_plan}
 
 PROPERTY INFORMATION FOOTER — 0.3 TO 10 SECONDS
 Display one slim, professional, completely opaque lower-third information footer continuously from 0.3 seconds until the source clip ends. It must remain upright, sharp, stationary and identical across all seven shots so it stays readable after slowing. Place it immediately above the platform watermark/safe area without covering, altering or imitating any provider provenance mark.
