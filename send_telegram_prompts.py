@@ -89,7 +89,7 @@ def send_prompt(job: dict, bot_token: str, chat_id: str) -> dict:
             send_reference_frames(frame_paths, bot_token, chat_id, video_id)
             reference_count = len(frame_paths)
         except Exception as exc:
-            reference_error = str(exc)[:500]
+            reference_error = str(exc)[-500:]
             print(f"Reference-frame warning for {video_id}: {reference_error}")
 
     if reference_count == 5:
