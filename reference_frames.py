@@ -24,26 +24,55 @@ def extract_reference_frames(job: dict, output_dir: Path, target_count: int = 5)
 
     output_dir.mkdir(parents=True, exist_ok=True)
     output_template = str(output_dir / "source.%(ext)s")
-    command = [
+    base_command = [
         "yt-dlp",
         "--no-playlist",
         "--quiet",
         "--no-warnings",
         "--socket-timeout",
         "30",
+        "--js-runtimes",
+        "node",
+        "--remote-components",
+        "ejs:github",
         "-f",
         "best[ext=mp4][height<=720]/best[height<=720]/best",
         "-o",
         output_template,
-        source_url,
     ]
-    try:
-        subprocess.run(command, check=True, capture_output=True, text=True, timeout=240)
-    except subprocess.TimeoutExpired as exc:
-        raise RuntimeError("YouTube reference download timed out") from exc
-    except subprocess.CalledProcessError as exc:
-        detail = (exc.stderr or exc.stdout or "").strip().splitlines()
-        raise RuntimeError(f"YouTube reference download failed: {(detail[-1] if detail else 'unknown yt-dlp error')[:300]}") from exc
+    client_variants = (
+        None,
+        "youtube:player_client=web_safari",
+        "youtube:player_client=android_vr",
+    )
+    errors: list[str] = []
+    for extractor_args in client_variants:
+        for stale in output_dir.glob("source.*"):
+            stale.unlink(missing_ok=True)
+        command = list(base_command)
+        if extractor_args:
+            command.extend(["--extractor-args", extractor_args])
+        command.append(source_url)
+        try:
+            subprocess.run(
+                command,
+                check=True,
+                capture_output=True,
+                text=True,
+                timeout=240,
+            )
+            if list(output_dir.glob("source.*")):
+                break
+        except subprocess.TimeoutExpired:
+            errors.append(f"{extractor_args or 'default'}: timed out")
+        except subprocess.CalledProcessError as exc:
+            detail = (exc.stderr or exc.stdout or "").strip().splitlines()
+            errors.append(
+                f"{extractor_args or 'default'}: "
+                f"{(detail[-1] if detail else 'unknown yt-dlp error')[:300]}"
+            )
+    else:
+        raise RuntimeError("YouTube reference download failed after client fallbacks: " + " | ".join(errors)[-900:])
 
     sources = sorted(output_dir.glob("source.*"))
     if not sources:
