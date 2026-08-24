@@ -1,0 +1,30 @@
+name: Register Aibros presenter reference
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  register-presenter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+      AIBROS_PRESENTER_KEY: aibros/private/presenter_reference.jpg
+      PYTHONPATH: .
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install R2 client
+        run: python -m pip install --disable-pip-version-check boto3
+      - name: Register latest captioned Telegram portrait
+        run: python -m ai_daily_channel.src.register_presenter_reference
