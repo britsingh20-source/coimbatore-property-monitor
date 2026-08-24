@@ -230,8 +230,16 @@
           "status": "published"
         },
         "instagram_story": {
-          "error": "Instagram container failed: {\"status_code\": \"ERROR\", \"status\": \"Error: Media upload has failed with error code 2207085\", \"id\": \"17894378040599708\"}",
-          "status": "failed"
+          "result": {
+            "creation_id": "17894378217599708",
+            "media_id": "18063233750774525",
+            "processing": {
+              "id": "17894378217599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
         },
         "youtube_short": {
           "result": {
