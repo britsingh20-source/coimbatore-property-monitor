@@ -295,25 +295,99 @@
       "video_id": "6jJtYT4MA_E"
     },
     "social-ready/telegram-AgAD_B4AArd1YFQ.mp4": {
-      "candidate_video_ids": [
-        "KiJEPqoUCTw",
-        "6RCA3cUaZ2Y",
-        "icWK1jhUiU0",
-        "7bj_axUSMmM",
-        "OEul0dWNXSU",
-        "94Y_3Jp2hQw",
-        "twP0glR4EyU",
-        "xTvjrweqpy4",
-        "3HCxfx5DoJs",
-        "_XMACm5xxtc",
-        "PAs5DHZmBKo",
-        "AIolIZydXTU",
-        "f330aqcYbfE"
-      ],
+      "content": {
+        "caption": "🏠 ₹6.50 Lakhs per Cent (Negotiable) Vacant Land in Veerapandi Pirivu, Mettupalayam Road, Coimbatore, Tamil Nadu, India — would you visit this property?\n\n📍 Location: Veerapandi Pirivu, Mettupalayam Road, Coimbatore, Tamil Nadu, India\n🏡 Property: Vacant Land\n💰 Price: ₹6.50 Lakhs per Cent (Negotiable)\n📐 Land: 70 Cents\n🧭 Facing: Main Road Facing\n✅ Approval: DTCP Approved Layout Proposed\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #VeerapandiPirivuMettupalayamRoadCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#CoimbatoreProperty",
+          "#VeerapandiPirivuMettupalayamRoadCoimbatoreTamilNaduIndiaProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "₹6.50 Lakhs per Cent (Negotiable) Vacant Land in Veerapandi Pirivu, Mettupalayam Road, Coimbatore, T",
+        "youtube_description": "₹6.50 Lakhs per Cent (Negotiable) Vacant Land in Veerapandi Pirivu, Mettupalayam Road, Coimbatore, Tamil Nadu, India. Watch the complete 10-second walkthrough.\n\n📍 Location: Veerapandi Pirivu, Mettupalayam Road, Coimbatore, Tamil Nadu, India\n🏡 Property: Vacant Land\n💰 Price: ₹6.50 Lakhs per Cent (Negotiable)\n📐 Land: 70 Cents\n🧭 Facing: Main Road Facing\n✅ Approval: DTCP Approved Layout Proposed\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#CoimbatoreProperty #VeerapandiPirivuMettupalayamRoadCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate"
+      },
       "etag": "ee9cbeb7cd73cfd52336fcaf5fc07abb-3",
-      "match_error": "Error code: 429 - {'error': {'message': 'Resource has been exhausted (e.g. check quota).', 'code': 'too_many_requests'}}",
-      "platforms": {},
-      "status": "match_error"
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "creation_id": "17894433129599708",
+            "media_id": "18103651931599843",
+            "processing": {
+              "id": "17894433129599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "thumb_offset_ms": 2000
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17894433471599708",
+            "media_id": "18083452388291405",
+            "processing": {
+              "id": "17894433471599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "₹6.50 Lakhs per Cent (Negotiable) Vacant Land in Veerapandi Pirivu, Mettupalayam Road, Coimbatore, Tamil Nadu, India. Watch the complete 10-second walkthrough.\n\n📍 Location: Veerapandi Pirivu, Mettupalayam Road, Coimbatore, Tamil Nadu, India\n🏡 Property: Vacant Land\n💰 Price: ₹6.50 Lakhs per Cent (Negotiable)\n📐 Land: 70 Cents\n🧭 Facing: Main Road Facing\n✅ Approval: DTCP Approved Layout Proposed\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#CoimbatoreProperty #VeerapandiPirivuMettupalayamRoadCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "₹6.50 Lakhs per Cent (Negotiable) Vacant Land in Veerapandi Pirivu, Mettupalayam Road, Coimbatore, Tamil Nadu, India. Watch the complete 10-second walkthrough.\n\n📍 Location: Veerapandi Pirivu, Mettupalayam Road, Coimbatore, Tamil Nadu, India\n🏡 Property: Vacant Land\n💰 Price: ₹6.50 Lakhs per Cent (Negotiable)\n📐 Land: 70 Cents\n🧭 Facing: Main Road Facing\n✅ Approval: DTCP Approved Layout Proposed\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#CoimbatoreProperty #VeerapandiPirivuMettupalayamRoadCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
+                "title": "₹6.50 Lakhs per Cent (Negotiable) Vacant Land in Veerapandi Pirivu, Mettupalayam Road, Coimbatore, T"
+              },
+              "publishedAt": "2026-08-24T15:18:55Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/63swUZCY59w/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/63swUZCY59w/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/63swUZCY59w/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "₹6.50 Lakhs per Cent (Negotiable) Vacant Land in Veerapandi Pirivu, Mettupalayam Road, Coimbatore, T"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "63swUZCY59w"
+          },
+          "status": "published"
+        }
+      },
+      "status": "matched",
+      "video_id": "icWK1jhUiU0"
     },
     "social-ready/telegram-AgADdyEAAiU0WFQ.mp4": {
       "content": {
