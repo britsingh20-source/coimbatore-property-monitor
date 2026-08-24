@@ -12,6 +12,8 @@ on:
       - ".github/workflows/monitor.yml"
       - "veo_prompt.py"
       - "send_telegram_prompts.py"
+      - "reference_frames.py"
+      - "requirements.txt"
       - "location_matcher.py"
 
 concurrency:
