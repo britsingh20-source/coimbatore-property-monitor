@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "source_states": [
+    "candidate",
+    "quarantined",
+    "verified",
+    "trusted",
+    "degraded",
+    "retired"
+  ],
+  "seed_sources": [
+    {
+      "id": "github-discovery",
+      "type": "github_search",
+      "scope": "public",
+      "state": "trusted",
+      "purpose": [
+        "updates",
+        "free_methods"
+      ]
+    },
+    {
+      "id": "huggingface-hub",
+      "type": "huggingface_api",
+      "scope": "models_spaces_orgs",
+      "state": "trusted",
+      "purpose": [
+        "updates",
+        "free_methods"
+      ]
+    },
+    {
+      "id": "arxiv-ai",
+      "type": "arxiv_api",
+      "scope": "cs.AI,cs.CL,cs.CV,cs.LG",
+      "state": "trusted",
+      "purpose": [
+        "updates"
+      ]
+    },
+    {
+      "id": "official-sitemaps",
+      "type": "official_domain_discovery",
+      "scope": "approved_domains",
+      "state": "trusted",
+      "purpose": [
+        "updates",
+        "free_methods"
+      ]
+    },
+    {
+      "id": "youtube-release-rss",
+      "type": "youtube_channel_rss",
+      "scope": "approved_channels",
+      "state": "verified",
+      "purpose": [
+        "updates"
+      ]
+    }
+  ],
+  "candidate_promotion": {
+    "requires_official_domain": true,
+    "requires_identity_match": true,
+    "requires_original_content": true,
+    "requires_primary_evidence": true,
+    "minimum_successful_fetches": 2,
+    "manual_approval_during_pilot": true
+  },
+  "selection_controls": {
+    "max_topics_per_company_per_day": 1,
+    "new_company_weekly_share_min": 0.3,
+    "free_method_weekly_share_min": 0.3,
+    "repeat_cooldown_days": 30
+  }
+}
