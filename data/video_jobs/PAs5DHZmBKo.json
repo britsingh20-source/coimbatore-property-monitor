@@ -1,0 +1,142 @@
+{
+  "video_id": "PAs5DHZmBKo",
+  "source_url": "https://www.youtube.com/watch?v=PAs5DHZmBKo",
+  "property_location": "Coimbatore, L&T Bypass, Near Karpagam College",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "3.5 Cents",
+    "built_up_area": "1800 sqft",
+    "price": "NOT SPECIFIED",
+    "facing": "East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking (12' x 21')",
+    "approval": "DTCP"
+  },
+  "verified_facts": "3BHK independent house constructed on a 3.5-cent plot with 1800 sqft built-up area, East facing site and main door, DTCP approved site with 75% bank loan availability, Equipped with 3kW solar panel system, solar water heater, and water softener",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local property presenter direct to camera",
+    "hook_strategy": "Highlighting key location advantage near L&T Bypass and major landmarks paired with a 3BHK independent home",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை L&T Bypass பக்கத்துல, Karpagam College மற்றும் L&T IT Park-க்கு ரொம்பவும் பக்கத்துல இருக்குற ஒரு Location-ல தான் நாம இப்போ இருக்கோம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல 3.5 Cents land area இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இது 1800 sqft built-up area கொண்ட 3 BHK Independent House. உள்ள Modular Kitchen, Pooja Room, Store Room, Private Balcony அப்புறம் 12' x 21' Covered Car Parking-ம் கொடுத்திருக்காங்க.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "floorplan-highlight",
+        "purpose": "house_tour"
+      },
+      {
+        "name": "facing",
+        "voice": "அதே மாதிரி, இந்த Site மற்றும் Main Door ரெண்டுமே East facing.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass-east",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approval பெற்ற Property, மேலும் 75% bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "badge-overlay",
+        "purpose": "legal_status"
+      },
+      {
+        "name": "verify",
+        "voice": "இதுல முக்கியமான விஷயம், 3kW Solar Panels, Solar Water Heater, Water Softener, Pressure Pump, CCTV, Individual Borewell, Water Sump அப்புறம் Gazebo-வும் இதுல இருக்கு.",
+        "broll": [
+          "interior",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "feature-checklist",
+        "purpose": "amenities_highlight"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் Details தெரிஞ்சுக்க அப்புறம் Site Visit வர உடனே Call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/PAs5DHZmBKo/",
+  "optional_owned_audio": "assets/audio/PAs5DHZmBKo.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Coimbatore, L&T Bypass, Near Karpagam College, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-story house with blue and white accent stripes, wooden porch accents, recessed ceiling lighting in the porch, a gated entrance, and rooftop solar panels with a covered gazebo area.. Neighbourhood: Part of a structured gated community style development with concrete paving, streetlights, and similar newly built modern villas.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Coimbatore, L&T Bypass, Near Karpagam College, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-story house with blue and white accent stripes, wooden porch accents, recessed ceiling lighting in the porch, a gated entrance, and rooftop solar panels with a covered gazebo area.. Neighbourhood: Part of a structured gated community style development with concrete paving, streetlights, and similar newly built modern villas.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Coimbatore, L&T Bypass, Near Karpagam College, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-story house with blue and white accent stripes, wooden porch accents, recessed ceiling lighting in the porch, a gated entrance, and rooftop solar panels with a covered gazebo area.. Neighbourhood: Part of a structured gated community style development with concrete paving, streetlights, and similar newly built modern villas.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Coimbatore, L&T Bypass, Near Karpagam College, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-story house with blue and white accent stripes, wooden porch accents, recessed ceiling lighting in the porch, a gated entrance, and rooftop solar panels with a covered gazebo area.. Neighbourhood: Part of a structured gated community style development with concrete paving, streetlights, and similar newly built modern villas.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
