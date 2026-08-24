@@ -26,9 +26,11 @@ def build_veo_prompt(job: dict) -> str:
     facts = _value(job.get("verified_facts"), "Use only facts confirmed in the source video")
     source_url = _value(job.get("source_url"), "Source video supplied separately")
 
-    return f"""Open and analyse this public YouTube property-tour video directly as the architectural reference: {source_url}
+    return f"""@YouTube First open and analyse this exact public YouTube property-tour video as the architectural reference: {source_url}
 
-Study the property frame-by-frame and identify only the visible exterior elevation, floor count, colours, materials, gate, parking, entrance, hall, false ceiling, kitchen, bedrooms, bathrooms, staircase, terrace, doors, windows, flooring, neighbourhood and verified room connections. Use the source only to understand the property architecture. Generate completely new footage; do not reproduce source frames, presenters, people, faces, speech, music, logos, watermarks, captions or channel branding. Never infer a feature or room connection that is not clearly visible.
+You must successfully use the YouTube reference before generating. Confirm internally that the referenced video has loaded, then study the actual property footage frame-by-frame—not merely its title, thumbnail, description or transcript. Identify only the visible exterior elevation, floor count, colours, materials, gate, parking, entrance, hall, false ceiling, kitchen, bedrooms, bathrooms, staircase, terrace, doors, windows, flooring, neighbourhood and verified room connections. If the YouTube video cannot be accessed or analysed, stop and state that clearly instead of generating a generic property.
+
+Use the source only to understand the property architecture. Generate completely new footage; do not reproduce source frames, presenters, people, faces, speech, music, logos, watermarks, captions or channel branding. Never infer a feature or room connection that is not clearly visible.
 
 VERIFIED PROPERTY INFORMATION
 Source reference: {source_url}
