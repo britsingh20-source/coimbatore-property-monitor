@@ -112,6 +112,36 @@ def _explicit_video_id(message: dict) -> str:
     return match.group(1) if match else ""
 
 
+def _unique_pending_video_id(supplied_id: str, queue: dict) -> str:
+    """Resolve only a unique pending ID with harmless mobile glyph confusion."""
+    pending_ids = [
+        str(item.get("video_id") or "").strip()
+        for item in queue.get("prompts", [])
+        if item.get("status") == "pending_mobile_upload" and item.get("video_id")
+    ]
+    if supplied_id in pending_ids:
+        return supplied_id
+
+    ambiguous_groups = (set("0O"), set("1Il"))
+    matches = []
+    for candidate in pending_ids:
+        if len(candidate) != len(supplied_id):
+            continue
+        compatible = True
+        for supplied_char, candidate_char in zip(supplied_id, candidate):
+            if supplied_char == candidate_char:
+                continue
+            if not any(
+                supplied_char in group and candidate_char in group
+                for group in ambiguous_groups
+            ):
+                compatible = False
+                break
+        if compatible:
+            matches.append(candidate)
+    return matches[0] if len(matches) == 1 else ""
+
+
 def _oldest_pending(queue: dict) -> dict | None:
     pending = [
         item for item in queue.get("prompts", [])
@@ -154,6 +184,9 @@ def ingest() -> int:
             standalone_video_id = _explicit_video_id(message)
             if not standalone_video_id:
                 continue
+            resolved_video_id = _unique_pending_video_id(standalone_video_id, queue)
+            if resolved_video_id:
+                standalone_video_id = resolved_video_id
             prompt = next(
                 (
                     item
@@ -241,6 +274,10 @@ def ingest() -> int:
             if item.get("status") == "pending_mobile_upload" and item.get("video_id")
         ]
         explicit_video_id = "" if reference_video_id else _explicit_video_id(message)
+        if explicit_video_id:
+            resolved_video_id = _unique_pending_video_id(explicit_video_id, queue)
+            if resolved_video_id:
+                explicit_video_id = resolved_video_id
         if explicit_video_id and explicit_video_id not in pending_ids:
             state["files"][unique_id] = {
                 "status": "rejected_invalid_video_id",
