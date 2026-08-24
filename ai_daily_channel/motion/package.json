@@ -1,0 +1,20 @@
+{
+  "name": "ai-daily-motion-pack",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "render": "remotion render src/index.ts TechPack out/tech-pack.mp4"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.491",
+    "@remotion/media": "4.0.491",
+    "remotion": "4.0.491",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.10",
+    "typescript": "5.9.2"
+  }
+}

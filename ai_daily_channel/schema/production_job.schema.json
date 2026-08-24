@@ -1,0 +1,236 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Daily Channel Production Job",
+  "type": "object",
+  "required": [
+    "job_id",
+    "language",
+    "status",
+    "tool",
+    "script",
+    "prompts",
+    "production",
+    "publishing"
+  ],
+  "properties": {
+    "job_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]{8,80}$"
+    },
+    "language": {
+      "enum": [
+        "ta",
+        "hi",
+        "en"
+      ]
+    },
+    "status": {
+      "enum": [
+        "discovered",
+        "verified",
+        "pack_ready",
+        "pack_delivered",
+        "final_uploaded",
+        "validated",
+        "correction_required",
+        "approved",
+        "publishing",
+        "published"
+      ]
+    },
+    "tool": {
+      "type": "object",
+      "required": [
+        "name",
+        "official_url",
+        "free_claim",
+        "verified_at",
+        "evidence"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "official_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "free_claim": {
+          "enum": [
+            "open_source",
+            "free_tier",
+            "free_without_signup",
+            "trial",
+            "unknown"
+          ]
+        },
+        "verified_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "evidence": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "url",
+              "claim"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "claim": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "card_required": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "watermark": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "commercial_use": {
+          "enum": [
+            "allowed",
+            "restricted",
+            "unknown"
+          ]
+        }
+      }
+    },
+    "script": {
+      "type": "object",
+      "required": [
+        "exact_text",
+        "segments"
+      ],
+      "properties": {
+        "exact_text": {
+          "type": "string",
+          "minLength": 40
+        },
+        "pronunciation": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "segments": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "start_hint",
+              "end_hint",
+              "text",
+              "delivery"
+            ],
+            "properties": {
+              "start_hint": {
+                "type": "number"
+              },
+              "end_hint": {
+                "type": "number"
+              },
+              "text": {
+                "type": "string"
+              },
+              "delivery": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "prompts": {
+      "type": "object",
+      "required": [
+        "cinematic_hook",
+        "ai_broll"
+      ],
+      "properties": {
+        "cinematic_hook": {
+          "type": "string"
+        },
+        "ai_broll": {
+          "type": "string"
+        }
+      }
+    },
+    "production": {
+      "type": "object",
+      "required": [
+        "screen_demo",
+        "motion_graphics",
+        "edit_reference"
+      ],
+      "properties": {
+        "screen_demo": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "motion_graphics": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "edit_reference": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "publishing": {
+      "type": "object",
+      "required": [
+        "destinations",
+        "title",
+        "caption",
+        "hashtags"
+      ],
+      "properties": {
+        "destinations": {
+          "type": "object"
+        },
+        "title": {
+          "type": "string"
+        },
+        "caption": {
+          "type": "string"
+        },
+        "hashtags": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

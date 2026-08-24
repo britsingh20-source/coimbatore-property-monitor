@@ -1,0 +1,31 @@
+name: AI Channel Validate
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "ai_daily_channel/**"
+      - ".github/workflows/ai-channel-validate.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Python tests
+        run: python -m unittest discover -s ai_daily_channel/tests -v
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install motion dependencies
+        working-directory: ai_daily_channel/motion
+        run: npm install
+      - name: Typecheck motion template
+        working-directory: ai_daily_channel/motion
+        run: npm run typecheck
