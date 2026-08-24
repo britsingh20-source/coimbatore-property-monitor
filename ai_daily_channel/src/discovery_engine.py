@@ -2,8 +2,9 @@ from __future__ import annotations
 import hashlib, json, os, re
 from datetime import datetime, timedelta, timezone
 from urllib import parse, request
+from xml.etree import ElementTree
 
-UA = "Aibros-Discovery/0.1"
+UA = "Aibros-Discovery/0.2"
 
 def get_json(url, headers=None):
     req=request.Request(url,headers={"User-Agent":UA,**(headers or {})})
@@ -40,9 +41,23 @@ def huggingface():
             out.append({"source":name.split("/")[0],"source_type":kind,"title":name,"url":"https://huggingface.co/"+("spaces/" if kind.endswith("space") else "")+name,"summary":"Trending "+kind.replace("_"," "),"published_at":x.get("lastModified",""),"primary_source":True,"popularity":min(x.get("likes",0)/1000,1),"free_signal":.9 if kind.endswith("space") else .8,"freshness":.7})
     return out
 
+def arxiv():
+    query="cat:cs.AI OR cat:cs.CL OR cat:cs.CV"
+    url="https://export.arxiv.org/api/query?"+parse.urlencode({"search_query":query,"start":0,"max_results":30,"sortBy":"submittedDate","sortOrder":"descending"})
+    req=request.Request(url,headers={"User-Agent":UA})
+    with request.urlopen(req,timeout=45) as r: root=ElementTree.fromstring(r.read())
+    ns={"a":"http://www.w3.org/2005/Atom"}
+    out=[]
+    for e in root.findall("a:entry",ns):
+        title=" ".join((e.findtext("a:title",default="",namespaces=ns)).split())
+        summary=" ".join((e.findtext("a:summary",default="",namespaces=ns)).split())
+        link=e.findtext("a:id",default="",namespaces=ns)
+        out.append({"source":"arXiv","source_type":"research_paper","title":title,"url":link,"summary":summary[:700],"published_at":e.findtext("a:published",default="",namespaces=ns),"primary_source":True,"popularity":.2,"free_signal":1.0,"freshness":.85})
+    return out
+
 def discover(output):
     all_items=[]; errors=[]
-    for name,fn in (("github",github),("huggingface",huggingface)):
+    for name,fn in (("github",github),("huggingface",huggingface),("arxiv",arxiv)):
         try: all_items.extend(fn())
         except Exception as e: errors.append(f"{name}: {type(e).__name__}: {e}")
     best={}
