@@ -200,22 +200,91 @@
       "video_id": "YeuCzhxC-j0"
     },
     "social-ready/telegram-AgADFh4AArd1YFQ.mp4": {
-      "candidate_video_ids": [
-        "KiJEPqoUCTw",
-        "6RCA3cUaZ2Y",
-        "6jJtYT4MA_E",
-        "icWK1jhUiU0",
-        "7bj_axUSMmM",
-        "OEul0dWNXSU",
-        "94Y_3Jp2hQw",
-        "twP0glR4EyU",
-        "xTvjrweqpy4",
-        "3HCxfx5DoJs"
-      ],
+      "content": {
+        "caption": "🏠 Land / Plot in Tex Park Road, Kalapatti Road, near Coimbatore International Airport, Coimbatore — would you visit this property?\n\n📍 Location: Tex Park Road, Kalapatti Road, near Coimbatore International Airport, Coimbatore\n🏡 Property: Land / Plot\n📐 Land: 5 Cents (Frontage: 40 ft, Length: 54 ft)\n🧭 Facing: North\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #TexParkRoadKalapattiRoadnearCoimbatoreInternationalAirportCoimbatoreProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#CoimbatoreProperty",
+          "#TexParkRoadKalapattiRoadnearCoimbatoreInternationalAirportCoimbatoreProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "Land / Plot in Tex Park Road, Kalapatti Road, near Coimbatore International Airport, Coimbatore | Si",
+        "youtube_description": "Land / Plot in Tex Park Road, Kalapatti Road, near Coimbatore International Airport, Coimbatore. Watch the complete 10-second walkthrough.\n\n📍 Location: Tex Park Road, Kalapatti Road, near Coimbatore International Airport, Coimbatore\n🏡 Property: Land / Plot\n📐 Land: 5 Cents (Frontage: 40 ft, Length: 54 ft)\n🧭 Facing: North\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#CoimbatoreProperty #TexParkRoadKalapattiRoadnearCoimbatoreInternationalAirportCoimbatoreProperty #CoimbatoreRealEstate"
+      },
       "etag": "cca8e3d7746520060be82cd45b167915-3",
-      "match_error": "Error code: 429 - {'error': {'message': 'Resource has been exhausted (e.g. check quota).', 'code': 'too_many_requests'}}",
-      "platforms": {},
-      "status": "match_error"
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "creation_id": "17894377875599708",
+            "media_id": "18085383698343648",
+            "processing": {
+              "id": "17894377875599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "thumb_offset_ms": 2000
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "error": "Instagram container failed: {\"status_code\": \"ERROR\", \"status\": \"Error: Media upload has failed with error code 2207085\", \"id\": \"17894378040599708\"}",
+          "status": "failed"
+        },
+        "youtube_short": {
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "Land / Plot in Tex Park Road, Kalapatti Road, near Coimbatore International Airport, Coimbatore. Watch the complete 10-second walkthrough.\n\n📍 Location: Tex Park Road, Kalapatti Road, near Coimbatore International Airport, Coimbatore\n🏡 Property: Land / Plot\n📐 Land: 5 Cents (Frontage: 40 ft, Length: 54 ft)\n🧭 Facing: North\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#CoimbatoreProperty #TexParkRoadKalapattiRoadnearCoimbatoreInternationalAirportCoimbatoreProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "Land / Plot in Tex Park Road, Kalapatti Road, near Coimbatore International Airport, Coimbatore. Watch the complete 10-second walkthrough.\n\n📍 Location: Tex Park Road, Kalapatti Road, near Coimbatore International Airport, Coimbatore\n🏡 Property: Land / Plot\n📐 Land: 5 Cents (Frontage: 40 ft, Length: 54 ft)\n🧭 Facing: North\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#CoimbatoreProperty #TexParkRoadKalapattiRoadnearCoimbatoreInternationalAirportCoimbatoreProperty #CoimbatoreRealEstate",
+                "title": "Land / Plot in Tex Park Road, Kalapatti Road, near Coimbatore International Airport, Coimbatore | Si"
+              },
+              "publishedAt": "2026-08-24T08:07:54Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/VWCBa2qIO8o/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/VWCBa2qIO8o/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/VWCBa2qIO8o/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "Land / Plot in Tex Park Road, Kalapatti Road, near Coimbatore International Airport, Coimbatore | Si"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "VWCBa2qIO8o"
+          },
+          "status": "published"
+        }
+      },
+      "status": "matched",
+      "video_id": "6jJtYT4MA_E"
     },
     "social-ready/telegram-AgADdyEAAiU0WFQ.mp4": {
       "content": {
