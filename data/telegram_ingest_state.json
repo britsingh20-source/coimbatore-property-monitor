@@ -34,24 +34,14 @@
       "uploaded_at": "2026-08-23T04:52:04.830947+00:00"
     },
     "AgADkCIAArd1WFQ": {
-      "candidate_video_ids": [
-        "KiJEPqoUCTw",
-        "6RCA3cUaZ2Y",
-        "uAJus2hXLTo",
-        "6jJtYT4MA_E",
-        "icWK1jhUiU0",
-        "7bj_axUSMmM",
-        "OEul0dWNXSU",
-        "94Y_3Jp2hQw",
-        "twP0glR4EyU",
-        "xTvjrweqpy4",
-        "3HCxfx5DoJs"
-      ],
       "r2_key": "social-ready/telegram-AgADkCIAArd1WFQ.mp4",
       "size": 20519981,
-      "status": "uploaded_awaiting_content_match",
+      "status": "uploaded_exact_video_id",
       "update_id": 789574035,
-      "uploaded_at": "2026-08-24T05:53:14.396923+00:00"
+      "uploaded_at": "2026-08-24T05:53:14.396923+00:00",
+      "video_id": "uAJus2hXLTo",
+      "paired_at": "2026-08-24T06:08:27.176Z",
+      "paired_by": "manual_recovery_after_standalone_message"
     },
     "AgADwR8AAl8jUVQ": {
       "corrected_from_video_id": "KiJEPqoUCTw",
