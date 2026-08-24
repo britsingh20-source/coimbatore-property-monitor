@@ -199,6 +199,24 @@
       "status": "matched",
       "video_id": "YeuCzhxC-j0"
     },
+    "social-ready/telegram-AgADFh4AArd1YFQ.mp4": {
+      "candidate_video_ids": [
+        "KiJEPqoUCTw",
+        "6RCA3cUaZ2Y",
+        "6jJtYT4MA_E",
+        "icWK1jhUiU0",
+        "7bj_axUSMmM",
+        "OEul0dWNXSU",
+        "94Y_3Jp2hQw",
+        "twP0glR4EyU",
+        "xTvjrweqpy4",
+        "3HCxfx5DoJs"
+      ],
+      "etag": "cca8e3d7746520060be82cd45b167915-3",
+      "match_error": "Error code: 429 - {'error': {'message': 'Resource has been exhausted (e.g. check quota).', 'code': 'too_many_requests'}}",
+      "platforms": {},
+      "status": "match_error"
+    },
     "social-ready/telegram-AgADdyEAAiU0WFQ.mp4": {
       "content": {
         "caption": "🏠 54.50 Lakhs (negotiable) 2 BHK Independent House in Pogalur, Mtp to Annur Road, Coimbatore — would you visit this property?\n\n📍 Location: Pogalur, Mtp to Annur Road, Coimbatore\n🏡 Property: 2 BHK Independent House\n💰 Price: 54.50 Lakhs (negotiable)\n📐 Land: 3 Cent\n🏗️ Built-up: 1250 sqft\n🧭 Facing: East Facing (House), North Facing (Site)\n🚗 Parking: Covered Car Parking (20' x 12')\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #PogalurMtptoAnnurRoadCoimbatoreProperty #CoimbatoreRealEstate",
