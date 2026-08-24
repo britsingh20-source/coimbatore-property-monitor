@@ -1,0 +1,133 @@
+{
+  "video_id": "czrxkmFHWn4",
+  "source_url": "https://www.youtube.com/watch?v=czrxkmFHWn4",
+  "property_location": "Sulur, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "36 Acres",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹5,80,000 per cent",
+    "facing": "NOT SPECIFIED",
+    "road_width": "45 ft, 33 ft, 30 ft",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP & RERA"
+  },
+  "verified_facts": "Project name: Olivia by R Builders & Developers., Total project area: 36 Acres across Phase 1 and Phase 2., Pre-launch offer price: ₹5,80,000 per cent (saving ₹50,000 per cent compared to standard price of ₹6,30,000 per cent if booked before September 13th)., 5 ready-to-move houses are available in the layout priced between ₹48 Lakhs and ₹68 Lakhs.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Saravanampatti சைட்ல Residential Plot தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹5,80,000 per cent.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 36 Acres லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "road",
+        "voice": "இதுல முக்கியமான விஷயம், முன்னாடி 45 ft, 33 ft, 30 ft ரோடு வசதி இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [],
+        "vfx": "road-measure",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP & RERA இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "Script invented numeric facts in price: ['50', '80']"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/czrxkmFHWn4/",
+  "optional_owned_audio": "assets/audio/czrxkmFHWn4.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A spacious 36-acre layout featuring blacktop internal roads, streetlights, side drainage, overhead water tower, landscaped children's park with play equipment, and a grand gated entrance arch.. Neighbourhood: Located directly off the main road in Sulur, Coimbatore, surrounded by rapidly developing residential layouts and open greenery.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A spacious 36-acre layout featuring blacktop internal roads, streetlights, side drainage, overhead water tower, landscaped children's park with play equipment, and a grand gated entrance arch.. Neighbourhood: Located directly off the main road in Sulur, Coimbatore, surrounded by rapidly developing residential layouts and open greenery.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A spacious 36-acre layout featuring blacktop internal roads, streetlights, side drainage, overhead water tower, landscaped children's park with play equipment, and a grand gated entrance arch.. Neighbourhood: Located directly off the main road in Sulur, Coimbatore, surrounded by rapidly developing residential layouts and open greenery.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A spacious 36-acre layout featuring blacktop internal roads, streetlights, side drainage, overhead water tower, landscaped children's park with play equipment, and a grand gated entrance arch.. Neighbourhood: Located directly off the main road in Sulur, Coimbatore, surrounded by rapidly developing residential layouts and open greenery.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
