@@ -25,6 +25,8 @@ on:
       - ".github/workflows/r2-social-autopilot.yml"
       - "r2_social_autopilot.py"
       - "telegram_r2_ingest.py"
+      - "reference_frames.py"
+      - "requirements.txt"
       - "social_content.py"
       - "send_telegram_prompts.py"
       - "video_property_matcher.py"
