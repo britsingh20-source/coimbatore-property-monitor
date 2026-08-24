@@ -24,16 +24,13 @@ def build_veo_prompt(job: dict) -> str:
     approval = _value(prop.get("approval"))
     price = _value(prop.get("price"))
     facts = _value(job.get("verified_facts"), "Use only facts confirmed in the source video")
-    source_url = _value(job.get("source_url"), "Source video supplied separately")
+    return f"""Use the five property reference images attached with this prompt as the only visual references for this property.
 
-    return f"""@YouTube First open and analyse this exact public YouTube property-tour video as the architectural reference: {source_url}
+Before generating, analyse all five attached images together. Confirm internally that five images are available and that they depict the same property. Study only the visible exterior elevation, floor count, colours, materials, gate, parking, entrance, hall, false ceiling, kitchen, bedrooms, bathrooms, staircase, terrace, doors, windows, flooring, neighbourhood and verified room connections. If fewer than five usable reference images are attached, stop and ask for the complete reference set instead of creating a generic property.
 
-You must successfully use the YouTube reference before generating. Confirm internally that the referenced video has loaded, then study the actual property footage frame-by-frame—not merely its title, thumbnail, description or transcript. Identify only the visible exterior elevation, floor count, colours, materials, gate, parking, entrance, hall, false ceiling, kitchen, bedrooms, bathrooms, staircase, terrace, doors, windows, flooring, neighbourhood and verified room connections. If the YouTube video cannot be accessed or analysed, stop and state that clearly instead of generating a generic property.
-
-Use the source only to understand the property architecture. Generate completely new footage; do not reproduce source frames, presenters, people, faces, speech, music, logos, watermarks, captions or channel branding. Never infer a feature or room connection that is not clearly visible.
+The images are architectural references only. Generate completely new footage; do not reproduce a reference frame directly. Exclude all presenters, people, faces, speech, source captions, channel names, logos, watermarks and third-party phone numbers visible in the images. Never infer a feature or room connection that is not clearly confirmed by the attached images and verified facts. Maintain the same property identity across every generated shot.
 
 VERIFIED PROPERTY INFORMATION
-Source reference: {source_url}
 Location: {location}
 Property type: {property_type}
 Bedrooms: {bhk}
