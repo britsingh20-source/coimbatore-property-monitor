@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "tool_states": [
+    "candidate",
+    "verified_free",
+    "changed",
+    "review_required",
+    "unavailable",
+    "archived"
+  ],
+  "reverification_days": {
+    "open_source": 14,
+    "completely_free": 7,
+    "free_tier": 7,
+    "credits": 1,
+    "trial": 1,
+    "unavailable": 30
+  },
+  "tools": []
+}
