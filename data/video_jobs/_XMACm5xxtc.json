@@ -1,0 +1,134 @@
+{
+  "video_id": "_XMACm5xxtc",
+  "source_url": "https://www.youtube.com/watch?v=_XMACm5xxtc",
+  "property_location": "L&T Bypass, Near Karpagam College, Coimbatore",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "3.5 Cents",
+    "built_up_area": "1800 sqft",
+    "price": "NOT SPECIFIED",
+    "facing": "East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "1 Car Covered Parking",
+    "approval": "DTCP"
+  },
+  "verified_facts": "3BHK Independent Villa/House located in a private gated community project of about 20 houses., Built on an East-facing 3.5-cent land plot with 1800 sqft total built-up area., Features East-facing teak wood main door, false ceiling in living room, fully modular kitchen with separate store room and utility passage., 3 master bedrooms with customized interior wood/loft works, individual texture paint accent walls, and attached bathrooms., Includes an extra outdoor/common toilet, front covered car parking (12' x 21'), open balcony, private balcony, and a covered terrace gazebo.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local property tour spoken naturally to camera in Coimbatore style",
+    "hook_strategy": "Lead with prime Coimbatore location connectivity (L&T Bypass, Karpagam College, L&T IT Park) paired with a 3 BHK independent house in a gated community.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore L&T Bypass-ல, Karpagam College அப்புறம் L&T IT Park பக்கத்துல அமைஞ்சிருக்க ஒரு 3 BHK Independent House பாக்கலாம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "பாத்தீங்கனா, 3.5 Cents land-ல 20 வீடுகள் கொண்ட ஒரு private gated community-ல இந்த வீடு அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "kitchen"
+        ],
+        "vfx": "plot-boundary-highlight",
+        "purpose": "land_details"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், DTCP approval-ஓட East facing teak wood main door குடுத்துருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "road"
+        ],
+        "vfx": "east-facing-compass",
+        "purpose": "facing_and_approval"
+      },
+      {
+        "name": "builtUp",
+        "voice": "மொத்தம் 1800 sqft built-up area. False ceiling பண்ணின Living room, modular kitchen அப்புறம் தனியா store room-னு செமையா பண்ணிருக்காங்க.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "exterior"
+        ],
+        "vfx": "builtup-sqft-text",
+        "purpose": "interior_highlights"
+      },
+      {
+        "name": "verify",
+        "voice": "அதே மாதிரி, attached bathroom-ஓட 3 master bedrooms, private balcony, terrace-ல gazebo அப்புறம் 1 car covered parking வசதியும் இருக்கு.",
+        "broll": [
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "feature-checklist-pop",
+        "purpose": "bedroom_and_amenities"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த property-க்கு நேரடியா site visit வரவும், further details தெரிஞ்சுக்கவும் உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "call-now-button",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/_XMACm5xxtc/",
+  "optional_owned_audio": "assets/audio/_XMACm5xxtc.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in L&T Bypass, Near Karpagam College, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-textured dual-tone exterior with vertical groove lines, brown/wood-style steel main entrance gate, covered car porch with hexagonal tiled flooring, perimeter setback passage with gas cylinder safety cage and CCTV cameras, first-floor open balcony with decorative steel railings, and rooftop metal-frame gazebo shelter.. Neighbourhood: Organized gated community layout featuring a row of uniform modern duplex villas served by wide internal asphalt tar roads, street lighting, perimeter security compound wall with main entrance gate, surrounded by green open spaces near the L&T Bypass highway corridor in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in L&T Bypass, Near Karpagam College, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-textured dual-tone exterior with vertical groove lines, brown/wood-style steel main entrance gate, covered car porch with hexagonal tiled flooring, perimeter setback passage with gas cylinder safety cage and CCTV cameras, first-floor open balcony with decorative steel railings, and rooftop metal-frame gazebo shelter.. Neighbourhood: Organized gated community layout featuring a row of uniform modern duplex villas served by wide internal asphalt tar roads, street lighting, perimeter security compound wall with main entrance gate, surrounded by green open spaces near the L&T Bypass highway corridor in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in L&T Bypass, Near Karpagam College, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-textured dual-tone exterior with vertical groove lines, brown/wood-style steel main entrance gate, covered car porch with hexagonal tiled flooring, perimeter setback passage with gas cylinder safety cage and CCTV cameras, first-floor open balcony with decorative steel railings, and rooftop metal-frame gazebo shelter.. Neighbourhood: Organized gated community layout featuring a row of uniform modern duplex villas served by wide internal asphalt tar roads, street lighting, perimeter security compound wall with main entrance gate, surrounded by green open spaces near the L&T Bypass highway corridor in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in L&T Bypass, Near Karpagam College, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-textured dual-tone exterior with vertical groove lines, brown/wood-style steel main entrance gate, covered car porch with hexagonal tiled flooring, perimeter setback passage with gas cylinder safety cage and CCTV cameras, first-floor open balcony with decorative steel railings, and rooftop metal-frame gazebo shelter.. Neighbourhood: Organized gated community layout featuring a row of uniform modern duplex villas served by wide internal asphalt tar roads, street lighting, perimeter security compound wall with main entrance gate, surrounded by green open spaces near the L&T Bypass highway corridor in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
