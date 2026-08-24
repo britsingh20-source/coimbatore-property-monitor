@@ -429,7 +429,17 @@ def main() -> None:
         item for item in response.get("Contents", [])
         if str(item.get("Key", "")).lower().endswith(".mp4")
     ]
-    objects.sort(key=lambda item: item.get("LastModified"))
+    assigned_keys = {
+        str(item.get("r2_key") or "")
+        for item in queue.get("prompts", [])
+        if item.get("status") == "assigned_to_r2_upload" and item.get("r2_key")
+    }
+    objects.sort(
+        key=lambda item: (
+            0 if str(item.get("Key") or "") in assigned_keys else 1,
+            item.get("LastModified"),
+        )
+    )
     processed = 0
     processed_keys: list[str] = []
     for item in objects:
