@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 import subprocess
+from urllib.parse import parse_qs, urlparse
 
 import cv2
 import requests
@@ -14,6 +15,112 @@ def _telegram_error(response: requests.Response) -> str:
     except ValueError:
         return response.text.strip()[:500] or "No response body"
     return str(body.get("description") or body)[:500]
+
+
+def _youtube_video_id(source_url: str) -> str:
+    parsed = urlparse(source_url)
+    if parsed.netloc.endswith("youtu.be"):
+        return parsed.path.strip("/").split("/")[0]
+    return parse_qs(parsed.query).get("v", [""])[0]
+
+
+def _storyboard_reference_frames(
+    source_url: str,
+    output_dir: Path,
+    target_count: int,
+) -> list[Path]:
+    """Use YouTube's public time-sampled storyboard sheets when video delivery is blocked."""
+    video_id = _youtube_video_id(source_url)
+    if not video_id:
+        raise RuntimeError("Could not parse the YouTube video ID for storyboard fallback")
+
+    cells: list[object] = []
+    for level in ("L2", "L1", "L0"):
+        level_cells: list[object] = []
+        misses = 0
+        for sheet_number in range(20):
+            url = (
+                f"https://i.ytimg.com/sb/{video_id}/"
+                f"storyboard3_{level}/M{sheet_number}.jpg"
+            )
+            try:
+                response = requests.get(url, timeout=30)
+            except requests.RequestException:
+                misses += 1
+                if misses >= 2:
+                    break
+                continue
+            if response.status_code != 200 or not response.content:
+                misses += 1
+                if misses >= 2:
+                    break
+                continue
+
+            sheet = cv2.imdecode(
+                cv2.UMat(
+                    cv2.imdecode(
+                        __import__("numpy").frombuffer(response.content, dtype="uint8"),
+                        cv2.IMREAD_COLOR,
+                    )
+                ).get()
+                if False
+                else __import__("numpy").frombuffer(response.content, dtype="uint8"),
+                cv2.IMREAD_COLOR,
+            )
+            if sheet is None:
+                continue
+            height, width = sheet.shape[:2]
+            grid_options = (5, 10)
+            grid = min(
+                grid_options,
+                key=lambda value: abs((width / value) / max(height / value, 1) - 16 / 9),
+            )
+            cell_width = width // grid
+            cell_height = height // grid
+            for row in range(grid):
+                for column in range(grid):
+                    crop = sheet[
+                        row * cell_height : (row + 1) * cell_height,
+                        column * cell_width : (column + 1) * cell_width,
+                    ]
+                    if crop.size and float(crop.mean()) > 4.0:
+                        level_cells.append(crop.copy())
+            misses = 0
+        if len(level_cells) >= target_count:
+            cells = level_cells
+            break
+
+    if len(cells) < target_count:
+        raise RuntimeError("YouTube storyboard images were unavailable")
+
+    face_detector = cv2.CascadeClassifier(
+        cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
+    )
+    selected: list[Path] = []
+    for group in range(target_count):
+        start = int(len(cells) * group / target_count)
+        end = max(start + 1, int(len(cells) * (group + 1) / target_count))
+        candidates = []
+        for frame in cells[start:end]:
+            gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+            faces = face_detector.detectMultiScale(
+                gray,
+                scaleFactor=1.15,
+                minNeighbors=5,
+                minSize=(24, 24),
+            )
+            sharpness = float(cv2.Laplacian(gray, cv2.CV_64F).var())
+            candidates.append((len(faces), -sharpness, frame))
+        candidates.sort(key=lambda item: (item[0], item[1]))
+        chosen = candidates[0][2]
+        enlarged = cv2.resize(chosen, (720, 405), interpolation=cv2.INTER_CUBIC)
+        path = output_dir / f"reference-{group + 1}.jpg"
+        if cv2.imwrite(str(path), enlarged, [int(cv2.IMWRITE_JPEG_QUALITY), 92]):
+            selected.append(path)
+
+    if len(selected) != target_count:
+        raise RuntimeError(f"Storyboard fallback produced only {len(selected)} frames")
+    return selected
 
 
 def extract_reference_frames(job: dict, output_dir: Path, target_count: int = 5) -> list[Path]:
@@ -72,7 +179,14 @@ def extract_reference_frames(job: dict, output_dir: Path, target_count: int = 5)
                 f"{(detail[-1] if detail else 'unknown yt-dlp error')[:300]}"
             )
     else:
-        raise RuntimeError("YouTube reference download failed after client fallbacks: " + " | ".join(errors)[-900:])
+        try:
+            return _storyboard_reference_frames(source_url, output_dir, target_count)
+        except Exception as storyboard_exc:
+            errors.append(f"storyboard: {storyboard_exc}")
+            raise RuntimeError(
+                "YouTube video and storyboard extraction both failed: "
+                + " | ".join(errors)[-900:]
+            ) from storyboard_exc
 
     sources = sorted(output_dir.glob("source.*"))
     if not sources:
