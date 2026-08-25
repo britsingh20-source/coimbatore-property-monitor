@@ -555,6 +555,14 @@
       "next_retry_at": "2026-08-08T17:49:41.941405+00:00",
       "status": "archived_non_target"
     },
+    "EgHl0GI4jnY": {
+      "attempts": 0,
+      "completed_at": "2026-08-25T01:55:46.048894+00:00",
+      "first_seen_at": "2026-08-25T01:55:13.742708+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-08-25T01:55:13.742708+00:00",
+      "status": "video_queued"
+    },
     "FEin2rHW1WU": {
       "attempts": 0,
       "completed_at": "2026-08-12T02:49:04.795394+00:00",

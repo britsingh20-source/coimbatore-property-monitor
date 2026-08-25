@@ -1,0 +1,125 @@
+{
+  "video_id": "EgHl0GI4jnY",
+  "source_url": "https://www.youtube.com/watch?v=EgHl0GI4jnY",
+  "property_location": "Athipalayam, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "5.5 Cents & 4.5 Cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "NOT SPECIFIED",
+    "facing": "North / North-West",
+    "road_width": "30 Feet & 40 Feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "Located opposite Roots Company in Athipalayam, Coimbatore., Offering two joint resale sites: 5.5 Cents (North Facing) and 4.5 Cents (North West Corner)., Located within the Mayons Vriksham Grand Nagar layout., Road infrastructure includes 30-feet and 40-feet wide paved roads., Gated community includes 15+ existing houses, overhead water tower, grand entrance arch, security, park, children's play area, and 8-walking track., Schools like Einstein Public School and Narayana E-Techno School are at walkable distance; Ranganathar Colleges are within 1 km.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera with natural Tamil real estate terms",
+    "hook_strategy": "Highlighting prime Athipalayam location opposite Roots Company in a ready gated layout",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை ஆத்திபாளையம், Roots Company-க்கு அப்படியே ஆப்போசிட்ல இருக்குற Mayons Vriksham Grand Nagar-ல ஒரு பிரைம் Location பாக்கப்போறோம்!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல 5.5 Cents மற்றும் 4.5 Cents-னு ரெண்டு Resale Plot Land இருக்குங்க. 15-க்கும் மேற்பட்ட வீடுகள், Park, Children's play area, 8-shaped walking track-னு வசதியான Gated Community-ல இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "text-overlay-area",
+        "purpose": "property-details"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், 5.5 Cents site வந்து North Facing, அதே மாதிரி 4.5 Cents site வந்து North-West Corner Facing-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing-details"
+      },
+      {
+        "name": "road",
+        "voice": "Road வசதின்னு பாத்தீங்கனா, 30 Feet மற்றும் 40 Feet Wide Roads இருக்கு. பக்கத்துலேயே Schools-ம், 1 km-ல Ranganathar Colleges-ம் இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "living_room",
+          "interior"
+        ],
+        "vfx": "text-overlay-road",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த Site-ல Details தெரிஞ்சுக்கவோ, நேர்ல Site Visit வரவோ உடனே Call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call-to-action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/EgHl0GI4jnY/",
+  "optional_owned_audio": "assets/audio/EgHl0GI4jnY.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Athipalayam, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Paved interior layout roads with white line markings, concrete curbs, modern LED street lamps, standard water reservoir tower labeled 'Mayons Vriksham Grande', grand arch entrance, manicured lawn with children's play setup, and an 8-shaped walking track.. Neighbourhood: A rapidly developing gated layout surrounded by coconut groves and open land, featuring several existing modern residential houses, nearby industrial facilities like Roots Company, and easy access to schools and colleges.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Athipalayam, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Paved interior layout roads with white line markings, concrete curbs, modern LED street lamps, standard water reservoir tower labeled 'Mayons Vriksham Grande', grand arch entrance, manicured lawn with children's play setup, and an 8-shaped walking track.. Neighbourhood: A rapidly developing gated layout surrounded by coconut groves and open land, featuring several existing modern residential houses, nearby industrial facilities like Roots Company, and easy access to schools and colleges.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Athipalayam, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Paved interior layout roads with white line markings, concrete curbs, modern LED street lamps, standard water reservoir tower labeled 'Mayons Vriksham Grande', grand arch entrance, manicured lawn with children's play setup, and an 8-shaped walking track.. Neighbourhood: A rapidly developing gated layout surrounded by coconut groves and open land, featuring several existing modern residential houses, nearby industrial facilities like Roots Company, and easy access to schools and colleges.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Athipalayam, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Paved interior layout roads with white line markings, concrete curbs, modern LED street lamps, standard water reservoir tower labeled 'Mayons Vriksham Grande', grand arch entrance, manicured lawn with children's play setup, and an 8-shaped walking track.. Neighbourhood: A rapidly developing gated layout surrounded by coconut groves and open land, featuring several existing modern residential houses, nearby industrial facilities like Roots Company, and easy access to schools and colleges.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
