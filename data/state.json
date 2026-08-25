@@ -530,9 +530,11 @@
     },
     "DZ_0GnMaT9k": {
       "attempts": 0,
+      "completed_at": "2026-08-25T15:09:19.646298+00:00",
       "first_seen_at": "2026-08-25T14:08:56.058674+00:00",
+      "last_error": "",
       "next_retry_at": "2026-08-25T14:08:56.058674+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "Dps8gEbQGqU": {
       "attempts": 0,
