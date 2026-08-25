@@ -1,0 +1,133 @@
+{
+  "video_id": "S_NnYorPyM0",
+  "source_url": "https://www.youtube.com/watch?v=S_NnYorPyM0",
+  "property_location": "Vadavalli, Coimbatore",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2 BHK",
+    "land_area": "3.5 Cents",
+    "built_up_area": "850 sq.ft",
+    "price": "Rs. 62 Lakhs",
+    "facing": "West",
+    "road_width": "NOT SPECIFIED",
+    "parking": "1 Covered Car Parking",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Land area is 3.5 cents with 850 sq.ft built-up area, 2 BHK independent house priced at Rs. 62 Lakhs, 75% bank loan facility available, Includes a large garden space occupying almost half the site area, West-facing site and main door, Equipped with modular kitchen, Faber chimney, RO water purifier, 3-phase electricity connection, and water sump",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter, conversational spoken Tamil with natural English real-estate terms, high visual relevance.",
+    "hook_strategy": "Highlighting a 2 BHK independent house in Vadavalli with a spacious garden at Rs. 62 Lakhs.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை வடவள்ளில 3.5 சென்ட் நிலத்துல ஒரு அருமையான 2 BHK Independent House விற்பனைக்கு வந்துருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல முக்கியமான விஷயம், 3.5 சென்ட் லேண்ட் ஏரியால கிட்டத்தட்ட பாதியளவு பெரிய Garden space அமைச்சு குடுத்துருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "living_room"
+        ],
+        "vfx": "highlight-garden",
+        "purpose": "land-and-garden"
+      },
+      {
+        "name": "builtUp",
+        "voice": "850 sq.ft built-up area-ல TV unit, wardrobes, modular kitchen, Faber chimney, RO water purifier-னு எல்லாமே ready-யா இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "interior-features-overlay",
+        "purpose": "interior-details"
+      },
+      {
+        "name": "facing",
+        "voice": "அதே மாதிரி, இது West facing site மற்றும் main door கொண்ட DTCP approved property.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "west-facing-badge",
+        "purpose": "facing-and-approval"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட விலை 62 Lakhs. இதுக்கு 75% bank loan facility-யும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag-overlay",
+        "purpose": "pricing-and-loan"
+      },
+      {
+        "name": "cta",
+        "voice": "பாரதியார் யுனிவர்சிட்டி மற்றும் மருதமலை ரோடு பக்கத்துல இருக்குற இந்த வீட்டை பாக்க, Details மற்றும் site visit-க்கு உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "call-now-button",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/S_NnYorPyM0/",
+  "optional_owned_audio": "assets/audio/S_NnYorPyM0.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary single-story house with brown wood-grain elevation accents, double-leaf main gate, covered tile-floored car parking, private side passage, spacious lawn/garden area at the rear with concrete borders, and red exterior stairs accessing an open terrace.. Neighbourhood: Residential row-house layout situated in Vadavalli off Maruthamalai Road near Bharathiar University with clear mountain backdrop views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary single-story house with brown wood-grain elevation accents, double-leaf main gate, covered tile-floored car parking, private side passage, spacious lawn/garden area at the rear with concrete borders, and red exterior stairs accessing an open terrace.. Neighbourhood: Residential row-house layout situated in Vadavalli off Maruthamalai Road near Bharathiar University with clear mountain backdrop views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary single-story house with brown wood-grain elevation accents, double-leaf main gate, covered tile-floored car parking, private side passage, spacious lawn/garden area at the rear with concrete borders, and red exterior stairs accessing an open terrace.. Neighbourhood: Residential row-house layout situated in Vadavalli off Maruthamalai Road near Bharathiar University with clear mountain backdrop views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary single-story house with brown wood-grain elevation accents, double-leaf main gate, covered tile-floored car parking, private side passage, spacious lawn/garden area at the rear with concrete borders, and red exterior stairs accessing an open terrace.. Neighbourhood: Residential row-house layout situated in Vadavalli off Maruthamalai Road near Bharathiar University with clear mountain backdrop views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

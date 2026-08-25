@@ -1,0 +1,166 @@
+{
+  "video_id": "n8Tl4Rmg7pU",
+  "source_url": "https://www.youtube.com/watch?v=n8Tl4Rmg7pU",
+  "property_location": "Mettupalayam to Annur Road, opposite Kumaran Kundru Kovil, Sirumugai Road, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "2.75 Cents onwards",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹7 Lakhs per Cent",
+    "facing": "North, East, South, West",
+    "road_width": "33 Feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP & RERA Approved"
+  },
+  "verified_facts": "Project name is Akshathas Paradise, a RERA & DTCP approved layout on Sirumugai Road opposite Kumaran Kundru Kovil., Special plot offer price is ₹7 Lakhs per cent with free registration expenses up to ₹80,000 included., Plots are available starting from 2.75 Cents with North, East, South, and West facing choices., Villa construction packages are available (1BHK at ₹36 Lakhs, 2BHK at ₹42 Lakhs, 3BHK at ₹49 Lakhs)., Free transport for site visit and spot booking registration is offered.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local Tamil property presenter direct-to-camera style",
+    "hook_strategy": "Start directly with the exact prime location and project name to capture target Coimbatore buyers immediately",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோயம்புத்தூர் Mettupalayam to Annur Road-ல, Sirumugai Road Kumaran Kundru Kovil-க்கு எதிர்புறம் அமைஞ்சிருக்கு Akshathas Paradise.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP மற்றும் RERA approval பெற்ற ஒரு gated community layout.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "approval-badge-overlay",
+        "purpose": "trust_building"
+      },
+      {
+        "name": "land",
+        "voice": "இங்க 2.75 Cents-ல இருந்து residential plots கிடைக்குது. Compound wall, 24/7 CCTV surveillance, EB line, drinking water connection, மற்றும் 40,000 Liters overhead water tank வசதிகள் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "amenities-list-overlay",
+        "purpose": "plot_features"
+      },
+      {
+        "name": "facing",
+        "voice": "பாத்தீங்கனா, North, East, South, West-னு நாலு facing-லயும் plots தேர்வு பண்ணலாம்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "compass-facing-overlay",
+        "purpose": "options"
+      },
+      {
+        "name": "road",
+        "voice": "Layout உள்ளே 33 Feet tar road மற்றும் concrete drainage அமைச்சு தர்றாங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "road-width-text",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "builtUp",
+        "voice": "அதே மாதிரி villa construction packages-உம் இருக்கு. 1BHK 36 Lakhs, 2BHK 42 Lakhs, 3BHK 49 Lakhs-ல கிடைக்குது.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "villa-package-overlay",
+        "purpose": "construction_options"
+      },
+      {
+        "name": "price",
+        "voice": "இதுல முக்கியமான விஷயம், plots ஒரு Cent 7 Lakhs மட்டுமே! 80,000 ரூபாய் வரை free registration expenses சலுகையும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "price-highlight-card",
+        "purpose": "value_proposition"
+      },
+      {
+        "name": "cta",
+        "voice": "Site visit வர free transport வசதி இருக்கு. உடனே call பண்ணி details தெரிஞ்சுக்கோங்க!",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "contact-details-bar",
+        "purpose": "action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/n8Tl4Rmg7pU/",
+  "optional_owned_audio": "assets/audio/n8Tl4Rmg7pU.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Mettupalayam to Annur Road, opposite Kumaran Kundru Kovil, Sirumugai Road, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Well-laid layout with a prominent yellow entrance gate, 33-ft asphalt roads, concrete side drainages, overhead water tank, yellow-and-white perimeter wall, and solar street poles.. Neighbourhood: Situated on Sirumugai Road near Mettupalayam-Annur main road, directly opposite Kumaran Kundru Kovil temple with nearby commercial shops and bakeries.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Mettupalayam to Annur Road, opposite Kumaran Kundru Kovil, Sirumugai Road, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Well-laid layout with a prominent yellow entrance gate, 33-ft asphalt roads, concrete side drainages, overhead water tank, yellow-and-white perimeter wall, and solar street poles.. Neighbourhood: Situated on Sirumugai Road near Mettupalayam-Annur main road, directly opposite Kumaran Kundru Kovil temple with nearby commercial shops and bakeries.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Mettupalayam to Annur Road, opposite Kumaran Kundru Kovil, Sirumugai Road, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Well-laid layout with a prominent yellow entrance gate, 33-ft asphalt roads, concrete side drainages, overhead water tank, yellow-and-white perimeter wall, and solar street poles.. Neighbourhood: Situated on Sirumugai Road near Mettupalayam-Annur main road, directly opposite Kumaran Kundru Kovil temple with nearby commercial shops and bakeries.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Mettupalayam to Annur Road, opposite Kumaran Kundru Kovil, Sirumugai Road, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Well-laid layout with a prominent yellow entrance gate, 33-ft asphalt roads, concrete side drainages, overhead water tank, yellow-and-white perimeter wall, and solar street poles.. Neighbourhood: Situated on Sirumugai Road near Mettupalayam-Annur main road, directly opposite Kumaran Kundru Kovil temple with nearby commercial shops and bakeries.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
