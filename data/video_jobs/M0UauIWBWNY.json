@@ -1,0 +1,146 @@
+{
+  "video_id": "M0UauIWBWNY",
+  "source_url": "https://www.youtube.com/watch?v=M0UauIWBWNY",
+  "property_location": "Vaiyampalayam, near IT-Park, Saravanampatti, Coimbatore",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": "2 BHK",
+    "land_area": "2.30 - 2.5 Cents",
+    "built_up_area": "890 - 1900 Sq.ft",
+    "price": "₹56 Lakhs (Negotiable)",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking Porch",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "2BHK Independent Villa located near IT Park, Vaiyampalayam, Coimbatore., North-facing site and main door., Price is 56 Lakhs (negotiable) with up to 75% bank loan facility available., Features include DTCP approval, borewell, 8000-liter water sump, false ceiling lighting, built-in TV unit, and modern kitchen.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local property presentation in spoken Tamil",
+    "hook_strategy": "Highlighting a 2 BHK Independent Villa near Saravanampatti IT Park",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை சரவணம்பட்டி IT Park பக்கத்துல வையம்பாளையத்துல ஒரு சூப்பரான 2 BHK Independent Villa விற்பனைக்கு வந்திருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price பார்த்தீங்கனா வெறும் 56 Lakhs, அதுவும் Negotiable தான். 75% Bank Loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "land"
+        ],
+        "vfx": "price-tag-animation",
+        "purpose": "value_proposition"
+      },
+      {
+        "name": "land",
+        "voice": "Land area 2.30-லிருந்து 2.5 Cents வரை இருக்கு. Covered Car Parking Porch, Borewell, அப்புறம் 8000 Litres Water Sump வசதி கொடுத்திருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "property_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Built-up area 890-லிருந்து 1900 Sq.ft. உள்ள False Ceiling, Cove Lighting, Wood Finish TV Cabinet, Modular Kitchen, Wardrobes எல்லாமே அருமையா பண்ணியிருக்காங்க.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "exterior",
+          "road"
+        ],
+        "vfx": "interior-feature-callouts",
+        "purpose": "interior_features"
+      },
+      {
+        "name": "facing",
+        "voice": "இந்த Villa-வோட Site மற்றும் Main Door ரெண்டுமே North facing பார்த்திருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "compass-north-indicator",
+        "purpose": "specifications"
+      },
+      {
+        "name": "approval",
+        "voice": "முக்கியமான விஷயம், இது முழுசா DTCP Approved property.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "dtcp-approval-badge",
+        "purpose": "trust_building"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து Site Visit பண்ணனும்னாலோ இல்ல Details வேணும்னாலோ உடனே Call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "call-now-button",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/M0UauIWBWNY/",
+  "optional_owned_audio": "assets/audio/M0UauIWBWNY.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary villa with a modern painted elevation in brown, white, and teal tones, metal folding gate, tiled parking area, decorative wooden main entrance door with floral panel, and exterior concrete staircase leading to the terrace.. Neighbourhood: Quiet residential row-house layout in Vaiyampalayam near Saravanampatti IT Park featuring newly built independent houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary villa with a modern painted elevation in brown, white, and teal tones, metal folding gate, tiled parking area, decorative wooden main entrance door with floral panel, and exterior concrete staircase leading to the terrace.. Neighbourhood: Quiet residential row-house layout in Vaiyampalayam near Saravanampatti IT Park featuring newly built independent houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary villa with a modern painted elevation in brown, white, and teal tones, metal folding gate, tiled parking area, decorative wooden main entrance door with floral panel, and exterior concrete staircase leading to the terrace.. Neighbourhood: Quiet residential row-house layout in Vaiyampalayam near Saravanampatti IT Park featuring newly built independent houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary villa with a modern painted elevation in brown, white, and teal tones, metal folding gate, tiled parking area, decorative wooden main entrance door with floral panel, and exterior concrete staircase leading to the terrace.. Neighbourhood: Quiet residential row-house layout in Vaiyampalayam near Saravanampatti IT Park featuring newly built independent houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
