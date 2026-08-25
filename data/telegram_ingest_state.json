@@ -28,15 +28,25 @@
       "status": "rejected_too_large",
       "update_id": 789574033
     },
+    "AgADXB8AArd1YFQ": {
+      "paired_at": "2026-08-25T02:45:12.840878+00:00",
+      "paired_by": "next_telegram_message",
+      "r2_key": "social-ready/telegram-AgADXB8AArd1YFQ.mp4",
+      "size": 19402388,
+      "status": "uploaded_exact_video_id",
+      "update_id": 789574041,
+      "uploaded_at": "2026-08-25T02:45:12.243437+00:00",
+      "video_id": "_XMACm5xxtc"
+    },
     "AgAD_B4AArd1YFQ": {
+      "paired_at": "2026-08-24T15:15:45.206Z",
+      "paired_by": "manual_recovery_ambiguous_O_zero",
       "r2_key": "social-ready/telegram-AgAD_B4AArd1YFQ.mp4",
       "size": 19558254,
       "status": "uploaded_exact_video_id",
       "update_id": 789574039,
       "uploaded_at": "2026-08-24T15:00:04.162335+00:00",
-      "video_id": "icWK1jhUiU0",
-      "paired_at": "2026-08-24T15:15:45.206Z",
-      "paired_by": "manual_recovery_ambiguous_O_zero"
+      "video_id": "icWK1jhUiU0"
     },
     "AgADdyEAAiU0WFQ": {
       "candidate_video_ids": [
@@ -73,5 +83,5 @@
       "video_id": "tTgkkQPNeCo"
     }
   },
-  "last_update_id": 789574040
+  "last_update_id": 789574042
 }
