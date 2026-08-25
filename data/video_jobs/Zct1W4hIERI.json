@@ -1,0 +1,123 @@
+{
+  "video_id": "Zct1W4hIERI",
+  "source_url": "https://www.youtube.com/watch?v=Zct1W4hIERI",
+  "property_location": "Mittanamalli, Avadi, Chennai, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "646 sq.ft (Minimum plot size) / 51 Acres (Total Township Area)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹21 Lakhs (Starting price) / ₹3,600 to ₹4,500 per sq.ft",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "CMDA & RERA Approved"
+  },
+  "verified_facts": "The project 'HiLiving Nexora' is a 51-acre mega-township layout in Avadi / Mittanamalli., Total project consists of approximately 1,200 plots across multiple phases., Phase 1 (169 plots) is fully sold out; Phase 2 with over 400 plots is currently open., Starting plot size is 646 sq.ft priced at ₹21 Lakhs., Per square foot rate ranges from ₹3,600 to ₹4,500., Up to 80% bank loan approval available for plot purchase., Located 700 meters from Chennai Outer Ring Road and 2 km from Pattabiram Military Siding Railway Station., Includes a 2-acre dedicated area for Velammal Academy school within the township.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Mittanamalli, Avadi, Chennai, Tamil Nadu சைட்ல Residential Plot தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹21 Lakhs (Starting price) / ₹3,600 to ₹4,500 per sq.ft.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 646 sq.ft (Minimum plot size) / 51 Acres (Total Township Area) லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா CMDA & RERA Approved இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/Zct1W4hIERI/",
+  "optional_owned_audio": "assets/audio/Zct1W4hIERI.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Mittanamalli, Avadi, Chennai, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed mega gated community township featuring wide blacktop roads with center/side markings, street lighting poles, underground utility access points, boundary compound walls, and a grand entrance arch with security gates.. Neighbourhood: Located in Mittanamalli near Avadi, Chennai, with immediate access to public transportation including local trains, mini buses, major educational institutions, health centers, and primary highways like the Chennai Outer Ring Road.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Mittanamalli, Avadi, Chennai, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed mega gated community township featuring wide blacktop roads with center/side markings, street lighting poles, underground utility access points, boundary compound walls, and a grand entrance arch with security gates.. Neighbourhood: Located in Mittanamalli near Avadi, Chennai, with immediate access to public transportation including local trains, mini buses, major educational institutions, health centers, and primary highways like the Chennai Outer Ring Road.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Mittanamalli, Avadi, Chennai, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed mega gated community township featuring wide blacktop roads with center/side markings, street lighting poles, underground utility access points, boundary compound walls, and a grand entrance arch with security gates.. Neighbourhood: Located in Mittanamalli near Avadi, Chennai, with immediate access to public transportation including local trains, mini buses, major educational institutions, health centers, and primary highways like the Chennai Outer Ring Road.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Mittanamalli, Avadi, Chennai, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed mega gated community township featuring wide blacktop roads with center/side markings, street lighting poles, underground utility access points, boundary compound walls, and a grand entrance arch with security gates.. Neighbourhood: Located in Mittanamalli near Avadi, Chennai, with immediate access to public transportation including local trains, mini buses, major educational institutions, health centers, and primary highways like the Chennai Outer Ring Road.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
