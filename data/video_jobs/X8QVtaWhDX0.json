@@ -1,0 +1,104 @@
+{
+  "video_id": "X8QVtaWhDX0",
+  "source_url": "https://www.youtube.com/watch?v=X8QVtaWhDX0",
+  "property_location": "Sri Ram Nagar, Pogalur, between Annur and Mettupalayam, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹4.5 Lakhs per cent",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "Plots are available for ₹4.5 Lakhs per cent., Optional 2 BHK house construction package offered at ₹40 Lakhs., Up to 80% bank loan facility available., Over 100+ houses already constructed in the layout with families living there., Monthly EMI options starting around ₹10,000., Located at Pogalur on the road connecting Annur and Mettupalayam in Coimbatore.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking naturally to camera with conversational Tamil and standard real-estate terminology.",
+    "hook_strategy": "Highlighting a plot layout where over 100 families are already living between Annur and Mettupalayam.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோயம்புத்தூர் அண்ணூர் to மேட்டுப்பாளையம் போற வழியில, போகளூர் ஸ்ரீ ராம் நகர்ல residential plots விற்பனைக்கு இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "location-text-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல முக்கியமான விஷயம், இங்க ஏற்கனவே 100-க்கும் அதிகமான வீடுகள் கட்டி குடும்பங்கள் வாழ்ந்துட்டு இருக்காங்க. தார் ரோடு, குடிநீர் இணைப்பு, பார்க், ஷட்டில் கோர்ட்னு எல்லா வசதிகளும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "amenity-icons-pop",
+        "purpose": "layout_details"
+      },
+      {
+        "name": "price",
+        "voice": "விலை பாத்தீங்கனா ஒரு சென்ட் 4.5 லட்சம் ரூபாய். 80% வரைக்கும் bank loan வசதியும், மாசம் 10,000 ரூபாயில இருந்து EMI ஆப்ஷனும் இருக்கு. அதே மாதிரி 40 லட்சத்துல 2 BHK வீடு கட்டித் தர்ற ஆப்ஷனும் தர்றாங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "price-loan-card",
+        "purpose": "pricing_and_loan"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details தெரிஞ்சுக்கவோ, நேர்ல site visit பண்ணவோ உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "contact-number-overlay",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/X8QVtaWhDX0/",
+  "optional_owned_audio": "assets/audio/X8QVtaWhDX0.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Sri Ram Nagar, Pogalur, between Annur and Mettupalayam, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A well-developed gated layout featuring asphalt tar roads, entrance arch, overhead concrete water storage tank, fenced boundary, Vinayagar temple, children's park with swings and slides, shuttle court, and built individual single and double-storey villas.. Neighbourhood: Green suburban residential environment in Pogalur situated along a four-lane highway with 24/7 public bus transportation between Annur and Mettupalayam.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Sri Ram Nagar, Pogalur, between Annur and Mettupalayam, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A well-developed gated layout featuring asphalt tar roads, entrance arch, overhead concrete water storage tank, fenced boundary, Vinayagar temple, children's park with swings and slides, shuttle court, and built individual single and double-storey villas.. Neighbourhood: Green suburban residential environment in Pogalur situated along a four-lane highway with 24/7 public bus transportation between Annur and Mettupalayam.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Sri Ram Nagar, Pogalur, between Annur and Mettupalayam, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A well-developed gated layout featuring asphalt tar roads, entrance arch, overhead concrete water storage tank, fenced boundary, Vinayagar temple, children's park with swings and slides, shuttle court, and built individual single and double-storey villas.. Neighbourhood: Green suburban residential environment in Pogalur situated along a four-lane highway with 24/7 public bus transportation between Annur and Mettupalayam.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Sri Ram Nagar, Pogalur, between Annur and Mettupalayam, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A well-developed gated layout featuring asphalt tar roads, entrance arch, overhead concrete water storage tank, fenced boundary, Vinayagar temple, children's park with swings and slides, shuttle court, and built individual single and double-storey villas.. Neighbourhood: Green suburban residential environment in Pogalur situated along a four-lane highway with 24/7 public bus transportation between Annur and Mettupalayam.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "needs_review",
+  "approval_mode": "automatic_fact_gate_v1"
+}
