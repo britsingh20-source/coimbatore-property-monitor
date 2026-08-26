@@ -81,7 +81,12 @@ Hard cut to a verified bedroom, staircase, bathroom, balcony or parking detail. 
 SHOT 7 — 8.5 TO 10 SECONDS — FINAL VERIFIED FEATURE
 Hard cut to one final distinct verified feature or a different exterior angle. Use a short reveal and keep the final 0.3 seconds almost motionless for a clean ending."""
 
-    return f"""REFERENCE-FIRST INSTRUCTION
+    return f"""MANDATORY OUTPUT FORMAT LOCK — READ THIS FIRST
+Generate a NATIVE PORTRAIT video only: vertical 9:16 aspect ratio, ideally 1080×1920 pixels. The frame must be taller than it is wide. Never generate landscape 16:9, horizontal video, square video, a rotated landscape frame, letterboxing, pillarboxing, or a landscape clip placed inside a portrait canvas. This format requirement overrides the orientation of every source or reference.
+
+The linked YouTube reference may be landscape. Use it only to understand the property's visual identity, then intelligently recompose every shot for a full-screen 9:16 portrait canvas. Keep the property centred with safe headroom and lower-third space. If native 9:16 output is unavailable in the current Gemini/Veo mode, do not generate a landscape substitute; instruct the user to select Portrait/9:16 mode first.
+
+REFERENCE-FIRST INSTRUCTION
 Open and use this exact YouTube property video as the visual reference before generating:
 {source_url}
 
