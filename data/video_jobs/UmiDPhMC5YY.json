@@ -1,0 +1,144 @@
+{
+  "video_id": "UmiDPhMC5YY",
+  "source_url": "https://www.youtube.com/watch?v=UmiDPhMC5YY",
+  "property_location": "Sirumugai Road, Mettupalayam to Annur Road, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "From 2.75 cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹7 Lakhs per cent",
+    "facing": "North, East, South, West",
+    "road_width": "33 feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP, RERA"
+  },
+  "verified_facts": "DTCP and RERA approved site layout named Akshathas Paradise., Registration cost worth ₹80,000 is provided for free upon site booking., Plot pricing is ₹7 Lakhs per cent under a special offer., Plots available starting from a minimum size of 2.75 cents across all cardinal directions., House construction option available: 1 BHK Villa at 36 Lakhs, 2 BHK Villa at 42 Lakhs, 3 BHK Villa at 49 Lakhs.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Sirumugai Road, Mettupalayam to Annur Road, Coimbatore, Tamil Nadu, India சைட்ல Residential Plot தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹7 Lakhs per cent.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் From 2.75 cents லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "road",
+        "voice": "இதுல முக்கியமான விஷயம், முன்னாடி 33 feet ரோடு வசதி இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [],
+        "vfx": "road-measure",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு North, East, South, West ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP, RERA இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 22.809688631s.', 'status': 'RESOURCE_EXHAUSTED"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/UmiDPhMC5YY/",
+  "optional_owned_audio": "assets/audio/UmiDPhMC5YY.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Sirumugai Road, Mettupalayam to Annur Road, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Plotted land development featuring a large entrance arch labeled Akshathas Paradise, paved 33-ft tar roads, 40,000L yellow overhead water tank, individual plot pipeline connections, concrete side drainage, and perimeter compound wall.. Neighbourhood: Situated on Mettupalayam to Annur Road near Kumaran Kundru Temple, featuring main-road access, surrounding green trees, and nearby residential developments.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Sirumugai Road, Mettupalayam to Annur Road, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Plotted land development featuring a large entrance arch labeled Akshathas Paradise, paved 33-ft tar roads, 40,000L yellow overhead water tank, individual plot pipeline connections, concrete side drainage, and perimeter compound wall.. Neighbourhood: Situated on Mettupalayam to Annur Road near Kumaran Kundru Temple, featuring main-road access, surrounding green trees, and nearby residential developments.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Sirumugai Road, Mettupalayam to Annur Road, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Plotted land development featuring a large entrance arch labeled Akshathas Paradise, paved 33-ft tar roads, 40,000L yellow overhead water tank, individual plot pipeline connections, concrete side drainage, and perimeter compound wall.. Neighbourhood: Situated on Mettupalayam to Annur Road near Kumaran Kundru Temple, featuring main-road access, surrounding green trees, and nearby residential developments.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Sirumugai Road, Mettupalayam to Annur Road, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Plotted land development featuring a large entrance arch labeled Akshathas Paradise, paved 33-ft tar roads, 40,000L yellow overhead water tank, individual plot pipeline connections, concrete side drainage, and perimeter compound wall.. Neighbourhood: Situated on Mettupalayam to Annur Road near Kumaran Kundru Temple, featuring main-road access, surrounding green trees, and nearby residential developments.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
