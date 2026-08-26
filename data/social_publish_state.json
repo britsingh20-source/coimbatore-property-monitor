@@ -199,6 +199,101 @@
       "status": "matched",
       "video_id": "YeuCzhxC-j0"
     },
+    "social-ready/telegram-AgADDCYAAjekcVQ.mp4": {
+      "content": {
+        "caption": "🏠 ₹65 Lakhs 3 BHK BHK Independent House in Kumarankundru, Mettuppalayam to Annur Road, Coimbatore, Tamil Nadu — would you visit this property?\n\n📍 Location: Kumarankundru, Mettuppalayam to Annur Road, Coimbatore, Tamil Nadu\n🏡 Property: 3 BHK BHK Independent House\n💰 Price: ₹65 Lakhs\n📐 Land: 3.25 Cents (1400 sq.ft)\n🏗️ Built-up: 1750 sq.ft\n🧭 Facing: North\n🚗 Parking: 1 Covered Car Parking\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #KumarankundruMettuppalayamtoAnnurRoadCoimbatoreTamilNaduProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#CoimbatoreProperty",
+          "#KumarankundruMettuppalayamtoAnnurRoadCoimbatoreTamilNaduProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "₹65 Lakhs 3 BHK BHK Independent House in Kumarankundru, Mettuppalayam to Annur Road, Coimbatore, Tam",
+        "youtube_description": "₹65 Lakhs 3 BHK BHK Independent House in Kumarankundru, Mettuppalayam to Annur Road, Coimbatore, Tamil Nadu. Watch the complete 10-second walkthrough.\n\n📍 Location: Kumarankundru, Mettuppalayam to Annur Road, Coimbatore, Tamil Nadu\n🏡 Property: 3 BHK BHK Independent House\n💰 Price: ₹65 Lakhs\n📐 Land: 3.25 Cents (1400 sq.ft)\n🏗️ Built-up: 1750 sq.ft\n🧭 Facing: North\n🚗 Parking: 1 Covered Car Parking\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#CoimbatoreProperty #KumarankundruMettuppalayamtoAnnurRoadCoimbatoreTamilNaduProperty #CoimbatoreRealEstate"
+      },
+      "etag": "58920fa18dc1b72998d7a969f7023cc8-3",
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "creation_id": "17894671629599708",
+            "media_id": "18094688171566541",
+            "processing": {
+              "id": "17894671629599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "thumb_offset_ms": 2000
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17894671803599708",
+            "media_id": "18610131007065524",
+            "processing": {
+              "id": "17894671803599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "₹65 Lakhs 3 BHK BHK Independent House in Kumarankundru, Mettuppalayam to Annur Road, Coimbatore, Tamil Nadu. Watch the complete 10-second walkthrough.\n\n📍 Location: Kumarankundru, Mettuppalayam to Annur Road, Coimbatore, Tamil Nadu\n🏡 Property: 3 BHK BHK Independent House\n💰 Price: ₹65 Lakhs\n📐 Land: 3.25 Cents (1400 sq.ft)\n🏗️ Built-up: 1750 sq.ft\n🧭 Facing: North\n🚗 Parking: 1 Covered Car Parking\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#CoimbatoreProperty #KumarankundruMettuppalayamtoAnnurRoadCoimbatoreTamilNaduProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "₹65 Lakhs 3 BHK BHK Independent House in Kumarankundru, Mettuppalayam to Annur Road, Coimbatore, Tamil Nadu. Watch the complete 10-second walkthrough.\n\n📍 Location: Kumarankundru, Mettuppalayam to Annur Road, Coimbatore, Tamil Nadu\n🏡 Property: 3 BHK BHK Independent House\n💰 Price: ₹65 Lakhs\n📐 Land: 3.25 Cents (1400 sq.ft)\n🏗️ Built-up: 1750 sq.ft\n🧭 Facing: North\n🚗 Parking: 1 Covered Car Parking\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#CoimbatoreProperty #KumarankundruMettuppalayamtoAnnurRoadCoimbatoreTamilNaduProperty #CoimbatoreRealEstate",
+                "title": "₹65 Lakhs 3 BHK BHK Independent House in Kumarankundru, Mettuppalayam to Annur Road, Coimbatore, Tam"
+              },
+              "publishedAt": "2026-08-26T03:03:52Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/7CwEPdriHjk/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/7CwEPdriHjk/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/7CwEPdriHjk/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "₹65 Lakhs 3 BHK BHK Independent House in Kumarankundru, Mettuppalayam to Annur Road, Coimbatore, Tam"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "7CwEPdriHjk"
+          },
+          "status": "published"
+        }
+      },
+      "status": "matched",
+      "video_id": "AIolIZydXTU"
+    },
     "social-ready/telegram-AgADFh4AArd1YFQ.mp4": {
       "content": {
         "caption": "🏠 Land / Plot in Tex Park Road, Kalapatti Road, near Coimbatore International Airport, Coimbatore — would you visit this property?\n\n📍 Location: Tex Park Road, Kalapatti Road, near Coimbatore International Airport, Coimbatore\n🏡 Property: Land / Plot\n📐 Land: 5 Cents (Frontage: 40 ft, Length: 54 ft)\n🧭 Facing: North\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #TexParkRoadKalapattiRoadnearCoimbatoreInternationalAirportCoimbatoreProperty #CoimbatoreRealEstate",

@@ -98,8 +98,11 @@
       "video_id": "PAs5DHZmBKo"
     },
     {
+      "r2_key": "social-ready/telegram-AgADDCYAAjekcVQ.mp4",
       "sent_at": "2026-08-24T13:23:50.021437+00:00",
-      "status": "pending_mobile_upload",
+      "status": "published",
+      "telegram_file_unique_id": "AgADDCYAAjekcVQ",
+      "uploaded_at": "2026-08-26T03:02:16.965330+00:00",
       "video_id": "AIolIZydXTU"
     },
     {
@@ -136,44 +139,44 @@
       "video_id": "M0UauIWBWNY"
     },
     {
-      "video_id": "57gPYoNDFUU",
       "sent_at": "2026-08-25T09:54:24.039492+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "57gPYoNDFUU"
     },
     {
-      "video_id": "tkJnGvIo32g",
       "sent_at": "2026-08-25T11:47:38.127535+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "tkJnGvIo32g"
     },
     {
-      "video_id": "S_NnYorPyM0",
       "sent_at": "2026-08-25T13:22:03.784247+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "S_NnYorPyM0"
     },
     {
-      "video_id": "n8Tl4Rmg7pU",
       "sent_at": "2026-08-25T13:22:04.624404+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "n8Tl4Rmg7pU"
     },
     {
-      "video_id": "DZ_0GnMaT9k",
       "sent_at": "2026-08-25T15:09:23.195692+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "DZ_0GnMaT9k"
     },
     {
-      "video_id": "yIeISXUEZYE",
       "sent_at": "2026-08-25T16:03:36.453721+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "yIeISXUEZYE"
     },
     {
-      "video_id": "OKVLA31175c",
       "sent_at": "2026-08-25T21:47:00.177090+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "OKVLA31175c"
     },
     {
-      "video_id": "UmiDPhMC5YY",
       "sent_at": "2026-08-26T02:01:39.749931+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "UmiDPhMC5YY"
     }
   ]
 }
