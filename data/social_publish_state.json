@@ -389,6 +389,36 @@
       "status": "matched",
       "video_id": "6jJtYT4MA_E"
     },
+    "social-ready/telegram-AgADUSIAAjekeVQ.mp4": {
+      "candidate_video_ids": [
+        "KiJEPqoUCTw",
+        "6RCA3cUaZ2Y",
+        "7bj_axUSMmM",
+        "OEul0dWNXSU",
+        "94Y_3Jp2hQw",
+        "twP0glR4EyU",
+        "xTvjrweqpy4",
+        "3HCxfx5DoJs",
+        "PAs5DHZmBKo",
+        "f330aqcYbfE",
+        "EgHl0GI4jnY",
+        "Zct1W4hIERI",
+        "y07Izy9Qikw",
+        "M0UauIWBWNY",
+        "57gPYoNDFUU",
+        "tkJnGvIo32g",
+        "S_NnYorPyM0",
+        "n8Tl4Rmg7pU",
+        "DZ_0GnMaT9k",
+        "yIeISXUEZYE",
+        "OKVLA31175c",
+        "UmiDPhMC5YY"
+      ],
+      "etag": "467fe8a458ffb5e01dc9e9e0ad2c332a-3",
+      "match_error": "Error code: 429 - {'error': {'message': 'Resource has been exhausted (e.g. check quota).', 'code': 'too_many_requests'}}",
+      "platforms": {},
+      "status": "match_error"
+    },
     "social-ready/telegram-AgADXB8AArd1YFQ.mp4": {
       "content": {
         "caption": "🏠 3 BHK BHK Independent House in L&T Bypass, Near Karpagam College, Coimbatore — would you visit this property?\n\n📍 Location: L&T Bypass, Near Karpagam College, Coimbatore\n🏡 Property: 3 BHK BHK Independent House\n📐 Land: 3.5 Cents\n🏗️ Built-up: 1800 sqft\n🧭 Facing: East\n🚗 Parking: 1 Car Covered Parking\n✅ Approval: DTCP\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #LTBypassNearKarpagamCollegeCoimbatoreProperty #CoimbatoreRealEstate",
