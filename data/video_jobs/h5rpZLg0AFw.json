@@ -1,0 +1,131 @@
+{
+  "video_id": "h5rpZLg0AFw",
+  "source_url": "https://www.youtube.com/watch?v=h5rpZLg0AFw",
+  "property_location": "Near Sitra Airport, Avinashi Road, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Apartment Building",
+    "bhk": "2 BHK (6 Units)",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "7300 sq ft",
+    "price": "₹4.35 Crore",
+    "facing": "South",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Parking for 6 to 8 Cars and Bikes",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Ready to move 3-floor apartment building with 6 individual 2 BHK units of approx 1000 sq ft each., Total built-up area is 7300 sq ft., Property generates an estimated ₹1.5 Lakhs monthly rental income., DTCP approved property with clear documents., Located 2.5 km from Sitra Airport, Coimbatore, opposite NGB College., Asking price is ₹4.35 Crore (negotiable).",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, conversational local presenter talking directly to camera with clear spoken Tamil and natural real-estate English terms.",
+    "hook_strategy": "Lead directly with the prime location near Sitra Airport on Avinashi Road and the total built-up capacity.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Sitra Airport-லிருந்து 2.5 km-ல, Avinashi Road NGB College எதிர்ல இருக்குற location-ல இந்த apartment building அமைஞ்சிருக்கு.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "location-text-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இதுல மொத்தம் 7300 sq ft built-up area-ல 3 floors இருக்கு. 6 units 2 BHK houses, automatic lift, covered car parking, balcony அப்புறம் open terrace வசதிகள் இருக்கு.",
+        "broll": [
+          "living_room",
+          "interior",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "bhk-highlight-overlay",
+        "purpose": "property-details"
+      },
+      {
+        "name": "facing",
+        "voice": "இந்த property பாத்தீங்கனா South facing-ல அமைச்சிருக்காங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing-info"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், இது clear documents-ோட இருக்கிற DTCP approval property.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "land"
+        ],
+        "vfx": "approval-badge-overlay",
+        "purpose": "trust-building"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price 4.35 Crore, negotiable. மாசம் estimated 1.5 Lakhs rental income வரக்கூடிய நல்ல investment இது.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "land"
+        ],
+        "vfx": "price-and-rent-text-overlay",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல site visit வரணும்னா இல்ல மேலும் details வேணும்னா உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "contact-details-overlay",
+        "purpose": "call-to-action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/h5rpZLg0AFw/",
+  "optional_owned_audio": "assets/audio/h5rpZLg0AFw.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Near Sitra Airport, Avinashi Road, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Four-story modern structure (stilt + 3 floors) painted in grey, dark grey, and white tones, with black metal balcony railings, a gated stilt parking area, and an open rooftop terrace.. Neighbourhood: Established residential neighborhood in Coimbatore with mountain backdrop views, close to Sitra Airport and local colleges.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Near Sitra Airport, Avinashi Road, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Four-story modern structure (stilt + 3 floors) painted in grey, dark grey, and white tones, with black metal balcony railings, a gated stilt parking area, and an open rooftop terrace.. Neighbourhood: Established residential neighborhood in Coimbatore with mountain backdrop views, close to Sitra Airport and local colleges.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Near Sitra Airport, Avinashi Road, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Four-story modern structure (stilt + 3 floors) painted in grey, dark grey, and white tones, with black metal balcony railings, a gated stilt parking area, and an open rooftop terrace.. Neighbourhood: Established residential neighborhood in Coimbatore with mountain backdrop views, close to Sitra Airport and local colleges.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Near Sitra Airport, Avinashi Road, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Four-story modern structure (stilt + 3 floors) painted in grey, dark grey, and white tones, with black metal balcony railings, a gated stilt parking area, and an open rooftop terrace.. Neighbourhood: Established residential neighborhood in Coimbatore with mountain backdrop views, close to Sitra Airport and local colleges.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
