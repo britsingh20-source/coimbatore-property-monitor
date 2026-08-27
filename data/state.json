@@ -399,6 +399,12 @@
       "next_retry_at": "2026-08-23T09:45:50.479644+00:00",
       "status": "video_queued"
     },
+    "9HYRV7ux5tg": {
+      "attempts": 0,
+      "first_seen_at": "2026-08-27T16:42:08.586816+00:00",
+      "next_retry_at": "2026-08-27T16:42:08.586816+00:00",
+      "status": "discovered"
+    },
     "9QsBL5dwykA": {
       "attempts": 2,
       "completed_at": "2026-08-08T11:48:28.181886+00:00",
@@ -1019,6 +1025,12 @@
       "next_retry_at": "2026-08-24T09:07:39.625618+00:00",
       "status": "video_queued"
     },
+    "PNTtybJTcgk": {
+      "attempts": 0,
+      "first_seen_at": "2026-08-27T16:42:08.586816+00:00",
+      "next_retry_at": "2026-08-27T16:42:08.586816+00:00",
+      "status": "discovered"
+    },
     "PttTiHcqT-E": {
       "attempts": 0,
       "completed_at": "2026-08-05T11:13:26.903992+00:00",
@@ -1140,6 +1152,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
       "status": "video_queued"
+    },
+    "S0evf4Cxoqc": {
+      "attempts": 0,
+      "first_seen_at": "2026-08-27T16:42:08.586816+00:00",
+      "next_retry_at": "2026-08-27T16:42:08.586816+00:00",
+      "status": "discovered"
     },
     "S7lv4VP4ym8": {
       "attempts": 0,
@@ -1581,6 +1599,12 @@
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
       "status": "video_queued"
     },
+    "e6GoUUW2RAA": {
+      "attempts": 0,
+      "first_seen_at": "2026-08-27T16:42:08.586816+00:00",
+      "next_retry_at": "2026-08-27T16:42:08.586816+00:00",
+      "status": "discovered"
+    },
     "e97Z-GhzBO8": {
       "attempts": 1,
       "completed_at": "2026-08-05T15:58:16.041697+00:00",
@@ -1734,6 +1758,14 @@
       "last_error": "",
       "next_retry_at": "2026-08-05T15:55:48.520012+00:00",
       "status": "video_queued"
+    },
+    "h5rpZLg0AFw": {
+      "attempts": 1,
+      "first_seen_at": "2026-08-27T16:42:08.586816+00:00",
+      "last_attempt_at": "2026-08-27T16:42:12.283713+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 47.737204602s.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-08-27T18:42:12.283726+00:00",
+      "status": "retry_pending"
     },
     "hWCA1wH1j80": {
       "attempts": 0,
@@ -1971,6 +2003,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-20T13:14:06.162719+00:00",
       "status": "archived_non_target"
+    },
+    "oPKXHsE6wVE": {
+      "attempts": 0,
+      "first_seen_at": "2026-08-27T16:42:08.586816+00:00",
+      "next_retry_at": "2026-08-27T16:42:08.586816+00:00",
+      "status": "discovered"
     },
     "pmed9DnHN9Q": {
       "attempts": 0,
