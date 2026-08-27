@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import subprocess
 import tempfile
 import time
 from pathlib import Path
@@ -33,6 +34,9 @@ QUEUE_PATH = Path(os.environ.get("TELEGRAM_PROMPT_QUEUE", "data/telegram_prompt_
 MAX_PER_RUN = max(1, int(os.environ.get("SOCIAL_MAX_PER_RUN", "1")))
 DRY_RUN = os.environ.get("SOCIAL_DRY_RUN", "false").lower() == "true"
 PUBLIC_PLATFORMS = ("instagram_reel", "instagram_story", "youtube_short")
+YOUTUBE_SHORT_MAX_SECONDS = 180.0
+YOUTUBE_SHORT_WIDTH = 1080
+YOUTUBE_SHORT_HEIGHT = 1920
 
 
 def _r2():
@@ -247,6 +251,92 @@ def delete_youtube_video(video_id: str) -> dict:
     return {"video_id": video_id, "deleted": True}
 
 
+def _probe_video(video_path: Path) -> dict:
+    """Return the dimensions and duration used by the Shorts eligibility gate."""
+    result = subprocess.run(
+        [
+            "ffprobe", "-v", "error", "-select_streams", "v:0",
+            "-show_entries", "stream=width,height:format=duration",
+            "-of", "json", str(video_path),
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    payload = json.loads(result.stdout)
+    streams = payload.get("streams") or []
+    if not streams:
+        raise RuntimeError("Uploaded MP4 has no video stream")
+    stream = streams[0]
+    return {
+        "width": int(stream.get("width") or 0),
+        "height": int(stream.get("height") or 0),
+        "duration": float((payload.get("format") or {}).get("duration") or 0),
+    }
+
+
+def prepare_youtube_short(source_path: Path, output_path: Path) -> dict:
+    """Create a guaranteed 9:16 MP4 before calling YouTube's normal upload API.
+
+    YouTube has no API flag that turns a landscape upload into a Short. It
+    classifies an eligible upload from its aspect ratio and duration, so every
+    mobile upload is normalized even when Gemini ignored the portrait prompt.
+    Landscape footage is fitted over a blurred full-frame background to avoid
+    cropping the property's elevation or embedded information footer.
+    """
+    source = _probe_video(source_path)
+    if source["duration"] <= 0:
+        raise RuntimeError("Could not determine uploaded MP4 duration")
+    if source["duration"] > YOUTUBE_SHORT_MAX_SECONDS:
+        raise RuntimeError(
+            f"Video is {source['duration']:.1f}s; YouTube Shorts must be no longer "
+            f"than {YOUTUBE_SHORT_MAX_SECONDS:.0f}s"
+        )
+
+    portrait_ratio = YOUTUBE_SHORT_HEIGHT / YOUTUBE_SHORT_WIDTH
+    source_ratio = source["height"] / max(1, source["width"])
+    if source_ratio >= portrait_ratio * 0.90:
+        video_filter = (
+            f"[0:v]scale={YOUTUBE_SHORT_WIDTH}:{YOUTUBE_SHORT_HEIGHT}:"
+            "force_original_aspect_ratio=increase,"
+            f"crop={YOUTUBE_SHORT_WIDTH}:{YOUTUBE_SHORT_HEIGHT},"
+            "setsar=1,fps=30,format=yuv420p[outv]"
+        )
+        layout = "portrait_crop"
+    else:
+        video_filter = (
+            "[0:v]split=2[background][foreground];"
+            f"[background]scale={YOUTUBE_SHORT_WIDTH}:{YOUTUBE_SHORT_HEIGHT}:"
+            "force_original_aspect_ratio=increase,"
+            f"crop={YOUTUBE_SHORT_WIDTH}:{YOUTUBE_SHORT_HEIGHT},"
+            "boxblur=24:2[blurred];"
+            f"[foreground]scale={YOUTUBE_SHORT_WIDTH}:{YOUTUBE_SHORT_HEIGHT}:"
+            "force_original_aspect_ratio=decrease[main];"
+            "[blurred][main]overlay=(W-w)/2:(H-h)/2,"
+            "setsar=1,fps=30,format=yuv420p[outv]"
+        )
+        layout = "landscape_blurred_fill"
+
+    subprocess.run(
+        [
+            "ffmpeg", "-y", "-loglevel", "error", "-i", str(source_path),
+            "-filter_complex", video_filter,
+            "-map", "[outv]", "-map", "0:a?",
+            "-c:v", "libx264", "-preset", "medium", "-crf", "20",
+            "-c:a", "aac", "-b:a", "192k",
+            "-movflags", "+faststart", "-shortest", str(output_path),
+        ],
+        check=True,
+    )
+    normalized = _probe_video(output_path)
+    if normalized["width"] != YOUTUBE_SHORT_WIDTH or normalized["height"] != YOUTUBE_SHORT_HEIGHT:
+        raise RuntimeError(
+            "YouTube Short normalization failed: expected 1080x1920, got "
+            f"{normalized['width']}x{normalized['height']}"
+        )
+    return {"source": source, "output": normalized, "layout": layout}
+
+
 def publish_facebook_story(video_path: Path) -> dict:
     token = _required("META_PAGE_ACCESS_TOKEN")
     page = validate_page_token()
@@ -301,9 +391,9 @@ def publish_youtube_short(video_path: Path, title: str, description: str) -> dic
         part="snippet,status",
         body={
             "snippet": {
-                "title": title,
+                "title": title[:100],
                 "description": description,
-                "tags": ["Coimbatore Property", "Coimbatore Real Estate", "Property For Sale"],
+                "tags": ["Shorts", "Coimbatore Property", "Coimbatore Real Estate", "Property For Sale"],
                 "categoryId": "22",
             },
             "status": {
@@ -378,16 +468,26 @@ def _publish_one(key: str, etag: str, client, bucket: str, state: dict, queue: d
 
     with tempfile.TemporaryDirectory(prefix="property-social-") as temp_dir:
         video_path = Path(temp_dir) / f"{video_id}.mp4"
+        youtube_path = Path(temp_dir) / f"{video_id}-youtube-short.mp4"
         client.download_file(bucket, key, str(video_path))
         if video_path.stat().st_size < 100_000:
             raise RuntimeError(f"R2 video is too small: {key}")
+        youtube_media = prepare_youtube_short(video_path, youtube_path)
+        record["youtube_media"] = youtube_media
+        _save_state(state)
+        print(
+            "YOUTUBE SHORT READY "
+            f"{video_id}: {youtube_media['source']['width']}x{youtube_media['source']['height']} -> "
+            f"{youtube_media['output']['width']}x{youtube_media['output']['height']} "
+            f"({youtube_media['layout']})"
+        )
         publishers: dict[str, Callable[[], dict]] = {
             "instagram_reel": lambda: publish_instagram_reel(video_url, str(content["caption"])),
             "facebook_reel": lambda: publish_facebook_reel(video_path, str(content["caption"])),
             "instagram_story": lambda: publish_instagram_story(video_url),
             "facebook_story": lambda: publish_facebook_story(video_path),
             "youtube_short": lambda: publish_youtube_short(
-                video_path, str(content["title"]), str(content["youtube_description"])
+                youtube_path, str(content["title"]), str(content["youtube_description"])
             ),
         }
         for platform in PUBLIC_PLATFORMS:

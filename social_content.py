@@ -73,7 +73,7 @@ def build_social_content(job: dict) -> dict[str, str | list[str]]:
         f"For complete details and a site visit, call {CONTACT_NUMBER}.",
         "Property information is based on the source listing. Verify availability, documents, dimensions and price before purchase.",
         "",
-        " ".join(hashtags),
+        " ".join(["#Shorts", *hashtags]),
     ])
     return {
         "title": title,
