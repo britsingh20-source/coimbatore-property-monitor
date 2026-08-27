@@ -51,7 +51,7 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v5
         with:
@@ -86,7 +86,7 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
           R2_SOCIAL_PREFIX: social-ready/
-          SOCIAL_MAX_PER_RUN: "1"
+          SOCIAL_MAX_PER_RUN: "5"
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_SOCIAL_MATCH_MODEL: gemini-3.5-flash-lite
           SOCIAL_MATCH_MIN_CONFIDENCE: "0.85"
