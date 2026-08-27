@@ -155,13 +155,13 @@
       "video_id": "S_NnYorPyM0"
     },
     {
+      "r2_key": "social-ready/telegram-AgADUyMAApfogFQ.mp4",
+      "reassigned_at": "2026-08-27T03:02:11.143Z",
       "sent_at": "2026-08-25T13:22:04.624404+00:00",
       "status": "published",
-      "video_id": "n8Tl4Rmg7pU",
-      "r2_key": "social-ready/telegram-AgADUyMAApfogFQ.mp4",
       "telegram_file_unique_id": "AgADUyMAApfogFQ",
       "uploaded_at": "2026-08-27T02:40:51.280459+00:00",
-      "reassigned_at": "2026-08-27T03:02:11.143Z"
+      "video_id": "n8Tl4Rmg7pU"
     },
     {
       "sent_at": "2026-08-25T15:09:23.195692+00:00",
@@ -169,8 +169,11 @@
       "video_id": "DZ_0GnMaT9k"
     },
     {
+      "r2_key": "social-ready/telegram-AgADDycAApfogFQ.mp4",
       "sent_at": "2026-08-25T16:03:36.453721+00:00",
-      "status": "pending_mobile_upload",
+      "status": "published",
+      "telegram_file_unique_id": "AgADDycAApfogFQ",
+      "uploaded_at": "2026-08-27T15:49:55.665175+00:00",
       "video_id": "yIeISXUEZYE"
     },
     {
