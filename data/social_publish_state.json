@@ -389,6 +389,37 @@
       "status": "matched",
       "video_id": "6jJtYT4MA_E"
     },
+    "social-ready/telegram-AgADRyEAAjekgVQ.mp4": {
+      "candidate_video_ids": [
+        "KiJEPqoUCTw",
+        "6RCA3cUaZ2Y",
+        "7bj_axUSMmM",
+        "OEul0dWNXSU",
+        "94Y_3Jp2hQw",
+        "twP0glR4EyU",
+        "xTvjrweqpy4",
+        "3HCxfx5DoJs",
+        "PAs5DHZmBKo",
+        "f330aqcYbfE",
+        "EgHl0GI4jnY",
+        "Zct1W4hIERI",
+        "y07Izy9Qikw",
+        "M0UauIWBWNY",
+        "57gPYoNDFUU",
+        "tkJnGvIo32g",
+        "S_NnYorPyM0",
+        "n8Tl4Rmg7pU",
+        "DZ_0GnMaT9k",
+        "yIeISXUEZYE",
+        "OKVLA31175c",
+        "UmiDPhMC5YY",
+        "BN27nDLnjfs"
+      ],
+      "etag": "c3c5d2e5c6815f24ab0806c5d83aa1db-3",
+      "match_error": "Error code: 429 - {'error': {'message': 'Resource has been exhausted (e.g. check quota).', 'code': 'too_many_requests'}}",
+      "platforms": {},
+      "status": "match_error"
+    },
     "social-ready/telegram-AgADUSIAAjekeVQ.mp4": {
       "candidate_video_ids": [
         "KiJEPqoUCTw",
