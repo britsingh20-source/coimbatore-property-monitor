@@ -512,9 +512,25 @@ def _publish_one(key: str, etag: str, client, bucket: str, state: dict, queue: d
                 or ""
             )
             if old_youtube_id:
-                deletion = delete_youtube_video(old_youtube_id)
-                record["youtube_republish_deletion"] = deletion
-                print(f"DELETED disturbed youtube_short before audio-safe replacement: {old_youtube_id}")
+                try:
+                    deletion = delete_youtube_video(old_youtube_id)
+                    record["youtube_republish_deletion"] = deletion
+                    print(f"DELETED disturbed youtube_short before audio-safe replacement: {old_youtube_id}")
+                except Exception as error:
+                    # Existing OAuth credentials may have youtube.upload scope
+                    # without delete permission. Do not block the corrected
+                    # upload; retain the old ID for manual Studio cleanup.
+                    record["youtube_republish_deletion"] = {
+                        "video_id": old_youtube_id,
+                        "deleted": False,
+                        "error": str(error)[:1500],
+                        "manual_cleanup_required": True,
+                    }
+                    print(
+                        "OLD youtube_short could not be deleted; publishing "
+                        f"audio-safe replacement and retaining {old_youtube_id} "
+                        "for manual cleanup"
+                    )
             record.setdefault("platforms", {}).pop("youtube_short", None)
             record["youtube_republish_pending"] = False
             _save_state(state)
