@@ -485,14 +485,25 @@
       "status": "matched",
       "video_id": "czrxkmFHWn4",
       "youtube_media": {
+        "audio_handling": "copied_original_aac",
         "layout": "landscape_blurred_fill",
         "output": {
-          "duration": 19.966667,
+          "audio_bit_rate": 248682,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 19.967,
           "height": 1920,
           "width": 1080
         },
         "source": {
-          "duration": 20,
+          "audio_bit_rate": 248465,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 20.0,
           "height": 1080,
           "width": 1920
         }
