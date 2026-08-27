@@ -503,7 +503,7 @@
           "audio_channels": 2,
           "audio_codec": "aac",
           "audio_sample_rate": 48000,
-          "duration": 20.0,
+          "duration": 20,
           "height": 1080,
           "width": 1920
         }
@@ -1025,6 +1025,16 @@
       },
       "status": "matched",
       "video_id": "uAJus2hXLTo"
+    },
+    "social-ready/telegram-AgADUyMAApfogFQ.mp4": {
+      "etag": "",
+      "video_id": "n8Tl4Rmg7pU",
+      "status": "matched",
+      "match_analysis": {
+        "method": "recovered_spaced_mobile_id",
+        "confidence": 1
+      },
+      "platforms": {}
     }
   }
 }
