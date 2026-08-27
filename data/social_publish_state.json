@@ -443,7 +443,7 @@
                 "description": "₹5,80,000 per cent Residential Plot in Sulur, Coimbatore, Tamil Nadu. Watch the complete 10-second walkthrough.\n\n📍 Location: Sulur, Coimbatore, Tamil Nadu\n🏡 Property: Residential Plot\n💰 Price: ₹5,80,000 per cent\n📐 Land: 36 Acres\n✅ Approval: DTCP & RERA\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #SulurCoimbatoreTamilNaduProperty #CoimbatoreRealEstate",
                 "title": "₹5,80,000 per cent Residential Plot in Sulur, Coimbatore, Tamil Nadu | Site Visit 9003787621"
               },
-              "publishedAt": "2026-08-27T02:22:57Z",
+              "publishedAt": "2026-08-27T02:51:33Z",
               "tags": [
                 "Coimbatore Property",
                 "Coimbatore Real Estate",
@@ -453,17 +453,17 @@
               "thumbnails": {
                 "default": {
                   "height": 90,
-                  "url": "https://i.ytimg.com/vi/14hXFPbWg34/default.jpg",
+                  "url": "https://i.ytimg.com/vi/4VDvpvNUefo/default.jpg",
                   "width": 120
                 },
                 "high": {
                   "height": 360,
-                  "url": "https://i.ytimg.com/vi/14hXFPbWg34/hqdefault.jpg",
+                  "url": "https://i.ytimg.com/vi/4VDvpvNUefo/hqdefault.jpg",
                   "width": 480
                 },
                 "medium": {
                   "height": 180,
-                  "url": "https://i.ytimg.com/vi/14hXFPbWg34/mqdefault.jpg",
+                  "url": "https://i.ytimg.com/vi/4VDvpvNUefo/mqdefault.jpg",
                   "width": 320
                 }
               },
@@ -477,7 +477,7 @@
               "selfDeclaredMadeForKids": false,
               "uploadStatus": "uploaded"
             },
-            "video_id": "14hXFPbWg34"
+            "video_id": "4VDvpvNUefo"
           },
           "status": "published"
         }
@@ -508,7 +508,13 @@
           "width": 1920
         }
       },
-      "youtube_republish_pending": true,
+      "youtube_republish_deletion": {
+        "deleted": false,
+        "error": "<HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/videos?id=14hXFPbWg34 returned \"Request had insufficient authentication scopes.\". Details: \"[{'message': 'Insufficient Permission', 'domain': 'global', 'reason': 'insufficientPermissions'}]\">",
+        "manual_cleanup_required": true,
+        "video_id": "14hXFPbWg34"
+      },
+      "youtube_republish_pending": false,
       "youtube_republish_reason": "replace_disturbed_audio_with_bit_exact_source_aac",
       "youtube_republish_requested_at": "2026-08-27T02:39:38.244Z"
     },
