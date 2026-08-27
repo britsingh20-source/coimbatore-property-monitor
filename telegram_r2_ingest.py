@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 import json
 import os
 import re
+import unicodedata
 from pathlib import Path
 import tempfile
 
@@ -96,11 +97,23 @@ def _explicit_video_id(message: dict) -> str:
     if re.fullmatch(r"[A-Za-z0-9_-]{11}", text):
         return text
 
-    # Mobile keyboards may insert spaces into a pasted YouTube VIDEO_ID.
-    # Accept whitespace-only separation when the normalized value is exactly 11 characters.
-    compact_text = re.sub(r"\\s+", "", text)
+    # iOS/Telegram may insert spaces, non-breaking spaces or invisible Unicode
+    # format characters into a copied YouTube ID. The old regex accidentally
+    # looked for the literal characters "\\s", so spaced IDs were discarded.
+    compact_text = "".join(
+        char
+        for char in text
+        if not char.isspace() and unicodedata.category(char) != "Cf"
+    )
+    separators_only = all(
+        char.isalnum()
+        or char in "_-"
+        or char.isspace()
+        or unicodedata.category(char) == "Cf"
+        for char in text
+    )
     if (
-        re.fullmatch(r"[A-Za-z0-9_-]+(?:\\s+[A-Za-z0-9_-]+)+", text)
+        separators_only
         and re.fullmatch(r"[A-Za-z0-9_-]{11}", compact_text)
     ):
         return compact_text
@@ -215,7 +228,10 @@ def ingest() -> int:
             candidates = [
                 (unique_id, item)
                 for unique_id, item in state.setdefault("files", {}).items()
-                if item.get("status") == "uploaded_awaiting_content_match"
+                if item.get("status") in {
+                    "uploaded_awaiting_content_match",
+                    "uploaded_awaiting_video_id",
+                }
                 and standalone_video_id in (item.get("candidate_video_ids") or [])
                 and item.get("r2_key")
             ]
@@ -231,7 +247,10 @@ def ingest() -> int:
                 recent_unmatched = [
                     (unique_id, item)
                     for unique_id, item in state.setdefault("files", {}).items()
-                    if item.get("status") == "uploaded_awaiting_content_match"
+                    if item.get("status") in {
+                        "uploaded_awaiting_content_match",
+                        "uploaded_awaiting_video_id",
+                    }
                     and item.get("r2_key")
                     and 0 < update_id - int(item.get("update_id") or 0) <= 5
                 ]
@@ -458,7 +477,7 @@ def ingest() -> int:
             print(f"Telegram video {unique_id} -> {key}; exact VIDEO_ID {explicit_video_id}")
         else:
             state["files"][unique_id] = {
-                "status": "uploaded_awaiting_content_match",
+                "status": "uploaded_awaiting_video_id",
                 "candidate_video_ids": pending_ids,
                 "r2_key": key,
                 "size": len(response.content),
@@ -467,9 +486,10 @@ def ingest() -> int:
             }
             confirmation = (
                 f"✅ Property video received\nUploaded to R2: {key}\n"
-                "No VIDEO_ID was supplied. Matching against pending prompts; publishing will wait for a confident match."
+                "No VIDEO_ID was supplied, so this video is safely paused and will not be published.\n"
+                "Send the exact 11-character VIDEO_ID as your next message before sending another video."
             )
-            print(f"Telegram video {unique_id} -> {key}; awaiting content-based prompt match")
+            print(f"Telegram video {unique_id} -> {key}; awaiting exact VIDEO_ID")
         uploaded += 1
         _send(token, chat_id, confirmation)
 

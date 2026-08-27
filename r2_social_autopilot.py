@@ -99,24 +99,36 @@ def _resolve_video_id(key: str, etag: str, video_url: str, state: dict, queue: d
     elif filename_job.exists():
         video_id = filename_id
     else:
+        ingest_path = Path(os.environ.get("TELEGRAM_INGEST_STATE", "data/telegram_ingest_state.json"))
+        ingest_state = (
+            json.loads(ingest_path.read_text(encoding="utf-8"))
+            if ingest_path.exists()
+            else {"files": {}}
+        )
+        upload_record = next(
+            (
+                item for item in ingest_state.get("files", {}).values()
+                if item.get("r2_key") == key
+            ),
+            None,
+        )
+        if upload_record and upload_record.get("status") == "uploaded_awaiting_video_id":
+            state["objects"][key] = {
+                "etag": etag,
+                "status": "waiting_for_video_id",
+                "platforms": {},
+            }
+            _save_state(state)
+            print(f"WAITING {key}: exact Telegram VIDEO_ID has not been supplied")
+            return ""
         pending_ids = [
             str(item.get("video_id") or "").strip()
             for item in queue.get("prompts", [])
             if item.get("status") == "pending_mobile_upload"
         ]
-        ingest_path = Path(os.environ.get("TELEGRAM_INGEST_STATE", "data/telegram_ingest_state.json"))
-        if ingest_path.exists():
-            ingest_state = json.loads(ingest_path.read_text(encoding="utf-8"))
-            upload_record = next(
-                (
-                    item for item in ingest_state.get("files", {}).values()
-                    if item.get("r2_key") == key and item.get("candidate_video_ids")
-                ),
-                None,
-            )
-            if upload_record:
-                allowed_at_upload = set(upload_record.get("candidate_video_ids") or [])
-                pending_ids = [video_id for video_id in pending_ids if video_id in allowed_at_upload]
+        if upload_record and upload_record.get("candidate_video_ids"):
+            allowed_at_upload = set(upload_record.get("candidate_video_ids") or [])
+            pending_ids = [video_id for video_id in pending_ids if video_id in allowed_at_upload]
         pending_ids = [
             video_id for video_id in pending_ids
             if video_id and (Path("data/video_jobs") / f"{video_id}.json").exists()
