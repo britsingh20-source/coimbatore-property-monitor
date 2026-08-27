@@ -55,7 +55,7 @@ def run() -> None:
             print(f"Processed {video_id}: target={location['is_target_location']}")
         except RetryableAnalysisError as error:
             retryable_failures += 1
-            mark_failure(state, video_id, error)
+            mark_failure(state, video_id, error, always_retry=True)
             print(f"RETRY {video_id}: {error}")
             save_state(state)
             print("Stopping further Gemini calls for this run after a transient API/quota error.")

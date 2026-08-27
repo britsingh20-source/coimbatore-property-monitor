@@ -19,7 +19,9 @@ name: R2 Social Publishing Autopilot
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    # Six off-peak opportunities per hour reduce the chance that a Telegram
+    # upload waits when GitHub drops an individual scheduled event.
+    - cron: "7,17,27,37,47,57 * * * *"
   push:
     branches:
       - main
@@ -42,7 +44,9 @@ on:
         type: boolean
 
 concurrency:
-  group: r2-social-publishing
+  # Serialize with Property Monitor because both workflows update the shared
+  # Telegram prompt queue in the repository.
+  group: property-automation-state
   cancel-in-progress: false
 
 permissions:
@@ -124,3 +128,17 @@ jobs:
         run: |
           echo "::error::One or more social publishing destinations failed. Successful destinations were recorded and will not be duplicated."
           exit 1
+      - name: Alert Telegram when social publishing recovery is required
+        if: failure()
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        shell: bash
+        run: |
+          message="⚠️ Property social publishing failed after automatic retry. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          curl --fail --silent --show-error \
+            --request POST \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${message}" \
+            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage"

@@ -2,8 +2,10 @@ name: Property Monitor
 
 on:
   schedule:
-    # Offset from the top of the hour to reduce GitHub scheduled-run congestion.
+    # Two off-peak attempts per hour reduce the effect of GitHub dropping a
+    # queued schedule event during Actions service congestion.
     - cron: "17 * * * *"
+    - cron: "47 * * * *"
   workflow_dispatch: {}
   push:
     branches:
@@ -17,7 +19,9 @@ on:
       - "location_matcher.py"
 
 concurrency:
-  group: property-monitor-main
+  # The monitor and publisher both update repository-backed queue state. A
+  # shared group prevents simultaneous commits and state.json conflicts.
+  group: property-automation-state
   cancel-in-progress: false
 
 permissions:
@@ -30,6 +34,9 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
+          # A re-run must start from current main, not the stale SHA belonging
+          # to the original run being retried.
+          ref: main
           fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
@@ -42,7 +49,9 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          MAX_VIDEOS_PER_RUN: "3"
+          # Stay below the free Gemini project's daily request allowance while
+          # preserving new listings in retry_pending for later runs.
+          MAX_VIDEOS_PER_RUN: "2"
           MAX_EXPLORATORY_PER_RUN: "1"
         run: python main.py
       - name: Commit state, records and approval jobs
@@ -119,3 +128,17 @@ jobs:
         run: |
           echo "::error::The monitor had one or more non-retryable analysis failures. Successful approved jobs were still committed and sent to Telegram."
           exit 1
+      - name: Alert Telegram when monitor recovery is required
+        if: failure()
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        shell: bash
+        run: |
+          message="⚠️ Property Monitor failed after automatic retry. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          curl --fail --silent --show-error \
+            --request POST \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${message}" \
+            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage"

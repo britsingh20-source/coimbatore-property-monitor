@@ -17,6 +17,21 @@ class StateStoreTests(unittest.TestCase):
         state_store.mark_success(state, "abc", True)
         self.assertFalse(state_store.eligible(state, video))
 
+    def test_transient_failures_never_become_manual_review(self):
+        state = {"videos": {}}
+        video = {"video_id": "quota-video"}
+        state_store.register_videos(state, [video])
+
+        for _ in range(8):
+            state_store.mark_failure(
+                state,
+                "quota-video",
+                RuntimeError("429 quota"),
+                always_retry=True,
+            )
+
+        self.assertEqual(state["videos"]["quota-video"]["status"], "retry_pending")
+
 
 if __name__ == "__main__":
     unittest.main()

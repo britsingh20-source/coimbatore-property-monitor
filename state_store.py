@@ -57,12 +57,21 @@ def mark_success(state: dict, video_id: str, target: bool) -> None:
     })
 
 
-def mark_failure(state: dict, video_id: str, error: Exception) -> None:
+def mark_failure(
+    state: dict,
+    video_id: str,
+    error: Exception,
+    *,
+    always_retry: bool = False,
+) -> None:
     record = state["videos"][video_id]
     attempts = int(record.get("attempts", 0)) + 1
     delay_hours = min(24, 2 ** min(attempts, 4))
     record.update({
-        "status": "retry_pending" if attempts < 6 else "manual_review",
+        # Quota exhaustion and temporary provider outages must never strand an
+        # otherwise valid listing in manual_review. They remain queued until a
+        # later run succeeds after the provider recovers or its daily reset.
+        "status": "retry_pending" if always_retry or attempts < 6 else "manual_review",
         "attempts": attempts,
         "last_error": str(error)[:1000],
         "last_attempt_at": utc_now().isoformat(),
