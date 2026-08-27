@@ -12,6 +12,27 @@ class RetryableAnalysisError(RuntimeError):
     pass
 
 
+def _is_retryable_error(message: str) -> bool:
+    normalized = (message or "").lower()
+    retryable_markers = (
+        "429",
+        "500",
+        "502",
+        "503",
+        "504",
+        "quota",
+        "resource_exhausted",
+        "too_many_requests",
+        "timeout",
+        "timed out",
+        "high demand",
+        "api_error",
+        "temporarily unavailable",
+        "internal server error",
+    )
+    return any(marker in normalized for marker in retryable_markers)
+
+
 def _parse_json(text: str) -> dict:
     cleaned = (text or "").strip()
     cleaned = re.sub(r"^```(?:json)?\s*|\s*```$", "", cleaned, flags=re.I)
@@ -61,6 +82,6 @@ Published: {video.get('published_at', '')}
         return result
     except Exception as error:
         message = str(error)
-        if any(token in message.lower() for token in ("429", "quota", "resource_exhausted", "timeout", "503")):
+        if _is_retryable_error(message):
             raise RetryableAnalysisError(message) from error
         raise
