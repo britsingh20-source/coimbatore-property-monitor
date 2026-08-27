@@ -252,11 +252,12 @@ def delete_youtube_video(video_id: str) -> dict:
 
 
 def _probe_video(video_path: Path) -> dict:
-    """Return the dimensions and duration used by the Shorts eligibility gate."""
+    """Return video and audio details used by the Shorts eligibility gate."""
     result = subprocess.run(
         [
-            "ffprobe", "-v", "error", "-select_streams", "v:0",
-            "-show_entries", "stream=width,height:format=duration",
+            "ffprobe", "-v", "error",
+            "-show_entries",
+            "stream=codec_type,codec_name,width,height,sample_rate,channels,channel_layout,bit_rate:format=duration",
             "-of", "json", str(video_path),
         ],
         check=True,
@@ -265,13 +266,19 @@ def _probe_video(video_path: Path) -> dict:
     )
     payload = json.loads(result.stdout)
     streams = payload.get("streams") or []
-    if not streams:
+    video_stream = next((item for item in streams if item.get("codec_type") == "video"), None)
+    audio_stream = next((item for item in streams if item.get("codec_type") == "audio"), None)
+    if video_stream is None:
         raise RuntimeError("Uploaded MP4 has no video stream")
-    stream = streams[0]
     return {
-        "width": int(stream.get("width") or 0),
-        "height": int(stream.get("height") or 0),
+        "width": int(video_stream.get("width") or 0),
+        "height": int(video_stream.get("height") or 0),
         "duration": float((payload.get("format") or {}).get("duration") or 0),
+        "audio_codec": str((audio_stream or {}).get("codec_name") or ""),
+        "audio_sample_rate": int((audio_stream or {}).get("sample_rate") or 0),
+        "audio_channels": int((audio_stream or {}).get("channels") or 0),
+        "audio_channel_layout": str((audio_stream or {}).get("channel_layout") or ""),
+        "audio_bit_rate": int((audio_stream or {}).get("bit_rate") or 0),
     }
 
 
@@ -317,13 +324,23 @@ def prepare_youtube_short(source_path: Path, output_path: Path) -> dict:
         )
         layout = "landscape_blurred_fill"
 
+    if source["audio_codec"] == "aac":
+        # The Telegram/Gemini MP4 already contains YouTube-compatible AAC.
+        # Copy it bit-for-bit: encoding it here and again at YouTube caused
+        # audible metallic/strained voice artifacts on the first converted Short.
+        audio_args = ["-c:a", "copy"]
+        audio_handling = "copied_original_aac"
+    else:
+        audio_args = ["-c:a", "aac", "-b:a", "256k", "-ar", "48000"]
+        audio_handling = "aac_fallback_encode" if source["audio_codec"] else "no_audio"
+
     subprocess.run(
         [
             "ffmpeg", "-y", "-loglevel", "error", "-i", str(source_path),
             "-filter_complex", video_filter,
             "-map", "[outv]", "-map", "0:a?",
             "-c:v", "libx264", "-preset", "medium", "-crf", "20",
-            "-c:a", "aac", "-b:a", "192k",
+            *audio_args,
             "-movflags", "+faststart", "-shortest", str(output_path),
         ],
         check=True,
@@ -334,7 +351,12 @@ def prepare_youtube_short(source_path: Path, output_path: Path) -> dict:
             "YouTube Short normalization failed: expected 1080x1920, got "
             f"{normalized['width']}x{normalized['height']}"
         )
-    return {"source": source, "output": normalized, "layout": layout}
+    return {
+        "source": source,
+        "output": normalized,
+        "layout": layout,
+        "audio_handling": audio_handling,
+    }
 
 
 def publish_facebook_story(video_path: Path) -> dict:
@@ -481,6 +503,21 @@ def _publish_one(key: str, etag: str, client, bucket: str, state: dict, queue: d
             f"{youtube_media['output']['width']}x{youtube_media['output']['height']} "
             f"({youtube_media['layout']})"
         )
+        if record.get("youtube_republish_pending"):
+            old_youtube_id = str(
+                record.get("platforms", {})
+                .get("youtube_short", {})
+                .get("result", {})
+                .get("video_id")
+                or ""
+            )
+            if old_youtube_id:
+                deletion = delete_youtube_video(old_youtube_id)
+                record["youtube_republish_deletion"] = deletion
+                print(f"DELETED disturbed youtube_short before audio-safe replacement: {old_youtube_id}")
+            record.setdefault("platforms", {}).pop("youtube_short", None)
+            record["youtube_republish_pending"] = False
+            _save_state(state)
         publishers: dict[str, Callable[[], dict]] = {
             "instagram_reel": lambda: publish_instagram_reel(video_url, str(content["caption"])),
             "facebook_reel": lambda: publish_facebook_reel(video_path, str(content["caption"])),
@@ -547,7 +584,10 @@ def main() -> None:
         etag = str(item.get("ETag", "")).strip('"')
         platforms = state.get("objects", {}).get(key, {}).get("platforms", {})
         correction_pending = bool(state.get("objects", {}).get(key, {}).get("correction_pending"))
-        if not correction_pending and all(
+        youtube_republish_pending = bool(
+            state.get("objects", {}).get(key, {}).get("youtube_republish_pending")
+        )
+        if not correction_pending and not youtube_republish_pending and all(
             platforms.get(p, {}).get("status") == "published" for p in PUBLIC_PLATFORMS
         ):
             continue
