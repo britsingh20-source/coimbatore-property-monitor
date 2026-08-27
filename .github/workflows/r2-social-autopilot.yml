@@ -61,6 +61,8 @@ jobs:
         with:
           python-version: "3.11"
           cache: pip
+      - name: Install video normalization tools
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - run: pip install -r requirements.txt
       - name: Import new Telegram property videos to R2
         id: telegram_ingest
