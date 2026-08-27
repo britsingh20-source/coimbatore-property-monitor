@@ -1395,6 +1395,14 @@
       "next_retry_at": "2026-08-18T13:11:18.332814+00:00",
       "status": "video_queued"
     },
+    "YxTt5-I6FRw": {
+      "attempts": 1,
+      "first_seen_at": "2026-08-27T09:55:44.553484+00:00",
+      "last_attempt_at": "2026-08-27T09:56:22.132712+00:00",
+      "last_error": "sequence item 2: expected str instance, dict found",
+      "next_retry_at": "2026-08-27T11:56:22.132724+00:00",
+      "status": "retry_pending"
+    },
     "ZOlzkDAKjNo": {
       "attempts": 0,
       "completed_at": "2026-08-06T10:03:04.874816+00:00",
