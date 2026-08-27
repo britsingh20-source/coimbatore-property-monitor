@@ -390,14 +390,113 @@
       "video_id": "6jJtYT4MA_E"
     },
     "social-ready/telegram-AgADRyEAAjekgVQ.mp4": {
-      "etag": "c3c5d2e5c6815f24ab0806c5d83aa1db-3",
-      "video_id": "czrxkmFHWn4",
-      "status": "matched",
-      "match_analysis": {
-        "method": "user_supplied_exact_video_id_recovery",
-        "confidence": 1
+      "content": {
+        "caption": "🏠 ₹5,80,000 per cent Residential Plot in Sulur, Coimbatore, Tamil Nadu — would you visit this property?\n\n📍 Location: Sulur, Coimbatore, Tamil Nadu\n🏡 Property: Residential Plot\n💰 Price: ₹5,80,000 per cent\n📐 Land: 36 Acres\n✅ Approval: DTCP & RERA\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #SulurCoimbatoreTamilNaduProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#CoimbatoreProperty",
+          "#SulurCoimbatoreTamilNaduProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "₹5,80,000 per cent Residential Plot in Sulur, Coimbatore, Tamil Nadu | Site Visit 9003787621",
+        "youtube_description": "₹5,80,000 per cent Residential Plot in Sulur, Coimbatore, Tamil Nadu. Watch the complete 10-second walkthrough.\n\n📍 Location: Sulur, Coimbatore, Tamil Nadu\n🏡 Property: Residential Plot\n💰 Price: ₹5,80,000 per cent\n📐 Land: 36 Acres\n✅ Approval: DTCP & RERA\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #SulurCoimbatoreTamilNaduProperty #CoimbatoreRealEstate"
       },
-      "platforms": {}
+      "etag": "c3c5d2e5c6815f24ab0806c5d83aa1db-3",
+      "match_analysis": {
+        "confidence": 1,
+        "method": "user_supplied_exact_video_id_recovery"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "creation_id": "17894818698599708",
+            "media_id": "18616251736054969",
+            "processing": {
+              "id": "17894818698599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "thumb_offset_ms": 2000
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17894818968599708",
+            "media_id": "18061263410596353",
+            "processing": {
+              "id": "17894818968599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "₹5,80,000 per cent Residential Plot in Sulur, Coimbatore, Tamil Nadu. Watch the complete 10-second walkthrough.\n\n📍 Location: Sulur, Coimbatore, Tamil Nadu\n🏡 Property: Residential Plot\n💰 Price: ₹5,80,000 per cent\n📐 Land: 36 Acres\n✅ Approval: DTCP & RERA\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #SulurCoimbatoreTamilNaduProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "₹5,80,000 per cent Residential Plot in Sulur, Coimbatore, Tamil Nadu. Watch the complete 10-second walkthrough.\n\n📍 Location: Sulur, Coimbatore, Tamil Nadu\n🏡 Property: Residential Plot\n💰 Price: ₹5,80,000 per cent\n📐 Land: 36 Acres\n✅ Approval: DTCP & RERA\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #SulurCoimbatoreTamilNaduProperty #CoimbatoreRealEstate",
+                "title": "₹5,80,000 per cent Residential Plot in Sulur, Coimbatore, Tamil Nadu | Site Visit 9003787621"
+              },
+              "publishedAt": "2026-08-27T02:22:57Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/14hXFPbWg34/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/14hXFPbWg34/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/14hXFPbWg34/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "₹5,80,000 per cent Residential Plot in Sulur, Coimbatore, Tamil Nadu | Site Visit 9003787621"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "14hXFPbWg34"
+          },
+          "status": "published"
+        }
+      },
+      "status": "matched",
+      "video_id": "czrxkmFHWn4",
+      "youtube_media": {
+        "layout": "landscape_blurred_fill",
+        "output": {
+          "duration": 19.966667,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "duration": 20.0,
+          "height": 1080,
+          "width": 1920
+        }
+      }
     },
     "social-ready/telegram-AgADUSIAAjekeVQ.mp4": {
       "candidate_video_ids": [
