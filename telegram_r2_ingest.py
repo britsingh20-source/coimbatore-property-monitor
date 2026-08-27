@@ -142,6 +142,23 @@ def _unique_pending_video_id(supplied_id: str, queue: dict) -> str:
     return matches[0] if len(matches) == 1 else ""
 
 
+def _resolve_supplied_video_id(supplied_id: str, queue: dict) -> str:
+    """Accept an exact known ID even when an earlier upload was published.
+
+    A user may regenerate a property video and send the same VIDEO_ID again.
+    Glyph correction remains limited to pending prompts so an ambiguous typo can
+    never select an old property silently.
+    """
+    known_ids = {
+        str(item.get("video_id") or "").strip()
+        for item in queue.get("prompts", [])
+        if item.get("video_id")
+    }
+    if supplied_id in known_ids:
+        return supplied_id
+    return _unique_pending_video_id(supplied_id, queue)
+
+
 def _oldest_pending(queue: dict) -> dict | None:
     pending = [
         item for item in queue.get("prompts", [])
@@ -184,7 +201,7 @@ def ingest() -> int:
             standalone_video_id = _explicit_video_id(message)
             if not standalone_video_id:
                 continue
-            resolved_video_id = _unique_pending_video_id(standalone_video_id, queue)
+            resolved_video_id = _resolve_supplied_video_id(standalone_video_id, queue)
             if resolved_video_id:
                 standalone_video_id = resolved_video_id
             prompt = next(
@@ -192,7 +209,6 @@ def ingest() -> int:
                     item
                     for item in queue.get("prompts", [])
                     if item.get("video_id") == standalone_video_id
-                    and item.get("status") == "pending_mobile_upload"
                 ),
                 None,
             )
@@ -207,6 +223,23 @@ def ingest() -> int:
                 key=lambda pair: int(pair[1].get("update_id") or 0),
                 reverse=True,
             )
+            if not candidates:
+                # When the ID belongs to an already-published prompt it was not
+                # part of the video's pending candidate snapshot. Safely pair
+                # only the most recent unmatched upload sent immediately before
+                # this standalone ID message.
+                recent_unmatched = [
+                    (unique_id, item)
+                    for unique_id, item in state.setdefault("files", {}).items()
+                    if item.get("status") == "uploaded_awaiting_content_match"
+                    and item.get("r2_key")
+                    and 0 < update_id - int(item.get("update_id") or 0) <= 5
+                ]
+                recent_unmatched.sort(
+                    key=lambda pair: int(pair[1].get("update_id") or 0),
+                    reverse=True,
+                )
+                candidates = recent_unmatched[:1]
             if prompt is None or not candidates:
                 _send(
                     token,
@@ -275,10 +308,15 @@ def ingest() -> int:
         ]
         explicit_video_id = "" if reference_video_id else _explicit_video_id(message)
         if explicit_video_id:
-            resolved_video_id = _unique_pending_video_id(explicit_video_id, queue)
+            resolved_video_id = _resolve_supplied_video_id(explicit_video_id, queue)
             if resolved_video_id:
                 explicit_video_id = resolved_video_id
-        if explicit_video_id and explicit_video_id not in pending_ids:
+        known_ids = {
+            str(item.get("video_id") or "").strip()
+            for item in queue.get("prompts", [])
+            if item.get("video_id")
+        }
+        if explicit_video_id and explicit_video_id not in known_ids:
             state["files"][unique_id] = {
                 "status": "rejected_invalid_video_id",
                 "provided_video_id": explicit_video_id,
@@ -288,7 +326,7 @@ def ingest() -> int:
             _send(
                 token,
                 chat_id,
-                f"Video ID {explicit_video_id} is not a pending property prompt. Nothing was uploaded or published. Please resend with the exact VIDEO_ID from the prompt.",
+                f"Video ID {explicit_video_id} is not a known property prompt. Nothing was uploaded or published. Please resend with the exact VIDEO_ID from the prompt.",
             )
             continue
 
