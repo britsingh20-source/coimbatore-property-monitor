@@ -5,13 +5,41 @@
   "language": "Tamil-English",
   "region": "Coimbatore, Tamil Nadu",
   "lookback_days": 10,
-  "max_candidates": 12,
+  "max_candidates": 30,
   "youtube_queries": [
     "Tamil interior design reels",
     "Coimbatore interior design",
     "modular kitchen Tamil",
     "small home interior Tamil",
     "interior renovation Tamil"
+  ],
+  "monitored_youtube_channels": [
+    {
+      "name": "Ridhi Khosla Jalan",
+      "handle": "Ridhi_KhoslaJalan",
+      "channel_id": "UCpBzqqQhfw2JffIeLQZGX_Q",
+      "priority": 1
+    },
+    {
+      "name": "Design.Decor.Travel.",
+      "handle": "designdecortravel",
+      "priority": 2
+    },
+    {
+      "name": "IDHD - Interior Design & Home Decor",
+      "handle": "IDHDofficial",
+      "priority": 2
+    },
+    {
+      "name": "DesignCafe",
+      "handle": "DesignCafe",
+      "priority": 2
+    },
+    {
+      "name": "Interior Coach",
+      "handle": "interiorcoach",
+      "priority": 2
+    }
   ],
   "youtube_channel_ids": [],
   "manual_competitor_urls": []

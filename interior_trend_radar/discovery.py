@@ -43,6 +43,39 @@ def _youtube_search(query: str, api_key: str, published_after: str) -> list[dict
     return items
 
 
+def _resolve_handle(handle: str, api_key: str) -> str:
+    params = {"part": "id", "forHandle": handle.lstrip("@"), "key": api_key}
+    data = _json("https://www.googleapis.com/youtube/v3/channels?" + parse.urlencode(params))
+    items = data.get("items", [])
+    return items[0]["id"] if items else ""
+
+
+def _youtube_channel_search(channel: dict, api_key: str, published_after: str) -> list[dict]:
+    channel_id = channel.get("channel_id", "") or _resolve_handle(channel.get("handle", ""), api_key)
+    if not channel_id:
+        raise ValueError(f"could not resolve @{channel.get('handle', '')}")
+    params = {
+        "part": "snippet", "type": "video", "order": "date", "maxResults": 10,
+        "channelId": channel_id, "publishedAfter": published_after, "key": api_key,
+    }
+    data = _json("https://www.googleapis.com/youtube/v3/search?" + parse.urlencode(params))
+    items = []
+    for row in data.get("items", []):
+        video_id = row.get("id", {}).get("videoId"); snippet = row.get("snippet", {})
+        if not video_id: continue
+        items.append({
+            "platform": "youtube", "video_id": video_id,
+            "url": f"https://www.youtube.com/watch?v={video_id}",
+            "title": snippet.get("title", ""), "description": snippet.get("description", ""),
+            "creator": channel.get("name") or snippet.get("channelTitle", ""),
+            "published_at": snippet.get("publishedAt", ""),
+            "thumbnail": snippet.get("thumbnails", {}).get("high", {}).get("url", ""),
+            "query": "priority-channel", "channel_id": channel_id,
+            "channel_priority": int(channel.get("priority", 2)),
+        })
+    return items
+
+
 def _youtube_feed(channel_id: str) -> list[dict]:
     url = "https://www.youtube.com/feeds/videos.xml?" + parse.urlencode({"channel_id": channel_id})
     with request.urlopen(request.Request(url, headers={"User-Agent": UA}), timeout=45) as response:
@@ -68,6 +101,9 @@ def discover(config_path: str, output_path: str) -> dict:
     candidates, errors = [], []
     api_key = os.getenv("YOUTUBE_API_KEY", "")
     if api_key:
+        for channel in config.get("monitored_youtube_channels", []):
+            try: candidates.extend(_youtube_channel_search(channel, api_key, after))
+            except Exception as exc: errors.append(f"youtube channel {channel.get('name', '')}: {type(exc).__name__}: {exc}")
         for query in config.get("youtube_queries", []):
             try: candidates.extend(_youtube_search(query, api_key, after))
             except Exception as exc: errors.append(f"youtube search {query}: {type(exc).__name__}: {exc}")
@@ -79,7 +115,11 @@ def discover(config_path: str, output_path: str) -> dict:
     for url in config.get("manual_competitor_urls", []):
         candidates.append({"platform": "manual", "video_id": _id(url), "url": url, "title": "Manual competitor reference", "description": "", "creator": "", "published_at": datetime.now(timezone.utc).isoformat(), "thumbnail": "", "query": "manual"})
     unique = {item["url"]: item for item in candidates}
-    ranked = sorted(unique.values(), key=lambda x: x.get("published_at", ""), reverse=True)
+    ranked = sorted(
+        unique.values(),
+        key=lambda x: (-(int(x.get("channel_priority", 99))), x.get("published_at", "")),
+        reverse=True,
+    )
     result = {"generated_at": datetime.now(timezone.utc).isoformat(), "errors": errors, "candidates": ranked[:int(config.get("max_candidates", 12))]}
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
     Path(output_path).write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
