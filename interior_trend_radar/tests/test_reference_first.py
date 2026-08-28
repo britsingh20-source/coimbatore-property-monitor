@@ -6,7 +6,7 @@ from interior_trend_radar.reference_first import build_reference_prompt, _select
 class ReferenceFirstPromptTests(unittest.TestCase):
     def test_prompt_has_property_monitor_structure_and_brand(self):
         candidate = {"url": "https://www.youtube.com/watch?v=abcdefghijk", "creator": "Test", "video_id": "abcdefghijk"}
-        analysis = {"trend_name": "Corner mechanism", "shot_subjects": ["wide kitchen"], "verified_visual_facts": ["warm wood cabinets"]}
+        analysis = {"core_idea": "Corner mechanism", "system_type": "cabinet mechanism", "installation_method": "inside corner cabinet", "mechanism": "pull-out", "shot_subjects": ["wide kitchen"], "verified_facts": ["warm wood cabinets"], "forbidden_substitutes": ["ordinary shelf"]}
         prompt = build_reference_prompt(candidate, analysis, {"brand": "Olive Tree Interiors"})
         self.assertIn("MANDATORY OUTPUT FORMAT LOCK", prompt)
         self.assertIn("REFERENCE-FIRST INSTRUCTION", prompt)
@@ -16,6 +16,8 @@ class ReferenceFirstPromptTests(unittest.TestCase):
         self.assertIn("no glossy CGI", prompt)
         self.assertNotIn("attached reference frames", prompt)
         self.assertIn("linked YouTube interior video", prompt)
+        self.assertIn("CRITICAL WRONG-SUBSTITUTE LOCK", prompt)
+        self.assertIn("ordinary shelf", prompt)
 
     def test_selects_one_unused_video_per_channel(self):
         config = {"daily_prompt_limit": 5, "monitored_youtube_channels": [{"name": "A"}, {"name": "B"}]}
