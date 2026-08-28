@@ -26,6 +26,7 @@ concurrency:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   monitor:
@@ -123,6 +124,15 @@ jobs:
             git pull --rebase
             git push
           fi
+      - name: Trigger social publisher fallback
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh workflow run r2-social-autopilot.yml --ref main -f dry_run=false
+          echo "Started the live social publisher as a fallback to its scheduled triggers."
       - name: Preserve monitor failure after committing successful jobs
         if: steps.monitor.outcome == 'failure'
         run: |
