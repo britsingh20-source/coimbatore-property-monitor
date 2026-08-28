@@ -26,5 +26,11 @@ class ReferenceFirstPromptTests(unittest.TestCase):
         selected = _select_daily(candidates, config, {"used_video_ids": ["used"]})
         self.assertEqual(["fresh-a", "fresh-b"], [item["video_id"] for item in selected])
 
+    def test_scheduled_slot_selects_one_preferred_channel(self):
+        config = {"daily_prompt_limit": 5, "monitored_youtube_channels": [{"name": "A"}, {"name": "B"}, {"name": "C"}]}
+        candidates = [{"creator": name, "video_id": name.lower()} for name in ("A", "B", "C")]
+        selected = _select_daily(candidates, config, {"used_video_ids": []}, "afternoon")
+        self.assertEqual(["b"], [item["video_id"] for item in selected])
+
 
 if __name__ == "__main__": unittest.main()
