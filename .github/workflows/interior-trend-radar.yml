@@ -10,6 +10,9 @@ on:
         default: true
   schedule:
     - cron: "30 3 * * *"
+    - cron: "30 8 * * *"
+    - cron: "30 11 * * *"
+    - cron: "30 13 * * *"
 
 permissions:
   contents: write
@@ -44,6 +47,13 @@ jobs:
         shell: bash
         run: |
           args=()
+          slot="manual"
+          case "${{ github.event.schedule }}" in
+            "30 3 * * *") slot="morning" ;;
+            "30 8 * * *") slot="afternoon" ;;
+            "30 11 * * *") slot="evening" ;;
+            "30 13 * * *") slot="night" ;;
+          esac
           if [[ "${{ github.event_name }}" == "schedule" || "${{ inputs.deliver_to_telegram }}" == "true" ]]; then
             args+=(--deliver)
           fi
@@ -52,6 +62,7 @@ jobs:
             interior_trend_radar/config.json \
             interior_trend_radar/output/production_pack.json \
             --state data/interior_trend_state.json \
+            --slot "$slot" \
             "${args[@]}"
       - name: Save used-video history
         if: ${{ github.event_name == 'schedule' || inputs.deliver_to_telegram }}
