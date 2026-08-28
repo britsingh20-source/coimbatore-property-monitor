@@ -14,7 +14,7 @@ It does **not** download or repost competitor footage. Metadata-only runs are la
 
 ## Configuration
 
-Edit `config.json`. Add known competitor YouTube channel IDs to `youtube_channel_ids` and Instagram/Reel links to `manual_competitor_urls`. Manual Instagram URLs are reference inputs; automated public Instagram scraping is intentionally not used because it is unreliable and may violate access controls.
+Edit `config.json`. Add priority creators to `monitored_youtube_channels`; a verified channel ID is preferred, but the workflow can resolve a YouTube handle through the official API. Lower priority numbers are processed first. Add Instagram/Reel links to `manual_competitor_urls`. Manual Instagram URLs are reference inputs; automated public Instagram scraping is intentionally not used because it is unreliable and may violate access controls.
 
 Required repository secrets for full operation:
 
