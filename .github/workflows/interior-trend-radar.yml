@@ -1,0 +1,50 @@
+name: Interior Trend Radar
+
+on:
+  workflow_dispatch:
+    inputs:
+      deliver_to_telegram:
+        description: Send the production pack to Telegram
+        required: true
+        type: boolean
+        default: true
+  schedule:
+    - cron: "30 3 * * 1,4"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: interior-trend-radar
+  cancel-in-progress: false
+
+jobs:
+  discover-analyze-deliver:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHONPATH: .
+      YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      INTERIOR_CONTACT: ${{ secrets.INTERIOR_CONTACT }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test Interior Trend Radar
+        run: python -m unittest discover -s interior_trend_radar/tests -v
+      - name: Discover recent interior videos
+        run: python -m interior_trend_radar.discovery interior_trend_radar/config.json interior_trend_radar/output/candidates.json
+      - name: Create original content and Google prompts
+        run: python -m interior_trend_radar.analyzer interior_trend_radar/output/candidates.json interior_trend_radar/config.json interior_trend_radar/output/production_pack.json
+      - name: Send production pack to Telegram
+        if: ${{ github.event_name == 'schedule' || inputs.deliver_to_telegram }}
+        run: python -m interior_trend_radar.telegram_pack interior_trend_radar/output/production_pack.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: interior-trend-radar-pack
+          path: interior_trend_radar/output/
+          retention-days: 14
