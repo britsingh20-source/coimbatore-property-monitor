@@ -1,6 +1,6 @@
 # Interior Trend Radar
 
-An isolated reference-first pipeline for growing Olive Tree Interiors. It discovers recent public interior videos, extracts five time-distributed visual references, verifies only what the images show, and sends those frames with one strict ready-to-paste Google Gemini/Veo prompt to Telegram.
+An isolated reference-first pipeline for growing Olive Tree Interiors. It discovers recent public interior videos and sends one strict ready-to-paste Google Gemini/Veo prompt containing the exact YouTube reference URL. No image attachment is required.
 
 It does **not** download or repost competitor footage. Metadata-only runs are labeled low confidence; the pack never claims frame-level inspection unless visual input is actually available.
 
@@ -8,9 +8,9 @@ It does **not** download or repost competitor footage. Metadata-only runs are la
 
 1. YouTube search/channel feeds and manually curated public URLs.
 2. Recent-item deduplication and ranking.
-3. Five-frame visual analysis through Gemini with no unsupported inference.
+3. URL-first instruction requiring Gemini to open and analyse the linked video frame-by-frame.
 4. One 10-second, seven-shot, reference-first 9:16 prompt following the property-monitor structure.
-5. Telegram reference album followed by the prompt document, plus a downloadable Actions artifact.
+5. Telegram prompt document, plus a downloadable Actions artifact.
 
 ## Configuration
 
