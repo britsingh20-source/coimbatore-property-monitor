@@ -4,8 +4,9 @@
   "contact": "",
   "language": "Tamil-English",
   "region": "Coimbatore, Tamil Nadu",
-  "lookback_days": 10,
-  "max_candidates": 30,
+  "lookback_days": 90,
+  "max_candidates": 50,
+  "daily_prompt_limit": 5,
   "youtube_queries": [
     "Tamil interior design reels",
     "Coimbatore interior design",

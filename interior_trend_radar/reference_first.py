@@ -69,30 +69,54 @@ Disclosure for final edit or caption: “AI visual reconstruction inspired by a 
 """
 
 
-def _send_prompt(prompt: str, candidate: dict, token: str, chat_id: str) -> None:
+def _send_prompt(prompt: str, candidate: dict, token: str, chat_id: str, position: int, total: int) -> None:
     import requests
     payload = io.BytesIO(prompt.encode()); payload.name = f"interior-{candidate['video_id']}-gemini-prompt.txt"
-    caption = "<b>Olive Tree Interiors — YouTube-reference Gemini prompt</b>\nNo image attachment is required. Paste this prompt in Gemini, allow it to open the included YouTube link, select Portrait/9:16, and generate the 10-second silent source clip."
+    caption = f"<b>Olive Tree Interiors — daily prompt {position}/{total}</b>\n<b>Source:</b> {candidate.get('creator', 'Interior channel')}\nNo image attachment is required. Paste this prompt in Gemini, allow it to open the included YouTube link, select Portrait/9:16, and generate the 10-second silent source clip."
     response = requests.post(f"https://api.telegram.org/bot{token}/sendDocument", data={"chat_id": chat_id, "caption": caption, "parse_mode": "HTML"}, files={"document": (payload.name, payload, "text/plain")}, timeout=90)
     response.raise_for_status()
     if not response.json().get("ok"): raise RuntimeError(response.text)
 
 
-def run(candidates_path: str, config_path: str, output_path: str, deliver: bool) -> dict:
+def _load_state(path: Path) -> dict:
+    if not path.exists(): return {"used_video_ids": [], "history": []}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _select_daily(candidates: list[dict], config: dict, state: dict) -> list[dict]:
+    used = set(state.get("used_video_ids", [])); selected = []
+    limit = int(config.get("daily_prompt_limit", 5))
+    for channel in config.get("monitored_youtube_channels", []):
+        name = channel.get("name", "")
+        match = next((item for item in candidates if item.get("creator") == name and item.get("video_id") not in used), None)
+        if match: selected.append(match)
+        if len(selected) >= limit: break
+    return selected
+
+
+def run(candidates_path: str, config_path: str, output_path: str, deliver: bool, state_path: str = "data/interior_trend_state.json") -> dict:
     discovery = json.loads(Path(candidates_path).read_text()); config = json.loads(Path(config_path).read_text())
     candidates = discovery.get("candidates", [])
     if not candidates: raise ValueError("No interior candidates found")
-    candidate = candidates[0]
-    prompt = build_reference_prompt(candidate, {}, config)
-    result = {"candidate": candidate, "gemini_prompt": prompt, "reference_mode": "youtube_url_only"}
+    state_file = Path(state_path); state = _load_state(state_file)
+    selected = _select_daily(candidates, config, state)
+    jobs = [{"candidate": candidate, "gemini_prompt": build_reference_prompt(candidate, {}, config)} for candidate in selected]
+    result = {"jobs": jobs, "prompt_count": len(jobs), "reference_mode": "youtube_url_only"}
     Path(output_path).parent.mkdir(parents=True, exist_ok=True); Path(output_path).write_text(json.dumps(result, ensure_ascii=False, indent=2))
-    if deliver:
+    if deliver and jobs:
         token = os.environ["TELEGRAM_BOT_TOKEN"]; chat_id = os.environ["TELEGRAM_CHAT_ID"]
-        _send_prompt(prompt, candidate, token, chat_id)
+        for index, job in enumerate(jobs, 1): _send_prompt(job["gemini_prompt"], job["candidate"], token, chat_id, index, len(jobs))
+        used = state.setdefault("used_video_ids", []); history = state.setdefault("history", [])
+        for job in jobs:
+            candidate = job["candidate"]
+            if candidate["video_id"] not in used: used.append(candidate["video_id"])
+            history.append({"video_id": candidate["video_id"], "creator": candidate.get("creator", ""), "url": candidate["url"]})
+        state["used_video_ids"] = used[-500:]; state["history"] = history[-500:]
+        state_file.parent.mkdir(parents=True, exist_ok=True); state_file.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return result
 
 
 if __name__ == "__main__":
     import argparse
-    parser = argparse.ArgumentParser(); parser.add_argument("candidates"); parser.add_argument("config"); parser.add_argument("output"); parser.add_argument("--deliver", action="store_true")
-    args = parser.parse_args(); run(args.candidates, args.config, args.output, args.deliver)
+    parser = argparse.ArgumentParser(); parser.add_argument("candidates"); parser.add_argument("config"); parser.add_argument("output"); parser.add_argument("--deliver", action="store_true"); parser.add_argument("--state", default="data/interior_trend_state.json")
+    args = parser.parse_args(); run(args.candidates, args.config, args.output, args.deliver, args.state)

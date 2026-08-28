@@ -1,6 +1,6 @@
 import unittest
 
-from interior_trend_radar.reference_first import build_reference_prompt
+from interior_trend_radar.reference_first import build_reference_prompt, _select_daily
 
 
 class ReferenceFirstPromptTests(unittest.TestCase):
@@ -16,6 +16,15 @@ class ReferenceFirstPromptTests(unittest.TestCase):
         self.assertIn("no glossy CGI", prompt)
         self.assertNotIn("attached reference frames", prompt)
         self.assertIn("linked YouTube interior video", prompt)
+
+    def test_selects_one_unused_video_per_channel(self):
+        config = {"daily_prompt_limit": 5, "monitored_youtube_channels": [{"name": "A"}, {"name": "B"}]}
+        candidates = [
+            {"creator": "A", "video_id": "used"}, {"creator": "A", "video_id": "fresh-a"},
+            {"creator": "B", "video_id": "fresh-b"}, {"creator": "B", "video_id": "older-b"},
+        ]
+        selected = _select_daily(candidates, config, {"used_video_ids": ["used"]})
+        self.assertEqual(["fresh-a", "fresh-b"], [item["video_id"] for item in selected])
 
 
 if __name__ == "__main__": unittest.main()
