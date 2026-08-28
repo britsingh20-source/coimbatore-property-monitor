@@ -1438,11 +1438,12 @@
     },
     "YxTt5-I6FRw": {
       "attempts": 1,
+      "completed_at": "2026-08-28T18:51:14.867353+00:00",
       "first_seen_at": "2026-08-27T09:55:44.553484+00:00",
       "last_attempt_at": "2026-08-27T09:56:22.132712+00:00",
-      "last_error": "sequence item 2: expected str instance, dict found",
+      "last_error": "",
       "next_retry_at": "2026-08-27T11:56:22.132724+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "ZOlzkDAKjNo": {
       "attempts": 0,
@@ -1861,6 +1862,14 @@
       "first_seen_at": "2026-08-21T07:10:39.897839+00:00",
       "last_error": "",
       "next_retry_at": "2026-08-21T07:10:39.897839+00:00",
+      "status": "video_queued"
+    },
+    "jdO7vT9yds0": {
+      "attempts": 0,
+      "completed_at": "2026-08-28T18:49:53.230772+00:00",
+      "first_seen_at": "2026-08-28T18:47:16.978373+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-08-28T18:47:16.978373+00:00",
       "status": "video_queued"
     },
     "jtxTpp00umw": {

@@ -1,0 +1,113 @@
+{
+  "video_id": "YxTt5-I6FRw",
+  "source_url": "https://www.youtube.com/watch?v=YxTt5-I6FRw",
+  "property_location": "Vadavalli, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "5.37 Cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "NOT SPECIFIED",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "5.37 Cents residential land for sale in Vadavalli, Coimbatore, North facing plot located within walking distance from the main road, Located opposite HDFC Bank, Pattinamman Nagar 2nd Street, towards Thondamuthur from Vadavalli town, Situated within 1 km from Vadavalli main town, Suitable for constructing an independent house or rental apartment property, Contact numbers provided: 904 2575 274, 904 300 2309",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Vadavalli சைட்ல Residential Plot தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 5.37 Cents லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு North ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/YxTt5-I6FRw/",
+  "optional_owned_audio": "assets/audio/YxTt5-I6FRw.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Vadavalli, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A 5.37-cent plot located amidst residential buildings, featuring a small existing single-storey tiled shed structure towards the back of the site.. Neighbourhood: Dense residential and commercial neighbourhood in Vadavalli with well-paved streets, close to main junctions, banks, schools, colleges, and healthcare facilities.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Vadavalli, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A 5.37-cent plot located amidst residential buildings, featuring a small existing single-storey tiled shed structure towards the back of the site.. Neighbourhood: Dense residential and commercial neighbourhood in Vadavalli with well-paved streets, close to main junctions, banks, schools, colleges, and healthcare facilities.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Vadavalli, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A 5.37-cent plot located amidst residential buildings, featuring a small existing single-storey tiled shed structure towards the back of the site.. Neighbourhood: Dense residential and commercial neighbourhood in Vadavalli with well-paved streets, close to main junctions, banks, schools, colleges, and healthcare facilities.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Vadavalli, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A 5.37-cent plot located amidst residential buildings, featuring a small existing single-storey tiled shed structure towards the back of the site.. Neighbourhood: Dense residential and commercial neighbourhood in Vadavalli with well-paved streets, close to main junctions, banks, schools, colleges, and healthcare facilities.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

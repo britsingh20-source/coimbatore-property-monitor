@@ -1,0 +1,153 @@
+{
+  "video_id": "jdO7vT9yds0",
+  "source_url": "https://www.youtube.com/watch?v=jdO7vT9yds0",
+  "property_location": "Avadi, Chennai, Tamil Nadu, India",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "646 sq ft onwards (51 Acre layout)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹21 Lakhs (for 646 sq ft) / ₹3,600 - ₹4,500 per sq.ft",
+    "facing": "North-East plots available",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "CMDA & RERA Approved"
+  },
+  "verified_facts": "Project name: HiLiving Nexora, located in Avadi, Chennai., Total project area is 51 acres containing 1,200 plots., Plot rates range from ₹3,600 to ₹4,500 per sq ft., Sample plot pricing shown is ₹21 Lakhs for 646 sq ft., Located 2 km from Mittanamalli railway station and 700 m from the Outer Ring Road., CMDA and RERA approved with bank loan facility available.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Conversational local real estate presenter speaking directly to camera, relaxed and informative",
+    "hook_strategy": "Highlight key connectivity distance from Outer Ring Road in Avadi location within first 3 seconds",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "சென்னை ஆவடியில, Outer Ring Road-ல இருந்து வெறும் 700 meter-ல HiLiving Nexora residential plots அமைஞ்சிருக்கு.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior",
+          "living_room"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 51 acre layout-ல 1,200 plots இருக்கு. 646 sq ft-ல இருந்து plots கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "layout-highlight",
+        "purpose": "property-overview"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல North-East facing plots-ம் available-ஆ இருக்குங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "kitchen"
+        ],
+        "vfx": "compass-badge",
+        "purpose": "facing-details"
+      },
+      {
+        "name": "road",
+        "voice": "Gated entrance arch, blacktop road, street lights, water facility, 24/7 CCTV security-னு எல்லாமே sẵn-ஆ இருக்கு.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen"
+        ],
+        "vfx": "amenities-list",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "approval",
+        "voice": "இது CMDA மற்றும் RERA approval பெற்ற project. Bank loan facility-யும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust-building"
+      },
+      {
+        "name": "price",
+        "voice": "Sq ft rate ₹3,600-ல இருந்து ₹4,500 வரைக்கும் வருது. 646 sq ft plot ₹21 Lakhs-ல இருந்து start ஆகுது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "price-tag-overlay",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "Site visit schedule பண்ண அல்லது மத்த details தெரிஞ்சுக்க உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen"
+        ],
+        "vfx": "contact-details",
+        "purpose": "call-to-action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/jdO7vT9yds0/",
+  "optional_owned_audio": "assets/audio/jdO7vT9yds0.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Avadi, Chennai, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Expansive layout site featuring freshly laid blacktop internal roads, demarcated plot boundaries, street lighting poles, colorful flag banners, and an ornate entrance archway ('Nexora Welcomes You').. Neighbourhood: Developing suburban area in Avadi near Pattabiram Military Siding station, well connected by the Outer Ring Road and surrounded by major schools and engineering colleges.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Avadi, Chennai, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Expansive layout site featuring freshly laid blacktop internal roads, demarcated plot boundaries, street lighting poles, colorful flag banners, and an ornate entrance archway ('Nexora Welcomes You').. Neighbourhood: Developing suburban area in Avadi near Pattabiram Military Siding station, well connected by the Outer Ring Road and surrounded by major schools and engineering colleges.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Avadi, Chennai, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Expansive layout site featuring freshly laid blacktop internal roads, demarcated plot boundaries, street lighting poles, colorful flag banners, and an ornate entrance archway ('Nexora Welcomes You').. Neighbourhood: Developing suburban area in Avadi near Pattabiram Military Siding station, well connected by the Outer Ring Road and surrounded by major schools and engineering colleges.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Avadi, Chennai, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Expansive layout site featuring freshly laid blacktop internal roads, demarcated plot boundaries, street lighting poles, colorful flag banners, and an ornate entrance archway ('Nexora Welcomes You').. Neighbourhood: Developing suburban area in Avadi near Pattabiram Military Siding station, well connected by the Outer Ring Road and surrounded by major schools and engineering colleges.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
