@@ -10,7 +10,9 @@ It does **not** download or repost competitor footage. Metadata-only runs are la
 2. Recent-item deduplication and ranking.
 3. URL-first instruction requiring Gemini to open and analyse the linked video frame-by-frame.
 4. One 10-second, seven-shot, reference-first 9:16 prompt following the property-monitor structure.
-5. Telegram prompt document, plus a downloadable Actions artifact.
+5. Up to five Telegram prompt documents daily—one unused source per monitored channel—plus a downloadable Actions artifact.
+
+The workflow runs daily at 9:00 AM IST. A persistent `data/interior_trend_state.json` history prevents the same source video from being issued twice. It can send three, four or five prompts depending on how many monitored channels have unused source videos in the 90-day pool.
 
 ## Configuration
 
