@@ -1,6 +1,6 @@
 # Interior Trend Radar
 
-An isolated competitor-learning pipeline for growing an interior-design Instagram page. It discovers recent public interior Shorts, extracts reusable creative patterns, creates an original Tamil-English content package, and sends four ready-to-paste Google Flow/Veo prompts to Telegram.
+An isolated reference-first pipeline for growing Olive Tree Interiors. It discovers recent public interior videos, extracts five time-distributed visual references, verifies only what the images show, and sends those frames with one strict ready-to-paste Google Gemini/Veo prompt to Telegram.
 
 It does **not** download or repost competitor footage. Metadata-only runs are labeled low confidence; the pack never claims frame-level inspection unless visual input is actually available.
 
@@ -8,9 +8,9 @@ It does **not** download or repost competitor footage. Metadata-only runs are la
 
 1. YouTube search/channel feeds and manually curated public URLs.
 2. Recent-item deduplication and ranking.
-3. Gemini creative analysis with an original-content constraint.
-4. Four consistent 9:16 Google video prompts, script, cover, caption and hashtags.
-5. Optional Telegram delivery plus a downloadable GitHub Actions artifact.
+3. Five-frame visual analysis through Gemini with no unsupported inference.
+4. One 10-second, seven-shot, reference-first 9:16 prompt following the property-monitor structure.
+5. Telegram reference album followed by the prompt document, plus a downloadable Actions artifact.
 
 ## Configuration
 
