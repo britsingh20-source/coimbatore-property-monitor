@@ -9,10 +9,10 @@ on:
         type: boolean
         default: true
   schedule:
-    - cron: "30 3 * * 1,4"
+    - cron: "30 3 * * *"
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: interior-trend-radar
@@ -51,7 +51,23 @@ jobs:
             interior_trend_radar/output/candidates.json \
             interior_trend_radar/config.json \
             interior_trend_radar/output/production_pack.json \
+            --state data/interior_trend_state.json \
             "${args[@]}"
+      - name: Save used-video history
+        if: ${{ github.event_name == 'schedule' || inputs.deliver_to_telegram }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "interior-trend-bot"
+          git config user.email "actions@github.com"
+          git add data/interior_trend_state.json
+          if git diff --staged --quiet; then
+            echo "No new interior prompts were consumed."
+          else
+            git commit -m "Record daily Olive Tree interior prompts [automated]"
+            git pull --rebase
+            git push
+          fi
       - uses: actions/upload-artifact@v4
         with:
           name: interior-trend-radar-pack
