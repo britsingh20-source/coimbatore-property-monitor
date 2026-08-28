@@ -5,7 +5,6 @@ import json
 import os
 from pathlib import Path
 
-
 def build_reference_prompt(candidate: dict, analysis: dict, config: dict) -> str:
     source = candidate["url"]
     source_title = candidate.get("title", "Interior reference video")
@@ -16,6 +15,7 @@ def build_reference_prompt(candidate: dict, analysis: dict, config: dict) -> str
     shots = []
     labels = ["ESTABLISHING VIEW", "PRODUCT OR DESIGN CONTEXT", "MATERIAL DETAIL", "MECHANISM OR FUNCTION", "PRACTICAL APPLICATION", "SECOND VERIFIED DETAIL", "FINAL REVEAL"]
     times = ["0 TO 1.4", "1.4 TO 2.8", "2.8 TO 4.2", "4.2 TO 5.6", "5.6 TO 7.0", "7.0 TO 8.5", "8.5 TO 10"]
+    verified_subjects = analysis.get("shot_subjects") or []
     instructions = [
         "the strongest verified wide view of the real room or installation shown in the source",
         "the new product, equipment or design idea in its verified room context",
@@ -25,6 +25,8 @@ def build_reference_prompt(candidate: dict, analysis: dict, config: dict) -> str
         "a second distinct verified feature that has not appeared earlier",
         "the strongest final verified reveal of the same design or equipment",
     ]
+    for index, subject in enumerate(verified_subjects[:7]):
+        if subject and str(subject).upper() != "NOT CONFIRMED": instructions[index] = str(subject)
     for i in range(7):
         shots.append(f"SHOT {i+1} — {times[i]} SECONDS — {labels[i]}\nHard cut to {instructions[i]}. Use a controlled professional smartphone-gimbal push-in, lateral slide or detail reveal appropriate to the source. Preserve the same room, product geometry, materials, colours, scale and installation. If this subject is not visible in the reference, substitute a different visually verified detail; never invent it.")
     return f"""MANDATORY OUTPUT FORMAT LOCK — READ THIS FIRST
@@ -45,7 +47,20 @@ Source: {source}
 Creator: {candidate.get('creator', 'Not specified')}
 Source title: {source_title}
 Source description: {source_description}
-Reference requirement: Gemini must determine the actual room, new product/equipment, materials, colours, mechanism, layout and practical benefit directly from the linked video. Treat the title and description only as supporting context. Do not display any unverified claim in the generated video.
+Core idea: {analysis.get('core_idea', 'NOT CONFIRMED')}
+Exact system/product type: {analysis.get('system_type', 'NOT CONFIRMED')}
+Installation method: {analysis.get('installation_method', 'NOT CONFIRMED')}
+Operating mechanism: {analysis.get('mechanism', 'NOT CONFIRMED')}
+Room/application: {analysis.get('room_application', 'NOT CONFIRMED')}
+Practical benefit: {analysis.get('practical_benefit', 'NOT CONFIRMED')}
+Required components: {'; '.join(analysis.get('required_components') or ['NOT CONFIRMED'])}
+Verified facts: {'; '.join(analysis.get('verified_facts') or ['NOT CONFIRMED'])}
+Reference requirement: Preserve this exact system category, installation connection and operating mechanism. Treat the title and description only as supporting context. Do not display or visually imply any unverified claim.
+
+CRITICAL WRONG-SUBSTITUTE LOCK
+Do not replace the verified system with any of these incorrect alternatives:
+{chr(10).join('- ' + item for item in (analysis.get('forbidden_substitutes') or ['any generic product that does not use the verified installation and mechanism']))}
+If Gemini cannot reconstruct the exact verified installation and mechanism, do not generate a generic substitute; ask the user to retry.
 
 Generate one completely new, highly photorealistic, exactly 10-second vertical 9:16 interior source clip at 60 fps. It will be slowed to 33.3% speed in VN Editor to create a smooth 30-second final video. Do not reuse source frames directly. Reconstruct only the visually confirmed design identity. It must resemble genuine smartphone footage recorded with a professional gimbal inside a real occupied Indian home or working interior showroom—not an architectural render, showroom CGI, slideshow or AI-image animation.
 
@@ -101,12 +116,16 @@ def _select_daily(candidates: list[dict], config: dict, state: dict, slot: str =
 
 
 def run(candidates_path: str, config_path: str, output_path: str, deliver: bool, state_path: str = "data/interior_trend_state.json", slot: str = "manual") -> dict:
+    from .video_analyzer import analyze_interior_video
     discovery = json.loads(Path(candidates_path).read_text()); config = json.loads(Path(config_path).read_text())
     candidates = discovery.get("candidates", [])
     if not candidates: raise ValueError("No interior candidates found")
     state_file = Path(state_path); state = _load_state(state_file)
     selected = _select_daily(candidates, config, state, slot)
-    jobs = [{"candidate": candidate, "gemini_prompt": build_reference_prompt(candidate, {}, config)} for candidate in selected]
+    jobs = []
+    for candidate in selected:
+        analysis = analyze_interior_video(candidate)
+        jobs.append({"candidate": candidate, "video_analysis": analysis, "gemini_prompt": build_reference_prompt(candidate, analysis, config)})
     result = {"jobs": jobs, "prompt_count": len(jobs), "reference_mode": "youtube_url_only", "delivery_slot": slot}
     Path(output_path).parent.mkdir(parents=True, exist_ok=True); Path(output_path).write_text(json.dumps(result, ensure_ascii=False, indent=2))
     if deliver and jobs:
