@@ -12,7 +12,7 @@ It does **not** download or repost competitor footage. Metadata-only runs are la
 4. One 10-second, seven-shot, reference-first 9:16 prompt following the property-monitor structure.
 5. Up to five Telegram prompt documents daily—one unused source per monitored channel—plus a downloadable Actions artifact.
 
-The workflow runs daily at 9:00 AM IST. A persistent `data/interior_trend_state.json` history prevents the same source video from being issued twice. It can send three, four or five prompts depending on how many monitored channels have unused source videos in the 90-day pool.
+The workflow sends one prompt at each daily IST slot: 9:00 AM, 2:00 PM, 5:00 PM and 7:00 PM. The morning slot prefers Ridhi Khosla Jalan; afternoon and evening use the next priority channels; the two remaining channels alternate in the 7:00 PM slot. If a preferred channel has no unused reference, the selector automatically falls back to another monitored channel. A persistent `data/interior_trend_state.json` history prevents the same source video from being issued twice.
 
 ## Configuration
 
