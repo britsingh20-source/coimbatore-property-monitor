@@ -1,0 +1,142 @@
+{
+  "video_id": "TiLsTsAVlT8",
+  "source_url": "https://www.youtube.com/watch?v=TiLsTsAVlT8",
+  "property_location": "Kiruba Enclave, Puthur, Thondamuthur, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "3.5 Cents (Plot dimensions: 27 ft x 57 ft)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹8 Lakhs per cent (Negotiable)",
+    "facing": "South",
+    "road_width": "30 Feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Resale plots for sale in Kiruba Enclave layout, Puthur, Thondamuthur, Coimbatore., 2 plots of 3.5 cents each available (dimension: 27 ft x 57 ft)., Plot facing is South., Layout is DTCP approved with 30 feet wide road access., Equipped with drinking water supply and EB line., Over 20 houses already constructed in the surrounding layout area., Price is ₹8 Lakhs per cent (negotiable)., Contact phone number: 9345425595.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local Coimbatore property presenter speaking directly to camera.",
+    "hook_strategy": "Highlight the Prime Thondamuthur location with ready-to-build layout setting.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோயம்புத்தூர் தொண்டாமுத்தூர் புத்தூர்ல இருக்குற கிருபா என்கிளேவ் லேஅவுட்ல ரெசிடென்ஷியல் பிளாட்ஸ் விற்பனைக்கு வந்திருக்குங்க!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல 27 cross 57 அளவுகள் கொண்ட 3.5 சென்ட் பிளாட்ஸ் 2 கிடைக்குது. சுற்றிலும் 20 வீடுகளுக்கு மேல கட்டிட்டாங்க, குடிநீர் வசதி மற்றும் EB line வசதியும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "property-details"
+      },
+      {
+        "name": "facing",
+        "voice": "இந்த பிளாட்ஸ் எல்லாமே சவுத் ஃபேசிங் அதாவது தெற்கு பார்த்த அமைப்பில் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing-info"
+      },
+      {
+        "name": "road",
+        "voice": "நல்லா 30 feet அகல ரோடு அக்சஸ் இருக்கு. பக்கத்துலேயே பஸ் ஸ்டாப், பள்ளிகள், மருத்துவமனைகள் மற்றும் commercial facilities எல்லாமே இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "accessibility"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், இந்த லேஅவுட் முழுமையா DTCP approval பெற்றது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust-building"
+      },
+      {
+        "name": "price",
+        "voice": "விலை பாத்தீங்கனா, ஒரு சென்ட் 8 லட்சம் ரூபாய்னு சொல்றாங்க. இது negotiable தான்.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details வேணும்னாலோ இல்ல site visit வரணும்னாலோ 9345425595 எண்ணுக்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "call-action",
+        "purpose": "call-to-action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/TiLsTsAVlT8/",
+  "optional_owned_audio": "assets/audio/TiLsTsAVlT8.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Kiruba Enclave, Puthur, Thondamuthur, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Level vacant residential plots inside a plotted development with gravel road access, young trees, line water posts, and coconut trees lining the perimeter.. Neighbourhood: Residential layout surrounded by lush coconut palm groves and existing independent houses in Thondamuthur, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Kiruba Enclave, Puthur, Thondamuthur, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Level vacant residential plots inside a plotted development with gravel road access, young trees, line water posts, and coconut trees lining the perimeter.. Neighbourhood: Residential layout surrounded by lush coconut palm groves and existing independent houses in Thondamuthur, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Kiruba Enclave, Puthur, Thondamuthur, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Level vacant residential plots inside a plotted development with gravel road access, young trees, line water posts, and coconut trees lining the perimeter.. Neighbourhood: Residential layout surrounded by lush coconut palm groves and existing independent houses in Thondamuthur, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Kiruba Enclave, Puthur, Thondamuthur, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Level vacant residential plots inside a plotted development with gravel road access, young trees, line water posts, and coconut trees lining the perimeter.. Neighbourhood: Residential layout surrounded by lush coconut palm groves and existing independent houses in Thondamuthur, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
