@@ -1,0 +1,133 @@
+{
+  "video_id": "oPKXHsE6wVE",
+  "source_url": "https://www.youtube.com/watch?v=oPKXHsE6wVE",
+  "property_location": "Periyanaickenpalayam, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "NOT SPECIFIED",
+    "facing": "NOT SPECIFIED",
+    "road_width": "30 - 33 ft",
+    "parking": "NOT SPECIFIED",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "Project named 'Vishaka Green Lands' spread across 2.5 acres containing 45 plots in Periyanaickenpalayam, Coimbatore., House construction options available: 2 BHK priced at 59.5 Lakhs and 3 BHK priced at 72 Lakhs., Initial downpayment required is ₹5 to ₹7 Lakhs with bank loan support available for the remaining amount., Located within 2-5 minutes from main bus stop and Mettupalayam Road.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera with natural Coimbatore Tamil speech.",
+    "hook_strategy": "Highlight the prime location of Periyanaickenpalayam just 2 to 5 minutes from Mettupalayam Road bus stop.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Periyanaickenpalayam-ல, Mettupalayam Road மற்றும் bus stop-லிருந்து 2 to 5 minutes distance-ல அமைஞ்சிருக்கற location இது.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இங்க 2.5 acres-ல 45 plots கொண்ட 'Vishaka Green Lands' project அமைஞ்சிருக்கு. full compound wall மற்றும் CCTV surveillance வசதியும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "project-name-overlay",
+        "purpose": "land_details"
+      },
+      {
+        "name": "road",
+        "voice": "இதுல 30 to 33 feet tar roads, EB connection, drainage system, மற்றும் water lines வசதி பண்ணியிருக்காங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "living_room"
+        ],
+        "vfx": "road-width-tag",
+        "purpose": "road_and_amenities"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இங்க house construction options-உம் தர்றாங்க. 2 BHK மற்றும் 3 BHK வீடு கட்டித்தர வசதி இருக்கு.",
+        "broll": [
+          "living_room",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "bhk-options-tag",
+        "purpose": "construction_options"
+      },
+      {
+        "name": "price",
+        "voice": "2 BHK 59.5 Lakhs-க்கும், 3 BHK 72 Lakhs-க்கும் கிடைக்கும். Initial downpayment 5 to 7 Lakhs இருந்தா போதும், bank loan support-உம் இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "price-breakdown-card",
+        "purpose": "pricing_and_financing"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details தெரிஞ்சுக்க மற்றும் site visit-க்கு உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "contact-details-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/oPKXHsE6wVE/",
+  "optional_owned_audio": "assets/audio/oPKXHsE6wVE.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Developing gated plot layout featuring newly laid wide asphalt roads with painted white-and-yellow curbs, underground drainage lines, electricity poles, and surrounding perimeter walls.. Neighbourhood: Peaceful residential neighborhood in Periyanaickenpalayam surrounded by lush coconut groves, close to Mettupalayam highway, public transit, hospitals, and educational institutes.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Developing gated plot layout featuring newly laid wide asphalt roads with painted white-and-yellow curbs, underground drainage lines, electricity poles, and surrounding perimeter walls.. Neighbourhood: Peaceful residential neighborhood in Periyanaickenpalayam surrounded by lush coconut groves, close to Mettupalayam highway, public transit, hospitals, and educational institutes.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Developing gated plot layout featuring newly laid wide asphalt roads with painted white-and-yellow curbs, underground drainage lines, electricity poles, and surrounding perimeter walls.. Neighbourhood: Peaceful residential neighborhood in Periyanaickenpalayam surrounded by lush coconut groves, close to Mettupalayam highway, public transit, hospitals, and educational institutes.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Developing gated plot layout featuring newly laid wide asphalt roads with painted white-and-yellow curbs, underground drainage lines, electricity poles, and surrounding perimeter walls.. Neighbourhood: Peaceful residential neighborhood in Periyanaickenpalayam surrounded by lush coconut groves, close to Mettupalayam highway, public transit, hospitals, and educational institutes.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "needs_review",
+  "approval_mode": "automatic_fact_gate_v1"
+}
