@@ -14,6 +14,8 @@ class ReferenceFirstPromptTests(unittest.TestCase):
         self.assertIn("OLIVE TREE INTERIORS", prompt)
         self.assertIn("Exactly 10 seconds", prompt)
         self.assertIn("no glossy CGI", prompt)
+        self.assertNotIn("attached reference frames", prompt)
+        self.assertIn("linked YouTube interior video", prompt)
 
 
 if __name__ == "__main__": unittest.main()
