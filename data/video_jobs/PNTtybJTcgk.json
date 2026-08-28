@@ -1,0 +1,119 @@
+{
+  "video_id": "PNTtybJTcgk",
+  "source_url": "https://www.youtube.com/watch?v=PNTtybJTcgk",
+  "property_location": "Vellalore, Singanallur, Kanjikonampalayam, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹13,30,000 per cent",
+    "facing": "NOT SPECIFIED",
+    "road_width": "33 ft",
+    "parking": "NOT SPECIFIED",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "Located in Vellalore / Kanjikonampalayam opposite Kanjikonampalayam Bus Stand., Property is situated inside a gated community site., Road width provided inside the layout is 33 feet., Market rate in the area is around 15-16 Lakhs per cent, offered at ₹13.30 Lakhs per cent., Located within 500m distance from the L&T Bypass highway., Contact number for inquiries: 8220101046.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking naturally to camera with clear spoken Tamil",
+    "hook_strategy": "Lead with prime location advantage 500m from L&T Bypass opposite the bus stand followed by high-value market rate comparison",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Vellalore, Kanjikonampalayam Bus Stand-க்கு நேர் எதிரா, L&T Bypass-ல இருந்து வெறும் 500 meter-ல இந்த residential plot அமைஞ்சிருக்கு.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-badge",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது ஒரு gated community site. இதுல clubhouse, water connection, electricity connection மற்றும் drainage system எல்லாமே அமைச்சிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "interior"
+        ],
+        "vfx": "amenities-grid",
+        "purpose": "layout_overview"
+      },
+      {
+        "name": "road",
+        "voice": "layout-க்கு உள்ள பாத்தீங்கனா நல்ல விசாலமான 33 feet tar road அமைச்சிருக்காங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "width-text-overlay",
+        "purpose": "road_infrastructure"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த சுற்றுவட்டாரத்துல market rate cent-க்கு 15-லிருந்து 16 lakhs வரை போகுது. ஆனா இங்க ஒரு cent வெறும் 13,30,000 ரூபாய்-க்கு தர்றாங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "price-highlight",
+        "purpose": "pricing_offer"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details தெரிஞ்சுக்க அல்லது site visit பண்ண 8220101046-க்கு call பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/PNTtybJTcgk/",
+  "optional_owned_audio": "assets/audio/PNTtybJTcgk.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Vellalore, Singanallur, Kanjikonampalayam, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Divided residential plot layout in a gated community with laid internal road demarcations, drainage, water, and electricity infrastructure visible.. Neighbourhood: Developing residential area near L&T Bypass highway in Vellalore, close to Kanjikonampalayam bus stand and accessible from Coimbatore Airport entrance.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Vellalore, Singanallur, Kanjikonampalayam, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Divided residential plot layout in a gated community with laid internal road demarcations, drainage, water, and electricity infrastructure visible.. Neighbourhood: Developing residential area near L&T Bypass highway in Vellalore, close to Kanjikonampalayam bus stand and accessible from Coimbatore Airport entrance.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Vellalore, Singanallur, Kanjikonampalayam, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Divided residential plot layout in a gated community with laid internal road demarcations, drainage, water, and electricity infrastructure visible.. Neighbourhood: Developing residential area near L&T Bypass highway in Vellalore, close to Kanjikonampalayam bus stand and accessible from Coimbatore Airport entrance.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Vellalore, Singanallur, Kanjikonampalayam, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Divided residential plot layout in a gated community with laid internal road demarcations, drainage, water, and electricity infrastructure visible.. Neighbourhood: Developing residential area near L&T Bypass highway in Vellalore, close to Kanjikonampalayam bus stand and accessible from Coimbatore Airport entrance.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

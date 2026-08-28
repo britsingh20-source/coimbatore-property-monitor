@@ -1,0 +1,146 @@
+{
+  "video_id": "9HYRV7ux5tg",
+  "source_url": "https://www.youtube.com/watch?v=9HYRV7ux5tg",
+  "property_location": "Vadavalli, Thondamuthur Road, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Villa",
+    "bhk": "3 BHK",
+    "land_area": "4.13 Cents (1,800 sq ft / 30 x 60 ft)",
+    "built_up_area": "3,200 sq ft",
+    "price": "₹2.49 Crore (Negotiable)",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Double Car Parking (26 ft x 17 ft)",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Land size is 4.13 cents (1,800 sq ft, 30 ft width x 60 ft length)., Total built-up area is 3,200 sq ft across Ground, First, and Second floors in a triplex layout., North-facing plot with a North-facing main entrance door made of teak wood with a smart digital lock., Ground floor includes covered car parking (26'x17'), sitout (8'x5'), living hall (22'x16'), dining & kitchen (20'x10'), first bedroom (16'x11') with attached bathroom (8'x5'), and an outside bathroom (4'x6')., Kitchen is a parallel modular design with white quartz countertop, upper/lower cabinets, wicker baskets, dishwasher space, and external gas cylinder piping., Includes a wooden CNC-cut pooja cabinet, crockery unit, and under-stairs hidden storage room., First floor includes a lounge (18.5'x10'), study space, second master bedroom (20'x16') with attached bathroom (12'x5.5') and courtyard/utility (7.75'x6') with ceiling skylight., Third master bedroom on first floor measures 16'x16' with attached bathroom (10'x5'), internal garden space (5.5'x5') with terracotta jaali and skylight, and front balcony (15'x9.25').",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local real-estate presenter speaking to camera",
+    "hook_strategy": "Highlight 3,200 sq ft luxury triplex villa in prime Vadavalli location",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Vadavalli, Thondamuthur Road கிட்ட இருக்குற ஒரு 3 BHK luxury Villa பாக்கலாம் வாங்க!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 4.13 Cents land-ல, 30-க்கு 60 dimensions-ல அமைச்சிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "land-dimensions",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Built-up area பாத்தீங்கனா 3,200 sq ft! Triplex layout-ல modular kitchen, balcony, Gym room-னு எல்லாமே செமையா இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-highlight",
+        "purpose": "built_up_details"
+      },
+      {
+        "name": "facing",
+        "voice": "North facing plot, அதே மாதிரி main entrance door-உம் North facing-ல தான் வருது.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "compass",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approved property, bank loan facility-யும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட asking price 2.49 Crore rupees, negotiable தான்!",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "Direct site visit பண்ணவோ அல்லது கூடுதல் details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/9HYRV7ux5tg/",
+  "optional_owned_audio": "assets/audio/9HYRV7ux5tg.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary row-villa facade combining red terracotta clay tiles, clay jaali lattice panels, grey concrete-textured wall panels, white painted borders, dark metal main gate with a small pedestrian door, covered porch with wood-finish ceiling panelling, and a red-tiled rooftop terrace with metal safety structures.. Neighbourhood: Residential row-house layout located off Thondamuthur Road in Vadavalli, Coimbatore, featuring neighboring modern houses, paved access streets, clear open skies, and distant views of green hills from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary row-villa facade combining red terracotta clay tiles, clay jaali lattice panels, grey concrete-textured wall panels, white painted borders, dark metal main gate with a small pedestrian door, covered porch with wood-finish ceiling panelling, and a red-tiled rooftop terrace with metal safety structures.. Neighbourhood: Residential row-house layout located off Thondamuthur Road in Vadavalli, Coimbatore, featuring neighboring modern houses, paved access streets, clear open skies, and distant views of green hills from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary row-villa facade combining red terracotta clay tiles, clay jaali lattice panels, grey concrete-textured wall panels, white painted borders, dark metal main gate with a small pedestrian door, covered porch with wood-finish ceiling panelling, and a red-tiled rooftop terrace with metal safety structures.. Neighbourhood: Residential row-house layout located off Thondamuthur Road in Vadavalli, Coimbatore, featuring neighboring modern houses, paved access streets, clear open skies, and distant views of green hills from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary row-villa facade combining red terracotta clay tiles, clay jaali lattice panels, grey concrete-textured wall panels, white painted borders, dark metal main gate with a small pedestrian door, covered porch with wood-finish ceiling panelling, and a red-tiled rooftop terrace with metal safety structures.. Neighbourhood: Residential row-house layout located off Thondamuthur Road in Vadavalli, Coimbatore, featuring neighboring modern houses, paved access streets, clear open skies, and distant views of green hills from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
