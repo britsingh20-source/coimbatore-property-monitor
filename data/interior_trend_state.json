@@ -1,12 +1,18 @@
 {
   "used_video_ids": [
-    "OrWxb2ZKxm4"
+    "OrWxb2ZKxm4",
+    "kGcF5QDy0uM"
   ],
   "history": [
     {
       "video_id": "OrWxb2ZKxm4",
       "creator": "Ridhi Khosla Jalan",
       "url": "https://www.youtube.com/watch?v=OrWxb2ZKxm4"
+    },
+    {
+      "video_id": "kGcF5QDy0uM",
+      "creator": "Ridhi Khosla Jalan",
+      "url": "https://www.youtube.com/watch?v=kGcF5QDy0uM"
     }
   ]
 }
