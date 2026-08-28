@@ -1,5 +1,15 @@
 {
   "files": {
+    "AgAD7iIAApfoiFQ": {
+      "paired_at": "2026-08-28T11:08:00.760783+00:00",
+      "paired_by": "next_telegram_message",
+      "r2_key": "social-ready/telegram-AgAD7iIAApfoiFQ.mp4",
+      "size": 20626951,
+      "status": "uploaded_exact_video_id",
+      "update_id": 789574055,
+      "uploaded_at": "2026-08-28T11:08:00.192233+00:00",
+      "video_id": "OKVLA31175c"
+    },
     "AgADDCYAAjekcVQ": {
       "paired_at": "2026-08-26T03:02:17.801560+00:00",
       "paired_by": "next_telegram_message",
@@ -164,5 +174,5 @@
       "video_id": "tTgkkQPNeCo"
     }
   },
-  "last_update_id": 789574054
+  "last_update_id": 789574056
 }
