@@ -83,10 +83,16 @@ def _load_state(path: Path) -> dict:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def _select_daily(candidates: list[dict], config: dict, state: dict) -> list[dict]:
+def _select_daily(candidates: list[dict], config: dict, state: dict, slot: str = "manual") -> list[dict]:
     used = set(state.get("used_video_ids", [])); selected = []
-    limit = int(config.get("daily_prompt_limit", 5))
-    for channel in config.get("monitored_youtube_channels", []):
+    channels = config.get("monitored_youtube_channels", [])
+    limit = int(config.get("daily_prompt_limit", 5)) if slot == "manual" else 1
+    preferred = {"morning": 0, "afternoon": 1, "evening": 2}.get(slot)
+    if slot == "night": preferred = 3 + (int(state.get("night_channel_cursor", 0)) % 2)
+    ordered = channels
+    if preferred is not None and preferred < len(channels):
+        ordered = [channels[preferred], *channels[:preferred], *channels[preferred + 1:]]
+    for channel in ordered:
         name = channel.get("name", "")
         match = next((item for item in candidates if item.get("creator") == name and item.get("video_id") not in used), None)
         if match: selected.append(match)
@@ -94,14 +100,14 @@ def _select_daily(candidates: list[dict], config: dict, state: dict) -> list[dic
     return selected
 
 
-def run(candidates_path: str, config_path: str, output_path: str, deliver: bool, state_path: str = "data/interior_trend_state.json") -> dict:
+def run(candidates_path: str, config_path: str, output_path: str, deliver: bool, state_path: str = "data/interior_trend_state.json", slot: str = "manual") -> dict:
     discovery = json.loads(Path(candidates_path).read_text()); config = json.loads(Path(config_path).read_text())
     candidates = discovery.get("candidates", [])
     if not candidates: raise ValueError("No interior candidates found")
     state_file = Path(state_path); state = _load_state(state_file)
-    selected = _select_daily(candidates, config, state)
+    selected = _select_daily(candidates, config, state, slot)
     jobs = [{"candidate": candidate, "gemini_prompt": build_reference_prompt(candidate, {}, config)} for candidate in selected]
-    result = {"jobs": jobs, "prompt_count": len(jobs), "reference_mode": "youtube_url_only"}
+    result = {"jobs": jobs, "prompt_count": len(jobs), "reference_mode": "youtube_url_only", "delivery_slot": slot}
     Path(output_path).parent.mkdir(parents=True, exist_ok=True); Path(output_path).write_text(json.dumps(result, ensure_ascii=False, indent=2))
     if deliver and jobs:
         token = os.environ["TELEGRAM_BOT_TOKEN"]; chat_id = os.environ["TELEGRAM_CHAT_ID"]
@@ -112,11 +118,12 @@ def run(candidates_path: str, config_path: str, output_path: str, deliver: bool,
             if candidate["video_id"] not in used: used.append(candidate["video_id"])
             history.append({"video_id": candidate["video_id"], "creator": candidate.get("creator", ""), "url": candidate["url"]})
         state["used_video_ids"] = used[-500:]; state["history"] = history[-500:]
+        if slot == "night": state["night_channel_cursor"] = (int(state.get("night_channel_cursor", 0)) + 1) % 2
         state_file.parent.mkdir(parents=True, exist_ok=True); state_file.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return result
 
 
 if __name__ == "__main__":
     import argparse
-    parser = argparse.ArgumentParser(); parser.add_argument("candidates"); parser.add_argument("config"); parser.add_argument("output"); parser.add_argument("--deliver", action="store_true"); parser.add_argument("--state", default="data/interior_trend_state.json")
-    args = parser.parse_args(); run(args.candidates, args.config, args.output, args.deliver, args.state)
+    parser = argparse.ArgumentParser(); parser.add_argument("candidates"); parser.add_argument("config"); parser.add_argument("output"); parser.add_argument("--deliver", action="store_true"); parser.add_argument("--state", default="data/interior_trend_state.json"); parser.add_argument("--slot", choices=("morning", "afternoon", "evening", "night", "manual"), default="manual")
+    args = parser.parse_args(); run(args.candidates, args.config, args.output, args.deliver, args.state, args.slot)
