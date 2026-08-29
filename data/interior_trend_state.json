@@ -6,7 +6,8 @@
     "DQMT2i4XZwk",
     "KY3wSJmuVow",
     "RM2aC_uVKLQ",
-    "2-KY5QxX4cY"
+    "2-KY5QxX4cY",
+    "xl3MtxVVm4Q"
   ],
   "history": [
     {
@@ -43,6 +44,12 @@
       "video_id": "2-KY5QxX4cY",
       "creator": "IDHD - Interior Design & Home Decor",
       "url": "https://www.youtube.com/watch?v=2-KY5QxX4cY"
+    },
+    {
+      "video_id": "xl3MtxVVm4Q",
+      "creator": "DesignCafe",
+      "url": "https://www.youtube.com/watch?v=xl3MtxVVm4Q"
     }
-  ]
+  ],
+  "night_channel_cursor": 1
 }
