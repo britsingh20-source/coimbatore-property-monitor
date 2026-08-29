@@ -1,0 +1,122 @@
+{
+  "video_id": "nq0mpD6B2TQ",
+  "source_url": "https://www.youtube.com/watch?v=nq0mpD6B2TQ",
+  "property_location": "Sulur, Kannampalayam, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "1 BHK, 2 BHK",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹24 Lakhs",
+    "facing": "NOT SPECIFIED",
+    "road_width": "33 feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP, RERA"
+  },
+  "verified_facts": "Project name is Happy Town / Green City located in Sulur Kannampalayam, Coimbatore., Total project consists of 500 plots., 1 BHK house priced at ₹24 Lakhs and 2 BHK house priced at ₹27 Lakhs., Plots can also be purchased individually at ₹6.50 Lakhs per cent., 24 Lakhs price includes registration cost, EB connection, building plan approval, and GST., Layout has DTCP and RERA approval., Features 33-foot internal tar roads, street lights, security service, and a common water tank., Located about 30 minutes from Sulur main town, near KMCH hospital and commercial facilities.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Sulur, Kannampalayam, Coimbatore, Tamil Nadu சைட்ல 1 BHK, 2 BHK Independent House தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹24 Lakhs.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "road",
+        "voice": "இதுல முக்கியமான விஷயம், முன்னாடி 33 feet ரோடு வசதி இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [],
+        "vfx": "road-measure",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP, RERA இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 31.467186383s.', 'status': 'RESOURCE_EXHAUSTED"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/nq0mpD6B2TQ/",
+  "optional_owned_audio": "assets/audio/nq0mpD6B2TQ.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Sulur, Kannampalayam, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: A gated township entry gate labeled 'Green City / Happy Town', asphalt internal roads, electrical poles with street lights, demarcated empty plots, and single-story flat-roof residential structures under construction.. Neighbourhood: Open suburban area in Kannampalayam with public bus access nearby, connecting to Sulur main town.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Sulur, Kannampalayam, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: A gated township entry gate labeled 'Green City / Happy Town', asphalt internal roads, electrical poles with street lights, demarcated empty plots, and single-story flat-roof residential structures under construction.. Neighbourhood: Open suburban area in Kannampalayam with public bus access nearby, connecting to Sulur main town.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Sulur, Kannampalayam, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: A gated township entry gate labeled 'Green City / Happy Town', asphalt internal roads, electrical poles with street lights, demarcated empty plots, and single-story flat-roof residential structures under construction.. Neighbourhood: Open suburban area in Kannampalayam with public bus access nearby, connecting to Sulur main town.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Sulur, Kannampalayam, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: A gated township entry gate labeled 'Green City / Happy Town', asphalt internal roads, electrical poles with street lights, demarcated empty plots, and single-story flat-roof residential structures under construction.. Neighbourhood: Open suburban area in Kannampalayam with public bus access nearby, connecting to Sulur main town.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
