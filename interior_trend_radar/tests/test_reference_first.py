@@ -18,6 +18,9 @@ class ReferenceFirstPromptTests(unittest.TestCase):
         self.assertIn("linked YouTube interior video", prompt)
         self.assertIn("CRITICAL WRONG-SUBSTITUTE LOCK", prompt)
         self.assertIn("ordinary shelf", prompt)
+        self.assertIn("INVISIBLE-CAMERA LOCK", prompt)
+        self.assertIn("Never show a cameraman", prompt)
+        self.assertNotIn("smartphone-gimbal push-in", prompt)
 
     def test_selects_one_unused_video_per_channel(self):
         config = {"daily_prompt_limit": 5, "monitored_youtube_channels": [{"name": "A"}, {"name": "B"}]}
