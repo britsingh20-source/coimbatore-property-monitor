@@ -2,7 +2,8 @@
   "used_video_ids": [
     "OrWxb2ZKxm4",
     "kGcF5QDy0uM",
-    "irPajwy6rOs"
+    "irPajwy6rOs",
+    "DQMT2i4XZwk"
   ],
   "history": [
     {
@@ -19,6 +20,11 @@
       "video_id": "irPajwy6rOs",
       "creator": "Ridhi Khosla Jalan",
       "url": "https://www.youtube.com/watch?v=irPajwy6rOs"
+    },
+    {
+      "video_id": "DQMT2i4XZwk",
+      "creator": "Ridhi Khosla Jalan",
+      "url": "https://www.youtube.com/watch?v=DQMT2i4XZwk"
     }
   ]
 }
