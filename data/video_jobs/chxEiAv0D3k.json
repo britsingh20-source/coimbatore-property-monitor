@@ -1,0 +1,112 @@
+{
+  "video_id": "chxEiAv0D3k",
+  "source_url": "https://www.youtube.com/watch?v=chxEiAv0D3k",
+  "property_location": "Sulur, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹13.25 Lakhs per cent",
+    "facing": "NOT SPECIFIED",
+    "road_width": "33 Feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "Residential plots are available for sale in Highway City Sulur, developed by CHR Pvt Ltd., Land price is ₹13.25 Lakhs per cent., Optional house construction packages are offered starting at ₹41 Lakhs for 1 BHK and ₹43 Lakhs for 2 BHK., House building package offers include free registration, building plan approval, EB connection, and GST., Located at a walkable distance from Coimbatore-Sulur-Trichy Main Road.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Sulur, Coimbatore, Tamil Nadu சைட்ல Residential Plot தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹13.25 Lakhs per cent.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "road",
+        "voice": "இதுல முக்கியமான விஷயம், முன்னாடி 33 Feet ரோடு வசதி இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [],
+        "vfx": "road-measure",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 28.364270089s.', 'status': 'RESOURCE_EXHAUSTED"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/chxEiAv0D3k/",
+  "optional_owned_audio": "assets/audio/chxEiAv0D3k.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Sulur, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Well-laid-out gated community layout named 'Highway City Sulur' with paved asphalt roads, demarcated plot boundaries with yellow numbers, street light poles, overhead water tower, play area equipment, and surrounding compound wall.. Neighbourhood: Residential area situated in Sulur, Coimbatore, located within walkable distance from the Trichy Main Road with nearby commercial shops and highways visible.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Sulur, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Well-laid-out gated community layout named 'Highway City Sulur' with paved asphalt roads, demarcated plot boundaries with yellow numbers, street light poles, overhead water tower, play area equipment, and surrounding compound wall.. Neighbourhood: Residential area situated in Sulur, Coimbatore, located within walkable distance from the Trichy Main Road with nearby commercial shops and highways visible.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Sulur, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Well-laid-out gated community layout named 'Highway City Sulur' with paved asphalt roads, demarcated plot boundaries with yellow numbers, street light poles, overhead water tower, play area equipment, and surrounding compound wall.. Neighbourhood: Residential area situated in Sulur, Coimbatore, located within walkable distance from the Trichy Main Road with nearby commercial shops and highways visible.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Sulur, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Well-laid-out gated community layout named 'Highway City Sulur' with paved asphalt roads, demarcated plot boundaries with yellow numbers, street light poles, overhead water tower, play area equipment, and surrounding compound wall.. Neighbourhood: Residential area situated in Sulur, Coimbatore, located within walkable distance from the Trichy Main Road with nearby commercial shops and highways visible.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
