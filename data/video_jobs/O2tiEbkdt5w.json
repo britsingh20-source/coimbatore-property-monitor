@@ -1,0 +1,116 @@
+{
+  "video_id": "O2tiEbkdt5w",
+  "source_url": "https://www.youtube.com/watch?v=O2tiEbkdt5w",
+  "property_location": "L&T Bypass, Near Karpagam College, Coimbatore",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "3.5 Cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "97 Lakhs - 1.30 Crores",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "3.5 Cents land area, 3 Bedroom house for sale, Located near Karpagam College, L&T Bypass, Coimbatore, House prices range from 97 Lakhs to 1.30 Crores, Contact numbers: 9500294881, 7708780440",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, energetic local property presenter delivering a fast-paced walk-through in spoken conversational Tamil.",
+    "hook_strategy": "Highlight the 3 BHK Independent House in a prime Coimbatore location near Karpagam College, L&T Bypass.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore L&T Bypass-ல, Karpagam College பக்கத்துல ஒரு 3 BHK Independent House விற்பனைக்கு வந்துருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தம் 3.5 Cents land area-ல அமைஞ்சிருக்குங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "வீட்டுக்குள்ள பாத்தீங்கனா Modular Kitchen, False Ceiling with LED Lighting, TV Unit, Wardrobes, அப்புறம் தனியா Pooja Room-உம் இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "interior_amenities"
+      },
+      {
+        "name": "price",
+        "voice": "அதுமட்டுமில்லாம Covered Car Parking, Covered Terrace Shed, Water Tanks வசதியும் இருக்கு. இதோட price 97 Lakhs-ல இருந்து 1.30 Crores வரைக்கும் வருது.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing_and_features"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த property-அ நேர்ல site visit பாக்கவோ, மேலும் details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "call-button",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/O2tiEbkdt5w/",
+  "optional_owned_audio": "assets/audio/O2tiEbkdt5w.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in L&T Bypass, Near Karpagam College, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story independent house with wooden-finish main gate, checkered floor tiles in the car park, grey and white exterior paint, side setback passage, covered balcony, and a rooftop terrace with metal roofing.. Neighbourhood: Quiet residential street with modern independent houses and villas nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in L&T Bypass, Near Karpagam College, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story independent house with wooden-finish main gate, checkered floor tiles in the car park, grey and white exterior paint, side setback passage, covered balcony, and a rooftop terrace with metal roofing.. Neighbourhood: Quiet residential street with modern independent houses and villas nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in L&T Bypass, Near Karpagam College, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story independent house with wooden-finish main gate, checkered floor tiles in the car park, grey and white exterior paint, side setback passage, covered balcony, and a rooftop terrace with metal roofing.. Neighbourhood: Quiet residential street with modern independent houses and villas nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in L&T Bypass, Near Karpagam College, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story independent house with wooden-finish main gate, checkered floor tiles in the car park, grey and white exterior paint, side setback passage, covered balcony, and a rooftop terrace with metal roofing.. Neighbourhood: Quiet residential street with modern independent houses and villas nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
