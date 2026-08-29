@@ -1,0 +1,153 @@
+{
+  "video_id": "nvdcB9maHh4",
+  "source_url": "https://www.youtube.com/watch?v=nvdcB9maHh4",
+  "property_location": "Papampatti, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2 BHK",
+    "land_area": "2.25 Cents",
+    "built_up_area": "850 sq ft",
+    "price": "₹35 Lakhs",
+    "facing": "East",
+    "road_width": "30 feet / 33 feet",
+    "parking": "1 Covered Car Parking (10x16 ft)",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "2 BHK independent model house built on 2.25 cents land with 850 sq ft built-up area for ₹35 Lakhs., Includes fully semi-furnished interior works: TV unit, false ceiling, modular kitchen, chimney, water purifier, wardrobes, and water heaters., Borewell (400 ft), water sump, septic tank, and overhead water tanks are included in the price., Up to 85% to 90% bank loan assistance available., Constructed using red brick, river sand, and quality materials.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local property presenter speaking directly to camera with clear visuals",
+    "hook_strategy": "Start directly with the sought-after location and independent house offer in Coimbatore",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Papampatti-ல, Trichy Road மற்றும் L&T Bypass பக்கத்துல அமைஞ்சிருக்கற ஒரு 2 BHK Independent House பாக்கலாம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 2.25 Cents land area-ல, Covered Car Parking வசதியோட அமைச்சிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "text-overlay-land",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Built-up area 850 sq ft. உள்ள பாத்தீங்கனா Modular Kitchen, Fall Ceiling, TV Unit-னு semi-furnished interior works பண்ணிருக்காங்க.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "interior-highlight",
+        "purpose": "interior_showcase"
+      },
+      {
+        "name": "facing",
+        "voice": "இந்த வீடோட facing பாத்தீங்கனா East facing.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "compass-east",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "road",
+        "voice": "வீட்டுக்கு முன்னாடி 30 feet மற்றும் 33 feet road வசதி இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "road-width-indicator",
+        "purpose": "road_details"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP Approved property. 85% லிருந்து 90% வரை Bank Loan assistance கிடைக்கும்.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_building"
+      },
+      {
+        "name": "price",
+        "voice": "Borewell, Water Sump வசதிகளோட சேர்த்து இதோட Price ₹35 Lakhs.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ண விரும்புனா உடனே Call பண்ணுங்க, details வாங்கிக்கோங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "call-button",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/nvdcB9maHh4/",
+  "optional_owned_audio": "assets/audio/nvdcB9maHh4.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story elevation with vibrant cyan, yellow, grey, and orange painted accents, black iron main gate, granite sit-out step, and textured wall tiles in the portico area.. Neighbourhood: Residential housing layout with adjacent newly constructed and under-construction row houses in Papampatti, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story elevation with vibrant cyan, yellow, grey, and orange painted accents, black iron main gate, granite sit-out step, and textured wall tiles in the portico area.. Neighbourhood: Residential housing layout with adjacent newly constructed and under-construction row houses in Papampatti, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story elevation with vibrant cyan, yellow, grey, and orange painted accents, black iron main gate, granite sit-out step, and textured wall tiles in the portico area.. Neighbourhood: Residential housing layout with adjacent newly constructed and under-construction row houses in Papampatti, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story elevation with vibrant cyan, yellow, grey, and orange painted accents, black iron main gate, granite sit-out step, and textured wall tiles in the portico area.. Neighbourhood: Residential housing layout with adjacent newly constructed and under-construction row houses in Papampatti, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
