@@ -12,6 +12,17 @@ def build_reference_prompt(candidate: dict, analysis: dict, config: dict) -> str
     brand = config.get("brand", "Olive Tree Interiors")
     contact = os.getenv("INTERIOR_CONTACT", "")
     contact_line = f"  |  ENQUIRY: {contact}" if contact else ""
+    highlights = analysis.get("highlighted_innovations") or []
+    highlight_text = []
+    for index, item in enumerate(highlights, 1):
+        highlight_text.append(
+            f"HIGHLIGHT {index}: {item.get('name', 'NOT CONFIRMED')}\n"
+            f"Why notable: {item.get('why_notable', 'NOT CONFIRMED')}\n"
+            f"Installation: {item.get('installation_method', 'NOT CONFIRMED')}\n"
+            f"Mechanism: {item.get('mechanism', 'NOT CONFIRMED')}\n"
+            f"Customer benefit: {item.get('practical_benefit', 'NOT CONFIRMED')}\n"
+            f"Visible evidence: {item.get('visual_evidence', 'NOT CONFIRMED')}"
+        )
     shots = []
     labels = ["ESTABLISHING VIEW", "PRODUCT OR DESIGN CONTEXT", "MATERIAL DETAIL", "MECHANISM OR FUNCTION", "PRACTICAL APPLICATION", "SECOND VERIFIED DETAIL", "FINAL REVEAL"]
     times = ["0 TO 1.4", "1.4 TO 2.8", "2.8 TO 4.2", "4.2 TO 5.6", "5.6 TO 7.0", "7.0 TO 8.5", "8.5 TO 10"]
@@ -56,6 +67,14 @@ Practical benefit: {analysis.get('practical_benefit', 'NOT CONFIRMED')}
 Required components: {'; '.join(analysis.get('required_components') or ['NOT CONFIRMED'])}
 Verified facts: {'; '.join(analysis.get('verified_facts') or ['NOT CONFIRMED'])}
 Reference requirement: Preserve this exact system category, installation connection and operating mechanism. Treat the title and description only as supporting context. Do not display or visually imply any unverified claim.
+
+SPECIFIC INNOVATIONS TO FEATURE
+{chr(10).join(highlight_text) if highlight_text else 'No verified innovation — do not generate.'}
+
+INNOVATION-SCOPE LOCK
+This is not a complete-home walkthrough. Every one of the seven shots must demonstrate only the specific innovations listed above, their installation, movement, internal hardware, storage planning or practical result. Do not spend any shot on an ordinary room, generic luxury décor or attractive filler footage. Exclude these non-priority source scenes completely:
+{chr(10).join('- ' + item for item in (analysis.get('excluded_generic_scenes') or ['all ordinary rooms and decorative filler']))}
+When two innovations are listed, show both clearly within the seven-shot sequence. Do not replace either innovation with a general room tour.
 
 CRITICAL WRONG-SUBSTITUTE LOCK
 Do not replace the verified system with any of these incorrect alternatives:
