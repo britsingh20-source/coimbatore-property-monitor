@@ -1,0 +1,142 @@
+{
+  "video_id": "GzZOCQNDFS8",
+  "source_url": "https://www.youtube.com/watch?v=GzZOCQNDFS8",
+  "property_location": "Vadavalli, Siruvani Road, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "4BHK",
+    "land_area": "3.75 Cents (1635 sq.ft.)",
+    "built_up_area": "2600 sq.ft.",
+    "price": "Rs. 1.80 Crore (Negotiable)",
+    "facing": "North Facing (House Main Door) / North-West Corner Site",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking (18' x 14')",
+    "approval": "DTCP Approved Site"
+  },
+  "verified_facts": "North-West corner site with 3.75 cents (1635 sq.ft.) land area., 2600 sq.ft. duplex independent house construction., North-facing main teak wood door., Ground Floor features Car Parking (18'x14'), Living Hall (16'x16') with double height ceiling and chandelier, Pooja Room (4'x3'), Kitchen & Dining (20'x10'), Utility Area (6'x16'), First Bedroom (16'x10') with Attached Bathroom (6.5'x4.5'), and an Outside Bathroom (4.5'x4')., First Floor features Lounge (16'x10'), Master Bedroom (16'x16') with Attached Bathroom (10'x4'), Third Bedroom (16'x10') with Attached Bathroom (7'x6.5'), Fourth Bedroom (10'x10'), and Front Covered Balcony (23'x7')., Terrace floor includes a fabrication gazebo sitting arrangement with terracotta jaali work., Located within Coimbatore Corporation Limits in Vadavalli, Siruvani Road., Asking price is Rs. 1.80 Crore (Negotiable) with bank loan facility available.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter, conversational spoken Tamil mixed naturally with common English real estate terms.",
+    "hook_strategy": "Highlight the prime location in Vadavalli on Siruvani Road featuring a spacious 4BHK independent house.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Vadavalli-ல Siruvani Road பக்கத்துல ஒரு பிரமாதமான 4BHK Independent House விற்பனைக்கு வந்துருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 3.75 Cents land area இருக்குற North-West corner site.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "detail"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Built-up area பாத்தீங்கனா 2600 sq.ft. Duplex construction. High ceiling living hall, modular kitchen, balcony, terrace gazebo-னு எல்லாமே பிரமாதமா அமைச்சிருக்காங்க.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "split-screen",
+        "purpose": "detail"
+      },
+      {
+        "name": "facing",
+        "voice": "வீட்டின் main door பாத்தீங்கனா North facing-ல teak wood-ல பண்ணிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "compass",
+        "purpose": "detail"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approved site. Bank loan facility-யும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "badge",
+        "purpose": "detail"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த வீட்டின் price 1.80 Crore. இது negotiable-தான்.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "value"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல site visit வரவோ, மத்த details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "phone-number",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/GzZOCQNDFS8/",
+  "optional_owned_audio": "assets/audio/GzZOCQNDFS8.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-storey duplex villa with off-white and brown textured facade, gated entrance, glass balcony railings, corner site position, and a custom dark-framed terrace gazebo.. Neighbourhood: Established residential area in Vadavalli, Coimbatore, surrounded by individual houses, greenery, paved suburban streets, and background mountain views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-storey duplex villa with off-white and brown textured facade, gated entrance, glass balcony railings, corner site position, and a custom dark-framed terrace gazebo.. Neighbourhood: Established residential area in Vadavalli, Coimbatore, surrounded by individual houses, greenery, paved suburban streets, and background mountain views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-storey duplex villa with off-white and brown textured facade, gated entrance, glass balcony railings, corner site position, and a custom dark-framed terrace gazebo.. Neighbourhood: Established residential area in Vadavalli, Coimbatore, surrounded by individual houses, greenery, paved suburban streets, and background mountain views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-storey duplex villa with off-white and brown textured facade, gated entrance, glass balcony railings, corner site position, and a custom dark-framed terrace gazebo.. Neighbourhood: Established residential area in Vadavalli, Coimbatore, surrounded by individual houses, greenery, paved suburban streets, and background mountain views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
