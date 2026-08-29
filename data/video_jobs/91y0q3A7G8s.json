@@ -1,0 +1,131 @@
+{
+  "video_id": "91y0q3A7G8s",
+  "source_url": "https://www.youtube.com/watch?v=91y0q3A7G8s",
+  "property_location": "Periyakallipatti, Panayampalli Road, Mettupalayam to Sathyamangalam NH, Coimbatore",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹2.25 Lakhs per cent",
+    "facing": "Main Road Facing",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved (No: 332/2018) & RERA Approved (No: TNRERA/TN/10/1310/2022)"
+  },
+  "verified_facts": "Price is ₹2.25 Lakhs per cent., Free registration for buying 1 site., Free iPhone for buying 2 sites., Free EV scooter (Bajaj Chetak) for buying 3 sites., 70% land loan available., Project name: Sri Sai Avenue by Real Value Land Promoters And Builders.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, conversational local property presenter speaking naturally to camera",
+    "hook_strategy": "Highlight accessible NH location in Periyakallipatti with attractive per-cent pricing and main road facing plot setup",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை Mettupalayam to Sathyamangalam NH-ல, Panayampalli Road Periyakallipatti கிட்ட இருக்குற 'Sri Sai Avenue' residential plots பத்தி தான் பாக்க போறோம்.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-text-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம் பாத்தீங்கனா, இந்த layout Main Road facing-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "highlight facing"
+      },
+      {
+        "name": "land",
+        "voice": "இங்க Gated entrance arch, EB line, individual water pipeline, Tar road, street lights அப்புறம் bus facility எல்லாமே இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "amenity-icons",
+        "purpose": "feature showcase"
+      },
+      {
+        "name": "approval",
+        "voice": "அதே மாதிரி, இது DTCP approval எண் 332/2018 மற்றும் RERA approval எண் TNRERA/TN/10/1310/2022 வாங்குன ஒரு project.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust building"
+      },
+      {
+        "name": "price",
+        "voice": "விலை பாத்தீங்கனா ஒரு சென்ட் வெறும் ₹2.25 Lakhs தான்! 70% land loan வசதியும் இருக்கு. 1 site வாங்குனா free registration, 2 sites வாங்குனா free iPhone, 3 sites-க்கு free Bajaj Chetak EV scooter வழங்குறாங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "price-and-offers-card",
+        "purpose": "value proposition"
+      },
+      {
+        "name": "cta",
+        "voice": "Murugar Othimalai Temple பக்கத்துல இருக்குற இந்த plots-ல site visit வர இல்ல மேலும் details தெரிஞ்சுக்க உடனே call பண்ணுங்க!",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "contact-details-callout",
+        "purpose": "call to action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/91y0q3A7G8s/",
+  "optional_owned_audio": "assets/audio/91y0q3A7G8s.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Periyakallipatti, Panayampalli Road, Mettupalayam to Sathyamangalam NH, Coimbatore, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Plotted development layout featuring a wide gated entrance, wide interior tar roads, yellow and black demarcated plot borders, street lights, and EB power infrastructure.. Neighbourhood: Suburban layout located on the Mettupalayam to Sathyamangalam route near Othimalai Temple, featuring main road bus connectivity and rural-suburban surroundings.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Periyakallipatti, Panayampalli Road, Mettupalayam to Sathyamangalam NH, Coimbatore, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Plotted development layout featuring a wide gated entrance, wide interior tar roads, yellow and black demarcated plot borders, street lights, and EB power infrastructure.. Neighbourhood: Suburban layout located on the Mettupalayam to Sathyamangalam route near Othimalai Temple, featuring main road bus connectivity and rural-suburban surroundings.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Periyakallipatti, Panayampalli Road, Mettupalayam to Sathyamangalam NH, Coimbatore, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Plotted development layout featuring a wide gated entrance, wide interior tar roads, yellow and black demarcated plot borders, street lights, and EB power infrastructure.. Neighbourhood: Suburban layout located on the Mettupalayam to Sathyamangalam route near Othimalai Temple, featuring main road bus connectivity and rural-suburban surroundings.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Periyakallipatti, Panayampalli Road, Mettupalayam to Sathyamangalam NH, Coimbatore, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Plotted development layout featuring a wide gated entrance, wide interior tar roads, yellow and black demarcated plot borders, street lights, and EB power infrastructure.. Neighbourhood: Suburban layout located on the Mettupalayam to Sathyamangalam route near Othimalai Temple, featuring main road bus connectivity and rural-suburban surroundings.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

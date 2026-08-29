@@ -1,0 +1,116 @@
+{
+  "video_id": "vFUJnl_KvEg",
+  "source_url": "https://www.youtube.com/watch?v=vFUJnl_KvEg",
+  "property_location": "Coimbatore, L&T Bypass, Near Karpagam College, Tamil Nadu",
+  "property": {
+    "property_type": "Villa",
+    "bhk": "3 BHK",
+    "land_area": "1500 sq ft (3.5 Cents)",
+    "built_up_area": "1890 sq ft",
+    "price": "₹97 Lakhs - ₹1.30 Crores",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered parking for 2 cars and two-wheelers",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "1500 sq ft land area (3.5 cents), 1890 sq ft built-up area, 3 BHK villa project consisting of 20 units in a gated community, Located near Karpagam College on L&T Bypass road, Coimbatore, Price ranges from ₹97 Lakhs to ₹1.30 Crores",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, conversational Tamil real-estate presenter speaking directly to camera with smooth B-roll transitions.",
+    "hook_strategy": "Lead with prime location on L&T Bypass near Karpagam College showcasing a gated 3 BHK villa project.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை L&T Bypass-ல Karpagam College பக்கத்துல அமைஞ்சிருக்கற 20 units கொண்ட ஒரு Gated Community 3 BHK Villa-வ இப்ப பாப்போம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல land area பாத்தீங்கனா 1500 sq ft, அதாவது 3.5 Cents. 2 cars மற்றும் two-wheelers பார்க் பண்ண வசதியான covered parking-உம் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இதோட built-up area 1890 sq ft வருது. modular kitchen, pooja room, terrace gazebo, solar panels மற்றும் solar water heater-னு பல வசதிகள் கொடுத்துருக்காங்க.",
+        "broll": [
+          "living_room",
+          "interior",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "feature-badge",
+        "purpose": "villa_features"
+      },
+      {
+        "name": "price",
+        "voice": "இதுல முக்கியமா இந்த villas-ஓட price range ₹97 Lakhs-ல இருந்து ₹1.30 Crores வரைக்கும் வருது.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த property-ல site visit பண்ணவோ இல்ல மேலும் details தெரிஞ்சுக்கவோ உடனே contact பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "contact-card",
+        "purpose": "action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/vFUJnl_KvEg/",
+  "optional_owned_audio": "assets/audio/vFUJnl_KvEg.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Coimbatore, L&T Bypass, Near Karpagam College, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: A contemporary 2-storey villa featuring a grey, brown, and white color palette, stylish elevation with vertical slats, sliding compound gate, tiled porch, side setbacks with outdoor utility sink, and terrace equipped with solar installations and water tanks.. Neighbourhood: Private gated community villa project located in a quiet residential development close to L&T Bypass Road and Karpagam College in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Coimbatore, L&T Bypass, Near Karpagam College, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: A contemporary 2-storey villa featuring a grey, brown, and white color palette, stylish elevation with vertical slats, sliding compound gate, tiled porch, side setbacks with outdoor utility sink, and terrace equipped with solar installations and water tanks.. Neighbourhood: Private gated community villa project located in a quiet residential development close to L&T Bypass Road and Karpagam College in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Coimbatore, L&T Bypass, Near Karpagam College, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: A contemporary 2-storey villa featuring a grey, brown, and white color palette, stylish elevation with vertical slats, sliding compound gate, tiled porch, side setbacks with outdoor utility sink, and terrace equipped with solar installations and water tanks.. Neighbourhood: Private gated community villa project located in a quiet residential development close to L&T Bypass Road and Karpagam College in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Coimbatore, L&T Bypass, Near Karpagam College, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: A contemporary 2-storey villa featuring a grey, brown, and white color palette, stylish elevation with vertical slats, sliding compound gate, tiled porch, side setbacks with outdoor utility sink, and terrace equipped with solar installations and water tanks.. Neighbourhood: Private gated community villa project located in a quiet residential development close to L&T Bypass Road and Karpagam College in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
