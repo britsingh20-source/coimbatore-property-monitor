@@ -201,9 +201,11 @@
     },
     "3A__QS75exs": {
       "attempts": 0,
+      "completed_at": "2026-08-29T18:56:15.606028+00:00",
       "first_seen_at": "2026-08-29T14:31:57.406739+00:00",
+      "last_error": "",
       "next_retry_at": "2026-08-29T14:31:57.406739+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "3HCxfx5DoJs": {
       "attempts": 0,
