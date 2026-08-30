@@ -666,6 +666,7 @@
         "youtube_description": "₹56 Lakhs (Negotiable) 2 BHK BHK Independent House in Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India. Watch the complete 10-second walkthrough.\n\n📍 Location: Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India\n🏡 Property: 2 BHK BHK Independent House\n💰 Price: ₹56 Lakhs (Negotiable)\n📐 Land: 2.5 Cents (20 x 50 ft)\n🏗️ Built-up: 890 sq ft\n🧭 Facing: North\n🚗 Parking: Covered Car Parking (10 x 16 ft)\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #VaiyampalayamnearSaravanampattiITParkCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate"
       },
       "etag": "07af06389b77d94b9df5cc4c4fdb9d1c-3",
+      "manual_deletion_required": true,
       "match_analysis": {
         "confidence": 1,
         "method": "telegram_exact_video_id"
@@ -755,6 +756,7 @@
       "replacement_delete_only_pending": false,
       "replacement_delete_only_status": "manual_deletion_required",
       "replacement_deletions": {},
+      "replacement_for_r2_key": "social-ready/telegram-AgADJyEAAmRQmVQ.mp4",
       "replacement_reason": "user_supplied_louder_audio_version",
       "replacement_requested_at": "2026-08-30T03:27:16.327Z",
       "status": "matched",
@@ -782,9 +784,7 @@
           "height": 1920,
           "width": 1080
         }
-      },
-      "manual_deletion_required": true,
-      "replacement_for_r2_key": "social-ready/telegram-AgADJyEAAmRQmVQ.mp4"
+      }
     },
     "social-ready/telegram-AgADDycAApfogFQ.mp4": {
       "content": {
@@ -1002,9 +1002,124 @@
       "video_id": "6jJtYT4MA_E"
     },
     "social-ready/telegram-AgADJyEAAmRQmVQ.mp4": {
+      "content": {
+        "caption": "🏠 ₹56 Lakhs (Negotiable) 2 BHK BHK Independent House in Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India — would you visit this property?\n\n📍 Location: Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India\n🏡 Property: 2 BHK BHK Independent House\n💰 Price: ₹56 Lakhs (Negotiable)\n📐 Land: 2.5 Cents (20 x 50 ft)\n🏗️ Built-up: 890 sq ft\n🧭 Facing: North\n🚗 Parking: Covered Car Parking (10 x 16 ft)\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #VaiyampalayamnearSaravanampattiITParkCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#CoimbatoreProperty",
+          "#VaiyampalayamnearSaravanampattiITParkCoimbatoreTamilNaduIndiaProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "₹56 Lakhs (Negotiable) 2 BHK BHK Independent House in Vaiyampalayam, near Saravanampatti IT Park, Co",
+        "youtube_description": "₹56 Lakhs (Negotiable) 2 BHK BHK Independent House in Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India. Watch the complete 10-second walkthrough.\n\n📍 Location: Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India\n🏡 Property: 2 BHK BHK Independent House\n💰 Price: ₹56 Lakhs (Negotiable)\n📐 Land: 2.5 Cents (20 x 50 ft)\n🏗️ Built-up: 890 sq ft\n🧭 Facing: North\n🚗 Parking: Covered Car Parking (10 x 16 ft)\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #VaiyampalayamnearSaravanampattiITParkCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate"
+      },
       "etag": "ca6556719d5fa20b3ef64a6ac6bfcd16-3",
-      "platforms": {},
-      "status": "waiting_for_video_id"
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "creation_id": "17895315960599708",
+            "media_id": "18104062580219839",
+            "processing": {
+              "id": "17895315960599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "thumb_offset_ms": 2000
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17895316146599708",
+            "media_id": "17976238311004567",
+            "processing": {
+              "id": "17895316146599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "₹56 Lakhs (Negotiable) 2 BHK BHK Independent House in Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India. Watch the complete 10-second walkthrough.\n\n📍 Location: Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India\n🏡 Property: 2 BHK BHK Independent House\n💰 Price: ₹56 Lakhs (Negotiable)\n📐 Land: 2.5 Cents (20 x 50 ft)\n🏗️ Built-up: 890 sq ft\n🧭 Facing: North\n🚗 Parking: Covered Car Parking (10 x 16 ft)\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #VaiyampalayamnearSaravanampattiITParkCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "₹56 Lakhs (Negotiable) 2 BHK BHK Independent House in Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India. Watch the complete 10-second walkthrough.\n\n📍 Location: Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India\n🏡 Property: 2 BHK BHK Independent House\n💰 Price: ₹56 Lakhs (Negotiable)\n📐 Land: 2.5 Cents (20 x 50 ft)\n🏗️ Built-up: 890 sq ft\n🧭 Facing: North\n🚗 Parking: Covered Car Parking (10 x 16 ft)\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #VaiyampalayamnearSaravanampattiITParkCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
+                "title": "₹56 Lakhs (Negotiable) 2 BHK BHK Independent House in Vaiyampalayam, near Saravanampatti IT Park, Co"
+              },
+              "publishedAt": "2026-08-30T03:34:40Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/mGh8iPJTwT8/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/mGh8iPJTwT8/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/mGh8iPJTwT8/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "₹56 Lakhs (Negotiable) 2 BHK BHK Independent House in Vaiyampalayam, near Saravanampatti IT Park, Co"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "mGh8iPJTwT8"
+          },
+          "status": "published"
+        }
+      },
+      "status": "matched",
+      "video_id": "57gPYoNDFUU",
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 249830,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 25.549,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 249755,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 25.566667,
+          "height": 1280,
+          "width": 720
+        }
+      }
     },
     "social-ready/telegram-AgADRyEAAjekgVQ.mp4": {
       "content": {
@@ -1147,11 +1262,13 @@
         "youtube_description": "₹56 Lakhs (Negotiable) 2 BHK BHK Independent House in Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India. Watch the complete 10-second walkthrough.\n\n📍 Location: Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India\n🏡 Property: 2 BHK BHK Independent House\n💰 Price: ₹56 Lakhs (Negotiable)\n📐 Land: 2.5 Cents (20 x 50 ft)\n🏗️ Built-up: 890 sq ft\n🧭 Facing: North\n🚗 Parking: Covered Car Parking (10 x 16 ft)\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #VaiyampalayamnearSaravanampattiITParkCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate"
       },
       "etag": "467fe8a458ffb5e01dc9e9e0ad2c332a-3",
+      "incorrect_video_id": "57gPYoNDFUU",
       "match_analysis": {
         "confidence": 1,
         "method": "telegram_exact_video_id"
       },
       "platforms": {},
+      "quarantine_reason": "older unmatched upload incorrectly auto-matched during replacement",
       "status": "quarantined_wrong_assignment",
       "youtube_media": {
         "audio_handling": "copied_original_aac",
@@ -1176,9 +1293,7 @@
           "height": 1080,
           "width": 1920
         }
-      },
-      "quarantine_reason": "older unmatched upload incorrectly auto-matched during replacement",
-      "incorrect_video_id": "57gPYoNDFUU"
+      }
     },
     "social-ready/telegram-AgADUyMAApfogFQ.mp4": {
       "content": {
