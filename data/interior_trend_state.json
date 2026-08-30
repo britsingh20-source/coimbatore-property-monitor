@@ -10,7 +10,8 @@
     "xl3MtxVVm4Q",
     "LROuxj5lPWM",
     "xvgRu4i43I4",
-    "FoVTzQ5hyQo"
+    "FoVTzQ5hyQo",
+    "IIRalr56d7Y"
   ],
   "history": [
     {
@@ -67,7 +68,12 @@
       "video_id": "FoVTzQ5hyQo",
       "creator": "IDHD - Interior Design & Home Decor",
       "url": "https://www.youtube.com/watch?v=FoVTzQ5hyQo"
+    },
+    {
+      "video_id": "IIRalr56d7Y",
+      "creator": "Interior Coach",
+      "url": "https://www.youtube.com/watch?v=IIRalr56d7Y"
     }
   ],
-  "night_channel_cursor": 1
+  "night_channel_cursor": 0
 }
