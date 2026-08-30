@@ -144,8 +144,11 @@
     },
     {
       "sent_at": "2026-08-25T09:54:24.039492+00:00",
-      "status": "pending_mobile_upload",
-      "video_id": "57gPYoNDFUU"
+      "status": "assigned_to_r2_upload",
+      "video_id": "57gPYoNDFUU",
+      "r2_key": "social-ready/telegram-AgADDR4AArYXoVQ.mp4",
+      "telegram_file_unique_id": "AgADDR4AArYXoVQ",
+      "uploaded_at": "2026-08-30T01:37:40.462120+00:00"
     },
     {
       "sent_at": "2026-08-25T11:47:38.127535+00:00",
