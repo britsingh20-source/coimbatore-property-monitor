@@ -667,6 +667,12 @@ def main() -> None:
     for item in objects:
         key = str(item["Key"])
         etag = str(item.get("ETag", "")).strip('"')
+        record_status = str(
+            state.get("objects", {}).get(key, {}).get("status") or ""
+        )
+        if record_status.startswith("quarantined_"):
+            print(f"SKIPPING quarantined upload {key}: {record_status}")
+            continue
         platforms = state.get("objects", {}).get(key, {}).get("platforms", {})
         correction_pending = bool(state.get("objects", {}).get(key, {}).get("correction_pending"))
         replacement_delete_only_pending = bool(
