@@ -752,8 +752,8 @@
         "instagram_story: Meta API HTTP 400: {\"error\": {\"message\": \"(#10) Insufficient permissions to access this data\", \"code\": 10, \"type\": \"OAuthException\", \"fbtrace_id\": \"AcEluFVKRivZlcXfdQGrm4V\"}}",
         "youtube_short: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/videos?id=JdqPazePdO0 returned \"Request had insufficient authentication scopes.\". Details: \"[{'message': 'Insufficient Permission', 'domain': 'global', 'reason': 'insufficientPermissions'}]\">"
       ],
-      "replacement_delete_only_pending": true,
-      "replacement_delete_only_status": "deletion_failed",
+      "replacement_delete_only_pending": false,
+      "replacement_delete_only_status": "manual_deletion_required",
       "replacement_deletions": {},
       "replacement_reason": "user_supplied_louder_audio_version",
       "replacement_requested_at": "2026-08-30T03:27:16.327Z",
@@ -782,7 +782,9 @@
           "height": 1920,
           "width": 1080
         }
-      }
+      },
+      "manual_deletion_required": true,
+      "replacement_for_r2_key": "social-ready/telegram-AgADJyEAAmRQmVQ.mp4"
     },
     "social-ready/telegram-AgADDycAApfogFQ.mp4": {
       "content": {
@@ -1146,22 +1148,11 @@
       },
       "etag": "467fe8a458ffb5e01dc9e9e0ad2c332a-3",
       "match_analysis": {
-        "confidence": 1.0,
+        "confidence": 1,
         "method": "telegram_exact_video_id"
       },
-      "platforms": {
-        "instagram_reel": {
-          "status": "dry_run"
-        },
-        "instagram_story": {
-          "status": "dry_run"
-        },
-        "youtube_short": {
-          "status": "dry_run"
-        }
-      },
-      "status": "matched",
-      "video_id": "57gPYoNDFUU",
+      "platforms": {},
+      "status": "quarantined_wrong_assignment",
       "youtube_media": {
         "audio_handling": "copied_original_aac",
         "layout": "landscape_blurred_fill",
@@ -1185,7 +1176,9 @@
           "height": 1080,
           "width": 1920
         }
-      }
+      },
+      "quarantine_reason": "older unmatched upload incorrectly auto-matched during replacement",
+      "incorrect_video_id": "57gPYoNDFUU"
     },
     "social-ready/telegram-AgADUyMAApfogFQ.mp4": {
       "content": {
