@@ -470,6 +470,54 @@ def _publish_one(key: str, etag: str, client, bucket: str, state: dict, queue: d
     content = build_social_content(json.loads(job_path.read_text(encoding="utf-8")))
     record["content"] = content
 
+    if record.get("replacement_delete_only_pending"):
+        deletion_results: dict[str, dict] = {}
+        deletion_failures: list[str] = []
+        for platform in ("instagram_reel", "instagram_story"):
+            media_id = str(
+                record.get("platforms", {})
+                .get(platform, {})
+                .get("result", {})
+                .get("media_id")
+                or ""
+            )
+            if not media_id:
+                continue
+            try:
+                deletion_results[platform] = delete_instagram_media(media_id)
+                print(f"DELETED replaced {platform}: {media_id}")
+            except Exception as error:
+                deletion_failures.append(f"{platform}: {error}")
+        youtube_id = str(
+            record.get("platforms", {})
+            .get("youtube_short", {})
+            .get("result", {})
+            .get("video_id")
+            or ""
+        )
+        if youtube_id:
+            try:
+                deletion_results["youtube_short"] = delete_youtube_video(youtube_id)
+                print(f"DELETED replaced youtube_short: {youtube_id}")
+            except Exception as error:
+                deletion_failures.append(f"youtube_short: {error}")
+        record["replacement_deletions"] = deletion_results
+        if deletion_failures:
+            record["replacement_delete_only_status"] = "deletion_failed"
+            record["replacement_delete_errors"] = deletion_failures
+            _save_state(state)
+            raise RuntimeError(
+                "Replacement deletion failed: " + " | ".join(deletion_failures)
+            )
+        record["replacement_delete_only_pending"] = False
+        record["replacement_delete_only_status"] = "deleted"
+        record["replacement_deleted_at_epoch"] = int(time.time())
+        record["platforms"] = {}
+        record["status"] = "replaced_deleted"
+        _save_state(state)
+        print(f"REPLACEMENT OLD POSTS DELETED {key}; no republish from old file")
+        return True
+
     if record.get("correction_pending"):
         deletion_results: dict[str, dict] = {}
         deletion_failures: list[str] = []
@@ -599,9 +647,18 @@ def main() -> None:
         for item in queue.get("prompts", [])
         if item.get("status") == "assigned_to_r2_upload" and item.get("r2_key")
     }
+    delete_only_keys = {
+        key
+        for key, record in state.get("objects", {}).items()
+        if record.get("replacement_delete_only_pending")
+    }
     objects.sort(
         key=lambda item: (
-            0 if str(item.get("Key") or "") in assigned_keys else 1,
+            0
+            if str(item.get("Key") or "") in delete_only_keys
+            else 1
+            if str(item.get("Key") or "") in assigned_keys
+            else 2,
             item.get("LastModified"),
         )
     )
@@ -612,11 +669,20 @@ def main() -> None:
         etag = str(item.get("ETag", "")).strip('"')
         platforms = state.get("objects", {}).get(key, {}).get("platforms", {})
         correction_pending = bool(state.get("objects", {}).get(key, {}).get("correction_pending"))
+        replacement_delete_only_pending = bool(
+            state.get("objects", {}).get(key, {}).get("replacement_delete_only_pending")
+        )
         youtube_republish_pending = bool(
             state.get("objects", {}).get(key, {}).get("youtube_republish_pending")
         )
-        if not correction_pending and not youtube_republish_pending and all(
-            platforms.get(p, {}).get("status") == "published" for p in PUBLIC_PLATFORMS
+        if (
+            not correction_pending
+            and not replacement_delete_only_pending
+            and not youtube_republish_pending
+            and all(
+                platforms.get(p, {}).get("status") == "published"
+                for p in PUBLIC_PLATFORMS
+            )
         ):
             continue
         if _publish_one(key, etag, client, bucket, state, queue):
