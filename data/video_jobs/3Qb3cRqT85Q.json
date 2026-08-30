@@ -1,0 +1,141 @@
+{
+  "video_id": "3Qb3cRqT85Q",
+  "source_url": "https://www.youtube.com/watch?v=3Qb3cRqT85Q",
+  "property_location": "Papampatti, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": 2,
+    "land_area": "2 Cents",
+    "built_up_area": "800 Sq.Ft.",
+    "price": "₹40 Lakhs (Negotiable)",
+    "facing": "North",
+    "road_width": "25 Feet",
+    "parking": "Covered Car Parking (10x14 ft)",
+    "approval": "DTCP Approved, Plan Approved"
+  },
+  "verified_facts": "Low-budget 2BHK simplex house located in Papampatti, Coimbatore., Land area is 2 cents with an 800 sq.ft built-up area., North-facing property with North main door made of teak wood., Asking price is 40 Lakhs (negotiable) with up to 85% bank loan support available., Car parking dimension: 10x14 ft, Living Hall: 16x8 ft, Kitchen: 10x10 ft., Master Bedroom: 10x11 ft with Attached Bathroom (4x8 ft), Kids Bedroom: 10x8 ft, Common Bathroom: 4x6 ft under staircase.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local Tamil property presenter speaking naturally directly to camera with smooth real-estate terms.",
+    "hook_strategy": "Highlight a DTCP-approved 2BHK independent house in Papampatti near Palladam-Cochin Highway.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை பாப்பம்பட்டியில, பல்லடம்-கொச்சின் ஹைவேல இருந்து 1 kilometer தொலவுல ஒரு சூப்பரான 2BHK Independent House விற்பனைக்கு வந்துருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "2 Cent Land Area-ல, 800 Sq.Ft Built-up Area-ல இந்த வீட்டை அமைச்சிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "overview"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இதுல 16x8 அடி Living Hall, 10x10 அடி Kitchen, 2 Bedrooms, அப்புறம் Covered Car Parking வசதியும் இருக்கு.",
+        "broll": [
+          "living_room",
+          "interior",
+          "bedroom",
+          "kitchen"
+        ],
+        "avoid_broll": [
+          "exterior"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "interior_tour"
+      },
+      {
+        "name": "facing",
+        "voice": "இது North facing property, 25 Feet Road வசதியோட அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass-north",
+        "purpose": "exterior_specs"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், இது DTCP மற்றும் Plan Approved property! 85% வரைக்கும் Bank Loan Support கிடைக்கும்.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "land"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_builder"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த வீட்டோட Price பாத்தீங்கனா 40 Lakhs, Negotiable தான்.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "Direct Site Visit பண்ண இல்லனா Details தெரிஞ்சுக்க உடனே Call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/3Qb3cRqT85Q/",
+  "optional_owned_audio": "assets/audio/3Qb3cRqT85Q.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story independent house with vibrant multi-colored paint scheme (white, orange, blue, brown accents), brown iron gate, car entry ramp, tiled parking porch, wall cladding tiles, and an external staircase leading to the open terrace.. Neighbourhood: Suburban developing residential locality in Papampatti with open layout plots, nearby houses, clear sky, and wide approach road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story independent house with vibrant multi-colored paint scheme (white, orange, blue, brown accents), brown iron gate, car entry ramp, tiled parking porch, wall cladding tiles, and an external staircase leading to the open terrace.. Neighbourhood: Suburban developing residential locality in Papampatti with open layout plots, nearby houses, clear sky, and wide approach road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story independent house with vibrant multi-colored paint scheme (white, orange, blue, brown accents), brown iron gate, car entry ramp, tiled parking porch, wall cladding tiles, and an external staircase leading to the open terrace.. Neighbourhood: Suburban developing residential locality in Papampatti with open layout plots, nearby houses, clear sky, and wide approach road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story independent house with vibrant multi-colored paint scheme (white, orange, blue, brown accents), brown iron gate, car entry ramp, tiled parking porch, wall cladding tiles, and an external staircase leading to the open terrace.. Neighbourhood: Suburban developing residential locality in Papampatti with open layout plots, nearby houses, clear sky, and wide approach road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
