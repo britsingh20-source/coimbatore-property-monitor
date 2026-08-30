@@ -143,12 +143,12 @@
       "video_id": "M0UauIWBWNY"
     },
     {
+      "r2_key": "social-ready/telegram-AgADUSIAAjekeVQ.mp4",
       "sent_at": "2026-08-25T09:54:24.039492+00:00",
-      "status": "published",
-      "video_id": "57gPYoNDFUU",
-      "r2_key": "social-ready/telegram-AgADDR4AArYXoVQ.mp4",
-      "telegram_file_unique_id": "AgADDR4AArYXoVQ",
-      "uploaded_at": "2026-08-30T01:37:40.462120+00:00"
+      "status": "assigned_to_r2_upload",
+      "telegram_file_unique_id": "AgADUSIAAjekeVQ",
+      "uploaded_at": "2026-08-26T11:01:22.046088+00:00",
+      "video_id": "57gPYoNDFUU"
     },
     {
       "sent_at": "2026-08-25T11:47:38.127535+00:00",

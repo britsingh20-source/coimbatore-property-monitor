@@ -747,6 +747,9 @@
           "status": "published"
         }
       },
+      "replacement_delete_only_pending": true,
+      "replacement_reason": "user_supplied_louder_audio_version",
+      "replacement_requested_at": "2026-08-30T03:27:16.327Z",
       "status": "matched",
       "video_id": "57gPYoNDFUU",
       "youtube_media": {
@@ -772,10 +775,7 @@
           "height": 1920,
           "width": 1080
         }
-      },
-      "replacement_delete_only_pending": true,
-      "replacement_requested_at": "2026-08-30T03:27:16.327Z",
-      "replacement_reason": "user_supplied_louder_audio_version"
+      }
     },
     "social-ready/telegram-AgADDycAApfogFQ.mp4": {
       "content": {
@@ -992,6 +992,11 @@
       "status": "matched",
       "video_id": "6jJtYT4MA_E"
     },
+    "social-ready/telegram-AgADJyEAAmRQmVQ.mp4": {
+      "etag": "ca6556719d5fa20b3ef64a6ac6bfcd16-3",
+      "platforms": {},
+      "status": "waiting_for_video_id"
+    },
     "social-ready/telegram-AgADRyEAAjekgVQ.mp4": {
       "content": {
         "caption": "🏠 ₹5,80,000 per cent Residential Plot in Sulur, Coimbatore, Tamil Nadu — would you visit this property?\n\n📍 Location: Sulur, Coimbatore, Tamil Nadu\n🏡 Property: Residential Plot\n💰 Price: ₹5,80,000 per cent\n📐 Land: 36 Acres\n✅ Approval: DTCP & RERA\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #SulurCoimbatoreTamilNaduProperty #CoimbatoreRealEstate",
@@ -1122,29 +1127,58 @@
       "youtube_republish_requested_at": "2026-08-27T02:39:38.244Z"
     },
     "social-ready/telegram-AgADUSIAAjekeVQ.mp4": {
-      "candidate_video_ids": [
-        "KiJEPqoUCTw",
-        "6RCA3cUaZ2Y",
-        "7bj_axUSMmM",
-        "OEul0dWNXSU",
-        "94Y_3Jp2hQw",
-        "twP0glR4EyU",
-        "xTvjrweqpy4",
-        "3HCxfx5DoJs",
-        "PAs5DHZmBKo",
-        "f330aqcYbfE",
-        "Zct1W4hIERI",
-        "y07Izy9Qikw",
-        "M0UauIWBWNY",
-        "tkJnGvIo32g",
-        "S_NnYorPyM0",
-        "DZ_0GnMaT9k",
-        "UmiDPhMC5YY"
-      ],
+      "content": {
+        "caption": "🏠 ₹56 Lakhs (Negotiable) 2 BHK BHK Independent House in Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India — would you visit this property?\n\n📍 Location: Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India\n🏡 Property: 2 BHK BHK Independent House\n💰 Price: ₹56 Lakhs (Negotiable)\n📐 Land: 2.5 Cents (20 x 50 ft)\n🏗️ Built-up: 890 sq ft\n🧭 Facing: North\n🚗 Parking: Covered Car Parking (10 x 16 ft)\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #VaiyampalayamnearSaravanampattiITParkCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#CoimbatoreProperty",
+          "#VaiyampalayamnearSaravanampattiITParkCoimbatoreTamilNaduIndiaProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "₹56 Lakhs (Negotiable) 2 BHK BHK Independent House in Vaiyampalayam, near Saravanampatti IT Park, Co",
+        "youtube_description": "₹56 Lakhs (Negotiable) 2 BHK BHK Independent House in Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India. Watch the complete 10-second walkthrough.\n\n📍 Location: Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India\n🏡 Property: 2 BHK BHK Independent House\n💰 Price: ₹56 Lakhs (Negotiable)\n📐 Land: 2.5 Cents (20 x 50 ft)\n🏗️ Built-up: 890 sq ft\n🧭 Facing: North\n🚗 Parking: Covered Car Parking (10 x 16 ft)\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #VaiyampalayamnearSaravanampattiITParkCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate"
+      },
       "etag": "467fe8a458ffb5e01dc9e9e0ad2c332a-3",
-      "match_error": "Error code: 429 - {'error': {'message': 'Resource has been exhausted (e.g. check quota).', 'code': 'too_many_requests'}}",
-      "platforms": {},
-      "status": "match_error"
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "status": "dry_run"
+        },
+        "instagram_story": {
+          "status": "dry_run"
+        },
+        "youtube_short": {
+          "status": "dry_run"
+        }
+      },
+      "status": "matched",
+      "video_id": "57gPYoNDFUU",
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "landscape_blurred_fill",
+        "output": {
+          "audio_bit_rate": 248041,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 25.425,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 248012,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 26.666667,
+          "height": 1080,
+          "width": 1920
+        }
+      }
     },
     "social-ready/telegram-AgADUyMAApfogFQ.mp4": {
       "content": {
