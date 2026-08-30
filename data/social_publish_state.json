@@ -212,7 +212,7 @@
       },
       "etag": "0ea3bebcd3a0aaa3511879cb217e1987-3",
       "match_analysis": {
-        "confidence": 1.0,
+        "confidence": 1,
         "method": "telegram_exact_video_id"
       },
       "platforms": {
@@ -332,7 +332,7 @@
       },
       "etag": "1da50d14a9a6d64aada29e8edfbfb1f6-3",
       "match_analysis": {
-        "confidence": 1.0,
+        "confidence": 1,
         "method": "telegram_exact_video_id"
       },
       "platforms": {
@@ -433,7 +433,7 @@
           "audio_channels": 2,
           "audio_codec": "aac",
           "audio_sample_rate": 48000,
-          "duration": 20.0,
+          "duration": 20,
           "height": 1080,
           "width": 1920
         }
@@ -452,7 +452,7 @@
       },
       "etag": "7fc6c78cf4ceffeb06460738e407d3a3-3",
       "match_analysis": {
-        "confidence": 1.0,
+        "confidence": 1,
         "method": "telegram_exact_video_id"
       },
       "platforms": {
@@ -667,7 +667,7 @@
       },
       "etag": "07af06389b77d94b9df5cc4c4fdb9d1c-3",
       "match_analysis": {
-        "confidence": 1.0,
+        "confidence": 1,
         "method": "telegram_exact_video_id"
       },
       "platforms": {
@@ -772,7 +772,10 @@
           "height": 1920,
           "width": 1080
         }
-      }
+      },
+      "replacement_delete_only_pending": true,
+      "replacement_requested_at": "2026-08-30T03:27:16.327Z",
+      "replacement_reason": "user_supplied_louder_audio_version"
     },
     "social-ready/telegram-AgADDycAApfogFQ.mp4": {
       "content": {
@@ -787,7 +790,7 @@
       },
       "etag": "a766030793a1b5a8934e98338dd52198-3",
       "match_analysis": {
-        "confidence": 1.0,
+        "confidence": 1,
         "method": "telegram_exact_video_id"
       },
       "platforms": {
@@ -888,7 +891,7 @@
           "audio_channels": 2,
           "audio_codec": "aac",
           "audio_sample_rate": 48000,
-          "duration": 20.0,
+          "duration": 20,
           "height": 1080,
           "width": 1920
         }
@@ -1247,7 +1250,7 @@
           "audio_channels": 2,
           "audio_codec": "aac",
           "audio_sample_rate": 48000,
-          "duration": 20.0,
+          "duration": 20,
           "height": 1920,
           "width": 1080
         },
@@ -1257,7 +1260,7 @@
           "audio_channels": 2,
           "audio_codec": "aac",
           "audio_sample_rate": 48000,
-          "duration": 20.0,
+          "duration": 20,
           "height": 1920,
           "width": 1080
         }
