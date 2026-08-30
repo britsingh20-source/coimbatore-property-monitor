@@ -747,7 +747,14 @@
           "status": "published"
         }
       },
+      "replacement_delete_errors": [
+        "instagram_reel: Meta API HTTP 400: {\"error\": {\"message\": \"(#10) Insufficient permissions to access this data\", \"code\": 10, \"type\": \"OAuthException\", \"fbtrace_id\": \"AXXdWeFBqMvP02_18W-_Y1t\"}}",
+        "instagram_story: Meta API HTTP 400: {\"error\": {\"message\": \"(#10) Insufficient permissions to access this data\", \"code\": 10, \"type\": \"OAuthException\", \"fbtrace_id\": \"AcEluFVKRivZlcXfdQGrm4V\"}}",
+        "youtube_short: <HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/videos?id=JdqPazePdO0 returned \"Request had insufficient authentication scopes.\". Details: \"[{'message': 'Insufficient Permission', 'domain': 'global', 'reason': 'insufficientPermissions'}]\">"
+      ],
       "replacement_delete_only_pending": true,
+      "replacement_delete_only_status": "deletion_failed",
+      "replacement_deletions": {},
       "replacement_reason": "user_supplied_louder_audio_version",
       "replacement_requested_at": "2026-08-30T03:27:16.327Z",
       "status": "matched",
