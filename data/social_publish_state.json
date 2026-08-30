@@ -655,9 +655,58 @@
       "video_id": "AIolIZydXTU"
     },
     "social-ready/telegram-AgADDR4AArYXoVQ.mp4": {
+      "content": {
+        "caption": "🏠 ₹56 Lakhs (Negotiable) 2 BHK BHK Independent House in Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India — would you visit this property?\n\n📍 Location: Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India\n🏡 Property: 2 BHK BHK Independent House\n💰 Price: ₹56 Lakhs (Negotiable)\n📐 Land: 2.5 Cents (20 x 50 ft)\n🏗️ Built-up: 890 sq ft\n🧭 Facing: North\n🚗 Parking: Covered Car Parking (10 x 16 ft)\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #VaiyampalayamnearSaravanampattiITParkCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#CoimbatoreProperty",
+          "#VaiyampalayamnearSaravanampattiITParkCoimbatoreTamilNaduIndiaProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "₹56 Lakhs (Negotiable) 2 BHK BHK Independent House in Vaiyampalayam, near Saravanampatti IT Park, Co",
+        "youtube_description": "₹56 Lakhs (Negotiable) 2 BHK BHK Independent House in Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India. Watch the complete 10-second walkthrough.\n\n📍 Location: Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India\n🏡 Property: 2 BHK BHK Independent House\n💰 Price: ₹56 Lakhs (Negotiable)\n📐 Land: 2.5 Cents (20 x 50 ft)\n🏗️ Built-up: 890 sq ft\n🧭 Facing: North\n🚗 Parking: Covered Car Parking (10 x 16 ft)\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #VaiyampalayamnearSaravanampattiITParkCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate"
+      },
       "etag": "07af06389b77d94b9df5cc4c4fdb9d1c-3",
-      "platforms": {},
-      "status": "waiting_for_video_id"
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "status": "dry_run"
+        },
+        "instagram_story": {
+          "status": "dry_run"
+        },
+        "youtube_short": {
+          "status": "dry_run"
+        }
+      },
+      "status": "matched",
+      "video_id": "57gPYoNDFUU",
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 249183,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 25.549,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 249109,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 25.566667,
+          "height": 1920,
+          "width": 1080
+        }
+      }
     },
     "social-ready/telegram-AgADDycAApfogFQ.mp4": {
       "content": {
@@ -1018,7 +1067,6 @@
         "Zct1W4hIERI",
         "y07Izy9Qikw",
         "M0UauIWBWNY",
-        "57gPYoNDFUU",
         "tkJnGvIo32g",
         "S_NnYorPyM0",
         "DZ_0GnMaT9k",
