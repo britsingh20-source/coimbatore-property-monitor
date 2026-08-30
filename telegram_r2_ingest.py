@@ -179,6 +179,16 @@ def _resolve_supplied_video_id(supplied_id: str, queue: dict) -> str:
     }
     if supplied_id in known_ids:
         return supplied_id
+
+    # Replacement uploads may reuse an already-published VIDEO_ID. Resolve a
+    # mobile case-only typo only when exactly one known property matches.
+    case_only_matches = [
+        candidate for candidate in known_ids
+        if candidate.casefold() == supplied_id.casefold()
+    ]
+    if len(case_only_matches) == 1:
+        return case_only_matches[0]
+
     return _unique_pending_video_id(supplied_id, queue)
 
 
