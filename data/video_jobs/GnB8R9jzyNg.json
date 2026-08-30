@@ -1,0 +1,160 @@
+{
+  "video_id": "GnB8R9jzyNg",
+  "source_url": "https://www.youtube.com/watch?v=GnB8R9jzyNg",
+  "property_location": "Pachapalayam, near Perur, Coimbatore",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "2.48 Cents",
+    "built_up_area": "1570 Sq Ft",
+    "price": "₹78 Lakhs",
+    "facing": "South-facing site, East-facing main door",
+    "road_width": "30 Feet",
+    "parking": "Small car parking space",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Located inside a gated community near Perur on Siruvani Road, Coimbatore., Property size is 2.48 cents land with 1570 sq. ft. built-up area across ground and first floor (duplex style)., 3 bedrooms with attached bathrooms, separate dining and kitchen areas with marble top and RCC loft., DTCP approved with up to 70% bank loan eligibility., Quoted price is ₹78 Lakhs.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, conversational local Coimbatore property presenter speaking directly to camera with natural Tamil-English blend.",
+    "hook_strategy": "Lead directly with the popular location, Siruvani Road/Pachapalayam near Perur, combined with the 3 BHK gated community callout.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore-ல Perur Siruvani Road, Pachapalayam location-ல இருக்குற இந்த 3 BHK gated community house-அ பாக்கலாம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இதுல 1570 sq ft built-up area வருது... duplex style-ல 3 bedrooms with attached bathrooms, separate dining, kitchen-னு அழகா அமைச்சிருக்காங்க.",
+        "broll": [
+          "living_room",
+          "interior",
+          "bedroom",
+          "kitchen"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "floor-plan-highlight",
+        "purpose": "property_layout_details"
+      },
+      {
+        "name": "land",
+        "voice": "Land area பாத்தீங்கனா 2.48 cents.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "area-callout",
+        "purpose": "land_details"
+      },
+      {
+        "name": "facing",
+        "voice": "South-facing site, main door East-facing-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "road",
+        "voice": "வீட்டுக்கு முன்னாடி 30 feet road வசதியும் இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "road-width-callout",
+        "purpose": "road_details"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approval வாங்குன property... up to 70% bank loan eligibility இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road",
+          "bedroom"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_and_loan_info"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த வீடொட quoted price 78 Lakhs.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag-pop",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல site visit பண்ணவோ, மேலும் details தெரியவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "land",
+          "bedroom"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/GnB8R9jzyNg/",
+  "optional_owned_audio": "assets/audio/GnB8R9jzyNg.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern duplex house with a white exterior accented by dark wooden paneling and decorative black laser-cut metal screen balconies/gates. Concrete slope ramps lead into covered car parking slots.. Neighbourhood: Situated inside a gated community accessed via a 30-feet tar road, surrounded by scenic hill views, open plots, and newly constructed houses in Pachapalayam near Perur.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern duplex house with a white exterior accented by dark wooden paneling and decorative black laser-cut metal screen balconies/gates. Concrete slope ramps lead into covered car parking slots.. Neighbourhood: Situated inside a gated community accessed via a 30-feet tar road, surrounded by scenic hill views, open plots, and newly constructed houses in Pachapalayam near Perur.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern duplex house with a white exterior accented by dark wooden paneling and decorative black laser-cut metal screen balconies/gates. Concrete slope ramps lead into covered car parking slots.. Neighbourhood: Situated inside a gated community accessed via a 30-feet tar road, surrounded by scenic hill views, open plots, and newly constructed houses in Pachapalayam near Perur.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern duplex house with a white exterior accented by dark wooden paneling and decorative black laser-cut metal screen balconies/gates. Concrete slope ramps lead into covered car parking slots.. Neighbourhood: Situated inside a gated community accessed via a 30-feet tar road, surrounded by scenic hill views, open plots, and newly constructed houses in Pachapalayam near Perur.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
