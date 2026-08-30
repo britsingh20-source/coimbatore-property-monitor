@@ -672,13 +672,79 @@
       },
       "platforms": {
         "instagram_reel": {
-          "status": "dry_run"
+          "result": {
+            "creation_id": "17895312927599708",
+            "media_id": "18104638777930937",
+            "processing": {
+              "id": "17895312927599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "thumb_offset_ms": 2000
+          },
+          "status": "published"
         },
         "instagram_story": {
-          "status": "dry_run"
+          "result": {
+            "creation_id": "17895313071599708",
+            "media_id": "18025649132913982",
+            "processing": {
+              "id": "17895313071599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
         },
         "youtube_short": {
-          "status": "dry_run"
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "₹56 Lakhs (Negotiable) 2 BHK BHK Independent House in Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India. Watch the complete 10-second walkthrough.\n\n📍 Location: Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India\n🏡 Property: 2 BHK BHK Independent House\n💰 Price: ₹56 Lakhs (Negotiable)\n📐 Land: 2.5 Cents (20 x 50 ft)\n🏗️ Built-up: 890 sq ft\n🧭 Facing: North\n🚗 Parking: Covered Car Parking (10 x 16 ft)\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #VaiyampalayamnearSaravanampattiITParkCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "₹56 Lakhs (Negotiable) 2 BHK BHK Independent House in Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India. Watch the complete 10-second walkthrough.\n\n📍 Location: Vaiyampalayam, near Saravanampatti IT Park, Coimbatore, Tamil Nadu, India\n🏡 Property: 2 BHK BHK Independent House\n💰 Price: ₹56 Lakhs (Negotiable)\n📐 Land: 2.5 Cents (20 x 50 ft)\n🏗️ Built-up: 890 sq ft\n🧭 Facing: North\n🚗 Parking: Covered Car Parking (10 x 16 ft)\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #VaiyampalayamnearSaravanampattiITParkCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
+                "title": "₹56 Lakhs (Negotiable) 2 BHK BHK Independent House in Vaiyampalayam, near Saravanampatti IT Park, Co"
+              },
+              "publishedAt": "2026-08-30T03:05:07Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/JdqPazePdO0/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/JdqPazePdO0/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/JdqPazePdO0/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "₹56 Lakhs (Negotiable) 2 BHK BHK Independent House in Vaiyampalayam, near Saravanampatti IT Park, Co"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "JdqPazePdO0"
+          },
+          "status": "published"
         }
       },
       "status": "matched",
