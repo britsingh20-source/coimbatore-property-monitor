@@ -135,7 +135,17 @@ def _unique_pending_video_id(supplied_id: str, queue: dict) -> str:
     if supplied_id in pending_ids:
         return supplied_id
 
-    ambiguous_groups = (set("0O"), set("1Il"))
+    # YouTube IDs are case-sensitive, but mobile keyboards can change only the
+    # letter case. Correct that typo only when exactly one pending prompt
+    # matches case-insensitively; never guess between multiple properties.
+    case_only_matches = [
+        candidate for candidate in pending_ids
+        if candidate.casefold() == supplied_id.casefold()
+    ]
+    if len(case_only_matches) == 1:
+        return case_only_matches[0]
+
+    ambiguous_groups = (set("0Oo"), set("1Il"))
     matches = []
     for candidate in pending_ids:
         if len(candidate) != len(supplied_id):
