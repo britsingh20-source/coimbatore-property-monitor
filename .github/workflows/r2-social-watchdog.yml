@@ -1,0 +1,53 @@
+name: R2 Social Publisher Watchdog
+
+on:
+  schedule:
+    # Independent fallback for GitHub occasionally dropping the publisher's
+    # own scheduled event. The watchdog dispatches only when no publisher run
+    # has started recently, so normal 10-minute scans are not duplicated.
+    - cron: "2,12,22,32,42,52 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  actions: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Dispatch live publisher only when overdue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          cutoff="$(date -u -d '12 minutes ago' +%s)"
+          latest_started="$({
+            gh api \
+              "repos/${GH_REPO}/actions/workflows/r2-social-autopilot.yml/runs?per_page=20" \
+              --jq '[.workflow_runs[] | select(.status == "queued" or .status == "in_progress" or .status == "completed") | .created_at] | max // empty'
+          } || true)"
+
+          if [[ -n "${latest_started}" ]] && (( $(date -u -d "${latest_started}" +%s) >= cutoff )); then
+            echo "Publisher is current; no fallback dispatch is needed."
+            exit 0
+          fi
+
+          gh workflow run r2-social-autopilot.yml --ref main -f dry_run=false
+          echo "Publisher was overdue; dispatched a live recovery run."
+
+      - name: Alert Telegram when watchdog recovery fails
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        shell: bash
+        run: |
+          message="⚠️ The property publishing watchdog could not start the overdue publisher. Run: https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          curl --fail --silent --show-error \
+            --request POST \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "text=${message}" \
+            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage"
