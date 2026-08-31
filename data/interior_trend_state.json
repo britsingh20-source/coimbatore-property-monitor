@@ -14,7 +14,8 @@
     "IIRalr56d7Y",
     "UHqIFIpkVWw",
     "j4miOWaBgqM",
-    "V2Dv6N4J9gI"
+    "V2Dv6N4J9gI",
+    "VEBpBMNl07Y"
   ],
   "history": [
     {
@@ -91,7 +92,12 @@
       "video_id": "V2Dv6N4J9gI",
       "creator": "IDHD - Interior Design & Home Decor",
       "url": "https://www.youtube.com/watch?v=V2Dv6N4J9gI"
+    },
+    {
+      "video_id": "VEBpBMNl07Y",
+      "creator": "DesignCafe",
+      "url": "https://www.youtube.com/watch?v=VEBpBMNl07Y"
     }
   ],
-  "night_channel_cursor": 0
+  "night_channel_cursor": 1
 }
