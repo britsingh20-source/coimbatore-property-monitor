@@ -1892,6 +1892,126 @@
       },
       "status": "matched",
       "video_id": "uAJus2hXLTo"
+    },
+    "social-ready/telegram-AgADtSEAAmRQoVQ.mp4": {
+      "content": {
+        "caption": "🏠 ₹67 Lakhs (Negotiable) 2BHK BHK Independent House in Karamadai, Coimbatore, Tamil Nadu, India — would you visit this property?\n\n📍 Location: Karamadai, Coimbatore, Tamil Nadu, India\n🏡 Property: 2BHK BHK Independent House\n💰 Price: ₹67 Lakhs (Negotiable)\n📐 Land: 3.5 Cents (1,525 sq ft)\n🏗️ Built-up: 1,350 sq ft\n🧭 Facing: East\n🚗 Parking: Covered Car & Two-Wheeler Parking\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #KaramadaiCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#CoimbatoreProperty",
+          "#KaramadaiCoimbatoreTamilNaduIndiaProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "₹67 Lakhs (Negotiable) 2BHK BHK Independent House in Karamadai, Coimbatore, Tamil Nadu, India | Site",
+        "youtube_description": "₹67 Lakhs (Negotiable) 2BHK BHK Independent House in Karamadai, Coimbatore, Tamil Nadu, India. Watch the complete 10-second walkthrough.\n\n📍 Location: Karamadai, Coimbatore, Tamil Nadu, India\n🏡 Property: 2BHK BHK Independent House\n💰 Price: ₹67 Lakhs (Negotiable)\n📐 Land: 3.5 Cents (1,525 sq ft)\n🏗️ Built-up: 1,350 sq ft\n🧭 Facing: East\n🚗 Parking: Covered Car & Two-Wheeler Parking\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #KaramadaiCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate"
+      },
+      "etag": "97674264b331911bd76dc85e16756da8-3",
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "creation_id": "17895476490599708",
+            "media_id": "18153919477517861",
+            "processing": {
+              "id": "17895476490599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "thumb_offset_ms": 2000
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17895476670599708",
+            "media_id": "18085453157296083",
+            "processing": {
+              "id": "17895476670599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "₹67 Lakhs (Negotiable) 2BHK BHK Independent House in Karamadai, Coimbatore, Tamil Nadu, India. Watch the complete 10-second walkthrough.\n\n📍 Location: Karamadai, Coimbatore, Tamil Nadu, India\n🏡 Property: 2BHK BHK Independent House\n💰 Price: ₹67 Lakhs (Negotiable)\n📐 Land: 3.5 Cents (1,525 sq ft)\n🏗️ Built-up: 1,350 sq ft\n🧭 Facing: East\n🚗 Parking: Covered Car & Two-Wheeler Parking\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #KaramadaiCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "₹67 Lakhs (Negotiable) 2BHK BHK Independent House in Karamadai, Coimbatore, Tamil Nadu, India. Watch the complete 10-second walkthrough.\n\n📍 Location: Karamadai, Coimbatore, Tamil Nadu, India\n🏡 Property: 2BHK BHK Independent House\n💰 Price: ₹67 Lakhs (Negotiable)\n📐 Land: 3.5 Cents (1,525 sq ft)\n🏗️ Built-up: 1,350 sq ft\n🧭 Facing: East\n🚗 Parking: Covered Car & Two-Wheeler Parking\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #KaramadaiCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
+                "title": "₹67 Lakhs (Negotiable) 2BHK BHK Independent House in Karamadai, Coimbatore, Tamil Nadu, India | Site"
+              },
+              "publishedAt": "2026-08-31T03:49:33Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/ZE9uzZ62hSM/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/ZE9uzZ62hSM/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/ZE9uzZ62hSM/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "₹67 Lakhs (Negotiable) 2BHK BHK Independent House in Karamadai, Coimbatore, Tamil Nadu, India | Site"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "ZE9uzZ62hSM"
+          },
+          "status": "published"
+        }
+      },
+      "status": "matched",
+      "video_id": "BN27nDLnjfs",
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 248650,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 20.0,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 248535,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 20.0,
+          "height": 1920,
+          "width": 1080
+        }
+      }
     }
   }
 }
