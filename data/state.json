@@ -880,9 +880,11 @@
     },
     "KJWRNZbATPs": {
       "attempts": 0,
+      "completed_at": "2026-08-31T20:10:15.006452+00:00",
       "first_seen_at": "2026-08-31T15:30:49.301847+00:00",
+      "last_error": "",
       "next_retry_at": "2026-08-31T15:30:49.301847+00:00",
-      "status": "discovered"
+      "status": "archived_non_target"
     },
     "KiJEPqoUCTw": {
       "attempts": 0,
