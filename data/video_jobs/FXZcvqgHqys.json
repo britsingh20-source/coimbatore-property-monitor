@@ -1,0 +1,127 @@
+{
+  "video_id": "FXZcvqgHqys",
+  "source_url": "https://www.youtube.com/watch?v=FXZcvqgHqys",
+  "property_location": "Veerapandi Pirivu, Mettupalayam Road, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "70 Cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹6.50 Lakhs per cent (Negotiable)",
+    "facing": "Main Road Facing / Corner Plot",
+    "road_width": "30 ft & 40 ft",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP proposed layout"
+  },
+  "verified_facts": "70 cents vacant plot located off Mettupalayam Road, Veerapandi Pirivu, Coimbatore., Features 400ft commercial main road frontage and corner plot location., Proposed layout allows for up to 20 DTCP approved residential plots., Equipped with 30ft and 40ft tar roads, electricity connection, and drainage., Quoted price is ₹6.50 Lakhs per cent, negotiable.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local Tamil real-estate presenter speaking naturally to camera with quick cuts and clear audio.",
+    "hook_strategy": "Highlighting the massive 400ft frontage and 70-cent land size right off Mettupalayam Road in Veerapandi Pirivu.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை மேட்டுப்பாளையம் ரோடு, வீரபாண்டி பிரிவு பக்கத்துல ஒரு சூப்பரான land option பாக்கப்போறோம்.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தம் 70 Cents vacant plot. 400 feet main road frontage கொண்ட ஒரு corner plot பாத்தீங்கனா இதுதான்.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "text-overlay-70-cents",
+        "purpose": "land_details"
+      },
+      {
+        "name": "road",
+        "voice": "இங்க 30 feet மற்றும் 40 feet tar road access இருக்கு. கூடவே EB connection, drainage வசதியும் பண்ணிருக்காங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room"
+        ],
+        "vfx": "text-overlay-road-width",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP proposed layout. இதுல 20 residential plots வரைக்கும் அமைக்கிறதுக்கான வசதி இருக்கு.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "dtcp-tag",
+        "purpose": "approval_details"
+      },
+      {
+        "name": "price",
+        "voice": "விலை பாத்தீங்கனா, ஒரு சென்ட் 6.50 Lakhs சொல்றாங்க. இது negotiable தான்.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேரடியா site visit வரவோ, மத்த details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/FXZcvqgHqys/",
+  "optional_owned_audio": "assets/audio/FXZcvqgHqys.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Veerapandi Pirivu, Mettupalayam Road, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Expansive flat vacant land parcel with perimeter fencing, roadside drainage, utility poles, and direct access to tar roads.. Neighbourhood: Established residential area with surrounding single/multi-storey houses, bus routes, temples, and commercial connectivity.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Veerapandi Pirivu, Mettupalayam Road, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Expansive flat vacant land parcel with perimeter fencing, roadside drainage, utility poles, and direct access to tar roads.. Neighbourhood: Established residential area with surrounding single/multi-storey houses, bus routes, temples, and commercial connectivity.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Veerapandi Pirivu, Mettupalayam Road, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Expansive flat vacant land parcel with perimeter fencing, roadside drainage, utility poles, and direct access to tar roads.. Neighbourhood: Established residential area with surrounding single/multi-storey houses, bus routes, temples, and commercial connectivity.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Veerapandi Pirivu, Mettupalayam Road, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Expansive flat vacant land parcel with perimeter fencing, roadside drainage, utility poles, and direct access to tar roads.. Neighbourhood: Established residential area with surrounding single/multi-storey houses, bus routes, temples, and commercial connectivity.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

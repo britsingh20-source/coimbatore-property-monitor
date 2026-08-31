@@ -669,6 +669,14 @@
       "next_retry_at": "2026-08-11T17:15:19.796976+00:00",
       "status": "archived_non_target"
     },
+    "FXZcvqgHqys": {
+      "attempts": 0,
+      "completed_at": "2026-08-31T14:04:27.654205+00:00",
+      "first_seen_at": "2026-08-31T13:59:31.458888+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-08-31T13:59:31.458888+00:00",
+      "status": "video_queued"
+    },
     "FikmwXmSPPM": {
       "attempts": 0,
       "completed_at": "2026-08-31T01:40:41.586852+00:00",
@@ -943,6 +951,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-07T15:42:52.723057+00:00",
       "status": "video_queued"
+    },
+    "MJxoOMpbHRE": {
+      "attempts": 0,
+      "first_seen_at": "2026-08-31T13:59:31.458888+00:00",
+      "next_retry_at": "2026-08-31T13:59:31.458888+00:00",
+      "status": "discovered"
     },
     "MdLJCQEnQNY": {
       "attempts": 0,
@@ -1566,6 +1580,12 @@
       "next_retry_at": "2026-08-24T08:25:18.651316+00:00",
       "status": "video_queued"
     },
+    "_lWCQGKqEWc": {
+      "attempts": 0,
+      "first_seen_at": "2026-08-31T13:59:31.458888+00:00",
+      "next_retry_at": "2026-08-31T13:59:31.458888+00:00",
+      "status": "discovered"
+    },
     "_rAMcelyT6U": {
       "attempts": 0,
       "completed_at": "2026-08-14T08:41:00.555000+00:00",
@@ -1927,6 +1947,12 @@
       "next_retry_at": "2026-08-15T13:01:19.664491+00:00",
       "status": "video_queued"
     },
+    "iNlaHoWV2Hw": {
+      "attempts": 0,
+      "first_seen_at": "2026-08-31T13:59:31.458888+00:00",
+      "next_retry_at": "2026-08-31T13:59:31.458888+00:00",
+      "status": "discovered"
+    },
     "iPZArXSDI4Q": {
       "attempts": 0,
       "completed_at": "2026-08-05T20:41:22.675834+00:00",
@@ -2188,6 +2214,14 @@
       "first_seen_at": "2026-08-27T16:42:08.586816+00:00",
       "last_error": "",
       "next_retry_at": "2026-08-27T16:42:08.586816+00:00",
+      "status": "video_queued"
+    },
+    "oy7DU8LRVGE": {
+      "attempts": 0,
+      "completed_at": "2026-08-31T14:01:46.072879+00:00",
+      "first_seen_at": "2026-08-31T13:59:31.458888+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-08-31T13:59:31.458888+00:00",
       "status": "video_queued"
     },
     "pmed9DnHN9Q": {
