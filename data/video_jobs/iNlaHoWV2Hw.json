@@ -1,0 +1,140 @@
+{
+  "video_id": "iNlaHoWV2Hw",
+  "source_url": "https://www.youtube.com/watch?v=iNlaHoWV2Hw",
+  "property_location": "Karamadai, Mettupalayam Road, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": 2,
+    "land_area": "3 Cents",
+    "built_up_area": "1300 sq ft",
+    "price": "₹57 Lakhs",
+    "facing": "West-facing site, North-facing main door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered portico parking (30' x 10') for 2 cars and two-wheelers",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "3 cents land area with 1300 sq ft built-up area., West-facing plot with a North-facing teakwood main entrance door., 2 BHK layout: Living hall (16'x16'), Kitchen (8'x8'), Master Bedroom (10'x16'), Kids/Second Bedroom (10'x10')., 3 Bathrooms: 2 attached western-style bathrooms (5'x5'6\" and 5'x5') and 1 outer Indian-style toilet (6'x7') in portico., 30'x10' large covered portico suitable for parking 2 cars and bikes., Borewell and 7,000-liter water sump present., Asking price is ₹57 Lakhs (negotiable) with 75% bank loan support., Located in Karamadai behind Savitha Hospital, off Mettupalayam Road, Coimbatore.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local property tour presenter speaking directly to camera.",
+    "hook_strategy": "Start directly with the prime location off Mettupalayam Road and attractive property type.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை மேட்டுப்பாளையம் ரோடு, காரமடையில சவிதா ஹாஸ்பிட்டல் பக்கத்துல ஒரு அருமையான 2 BHK Independent House விற்பனைக்கு வந்துருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 3 Cents land area-ல, 30'x10' பெரிய covered portico parking-ோட அமைச்சிருக்காங்க. 2 கார்கள் தாராளமா பார்க் பண்ணலாம்.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "area-overlay",
+        "purpose": "land_highlight"
+      },
+      {
+        "name": "facing",
+        "voice": "இது West-facing site, ஆனா main entrance door பாத்தீங்கனா North-facing teakwood-ல கொடுத்திருக்காங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1300 sq ft built-up area-ல 16x16 living hall, TV unit, 2 bedrooms, kitchen storage, 7,000-liter water sump மற்றும் borewell வசதியும் இருக்கு.",
+        "broll": [
+          "living_room",
+          "interior",
+          "bedroom",
+          "kitchen"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "highlight-text",
+        "purpose": "interior_tour"
+      },
+      {
+        "name": "approval",
+        "voice": "இது முழுசா DTCP approved பண்ணப்பட்ட property பாத்தீங்கனா.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "badge-pop",
+        "purpose": "trust_factor"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price 57 Lakhs, negotiable தான். 75% வரைக்கும் bank loan support-உம் பெறலாம்.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த வீட்டை நேர்ல பாக்க site visit வரவோ, details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/iNlaHoWV2Hw/",
+  "optional_owned_audio": "assets/audio/iNlaHoWV2Hw.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary home featuring pink and beige exterior walls with dark grey striped accents, maroon-framed entrance gate, yellow access ramp, textured tile parking portico, and an open top terrace.. Neighbourhood: Established residential neighborhood with concrete roads, contiguous existing houses, overhead utility lines, and scenic mountain views visible from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary home featuring pink and beige exterior walls with dark grey striped accents, maroon-framed entrance gate, yellow access ramp, textured tile parking portico, and an open top terrace.. Neighbourhood: Established residential neighborhood with concrete roads, contiguous existing houses, overhead utility lines, and scenic mountain views visible from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary home featuring pink and beige exterior walls with dark grey striped accents, maroon-framed entrance gate, yellow access ramp, textured tile parking portico, and an open top terrace.. Neighbourhood: Established residential neighborhood with concrete roads, contiguous existing houses, overhead utility lines, and scenic mountain views visible from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story contemporary home featuring pink and beige exterior walls with dark grey striped accents, maroon-framed entrance gate, yellow access ramp, textured tile parking portico, and an open top terrace.. Neighbourhood: Established residential neighborhood with concrete roads, contiguous existing houses, overhead utility lines, and scenic mountain views visible from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

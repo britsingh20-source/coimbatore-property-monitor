@@ -1,0 +1,143 @@
+{
+  "video_id": "MJxoOMpbHRE",
+  "source_url": "https://www.youtube.com/watch?v=MJxoOMpbHRE",
+  "property_location": "Karamadai, Mettupalayam Road, Coimbatore",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": "2 BHK",
+    "land_area": "3 Cents",
+    "built_up_area": "1300 sqft",
+    "price": "₹57 Lakhs",
+    "facing": "West (Site), North (Main Door)",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking (30'0\" x 10'0\")",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Land area is 3 Cents, Built-up area is 1300 sqft, Asking price is ₹57 Lakhs (negotiable), Site facing is West, Main door facing is North, Property location is Karamadai, Mettupalayam Road, Coimbatore, DTCP approved site, 75% Bank Loan Available",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking naturally to camera with natural conversational Tamil",
+    "hook_strategy": "Lead directly with 2 BHK Independent Villa location on Mettupalayam Road, Karamadai",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Mettupalayam Road, Karamadai-ல அமைஞ்சிருக்கற இந்த 2 BHK Independent Villa-வை தான் இன்னைக்கு பாக்கப்போறோம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-text-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 3 Cents land area-ல, covered car parking, 7,000 Liters sump அப்புறம் borewell வசதியோட அமைச்சிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "land-area-highlight",
+        "purpose": "feature_land_and_utilities"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1300 sqft built-up area! உள்ள பாத்தீங்கனா TV wall unit மற்றும் modular kitchen cabinets neatly பண்ணிருக்காங்க.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "exterior"
+        ],
+        "vfx": "area-text-overlay",
+        "purpose": "interior_highlights"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், site West facing, main door North facing-ல வருது.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "approval",
+        "voice": "அதே மாதிரி, இது DTCP approved site. 75% bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "approval-badge-overlay",
+        "purpose": "trust_and_loan"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price பாத்தீங்கனா 57 Lakhs, அதுவும் negotiable-தான்.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag-overlay",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "Site visit பண்ணனும்னாலோ, details வேணும்னாலோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "contact-details-overlay",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/MJxoOMpbHRE/",
+  "optional_owned_audio": "assets/audio/MJxoOMpbHRE.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story villa featuring pink and cream exterior walls with patterned wall tile accents, a yellow entrance ramp, maroon and gold metal gate, covered parking portico with patterned floor tiles, and stairs leading to the terrace.. Neighbourhood: NOT SPECIFIED. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story villa featuring pink and cream exterior walls with patterned wall tile accents, a yellow entrance ramp, maroon and gold metal gate, covered parking portico with patterned floor tiles, and stairs leading to the terrace.. Neighbourhood: NOT SPECIFIED. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story villa featuring pink and cream exterior walls with patterned wall tile accents, a yellow entrance ramp, maroon and gold metal gate, covered parking portico with patterned floor tiles, and stairs leading to the terrace.. Neighbourhood: NOT SPECIFIED. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story villa featuring pink and cream exterior walls with patterned wall tile accents, a yellow entrance ramp, maroon and gold metal gate, covered parking portico with patterned floor tiles, and stairs leading to the terrace.. Neighbourhood: NOT SPECIFIED. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
