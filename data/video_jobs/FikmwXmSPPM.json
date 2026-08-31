@@ -1,0 +1,116 @@
+{
+  "video_id": "FikmwXmSPPM",
+  "source_url": "https://www.youtube.com/watch?v=FikmwXmSPPM",
+  "property_location": "Maharani Avenue, Vadavalli, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "3.5 Cents (30 ft x 50 ft)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "NOT SPECIFIED",
+    "facing": "South Facing Site, East Facing Main Door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Space for 2 Cars",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "Located in Maharani Avenue, Vadavalli, Coimbatore., 3 BHK house where all three bedrooms are master bedrooms with attached bathrooms., Total land area is 3.5 cents with site dimensions of 30 ft x 50 ft., South-facing site with an East-facing main entrance door., Ground floor features a living hall (10x16 ft), spacious dining & kitchen, 1 master bedroom (10x14 ft) with dressing area & attached bath, and a separate pooja room., First floor includes 2 master bedrooms with attached bathrooms, extra veranda/utility area, balcony, and cloth drying area., Terrace has cooling proofing, two overhead tanks, and offers a view of Marudhamalai Temple., Features a car portico with set back area capable of parking two cars.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local Tamil property presenter speaking directly to camera with clear visual walkthrough cues.",
+    "hook_strategy": "Hook viewers instantly with the prime Vadavalli Maharani Avenue location and 3 BHK independent house configuration.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Vadavalli, Maharani Avenue-ல இருக்குற ஒரு 3 BHK Independent House பாக்கப்போறோம்!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தம் 3.5 Cents land-ல, 30 feet by 50 feet site dimensions-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "dimension-tag",
+        "purpose": "land_details"
+      },
+      {
+        "name": "facing",
+        "voice": "South facing site, main door பாத்தீங்கனா East facing. 2 cars park பண்ற அளவுக்கு parking space இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass-graphic",
+        "purpose": "facing_and_parking"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இதுல முக்கியமான விஷயம், 3 bedrooms-மே attached bathrooms இருக்கிற master bedrooms! Ground floor-ல living hall, kitchen, pooja room இருக்கு. First floor-ல balcony, அப்புறம் terrace-ல cooling proof roof-ம் இருக்கு.",
+        "broll": [
+          "living_room",
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "feature-list-overlay",
+        "purpose": "layout_highlights"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணி details தெரிஞ்சுக்க உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "contact-details-card",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/FikmwXmSPPM/",
+  "optional_owned_audio": "assets/audio/FikmwXmSPPM.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story independent residential house with a modern yellow, white, and brown facade, dark wood-style gate, balcony with pergola framing, and a red-tiled terrace.. Neighbourhood: Established residential colony with residential houses along an unpaved approach road within walkable distance to the main road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story independent residential house with a modern yellow, white, and brown facade, dark wood-style gate, balcony with pergola framing, and a red-tiled terrace.. Neighbourhood: Established residential colony with residential houses along an unpaved approach road within walkable distance to the main road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story independent residential house with a modern yellow, white, and brown facade, dark wood-style gate, balcony with pergola framing, and a red-tiled terrace.. Neighbourhood: Established residential colony with residential houses along an unpaved approach road within walkable distance to the main road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story independent residential house with a modern yellow, white, and brown facade, dark wood-style gate, balcony with pergola framing, and a red-tiled terrace.. Neighbourhood: Established residential colony with residential houses along an unpaved approach road within walkable distance to the main road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
