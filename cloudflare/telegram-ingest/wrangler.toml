@@ -1,0 +1,12 @@
+name = "coimbatore-property-telegram-ingest"
+main = "src/index.js"
+compatibility_date = "2026-08-01"
+workers_dev = true
+
+[[kv_namespaces]]
+binding = "PAIRING_STATE"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+[vars]
+GITHUB_REPOSITORY = "britsingh20-source/coimbatore-property-monitor"
+# TELEGRAM_CHAT_ID may be set here or with: wrangler secret put TELEGRAM_CHAT_ID
