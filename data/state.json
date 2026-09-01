@@ -33,6 +33,14 @@
       "next_retry_at": "2026-08-09T13:18:19.763629+00:00",
       "status": "archived_non_target"
     },
+    "-ZveRaGaOCk": {
+      "attempts": 0,
+      "completed_at": "2026-09-01T00:54:04.206295+00:00",
+      "first_seen_at": "2026-09-01T00:53:38.704365+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-09-01T00:53:38.704365+00:00",
+      "status": "video_queued"
+    },
     "-cH8S-JS4aM": {
       "attempts": 1,
       "completed_at": "2026-08-08T04:31:41.648073+00:00",
