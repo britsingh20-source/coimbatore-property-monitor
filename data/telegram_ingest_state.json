@@ -195,6 +195,16 @@
       "uploaded_at": "2026-08-31T03:46:44.577263+00:00",
       "video_id": "BN27nDLnjfs"
     },
+    "AgADvh0AAlMgsFQ": {
+      "paired_at": "2026-09-01T04:56:21.862166+00:00",
+      "paired_by": "next_telegram_message",
+      "r2_key": "social-ready/telegram-AgADvh0AAlMgsFQ.mp4",
+      "size": 19231328,
+      "status": "uploaded_exact_video_id",
+      "update_id": 789574067,
+      "uploaded_at": "2026-09-01T04:56:21.239040+00:00",
+      "video_id": "9HYRV7ux5tg"
+    },
     "AgADwR8AAl8jUVQ": {
       "corrected_from_video_id": "KiJEPqoUCTw",
       "r2_key": "social-ready/KiJEPqoUCTw.mp4",
@@ -205,5 +215,5 @@
       "video_id": "tTgkkQPNeCo"
     }
   },
-  "last_update_id": 789574066
+  "last_update_id": 789574068
 }
