@@ -15,7 +15,8 @@
     "UHqIFIpkVWw",
     "j4miOWaBgqM",
     "V2Dv6N4J9gI",
-    "VEBpBMNl07Y"
+    "VEBpBMNl07Y",
+    "asuirgkIAEk"
   ],
   "history": [
     {
@@ -97,6 +98,11 @@
       "video_id": "VEBpBMNl07Y",
       "creator": "DesignCafe",
       "url": "https://www.youtube.com/watch?v=VEBpBMNl07Y"
+    },
+    {
+      "video_id": "asuirgkIAEk",
+      "creator": "Design.Decor.Travel.",
+      "url": "https://www.youtube.com/watch?v=asuirgkIAEk"
     }
   ],
   "night_channel_cursor": 1
