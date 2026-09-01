@@ -1,0 +1,133 @@
+{
+  "video_id": "BALTOB4A6_c",
+  "source_url": "https://www.youtube.com/watch?v=BALTOB4A6_c",
+  "property_location": "Sulur, Kannampalayam, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹6.5 Lakhs per cent",
+    "facing": "NOT SPECIFIED",
+    "road_width": "33 ft",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP and RERA Approved"
+  },
+  "verified_facts": "Project named Happy Town / Green City featuring 500 DTCP and RERA approved plots in Sulur Kannampalayam, Coimbatore., Land available for purchase at ₹6.5 Lakhs per cent with up to 70% bank loan facility., House construction offer available for 1 BHK at ₹24 Lakhs and 2 BHK at ₹27 Lakhs, including free registration, plan approval, and EB connection., Site amenities include a 33-foot main entrance tar road, overhead water tank, EB line, street lights, and security entrance.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera with natural conversational Tamil",
+    "hook_strategy": "Lead with prime location in Sulur Kannampalayam and DTCP/RERA approval status",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை சூலூர் கண்ணம்பாளையத்துல ஒரு நல்ல location-ல plot தேடுறீங்களா?",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இங்க Happy Town, Green City-ல மொத்தம் 500 DTCP மற்றும் RERA approved plots இருக்குங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "interior"
+        ],
+        "vfx": "text-overlay-approval",
+        "purpose": "property_overview"
+      },
+      {
+        "name": "road",
+        "voice": "பாத்தீங்கனா, 33 feet main entrance tar road, street lights, overhead water tank, EB line, அப்புறம் security entrance எல்லாமே ready-யா இருக்கு. பக்கத்துல bus stop-உம் இருக்கு.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "text-overlay-amenities",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இதுல முக்கியமான விஷயம், house construction offer-உம் இருக்கு. 1 BHK 24 Lakhs-லேயும், 2 BHK 27 Lakhs-லேயும் free registration, plan approval, EB connection-ோட பண்ணி தர்றாங்க.",
+        "broll": [
+          "interior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "text-overlay-construction",
+        "purpose": "construction_offer"
+      },
+      {
+        "name": "price",
+        "voice": "Plot விலை ஒரு சென்ட் வெறும் 6.5 Lakhs தான். 70% வரைக்கும் bank loan facility-யும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing_and_loan"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details தெரிஞ்சுக்க அப்புறம் site visit வர உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/BALTOB4A6_c/",
+  "optional_owned_audio": "assets/audio/BALTOB4A6_c.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Sulur, Kannampalayam, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Expansive plotted development project with a grand entrance gate ('Green City / Happy Town'), wide 33-foot tar access road, overhead water tank tower, electric poles, street lights, and sample single-story houses being constructed.. Neighbourhood: Suburban residential development setting in Sulur Kannampalayam, Coimbatore, located near public transport bus routes and local temples.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Sulur, Kannampalayam, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Expansive plotted development project with a grand entrance gate ('Green City / Happy Town'), wide 33-foot tar access road, overhead water tank tower, electric poles, street lights, and sample single-story houses being constructed.. Neighbourhood: Suburban residential development setting in Sulur Kannampalayam, Coimbatore, located near public transport bus routes and local temples.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Sulur, Kannampalayam, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Expansive plotted development project with a grand entrance gate ('Green City / Happy Town'), wide 33-foot tar access road, overhead water tank tower, electric poles, street lights, and sample single-story houses being constructed.. Neighbourhood: Suburban residential development setting in Sulur Kannampalayam, Coimbatore, located near public transport bus routes and local temples.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Sulur, Kannampalayam, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Expansive plotted development project with a grand entrance gate ('Green City / Happy Town'), wide 33-foot tar access road, overhead water tank tower, electric poles, street lights, and sample single-story houses being constructed.. Neighbourhood: Suburban residential development setting in Sulur Kannampalayam, Coimbatore, located near public transport bus routes and local temples.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
