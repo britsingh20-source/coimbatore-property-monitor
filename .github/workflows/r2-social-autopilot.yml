@@ -20,6 +20,8 @@ name: R2 Social Publishing Autopilot
 # 2026-08-22 Facebook Page credential verification
 
 on:
+  repository_dispatch:
+    types: [telegram-property-upload]
   schedule:
     # Six off-peak opportunities per hour reduce the chance that a Telegram
     # upload waits when GitHub drops an individual scheduled event.
@@ -82,6 +84,7 @@ jobs:
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
           R2_SOCIAL_PREFIX: social-ready/
           TELEGRAM_MAX_VIDEO_BYTES: "20971520"
+          TELEGRAM_WEBHOOK_UPDATE_JSON: ${{ github.event_name == 'repository_dispatch' && toJson(github.event.client_payload.update) || '' }}
         run: python telegram_r2_ingest.py
       - name: Scan R2 and publish new property videos
         id: autopilot
@@ -96,7 +99,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_SOCIAL_MATCH_MODEL: gemini-3.5-flash-lite
           SOCIAL_MATCH_MIN_CONFIDENCE: "0.85"
-          SOCIAL_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || (github.event_name == 'push' && !contains(github.event.head_commit.message, '[social-live-test]')) }}
+          SOCIAL_DRY_RUN: ${{ github.event_name == 'repository_dispatch' && 'false' || (github.event_name == 'workflow_dispatch' && inputs.dry_run || (github.event_name == 'push' && !contains(github.event.head_commit.message, '[social-live-test]'))) }}
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
           META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
           META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
