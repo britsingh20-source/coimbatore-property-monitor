@@ -209,12 +209,20 @@ def ingest() -> int:
     queue = _load(QUEUE_PATH, {"prompts": []})
     offset = int(state.get("last_update_id") or 0) + 1
 
-    body = _telegram(
-        "getUpdates",
-        token,
-        data={"offset": str(offset), "limit": "100", "timeout": "0", "allowed_updates": json.dumps(["message"])},
-    )
-    updates = body.get("result") or []
+    webhook_update_json = os.environ.get("TELEGRAM_WEBHOOK_UPDATE_JSON", "").strip()
+    if webhook_update_json:
+        # An event-driven Cloudflare Worker forwards exactly one Telegram
+        # update. The traditional getUpdates path remains as a recovery
+        # fallback and for manual workflow runs.
+        webhook_update = json.loads(webhook_update_json)
+        updates = [webhook_update]
+    else:
+        body = _telegram(
+            "getUpdates",
+            token,
+            data={"offset": str(offset), "limit": "100", "timeout": "0", "allowed_updates": json.dumps(["message"])},
+        )
+        updates = body.get("result") or []
     if not updates:
         print("No new Telegram messages.")
         return 0
