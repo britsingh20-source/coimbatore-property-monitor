@@ -81,7 +81,7 @@ export default {
 };
 
 function extractVideoId(text) {
-  const labelled = text.match(/(?:video[\\s_-]*id|id)[\\s:=_-]+([A-Za-z0-9_-]{11})/i);
+  const labelled = text.match(/(?:video[\s_-]*id|id)[\s:=_-]+([A-Za-z0-9_-]{11})/i);
   if (labelled) return labelled[1];
   return /^[A-Za-z0-9_-]{11}$/.test(text) ? text : "";
 }
