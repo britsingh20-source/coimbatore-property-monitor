@@ -195,6 +195,60 @@
       "uploaded_at": "2026-08-31T03:46:44.577263+00:00",
       "video_id": "BN27nDLnjfs"
     },
+    "AgADux8AAlMgsFQ": {
+      "candidate_video_ids": [
+        "KiJEPqoUCTw",
+        "6RCA3cUaZ2Y",
+        "7bj_axUSMmM",
+        "OEul0dWNXSU",
+        "94Y_3Jp2hQw",
+        "twP0glR4EyU",
+        "xTvjrweqpy4",
+        "3HCxfx5DoJs",
+        "PAs5DHZmBKo",
+        "f330aqcYbfE",
+        "Zct1W4hIERI",
+        "y07Izy9Qikw",
+        "M0UauIWBWNY",
+        "tkJnGvIo32g",
+        "S_NnYorPyM0",
+        "DZ_0GnMaT9k",
+        "UmiDPhMC5YY",
+        "S0evf4Cxoqc",
+        "0-1lYKdK5dI",
+        "e6GoUUW2RAA",
+        "PNTtybJTcgk",
+        "TiLsTsAVlT8",
+        "oCQB_GqRnJ8",
+        "YxTt5-I6FRw",
+        "jdO7vT9yds0",
+        "nq0mpD6B2TQ",
+        "kl1Ofu9mqeU",
+        "nvdcB9maHh4",
+        "O2tiEbkdt5w",
+        "niCDCM0rWBM",
+        "91y0q3A7G8s",
+        "vFUJnl_KvEg",
+        "GzZOCQNDFS8",
+        "3A__QS75exs",
+        "chxEiAv0D3k",
+        "DGnv0PLVJb0",
+        "GnB8R9jzyNg",
+        "3Qb3cRqT85Q",
+        "FikmwXmSPPM",
+        "Eh4PyhVMoHw",
+        "FXZcvqgHqys",
+        "oy7DU8LRVGE",
+        "MJxoOMpbHRE",
+        "iNlaHoWV2Hw",
+        "-ZveRaGaOCk"
+      ],
+      "r2_key": "social-ready/telegram-AgADux8AAlMgsFQ.mp4",
+      "size": 20066180,
+      "status": "uploaded_awaiting_video_id",
+      "update_id": 789574070,
+      "uploaded_at": "2026-09-01T11:44:09.550553+00:00"
+    },
     "AgADvh0AAlMgsFQ": {
       "paired_at": "2026-09-01T04:56:21.862166+00:00",
       "paired_by": "next_telegram_message",
@@ -215,5 +269,5 @@
       "video_id": "tTgkkQPNeCo"
     }
   },
-  "last_update_id": 789574068
+  "last_update_id": 789574070
 }
