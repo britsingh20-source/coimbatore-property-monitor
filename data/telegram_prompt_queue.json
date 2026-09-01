@@ -242,8 +242,9 @@
     },
     {
       "sent_at": "2026-08-28T13:24:49.798455+00:00",
-      "status": "pending_mobile_upload",
-      "video_id": "TiLsTsAVlT8"
+      "status": "published",
+      "video_id": "TiLsTsAVlT8",
+      "r2_key": "social-ready/telegram-AgADux8AAlMgsFQ.mp4"
     },
     {
       "sent_at": "2026-08-28T13:24:50.559136+00:00",
