@@ -1,0 +1,146 @@
+{
+  "video_id": "Kgy_c2UCFc0",
+  "source_url": "https://www.youtube.com/watch?v=Kgy_c2UCFc0",
+  "property_location": "Saravanampatti, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "3.5 Cents",
+    "built_up_area": "3150 Sq.ft",
+    "price": "₹1.79 Crore",
+    "facing": "South site, East main door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "3BHK Independent House in Saravanampatti, Coimbatore, Land area: 3.5 Cents (30'0\" x 50'0\"), Build-up area: 3150 sq.ft, Price: ₹1.79 Crore, 75% Bank loan available, South facing site, East facing main door, DTCP approved layout, Includes ground floor living/kitchen/1 bedroom, first floor 2 bedrooms/hall/balcony, and second floor gazebo/kids swimming pool",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera, natural conversational Tamil mixed with everyday real-estate terms.",
+    "hook_strategy": "Highlight the prime Saravanampatti location just 5 minutes from Sathy Road with premium features like Kids Swimming Pool and Gazebo.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Saravanampatti-ல, Sathy Road-ல இருந்து வெறும் 5 mins distance-ல இந்த 3 BHK Independent House அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "3150 Sq.ft built-up area! Ground floor-ல indoor garden, first floor-ல balcony, second floor-ல gazebo மற்றும் kids swimming pool-னு சூப்பரா பண்ணிருக்காங்க.",
+        "broll": [
+          "interior",
+          "living_room",
+          "bedroom",
+          "kitchen"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-highlight",
+        "purpose": "feature_highlight"
+      },
+      {
+        "name": "land",
+        "voice": "Land area பாத்தீங்கனா 3.5 Cents, 30 to 50 dimension-ல covered car parking வசதியோட வருது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "dimension-overlay",
+        "purpose": "property_specs"
+      },
+      {
+        "name": "facing",
+        "voice": "இது South site facing, அதே மாதிரி main door East facing-ல அமைச்சிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "approval",
+        "voice": "முக்கியமான விஷயம், இது DTCP approval பெற்ற property. 75% bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_building"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த வீட்டின் விலை ₹1.79 Crore.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல site visit வரணும்னாலோ இல்ல மேலும் details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/Kgy_c2UCFc0/",
+  "optional_owned_audio": "assets/audio/Kgy_c2UCFc0.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-level house with a white exterior, wooden wall cladding accents, glass balcony railings, stylish wooden main door, covered car parking space, and a rooftop terrace equipped with a pergola gazebo and swimming pool.. Neighbourhood: Quiet residential layout located in Saravanampatti, Coimbatore, approximately 5 minutes from Sathy Road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-level house with a white exterior, wooden wall cladding accents, glass balcony railings, stylish wooden main door, covered car parking space, and a rooftop terrace equipped with a pergola gazebo and swimming pool.. Neighbourhood: Quiet residential layout located in Saravanampatti, Coimbatore, approximately 5 minutes from Sathy Road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-level house with a white exterior, wooden wall cladding accents, glass balcony railings, stylish wooden main door, covered car parking space, and a rooftop terrace equipped with a pergola gazebo and swimming pool.. Neighbourhood: Quiet residential layout located in Saravanampatti, Coimbatore, approximately 5 minutes from Sathy Road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-level house with a white exterior, wooden wall cladding accents, glass balcony railings, stylish wooden main door, covered car parking space, and a rooftop terrace equipped with a pergola gazebo and swimming pool.. Neighbourhood: Quiet residential layout located in Saravanampatti, Coimbatore, approximately 5 minutes from Sathy Road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
