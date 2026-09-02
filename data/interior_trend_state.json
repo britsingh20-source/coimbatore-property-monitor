@@ -21,7 +21,8 @@
     "qGFdpuUKWDc",
     "XbrFVdsIAfs",
     "ZEM0ECOrYxU",
-    "ph2Jsv0yzMA"
+    "ph2Jsv0yzMA",
+    "Gli5pvgckYc"
   ],
   "history": [
     {
@@ -133,7 +134,12 @@
       "video_id": "ph2Jsv0yzMA",
       "creator": "Ridhi Khosla Jalan",
       "url": "https://www.youtube.com/watch?v=ph2Jsv0yzMA"
+    },
+    {
+      "video_id": "Gli5pvgckYc",
+      "creator": "DesignCafe",
+      "url": "https://www.youtube.com/watch?v=Gli5pvgckYc"
     }
   ],
-  "night_channel_cursor": 0
+  "night_channel_cursor": 1
 }
