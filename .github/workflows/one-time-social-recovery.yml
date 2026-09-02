@@ -26,6 +26,11 @@ jobs:
         with:
           python-version: "3.11"
           cache: pip
+      - name: Install video tools
+        timeout-minutes: 5
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
       - run: pip install -r requirements.txt
       - name: Publish verified R2 property video
         env:
