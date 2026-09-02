@@ -1416,9 +1416,48 @@
       }
     },
     "social-ready/telegram-AgADWCMAAmSZwFQ.mp4": {
+      "content": {
+        "caption": "🏠 ₹78 Lakhs (Negotiable) 3 BHK BHK Independent House in Pachapalayam, Perur Road, Coimbatore, Tamil Nadu — would you visit this property?\n\n📍 Location: Pachapalayam, Perur Road, Coimbatore, Tamil Nadu\n🏡 Property: 3 BHK BHK Independent House\n💰 Price: ₹78 Lakhs (Negotiable)\n📐 Land: 2.5 Cents\n🏗️ Built-up: 1570 Sq.Ft.\n🧭 Facing: East facing main entrance (South facing site)\n🚗 Parking: Car Portico (9 x 18 ft)\n✅ Approval: DTCP & RERA Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #PachapalayamPerurRoadCoimbatoreTamilNaduProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#CoimbatoreProperty",
+          "#PachapalayamPerurRoadCoimbatoreTamilNaduProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "₹78 Lakhs (Negotiable) 3 BHK BHK Independent House in Pachapalayam, Perur Road, Coimbatore, Tamil Na",
+        "youtube_description": "₹78 Lakhs (Negotiable) 3 BHK BHK Independent House in Pachapalayam, Perur Road, Coimbatore, Tamil Nadu. Watch the complete 10-second walkthrough.\n\n📍 Location: Pachapalayam, Perur Road, Coimbatore, Tamil Nadu\n🏡 Property: 3 BHK BHK Independent House\n💰 Price: ₹78 Lakhs (Negotiable)\n📐 Land: 2.5 Cents\n🏗️ Built-up: 1570 Sq.Ft.\n🧭 Facing: East facing main entrance (South facing site)\n🚗 Parking: Car Portico (9 x 18 ft)\n✅ Approval: DTCP & RERA Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #PachapalayamPerurRoadCoimbatoreTamilNaduProperty #CoimbatoreRealEstate"
+      },
       "etag": "e584426d91351d43530dcd93a621d7a8-3",
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
       "platforms": {},
-      "status": "waiting_for_video_id"
+      "status": "matched",
+      "video_id": "oCQB_GqRnJ8",
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 250045,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 24.444,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 250011,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 24.466667,
+          "height": 1920,
+          "width": 1080
+        }
+      }
     },
     "social-ready/telegram-AgADXB8AArd1YFQ.mp4": {
       "content": {
