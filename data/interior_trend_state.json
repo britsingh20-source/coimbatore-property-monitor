@@ -19,7 +19,8 @@
     "asuirgkIAEk",
     "W6rmIa2HoYU",
     "qGFdpuUKWDc",
-    "XbrFVdsIAfs"
+    "XbrFVdsIAfs",
+    "ZEM0ECOrYxU"
   ],
   "history": [
     {
@@ -121,6 +122,11 @@
       "video_id": "XbrFVdsIAfs",
       "creator": "Ridhi Khosla Jalan",
       "url": "https://www.youtube.com/watch?v=XbrFVdsIAfs"
+    },
+    {
+      "video_id": "ZEM0ECOrYxU",
+      "creator": "Design.Decor.Travel.",
+      "url": "https://www.youtube.com/watch?v=ZEM0ECOrYxU"
     }
   ],
   "night_channel_cursor": 0
