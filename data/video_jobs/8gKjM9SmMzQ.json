@@ -1,0 +1,145 @@
+{
+  "video_id": "8gKjM9SmMzQ",
+  "source_url": "https://www.youtube.com/watch?v=8gKjM9SmMzQ",
+  "property_location": "Sulur, near KMCH, Trichy Highway, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "1 Cent (rate specified per cent)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹13.25 Lakhs per cent (negotiable)",
+    "facing": "NOT SPECIFIED",
+    "road_width": "33 feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP & RERA Approved"
+  },
+  "verified_facts": "DTCP and RERA approved gated layout 'Highway City' located within walkable distance from Trichy Highway in Sulur, Coimbatore., Land plots are priced at ₹13.25 Lakhs per cent, with prices slightly negotiable., Optional house construction package is available: 1BHK house for ₹41 Lakhs and 2BHK house for ₹43 Lakhs., House construction packages include free registration, free plan approval, free EB connection, and inclusive GST.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local presenter style speaking directly to camera in natural spoken Tamil mixed with common real-estate English terminology.",
+    "hook_strategy": "Highlight the Prime Trichy Highway location in Sulur near KMCH with walkable distance to the main road and approved layout setup.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை சூளூர் Trichy Highway-ல KMCH பக்கத்துல நடந்து போற தூரத்துல ஒரு அருமையான location-ல 'Highway City' layout அமைஞ்சிருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-highlight",
+        "purpose": "hook"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், இது முழுசா DTCP மற்றும் RERA approval பெற்ற 24/7 security இருக்கிற gated community layout.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "approval-badge-overlay",
+        "purpose": "trust_building"
+      },
+      {
+        "name": "land",
+        "voice": "பாத்தீங்கனா, individual water connection, overhead tank, street lights, concrete drainage, குழந்தைகள் விளையாட play area-னு எல்லாமே தயாரா இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "amenities-list-popup",
+        "purpose": "amenities_showcase"
+      },
+      {
+        "name": "road",
+        "voice": "அதே மாதிரி, layout முழுக்க 33 feet அகலமான தார் ரோடு வசதியும் அமைச்சு கொடுத்திருக்காங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "road-width-graphic",
+        "purpose": "infrastructure_details"
+      },
+      {
+        "name": "price",
+        "voice": "Plot விலை ஒரு சென்ட் 13.25 Lakhs வருது, இதுல விலை negotiable-தான்!",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "price-display",
+        "purpose": "value_proposition"
+      },
+      {
+        "name": "builtUp",
+        "voice": "உங்களுக்கு வீடு கட்டணும்னா, 1BHK house 41 Lakhs-லேயும் 2BHK 43 Lakhs-லேயும் பண்ணி தர்றாங்க! இதுல free registration, free plan approval, free EB connection மற்றும் GST அடக்கம்.",
+        "broll": [
+          "interior",
+          "living_room",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "package-inclusions-text",
+        "purpose": "construction_package"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details தெரிஞ்சுக்கவும் direct-ஆ site visit வரவும் உடனே screen-ல தெரியற நம்பருக்கு call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "contact-number-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/8gKjM9SmMzQ/",
+  "optional_owned_audio": "assets/audio/8gKjM9SmMzQ.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Sulur, near KMCH, Trichy Highway, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Gated residential layout with an entrance arch labeled 'HIGHWAY CITY SULUR', security booth, elevated water tower, 33-foot asphalt roads with streetlights, underground/side concrete drainage, and neatly demarcated vacant plots with boundary stones.. Neighbourhood: Located in Sulur within walkable distance to Trichy Highway and near KMCH, set in a peaceful, rapidly developing suburban residential area of Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Sulur, near KMCH, Trichy Highway, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Gated residential layout with an entrance arch labeled 'HIGHWAY CITY SULUR', security booth, elevated water tower, 33-foot asphalt roads with streetlights, underground/side concrete drainage, and neatly demarcated vacant plots with boundary stones.. Neighbourhood: Located in Sulur within walkable distance to Trichy Highway and near KMCH, set in a peaceful, rapidly developing suburban residential area of Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Sulur, near KMCH, Trichy Highway, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Gated residential layout with an entrance arch labeled 'HIGHWAY CITY SULUR', security booth, elevated water tower, 33-foot asphalt roads with streetlights, underground/side concrete drainage, and neatly demarcated vacant plots with boundary stones.. Neighbourhood: Located in Sulur within walkable distance to Trichy Highway and near KMCH, set in a peaceful, rapidly developing suburban residential area of Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Sulur, near KMCH, Trichy Highway, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Gated residential layout with an entrance arch labeled 'HIGHWAY CITY SULUR', security booth, elevated water tower, 33-foot asphalt roads with streetlights, underground/side concrete drainage, and neatly demarcated vacant plots with boundary stones.. Neighbourhood: Located in Sulur within walkable distance to Trichy Highway and near KMCH, set in a peaceful, rapidly developing suburban residential area of Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
