@@ -1431,7 +1431,17 @@
         "confidence": 1.0,
         "method": "telegram_exact_video_id"
       },
-      "platforms": {},
+      "platforms": {
+        "instagram_reel": {
+          "status": "dry_run"
+        },
+        "instagram_story": {
+          "status": "dry_run"
+        },
+        "youtube_short": {
+          "status": "dry_run"
+        }
+      },
       "status": "matched",
       "video_id": "oCQB_GqRnJ8",
       "youtube_media": {
