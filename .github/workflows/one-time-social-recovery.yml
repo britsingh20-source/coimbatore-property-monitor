@@ -1,0 +1,59 @@
+name: One-time Property Social Recovery
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/one-time-social-recovery.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: property-social-emergency
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Publish verified R2 property video
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          R2_SOCIAL_PREFIX: social-ready/
+          SOCIAL_MAX_PER_RUN: "5"
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_SOCIAL_MATCH_MODEL: gemini-3.5-flash-lite
+          SOCIAL_MATCH_MIN_CONFIDENCE: "0.85"
+          SOCIAL_DRY_RUN: "false"
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_PRIVACY_STATUS: public
+        run: python r2_social_autopilot.py
+      - name: Commit publish state
+        run: |
+          git config user.name "property-social-bot"
+          git config user.email "actions@github.com"
+          git add data/social_publish_state.json data/telegram_prompt_queue.json
+          if ! git diff --staged --quiet; then
+            git commit -m "Record one-time property social recovery [automated]"
+            git pull --rebase
+            git push
+          fi
