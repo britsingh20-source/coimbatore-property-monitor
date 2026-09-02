@@ -1433,13 +1433,79 @@
       },
       "platforms": {
         "instagram_reel": {
-          "status": "dry_run"
+          "result": {
+            "creation_id": "17895881625599708",
+            "media_id": "18588299971067143",
+            "processing": {
+              "id": "17895881625599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "thumb_offset_ms": 2000
+          },
+          "status": "published"
         },
         "instagram_story": {
-          "status": "dry_run"
+          "result": {
+            "creation_id": "17895881760599708",
+            "media_id": "18094863479099642",
+            "processing": {
+              "id": "17895881760599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
         },
         "youtube_short": {
-          "status": "dry_run"
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "₹78 Lakhs (Negotiable) 3 BHK BHK Independent House in Pachapalayam, Perur Road, Coimbatore, Tamil Nadu. Watch the complete 10-second walkthrough.\n\n📍 Location: Pachapalayam, Perur Road, Coimbatore, Tamil Nadu\n🏡 Property: 3 BHK BHK Independent House\n💰 Price: ₹78 Lakhs (Negotiable)\n📐 Land: 2.5 Cents\n🏗️ Built-up: 1570 Sq.Ft.\n🧭 Facing: East facing main entrance (South facing site)\n🚗 Parking: Car Portico (9 x 18 ft)\n✅ Approval: DTCP & RERA Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #PachapalayamPerurRoadCoimbatoreTamilNaduProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "₹78 Lakhs (Negotiable) 3 BHK BHK Independent House in Pachapalayam, Perur Road, Coimbatore, Tamil Nadu. Watch the complete 10-second walkthrough.\n\n📍 Location: Pachapalayam, Perur Road, Coimbatore, Tamil Nadu\n🏡 Property: 3 BHK BHK Independent House\n💰 Price: ₹78 Lakhs (Negotiable)\n📐 Land: 2.5 Cents\n🏗️ Built-up: 1570 Sq.Ft.\n🧭 Facing: East facing main entrance (South facing site)\n🚗 Parking: Car Portico (9 x 18 ft)\n✅ Approval: DTCP & RERA Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #PachapalayamPerurRoadCoimbatoreTamilNaduProperty #CoimbatoreRealEstate",
+                "title": "₹78 Lakhs (Negotiable) 3 BHK BHK Independent House in Pachapalayam, Perur Road, Coimbatore, Tamil Na"
+              },
+              "publishedAt": "2026-09-02T16:51:31Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/pvcGOgUsua4/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/pvcGOgUsua4/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/pvcGOgUsua4/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "₹78 Lakhs (Negotiable) 3 BHK BHK Independent House in Pachapalayam, Perur Road, Coimbatore, Tamil Na"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "pvcGOgUsua4"
+          },
+          "status": "published"
         }
       },
       "status": "matched",
