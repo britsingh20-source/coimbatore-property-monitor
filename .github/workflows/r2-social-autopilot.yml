@@ -51,7 +51,7 @@ concurrency:
   # Serialize with Property Monitor because both workflows update the shared
   # Telegram prompt queue in the repository.
   group: property-automation-state
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 permissions:
   contents: write
@@ -70,7 +70,14 @@ jobs:
           python-version: "3.11"
           cache: pip
       - name: Install video normalization tools
-        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+        timeout-minutes: 5
+        run: |
+          if command -v ffmpeg >/dev/null 2>&1; then
+            ffmpeg -version | head -n 1
+          else
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
       - run: pip install -r requirements.txt
       - name: Import new Telegram property videos to R2
         id: telegram_ingest
