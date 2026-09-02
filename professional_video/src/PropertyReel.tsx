@@ -164,21 +164,51 @@ const PlotOutline: React.FC = () => {
   );
 };
 
-const HookScene: React.FC<{source?: VisualSource; title: string; location: string}> = ({source, title, location}) => {
+type ProfessionalHook = 'exterior' | 'interior' | 'location' | 'land' | 'price' | 'parking';
+
+const HookScene: React.FC<{
+  source?: VisualSource;
+  title: string;
+  location: string;
+  mode: ProfessionalHook;
+  highlight: string;
+}> = ({source, title, location, mode, highlight}) => {
   const frame = useCurrentFrame();
-  const zoom = interpolate(frame, [0, 120], [1.01, 1.13], clamp);
+  const reveal = spring({frame: frame - 3, fps: 30, config: {damping: 18, stiffness: 135}});
+  const zoomByMode: Record<ProfessionalHook, [number, number]> = {
+    exterior: [1.16, 1.02],
+    interior: [1.04, 1.14],
+    location: [1.02, 1.1],
+    land: [1.12, 1.03],
+    price: [1.08, 1.02],
+    parking: [1.12, 1.025],
+  };
+  const labels: Record<ProfessionalHook, string> = {
+    exterior: 'PROPERTY REVEAL',
+    interior: 'INTERIOR HIGHLIGHT',
+    location: 'LOCATION ADVANTAGE',
+    land: 'PLOT REVEAL',
+    price: 'VALUE HIGHLIGHT',
+    parking: 'PARKING & ACCESS',
+  };
+  const [zoomStart, zoomEnd] = zoomByMode[mode];
+  const zoom = interpolate(frame, [0, 105], [zoomStart, zoomEnd], clamp);
+  const shutter = interpolate(frame, [0, 24], [52, 0], clamp);
   return (
-    <AbsoluteFill style={{fontFamily: typeface, overflow: 'hidden'}}>
-      <AbsoluteFill><Visual source={source} scale={zoom} /></AbsoluteFill>
-      <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(2,11,20,.18), rgba(2,11,20,.14) 45%, rgba(2,11,20,.9))'}} />
-      <PlotOutline />
-      <SceneCode number="01" label="NEW PROPERTY DROP" />
-      <div style={{position: 'absolute', left: 56, right: 56, bottom: 270}}>
-        <div style={{fontSize: 21, color: cyan, letterSpacing: 4, fontWeight: 950, marginBottom: 20}}>LOCATION • {location.toUpperCase()}</div>
-        <KineticWords words={['OWN', 'YOUR', 'COIMBATORE', 'HOME']} size={76} accent={2} start={4} />
-        <div style={{marginTop: 22, fontSize: 35, color: cream, fontWeight: 850, transform: `translateX(${interpolate(frame, [30, 58], [-90, 0], clamp)}px)`, opacity: interpolate(frame, [30, 52], [0, 1], clamp)}}>{title}</div>
+    <AbsoluteFill style={{fontFamily: typeface, overflow: 'hidden', background: navy}}>
+      <AbsoluteFill style={{clipPath: `inset(0 ${shutter}% 0 ${shutter}%)`}}>
+        <Visual source={source} scale={zoom} />
+      </AbsoluteFill>
+      <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(2,11,20,.12), rgba(2,11,20,.08) 48%, rgba(2,11,20,.92))'}} />
+      {mode === 'land' && <PlotOutline />}
+      <SceneCode number="01" label={labels[mode]} />
+      <div style={{position: 'absolute', left: 56, right: 56, bottom: 250, opacity: reveal, transform: `translateY(${interpolate(reveal, [0, 1], [55, 0])}px)`}}>
+        <div style={{fontSize: 20, color: cyan, letterSpacing: 4, fontWeight: 950, marginBottom: 18}}>LOCATION • {location.toUpperCase()}</div>
+        <div style={{fontSize: 74, lineHeight: .98, color: cream, fontWeight: 1000, textShadow: '0 8px 30px rgba(0,0,0,.5)'}}>{highlight}</div>
+        <div style={{marginTop: 20, fontSize: 32, color: gold, fontWeight: 900}}>{title}</div>
       </div>
-      <SceneFlash />
+      <div style={{position: 'absolute', left: 120, right: 120, top: 430, height: 3, background: `linear-gradient(90deg, transparent, ${gold}, transparent)`, transform: `scaleX(${reveal})`, boxShadow: `0 0 20px ${gold}`}} />
+      <SceneFlash color={mode === 'location' ? cyan : gold} />
     </AbsoluteFill>
   );
 };
@@ -544,10 +574,25 @@ export const PropertyReel: React.FC<PropertyVideoProps> = (props) => {
   };
   const mapVisuals: VisualSource[] = props.maps.map(src=>({src,video:false}));
   const facts = props.facts;
+  const factValue = (label:string) => facts.find(f=>f.label === label)?.value || '';
+  const verified = (value:string) => Boolean(value && !/verify|not specified/i.test(value));
+  const hookCandidates: Array<{mode:ProfessionalHook; source?:VisualSource; highlight:string; enabled:boolean}> = [
+    {mode:'exterior', source:sourceFor('exterior'), highlight:'A HOME WORTH SEEING', enabled:Boolean(sourceFor('exterior'))},
+    {mode:'interior', source:sourceFor('interior') || sourceFor('living') || sourceFor('kitchen'), highlight:'STEP INSIDE', enabled:Boolean(sourceFor('interior') || sourceFor('living') || sourceFor('kitchen'))},
+    {mode:'location', source:sourceFor('road') || mapVisuals[0], highlight:props.locationLabel.toUpperCase(), enabled:Boolean(sourceFor('road') || mapVisuals[0])},
+    {mode:'land', source:sourceFor('land') || sourceFor('exterior'), highlight:factValue('LAND'), enabled:verified(factValue('LAND')) && Boolean(sourceFor('land') || sourceFor('exterior'))},
+    {mode:'price', source:sourceFor('exterior',1) || sourceFor('exterior'), highlight:props.price, enabled:verified(props.price) && Boolean(sourceFor('exterior'))},
+    {mode:'parking', source:sourceFor('exterior') || sourceFor('road'), highlight:factValue('PARKING'), enabled:verified(factValue('PARKING')) && Boolean(sourceFor('exterior') || sourceFor('road'))},
+  ];
+  const availableHooks = hookCandidates.filter(h=>h.enabled);
+  const hookSeed = Array.from(props.videoId).reduce((sum,ch)=>sum + ch.charCodeAt(0),0);
+  const selectedHook = availableHooks[hookSeed % Math.max(1, availableHooks.length)] || {
+    mode:'exterior' as ProfessionalHook,
+    source:sourceFor('exterior') || sourceFor('land') || sourceFor('road'),
+    highlight:'PROPERTY REVEAL',
+  };
   const sceneNodes: Record<string, React.ReactNode> = {
-    location: props.templateVariant === 'plot'
-      ? <LocationJourneyScene mapSources={mapVisuals} houseSource={sourceFor('exterior') || sourceFor('land')} title={props.title} location={props.location} targetLocation={props.locationLabel}/>
-      : <HookScene source={sourceFor('exterior')} title={props.title} location={props.location}/>,
+    location: <HookScene source={selectedHook.source} title={props.title} location={props.location} mode={selectedHook.mode} highlight={selectedHook.highlight}/>,
     land: <LaserPlotScene source={sourceFor('land')} fact={facts[0] || {label:'LAND',value:'VERIFY ON SITE'}}/>,
     builtUp: <BuiltUpScanScene source={sourceFor('exterior')} fact={facts[1] || {label:'BUILT-UP',value:'VERIFY ON SITE'}}/>,
     price: <PriceScene source={sourceFor('exterior',1)} price={props.price}/>,
