@@ -1981,6 +1981,14 @@
       "next_retry_at": "2026-08-19T13:12:40.866578+00:00",
       "status": "video_queued"
     },
+    "heG7hx02Q3A": {
+      "attempts": 0,
+      "completed_at": "2026-09-02T01:28:24.738721+00:00",
+      "first_seen_at": "2026-09-02T01:27:28.116670+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-09-02T01:27:28.116670+00:00",
+      "status": "video_queued"
+    },
     "hv8z3FZL-hY": {
       "attempts": 1,
       "completed_at": "2026-08-10T17:12:08.160583+00:00",

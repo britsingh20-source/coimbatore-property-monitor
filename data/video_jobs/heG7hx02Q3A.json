@@ -1,0 +1,149 @@
+{
+  "video_id": "heG7hx02Q3A",
+  "source_url": "https://www.youtube.com/watch?v=heG7hx02Q3A",
+  "property_location": "Pasumai Nagar, Near Mandrampalayam Village, Kinathukadavu to Vadasithur Road, Kinathukadavu, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "2.75 Cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹7 Lakhs for 2.75 Cents (₹2.75 Lakhs per cent)",
+    "facing": "North, East, South, West",
+    "road_width": "33 feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP & RERA Approved"
+  },
+  "verified_facts": "Plot price is ₹2.75 Lakhs per cent (totaling ₹7 Lakhs for 2.75 Cents)., Layout project named Pasumai Nagar contains approximately 2000 plots., Optional house construction package offered: 1 BHK for ₹18 Lakhs and 2 BHK for ₹21 Lakhs., Free land registration cost, free new EB connection, and free building plan approval offered upon house booking., Up to 70% bank loan available for land purchase., DTCP and RERA approvals are confirmed.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Conversational, energetic, authentic local Tamil presenter",
+    "hook_strategy": "Highlight affordable per-cent plot pricing in a prime Kinathukadavu location",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோயம்புத்தூர் கிணத்துக்கடவு - வடசித்தூர் ரோட்ல, மன்றம்பாளையம் கிராமம் பக்கத்துல இருக்குற பசுமை நகர் layout தான் இது.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-tag",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இங்க 2.75 சென்ட் residential plot மொத்த விலை வெறும் 7 லட்ச ரூபாய், அதாவது ஒரு சென்ட் 2.75 லட்ச ரூபாய் தான்!",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "price-card",
+        "purpose": "value_proposition"
+      },
+      {
+        "name": "land",
+        "voice": "இந்த பசுமை நகர் layout-ல மொத்தம் 2000 plots இருக்கு. நிலம் வாங்க 70% வரைக்கும் bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "plot-highlight",
+        "purpose": "property_details"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல பாத்தீங்கனா North, East, South, West-னு எல்லா facing plots-மும் கிடைக்குது.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "living_room"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "road",
+        "voice": "அதே மாதிரி 33 feet main tar road, street lights, CCTV, overhead water tank-னு gated community வசதிகள் இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior",
+          "living_room"
+        ],
+        "vfx": "amenities-overlay",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "approval",
+        "voice": "இது முழுசா DTCP மற்றும் RERA approval பெற்ற layout.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_building"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணவும், details தெரிஞ்சுக்கவும் உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "kitchen"
+        ],
+        "vfx": "contact-button",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/heG7hx02Q3A/",
+  "optional_owned_audio": "assets/audio/heG7hx02Q3A.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Pasumai Nagar, Near Mandrampalayam Village, Kinathukadavu to Vadasithur Road, Kinathukadavu, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Vast open residential layout featuring demarcated plot stones, unpaved inner access roads, a 33-foot tar road, streetlights, power poles, an overhead water tank, and a few existing low-rise houses.. Neighbourhood: Semi-rural residential location near Mandrampalayam village along the Kinathukadavu to Vadasithur route, surrounded by open land, coconut groves, and connecting asphalt roads.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Pasumai Nagar, Near Mandrampalayam Village, Kinathukadavu to Vadasithur Road, Kinathukadavu, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Vast open residential layout featuring demarcated plot stones, unpaved inner access roads, a 33-foot tar road, streetlights, power poles, an overhead water tank, and a few existing low-rise houses.. Neighbourhood: Semi-rural residential location near Mandrampalayam village along the Kinathukadavu to Vadasithur route, surrounded by open land, coconut groves, and connecting asphalt roads.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Pasumai Nagar, Near Mandrampalayam Village, Kinathukadavu to Vadasithur Road, Kinathukadavu, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Vast open residential layout featuring demarcated plot stones, unpaved inner access roads, a 33-foot tar road, streetlights, power poles, an overhead water tank, and a few existing low-rise houses.. Neighbourhood: Semi-rural residential location near Mandrampalayam village along the Kinathukadavu to Vadasithur route, surrounded by open land, coconut groves, and connecting asphalt roads.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Pasumai Nagar, Near Mandrampalayam Village, Kinathukadavu to Vadasithur Road, Kinathukadavu, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Vast open residential layout featuring demarcated plot stones, unpaved inner access roads, a 33-foot tar road, streetlights, power poles, an overhead water tank, and a few existing low-rise houses.. Neighbourhood: Semi-rural residential location near Mandrampalayam village along the Kinathukadavu to Vadasithur route, surrounded by open land, coconut groves, and connecting asphalt roads.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
