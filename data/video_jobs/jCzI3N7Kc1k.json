@@ -1,0 +1,141 @@
+{
+  "video_id": "jCzI3N7Kc1k",
+  "source_url": "https://www.youtube.com/watch?v=jCzI3N7Kc1k",
+  "property_location": "Saravanampatti, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "3.5 Cents (30 ft x 50 ft)",
+    "built_up_area": "3150 sq.ft",
+    "price": "₹1.79 Crore",
+    "facing": "South (Site), East (Main Door)",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered parking for 2 cars (18'0\" x 16'0\")",
+    "approval": "DTCP approved layout"
+  },
+  "verified_facts": "3BHK Independent house with 3150 sq.ft built-up area built on 3.5 cents land., Site is South-facing and the main door is East-facing., DTCP approved layout located in Saravanampatti, Coimbatore, 5 mins from Sathy Road., Property price is ₹1.79 Crore (negotiable) with up to 75% bank loan availability., Ground floor features car parking, foyer, high-roof living hall, kitchen with dining, 1 master bedroom with attached bathroom, indoor garden, and an outer bathroom., First floor includes a living hall, 2 king-size bedrooms with attached bathrooms, walk-in wardrobe, and front balcony., Terrace includes a gazebo setup (20' x 16') and a kids swimming pool.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, conversational Tamil property tour with natural English term integration",
+    "hook_strategy": "Highlighting the premium 3 BHK features like terrace swimming pool and gazebo in Saravanampatti",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை சரவணம்பட்டியில, சத்தியமங்கலம் ரோட்ல இருந்து ஜஸ்ட் 5 minutes-ல, டெரஸ்ல Kids Swimming Pool அண்ட் Gazebo-வோட அமைஞ்சிருக்கற 3 BHK Independent House பாக்கலாம் வாங்க!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-tag-saravanampatti",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இதுல 3150 sq.ft built-up area வருது. High-roof living hall, modular kitchen, walk-in wardrobe-னு பண்ணிருக்காங்க.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "exterior"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "feature_showcase"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 3.5 Cents land area, 30 by 50 dimension. 2 car parking space-உம் இதுல இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "dimension-overlay",
+        "purpose": "property_specs"
+      },
+      {
+        "name": "facing",
+        "voice": "Facing பாத்தீங்கனா, Site South-facing அண்ட் Main door East-facing-ல அமைச்சிருக்காங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "compass-graphic",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "approval",
+        "voice": "இது ஒரு DTCP approved layout. 75% வரைக்கும் bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "dtcp-approved-badge",
+        "purpose": "trust_and_legality"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price 1.79 Crore, negotiable-தான்.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-card-overlay",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணி details தெரிஞ்சுக்க உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "contact-number-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/jCzI3N7Kc1k/",
+  "optional_owned_audio": "assets/audio/jCzI3N7Kc1k.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-storey elevation featuring wood-finish panels, white plastering, glass balcony railing, automated WPC wooden gate, and laser-cut CNC metal partition grills.. Neighbourhood: Well-developed residential layout with independent houses and concrete roads located in Saravanampatti, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-storey elevation featuring wood-finish panels, white plastering, glass balcony railing, automated WPC wooden gate, and laser-cut CNC metal partition grills.. Neighbourhood: Well-developed residential layout with independent houses and concrete roads located in Saravanampatti, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-storey elevation featuring wood-finish panels, white plastering, glass balcony railing, automated WPC wooden gate, and laser-cut CNC metal partition grills.. Neighbourhood: Well-developed residential layout with independent houses and concrete roads located in Saravanampatti, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-storey elevation featuring wood-finish panels, white plastering, glass balcony railing, automated WPC wooden gate, and laser-cut CNC metal partition grills.. Neighbourhood: Well-developed residential layout with independent houses and concrete roads located in Saravanampatti, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
