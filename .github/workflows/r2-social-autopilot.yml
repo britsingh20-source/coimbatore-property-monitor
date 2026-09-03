@@ -81,6 +81,18 @@ jobs:
             sudo apt-get install -y ffmpeg
           fi
       - run: pip install -r requirements.txt
+      - name: Restore Telegram polling while webhook recovery is unavailable
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error \
+            --request POST \
+            --data-urlencode "drop_pending_updates=false" \
+            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/deleteWebhook" >/dev/null
+          echo "Telegram polling mode is active."
+
       - name: Import new Telegram property videos to R2
         id: telegram_ingest
         continue-on-error: true
