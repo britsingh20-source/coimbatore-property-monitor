@@ -247,12 +247,12 @@
       "video_id": "TiLsTsAVlT8"
     },
     {
+      "r2_key": "social-ready/telegram-AgADWCMAAmSZwFQ.mp4",
       "sent_at": "2026-08-28T13:24:50.559136+00:00",
       "status": "published",
-      "video_id": "oCQB_GqRnJ8",
-      "r2_key": "social-ready/telegram-AgADWCMAAmSZwFQ.mp4",
       "telegram_file_unique_id": "AgADWCMAAmSZwFQ",
-      "uploaded_at": "2026-09-02T16:19:28.994355+00:00"
+      "uploaded_at": "2026-09-02T16:19:28.994355+00:00",
+      "video_id": "oCQB_GqRnJ8"
     },
     {
       "sent_at": "2026-08-28T18:51:17.836234+00:00",
@@ -415,34 +415,34 @@
       "video_id": "xOGTkdfg7mU"
     },
     {
-      "video_id": "mF6aejsSTDk",
       "sent_at": "2026-09-02T18:59:53.944483+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "mF6aejsSTDk"
     },
     {
-      "video_id": "8gKjM9SmMzQ",
       "sent_at": "2026-09-02T19:52:01.229279+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "8gKjM9SmMzQ"
     },
     {
-      "video_id": "_obNi427hr4",
       "sent_at": "2026-09-02T19:52:02.100365+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "_obNi427hr4"
     },
     {
-      "video_id": "d9zoo10zv2o",
       "sent_at": "2026-09-02T22:02:35.839550+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "d9zoo10zv2o"
     },
     {
-      "video_id": "YW_1IWC4aEk",
       "sent_at": "2026-09-03T00:44:55.322700+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "YW_1IWC4aEk"
     },
     {
-      "video_id": "K9UjPyeZZr8",
       "sent_at": "2026-09-03T01:09:39.785243+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "K9UjPyeZZr8"
     }
   ]
 }
