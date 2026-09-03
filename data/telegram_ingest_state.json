@@ -284,6 +284,16 @@
       "uploaded_at": "2026-09-03T04:57:30.743258+00:00",
       "video_id": "vFUJnl_KvEg"
     },
+    "AgADriMAAmSZyFQ": {
+      "paired_at": "2026-09-03T14:11:39.647941+00:00",
+      "paired_by": "next_telegram_message",
+      "r2_key": "social-ready/telegram-AgADriMAAmSZyFQ.mp4",
+      "size": 18745126,
+      "status": "uploaded_exact_video_id",
+      "update_id": 789574079,
+      "uploaded_at": "2026-09-03T14:11:39.154024+00:00",
+      "video_id": "O2tiEbkdt5w"
+    },
     "AgADtSEAAmRQoVQ": {
       "paired_at": "2026-08-31T03:46:45.130495+00:00",
       "paired_by": "next_telegram_message",
@@ -324,5 +334,5 @@
       "video_id": "tTgkkQPNeCo"
     }
   },
-  "last_update_id": 789574078
+  "last_update_id": 789574080
 }

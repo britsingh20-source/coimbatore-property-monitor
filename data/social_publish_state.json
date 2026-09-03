@@ -1946,7 +1946,6 @@
         "nq0mpD6B2TQ",
         "kl1Ofu9mqeU",
         "nvdcB9maHh4",
-        "O2tiEbkdt5w",
         "niCDCM0rWBM",
         "91y0q3A7G8s",
         "GzZOCQNDFS8",
@@ -2201,6 +2200,126 @@
           "audio_codec": "aac",
           "audio_sample_rate": 48000,
           "duration": 23.333333,
+          "height": 1280,
+          "width": 720
+        }
+      }
+    },
+    "social-ready/telegram-AgADriMAAmSZyFQ.mp4": {
+      "content": {
+        "caption": "🏠 97 Lakhs - 1.30 Crores 3 BHK BHK Independent House in L&T Bypass, Near Karpagam College, Coimbatore — would you visit this property?\n\n📍 Location: L&T Bypass, Near Karpagam College, Coimbatore\n🏡 Property: 3 BHK BHK Independent House\n💰 Price: 97 Lakhs - 1.30 Crores\n📐 Land: 3.5 Cents\n🚗 Parking: Covered Car Parking\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #LTBypassNearKarpagamCollegeCoimbatoreProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#CoimbatoreProperty",
+          "#LTBypassNearKarpagamCollegeCoimbatoreProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "97 Lakhs - 1.30 Crores 3 BHK BHK Independent House in L&T Bypass, Near Karpagam College, Coimbatore ",
+        "youtube_description": "97 Lakhs - 1.30 Crores 3 BHK BHK Independent House in L&T Bypass, Near Karpagam College, Coimbatore. Watch the complete 10-second walkthrough.\n\n📍 Location: L&T Bypass, Near Karpagam College, Coimbatore\n🏡 Property: 3 BHK BHK Independent House\n💰 Price: 97 Lakhs - 1.30 Crores\n📐 Land: 3.5 Cents\n🚗 Parking: Covered Car Parking\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #LTBypassNearKarpagamCollegeCoimbatoreProperty #CoimbatoreRealEstate"
+      },
+      "etag": "3fafd05904b1906516a8cc13c8c5d99f-3",
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "creation_id": "17896011930599708",
+            "media_id": "18030194945672237",
+            "processing": {
+              "id": "17896011930599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "thumb_offset_ms": 2000
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17896012089599708",
+            "media_id": "17943706752318866",
+            "processing": {
+              "id": "17896012089599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "97 Lakhs - 1.30 Crores 3 BHK BHK Independent House in L&T Bypass, Near Karpagam College, Coimbatore. Watch the complete 10-second walkthrough.\n\n📍 Location: L&T Bypass, Near Karpagam College, Coimbatore\n🏡 Property: 3 BHK BHK Independent House\n💰 Price: 97 Lakhs - 1.30 Crores\n📐 Land: 3.5 Cents\n🚗 Parking: Covered Car Parking\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #LTBypassNearKarpagamCollegeCoimbatoreProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "97 Lakhs - 1.30 Crores 3 BHK BHK Independent House in L&T Bypass, Near Karpagam College, Coimbatore. Watch the complete 10-second walkthrough.\n\n📍 Location: L&T Bypass, Near Karpagam College, Coimbatore\n🏡 Property: 3 BHK BHK Independent House\n💰 Price: 97 Lakhs - 1.30 Crores\n📐 Land: 3.5 Cents\n🚗 Parking: Covered Car Parking\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #LTBypassNearKarpagamCollegeCoimbatoreProperty #CoimbatoreRealEstate",
+                "title": "97 Lakhs - 1.30 Crores 3 BHK BHK Independent House in L&T Bypass, Near Karpagam College, Coimbatore"
+              },
+              "publishedAt": "2026-09-03T14:13:42Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/-nP8sS6vRyY/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/-nP8sS6vRyY/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/-nP8sS6vRyY/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "97 Lakhs - 1.30 Crores 3 BHK BHK Independent House in L&T Bypass, Near Karpagam College, Coimbatore"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "-nP8sS6vRyY"
+          },
+          "status": "published"
+        }
+      },
+      "status": "matched",
+      "video_id": "O2tiEbkdt5w",
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 248829,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 24.889,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 248766,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 24.9,
           "height": 1280,
           "width": 720
         }

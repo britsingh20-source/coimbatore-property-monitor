@@ -280,8 +280,11 @@
       "video_id": "nvdcB9maHh4"
     },
     {
+      "r2_key": "social-ready/telegram-AgADriMAAmSZyFQ.mp4",
       "sent_at": "2026-08-29T14:33:19.026444+00:00",
-      "status": "pending_mobile_upload",
+      "status": "published",
+      "telegram_file_unique_id": "AgADriMAAmSZyFQ",
+      "uploaded_at": "2026-09-03T14:11:39.154024+00:00",
       "video_id": "O2tiEbkdt5w"
     },
     {
