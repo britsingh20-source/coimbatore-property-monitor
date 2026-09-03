@@ -1919,9 +1919,70 @@
       "video_id": "tTgkkQPNeCo"
     },
     "social-ready/telegram-AgADjCEAAmSZyFQ.mp4": {
+      "candidate_video_ids": [
+        "KiJEPqoUCTw",
+        "6RCA3cUaZ2Y",
+        "7bj_axUSMmM",
+        "OEul0dWNXSU",
+        "94Y_3Jp2hQw",
+        "twP0glR4EyU",
+        "xTvjrweqpy4",
+        "3HCxfx5DoJs",
+        "PAs5DHZmBKo",
+        "f330aqcYbfE",
+        "Zct1W4hIERI",
+        "y07Izy9Qikw",
+        "M0UauIWBWNY",
+        "tkJnGvIo32g",
+        "S_NnYorPyM0",
+        "DZ_0GnMaT9k",
+        "UmiDPhMC5YY",
+        "S0evf4Cxoqc",
+        "0-1lYKdK5dI",
+        "e6GoUUW2RAA",
+        "PNTtybJTcgk",
+        "YxTt5-I6FRw",
+        "jdO7vT9yds0",
+        "nq0mpD6B2TQ",
+        "kl1Ofu9mqeU",
+        "nvdcB9maHh4",
+        "O2tiEbkdt5w",
+        "niCDCM0rWBM",
+        "91y0q3A7G8s",
+        "GzZOCQNDFS8",
+        "3A__QS75exs",
+        "chxEiAv0D3k",
+        "DGnv0PLVJb0",
+        "GnB8R9jzyNg",
+        "3Qb3cRqT85Q",
+        "FikmwXmSPPM",
+        "Eh4PyhVMoHw",
+        "FXZcvqgHqys",
+        "oy7DU8LRVGE",
+        "MJxoOMpbHRE",
+        "iNlaHoWV2Hw",
+        "-ZveRaGaOCk",
+        "XfVdMpX08kA",
+        "gVp_3zKEN6I",
+        "BALTOB4A6_c",
+        "jrLWenpG3Y8",
+        "heG7hx02Q3A",
+        "d7c3IMAR194",
+        "Kgy_c2UCFc0",
+        "ejH4FBRZ9rs",
+        "jCzI3N7Kc1k",
+        "xOGTkdfg7mU",
+        "mF6aejsSTDk",
+        "8gKjM9SmMzQ",
+        "_obNi427hr4",
+        "d9zoo10zv2o",
+        "YW_1IWC4aEk",
+        "K9UjPyeZZr8"
+      ],
       "etag": "f1e5be806c51dc666a1e99e1a36df1d9-3",
+      "match_error": "Error code: 403 - {'error': {'message': 'The caller does not have permission', 'code': 'permission_denied'}}",
       "platforms": {},
-      "status": "waiting_for_video_id"
+      "status": "match_error"
     },
     "social-ready/telegram-AgADkCIAArd1WFQ.mp4": {
       "content": {
@@ -2019,9 +2080,124 @@
       "video_id": "uAJus2hXLTo"
     },
     "social-ready/telegram-AgADriEAAmSZyFQ.mp4": {
+      "content": {
+        "caption": "🏠 ₹97 Lakhs - ₹1.30 Crores 3 BHK BHK Villa in Coimbatore, L&T Bypass, Near Karpagam College, Tamil Nadu — would you visit this property?\n\n📍 Location: Coimbatore, L&T Bypass, Near Karpagam College, Tamil Nadu\n🏡 Property: 3 BHK BHK Villa\n💰 Price: ₹97 Lakhs - ₹1.30 Crores\n📐 Land: 1500 sq ft (3.5 Cents)\n🏗️ Built-up: 1890 sq ft\n🚗 Parking: Covered parking for 2 cars and two-wheelers\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #CoimbatoreLTBypassNearKarpagamCollegeTamilNaduProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#CoimbatoreProperty",
+          "#CoimbatoreLTBypassNearKarpagamCollegeTamilNaduProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "₹97 Lakhs - ₹1.30 Crores 3 BHK BHK Villa in Coimbatore, L&T Bypass, Near Karpagam College, Tamil Nad",
+        "youtube_description": "₹97 Lakhs - ₹1.30 Crores 3 BHK BHK Villa in Coimbatore, L&T Bypass, Near Karpagam College, Tamil Nadu. Watch the complete 10-second walkthrough.\n\n📍 Location: Coimbatore, L&T Bypass, Near Karpagam College, Tamil Nadu\n🏡 Property: 3 BHK BHK Villa\n💰 Price: ₹97 Lakhs - ₹1.30 Crores\n📐 Land: 1500 sq ft (3.5 Cents)\n🏗️ Built-up: 1890 sq ft\n🚗 Parking: Covered parking for 2 cars and two-wheelers\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #CoimbatoreLTBypassNearKarpagamCollegeTamilNaduProperty #CoimbatoreRealEstate"
+      },
       "etag": "f1e5be806c51dc666a1e99e1a36df1d9-3",
-      "platforms": {},
-      "status": "waiting_for_video_id"
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "creation_id": "17895945966599708",
+            "media_id": "18099780203305621",
+            "processing": {
+              "id": "17895945966599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "thumb_offset_ms": 2000
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17895946167599708",
+            "media_id": "18063669605764590",
+            "processing": {
+              "id": "17895946167599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "₹97 Lakhs - ₹1.30 Crores 3 BHK BHK Villa in Coimbatore, L&T Bypass, Near Karpagam College, Tamil Nadu. Watch the complete 10-second walkthrough.\n\n📍 Location: Coimbatore, L&T Bypass, Near Karpagam College, Tamil Nadu\n🏡 Property: 3 BHK BHK Villa\n💰 Price: ₹97 Lakhs - ₹1.30 Crores\n📐 Land: 1500 sq ft (3.5 Cents)\n🏗️ Built-up: 1890 sq ft\n🚗 Parking: Covered parking for 2 cars and two-wheelers\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #CoimbatoreLTBypassNearKarpagamCollegeTamilNaduProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "₹97 Lakhs - ₹1.30 Crores 3 BHK BHK Villa in Coimbatore, L&T Bypass, Near Karpagam College, Tamil Nadu. Watch the complete 10-second walkthrough.\n\n📍 Location: Coimbatore, L&T Bypass, Near Karpagam College, Tamil Nadu\n🏡 Property: 3 BHK BHK Villa\n💰 Price: ₹97 Lakhs - ₹1.30 Crores\n📐 Land: 1500 sq ft (3.5 Cents)\n🏗️ Built-up: 1890 sq ft\n🚗 Parking: Covered parking for 2 cars and two-wheelers\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #CoimbatoreLTBypassNearKarpagamCollegeTamilNaduProperty #CoimbatoreRealEstate",
+                "title": "₹97 Lakhs - ₹1.30 Crores 3 BHK BHK Villa in Coimbatore, L&T Bypass, Near Karpagam College, Tamil Nad"
+              },
+              "publishedAt": "2026-09-03T05:01:53Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/it-HT4_J_E4/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/it-HT4_J_E4/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/it-HT4_J_E4/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "₹97 Lakhs - ₹1.30 Crores 3 BHK BHK Villa in Coimbatore, L&T Bypass, Near Karpagam College, Tamil Nad"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "it-HT4_J_E4"
+          },
+          "status": "published"
+        }
+      },
+      "status": "matched",
+      "video_id": "vFUJnl_KvEg",
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 247668,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 23.334,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 247626,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 23.333333,
+          "height": 1280,
+          "width": 720
+        }
+      }
     },
     "social-ready/telegram-AgADtSEAAmRQoVQ.mp4": {
       "content": {
