@@ -2631,9 +2631,11 @@
     },
     "sVocxbjhONs": {
       "attempts": 0,
+      "completed_at": "2026-09-04T18:34:49.468745+00:00",
       "first_seen_at": "2026-09-04T15:10:02.436664+00:00",
+      "last_error": "",
       "next_retry_at": "2026-09-04T15:10:02.436664+00:00",
-      "status": "discovered"
+      "status": "archived_non_target"
     },
     "sucZKA4h_oA": {
       "attempts": 3,
