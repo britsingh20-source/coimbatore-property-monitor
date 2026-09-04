@@ -1,0 +1,157 @@
+{
+  "video_id": "eAJMYyc2VG0",
+  "source_url": "https://www.youtube.com/watch?v=eAJMYyc2VG0",
+  "property_location": "Papampatti, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2 BHK",
+    "land_area": "3.25 cents",
+    "built_up_area": "1160 sqft",
+    "price": "Rs. 58 Lakhs",
+    "facing": "East",
+    "road_width": "25 feet",
+    "parking": "Covered Car Parking (13 x 18 ft)",
+    "approval": "DTCP Approved, Plan Approved"
+  },
+  "verified_facts": "Land area is 3.25 cents with plot dimensions 25 ft x 57 ft, Total built-up area is 1160 sqft, House is East-facing with an East-facing main teak door, Includes 2 master bedrooms (10 x 17 ft & 10 x 16 ft), both with attached bathrooms, Price is 58 Lakhs including land and interior work, Located 1 km from Papampatti 4-road and 5 km from Papampatti Pirivu / Trichy Road",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local property showcase in spoken Tamil mixed with English real-estate terms.",
+    "hook_strategy": "Highlight the desirable Papampatti location and key value proposition right in the first sentence.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Papampatti-ல, Trichy Road Pirivu-க்கு பக்கத்துல அமைஞ்சிருக்கற ஒரு அருமையான Independent House பாக்கப்போறோம்!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-tag-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது பாத்தீங்கனா 3.25 Cents land area-ல, 25 by 57 feet dimensions-ல கட்டிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "",
+        "purpose": "land_specs"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு East facing, அதே மாதிரி Main Teak Door-உம் East-facing-ல தான் அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "மொத்தம் 1160 sqft built-up area! Semi-furnished interiors, False ceiling, Modular kitchen, அப்புறம் 2 Master bedrooms attached bathrooms-ஓட வருது.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "",
+        "purpose": "interior_tour"
+      },
+      {
+        "name": "road",
+        "voice": "வீட்டுக்கு முன்னாடி 25 feet road வசதியும், 13 by 18 feet Covered Car Parking-உம் இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "",
+        "purpose": "access_and_parking"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP Approved மற்றும் Plan Approved property.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "",
+        "purpose": "approval_status"
+      },
+      {
+        "name": "price",
+        "voice": "Land, House, Interior work எல்லாம் சேர்த்து மொத்த Price வெறும் 58 Lakhs தான்!",
+        "broll": [
+          "interior",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து Site Visit பண்ணவோ, Details தெரிஞ்சுக்கவோ உடனே Call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/eAJMYyc2VG0/",
+  "optional_owned_audio": "assets/audio/eAJMYyc2VG0.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Papampatti, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story house with a golden-yellow and grey facade, L-shaped double-layer elevation profile, LED spot lighting, decorative laser-cut metal entrance gate, staircase with iron railings leading to the terrace, and covered car parking.. Neighbourhood: Developing residential locality in Papampatti, Coimbatore, situated close to Trichy Road, L&T Bypass, and Pollachi Road with surrounding houses and a 25 ft wide front road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Papampatti, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story house with a golden-yellow and grey facade, L-shaped double-layer elevation profile, LED spot lighting, decorative laser-cut metal entrance gate, staircase with iron railings leading to the terrace, and covered car parking.. Neighbourhood: Developing residential locality in Papampatti, Coimbatore, situated close to Trichy Road, L&T Bypass, and Pollachi Road with surrounding houses and a 25 ft wide front road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Papampatti, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story house with a golden-yellow and grey facade, L-shaped double-layer elevation profile, LED spot lighting, decorative laser-cut metal entrance gate, staircase with iron railings leading to the terrace, and covered car parking.. Neighbourhood: Developing residential locality in Papampatti, Coimbatore, situated close to Trichy Road, L&T Bypass, and Pollachi Road with surrounding houses and a 25 ft wide front road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Papampatti, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-story house with a golden-yellow and grey facade, L-shaped double-layer elevation profile, LED spot lighting, decorative laser-cut metal entrance gate, staircase with iron railings leading to the terrace, and covered car parking.. Neighbourhood: Developing residential locality in Papampatti, Coimbatore, situated close to Trichy Road, L&T Bypass, and Pollachi Road with surrounding houses and a 25 ft wide front road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
