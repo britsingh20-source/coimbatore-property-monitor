@@ -1,0 +1,133 @@
+{
+  "video_id": "iCbNe176ymw",
+  "source_url": "https://www.youtube.com/watch?v=iCbNe176ymw",
+  "property_location": "IOB Colony, Vadavalli, Marudhamalai Road, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "6.42 Cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "NOT SPECIFIED",
+    "facing": "South",
+    "road_width": "30 Feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "6.42 cents DTCP approved residential plot (available as 2 joint sites of ~3.21 cents each) for sale in IOB Colony, Vadavalli, Coimbatore., Individual plot size is 40 ft frontage by 70 ft length; combined plot size is 80 ft frontage by 70 ft length., Property features south-facing orientation and 30-foot road access., Up to 70% bank loan approval available., Located close to Law College, Bharathiar University, IT companies, and Marudhamalai Temple.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera with natural spoken Tamil",
+    "hook_strategy": "Highlight prime Vadavalli Marudhamalai Road location with DTCP approved plot availability",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Vadavalli, Marudhamalai Road-ல இருக்குற IOB Colony location-ல ஒரு அருமையான residential plot பாக்கப்போறோம்!",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தம் 6.42 Cents land. 3.21 cents கொண்ட 2 joint sites-ஆகவும் வாங்கலாம். Single plot 40 by 70 feet, combined-ஆ 80 by 70 feet dimensions வருது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "kitchen"
+        ],
+        "vfx": "dimension-outline",
+        "purpose": "land-details"
+      },
+      {
+        "name": "road",
+        "voice": "இந்த plot-க்கு நல்ல 30 feet road access அமைஞ்சிருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "road-width-indicator",
+        "purpose": "road-access"
+      },
+      {
+        "name": "facing",
+        "voice": "பாத்தீங்கனா, இது ரும்பவே நல்ல South facing plot.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "compass-south-graphic",
+        "purpose": "facing-details"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approval பெற்ற site. 70% வரைக்கும் bank loan வசதியும் இருக்கு. Law College, Bharathiar University, IT companies, Marudhamalai Temple எல்லாம் ரொம்ப பக்கம்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust-and-connectivity"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணவோ, மேலும் details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "kitchen"
+        ],
+        "vfx": "contact-card",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/iCbNe176ymw/",
+  "optional_owned_audio": "assets/audio/iCbNe176ymw.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Vadavalli, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Level vacant land plot with red soil, marked boundary boundaries, lined with mature trees along one side.. Neighbourhood: Quiet residential locality surrounded by greenery, individual homes, gated communities, and scenic mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Vadavalli, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Level vacant land plot with red soil, marked boundary boundaries, lined with mature trees along one side.. Neighbourhood: Quiet residential locality surrounded by greenery, individual homes, gated communities, and scenic mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Vadavalli, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Level vacant land plot with red soil, marked boundary boundaries, lined with mature trees along one side.. Neighbourhood: Quiet residential locality surrounded by greenery, individual homes, gated communities, and scenic mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Vadavalli, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Level vacant land plot with red soil, marked boundary boundaries, lined with mature trees along one side.. Neighbourhood: Quiet residential locality surrounded by greenery, individual homes, gated communities, and scenic mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
