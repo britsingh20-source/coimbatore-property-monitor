@@ -715,9 +715,11 @@
     },
     "FKHXc5WSQ_E": {
       "attempts": 0,
+      "completed_at": "2026-09-04T11:47:23.281809+00:00",
       "first_seen_at": "2026-09-04T11:25:00.267341+00:00",
+      "last_error": "",
       "next_retry_at": "2026-09-04T11:25:00.267341+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "FXZcvqgHqys": {
       "attempts": 0,
@@ -2509,9 +2511,11 @@
     },
     "qNcpFyj5bNs": {
       "attempts": 0,
+      "completed_at": "2026-09-04T11:48:20.039703+00:00",
       "first_seen_at": "2026-09-04T11:25:00.267341+00:00",
+      "last_error": "",
       "next_retry_at": "2026-09-04T11:25:00.267341+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "qWJQqa91NAg": {
       "attempts": 0,
