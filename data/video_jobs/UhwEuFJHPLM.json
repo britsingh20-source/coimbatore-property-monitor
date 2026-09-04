@@ -1,0 +1,129 @@
+{
+  "video_id": "UhwEuFJHPLM",
+  "source_url": "https://www.youtube.com/watch?v=UhwEuFJHPLM",
+  "property_location": "Appaanaickenpatti, Sulur, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹5.80 Lakhs per cent (Offer Price till Sep 13) / ₹6.30 Lakhs per cent",
+    "facing": "NOT SPECIFIED",
+    "road_width": "40 ft, 33 ft, 30 ft",
+    "parking": "NOT SPECIFIED",
+    "approval": "RERA and DTCP Approved"
+  },
+  "verified_facts": "Project name is Olivia Premium Plots by RR Builders & Developers., Launching on September 13th., Offer price is ₹5.80 Lakhs per cent for bookings on or before September 13th., Post-launch price is ₹6.30 Lakhs per cent., Project offers a ₹50,000 profit advantage from Day 01., Located on the Appaanaickenpatti to Karadivavi main road in Sulur, Coimbatore.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter, conversational, energetic Tamil speech with standard English real-estate terms",
+    "hook_strategy": "Lead directly with the location and pre-launch pricing offer advantage",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை சுலூர், அப்பநாயக்கன்பட்டி to காரடிவாவி மெயின் ரோட்ல அமைஞ்சிருக்கு RR Builders-ன் Olivia Premium Plots.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதுல முக்கியமான விஷயம், செப்டம்பர் 13 Launch-க்கு முன்னாடி புக் பண்ணா ஒரு சென்ட் 5.80 Lakhs தான்! அப்புறம் 6.30 Lakhs, சோ சென்ட்டுக்கு 50,000 ரூபாய் Profit Advantage இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "value_proposition"
+      },
+      {
+        "name": "road",
+        "voice": "உள்ள பாத்தீங்கனா 40 feet, 33 feet, மற்றும் 30 feet Tar Roads போட்டிருக்காங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "lower-third",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "land",
+        "voice": "இந்த Gated Community-ல Grand Entrance Arch, Compound Wall, 24/7 Security, Individual Water Tap Connection, மற்றும் Children's Park வசதிகள் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "interior"
+        ],
+        "vfx": "icon-list",
+        "purpose": "amenities"
+      },
+      {
+        "name": "approval",
+        "voice": "அதே மாதிரி இது DTCP மற்றும் RERA Approval பெற்ற Residential Plot.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் Details தெரிஞ்சுக்க அண்ட் Site Visit வர உடனே Call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "call-to-action",
+        "purpose": "conversion"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/UhwEuFJHPLM/",
+  "optional_owned_audio": "assets/audio/UhwEuFJHPLM.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Appaanaickenpatti, Sulur, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A well-developed gated residential layout with wide asphalt roads, white line markings, concrete drainage gutters, young avenue trees with drip irrigation lines, an overhead water tank, a children's play area with swings and slides, and a stylish modern entrance archway.. Neighbourhood: Located in a developing suburban environment in Sulur, Appaanaickenpatti near Karadivavi Main Road, Coimbatore, featuring open green surroundings and industrial/commercial presence in the vicinity.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Appaanaickenpatti, Sulur, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A well-developed gated residential layout with wide asphalt roads, white line markings, concrete drainage gutters, young avenue trees with drip irrigation lines, an overhead water tank, a children's play area with swings and slides, and a stylish modern entrance archway.. Neighbourhood: Located in a developing suburban environment in Sulur, Appaanaickenpatti near Karadivavi Main Road, Coimbatore, featuring open green surroundings and industrial/commercial presence in the vicinity.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Appaanaickenpatti, Sulur, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A well-developed gated residential layout with wide asphalt roads, white line markings, concrete drainage gutters, young avenue trees with drip irrigation lines, an overhead water tank, a children's play area with swings and slides, and a stylish modern entrance archway.. Neighbourhood: Located in a developing suburban environment in Sulur, Appaanaickenpatti near Karadivavi Main Road, Coimbatore, featuring open green surroundings and industrial/commercial presence in the vicinity.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Appaanaickenpatti, Sulur, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A well-developed gated residential layout with wide asphalt roads, white line markings, concrete drainage gutters, young avenue trees with drip irrigation lines, an overhead water tank, a children's play area with swings and slides, and a stylish modern entrance archway.. Neighbourhood: Located in a developing suburban environment in Sulur, Appaanaickenpatti near Karadivavi Main Road, Coimbatore, featuring open green surroundings and industrial/commercial presence in the vicinity.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
