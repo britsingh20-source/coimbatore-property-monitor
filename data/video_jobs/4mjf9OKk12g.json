@@ -1,0 +1,146 @@
+{
+  "video_id": "4mjf9OKk12g",
+  "source_url": "https://www.youtube.com/watch?v=4mjf9OKk12g",
+  "property_location": "Karamadai, Coimbatore",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": "2 BHK",
+    "land_area": "3.25 Cents",
+    "built_up_area": "1300 sqft",
+    "price": "₹55 Lakhs",
+    "facing": "South Facing Site, East Facing Main Door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking (11'0\" × 23'0\")",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "2BHK Independent Villa built on 3.25 Cents of land area, Built-up area of 1300 sqft, South-facing plot with an East-facing main entrance door, DTCP approved site with 75% bank loan availability, Listed price is 55 Lakhs (negotiable), Includes ground floor layout with 2 bedrooms, 2 attached bathrooms, 1 outer bathroom, living room, kitchen/dining, and covered parking",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and authentic local property walkthrough in conversational Spoken Tamil, keeping essential real estate terms in English.",
+    "hook_strategy": "Lead directly with the popular location Karamadai and property type to capture immediate home-buyer interest.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Karamadai-ல ஒரு அழகான 2 BHK Independent Villa பாக்கப்போறோம்.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தமா 3.25 Cents land area-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Built-up area பாத்தீங்கனா 1300 sqft. 2 bedrooms, attached bathrooms, hall, kitchen, TV unit, utility area, outer bathroom அப்புறம் 11 Feet by 23 Feet covered car parking வசதியும் இருக்கு.",
+        "broll": [
+          "living_room",
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "feature-text",
+        "purpose": "property_overview"
+      },
+      {
+        "name": "facing",
+        "voice": "இது South facing site, அதே மாதிரி main door பாத்தீங்கனா East facing-ல கொடுத்திருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "compass",
+        "purpose": "orientation"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approved site. 75% வரைக்கும் bank loan availability இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "legality"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price 55 Lakhs சொல்றாங்க, இது negotiable தான்.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details தெரிஞ்சுக்கவோ, நேர்ல site visit வரவோ உடனே contact பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/4mjf9OKk12g/",
+  "optional_owned_audio": "assets/audio/4mjf9OKk12g.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-storey house featuring a multi-color geometric exterior facade, a MS steel main gate with CNC cuts, tiled parking area, and brown marble-textured wall tiles.. Neighbourhood: Residential locality in Karamadai, Coimbatore, surrounded by other individual houses with clear mountain views visible from the open terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-storey house featuring a multi-color geometric exterior facade, a MS steel main gate with CNC cuts, tiled parking area, and brown marble-textured wall tiles.. Neighbourhood: Residential locality in Karamadai, Coimbatore, surrounded by other individual houses with clear mountain views visible from the open terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-storey house featuring a multi-color geometric exterior facade, a MS steel main gate with CNC cuts, tiled parking area, and brown marble-textured wall tiles.. Neighbourhood: Residential locality in Karamadai, Coimbatore, surrounded by other individual houses with clear mountain views visible from the open terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-storey house featuring a multi-color geometric exterior facade, a MS steel main gate with CNC cuts, tiled parking area, and brown marble-textured wall tiles.. Neighbourhood: Residential locality in Karamadai, Coimbatore, surrounded by other individual houses with clear mountain views visible from the open terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
