@@ -1,0 +1,157 @@
+{
+  "video_id": "nlAsGhAfr0I",
+  "source_url": "https://www.youtube.com/watch?v=nlAsGhAfr0I",
+  "property_location": "Kovaipudur, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Villa",
+    "bhk": "3 BHK",
+    "land_area": "3.5 cents",
+    "built_up_area": "1600 sqft",
+    "price": "₹75 Lakhs",
+    "facing": "North",
+    "road_width": "39 ft",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP"
+  },
+  "verified_facts": "3 BHK duplex villa starting from ₹75 Lakhs in a gated community named Victoria's Anandam., Land area is 3.5 cents and built-up area is 1600 sqft., Site and main door are North-facing., DTCP approved project with 14 villa plots., Down payment option starting at ₹5 Lakhs with up to 95% bank loan availability., Developed by Victoria Realtors, near Western Ring Road and Krishna College in Kovaipudur, Coimbatore.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter, conversational spoken Tamil, clear visual storytelling",
+    "hook_strategy": "Highlighting a 3 BHK duplex villa starting at 75 Lakhs in Kovaipudur with key landmark references.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Kovaipudur-ல Western Ring Road, Krishna College மற்றும் CS Academy பக்கத்துல ஒரு 3 BHK duplex villa பாக்கப்போறோம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "location-pin-highlight",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "Victoria Realtors-ஓட Victoria's Anandam gated community-ல இந்த villa வெறும் 75 Lakhs-ல இருந்து start ஆகுது. 5 Lakhs down payment பண்ணினா 95% வரைக்கும் bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-badge-overlay",
+        "purpose": "pricing_and_financing"
+      },
+      {
+        "name": "land",
+        "voice": "3.5 cents land area-ல 14 villa plots இருக்குற gated community இது. Water sump, DIY lifestyle space-லாம் கொடுத்துருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "land-area-callout",
+        "purpose": "land_and_amenities"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Built-up area பாத்தீங்கனா 1600 sqft. Spacious 3 BHK duplex layout-ஆ பண்ணிருக்காங்க.",
+        "broll": [
+          "living_room",
+          "interior",
+          "bedroom",
+          "kitchen"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "builtup-sqft-counter",
+        "purpose": "interior_details"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், site மற்றும் main door ரெண்டுமே North facing.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "compass-north-indicator",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "road",
+        "voice": "அதே மாதிரி front-ல 39 ft wide road அமைச்சுருக்காங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "road-width-measurement",
+        "purpose": "road_infrastructure"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approval பெற்ற project.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "dtcp-approval-seal",
+        "purpose": "trust_and_legality"
+      },
+      {
+        "name": "cta",
+        "voice": "Direct-ஆ site visit பண்ணவோ, further details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "contact-card-animation",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/nlAsGhAfr0I/",
+  "optional_owned_audio": "assets/audio/nlAsGhAfr0I.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Kovaipudur, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: A newly laid gated community layout with asphalt access roads, surrounded by open plots under construction, nearby multi-story residential blocks, and a modern entrance arch render titled 'Victoria Anandam'.. Neighbourhood: Located in Kovaipudur near the Coimbatore Western Ring Road, in close proximity to educational institutions such as Krishna College and CS Academy, with mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Kovaipudur, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: A newly laid gated community layout with asphalt access roads, surrounded by open plots under construction, nearby multi-story residential blocks, and a modern entrance arch render titled 'Victoria Anandam'.. Neighbourhood: Located in Kovaipudur near the Coimbatore Western Ring Road, in close proximity to educational institutions such as Krishna College and CS Academy, with mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Kovaipudur, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: A newly laid gated community layout with asphalt access roads, surrounded by open plots under construction, nearby multi-story residential blocks, and a modern entrance arch render titled 'Victoria Anandam'.. Neighbourhood: Located in Kovaipudur near the Coimbatore Western Ring Road, in close proximity to educational institutions such as Krishna College and CS Academy, with mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Kovaipudur, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: A newly laid gated community layout with asphalt access roads, surrounded by open plots under construction, nearby multi-story residential blocks, and a modern entrance arch render titled 'Victoria Anandam'.. Neighbourhood: Located in Kovaipudur near the Coimbatore Western Ring Road, in close proximity to educational institutions such as Krishna College and CS Academy, with mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
