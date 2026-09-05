@@ -371,8 +371,11 @@
       "video_id": "-ZveRaGaOCk"
     },
     {
+      "r2_key": "social-ready/telegram-AgADlB4AAmcz4VQ.mp4",
       "sent_at": "2026-09-01T12:51:33.065206+00:00",
-      "status": "pending_mobile_upload",
+      "status": "published",
+      "telegram_file_unique_id": "AgADlB4AAmcz4VQ",
+      "uploaded_at": "2026-09-05T02:56:06.244742+00:00",
       "video_id": "XfVdMpX08kA"
     },
     {
@@ -479,54 +482,54 @@
       "video_id": "ti_alU3nnRA"
     },
     {
-      "video_id": "UhwEuFJHPLM",
       "sent_at": "2026-09-04T05:59:41.016140+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "UhwEuFJHPLM"
     },
     {
-      "video_id": "MWVf2vWNXPw",
       "sent_at": "2026-09-04T11:27:08.266745+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "MWVf2vWNXPw"
     },
     {
-      "video_id": "T0KcXzowSFI",
       "sent_at": "2026-09-04T11:27:09.388808+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "T0KcXzowSFI"
     },
     {
-      "video_id": "FKHXc5WSQ_E",
       "sent_at": "2026-09-04T11:48:23.097125+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "FKHXc5WSQ_E"
     },
     {
-      "video_id": "qNcpFyj5bNs",
       "sent_at": "2026-09-04T11:48:24.126854+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "qNcpFyj5bNs"
     },
     {
-      "video_id": "eAJMYyc2VG0",
       "sent_at": "2026-09-04T15:12:14.697046+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "eAJMYyc2VG0"
     },
     {
-      "video_id": "eECzpeUkyRY",
       "sent_at": "2026-09-04T15:12:15.614663+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "eECzpeUkyRY"
     },
     {
-      "video_id": "JNO9hN2xYg4",
       "sent_at": "2026-09-04T16:28:59.012321+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "JNO9hN2xYg4"
     },
     {
-      "video_id": "iCbNe176ymw",
       "sent_at": "2026-09-04T16:29:00.055719+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "iCbNe176ymw"
     },
     {
-      "video_id": "BgIePN-H4Kk",
       "sent_at": "2026-09-05T01:02:21.277082+00:00",
-      "status": "pending_mobile_upload"
+      "status": "pending_mobile_upload",
+      "video_id": "BgIePN-H4Kk"
     }
   ]
 }

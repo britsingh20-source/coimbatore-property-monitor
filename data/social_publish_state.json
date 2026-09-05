@@ -2081,7 +2081,6 @@
         "MJxoOMpbHRE",
         "iNlaHoWV2Hw",
         "-ZveRaGaOCk",
-        "XfVdMpX08kA",
         "gVp_3zKEN6I",
         "BALTOB4A6_c",
         "jrLWenpG3Y8",
@@ -2211,6 +2210,126 @@
       },
       "status": "matched",
       "video_id": "uAJus2hXLTo"
+    },
+    "social-ready/telegram-AgADlB4AAmcz4VQ.mp4": {
+      "content": {
+        "caption": "🏠 Rs. 13.75 Lakhs per cent (Slightly Negotiable) Residential Plot in Kovilpalayam, Sakthi Road (Sathy Road), Coimbatore, Tamil Nadu — would you visit this property?\n\n📍 Location: Kovilpalayam, Sakthi Road (Sathy Road), Coimbatore, Tamil Nadu\n🏡 Property: Residential Plot\n💰 Price: Rs. 13.75 Lakhs per cent (Slightly Negotiable)\n📐 Land: 5 Cents\n🧭 Facing: North-West\n✅ Approval: DTCP & RERA Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #KovilpalayamSakthiRoadSathyRoadCoimbatoreTamilNaduProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#CoimbatoreProperty",
+          "#KovilpalayamSakthiRoadSathyRoadCoimbatoreTamilNaduProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "Rs. 13.75 Lakhs per cent (Slightly Negotiable) Residential Plot in Kovilpalayam, Sakthi Road (Sathy ",
+        "youtube_description": "Rs. 13.75 Lakhs per cent (Slightly Negotiable) Residential Plot in Kovilpalayam, Sakthi Road (Sathy Road), Coimbatore, Tamil Nadu. Watch the complete 10-second walkthrough.\n\n📍 Location: Kovilpalayam, Sakthi Road (Sathy Road), Coimbatore, Tamil Nadu\n🏡 Property: Residential Plot\n💰 Price: Rs. 13.75 Lakhs per cent (Slightly Negotiable)\n📐 Land: 5 Cents\n🧭 Facing: North-West\n✅ Approval: DTCP & RERA Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #KovilpalayamSakthiRoadSathyRoadCoimbatoreTamilNaduProperty #CoimbatoreRealEstate"
+      },
+      "etag": "c555715cc1cfeb79be9f02f1279d5bbd-3",
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "creation_id": "17896239897599708",
+            "media_id": "18092034770445163",
+            "processing": {
+              "id": "17896239897599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "thumb_offset_ms": 2000
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17896240053599708",
+            "media_id": "17881184052622001",
+            "processing": {
+              "id": "17896240053599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "Rs. 13.75 Lakhs per cent (Slightly Negotiable) Residential Plot in Kovilpalayam, Sakthi Road (Sathy Road), Coimbatore, Tamil Nadu. Watch the complete 10-second walkthrough.\n\n📍 Location: Kovilpalayam, Sakthi Road (Sathy Road), Coimbatore, Tamil Nadu\n🏡 Property: Residential Plot\n💰 Price: Rs. 13.75 Lakhs per cent (Slightly Negotiable)\n📐 Land: 5 Cents\n🧭 Facing: North-West\n✅ Approval: DTCP & RERA Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #KovilpalayamSakthiRoadSathyRoadCoimbatoreTamilNaduProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "Rs. 13.75 Lakhs per cent (Slightly Negotiable) Residential Plot in Kovilpalayam, Sakthi Road (Sathy Road), Coimbatore, Tamil Nadu. Watch the complete 10-second walkthrough.\n\n📍 Location: Kovilpalayam, Sakthi Road (Sathy Road), Coimbatore, Tamil Nadu\n🏡 Property: Residential Plot\n💰 Price: Rs. 13.75 Lakhs per cent (Slightly Negotiable)\n📐 Land: 5 Cents\n🧭 Facing: North-West\n✅ Approval: DTCP & RERA Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #KovilpalayamSakthiRoadSathyRoadCoimbatoreTamilNaduProperty #CoimbatoreRealEstate",
+                "title": "Rs. 13.75 Lakhs per cent (Slightly Negotiable) Residential Plot in Kovilpalayam, Sakthi Road (Sathy"
+              },
+              "publishedAt": "2026-09-05T02:57:44Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/3CNMwe4givY/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/3CNMwe4givY/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/3CNMwe4givY/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "Rs. 13.75 Lakhs per cent (Slightly Negotiable) Residential Plot in Kovilpalayam, Sakthi Road (Sathy"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "3CNMwe4givY"
+          },
+          "status": "published"
+        }
+      },
+      "status": "matched",
+      "video_id": "XfVdMpX08kA",
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 247693,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 22.707,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 247562,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 22.733333,
+          "height": 1280,
+          "width": 720
+        }
+      }
     },
     "social-ready/telegram-AgADpiMAAmSZyFQ.mp4": {
       "etag": "3fafd05904b1906516a8cc13c8c5d99f-3",
