@@ -472,8 +472,11 @@
       "video_id": "ZpnuesKsc3s"
     },
     {
+      "r2_key": "social-ready/telegram-AgADqx4AAmcz4VQ.mp4",
       "sent_at": "2026-09-03T14:52:59.329272+00:00",
-      "status": "pending_mobile_upload",
+      "status": "published",
+      "telegram_file_unique_id": "AgADqx4AAmcz4VQ",
+      "uploaded_at": "2026-09-05T04:13:21.715256+00:00",
       "video_id": "osMfPx-K60Q"
     },
     {

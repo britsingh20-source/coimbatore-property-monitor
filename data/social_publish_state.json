@@ -2098,7 +2098,6 @@
         "K9UjPyeZZr8",
         "OhN4bnvLpSE",
         "ZpnuesKsc3s",
-        "osMfPx-K60Q",
         "ti_alU3nnRA",
         "UhwEuFJHPLM",
         "MWVf2vWNXPw",
@@ -2337,9 +2336,124 @@
       "status": "waiting_for_video_id"
     },
     "social-ready/telegram-AgADqx4AAmcz4VQ.mp4": {
+      "content": {
+        "caption": "🏠 ₹7,50,000 per cent (Negotiable) Residential Plot in Balu Garden, Seerapalayam, Coimbatore, Tamil Nadu, India — would you visit this property?\n\n📍 Location: Balu Garden, Seerapalayam, Coimbatore, Tamil Nadu, India\n🏡 Property: Residential Plot\n💰 Price: ₹7,50,000 per cent (Negotiable)\n📐 Land: Starting from 2.75 Cents (Total 10 Cents available)\n✅ Approval: DTCP & RERA Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #BaluGardenSeerapalayamCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#CoimbatoreProperty",
+          "#BaluGardenSeerapalayamCoimbatoreTamilNaduIndiaProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "₹7,50,000 per cent (Negotiable) Residential Plot in Balu Garden, Seerapalayam, Coimbatore, Tamil Nad",
+        "youtube_description": "₹7,50,000 per cent (Negotiable) Residential Plot in Balu Garden, Seerapalayam, Coimbatore, Tamil Nadu, India. Watch the complete 10-second walkthrough.\n\n📍 Location: Balu Garden, Seerapalayam, Coimbatore, Tamil Nadu, India\n🏡 Property: Residential Plot\n💰 Price: ₹7,50,000 per cent (Negotiable)\n📐 Land: Starting from 2.75 Cents (Total 10 Cents available)\n✅ Approval: DTCP & RERA Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #BaluGardenSeerapalayamCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate"
+      },
       "etag": "3ba63df69eeb50c157c2801b5f2c1775-3",
-      "platforms": {},
-      "status": "waiting_for_video_id"
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "creation_id": "17896251117599708",
+            "media_id": "18342886174271100",
+            "processing": {
+              "id": "17896251117599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "thumb_offset_ms": 2000
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17896251264599708",
+            "media_id": "18090638279169650",
+            "processing": {
+              "id": "17896251264599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "₹7,50,000 per cent (Negotiable) Residential Plot in Balu Garden, Seerapalayam, Coimbatore, Tamil Nadu, India. Watch the complete 10-second walkthrough.\n\n📍 Location: Balu Garden, Seerapalayam, Coimbatore, Tamil Nadu, India\n🏡 Property: Residential Plot\n💰 Price: ₹7,50,000 per cent (Negotiable)\n📐 Land: Starting from 2.75 Cents (Total 10 Cents available)\n✅ Approval: DTCP & RERA Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #BaluGardenSeerapalayamCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "₹7,50,000 per cent (Negotiable) Residential Plot in Balu Garden, Seerapalayam, Coimbatore, Tamil Nadu, India. Watch the complete 10-second walkthrough.\n\n📍 Location: Balu Garden, Seerapalayam, Coimbatore, Tamil Nadu, India\n🏡 Property: Residential Plot\n💰 Price: ₹7,50,000 per cent (Negotiable)\n📐 Land: Starting from 2.75 Cents (Total 10 Cents available)\n✅ Approval: DTCP & RERA Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #BaluGardenSeerapalayamCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
+                "title": "₹7,50,000 per cent (Negotiable) Residential Plot in Balu Garden, Seerapalayam, Coimbatore, Tamil Nad"
+              },
+              "publishedAt": "2026-09-05T04:27:09Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/iwWRicfHRNw/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/iwWRicfHRNw/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/iwWRicfHRNw/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "₹7,50,000 per cent (Negotiable) Residential Plot in Balu Garden, Seerapalayam, Coimbatore, Tamil Nad"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "iwWRicfHRNw"
+          },
+          "status": "published"
+        }
+      },
+      "status": "matched",
+      "video_id": "osMfPx-K60Q",
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 250460,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 24.222,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 250340,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 24.233333,
+          "height": 1280,
+          "width": 720
+        }
+      }
     },
     "social-ready/telegram-AgADriEAAmSZyFQ.mp4": {
       "content": {
