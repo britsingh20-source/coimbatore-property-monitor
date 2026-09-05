@@ -2634,9 +2634,11 @@
     },
     "rVJp1ez9SQs": {
       "attempts": 0,
+      "completed_at": "2026-09-05T14:01:44.243646+00:00",
       "first_seen_at": "2026-09-05T13:53:15.117520+00:00",
+      "last_error": "",
       "next_retry_at": "2026-09-05T13:53:15.117520+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "rg4P-tT8nro": {
       "attempts": 0,

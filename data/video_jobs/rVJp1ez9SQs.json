@@ -1,0 +1,150 @@
+{
+  "video_id": "rVJp1ez9SQs",
+  "source_url": "https://www.youtube.com/watch?v=rVJp1ez9SQs",
+  "property_location": "Kovilpalayam, Sakthi Road, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "5 Cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "Rs. 13.75 Lakhs per cent (Slightly Negotiable)",
+    "facing": "North-West",
+    "road_width": "33 Feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP & RERA Approved"
+  },
+  "verified_facts": "5 Cents north-west corner plot available for sale in Kovilpalayam, Sathy Road, Coimbatore., Property is DTCP and RERA approved, suitable for immediate residential construction., Situated on a 33-foot wide tar road with continuous tar road connectivity from Sakthi Main Road., Quoted price is Rs. 13.75 Lakhs per cent (slightly negotiable)., Located 12 km from Coimbatore International Airport and 8-10 km from Saravanampatti IT parks.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera in natural conversational Tamil.",
+    "hook_strategy": "Highlight strategic location near Saravanampatti IT hubs on Sakthi Road Kovilpalayam.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை சக்தி ரோடு கோவில்பாளையத்துல, சரவணம்பட்டி IT hubs-க்கு 8 லிருந்து 10 kilometer பக்கத்துல ஒரு plot location பாப்போம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இங்க 5 Cents residential plot விற்பனைக்கு இருக்குங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "property details"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், இது ஒரு North-West corner plot.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing specification"
+      },
+      {
+        "name": "road",
+        "voice": "சக்தி மெயின் ரோடுல இருந்து continuous-ஆ 33 feet tar road connectivity இருக்கு. Street lights, drainage-யோட gated community setup-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom",
+          "living_room"
+        ],
+        "vfx": "road-width-badge",
+        "purpose": "infrastructure details"
+      },
+      {
+        "name": "approval",
+        "voice": "அதே மாதிரி, இந்த plot DTCP மற்றும் RERA approved, உடனே வீடு கட்ட ஏற்ற இடம்.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "kitchen"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust and legal verification"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட விலை ஒரு சென்ட் 13.75 Lakhs, இது slightly negotiable.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "Site visit வரதுக்கும், மேலும் details தெரிஞ்சுக்கவும் உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call to action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/rVJp1ez9SQs/",
+  "optional_owned_audio": "assets/audio/rVJp1ez9SQs.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Clear corner plot layout with defined boundaries, paved 33-foot tar road access, street lighting poles, and newly constructed houses in the surrounding layout.. Neighbourhood: Rapidly expanding residential area in Kovilpalayam off Sathy Road, surrounded by gated community projects, educational institutes, and convenient connectivity to Saravanampatti IT hub.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Clear corner plot layout with defined boundaries, paved 33-foot tar road access, street lighting poles, and newly constructed houses in the surrounding layout.. Neighbourhood: Rapidly expanding residential area in Kovilpalayam off Sathy Road, surrounded by gated community projects, educational institutes, and convenient connectivity to Saravanampatti IT hub.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Clear corner plot layout with defined boundaries, paved 33-foot tar road access, street lighting poles, and newly constructed houses in the surrounding layout.. Neighbourhood: Rapidly expanding residential area in Kovilpalayam off Sathy Road, surrounded by gated community projects, educational institutes, and convenient connectivity to Saravanampatti IT hub.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Clear corner plot layout with defined boundaries, paved 33-foot tar road access, street lighting poles, and newly constructed houses in the surrounding layout.. Neighbourhood: Rapidly expanding residential area in Kovilpalayam off Sathy Road, surrounded by gated community projects, educational institutes, and convenient connectivity to Saravanampatti IT hub.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
