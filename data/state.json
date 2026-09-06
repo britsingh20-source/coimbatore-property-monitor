@@ -1421,6 +1421,14 @@
       "next_retry_at": "2026-09-04T21:39:43.856408+00:00",
       "status": "archived_non_target"
     },
+    "SSgBL9btp1U": {
+      "attempts": 0,
+      "completed_at": "2026-09-06T13:42:56.892036+00:00",
+      "first_seen_at": "2026-09-06T13:42:35.661116+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-09-06T13:42:35.661116+00:00",
+      "status": "video_queued"
+    },
     "S_NnYorPyM0": {
       "attempts": 0,
       "completed_at": "2026-08-25T13:21:49.991289+00:00",
