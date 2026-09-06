@@ -30,7 +30,8 @@
     "WA39X-5Qzdg",
     "mDIElkwZbtI",
     "1mK3nGydU9k",
-    "Av-C0RXY45c"
+    "Av-C0RXY45c",
+    "uclvHfgEC1I"
   ],
   "history": [
     {
@@ -187,7 +188,12 @@
       "video_id": "Av-C0RXY45c",
       "creator": "Ridhi Khosla Jalan",
       "url": "https://www.youtube.com/watch?v=Av-C0RXY45c"
+    },
+    {
+      "video_id": "uclvHfgEC1I",
+      "creator": "DesignCafe",
+      "url": "https://www.youtube.com/watch?v=uclvHfgEC1I"
     }
   ],
-  "night_channel_cursor": 0
+  "night_channel_cursor": 1
 }
