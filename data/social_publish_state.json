@@ -1940,6 +1940,126 @@
       "status": "matched",
       "video_id": "czrxkmFHWn4"
     },
+    "social-ready/telegram-AgADcCMAAr1U6FQ.mp4": {
+      "content": {
+        "caption": "🏠 55 Lakhs 2 BHK BHK Independent House in Karamadai, Coimbatore — would you visit this property?\n\n📍 Location: Karamadai, Coimbatore\n🏡 Property: 2 BHK BHK Independent House\n💰 Price: 55 Lakhs\n📐 Land: 3.25 Cents\n🏗️ Built-up: 1300 sqft\n🧭 Facing: South\n🚗 Parking: 1 Covered Car Parking\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #KaramadaiCoimbatoreProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#CoimbatoreProperty",
+          "#KaramadaiCoimbatoreProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "55 Lakhs 2 BHK BHK Independent House in Karamadai, Coimbatore | Site Visit 9003787621",
+        "youtube_description": "55 Lakhs 2 BHK BHK Independent House in Karamadai, Coimbatore. Watch the complete 10-second walkthrough.\n\n📍 Location: Karamadai, Coimbatore\n🏡 Property: 2 BHK BHK Independent House\n💰 Price: 55 Lakhs\n📐 Land: 3.25 Cents\n🏗️ Built-up: 1300 sqft\n🧭 Facing: South\n🚗 Parking: 1 Covered Car Parking\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #KaramadaiCoimbatoreProperty #CoimbatoreRealEstate"
+      },
+      "etag": "94bc9d59201eacecb2073f092cc5af63-3",
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "creation_id": "17896387275599708",
+            "media_id": "18121111846913453",
+            "processing": {
+              "id": "17896387275599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "thumb_offset_ms": 2000
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17896387446599708",
+            "media_id": "18070668857725667",
+            "processing": {
+              "id": "17896387446599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "55 Lakhs 2 BHK BHK Independent House in Karamadai, Coimbatore. Watch the complete 10-second walkthrough.\n\n📍 Location: Karamadai, Coimbatore\n🏡 Property: 2 BHK BHK Independent House\n💰 Price: 55 Lakhs\n📐 Land: 3.25 Cents\n🏗️ Built-up: 1300 sqft\n🧭 Facing: South\n🚗 Parking: 1 Covered Car Parking\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #KaramadaiCoimbatoreProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "55 Lakhs 2 BHK BHK Independent House in Karamadai, Coimbatore. Watch the complete 10-second walkthrough.\n\n📍 Location: Karamadai, Coimbatore\n🏡 Property: 2 BHK BHK Independent House\n💰 Price: 55 Lakhs\n📐 Land: 3.25 Cents\n🏗️ Built-up: 1300 sqft\n🧭 Facing: South\n🚗 Parking: 1 Covered Car Parking\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #KaramadaiCoimbatoreProperty #CoimbatoreRealEstate",
+                "title": "55 Lakhs 2 BHK BHK Independent House in Karamadai, Coimbatore | Site Visit 9003787621"
+              },
+              "publishedAt": "2026-09-06T02:32:09Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/cxXmnppmv7U/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/cxXmnppmv7U/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/cxXmnppmv7U/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "55 Lakhs 2 BHK BHK Independent House in Karamadai, Coimbatore | Site Visit 9003787621"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "cxXmnppmv7U"
+          },
+          "status": "published"
+        }
+      },
+      "status": "matched",
+      "video_id": "zSqKOukvgZo",
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 247896,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 23.334,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 247854,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 23.333333,
+          "height": 1280,
+          "width": 720
+        }
+      }
+    },
     "social-ready/telegram-AgADdyEAAiU0WFQ.mp4": {
       "content": {
         "caption": "🏠 54.50 Lakhs (negotiable) 2 BHK Independent House in Pogalur, Mtp to Annur Road, Coimbatore — would you visit this property?\n\n📍 Location: Pogalur, Mtp to Annur Road, Coimbatore\n🏡 Property: 2 BHK Independent House\n💰 Price: 54.50 Lakhs (negotiable)\n📐 Land: 3 Cent\n🏗️ Built-up: 1250 sqft\n🧭 Facing: East Facing (House), North Facing (Site)\n🚗 Parking: Covered Car Parking (20' x 12')\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #PogalurMtptoAnnurRoadCoimbatoreProperty #CoimbatoreRealEstate",
@@ -2114,7 +2234,6 @@
         "4mjf9OKk12g",
         "rVJp1ez9SQs",
         "dFC01ZlmNdA",
-        "zSqKOukvgZo",
         "sG3UExK9Uxo"
       ],
       "etag": "f1e5be806c51dc666a1e99e1a36df1d9-3",
