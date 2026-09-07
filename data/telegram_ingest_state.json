@@ -373,14 +373,15 @@
         "psLArviRnI4",
         "h5ITzu3lL30"
       ],
-      "manual_caption_confirmed_at": "2026-09-07T11:33:19.948899+00:00",
+      "error": "Audio must clearly state the location, property type, and at least one of BHK, price, land area or built-up area",
+      "manual_caption_confirmed_at": "2026-09-07T11:37:44.417159+00:00",
       "r2_key": "social-ready/telegram-AgADfycAAinL-VQ.mp4",
       "recovery_reason": "user_confirmed_MANUAL_PUBLISH_caption",
       "recovery_requested_at": "2026-09-07T11:14:59.274Z",
       "retry_reason": "retry_transient_gemini_demand_with_backoff",
       "retry_requested_at": "2026-09-07T11:35:59.954Z",
       "size": 18876179,
-      "status": "manual_audio_recovery_requested",
+      "status": "manual_audio_analysis_failed",
       "update_id": 789574093,
       "uploaded_at": "2026-09-07T11:11:19.398586+00:00",
       "video_id": "manual-AgADfycAAinL-VQ"
