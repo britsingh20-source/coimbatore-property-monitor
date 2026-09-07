@@ -1,0 +1,106 @@
+{
+  "video_id": "5v05bcioDTY",
+  "source_url": "https://www.youtube.com/watch?v=5v05bcioDTY",
+  "property_location": "Mathampatty, Siruvani to Isha Main Road, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Farm Land",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "75 Cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹8 Lakhs per cent",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "75 Cents of farm land fully planted with yielding coconut trees for sale near Mathampatty, Coimbatore., Located along the Siruvani to Isha main road, around 100 feet inside from the main road., Offered at ₹8 Lakhs per cent, direct owner sale., Located 4 km from Ring Road, and 12 km from RS Puram / Coimbatore Railway Station.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local property presenter speaking directly to camera on location",
+    "hook_strategy": "Lead with the prime location on Siruvani to Isha Main Road near RS Puram",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore RS Puram மற்றும் Railway Station-ல இருந்து வெறும் 12 km-ல, Siruvani to Isha Main Road கிட்ட ஒரு சூப்பர் Farm Land சேல்ஸ்க்கு வந்திருக்கு!",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 75 Cents Farm Land. இதுல fully yielding coconut trees இருக்கு. Main road-ல இருந்து 100 feet inside-ல, நல்ல on-road access-ோட அமைஞ்சிருக்கு.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "text-overlay-area",
+        "purpose": "property_highlights"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட Price பாத்தீங்கனா per cent ₹8 Lakhs. முக்கியமா இது direct owner sale!",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த location-ல Site visit போகணும்னாலோ, மேலும் details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "kitchen"
+        ],
+        "vfx": "call-now-button",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/5v05bcioDTY/",
+  "optional_owned_audio": "assets/audio/5v05bcioDTY.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in RS Puram, Coimbatore, Tamil Nadu. Architecture consistent with: A 75-cent flat agricultural land parcel filled with full-grown yielding coconut trees, featuring road access and neighboring farmhouses.. Neighbourhood: Green agricultural and farm land area along the Siruvani-Isha main road in Mathampatty, Coimbatore, close to Isha Yoga and educational institutions.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in RS Puram, Coimbatore, Tamil Nadu. Architecture consistent with: A 75-cent flat agricultural land parcel filled with full-grown yielding coconut trees, featuring road access and neighboring farmhouses.. Neighbourhood: Green agricultural and farm land area along the Siruvani-Isha main road in Mathampatty, Coimbatore, close to Isha Yoga and educational institutions.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in RS Puram, Coimbatore, Tamil Nadu. Architecture consistent with: A 75-cent flat agricultural land parcel filled with full-grown yielding coconut trees, featuring road access and neighboring farmhouses.. Neighbourhood: Green agricultural and farm land area along the Siruvani-Isha main road in Mathampatty, Coimbatore, close to Isha Yoga and educational institutions.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in RS Puram, Coimbatore, Tamil Nadu. Architecture consistent with: A 75-cent flat agricultural land parcel filled with full-grown yielding coconut trees, featuring road access and neighboring farmhouses.. Neighbourhood: Green agricultural and farm land area along the Siruvani-Isha main road in Mathampatty, Coimbatore, close to Isha Yoga and educational institutions.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
