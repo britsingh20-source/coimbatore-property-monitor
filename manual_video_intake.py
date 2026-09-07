@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import unicodedata
 from typing import Any
 
 from google import genai
@@ -11,14 +12,18 @@ from google import genai
 MODEL = os.environ.get("GEMINI_MANUAL_AUDIO_MODEL", "gemini-3.5-flash-lite")
 MISSING = {"", "NOT SPECIFIED", "UNKNOWN", "N/A", "NONE", "NULL"}
 MANUAL_PATTERN = re.compile(
-    r"(?:^|\\s)(?:MANUAL_PUBLISH|MANUAL[\\s_-]*PUBLISH|MODE\\s*[:=]\\s*MANUAL)(?:\\s|$)",
+    r"(?:^|\s)(?:MANUAL_PUBLISH|MANUAL[\s_-]*PUBLISH|MODE\s*[:=]\s*MANUAL)(?:\s|$)",
     flags=re.I,
 )
 
 
 def manual_publish_requested(message: dict) -> bool:
     """Require an explicit publishing instruction in the video's own caption."""
-    text = str(message.get("caption") or message.get("text") or "").strip()
+    raw = str(message.get("caption") or message.get("text") or "")
+    text = "".join(
+        char for char in raw
+        if unicodedata.category(char) != "Cf"
+    ).strip()
     return bool(MANUAL_PATTERN.search(text))
 
 
