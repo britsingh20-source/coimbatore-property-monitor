@@ -586,6 +586,16 @@
       "sent_at": "2026-09-07T10:27:33.429122+00:00",
       "status": "pending_mobile_upload",
       "video_id": "h5ITzu3lL30"
+    },
+    {
+      "video_id": "manual-AgADfycAAinL-VQ",
+      "status": "assigned_to_r2_upload",
+      "source_type": "manual_audio",
+      "r2_key": "social-ready/telegram-AgADfycAAinL-VQ.mp4",
+      "telegram_file_unique_id": "AgADfycAAinL-VQ",
+      "uploaded_at": "2026-09-07T11:11:19.398586+00:00",
+      "assigned_at": "2026-09-07T11:48:34.495Z",
+      "verification_source": "user_confirmed_visible_footer"
     }
   ]
 }
