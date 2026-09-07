@@ -37,6 +37,7 @@ on:
       - ".github/workflows/r2-social-autopilot.yml"
       - "r2_social_autopilot.py"
       - "telegram_r2_ingest.py"
+      - "manual_video_intake.py"
       - "reference_frames.py"
       - "requirements.txt"
       - "social_content.py"
@@ -107,6 +108,8 @@ jobs:
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
           R2_SOCIAL_PREFIX: social-ready/
           TELEGRAM_MAX_VIDEO_BYTES: "20971520"
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MANUAL_AUDIO_MODEL: gemini-3.5-flash-lite
           TELEGRAM_WEBHOOK_UPDATE_JSON: ${{ github.event_name == 'repository_dispatch' && toJson(github.event.client_payload.update) || '' }}
         run: python telegram_r2_ingest.py
       - name: Scan R2 and publish new property videos
@@ -138,7 +141,7 @@ jobs:
           set -euo pipefail
           git config user.name "property-social-bot"
           git config user.email "actions@github.com"
-          git add data/telegram_ingest_state.json data/social_publish_state.json data/telegram_prompt_queue.json
+          git add data/telegram_ingest_state.json data/social_publish_state.json data/telegram_prompt_queue.json data/video_jobs/*.json
           if git diff --staged --quiet; then
             echo "No Telegram ingestion, social publishing or prompt-pairing state changes."
           else

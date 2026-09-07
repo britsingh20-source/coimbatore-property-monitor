@@ -12,6 +12,12 @@ import boto3
 import requests
 
 from reference_frames import extract_frames_from_local_video, send_reference_frames
+from manual_video_intake import (
+    analyze_manual_video,
+    build_manual_job,
+    manual_publish_requested,
+    manual_video_id,
+)
 
 
 STATE_PATH = Path(os.environ.get("TELEGRAM_INGEST_STATE", "data/telegram_ingest_state.json"))
@@ -353,7 +359,8 @@ def ingest() -> int:
             for item in queue.get("prompts", [])
             if item.get("status") == "pending_mobile_upload" and item.get("video_id")
         ]
-        explicit_video_id = "" if reference_video_id else _explicit_video_id(message)
+        manual_requested = manual_publish_requested(message)
+        explicit_video_id = "" if reference_video_id or manual_requested else _explicit_video_id(message)
         if explicit_video_id:
             resolved_video_id = _resolve_supplied_video_id(explicit_video_id, queue)
             if resolved_video_id:
@@ -377,7 +384,7 @@ def ingest() -> int:
             )
             continue
 
-        if not reference_video_id and not pending_ids:
+        if not reference_video_id and not manual_requested and not pending_ids:
             state["files"][unique_id] = {
                 "status": "ignored_no_pending_prompt",
                 "update_id": update_id,
@@ -468,7 +475,8 @@ def ingest() -> int:
             continue
 
         safe_unique_id = re.sub(r"[^A-Za-z0-9_-]+", "-", unique_id).strip("-")
-        key_name = explicit_video_id if explicit_video_id else f"telegram-{safe_unique_id}"
+        generated_manual_id = manual_video_id(unique_id) if manual_requested else ""
+        key_name = generated_manual_id or explicit_video_id or f"telegram-{safe_unique_id}"
         key = f"{PREFIX.rstrip('/')}/{key_name}.mp4"
         with tempfile.NamedTemporaryFile(prefix="telegram-property-", suffix=".mp4") as handle:
             handle.write(response.content)
@@ -481,7 +489,74 @@ def ingest() -> int:
             )
 
         now = datetime.now(timezone.utc).isoformat()
-        if explicit_video_id:
+        if manual_requested:
+            video_url = client.generate_presigned_url(
+                "get_object",
+                Params={"Bucket": bucket, "Key": key},
+                ExpiresIn=21600,
+            )
+            try:
+                analysis = analyze_manual_video(video_url)
+                manual_job = build_manual_job(generated_manual_id, analysis)
+            except Exception as error:
+                state["files"][unique_id] = {
+                    "status": "manual_audio_analysis_failed",
+                    "video_id": generated_manual_id,
+                    "r2_key": key,
+                    "size": len(response.content),
+                    "update_id": update_id,
+                    "uploaded_at": now,
+                    "error": str(error)[:3000],
+                }
+                _send(
+                    token,
+                    chat_id,
+                    "⚠️ Manual video was received but its spoken property details "
+                    "could not be verified. Nothing will be published. "
+                    f"Reason: {str(error)[:500]}",
+                )
+                print(
+                    f"Manual video {unique_id} stored at {key}; "
+                    f"audio analysis failed: {error}"
+                )
+                continue
+
+            job_path = Path("data/video_jobs") / f"{generated_manual_id}.json"
+            _save(job_path, manual_job)
+            state["files"][unique_id] = {
+                "status": "uploaded_manual_audio_verified",
+                "video_id": generated_manual_id,
+                "r2_key": key,
+                "size": len(response.content),
+                "update_id": update_id,
+                "uploaded_at": now,
+                "manual_audio": manual_job["manual_audio"],
+            }
+            queue.setdefault("prompts", []).append({
+                "video_id": generated_manual_id,
+                "status": "assigned_to_r2_upload",
+                "source_type": "manual_audio",
+                "r2_key": key,
+                "telegram_file_unique_id": unique_id,
+                "uploaded_at": now,
+            })
+            content_preview = manual_job.get("marketing_hook") or (
+                f"{manual_job['property']['property_type']} in "
+                f"{manual_job['property_location']}"
+            )
+            confirmation = (
+                "✅ Manual property video received and audio verified\n"
+                f"PUBLISH_ID: {generated_manual_id}\n"
+                f"Property: {content_preview}\n"
+                f"Uploaded to R2: {key}\n"
+                "Caption, description and hashtags will be generated from the "
+                "spoken details and published automatically."
+            )
+            print(
+                f"Telegram manual video {unique_id} -> {key}; "
+                f"PUBLISH_ID {generated_manual_id}"
+            )
+        elif explicit_video_id:
             state["files"][unique_id] = {
                 "status": "uploaded_exact_video_id",
                 "video_id": explicit_video_id,
