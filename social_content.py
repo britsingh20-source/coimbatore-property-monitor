@@ -81,21 +81,12 @@ def build_social_content(job: dict) -> dict[str, str | list[str]]:
     selling_points = _clean_list(job.get("selling_points"))
     highlights = _unique([*selling_points, *amenities])[:5]
 
+    # Keep Instagram captions focused: three relevant hashtags only.
     hashtags = [
+        _hashtag(f"{location.split(',')[0].strip()}Property"),
         "#CoimbatoreProperty",
-        _hashtag(f"{location}Property"),
         "#CoimbatoreRealEstate",
     ]
-    if manual_audio:
-        area = location.split(",")[0].strip()
-        hashtags = _unique([
-            *hashtags,
-            _hashtag(kind),
-            _hashtag(f"{area}RealEstate"),
-            "#PropertyForSale",
-            "#TamilNaduRealEstate",
-            "#HouseHunting",
-        ])[:8]
 
     caption_parts = [
         f"🏠 {hook}",
