@@ -140,11 +140,23 @@ Rules for selling_points and spoken_facts:
         else:
             raise TimeoutError("Gemini did not finish processing the video in 10 minutes")
 
-        response = client.models.generate_content(
-            model=MODEL,
-            contents=[uploaded_file, prompt],
-        )
-        result = _parse_json(response.text)
+        for attempt in range(6):
+            try:
+                response = client.models.generate_content(
+                    model=MODEL,
+                    contents=[uploaded_file, prompt],
+                )
+                result = _parse_json(response.text)
+                break
+            except Exception as exc:
+                message = str(exc).upper()
+                transient = any(
+                    marker in message
+                    for marker in ("429", "500", "503", "RESOURCE_EXHAUSTED", "UNAVAILABLE")
+                )
+                if not transient or attempt == 5:
+                    raise
+                time.sleep(min(5 * (2 ** attempt), 60))
     finally:
         if uploaded_file is not None:
             try:
