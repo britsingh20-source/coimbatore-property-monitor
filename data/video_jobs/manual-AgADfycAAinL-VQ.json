@@ -1,0 +1,46 @@
+{
+  "video_id": "manual-AgADfycAAinL-VQ",
+  "source_type": "manual_audio",
+  "property_location": "Shanthimedu",
+  "property": {
+    "property_type": "Residential Property",
+    "bhk": "",
+    "price": "₹59 lakhs (negotiable)",
+    "land_area": "2.75 cents",
+    "built_up_area": "1,175 sq.ft",
+    "facing": "",
+    "road_width": "",
+    "parking": "",
+    "approval": "",
+    "amenities": [
+      "Gated community"
+    ],
+    "nearby_landmarks": [
+      "700 metres from MTP Main Road"
+    ]
+  },
+  "verified_facts": [
+    "Shanthimedu main-road project",
+    "Land area: 2.75 cents",
+    "Built-up area: 1,175 sq.ft",
+    "Price: ₹59 lakhs, negotiable",
+    "700 metres from MTP Main Road",
+    "Gated community",
+    "Contact: 9003787621"
+  ],
+  "selling_points": [
+    "Main-road project",
+    "Gated community",
+    "700 metres from MTP Main Road"
+  ],
+  "marketing_hook": "Shanthimedu main-road property with 2.75 cents of land and 1,175 sq.ft built-up area, priced at ₹59 lakhs negotiable.",
+  "contact_number": "9003787621",
+  "manual_audio": {
+    "transcript": "",
+    "analysis_model": "user_verified_video_footer",
+    "fact_policy": "visible_footer_details_confirmed_by_user"
+  },
+  "status": "auto_approved",
+  "approval_mode": "explicit_manual_publish_caption_plus_user_verified_footer",
+  "aspect_ratio": "9:16"
+}
