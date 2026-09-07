@@ -1,0 +1,160 @@
+{
+  "video_id": "psLArviRnI4",
+  "source_url": "https://www.youtube.com/watch?v=psLArviRnI4",
+  "property_location": "Nariyampalli, Annur to Avinashi Main Road, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "2.75 Cents (30 x 40 ft)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹7,00,000",
+    "facing": "North",
+    "road_width": "23 Feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP & RERA Approved"
+  },
+  "verified_facts": "Total price is 7 Lakhs for 2.75 Cents plot area., Plot dimensions are 30 ft x 40 ft., Plot orientation includes North-facing and corner plot options., Property features 23 ft wide access road., Layout is DTCP and RERA approved., Located near Nariyampalli on the Annur to Avinashi Main Road, approximately 5 km from Annur.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking naturally to camera with casual conversational Tamil and standard real-estate terms.",
+    "hook_strategy": "Hook viewers immediately with the prime main road location near Annur followed directly by the attractive 7 Lakhs pricing.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை அண்ணூர் டூ அவிநாசி மெயின் ரோட்ல, அண்ணூர்ல இருந்து 5 km-ல இருக்கிற நரியம்பள்ளியில ஒரு அருமையான location-ல plot அமைஞ்சிருக்குங்க.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-text-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "வெறும் 7 லட்சத்துல நிலம் வாங்க நினைக்கிறவங்களுக்கு இது ஒரு செம்ம option.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "price-pop",
+        "purpose": "value-proposition"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல plot area பாத்தீங்கனா 30 by 40 dimensions-ல 2.75 Cents நிலம் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "dimension-overlay",
+        "purpose": "property-details"
+      },
+      {
+        "name": "road",
+        "voice": "அதே மாதிரி சைட்டுக்கு 23 Feet அகலமான road access வசதியும் கொடுத்திருக்காங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "road-width-highlight",
+        "purpose": "feature-highlight"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல North facing plots மற்றும் corner plot options-ம் கிடைக்கக்கூடியதா இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "compass-north",
+        "purpose": "feature-highlight"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம் என்னன்னா, இந்த layout DTCP மற்றும் RERA approval பெற்றது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust-builder"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல site visit வரயோ இல்ல details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "call-to-action-button",
+        "purpose": "conversion"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/psLArviRnI4/",
+  "optional_owned_audio": "assets/audio/psLArviRnI4.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Nariyampalli, Annur to Avinashi Main Road, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Level vacant plots marked with yellow boundary pegs and plot numbers, accessed via wide unpaved gravel roads, situated close to coconut plantations and power lines.. Neighbourhood: Suburban layout near Nariyampalli village along the Annur-Avinashi highway, surrounded by green agricultural fields, coconut groves, low-rise residential houses, and electrical utility infrastructure.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Nariyampalli, Annur to Avinashi Main Road, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Level vacant plots marked with yellow boundary pegs and plot numbers, accessed via wide unpaved gravel roads, situated close to coconut plantations and power lines.. Neighbourhood: Suburban layout near Nariyampalli village along the Annur-Avinashi highway, surrounded by green agricultural fields, coconut groves, low-rise residential houses, and electrical utility infrastructure.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Nariyampalli, Annur to Avinashi Main Road, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Level vacant plots marked with yellow boundary pegs and plot numbers, accessed via wide unpaved gravel roads, situated close to coconut plantations and power lines.. Neighbourhood: Suburban layout near Nariyampalli village along the Annur-Avinashi highway, surrounded by green agricultural fields, coconut groves, low-rise residential houses, and electrical utility infrastructure.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Nariyampalli, Annur to Avinashi Main Road, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Level vacant plots marked with yellow boundary pegs and plot numbers, accessed via wide unpaved gravel roads, situated close to coconut plantations and power lines.. Neighbourhood: Suburban layout near Nariyampalli village along the Annur-Avinashi highway, surrounded by green agricultural fields, coconut groves, low-rise residential houses, and electrical utility infrastructure.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
