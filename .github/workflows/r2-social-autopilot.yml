@@ -109,7 +109,7 @@ jobs:
           R2_SOCIAL_PREFIX: social-ready/
           TELEGRAM_MAX_VIDEO_BYTES: "20971520"
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MANUAL_AUDIO_MODEL: gemini-3.5-flash-lite
+          GEMINI_MANUAL_AUDIO_MODEL: gemini-3.6-flash
           TELEGRAM_WEBHOOK_UPDATE_JSON: ${{ github.event_name == 'repository_dispatch' && toJson(github.event.client_payload.update) || '' }}
         run: python telegram_r2_ingest.py
       - name: Scan R2 and publish new property videos
