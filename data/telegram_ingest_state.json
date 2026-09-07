@@ -293,7 +293,14 @@
       "uploaded_at": "2026-09-07T11:02:21.249722+00:00"
     },
     "AgADfycAAinL-VQ": {
+      "manual_audio": {
+        "analysis_model": "user_verified_video_footer",
+        "fact_policy": "visible_footer_details_confirmed_by_user",
+        "transcript": ""
+      },
       "manual_caption_confirmed_at": "2026-09-07T11:37:44.417159+00:00",
+      "paired_at": "2026-09-07T13:48:56.967Z",
+      "paired_by": "user_confirmed_visible_footer",
       "r2_key": "social-ready/telegram-AgADfycAAinL-VQ.mp4",
       "recovery_reason": "user_confirmed_MANUAL_PUBLISH_caption",
       "recovery_requested_at": "2026-09-07T11:14:59.274Z",
@@ -303,14 +310,7 @@
       "status": "uploaded_manual_footer_verified",
       "update_id": 789574093,
       "uploaded_at": "2026-09-07T11:11:19.398586+00:00",
-      "video_id": "manual-AgADfycAAinL-VQ",
-      "paired_at": "2026-09-07T13:48:56.967Z",
-      "paired_by": "user_confirmed_visible_footer",
-      "manual_audio": {
-        "transcript": "",
-        "analysis_model": "user_verified_video_footer",
-        "fact_policy": "visible_footer_details_confirmed_by_user"
-      }
+      "video_id": "manual-AgADfycAAinL-VQ"
     },
     "AgADjCEAAmSZyFQ": {
       "duplicate_of": "AgADriEAAmSZyFQ",

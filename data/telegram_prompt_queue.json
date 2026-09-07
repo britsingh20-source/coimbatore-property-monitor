@@ -593,14 +593,14 @@
       "video_id": "gUrleJ_lw2s"
     },
     {
-      "video_id": "manual-AgADfycAAinL-VQ",
-      "status": "assigned_to_r2_upload",
-      "source_type": "manual_audio",
+      "assigned_at": "2026-09-07T13:48:56.967Z",
       "r2_key": "social-ready/telegram-AgADfycAAinL-VQ.mp4",
+      "source_type": "manual_audio",
+      "status": "published",
       "telegram_file_unique_id": "AgADfycAAinL-VQ",
       "uploaded_at": "2026-09-07T11:11:19.398586+00:00",
-      "assigned_at": "2026-09-07T13:48:56.967Z",
-      "verification_source": "user_confirmed_visible_footer"
+      "verification_source": "user_confirmed_visible_footer",
+      "video_id": "manual-AgADfycAAinL-VQ"
     }
   ]
 }

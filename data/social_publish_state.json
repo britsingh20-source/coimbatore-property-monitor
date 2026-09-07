@@ -2164,90 +2164,129 @@
       "status": "waiting_for_video_id"
     },
     "social-ready/telegram-AgADfycAAinL-VQ.mp4": {
-      "candidate_video_ids": [
-        "KiJEPqoUCTw",
-        "6RCA3cUaZ2Y",
-        "7bj_axUSMmM",
-        "OEul0dWNXSU",
-        "94Y_3Jp2hQw",
-        "twP0glR4EyU",
-        "xTvjrweqpy4",
-        "3HCxfx5DoJs",
-        "PAs5DHZmBKo",
-        "f330aqcYbfE",
-        "Zct1W4hIERI",
-        "y07Izy9Qikw",
-        "M0UauIWBWNY",
-        "tkJnGvIo32g",
-        "S_NnYorPyM0",
-        "DZ_0GnMaT9k",
-        "UmiDPhMC5YY",
-        "S0evf4Cxoqc",
-        "0-1lYKdK5dI",
-        "e6GoUUW2RAA",
-        "PNTtybJTcgk",
-        "YxTt5-I6FRw",
-        "jdO7vT9yds0",
-        "nq0mpD6B2TQ",
-        "kl1Ofu9mqeU",
-        "nvdcB9maHh4",
-        "niCDCM0rWBM",
-        "91y0q3A7G8s",
-        "GzZOCQNDFS8",
-        "3A__QS75exs",
-        "chxEiAv0D3k",
-        "DGnv0PLVJb0",
-        "GnB8R9jzyNg",
-        "3Qb3cRqT85Q",
-        "FikmwXmSPPM",
-        "Eh4PyhVMoHw",
-        "FXZcvqgHqys",
-        "oy7DU8LRVGE",
-        "MJxoOMpbHRE",
-        "iNlaHoWV2Hw",
-        "-ZveRaGaOCk",
-        "gVp_3zKEN6I",
-        "BALTOB4A6_c",
-        "jrLWenpG3Y8",
-        "heG7hx02Q3A",
-        "d7c3IMAR194",
-        "Kgy_c2UCFc0",
-        "ejH4FBRZ9rs",
-        "jCzI3N7Kc1k",
-        "xOGTkdfg7mU",
-        "mF6aejsSTDk",
-        "8gKjM9SmMzQ",
-        "_obNi427hr4",
-        "d9zoo10zv2o",
-        "YW_1IWC4aEk",
-        "K9UjPyeZZr8",
-        "OhN4bnvLpSE",
-        "ZpnuesKsc3s",
-        "ti_alU3nnRA",
-        "UhwEuFJHPLM",
-        "MWVf2vWNXPw",
-        "T0KcXzowSFI",
-        "FKHXc5WSQ_E",
-        "qNcpFyj5bNs",
-        "eAJMYyc2VG0",
-        "eECzpeUkyRY",
-        "JNO9hN2xYg4",
-        "iCbNe176ymw",
-        "BgIePN-H4Kk",
-        "Eus4n_Nmph0",
-        "nlAsGhAfr0I",
-        "4mjf9OKk12g",
-        "rVJp1ez9SQs",
-        "dFC01ZlmNdA",
-        "sG3UExK9Uxo",
-        "SSgBL9btp1U",
-        "psLArviRnI4",
-        "h5ITzu3lL30"
-      ],
+      "content": {
+        "caption": "🏠 Shanthimedu main-road property with 2.75 cents of land and 1,175 sq.ft built-up area, priced at ₹59 lakhs negotiable.\n\n📍 Location: Shanthimedu\n🏡 Property: Residential Property\n💰 Price: ₹59 lakhs (negotiable)\n📐 Land: 2.75 cents\n🏗️ Built-up: 1,175 sq.ft\n\n✨ Highlights:\n• Main-road project\n• Gated community\n• 700 metres from MTP Main Road\n\n📌 Nearby:\n• 700 metres from MTP Main Road\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #ShanthimeduProperty #CoimbatoreRealEstate #ResidentialProperty #ShanthimeduRealEstate #PropertyForSale #TamilNaduRealEstate #HouseHunting",
+        "hashtags": [
+          "#CoimbatoreProperty",
+          "#ShanthimeduProperty",
+          "#CoimbatoreRealEstate",
+          "#ResidentialProperty",
+          "#ShanthimeduRealEstate",
+          "#PropertyForSale",
+          "#TamilNaduRealEstate",
+          "#HouseHunting"
+        ],
+        "title": "₹59 lakhs (negotiable) Residential Property in Shanthimedu | Site Visit 9003787621",
+        "youtube_description": "Shanthimedu main-road property with 2.75 cents of land and 1,175 sq.ft built-up area, priced at ₹59 lakhs negotiable.. Watch the complete property walkthrough.\n\n📍 Location: Shanthimedu\n🏡 Property: Residential Property\n💰 Price: ₹59 lakhs (negotiable)\n📐 Land: 2.75 cents\n🏗️ Built-up: 1,175 sq.ft\n\nHighlights:\n- Main-road project\n- Gated community\n- 700 metres from MTP Main Road\n\nNearby landmarks:\n- 700 metres from MTP Main Road\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the spoken video narration. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #ShanthimeduProperty #CoimbatoreRealEstate #ResidentialProperty #ShanthimeduRealEstate #PropertyForSale #TamilNaduRealEstate #HouseHunting"
+      },
       "etag": "3fcd3591dc65164484459299c412a41c-3",
-      "match_error": "Error code: 403 - {'error': {'message': 'The caller does not have permission', 'code': 'permission_denied'}}",
-      "platforms": {},
-      "status": "match_error"
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "creation_id": "17896611870599708",
+            "media_id": "18174544717429968",
+            "processing": {
+              "id": "17896611870599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "thumb_offset_ms": 2000
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17896612101599708",
+            "media_id": "18559675288076266",
+            "processing": {
+              "id": "17896612101599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "Shanthimedu main-road property with 2.75 cents of land and 1,175 sq.ft built-up area, priced at ₹59 lakhs negotiable.. Watch the complete property walkthrough.\n\n📍 Location: Shanthimedu\n🏡 Property: Residential Property\n💰 Price: ₹59 lakhs (negotiable)\n📐 Land: 2.75 cents\n🏗️ Built-up: 1,175 sq.ft\n\nHighlights:\n- Main-road project\n- Gated community\n- 700 metres from MTP Main Road\n\nNearby landmarks:\n- 700 metres from MTP Main Road\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the spoken video narration. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #ShanthimeduProperty #CoimbatoreRealEstate #ResidentialProperty #ShanthimeduRealEstate #PropertyForSale #TamilNaduRealEstate #HouseHunting",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "Shanthimedu main-road property with 2.75 cents of land and 1,175 sq.ft built-up area, priced at ₹59 lakhs negotiable.. Watch the complete property walkthrough.\n\n📍 Location: Shanthimedu\n🏡 Property: Residential Property\n💰 Price: ₹59 lakhs (negotiable)\n📐 Land: 2.75 cents\n🏗️ Built-up: 1,175 sq.ft\n\nHighlights:\n- Main-road project\n- Gated community\n- 700 metres from MTP Main Road\n\nNearby landmarks:\n- 700 metres from MTP Main Road\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the spoken video narration. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CoimbatoreProperty #ShanthimeduProperty #CoimbatoreRealEstate #ResidentialProperty #ShanthimeduRealEstate #PropertyForSale #TamilNaduRealEstate #HouseHunting",
+                "title": "₹59 lakhs (negotiable) Residential Property in Shanthimedu | Site Visit 9003787621"
+              },
+              "publishedAt": "2026-09-07T13:55:42Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/KnriC9vdnr8/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/KnriC9vdnr8/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/KnriC9vdnr8/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "₹59 lakhs (negotiable) Residential Property in Shanthimedu | Site Visit 9003787621"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "KnriC9vdnr8"
+          },
+          "status": "published"
+        }
+      },
+      "status": "matched",
+      "video_id": "manual-AgADfycAAinL-VQ",
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 247921,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 46.307,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 247886,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 46.333333,
+          "height": 1280,
+          "width": 720
+        }
+      }
     },
     "social-ready/telegram-AgADjCEAAmSZyFQ.mp4": {
       "candidate_video_ids": [
