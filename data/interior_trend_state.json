@@ -31,7 +31,8 @@
     "mDIElkwZbtI",
     "1mK3nGydU9k",
     "Av-C0RXY45c",
-    "uclvHfgEC1I"
+    "uclvHfgEC1I",
+    "2DUoRiCIpKM"
   ],
   "history": [
     {
@@ -193,7 +194,12 @@
       "video_id": "uclvHfgEC1I",
       "creator": "DesignCafe",
       "url": "https://www.youtube.com/watch?v=uclvHfgEC1I"
+    },
+    {
+      "video_id": "2DUoRiCIpKM",
+      "creator": "Interior Coach",
+      "url": "https://www.youtube.com/watch?v=2DUoRiCIpKM"
     }
   ],
-  "night_channel_cursor": 1
+  "night_channel_cursor": 0
 }
