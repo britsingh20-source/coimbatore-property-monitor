@@ -1,0 +1,156 @@
+{
+  "video_id": "gUrleJ_lw2s",
+  "source_url": "https://www.youtube.com/watch?v=gUrleJ_lw2s",
+  "property_location": "Idikarai, Thudiyalur to Kovilpalayam Main Road, near Athipalayam Four Corner, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Villa",
+    "bhk": "3 BHK",
+    "land_area": "5 Cents",
+    "built_up_area": "2200 sq.ft.",
+    "price": "Rs. 98 Lakhs - 1.15 Crore",
+    "facing": "East",
+    "road_width": "30 Feet",
+    "parking": "Covered Car Parking (17' x 12')",
+    "approval": "DTCP & RERA Approved"
+  },
+  "verified_facts": "3 BHK duplex model villa constructed using Japandi design theme/philosophy., Located within 'Turiya', a 70-cent gated community project by Era Properties comprising 13 villas., Features high double-height ceiling living hall, modular kitchen with dining, and dedicated walk-in wardrobe dressing areas for all 3 bedrooms., Constructed using branded materials like Jaquar, Finolex, and Kajaria.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera in natural conversational Tamil, using clean visuals and fast cuts.",
+    "hook_strategy": "Highlight the prime location near Athipalayam Four Corner combined with modern Japandi architecture.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை துடியலூர் - கோவில்பாளையம் மெயின் ரோடு, ஆத்திபாளையம் ஃபோர் கார்னர் பக்கத்துல இருக்கற இதிகரையில தான் இந்த பிராப்பர்ட்டி அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இதுல 'Turiya' கேடட் கம்யூனிட்டில 2200 sq.ft built-up-ல Japandi டிசைன்ல 3 BHK டூப்ளக்ஸ் வில்லா இருக்கு. டபுள் ஹைட் சீலிங் ஹால், மாடுலார் கிச்சன் அப்புறம் வாக்-இன் வார்ட்ரோப் வசதியும் பண்ணிருக்காங்க.",
+        "broll": [
+          "living_room",
+          "interior",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "showcase_interior"
+      },
+      {
+        "name": "land",
+        "voice": "5 Cents land area-ல, 17' x 12' சைஸ்ல கவர்டு கார் பார்க்கிங் அமைச்சுருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "dimension-callout",
+        "purpose": "land_details"
+      },
+      {
+        "name": "facing",
+        "voice": "இந்த அழகான வில்லா பாத்தீங்கனா East facing-ல லேஅவுட் பண்ணிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "compass-east",
+        "purpose": "facing_info"
+      },
+      {
+        "name": "road",
+        "voice": "கம்யூனிட்டிக்குள்ள 30 feet பேவர் பிளாக் road அப்புறம் 24/7 செக்யூரிட்டி வசதி இருக்கு.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room"
+        ],
+        "vfx": "measurement-overlay",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "approval",
+        "voice": "இது முழுக்க முழுக்க DTCP அண்ட் RERA approval பெற்ற பிராப்பர்ட்டி.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "stamp-approval",
+        "purpose": "trust_verification"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price பாத்தீங்கனா 98 Lakhs-லிருந்து 1.15 Crore வரை வருது.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-card",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details தெரிஞ்சுக்க அண்ட் site visit புக் பண்ண உடனே கால் பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "land"
+        ],
+        "vfx": "contact-overlay",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/gUrleJ_lw2s/",
+  "optional_owned_audio": "assets/audio/gUrleJ_lw2s.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-storey villa with textured cream/beige exterior walls, wood-finished balcony ceiling soffit, glass safety railing, and tiled/paver parking space.. Neighbourhood: Gated residential community set in a peaceful semi-urban environment near Idikarai, surrounded by lush green plots, residential developments, and paved internal access roads.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-storey villa with textured cream/beige exterior walls, wood-finished balcony ceiling soffit, glass safety railing, and tiled/paver parking space.. Neighbourhood: Gated residential community set in a peaceful semi-urban environment near Idikarai, surrounded by lush green plots, residential developments, and paved internal access roads.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-storey villa with textured cream/beige exterior walls, wood-finished balcony ceiling soffit, glass safety railing, and tiled/paver parking space.. Neighbourhood: Gated residential community set in a peaceful semi-urban environment near Idikarai, surrounded by lush green plots, residential developments, and paved internal access roads.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-storey villa with textured cream/beige exterior walls, wood-finished balcony ceiling soffit, glass safety railing, and tiled/paver parking space.. Neighbourhood: Gated residential community set in a peaceful semi-urban environment near Idikarai, surrounded by lush green plots, residential developments, and paved internal access roads.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
