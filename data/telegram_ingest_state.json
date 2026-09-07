@@ -373,15 +373,14 @@
         "psLArviRnI4",
         "h5ITzu3lL30"
       ],
-      "error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
       "manual_caption_confirmed_at": "2026-09-07T11:33:19.948899+00:00",
       "r2_key": "social-ready/telegram-AgADfycAAinL-VQ.mp4",
       "recovery_reason": "user_confirmed_MANUAL_PUBLISH_caption",
       "recovery_requested_at": "2026-09-07T11:14:59.274Z",
-      "retry_reason": "retry_with_gemini_files_api",
-      "retry_requested_at": "2026-09-07T11:31:25.556Z",
+      "retry_reason": "retry_transient_gemini_demand_with_backoff",
+      "retry_requested_at": "2026-09-07T11:35:59.954Z",
       "size": 18876179,
-      "status": "manual_audio_analysis_failed",
+      "status": "manual_audio_recovery_requested",
       "update_id": 789574093,
       "uploaded_at": "2026-09-07T11:11:19.398586+00:00",
       "video_id": "manual-AgADfycAAinL-VQ"
