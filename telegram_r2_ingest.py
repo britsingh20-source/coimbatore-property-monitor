@@ -335,10 +335,28 @@ def ingest() -> int:
         updates = body.get("result") or []
     if not updates:
         print("No new Telegram messages.")
-        return 0
 
     client = _r2()
     uploaded = 0
+    manual_recoveries = [
+        (unique_id, item)
+        for unique_id, item in state.setdefault("files", {}).items()
+        if item.get("status") == "manual_audio_recovery_requested"
+        and item.get("r2_key")
+    ]
+    for unique_id, existing in manual_recoveries:
+        _recover_edited_manual_upload(
+            client,
+            bucket,
+            unique_id,
+            existing,
+            int(existing.get("update_id") or state.get("last_update_id") or 0),
+            state,
+            queue,
+            token,
+            chat_id,
+        )
+
     for update in updates:
         update_id = int(update.get("update_id") or 0)
         state["last_update_id"] = max(int(state.get("last_update_id") or 0), update_id)
