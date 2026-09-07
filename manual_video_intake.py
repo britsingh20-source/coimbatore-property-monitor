@@ -3,13 +3,16 @@ from __future__ import annotations
 import json
 import os
 import re
+import tempfile
+import time
 import unicodedata
 from typing import Any
 
+import requests
 from google import genai
 
 
-MODEL = os.environ.get("GEMINI_MANUAL_AUDIO_MODEL", "gemini-3.6-flash")
+MODEL = os.environ.get("GEMINI_MANUAL_AUDIO_MODEL", "gemini-2.5-flash")
 MISSING = {"", "NOT SPECIFIED", "UNKNOWN", "N/A", "NONE", "NULL"}
 MANUAL_PATTERN = re.compile(
     r"(?:^|\s)(?:MANUAL_PUBLISH|MANUAL[\s_-]*PUBLISH|MODE\s*[:=]\s*MANUAL)(?:\s|$)",
@@ -107,14 +110,52 @@ Rules for selling_points and spoken_facts:
 - Keep each entry concise.
 """
     client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
-    interaction = client.interactions.create(
-        model=MODEL,
-        input=[
-            {"type": "video", "uri": video_url},
-            {"type": "text", "text": prompt},
-        ],
-    )
-    result = _parse_json(interaction.output_text)
+    uploaded_file = None
+    temp_path = ""
+    try:
+        with tempfile.NamedTemporaryFile(suffix=".mp4", delete=False) as temp_video:
+            temp_path = temp_video.name
+            with requests.get(
+                video_url,
+                stream=True,
+                timeout=(30, 300),
+            ) as response:
+                response.raise_for_status()
+                for chunk in response.iter_content(chunk_size=1024 * 1024):
+                    if chunk:
+                        temp_video.write(chunk)
+
+        uploaded_file = client.files.upload(file=temp_path)
+        for _ in range(120):
+            state = getattr(uploaded_file, "state", "")
+            state_name = getattr(state, "name", str(state)).upper()
+            if state_name.endswith("ACTIVE"):
+                break
+            if state_name.endswith("FAILED"):
+                raise RuntimeError(
+                    f"Gemini file processing failed for {uploaded_file.name}"
+                )
+            time.sleep(5)
+            uploaded_file = client.files.get(name=uploaded_file.name)
+        else:
+            raise TimeoutError("Gemini did not finish processing the video in 10 minutes")
+
+        response = client.models.generate_content(
+            model=MODEL,
+            contents=[uploaded_file, prompt],
+        )
+        result = _parse_json(response.text)
+    finally:
+        if uploaded_file is not None:
+            try:
+                client.files.delete(name=uploaded_file.name)
+            except Exception:
+                pass
+        if temp_path:
+            try:
+                os.unlink(temp_path)
+            except FileNotFoundError:
+                pass
     normalized = {
         "transcript": _clean(result.get("transcript")),
         "property_location": _clean(result.get("property_location")),
