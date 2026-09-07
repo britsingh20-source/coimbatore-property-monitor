@@ -9,7 +9,7 @@ from typing import Any
 from google import genai
 
 
-MODEL = os.environ.get("GEMINI_MANUAL_AUDIO_MODEL", "gemini-3.5-flash-lite")
+MODEL = os.environ.get("GEMINI_MANUAL_AUDIO_MODEL", "gemini-3.6-flash")
 MISSING = {"", "NOT SPECIFIED", "UNKNOWN", "N/A", "NONE", "NULL"}
 MANUAL_PATTERN = re.compile(
     r"(?:^|\s)(?:MANUAL_PUBLISH|MANUAL[\s_-]*PUBLISH|MODE\s*[:=]\s*MANUAL)(?:\s|$)",
