@@ -207,6 +207,110 @@ def _oldest_pending(queue: dict) -> dict | None:
     return pending[0] if pending else None
 
 
+def _recover_edited_manual_upload(
+    client,
+    bucket: str,
+    unique_id: str,
+    existing: dict,
+    update_id: int,
+    state: dict,
+    queue: dict,
+    token: str,
+    chat_id: str,
+) -> bool:
+    """Turn a caption-edited waiting upload into an explicit manual-audio job."""
+    key = str(existing.get("r2_key") or "")
+    generated_manual_id = manual_video_id(unique_id)
+    now = datetime.now(timezone.utc).isoformat()
+    video_url = client.generate_presigned_url(
+        "get_object",
+        Params={"Bucket": bucket, "Key": key},
+        ExpiresIn=21600,
+    )
+    try:
+        analysis = analyze_manual_video(video_url)
+        manual_job = build_manual_job(generated_manual_id, analysis)
+    except Exception as error:
+        existing.update(
+            {
+                "status": "manual_audio_analysis_failed",
+                "video_id": generated_manual_id,
+                "update_id": update_id,
+                "manual_caption_confirmed_at": now,
+                "error": str(error)[:3000],
+            }
+        )
+        _send(
+            token,
+            chat_id,
+            "⚠️ Manual video was received but its spoken property details "
+            "could not be verified. Nothing will be published. "
+            f"Reason: {str(error)[:500]}",
+        )
+        print(
+            f"Edited manual caption accepted for {unique_id} at {key}; "
+            f"audio analysis failed: {error}"
+        )
+        return False
+
+    job_path = Path("data/video_jobs") / f"{generated_manual_id}.json"
+    _save(job_path, manual_job)
+    existing.update(
+        {
+            "status": "uploaded_manual_audio_verified",
+            "video_id": generated_manual_id,
+            "update_id": update_id,
+            "paired_at": now,
+            "paired_by": "edited_manual_publish_caption",
+            "manual_caption_confirmed_at": now,
+            "manual_audio": manual_job["manual_audio"],
+        }
+    )
+    existing.pop("candidate_video_ids", None)
+    assignment = next(
+        (
+            item
+            for item in queue.get("prompts", [])
+            if item.get("video_id") == generated_manual_id
+            and item.get("r2_key") == key
+        ),
+        None,
+    )
+    if assignment is None:
+        queue.setdefault("prompts", []).append(
+            {
+                "video_id": generated_manual_id,
+                "status": "assigned_to_r2_upload",
+                "source_type": "manual_audio",
+                "r2_key": key,
+                "telegram_file_unique_id": unique_id,
+                "uploaded_at": existing.get("uploaded_at") or now,
+            }
+        )
+    else:
+        assignment["status"] = "assigned_to_r2_upload"
+
+    content_preview = manual_job.get("marketing_hook") or (
+        f"{manual_job['property']['property_type']} in "
+        f"{manual_job['property_location']}"
+    )
+    _send(
+        token,
+        chat_id,
+        "✅ Edited MANUAL_PUBLISH caption accepted\n"
+        f"PUBLISH_ID: {generated_manual_id}\n"
+        f"Property: {content_preview}\n"
+        f"R2: {key}\n"
+        "Caption, description and hashtags were generated from the spoken "
+        "details. Social publishing can now continue.",
+    )
+    print(
+        f"Edited Telegram manual video {unique_id} recovered at {key}; "
+        f"PUBLISH_ID {generated_manual_id}"
+    )
+    return True
+
+
 def ingest() -> int:
     token = _required("TELEGRAM_BOT_TOKEN")
     chat_id = _required("TELEGRAM_CHAT_ID")
@@ -226,7 +330,7 @@ def ingest() -> int:
         body = _telegram(
             "getUpdates",
             token,
-            data={"offset": str(offset), "limit": "100", "timeout": "0", "allowed_updates": json.dumps(["message"])},
+            data={"offset": str(offset), "limit": "100", "timeout": "0", "allowed_updates": json.dumps(["message", "edited_message"])},
         )
         updates = body.get("result") or []
     if not updates:
@@ -238,7 +342,7 @@ def ingest() -> int:
     for update in updates:
         update_id = int(update.get("update_id") or 0)
         state["last_update_id"] = max(int(state.get("last_update_id") or 0), update_id)
-        message = update.get("message") or {}
+        message = update.get("message") or update.get("edited_message") or {}
         incoming_chat_id = str((message.get("chat") or {}).get("id") or "")
         if incoming_chat_id != chat_id:
             continue
@@ -334,8 +438,31 @@ def ingest() -> int:
             continue
 
         unique_id = str(attachment.get("file_unique_id") or attachment.get("file_id") or "")
-        if unique_id in state.setdefault("files", {}):
-            print(f"Duplicate Telegram video ignored: {unique_id}")
+        manual_requested = manual_publish_requested(message)
+        existing = state.setdefault("files", {}).get(unique_id)
+        if existing is not None:
+            recoverable_statuses = {
+                "uploaded_awaiting_content_match",
+                "uploaded_awaiting_video_id",
+            }
+            if (
+                manual_requested
+                and existing.get("status") in recoverable_statuses
+                and existing.get("r2_key")
+            ):
+                _recover_edited_manual_upload(
+                    client,
+                    bucket,
+                    unique_id,
+                    existing,
+                    update_id,
+                    state,
+                    queue,
+                    token,
+                    chat_id,
+                )
+            else:
+                print(f"Duplicate Telegram video ignored: {unique_id}")
             continue
 
         reference_video_id = _reference_video_id(message)
@@ -359,7 +486,6 @@ def ingest() -> int:
             for item in queue.get("prompts", [])
             if item.get("status") == "pending_mobile_upload" and item.get("video_id")
         ]
-        manual_requested = manual_publish_requested(message)
         explicit_video_id = "" if reference_video_id or manual_requested else _explicit_video_id(message)
         if explicit_video_id:
             resolved_video_id = _resolve_supplied_video_id(explicit_video_id, queue)
