@@ -601,6 +601,11 @@
       "uploaded_at": "2026-09-07T11:11:19.398586+00:00",
       "verification_source": "user_confirmed_visible_footer",
       "video_id": "manual-AgADfycAAinL-VQ"
+    },
+    {
+      "video_id": "5v05bcioDTY",
+      "sent_at": "2026-09-07T16:31:39.221321+00:00",
+      "status": "pending_mobile_upload"
     }
   ]
 }
