@@ -307,7 +307,7 @@
       "manual_recovery_reason": "user_confirmed_MANUAL_PUBLISH_2026-09-08",
       "r2_key": "social-ready/telegram-AgADfCcAAinL-VQ.mp4",
       "size": 18876179,
-      "status": "manual_audio_analysis_failed",
+      "status": "manual_audio_recovery_requested",
       "update_id": 789574091,
       "uploaded_at": "2026-09-07T11:02:21.249722+00:00",
       "video_id": "manual-AgADfCcAAinL-VQ"
