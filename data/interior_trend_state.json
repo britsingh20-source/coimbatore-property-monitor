@@ -33,7 +33,8 @@
     "Av-C0RXY45c",
     "uclvHfgEC1I",
     "2DUoRiCIpKM",
-    "fRa83U6c0ts"
+    "fRa83U6c0ts",
+    "DEVssAmvNsI"
   ],
   "history": [
     {
@@ -205,6 +206,11 @@
       "video_id": "fRa83U6c0ts",
       "creator": "Ridhi Khosla Jalan",
       "url": "https://www.youtube.com/watch?v=fRa83U6c0ts"
+    },
+    {
+      "video_id": "DEVssAmvNsI",
+      "creator": "Ridhi Khosla Jalan",
+      "url": "https://www.youtube.com/watch?v=DEVssAmvNsI"
     }
   ],
   "night_channel_cursor": 0
