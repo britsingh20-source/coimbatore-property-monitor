@@ -34,7 +34,8 @@
     "uclvHfgEC1I",
     "2DUoRiCIpKM",
     "fRa83U6c0ts",
-    "DEVssAmvNsI"
+    "DEVssAmvNsI",
+    "na1AmFoXJVo"
   ],
   "history": [
     {
@@ -211,7 +212,12 @@
       "video_id": "DEVssAmvNsI",
       "creator": "Ridhi Khosla Jalan",
       "url": "https://www.youtube.com/watch?v=DEVssAmvNsI"
+    },
+    {
+      "video_id": "na1AmFoXJVo",
+      "creator": "DesignCafe",
+      "url": "https://www.youtube.com/watch?v=na1AmFoXJVo"
     }
   ],
-  "night_channel_cursor": 0
+  "night_channel_cursor": 1
 }
