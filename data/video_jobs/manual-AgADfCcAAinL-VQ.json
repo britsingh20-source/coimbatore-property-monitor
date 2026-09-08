@@ -1,0 +1,61 @@
+{
+  "approval_mode": "explicit_manual_publish_caption",
+  "aspect_ratio": "9:16",
+  "contact_number": "9003787621",
+  "manual_audio": {
+    "analysis_model": "gemini-2.5-flash",
+    "fact_policy": "spoken_audio_only_no_inference",
+    "transcript": "இந்த மாதிரி ப்ராப்பர்ட்டி எல்லாம் இந்த மாதிரி லொகேஷன்ல ஒன் டைம் தாங்க. விட்டாச்சு அப்படின்னா நீங்க திரும்ப திரும்ப யோசிப்பீங்க. ரெண்டே முக்கால் சென்ட்ல 1175 ஸ்கொயர் ஃபீட்ல அழகான கார் பார்க்கிங் ஸ்பேஸோட போர் ஃபெசிலிட்டி, 5000 லிட்டர் வாட்டர் டேங்க், 16க்கு 16ல ஸ்பேஷியஸான ஹால்ங்க. அழகான டைனிங் வித் கிச்சன், ஃபுல்லி ஃபர்னிஷ்டு கிச்சன்ங்க. அதுபோக ஆல் ஸ்பேஸ்ல கம்ப்ளீட்டா டிவி யூனிட், பூஜா யூனிட் அடிச்சு, கீழ ஒரு மாஸ்டர் பெட்ரூம். அதே மாதிரி மேல ஒரு மாஸ்டர் பெட்ரூம். ரெண்டுலயும் அட்டாச்டு பாத்ரூமோட சூப்பரான பால்கனி ஸ்பேஸோட ரெண்டே முக்கால் சென்ட்ல 1175 ஸ்கொயர் ஃபீட்ல சூப்பரான பால்கனி ஸ்பேஸோட ரோட்டுக்கு மேலேயே அதாவது மேட்டுப்பாளையம் மெயின் ரோட்ல இருந்து வெறும் 800 மீட்டர் தான் இந்த ப்ராப்பர்ட்டிக்கு. இந்த ப்ராப்பர்ட்டி பார்த்துட்டு இருக்கீங்கன்னா, புக்கிங் ஆகுறதுக்கு முன்னாடி காண்டாக்ட் பண்ணுங்க. மறக்காம நம்ம சேனலை ஃபாலோ பண்ணிக்கோங்க."
+  },
+  "marketing_hook": "A 2.75 cent property with 1175 sq.ft built-up area and car parking, located 800 meters from Mettupalayam Main Road, is a one-time opportunity.",
+  "property": {
+    "amenities": [
+      "Bore facility",
+      "5000 liter water tank",
+      "TV unit",
+      "Pooja unit",
+      "Attached bathrooms",
+      "Balcony space"
+    ],
+    "approval": "",
+    "bhk": "",
+    "built_up_area": "1175 sq.ft",
+    "facing": "",
+    "land_area": "2.75 cents",
+    "nearby_landmarks": [
+      "800 meters from Mettupalayam Main Road"
+    ],
+    "parking": "Car parking space",
+    "price": "",
+    "property_type": "House",
+    "road_width": ""
+  },
+  "property_location": "Near Mettupalayam Main Road",
+  "selling_points": [
+    "One-time opportunity",
+    "Spacious hall (16x16)",
+    "Beautiful dining with kitchen",
+    "Fully furnished kitchen",
+    "Contact before booking"
+  ],
+  "source_type": "manual_audio",
+  "status": "auto_approved",
+  "verified_facts": [
+    "This property is a one-time opportunity.",
+    "Land area is 2.75 cents.",
+    "Built-up area is 1175 sq.ft.",
+    "Includes car parking space.",
+    "Has bore facility.",
+    "Features a 5000 liter water tank.",
+    "The hall is spacious (16x16).",
+    "Comes with beautiful dining and a fully furnished kitchen.",
+    "Includes TV unit and Pooja unit.",
+    "There is one master bedroom downstairs.",
+    "There is one master bedroom upstairs.",
+    "Both master bedrooms have attached bathrooms.",
+    "The property has a balcony space.",
+    "It is located 800 meters from Mettupalayam Main Road.",
+    "Contact before booking."
+  ],
+  "video_id": "manual-AgADfCcAAinL-VQ"
+}

@@ -614,6 +614,14 @@
       "telegram_file_unique_id": "AgADGB4AAinLAVU",
       "uploaded_at": "2026-09-08T03:52:23.568265+00:00",
       "video_id": "manual-AgADGB4AAinLAVU"
+    },
+    {
+      "r2_key": "social-ready/telegram-AgADfCcAAinL-VQ.mp4",
+      "source_type": "manual_audio",
+      "status": "published",
+      "telegram_file_unique_id": "AgADfCcAAinL-VQ",
+      "uploaded_at": "2026-09-07T11:02:21.249722+00:00",
+      "video_id": "manual-AgADfCcAAinL-VQ"
     }
   ]
 }
