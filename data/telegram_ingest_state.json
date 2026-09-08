@@ -302,8 +302,8 @@
         "psLArviRnI4",
         "h5ITzu3lL30"
       ],
-      "error": "Audio must clearly state the location, property type, and at least one of BHK, price, land area or built-up area",
-      "manual_caption_confirmed_at": "2026-09-08T04:46:23.054979+00:00",
+      "error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+      "manual_caption_confirmed_at": "2026-09-08T05:21:02.231189+00:00",
       "manual_recovery_reason": "user_confirmed_MANUAL_PUBLISH_2026-09-08",
       "r2_key": "social-ready/telegram-AgADfCcAAinL-VQ.mp4",
       "size": 18876179,
