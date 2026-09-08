@@ -28,8 +28,6 @@ on:
   repository_dispatch:
     types: [telegram-property-upload]
   schedule:
-    # Six off-peak opportunities per hour reduce the chance that a Telegram
-    # upload waits when GitHub drops an individual scheduled event.
     - cron: "7,17,27,37,47,57 * * * *"
   push:
     branches:
@@ -54,8 +52,6 @@ on:
         type: boolean
 
 concurrency:
-  # Serialize with Property Monitor because both workflows update the shared
-  # Telegram prompt queue in the repository.
   group: property-automation-state
   cancel-in-progress: true
 
@@ -96,6 +92,29 @@ jobs:
             --data-urlencode "drop_pending_updates=false" \
             "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/deleteWebhook" >/dev/null
           echo "Telegram polling mode is active."
+
+      - name: Recover confirmed MANUAL_PUBLISH upload
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('data/telegram_ingest_state.json')
+          state = json.loads(path.read_text(encoding='utf-8'))
+          unique_id = 'AgADfCcAAinL-VQ'
+          item = state.setdefault('files', {}).get(unique_id)
+          if item and item.get('r2_key') and item.get('status') in {
+              'uploaded_awaiting_content_match',
+              'uploaded_awaiting_video_id',
+              'manual_audio_analysis_failed',
+          }:
+              item['status'] = 'manual_audio_recovery_requested'
+              item['manual_recovery_reason'] = 'user_confirmed_MANUAL_PUBLISH_2026-09-08'
+              path.write_text(json.dumps(state, ensure_ascii=False, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+              print(f'Recovery armed for {unique_id}: {item["r2_key"]}')
+          else:
+              print(f'No recovery state change needed for {unique_id}: {item}')
+          PY
 
       - name: Import new Telegram property videos to R2
         id: telegram_ingest
