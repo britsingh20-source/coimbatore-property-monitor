@@ -606,6 +606,14 @@
       "sent_at": "2026-09-07T16:31:39.221321+00:00",
       "status": "pending_mobile_upload",
       "video_id": "5v05bcioDTY"
+    },
+    {
+      "r2_key": "social-ready/telegram-AgADGB4AAinLAVU.mp4",
+      "source_type": "manual_audio",
+      "status": "published",
+      "telegram_file_unique_id": "AgADGB4AAinLAVU",
+      "uploaded_at": "2026-09-08T03:52:23.568265+00:00",
+      "video_id": "manual-AgADGB4AAinLAVU"
     }
   ]
 }

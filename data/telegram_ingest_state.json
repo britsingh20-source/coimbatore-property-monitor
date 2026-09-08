@@ -79,6 +79,22 @@
       "uploaded_at": "2026-08-24T07:56:15.806245+00:00",
       "video_id": "6jJtYT4MA_E"
     },
+    "AgADGB4AAinLAVU": {
+      "manual_audio": {
+        "analysis_model": "gemini-2.5-flash",
+        "fact_policy": "spoken_audio_only_no_inference",
+        "transcript": "நம்ம கோயம்புத்தூர் வடவள்ளில சோமையம் பாளையத்துல லொக்கேட் ஆயிருக்கிற 3 BHK வில்லாவதான் பாத்துட்டு இருக்கீங்க. இன்னைக்கு இருக்கிற கரண்ட் மார்க்கெட்ல எங்கள்ட்ட நிறைய பேர் கேக்குறது, சார் 90 லட்சம் ரூபாய்க்கு கீழ வீடு இல்லைங்களா வடவள்ளில? இது 90 லட்சம் ரூபாய்க்கு கீழ தாங்க. 90 லட்சம் ரூபான்றது லிஸ்டிங் கொடுத்திருக்கிறோம். பிரைஸ் ரொம்ப சர்ப்ரைசிங்கா இருக்கும். நீங்க பார்த்துட்டு இருக்கீங்க இந்த வீட பாத்துட்டு இருக்கீங்கன்னா இம்மீடியட்டா நம்ம நம்பரை காண்டாக்ட் பண்ணுங்க. மறக்காம நம்ம சேனலுக்கு ஃபாலோ பண்ணுங்க."
+      },
+      "manual_caption_confirmed_at": "2026-09-08T03:52:24.069184+00:00",
+      "paired_at": "2026-09-08T03:52:24.069184+00:00",
+      "paired_by": "edited_manual_publish_caption",
+      "r2_key": "social-ready/telegram-AgADGB4AAinLAVU.mp4",
+      "size": 18644078,
+      "status": "uploaded_manual_audio_verified",
+      "update_id": 789574095,
+      "uploaded_at": "2026-09-08T03:52:23.568265+00:00",
+      "video_id": "manual-AgADGB4AAinLAVU"
+    },
     "AgADISAAAl8jSVQ": {
       "received_at": "2026-08-22T04:23:10.845828+00:00",
       "status": "ignored_no_pending_prompt",
@@ -286,11 +302,15 @@
         "psLArviRnI4",
         "h5ITzu3lL30"
       ],
+      "error": "Audio must clearly state the location, property type, and at least one of BHK, price, land area or built-up area",
+      "manual_caption_confirmed_at": "2026-09-08T03:51:38.225637+00:00",
+      "manual_recovery_reason": "user_confirmed_MANUAL_PUBLISH_2026-09-08",
       "r2_key": "social-ready/telegram-AgADfCcAAinL-VQ.mp4",
       "size": 18876179,
-      "status": "uploaded_awaiting_video_id",
+      "status": "manual_audio_analysis_failed",
       "update_id": 789574091,
-      "uploaded_at": "2026-09-07T11:02:21.249722+00:00"
+      "uploaded_at": "2026-09-07T11:02:21.249722+00:00",
+      "video_id": "manual-AgADfCcAAinL-VQ"
     },
     "AgADfycAAinL-VQ": {
       "manual_audio": {
@@ -481,5 +501,5 @@
       "video_id": "tTgkkQPNeCo"
     }
   },
-  "last_update_id": 789574093
+  "last_update_id": 789574096
 }

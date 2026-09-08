@@ -1,0 +1,39 @@
+{
+  "approval_mode": "explicit_manual_publish_caption",
+  "aspect_ratio": "9:16",
+  "contact_number": "9003787621",
+  "manual_audio": {
+    "analysis_model": "gemini-2.5-flash",
+    "fact_policy": "spoken_audio_only_no_inference",
+    "transcript": "நம்ம கோயம்புத்தூர் வடவள்ளில சோமையம் பாளையத்துல லொக்கேட் ஆயிருக்கிற 3 BHK வில்லாவதான் பாத்துட்டு இருக்கீங்க. இன்னைக்கு இருக்கிற கரண்ட் மார்க்கெட்ல எங்கள்ட்ட நிறைய பேர் கேக்குறது, சார் 90 லட்சம் ரூபாய்க்கு கீழ வீடு இல்லைங்களா வடவள்ளில? இது 90 லட்சம் ரூபாய்க்கு கீழ தாங்க. 90 லட்சம் ரூபான்றது லிஸ்டிங் கொடுத்திருக்கிறோம். பிரைஸ் ரொம்ப சர்ப்ரைசிங்கா இருக்கும். நீங்க பார்த்துட்டு இருக்கீங்க இந்த வீட பாத்துட்டு இருக்கீங்கன்னா இம்மீடியட்டா நம்ம நம்பரை காண்டாக்ட் பண்ணுங்க. மறக்காம நம்ம சேனலுக்கு ஃபாலோ பண்ணுங்க."
+  },
+  "marketing_hook": "Discover a 3 BHK villa in Vadavalli, Somayampalayam, Coimbatore, listed under 90 lakh rupees with a surprising price.",
+  "property": {
+    "amenities": [],
+    "approval": "",
+    "bhk": "3 BHK",
+    "built_up_area": "",
+    "facing": "",
+    "land_area": "",
+    "nearby_landmarks": [],
+    "parking": "",
+    "price": "90 lakh rupees",
+    "property_type": "Villa",
+    "road_width": ""
+  },
+  "property_location": "Vadavalli, Somayampalayam, Coimbatore",
+  "selling_points": [
+    "Located in Vadavalli, Somayampalayam",
+    "Many people ask for houses under 90 lakh rupees in Vadavalli",
+    "Listing price is 90 lakh rupees, actual price will be surprising"
+  ],
+  "source_type": "manual_audio",
+  "status": "auto_approved",
+  "verified_facts": [
+    "Property located in Vadavalli, Somayampalayam, Coimbatore",
+    "3 BHK villa",
+    "Listing price is 90 lakh rupees",
+    "Actual price will be surprising"
+  ],
+  "video_id": "manual-AgADGB4AAinLAVU"
+}
