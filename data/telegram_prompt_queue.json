@@ -622,6 +622,11 @@
       "telegram_file_unique_id": "AgADfCcAAinL-VQ",
       "uploaded_at": "2026-09-07T11:02:21.249722+00:00",
       "video_id": "manual-AgADfCcAAinL-VQ"
+    },
+    {
+      "video_id": "Ui6B2DhJPmg",
+      "sent_at": "2026-09-08T14:38:36.435936+00:00",
+      "status": "pending_mobile_upload"
     }
   ]
 }
