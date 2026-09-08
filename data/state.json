@@ -424,11 +424,11 @@
       "status": "video_queued"
     },
     "7d1_YZj2Rns": {
-      "attempts": 1,
+      "attempts": 2,
       "first_seen_at": "2026-09-08T09:46:23.864322+00:00",
-      "last_attempt_at": "2026-09-08T09:53:30.667479+00:00",
-      "last_error": "Error code: 500 - {'error': {'message': 'gemini-3.6-flash is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.', 'code': 'api_error'}}",
-      "next_retry_at": "2026-09-08T11:53:30.667489+00:00",
+      "last_attempt_at": "2026-09-08T14:38:32.963156+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 27.069225708s.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-09-08T18:38:32.963167+00:00",
       "status": "retry_pending"
     },
     "7ezG0eLWg1I": {
@@ -1572,6 +1572,14 @@
       "last_attempt_at": "2026-09-04T01:02:48.443161+00:00",
       "last_error": "",
       "next_retry_at": "2026-09-04T03:02:48.443170+00:00",
+      "status": "video_queued"
+    },
+    "Ui6B2DhJPmg": {
+      "attempts": 0,
+      "completed_at": "2026-09-08T14:38:29.141436+00:00",
+      "first_seen_at": "2026-09-08T14:36:35.923114+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-09-08T14:36:35.923114+00:00",
       "status": "video_queued"
     },
     "UmiDPhMC5YY": {
