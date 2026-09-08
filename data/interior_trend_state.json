@@ -32,7 +32,8 @@
     "1mK3nGydU9k",
     "Av-C0RXY45c",
     "uclvHfgEC1I",
-    "2DUoRiCIpKM"
+    "2DUoRiCIpKM",
+    "fRa83U6c0ts"
   ],
   "history": [
     {
@@ -199,6 +200,11 @@
       "video_id": "2DUoRiCIpKM",
       "creator": "Interior Coach",
       "url": "https://www.youtube.com/watch?v=2DUoRiCIpKM"
+    },
+    {
+      "video_id": "fRa83U6c0ts",
+      "creator": "Ridhi Khosla Jalan",
+      "url": "https://www.youtube.com/watch?v=fRa83U6c0ts"
     }
   ],
   "night_channel_cursor": 0
