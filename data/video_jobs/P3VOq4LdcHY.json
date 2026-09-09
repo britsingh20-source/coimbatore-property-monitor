@@ -1,0 +1,146 @@
+{
+  "video_id": "P3VOq4LdcHY",
+  "source_url": "https://www.youtube.com/watch?v=P3VOq4LdcHY",
+  "property_location": "Thoppampatti, near Thudiyalur, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Villa",
+    "bhk": "3 BHK",
+    "land_area": "3.10 Cents (1350 sq.ft. / 30 ft x 45 ft)",
+    "built_up_area": "2650 sq.ft.",
+    "price": "₹1.53 Crore (Negotiable)",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking (19 ft x 12 ft)",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "North-facing site and North-facing main door made of teak wood., Total land area is 3.10 cents (1350 sq.ft., measuring 30 ft by 45 ft)., Total built-up area is 2650 sq.ft., built as a G+1 duplex structure., Ground floor includes car parking, 16x16 ft living hall, 11x10 ft dining room, 10x8 ft kitchen, 5x4 ft pooja room, 16x11 ft bedroom with attached bathroom (8x5 ft), and an outside bathroom (5x4 ft)., First floor includes a 10x10 ft lounge, master bedroom (16x16 ft) with walk-in wardrobe (8x6 ft) and attached bathroom (8x6 ft), third bedroom (16x11 ft) with dressing area (4.5x6 ft) and attached bathroom (9x4 ft), plus a 19x11 ft front balcony., Ceiling height is elevated to 11 feet on both floors., Location is Thoppampatti near Thudiyalur, Coimbatore., Asking price is ₹1.53 Crore, negotiable.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Thudiyalur சைட்ல 3 BHK Villa தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹1.53 Crore (Negotiable).",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 3.10 Cents (1350 sq.ft. / 30 ft x 45 ft) லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 2650 sq.ft. இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு North ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP Approved இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/P3VOq4LdcHY/",
+  "optional_owned_audio": "assets/audio/P3VOq4LdcHY.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: A contemporary white two-story villa featuring a black iron main entrance gate, covered car parking with floor profile lights, a spacious first-floor balcony with decorative black railings, and a terrace with a tank room and utility space against scenic coconut grove views.. Neighbourhood: Situated in a quiet residential neighborhood with adjacent residential homes and construction, surrounded by lush coconut tree groves and distant hill views visible from the upper balcony and terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: A contemporary white two-story villa featuring a black iron main entrance gate, covered car parking with floor profile lights, a spacious first-floor balcony with decorative black railings, and a terrace with a tank room and utility space against scenic coconut grove views.. Neighbourhood: Situated in a quiet residential neighborhood with adjacent residential homes and construction, surrounded by lush coconut tree groves and distant hill views visible from the upper balcony and terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: A contemporary white two-story villa featuring a black iron main entrance gate, covered car parking with floor profile lights, a spacious first-floor balcony with decorative black railings, and a terrace with a tank room and utility space against scenic coconut grove views.. Neighbourhood: Situated in a quiet residential neighborhood with adjacent residential homes and construction, surrounded by lush coconut tree groves and distant hill views visible from the upper balcony and terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: A contemporary white two-story villa featuring a black iron main entrance gate, covered car parking with floor profile lights, a spacious first-floor balcony with decorative black railings, and a terrace with a tank room and utility space against scenic coconut grove views.. Neighbourhood: Situated in a quiet residential neighborhood with adjacent residential homes and construction, surrounded by lush coconut tree groves and distant hill views visible from the upper balcony and terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
