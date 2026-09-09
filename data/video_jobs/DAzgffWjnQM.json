@@ -1,0 +1,136 @@
+{
+  "video_id": "DAzgffWjnQM",
+  "source_url": "https://www.youtube.com/watch?v=DAzgffWjnQM",
+  "property_location": "Koundampalayam, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Commercial Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "1.25 Cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "18.5 Lakhs per cent (Negotiable)",
+    "facing": "NOT SPECIFIED",
+    "road_width": "30 feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "1.25 cents commercial shop site located in Koundampalayam, Coimbatore., The plot features a 27-foot frontage., Located along a 30-foot wide tar road in a well-developed residential neighborhood., DTCP approved plot with up to 70% bank loan availability for land purchase., Priced at 18.5 Lakhs per cent (negotiable).",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, authentic local property presenter walking through commercial plot highlights in spoken Tamil.",
+    "hook_strategy": "Focus on a commercial shop site with 27-ft frontage in Koundampalayam, Coimbatore.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை கவுண்டம்பாளையத்துல ஒரு 1.25 Cents commercial shop site விற்பனைக்கு வந்துருக்கு.",
+        "broll": [
+          "land",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல 27 feet frontage வருது. Corporation limit-ல ஒரு நல்ல residential neighborhood-ல இந்த plot அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "dimension-overlay",
+        "purpose": "land_details"
+      },
+      {
+        "name": "road",
+        "voice": "பாத்தீங்கனா, இந்த site-க்கு நல்ல 30 feet wide tar road access இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "text-callout",
+        "purpose": "road_details"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approval பெற்ற plot. 70% வரைக்கும் bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "badge-pop",
+        "purpose": "approval_details"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட விலை per cent-க்கு 18.5 Lakhs சொல்றாங்க, இது negotiable தான்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "price-tag",
+        "purpose": "price_details"
+      },
+      {
+        "name": "cta",
+        "voice": "நேரடியா site visit பண்ணவோ, மேலும் details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/DAzgffWjnQM/",
+  "optional_owned_audio": "assets/audio/DAzgffWjnQM.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Koundampalayam, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Vacant land plot marked with white and red concrete posts along a paved 30-foot tar road. Greenery, mature trees, utility poles, and contemporary residential buildings are visible opposite and adjacent to the plot.. Neighbourhood: Established residential locality in Koundampalayam, Coimbatore with wide asphalt roads, trees, overhead electric lines, and modern residential homes.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Koundampalayam, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Vacant land plot marked with white and red concrete posts along a paved 30-foot tar road. Greenery, mature trees, utility poles, and contemporary residential buildings are visible opposite and adjacent to the plot.. Neighbourhood: Established residential locality in Koundampalayam, Coimbatore with wide asphalt roads, trees, overhead electric lines, and modern residential homes.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Koundampalayam, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Vacant land plot marked with white and red concrete posts along a paved 30-foot tar road. Greenery, mature trees, utility poles, and contemporary residential buildings are visible opposite and adjacent to the plot.. Neighbourhood: Established residential locality in Koundampalayam, Coimbatore with wide asphalt roads, trees, overhead electric lines, and modern residential homes.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Koundampalayam, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Vacant land plot marked with white and red concrete posts along a paved 30-foot tar road. Greenery, mature trees, utility poles, and contemporary residential buildings are visible opposite and adjacent to the plot.. Neighbourhood: Established residential locality in Koundampalayam, Coimbatore with wide asphalt roads, trees, overhead electric lines, and modern residential homes.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
