@@ -509,6 +509,14 @@
       "next_retry_at": "2026-08-28T09:16:15.679545+00:00",
       "status": "video_queued"
     },
+    "9QoU7ftWYek": {
+      "attempts": 1,
+      "first_seen_at": "2026-09-09T01:36:43.540848+00:00",
+      "last_attempt_at": "2026-09-09T01:36:55.448957+00:00",
+      "last_error": "sequence item 2: expected str instance, dict found",
+      "next_retry_at": "2026-09-09T03:36:55.448966+00:00",
+      "status": "retry_pending"
+    },
     "9QsBL5dwykA": {
       "attempts": 2,
       "completed_at": "2026-08-08T11:48:28.181886+00:00",
