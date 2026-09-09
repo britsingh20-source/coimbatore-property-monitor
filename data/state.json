@@ -643,9 +643,11 @@
     },
     "BkmJsdhBJjA": {
       "attempts": 0,
+      "completed_at": "2026-09-09T19:49:45.347030+00:00",
       "first_seen_at": "2026-09-09T16:42:51.349090+00:00",
+      "last_error": "",
       "next_retry_at": "2026-09-09T16:42:51.349090+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "BoWMLEvalrw": {
       "attempts": 4,
