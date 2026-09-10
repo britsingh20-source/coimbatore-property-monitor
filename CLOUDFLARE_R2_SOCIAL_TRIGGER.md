@@ -1,28 +1,49 @@
 # Cloudflare R2 → automatic Instagram/YouTube trigger
 
-The repository already has `.github/workflows/r2-social-autopilot.yml`, which listens for the `r2-social-object-created` repository-dispatch event. This Worker is the missing Cloudflare bridge: R2 object-create → Queue → Worker → GitHub repository_dispatch.
+The social publishing code already lives in GitHub Actions. The Cloudflare layer is the reliable event trigger and buffer:
 
-## Cloudflare setup
+**Telegram upload → R2 `social-ready/*.mp4` → R2 Event Notification → Cloudflare Queue → Cloudflare Worker → GitHub `repository_dispatch` → R2 Social Publishing Autopilot → Instagram + YouTube**
 
-Create a Queue, for example `coimbatore-property-social-events`.
+The existing scheduled scan remains as a recovery fallback.
 
-Configure the R2 bucket that receives `social-ready/` uploads with an `object-create` event notification to that queue, filtered with prefix `social-ready/` and suffix `.mp4`.
+## What was added to this repository
 
-Deploy `cloudflare-r2-social-trigger.ts` as a Queue consumer Worker.
+- `cloudflare/social-trigger/wrangler.jsonc` — Queue consumer Worker configuration.
+- `cloudflare/social-trigger/src/index.ts` — consumes R2 events and dispatches the exact R2 object to GitHub.
+- `.github/workflows/deploy-cloudflare-social-trigger.yml` — creates the Queue, deploys the Worker, sets the Worker secret, and configures the R2 event notification.
+- `.github/workflows/r2-social-autopilot.yml` — no longer cancels an active publishing run when another video arrives; incoming videos are queued. R2 events process only the exact MP4 that triggered the event, while scheduled runs continue to scan the full `social-ready/` prefix.
 
-Set these Worker variables:
+## One-time GitHub secrets required
 
-- `GITHUB_OWNER=britsingh20-source`
-- `GITHUB_REPO=coimbatore-property-monitor`
+Add these repository secrets before running the Cloudflare deployment workflow:
 
-Create the Worker secret:
+- `CLOUDFLARE_ACCOUNT_ID`
+- `CLOUDFLARE_API_TOKEN`
+- `GITHUB_DISPATCH_TOKEN`
+- `R2_BUCKET_NAME` (already required by the existing R2 pipeline; keep the existing value)
 
-- `GITHUB_REPOSITORY_DISPATCH_TOKEN` — a GitHub token allowed to create repository dispatch events for this repository. Do not commit this value.
+The existing Meta/Instagram and YouTube secrets are reused by the publishing workflow; they are not moved into Cloudflare.
 
-The Worker only dispatches for `social-ready/*.mp4`; other R2 objects are acknowledged and ignored.
+### `GITHUB_DISPATCH_TOKEN`
 
-## Expected flow
+Use a GitHub token that can create a repository dispatch for `britsingh20-source/coimbatore-property-monitor`. Keep it only as a Cloudflare Worker secret; never commit it.
 
-Telegram upload → existing ingestion → R2 `social-ready/` → R2 event notification → Cloudflare Queue → Worker → GitHub `r2-social-object-created` → existing `R2 Social Publishing Autopilot` → YouTube/Instagram/Facebook.
+### `CLOUDFLARE_API_TOKEN`
 
-The existing 10-minute GitHub schedule remains as a fallback/recovery mechanism, so the event-driven trigger does not remove the safety net.
+Use a Cloudflare API token with enough permissions to manage the Worker, Queues, and the R2 event-notification rule for this account.
+
+## Cloudflare resources
+
+The deployment workflow creates/uses:
+
+- Queue: `coimbatore-property-social-events`
+- Worker: `coimbatore-property-social-trigger`
+- R2 event rule: `object-create`, prefix `social-ready/`, suffix `.mp4`
+
+Cloudflare R2 Event Notifications are designed to send object-change messages to Queues, and Queue consumers can retry failed messages. See the official Cloudflare documentation for the event-notification and Queue model.
+
+## Four-video behavior
+
+If four MP4s arrive close together, each R2 event enters the Queue. GitHub Actions is configured not to cancel the active publishing run, so the videos wait rather than being lost. Each event carries its exact R2 key, preventing a new upload from accidentally publishing an older file.
+
+The scheduled GitHub scan remains enabled as a safety net for anything that was not successfully dispatched.
