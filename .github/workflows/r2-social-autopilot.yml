@@ -1,32 +1,9 @@
 # Verified footer recovery trigger: manual-AgADfycAAinL-VQ
 name: R2 Social Publishing Autopilot
 
-# Exact Telegram recovery: vFUJnl_KvEg / AgADriEAAmSZyFQ
-
-# Emergency recovery coordination: isolated publisher owns the current live attempt.
-
-# Case-corrected VIDEO_ID live recovery trigger: 2026-08-30 08:35 IST
-
-# Standalone Telegram ID pairing live publish: 2026-08-24 uAJus2hXLTo
-
-# Manual Pogalur pairing publish trigger: 2026-08-23
-
-# Post-reset Gemini quota retest: 2026-08-23 17:00 IST
-
-# Corrected Othakalmandapam republish trigger: 2026-08-22
-
-# Othakalmandapam correction replacement trigger: 2026-08-22
-
-# YouTube credential test: 2026-08-22
-
-# Instagram cross-post test: 2026-08-22
-
-# Facebook token retest: 2026-08-22 fresh Bright system-user token
-# 2026-08-22 Facebook Page credential verification
-
 on:
   repository_dispatch:
-    types: [telegram-property-upload]
+    types: [telegram-property-upload, r2-social-object-created]
   schedule:
     - cron: "7,17,27,37,47,57 * * * *"
   push:
@@ -149,6 +126,9 @@ jobs:
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
           META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
           META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
+          INTERIOR_META_ACCESS_TOKEN: ${{ secrets.INTERIOR_META_ACCESS_TOKEN }}
+          INTERIOR_META_PAGE_ID: ${{ secrets.INTERIOR_META_PAGE_ID }}
+          INTERIOR_IG_USER_ID: ${{ secrets.INTERIOR_IG_USER_ID }}
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
