@@ -4,9 +4,6 @@
   "main": "src/index.ts",
   "compatibility_date": "2026-09-10",
   "compatibility_flags": ["nodejs_compat"],
-  "secrets": {
-    "required": ["GITHUB_DISPATCH_TOKEN"]
-  },
   "vars": {
     "GITHUB_REPOSITORY": "britsingh20-source/coimbatore-property-monitor",
     "GITHUB_EVENT_TYPE": "r2-social-object-created"
