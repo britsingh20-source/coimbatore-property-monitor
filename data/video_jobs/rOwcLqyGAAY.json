@@ -1,0 +1,153 @@
+{
+  "video_id": "rOwcLqyGAAY",
+  "source_url": "https://www.youtube.com/watch?v=rOwcLqyGAAY",
+  "property_location": "Karamadai, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "600 - 2400 sq.ft",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "NOT SPECIFIED",
+    "facing": "NOT SPECIFIED",
+    "road_width": "30 ft / 40 ft",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "The project is named Vishnu Vishta, an 18-acre gated community in Karamadai, Coimbatore, situated 500 meters from the Coimbatore-Ooty National Highway., Offers DTCP-approved residential plots ranging from 600 to 2,400 sq.ft., A custom 2BHK house construction package on a 2.5 cent plot is advertised starting at Rs 47 Lakhs., The layout features 30ft, 33ft, 40ft, and 45ft wide blacktop roads., Bank loan assistance of up to 75% for plots and 85-90% for plot-plus-construction is supported across major banks.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking naturally to camera",
+    "hook_strategy": "Highlighting prime location proximity (500m from Coimbatore-Ooty Highway) in an 18-acre gated community",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore to Ooty Highway-ல இருந்து வெறும் 500 meter-ல காரமடை-ல அமைஞ்சிருக்கு இந்த 18-acre gated community layout.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல 600-ல இருந்து 2,400 sq.ft அளவுகள்ல residential plots கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "plot_sizes"
+      },
+      {
+        "name": "road",
+        "voice": "Layout உள்ள பாத்தீங்கனா 30, 33, 40 மற்றும் 45 feet அகலமான blacktop roads போட்டிருக்காங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "road-width-callout",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "builtUp",
+        "voice": "அதே மாதிரி 2.5 cent plot-ல custom 2BHK house construction package-உம் பண்ணி தர்றாங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "house_option"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த 2BHK house construction package-ோட ஆரம்ப விலை 47 Lakhs.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "approval",
+        "voice": "இது முழுமையா DTCP approved layout.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust"
+      },
+      {
+        "name": "verify",
+        "voice": "Plots-க்கு 75% வரைக்கும், Plot plus construction-க்கு 85 to 90% வரைக்கும் bank loan assistance இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "percentage-callout",
+        "purpose": "financial_support"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து பாக்கணும்னா இல்ல details தெரிஞ்சுக்கனும்னா உடனே contact பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/rOwcLqyGAAY/",
+  "optional_owned_audio": "assets/audio/rOwcLqyGAAY.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed 18-acre gated layout with blacktop internal roads, street lights, compound walls, entrance arch, synthetic sports turf, and children's playground under clear skies with mountain views.. Neighbourhood: Situated in Karamadai near the Ooty-Coimbatore National Highway, right adjacent to KR Public School, with colleges, hospitals, and a railway station located within 1 km.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed 18-acre gated layout with blacktop internal roads, street lights, compound walls, entrance arch, synthetic sports turf, and children's playground under clear skies with mountain views.. Neighbourhood: Situated in Karamadai near the Ooty-Coimbatore National Highway, right adjacent to KR Public School, with colleges, hospitals, and a railway station located within 1 km.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed 18-acre gated layout with blacktop internal roads, street lights, compound walls, entrance arch, synthetic sports turf, and children's playground under clear skies with mountain views.. Neighbourhood: Situated in Karamadai near the Ooty-Coimbatore National Highway, right adjacent to KR Public School, with colleges, hospitals, and a railway station located within 1 km.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed 18-acre gated layout with blacktop internal roads, street lights, compound walls, entrance arch, synthetic sports turf, and children's playground under clear skies with mountain views.. Neighbourhood: Situated in Karamadai near the Ooty-Coimbatore National Highway, right adjacent to KR Public School, with colleges, hospitals, and a railway station located within 1 km.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
