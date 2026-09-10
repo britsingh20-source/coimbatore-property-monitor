@@ -1,0 +1,29 @@
+name: Telegram Cloudflare Webhook Keeper
+
+on:
+  workflow_run:
+    workflows: ["R2 Social Publishing Autopilot"]
+    types: [completed]
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/telegram-cloudflare-webhook-keeper.yml"
+
+jobs:
+  configure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configure Telegram webhook
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_WEBHOOK_URL: https://coimbatore-social-trigger.britsingh20.workers.dev/
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error \
+            --request POST \
+            --data-urlencode "url=${TELEGRAM_WEBHOOK_URL}" \
+            --data-urlencode 'allowed_updates=["message","edited_message"]' \
+            --data-urlencode "drop_pending_updates=false" \
+            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/setWebhook" >/dev/null
+          echo "Telegram webhook configured for Cloudflare Worker."
