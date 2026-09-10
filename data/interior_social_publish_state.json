@@ -17,8 +17,8 @@
       "r2_key": "interior-social-ready/sUmQvFpBXVU-AgADbiQAAvCKGVU.mp4",
       "source_id": "sUmQvFpBXVU",
       "youtube": {
-        "error": "('deleted_client: The OAuth client was deleted.', {'error': 'deleted_client', 'error_description': 'The OAuth client was deleted.'})",
-        "status": "failed"
+        "status": "published",
+        "video_id": "1-BffH9PomU"
       }
     }
   },
@@ -40,8 +40,8 @@
       "r2_key": "interior-social-ready/sUmQvFpBXVU-AgADbiQAAvCKGVU.mp4",
       "source_id": "sUmQvFpBXVU",
       "youtube": {
-        "error": "('deleted_client: The OAuth client was deleted.', {'error': 'deleted_client', 'error_description': 'The OAuth client was deleted.'})",
-        "status": "failed"
+        "status": "published",
+        "video_id": "1-BffH9PomU"
       }
     }
   }
