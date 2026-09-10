@@ -71,6 +71,9 @@ jobs:
             --state data/interior_trend_state.json \
             --slot "$slot" \
             "${args[@]}"
+      - name: Send copy-ready Interior ID instruction
+        if: ${{ github.event_name == 'push' || github.event_name == 'schedule' || inputs.deliver_to_telegram }}
+        run: python send_interior_upload_instructions.py
       - name: Save used-video history
         if: ${{ github.event_name == 'push' || github.event_name == 'schedule' || inputs.deliver_to_telegram }}
         shell: bash
