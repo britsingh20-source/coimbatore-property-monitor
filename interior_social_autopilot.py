@@ -102,7 +102,7 @@ def instagram_caption(source_id: str) -> str:
         "AI visual reconstruction inspired by a verified interior reference. "
         "Design details should be adapted to actual site dimensions and requirements.\n\n"
         f"Reference inspiration: {creator}\n"
-        "#OlivetreeInteriors #InteriorDesign #HomeInteriors #InteriorIdeas #ModernInteriors #CoimbatoreInteriors"
+        "#OlivetreeInteriors #InteriorDesign #CoimbatoreInteriors"
     )
 
 
@@ -152,6 +152,34 @@ def publish_instagram_reel(video_url: str, caption: str) -> dict:
     published = response.json()
     if not response.ok or published.get("error") or not published.get("id"):
         raise RuntimeError(f"Instagram Reel publish failed: {published}")
+    return {"creation_id": creation_id, "media_id": published["id"]}
+
+
+def publish_instagram_story(video_url: str) -> dict:
+    token = required("INTERIOR_META_ACCESS_TOKEN")
+    ig_user_id = required("INTERIOR_IG_USER_ID")
+    response = requests.post(
+        f"{GRAPH}/{ig_user_id}/media",
+        data={
+            "media_type": "STORIES",
+            "video_url": video_url,
+            "access_token": token,
+        },
+        timeout=60,
+    )
+    body = response.json()
+    if not response.ok or body.get("error") or not body.get("id"):
+        raise RuntimeError(f"Instagram Story container creation failed: {body}")
+    creation_id = str(body["id"])
+    wait_instagram_container(creation_id, token)
+    response = requests.post(
+        f"{GRAPH}/{ig_user_id}/media_publish",
+        data={"creation_id": creation_id, "access_token": token},
+        timeout=60,
+    )
+    published = response.json()
+    if not response.ok or published.get("error") or not published.get("id"):
+        raise RuntimeError(f"Instagram Story publish failed: {published}")
     return {"creation_id": creation_id, "media_id": published["id"]}
 
 
@@ -236,6 +264,7 @@ def handle_update(update: dict) -> int:
             "source_id": source_id,
             "r2_key": key,
             "instagram": {},
+            "instagram_story": {},
             "youtube": {},
         }
         state["telegram_files"][unique_id] = record
@@ -251,13 +280,24 @@ def handle_update(update: dict) -> int:
             save_state(state)
 
         try:
+            record["instagram_story"] = {"status": "published", **publish_instagram_story(video_url)}
+            save_state(state)
+        except Exception as error:
+            record["instagram_story"] = {"status": "failed", "error": str(error)[:3000]}
+            save_state(state)
+
+        try:
             record["youtube"] = {"status": "published", **publish_youtube_short(Path(handle.name), source_id)}
             save_state(state)
         except Exception as error:
             record["youtube"] = {"status": "failed", "error": str(error)[:3000]}
             save_state(state)
 
-    failures = [name for name in ("instagram", "youtube") if record[name].get("status") != "published"]
+    failures = [
+        name
+        for name in ("instagram", "instagram_story", "youtube")
+        if record[name].get("status") != "published"
+    ]
     if failures:
         send_message(
             token,
@@ -271,7 +311,7 @@ def handle_update(update: dict) -> int:
         chat_id,
         "✅ Interior video published successfully\n"
         f"INTERIOR_ID: {source_id}\n"
-        "Destinations: Instagram Reel + YouTube Short",
+        "Destinations: Instagram Reel + Instagram Story + YouTube Short",
     )
     return 1
 
