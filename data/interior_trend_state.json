@@ -37,7 +37,8 @@
     "DEVssAmvNsI",
     "na1AmFoXJVo",
     "sUmQvFpBXVU",
-    "fHjyp0x_D1o"
+    "fHjyp0x_D1o",
+    "QBLKVPEpLck"
   ],
   "history": [
     {
@@ -229,6 +230,11 @@
       "video_id": "fHjyp0x_D1o",
       "creator": "DesignCafe",
       "url": "https://www.youtube.com/watch?v=fHjyp0x_D1o"
+    },
+    {
+      "video_id": "QBLKVPEpLck",
+      "creator": "DesignCafe",
+      "url": "https://www.youtube.com/watch?v=QBLKVPEpLck"
     }
   ],
   "night_channel_cursor": 1
