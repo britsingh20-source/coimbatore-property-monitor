@@ -86,11 +86,26 @@ def send_prompt(job: dict, bot_token: str, chat_id: str) -> None:
         f"Add this exact caption: <code>VIDEO_ID: {html.escape(video_id)}</code>. "
         "The mobile filename can remain unchanged."
     )
+    keyboard = {
+        "inline_keyboard": [
+            [
+                {
+                    "text": "Copy VIDEO_ID",
+                    "copy_text": {"text": video_id},
+                }
+            ]
+        ]
+    }
     payload = io.BytesIO(prompt.encode("utf-8"))
     payload.name = telegram_filename(job)
     response = requests.post(
         f"https://api.telegram.org/bot{bot_token}/sendDocument",
-        data={"chat_id": chat_id, "caption": caption, "parse_mode": "HTML"},
+        data={
+            "chat_id": chat_id,
+            "caption": caption,
+            "parse_mode": "HTML",
+            "reply_markup": json.dumps(keyboard),
+        },
         files={"document": (payload.name, payload, "text/plain; charset=utf-8")},
         timeout=60,
     )
