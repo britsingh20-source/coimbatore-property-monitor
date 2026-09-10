@@ -64,7 +64,7 @@ jobs:
           if [[ "${{ github.event_name }}" == "push" || "${{ github.event_name }}" == "schedule" || "${{ inputs.deliver_to_telegram }}" == "true" ]]; then
             args+=(--deliver)
           fi
-          python -m interior_trend_radar.reference_first \
+          python -m interior_trend_radar.safe_reference_first \
             interior_trend_radar/output/candidates.json \
             interior_trend_radar/config.json \
             interior_trend_radar/output/production_pack.json \
