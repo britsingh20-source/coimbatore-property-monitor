@@ -1,0 +1,99 @@
+name: Interior YouTube Retry
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/interior-youtube-retry.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  retry:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: pip install boto3 google-api-python-client google-auth requests
+      - name: Retry last interior upload to YouTube only
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          INTERIOR_YOUTUBE_CLIENT_ID: ${{ secrets.INTERIOR_YOUTUBE_CLIENT_ID }}
+          INTERIOR_YOUTUBE_CLIENT_SECRET: ${{ secrets.INTERIOR_YOUTUBE_CLIENT_SECRET }}
+          INTERIOR_YOUTUBE_REFRESH_TOKEN: ${{ secrets.INTERIOR_YOUTUBE_REFRESH_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python - <<'PY'
+          import json, os, tempfile
+          from pathlib import Path
+          import boto3, requests
+          from google.oauth2.credentials import Credentials
+          from googleapiclient.discovery import build
+          from googleapiclient.http import MediaFileUpload
+
+          state_path = Path('data/interior_social_publish_state.json')
+          state = json.loads(state_path.read_text())
+          if not state.get('objects'):
+              raise RuntimeError('No interior upload found in state')
+          key, rec = list(state['objects'].items())[-1]
+          source_id = str(rec.get('source_id') or '')
+          current = rec.get('youtube') or {}
+          if current.get('status') == 'published' and current.get('video_id'):
+              print('YouTube already published; skipping duplicate')
+              raise SystemExit(0)
+
+          s3 = boto3.client('s3', endpoint_url=f"https://{os.environ['R2_ACCOUNT_ID']}.r2.cloudflarestorage.com", aws_access_key_id=os.environ['R2_ACCESS_KEY_ID'], aws_secret_access_key=os.environ['R2_SECRET_ACCESS_KEY'], region_name='auto')
+          with tempfile.NamedTemporaryFile(suffix='.mp4') as f:
+              s3.download_file(os.environ['R2_BUCKET_NAME'], key, f.name)
+              creds = Credentials(token=None, refresh_token=os.environ['INTERIOR_YOUTUBE_REFRESH_TOKEN'], token_uri='https://oauth2.googleapis.com/token', client_id=os.environ['INTERIOR_YOUTUBE_CLIENT_ID'], client_secret=os.environ['INTERIOR_YOUTUBE_CLIENT_SECRET'], scopes=['https://www.googleapis.com/auth/youtube.upload'])
+              youtube = build('youtube', 'v3', credentials=creds, cache_discovery=False)
+              body = {
+                  'snippet': {
+                      'title': 'Smart Interior Idea | Home Space #Shorts',
+                      'description': 'Smart interior ideas for modern homes.\n\n#Shorts #InteriorDesign #CoimbatoreInteriors',
+                      'tags': ['Shorts','Interior Design','Coimbatore Interiors'],
+                      'categoryId': '26'
+                  },
+                  'status': {'privacyStatus': 'public', 'selfDeclaredMadeForKids': False}
+              }
+              req = youtube.videos().insert(part='snippet,status', body=body, media_body=MediaFileUpload(f.name, mimetype='video/mp4', resumable=True))
+              result = None
+              while result is None:
+                  _, result = req.next_chunk()
+              vid = result.get('id')
+
+          rec['youtube'] = {'status':'published','video_id':vid}
+          # mirror same record in telegram_files if present
+          for _, trec in state.get('telegram_files', {}).items():
+              if trec.get('r2_key') == key:
+                  trec['youtube'] = {'status':'published','video_id':vid}
+          state_path.write_text(json.dumps(state, indent=2, sort_keys=True) + '\n')
+          msg = f"✅ Interior YouTube published\nINTERIOR_ID: {source_id}\nVideo ID: {vid}"
+          requests.post(f"https://api.telegram.org/bot{os.environ['TELEGRAM_BOT_TOKEN']}/sendMessage", data={'chat_id':os.environ['TELEGRAM_CHAT_ID'],'text':msg}, timeout=30).raise_for_status()
+          print(msg)
+          PY
+      - name: Commit YouTube state
+        if: always()
+        run: |
+          git config user.name "interior-social-bot"
+          git config user.email "actions@github.com"
+          git add data/interior_social_publish_state.json || true
+          if git diff --staged --quiet; then
+            echo "No state changes"
+          else
+            git commit -m "Update interior YouTube publish state [automated]"
+            git pull --rebase
+            git push
+          fi
