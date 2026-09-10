@@ -1,0 +1,77 @@
+name: Interior Instagram Diagnostic
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/interior-instagram-diagnostic.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - name: Verify configured Instagram account and last media
+        env:
+          INTERIOR_META_ACCESS_TOKEN: ${{ secrets.INTERIOR_META_ACCESS_TOKEN }}
+          INTERIOR_IG_USER_ID: ${{ secrets.INTERIOR_IG_USER_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python - <<'PY'
+          import json, os, requests
+          from pathlib import Path
+
+          graph = "https://graph.facebook.com/v23.0"
+          token = os.environ["INTERIOR_META_ACCESS_TOKEN"]
+          igid = os.environ["INTERIOR_IG_USER_ID"]
+          chat = os.environ["TELEGRAM_CHAT_ID"]
+          bot = os.environ["TELEGRAM_BOT_TOKEN"]
+
+          def get(path, fields):
+              r = requests.get(f"{graph}/{path}", params={"fields": fields, "access_token": token}, timeout=30)
+              try: body = r.json()
+              except Exception: body = {"raw": r.text[:1000]}
+              return r.status_code, body
+
+          account_status, account = get(igid, "id,username,name,profile_picture_url")
+          state = json.loads(Path("data/interior_social_publish_state.json").read_text())
+          last = list(state.get("objects", {}).values())[-1] if state.get("objects") else {}
+          media_id = str((last.get("instagram") or {}).get("media_id") or "")
+          media_status, media = (0, {})
+          if media_id:
+              media_status, media = get(media_id, "id,username,media_type,media_product_type,permalink,timestamp,caption")
+
+          safe_account = {k:v for k,v in account.items() if k != "profile_picture_url"}
+          print("Configured IG account:", json.dumps(safe_account, ensure_ascii=False))
+          print("Last media lookup:", json.dumps(media, ensure_ascii=False))
+
+          lines = [
+              "🔎 Interior Instagram diagnostic",
+              f"Configured IG_USER_ID: {igid}",
+              f"Account API status: {account_status}",
+              f"Username: {account.get('username','(not returned)')}",
+              f"Name: {account.get('name','(not returned)')}",
+              f"Last recorded media ID: {media_id or '(none)'}",
+              f"Media API status: {media_status if media_id else '(not checked)'}",
+              f"Media username: {media.get('username','(not returned)') if media_id else '(none)'}",
+              f"Permalink: {media.get('permalink','(not returned)') if media_id else '(none)'}",
+          ]
+          if account.get("error"):
+              lines.append("Account error: " + str(account["error"])[:500])
+          if media.get("error"):
+              lines.append("Media error: " + str(media["error"])[:500])
+
+          requests.post(
+              f"https://api.telegram.org/bot{bot}/sendMessage",
+              data={"chat_id": chat, "text": "\n".join(lines)}, timeout=30
+          ).raise_for_status()
+          PY
