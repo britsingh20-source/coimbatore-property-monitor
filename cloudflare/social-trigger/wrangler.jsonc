@@ -1,0 +1,24 @@
+{
+  "$schema": "https://unpkg.com/wrangler@latest/config-schema.json",
+  "name": "coimbatore-property-social-trigger",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-10",
+  "compatibility_flags": ["nodejs_compat"],
+  "secrets": {
+    "required": ["GITHUB_DISPATCH_TOKEN"]
+  },
+  "vars": {
+    "GITHUB_REPOSITORY": "britsingh20-source/coimbatore-property-monitor",
+    "GITHUB_EVENT_TYPE": "r2-social-object-created"
+  },
+  "queues": {
+    "consumers": [
+      {
+        "queue": "coimbatore-property-social-events",
+        "max_batch_size": 10,
+        "max_batch_timeout": 5,
+        "max_retries": 5
+      }
+    ]
+  }
+}
