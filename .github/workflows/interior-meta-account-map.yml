@@ -1,0 +1,71 @@
+name: Interior Meta Account Map
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/interior-meta-account-map.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  map:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - name: Discover accessible Facebook pages and linked Instagram accounts
+        env:
+          TOKEN: ${{ secrets.INTERIOR_META_ACCESS_TOKEN }}
+          CURRENT_PAGE_ID: ${{ secrets.INTERIOR_META_PAGE_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          python - <<'PY'
+          import json, os, requests
+          graph='https://graph.facebook.com/v23.0'
+          token=os.environ['TOKEN']
+          target='olivetreeinteriors777'
+
+          def get(path, fields=None):
+              params={'access_token':token}
+              if fields: params['fields']=fields
+              r=requests.get(f'{graph}/{path}',params=params,timeout=30)
+              try: body=r.json()
+              except Exception: body={'raw':r.text[:1000]}
+              return r.status_code, body
+
+          results=[]
+          me_status, me=get('me','id,name')
+          results.append({'kind':'token_me','status':me_status,'data':me})
+
+          page_id=os.environ.get('CURRENT_PAGE_ID','').strip()
+          if page_id:
+              st, body=get(page_id,'id,name,instagram_business_account{id,username},connected_instagram_account{id,username}')
+              results.append({'kind':'configured_page','status':st,'data':body})
+
+          st, accounts=get('me/accounts','id,name,instagram_business_account{id,username},connected_instagram_account{id,username}')
+          results.append({'kind':'me_accounts','status':st,'data':accounts})
+
+          matches=[]
+          for page in (accounts.get('data') or []):
+              for k in ('instagram_business_account','connected_instagram_account'):
+                  ig=page.get(k) or {}
+                  if str(ig.get('username') or '').lower()==target:
+                      matches.append({'page_id':page.get('id'),'page_name':page.get('name'),'ig_id':ig.get('id'),'username':ig.get('username'),'link_type':k})
+
+          print('META_ACCOUNT_MAP='+json.dumps(results,ensure_ascii=False))
+          print('TARGET_MATCHES='+json.dumps(matches,ensure_ascii=False))
+
+          msg=['🔎 Olive Tree Interiors Meta mapping','Target: @'+target]
+          if matches:
+              for m in matches:
+                  msg += [f"MATCH FOUND",f"Facebook Page: {m['page_name']} ({m['page_id']})",f"Instagram: @{m['username']} ({m['ig_id']})"]
+          else:
+              msg += ['No accessible Meta page is linked to @'+target,'The current INTERIOR_META_ACCESS_TOKEN does not expose the correct account mapping.']
+          requests.post(f"https://api.telegram.org/bot{os.environ['TELEGRAM_BOT_TOKEN']}/sendMessage",data={'chat_id':os.environ['TELEGRAM_CHAT_ID'],'text':'\n'.join(msg)},timeout=30).raise_for_status()
+          PY
