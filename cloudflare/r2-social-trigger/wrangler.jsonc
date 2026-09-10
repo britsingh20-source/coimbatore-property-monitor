@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developers.cloudflare.com/workers/wrangler/config-schema.json",
+  "name": "coimbatore-property-r2-social-trigger",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-09-08",
+  "queues": {
+    "consumers": [
+      {
+        "queue": "property-social-publish-trigger",
+        "max_batch_size": 10,
+        "max_batch_timeout": 5,
+        "max_retries": 5
+      }
+    ]
+  }
+}
