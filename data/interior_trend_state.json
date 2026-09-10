@@ -35,7 +35,8 @@
     "2DUoRiCIpKM",
     "fRa83U6c0ts",
     "DEVssAmvNsI",
-    "na1AmFoXJVo"
+    "na1AmFoXJVo",
+    "sUmQvFpBXVU"
   ],
   "history": [
     {
@@ -217,6 +218,11 @@
       "video_id": "na1AmFoXJVo",
       "creator": "DesignCafe",
       "url": "https://www.youtube.com/watch?v=na1AmFoXJVo"
+    },
+    {
+      "video_id": "sUmQvFpBXVU",
+      "creator": "Design.Decor.Travel.",
+      "url": "https://www.youtube.com/watch?v=sUmQvFpBXVU"
     }
   ],
   "night_channel_cursor": 1
