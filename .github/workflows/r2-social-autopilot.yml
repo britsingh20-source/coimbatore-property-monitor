@@ -13,6 +13,8 @@ on:
       - ".github/workflows/r2-social-autopilot.yml"
       - "r2_social_autopilot.py"
       - "telegram_r2_ingest.py"
+      - "telegram_router.py"
+      - "interior_social_autopilot.py"
       - "manual_video_intake.py"
       - "reference_frames.py"
       - "requirements.txt"
@@ -28,8 +30,6 @@ on:
         default: true
         type: boolean
 
-# Do not cancel a running publishing job when another video arrives.
-# The queue: max setting lets multiple incoming videos wait safely.
 concurrency:
   group: property-automation-state
   cancel-in-progress: false
@@ -62,8 +62,6 @@ jobs:
           fi
       - run: pip install -r requirements.txt
 
-      # Telegram polling is only needed for Telegram-triggered/recovery runs.
-      # An R2 event must never reset Telegram's webhook/polling state.
       - name: Restore Telegram polling while webhook recovery is unavailable
         if: github.event_name != 'repository_dispatch' || github.event.action == 'telegram-property-upload'
         env:
@@ -101,7 +99,7 @@ jobs:
               print(f'No recovery state change needed for {unique_id}: {item}')
           PY
 
-      - name: Import new Telegram property videos to R2
+      - name: Route Telegram uploads to Property or Interior publisher
         id: telegram_ingest
         if: github.event_name != 'repository_dispatch' || github.event.action == 'telegram-property-upload'
         continue-on-error: true
@@ -116,8 +114,15 @@ jobs:
           TELEGRAM_MAX_VIDEO_BYTES: "20971520"
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MANUAL_AUDIO_MODEL: gemini-2.5-flash
+          INTERIOR_META_ACCESS_TOKEN: ${{ secrets.INTERIOR_META_ACCESS_TOKEN }}
+          INTERIOR_META_PAGE_ID: ${{ secrets.INTERIOR_META_PAGE_ID }}
+          INTERIOR_IG_USER_ID: ${{ secrets.INTERIOR_IG_USER_ID }}
+          INTERIOR_YOUTUBE_CLIENT_ID: ${{ secrets.INTERIOR_YOUTUBE_CLIENT_ID }}
+          INTERIOR_YOUTUBE_CLIENT_SECRET: ${{ secrets.INTERIOR_YOUTUBE_CLIENT_SECRET }}
+          INTERIOR_YOUTUBE_REFRESH_TOKEN: ${{ secrets.INTERIOR_YOUTUBE_REFRESH_TOKEN }}
+          INTERIOR_YOUTUBE_PRIVACY_STATUS: public
           TELEGRAM_WEBHOOK_UPDATE_JSON: ${{ github.event_name == 'repository_dispatch' && github.event.action == 'telegram-property-upload' && toJson(github.event.client_payload.update) || '' }}
-        run: python telegram_r2_ingest.py
+        run: python telegram_router.py
 
       - name: Scan R2 and publish new property videos
         id: autopilot
@@ -127,8 +132,6 @@ jobs:
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
-          # For a Cloudflare event, make the existing scanner look at exactly
-          # the object that arrived. Scheduled/manual runs keep the full prefix.
           R2_SOCIAL_PREFIX: ${{ github.event_name == 'repository_dispatch' && github.event.action == 'r2-social-object-created' && github.event.client_payload.r2_key || 'social-ready/' }}
           SOCIAL_MAX_PER_RUN: ${{ github.event_name == 'repository_dispatch' && '1' || '5' }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -153,7 +156,7 @@ jobs:
           set -euo pipefail
           git config user.name "property-social-bot"
           git config user.email "actions@github.com"
-          git add data/telegram_ingest_state.json data/social_publish_state.json data/telegram_prompt_queue.json data/video_jobs/*.json
+          git add data/telegram_ingest_state.json data/social_publish_state.json data/interior_social_publish_state.json data/telegram_prompt_queue.json data/video_jobs/*.json
           if git diff --staged --quiet; then
             echo "No Telegram ingestion, social publishing or prompt-pairing state changes."
           else
