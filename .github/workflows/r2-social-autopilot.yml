@@ -127,8 +127,9 @@ jobs:
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
-          R2_SOCIAL_PREFIX: social-ready/
-          TARGET_R2_KEY: ${{ github.event_name == 'repository_dispatch' && github.event.action == 'r2-social-object-created' && github.event.client_payload.r2_key || '' }}
+          # For a Cloudflare event, make the existing scanner look at exactly
+          # the object that arrived. Scheduled/manual runs keep the full prefix.
+          R2_SOCIAL_PREFIX: ${{ github.event_name == 'repository_dispatch' && github.event.action == 'r2-social-object-created' && github.event.client_payload.r2_key || 'social-ready/' }}
           SOCIAL_MAX_PER_RUN: ${{ github.event_name == 'repository_dispatch' && '1' || '5' }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_SOCIAL_MATCH_MODEL: gemini-3.5-flash-lite
