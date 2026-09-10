@@ -1,0 +1,119 @@
+{
+  "video_id": "2Z03p-Zr7Gs",
+  "source_url": "https://www.youtube.com/watch?v=2Z03p-Zr7Gs",
+  "property_location": "Saravanampatti, Coimbatore",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "3.5 Cents",
+    "built_up_area": "2700 SqFt",
+    "price": "Rs. 1.60 Crore",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "3BHK house located in Saravanampatti, Coimbatore, Land area: 3.5 Cents, Built-up area: 2700 SqFt, Price: 1.60 Crore, Contact phone number: 6379188694",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local property presenter speaking directly to camera, using casual Tamil mixed naturally with English real-estate terms.",
+    "hook_strategy": "Highlight the spacious 2700 SqFt 3 BHK independent house layout directly in prime Saravanampatti.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை சரவணம்பட்டியில ஒரு 2700 SqFt 3 BHK Independent House பாக்கலாம் வாங்க!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-text-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல மொத்தமா 3.5 Cents Land Area இருக்கு, அத்தோட Covered Car Parking வசதியும் கொடுத்திருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Built-up Area பாத்தீங்கனா 2700 SqFt. 3 BHK வீடு நல்லா spacious-ஆ அமைஞ்சிருக்கு.",
+        "broll": [
+          "living_room",
+          "interior",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "dimension-overlay",
+        "purpose": "interior_overview"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த வீடோட Price பாத்தீங்கனா 1.60 Crore.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag-graphic",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து Site Visit பண்ணவோ, Details தெரிஞ்சுக்கவோ 6379188694 நம்பருக்கு Call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "phone-number-banner",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/2Z03p-Zr7Gs/",
+  "optional_owned_audio": "assets/audio/2Z03p-Zr7Gs.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story (G+1) modern house with white and grey exterior paint, purple accents on window trim and front gate, wooden pergola detail above the first-floor glass balcony, compound wall, and concrete entryway ramp.. Neighbourhood: Open suburban residential setting with surrounding undeveloped land and clear skies.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story (G+1) modern house with white and grey exterior paint, purple accents on window trim and front gate, wooden pergola detail above the first-floor glass balcony, compound wall, and concrete entryway ramp.. Neighbourhood: Open suburban residential setting with surrounding undeveloped land and clear skies.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story (G+1) modern house with white and grey exterior paint, purple accents on window trim and front gate, wooden pergola detail above the first-floor glass balcony, compound wall, and concrete entryway ramp.. Neighbourhood: Open suburban residential setting with surrounding undeveloped land and clear skies.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story (G+1) modern house with white and grey exterior paint, purple accents on window trim and front gate, wooden pergola detail above the first-floor glass balcony, compound wall, and concrete entryway ramp.. Neighbourhood: Open suburban residential setting with surrounding undeveloped land and clear skies.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

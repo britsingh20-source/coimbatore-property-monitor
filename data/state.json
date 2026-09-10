@@ -190,9 +190,11 @@
     },
     "2Z03p-Zr7Gs": {
       "attempts": 0,
+      "completed_at": "2026-09-10T10:04:23.670021+00:00",
       "first_seen_at": "2026-09-10T09:43:18.076532+00:00",
+      "last_error": "",
       "next_retry_at": "2026-09-10T09:43:18.076532+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "2dmrqPHzh6s": {
       "attempts": 0,
