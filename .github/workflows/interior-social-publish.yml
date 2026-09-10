@@ -1,0 +1,61 @@
+name: Interior Social Publishing
+
+on:
+  repository_dispatch:
+    types: [telegram-property-upload]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: interior-social-publishing
+  cancel-in-progress: false
+
+jobs:
+  publish-interior:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Process Interior Telegram upload
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_WEBHOOK_UPDATE_JSON: ${{ toJson(github.event.client_payload.update) }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          INTERIOR_META_ACCESS_TOKEN: ${{ secrets.INTERIOR_META_ACCESS_TOKEN }}
+          INTERIOR_META_PAGE_ID: ${{ secrets.INTERIOR_META_PAGE_ID }}
+          INTERIOR_IG_USER_ID: ${{ secrets.INTERIOR_IG_USER_ID }}
+          INTERIOR_YOUTUBE_CLIENT_ID: ${{ secrets.INTERIOR_YOUTUBE_CLIENT_ID }}
+          INTERIOR_YOUTUBE_CLIENT_SECRET: ${{ secrets.INTERIOR_YOUTUBE_CLIENT_SECRET }}
+          INTERIOR_YOUTUBE_REFRESH_TOKEN: ${{ secrets.INTERIOR_YOUTUBE_REFRESH_TOKEN }}
+          INTERIOR_YOUTUBE_PRIVACY_STATUS: public
+        run: python interior_social_autopilot.py
+      - name: Commit Interior publishing state
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "interior-social-bot"
+          git config user.email "actions@github.com"
+          if [[ -f data/interior_social_publish_state.json ]]; then
+            git add data/interior_social_publish_state.json
+          fi
+          if git diff --staged --quiet; then
+            echo "No interior publishing state changes."
+          else
+            git commit -m "Update interior social publishing state [automated]"
+            git pull --rebase
+            git push
+          fi
