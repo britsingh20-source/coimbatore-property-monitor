@@ -1,0 +1,134 @@
+{
+  "video_id": "3C8s8V0ULhc",
+  "source_url": "https://www.youtube.com/watch?v=3C8s8V0ULhc",
+  "property_location": "Panapatti, Kinathukadavu, Coimbatore",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "600 sq ft",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "Rs. 2,79,000",
+    "facing": "North, South, East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved (DTCP No: 56/2025)"
+  },
+  "verified_facts": "11-acre DTCP-approved layout named Kurinji Ma Nagar with 380 total sites, 170 available., DTCP Approval Number: 56/2025., Standard plot size is 20 x 30 ft (600 sq ft) priced at Rs. 2,79,000., Optional 1BHK house package (500 sq ft house on 600 sq ft plot) available for Rs. 15 Lakhs., Free registration offer provided for buyers who visit through the channel video.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Panapatti, Kinathukadavu, Coimbatore சைட்ல Residential Plot தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை Rs. 2,79,000.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 600 sq ft லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு North, South, East ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP Approved (DTCP No: 56/2025) இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 58.479998803s.', 'status': 'RESOURCE_EXHAUSTED"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/3C8s8V0ULhc/",
+  "optional_owned_audio": "assets/audio/3C8s8V0ULhc.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Panapatti, Kinathukadavu, Coimbatore, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Expansive, flat open land partitioned into individual plots marked with numbered yellow/red boundary stones and wide dirt access roads, set against a backdrop of coconut palm groves and windmills.. Neighbourhood: Semi-rural layout near Chettipalayam and Kinathukadavu with direct bus access (73A, Ukkadam-Negamam routes) and proximity to industrial companies like Crown Worldwide Group.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Panapatti, Kinathukadavu, Coimbatore, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Expansive, flat open land partitioned into individual plots marked with numbered yellow/red boundary stones and wide dirt access roads, set against a backdrop of coconut palm groves and windmills.. Neighbourhood: Semi-rural layout near Chettipalayam and Kinathukadavu with direct bus access (73A, Ukkadam-Negamam routes) and proximity to industrial companies like Crown Worldwide Group.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Panapatti, Kinathukadavu, Coimbatore, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Expansive, flat open land partitioned into individual plots marked with numbered yellow/red boundary stones and wide dirt access roads, set against a backdrop of coconut palm groves and windmills.. Neighbourhood: Semi-rural layout near Chettipalayam and Kinathukadavu with direct bus access (73A, Ukkadam-Negamam routes) and proximity to industrial companies like Crown Worldwide Group.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Panapatti, Kinathukadavu, Coimbatore, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Expansive, flat open land partitioned into individual plots marked with numbered yellow/red boundary stones and wide dirt access roads, set against a backdrop of coconut palm groves and windmills.. Neighbourhood: Semi-rural layout near Chettipalayam and Kinathukadavu with direct bus access (73A, Ukkadam-Negamam routes) and proximity to industrial companies like Crown Worldwide Group.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

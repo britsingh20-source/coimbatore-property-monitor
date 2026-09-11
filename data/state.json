@@ -237,6 +237,14 @@
       "next_retry_at": "2026-08-29T14:31:57.406739+00:00",
       "status": "video_queued"
     },
+    "3C8s8V0ULhc": {
+      "attempts": 0,
+      "completed_at": "2026-09-11T06:05:01.540124+00:00",
+      "first_seen_at": "2026-09-11T06:04:45.534396+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-09-11T06:04:45.534396+00:00",
+      "status": "video_queued"
+    },
     "3Citq_Zelio": {
       "attempts": 0,
       "first_seen_at": "2026-09-04T11:25:00.267341+00:00",
@@ -656,6 +664,12 @@
       "last_error": "",
       "next_retry_at": "2026-09-09T16:42:51.349090+00:00",
       "status": "video_queued"
+    },
+    "BmkzVBBDiV8": {
+      "attempts": 0,
+      "first_seen_at": "2026-09-11T06:04:45.534396+00:00",
+      "next_retry_at": "2026-09-11T06:04:45.534396+00:00",
+      "status": "discovered"
     },
     "BoWMLEvalrw": {
       "attempts": 4,
