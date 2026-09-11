@@ -34,6 +34,8 @@ jobs:
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          INTERIOR_GEMINI_MODEL: gemini-2.5-flash
           INTERIOR_META_ACCESS_TOKEN: ${{ secrets.INTERIOR_META_ACCESS_TOKEN }}
           INTERIOR_META_PAGE_ID: ${{ secrets.INTERIOR_META_PAGE_ID }}
           INTERIOR_IG_USER_ID: ${{ secrets.INTERIOR_IG_USER_ID }}
