@@ -9,6 +9,7 @@ from pathlib import Path
 
 import boto3
 import requests
+from google import genai
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
@@ -83,27 +84,104 @@ def interior_id(message: dict) -> str:
     return match.group(1) if match else ""
 
 
-def history_record(source_id: str) -> dict:
-    path = Path("data/interior_trend_state.json")
-    if not path.exists():
-        return {}
-    state = json.loads(path.read_text(encoding="utf-8"))
-    for item in reversed(state.get("history", [])):
-        if str(item.get("video_id") or "") == source_id:
-            return item
-    return {}
+FORBIDDEN_PUBLISH_WORDS = (
+    "reference video",
+    "reference inspiration",
+    "inspired by",
+    "source video",
+    "source creator",
+    "ai visual reconstruction",
+)
 
 
-def instagram_caption(source_id: str) -> str:
-    item = history_record(source_id)
-    creator = str(item.get("creator") or "Interior design reference").strip()
-    return (
-        "Smart interior ideas for modern homes.\n\n"
-        "AI visual reconstruction inspired by a verified interior reference. "
-        "Design details should be adapted to actual site dimensions and requirements.\n\n"
-        f"Reference inspiration: {creator}\n"
-        "#OlivetreeInteriors #InteriorDesign #CoimbatoreInteriors"
-    )
+def _json_object(text: str) -> dict:
+    cleaned = re.sub(r"^```(?:json)?\s*|\s*```$", "", (text or "").strip(), flags=re.I)
+    start, end = cleaned.find("{"), cleaned.rfind("}")
+    if start < 0 or end < start:
+        raise ValueError("Interior video analysis did not return JSON")
+    return json.loads(cleaned[start:end + 1])
+
+
+def _clean_hashtags(values: object, subject: str) -> list[str]:
+    hashtags: list[str] = []
+    if isinstance(values, list):
+        for value in values:
+            tag = "#" + re.sub(r"[^A-Za-z0-9]", "", str(value).lstrip("#"))
+            if len(tag) > 1 and tag.lower() not in {x.lower() for x in hashtags}:
+                hashtags.append(tag)
+    fallback_subject = "#" + re.sub(r"[^A-Za-z0-9]", "", subject.title())[:40]
+    for tag in (fallback_subject, "#OliveTreeInteriors", "#CoimbatoreInteriors"):
+        if len(tag) > 1 and tag.lower() not in {x.lower() for x in hashtags}:
+            hashtags.append(tag)
+    return hashtags[:3]
+
+
+def analyze_publish_content(video_path: Path) -> dict:
+    prompt = """Watch the uploaded interior video completely, including its visuals and audio.
+Create original, customer-focused social content for Olive Tree Interiors in Coimbatore.
+
+Return one JSON object with these exact keys:
+subject, hook, interior_features, customer_benefits, instagram_caption,
+youtube_title, youtube_description, hashtags, youtube_tags.
+
+Rules:
+- Describe only interior elements clearly visible or audible in this uploaded video.
+- Identify the room, materials, finishes, colour palette, storage, lighting, hardware,
+  space-saving mechanism, craftsmanship and practical benefits when actually supported.
+- Lead with a strong specific hook, not a generic phrase.
+- Instagram caption: 70-140 words, easy English, short readable paragraphs, premium but natural,
+  with a save/share/DM call to action. Do not put hashtags inside this field.
+- YouTube title: specific, searchable and compelling; maximum 85 characters; no hashtags.
+- YouTube description: 90-180 words, searchable natural language, key design features first,
+  Olive Tree Interiors and Coimbatore included, and a contact/DM call to action.
+  Do not put hashtags inside this field.
+- hashtags: exactly 3 highly relevant hashtags, including OliveTreeInteriors and CoimbatoreInteriors.
+- youtube_tags: 5-10 concise search phrases.
+- Never mention a reference, source, inspiration creator/channel, reconstruction, AI generation,
+  competitor, copied footage, or how the video was produced.
+- Never invent dimensions, brands, materials, mechanisms, prices or project claims.
+"""
+    client = genai.Client(api_key=required("GEMINI_API_KEY"))
+    uploaded = client.files.upload(file=str(video_path))
+    try:
+        for _ in range(30):
+            state = str(getattr(getattr(uploaded, "state", None), "name", "") or "").upper()
+            if state in {"", "ACTIVE"}:
+                break
+            if state == "FAILED":
+                raise RuntimeError("Gemini could not process the interior video")
+            time.sleep(2)
+            uploaded = client.files.get(name=uploaded.name)
+        response = client.models.generate_content(
+            model=os.environ.get("INTERIOR_GEMINI_MODEL", "gemini-2.5-flash"),
+            contents=[uploaded, prompt],
+            config={"response_mime_type": "application/json", "temperature": 0.35},
+        )
+        result = _json_object(response.text)
+    finally:
+        try:
+            client.files.delete(name=uploaded.name)
+        except Exception:
+            pass
+
+    subject = str(result.get("subject") or "Modern Home Interior").strip()
+    hashtags = _clean_hashtags(result.get("hashtags"), subject)
+    caption = str(result.get("instagram_caption") or "").strip()
+    description = str(result.get("youtube_description") or "").strip()
+    title = str(result.get("youtube_title") or subject).strip()[:85]
+    searchable = " ".join((caption, description, title)).lower()
+    if any(term in searchable for term in FORBIDDEN_PUBLISH_WORDS):
+        raise ValueError("Generated social copy contained prohibited reference/source wording")
+    if not caption or not description or len(hashtags) != 3:
+        raise ValueError("Generated interior social copy was incomplete")
+    result["subject"] = subject
+    result["instagram_caption"] = f"{caption}\n\n{' '.join(hashtags)}"
+    result["youtube_title"] = f"{title} #Shorts"[:100]
+    result["youtube_description"] = f"{description}\n\n{' '.join(hashtags)}"
+    result["hashtags"] = hashtags
+    tags = result.get("youtube_tags")
+    result["youtube_tags"] = [str(x).strip() for x in tags if str(x).strip()][:10] if isinstance(tags, list) else []
+    return result
 
 
 def wait_instagram_container(creation_id: str, token: str) -> None:
@@ -194,13 +272,15 @@ def youtube_credentials() -> Credentials:
     )
 
 
-def publish_youtube_short(video_path: Path, source_id: str) -> dict:
+def publish_youtube_short(video_path: Path, content: dict) -> dict:
     youtube = build("youtube", "v3", credentials=youtube_credentials(), cache_discovery=False)
     body = {
         "snippet": {
-            "title": "Smart Interior Idea | Olivetree Interiors #Shorts",
-            "description": instagram_caption(source_id),
-            "tags": ["Shorts", "Interior Design", "Home Interiors", "Olivetree Interiors", "Coimbatore Interiors"],
+            "title": content["youtube_title"],
+            "description": content["youtube_description"],
+            "tags": content.get("youtube_tags") or [
+                "Interior Design", "Home Interiors", "Olive Tree Interiors", "Coimbatore Interiors"
+            ],
             "categoryId": "26",
         },
         "status": {
@@ -271,7 +351,21 @@ def handle_update(update: dict) -> int:
         state.setdefault("objects", {})[key] = record
         save_state(state)
 
-        caption = instagram_caption(source_id)
+        try:
+            content = analyze_publish_content(Path(handle.name))
+            record["content"] = content
+            save_state(state)
+        except Exception as error:
+            record["content"] = {"status": "failed", "error": str(error)[:3000]}
+            save_state(state)
+            send_message(
+                token,
+                chat_id,
+                "⚠️ Interior video publishing stopped: content analysis failed. No social post was created.",
+            )
+            raise
+
+        caption = content["instagram_caption"]
         try:
             record["instagram"] = {"status": "published", **publish_instagram_reel(video_url, caption)}
             save_state(state)
@@ -287,7 +381,7 @@ def handle_update(update: dict) -> int:
             save_state(state)
 
         try:
-            record["youtube"] = {"status": "published", **publish_youtube_short(Path(handle.name), source_id)}
+            record["youtube"] = {"status": "published", **publish_youtube_short(Path(handle.name), content)}
             save_state(state)
         except Exception as error:
             record["youtube"] = {"status": "failed", "error": str(error)[:3000]}
