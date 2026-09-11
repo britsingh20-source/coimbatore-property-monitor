@@ -39,7 +39,8 @@
     "sUmQvFpBXVU",
     "fHjyp0x_D1o",
     "QBLKVPEpLck",
-    "oUDW0j16dHc"
+    "oUDW0j16dHc",
+    "_ljtmslbTI4"
   ],
   "history": [
     {
@@ -241,6 +242,11 @@
       "video_id": "oUDW0j16dHc",
       "creator": "DesignCafe",
       "url": "https://www.youtube.com/watch?v=oUDW0j16dHc"
+    },
+    {
+      "video_id": "_ljtmslbTI4",
+      "creator": "DesignCafe",
+      "url": "https://www.youtube.com/watch?v=_ljtmslbTI4"
     }
   ],
   "night_channel_cursor": 1
