@@ -102,7 +102,6 @@ Exactly 10 seconds; native 60 fps; vertical 9:16; designed for smooth 3× slow m
 
 Make the footage feel physically filmed: natural Indian daylight, subtle sensor noise, believable exposure changes, realistic material texture, stable straight lines, correct cabinet clearances, minor real-world variation and natural reflections. When unclear, exclude the feature. A simpler accurate reconstruction is preferable to an attractive invented design.
 
-Disclosure for final edit or caption: “AI visual reconstruction inspired by a verified interior reference.”
 """
 
 
