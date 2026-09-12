@@ -22,6 +22,7 @@ type R2Event = {
 type QueueMessage = Message<R2Event>;
 
 const GITHUB_API = "https://api.github.com";
+const ACTIVE_FOCUS_KEY = "weekly-focus-active";
 
 type TelegramMessage = {
   message_id?: number;
@@ -105,8 +106,8 @@ function focusSelectionKey(chatId: string): string {
   return `weekly-focus-selection:${chatId}`;
 }
 
-async function readFocusSelection(env: Env, chatId: string): Promise<string[]> {
-  const raw = await env.PAIRING_STATE.get(focusSelectionKey(chatId));
+async function readJsonList(env: Env, key: string): Promise<string[]> {
+  const raw = await env.PAIRING_STATE.get(key);
   if (!raw) return [];
   try {
     const parsed = JSON.parse(raw);
@@ -114,6 +115,12 @@ async function readFocusSelection(env: Env, chatId: string): Promise<string[]> {
   } catch {
     return [];
   }
+}
+
+async function readFocusSelection(env: Env, chatId: string): Promise<string[]> {
+  const pending = await readJsonList(env, focusSelectionKey(chatId));
+  if (pending.length) return pending;
+  return readJsonList(env, ACTIVE_FOCUS_KEY);
 }
 
 async function writeFocusSelection(env: Env, chatId: string, selected: string[], ttlMinutes: number): Promise<void> {
@@ -147,6 +154,54 @@ function focusText(catalog: FocusCatalog, selected: string[]): string {
     names.length ? `Selected: ${names.join(" + ")}` : "Selected: none",
     "Tap Apply Weekly Focus when ready.",
   ].join("\n");
+}
+
+function indiaDateParts(now = new Date()): { year: number; month: number; day: number } {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Kolkata",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(now);
+  const get = (type: string) => Number(parts.find(part => part.type === type)?.value || 0);
+  return { year: get("year"), month: get("month"), day: get("day") };
+}
+
+function isoDateUtc(date: Date): string {
+  return date.toISOString().slice(0, 10);
+}
+
+function currentSundaySaturday(): { start: string; end: string } {
+  const p = indiaDateParts();
+  const d = new Date(Date.UTC(p.year, p.month - 1, p.day));
+  const daysSinceSunday = d.getUTCDay();
+  const start = new Date(d);
+  start.setUTCDate(d.getUTCDate() - daysSinceSunday);
+  const end = new Date(start);
+  end.setUTCDate(start.getUTCDate() + 6);
+  return { start: isoDateUtc(start), end: isoDateUtc(end) };
+}
+
+function buildWeeklyFocusConfig(catalog: FocusCatalog, selected: string[]): object {
+  const { start, end } = currentSundaySaturday();
+  const maxSelected = Number(catalog.rules?.max_selected || 2);
+  const chosen = catalog.areas.filter(area => selected.includes(area.slug)).slice(0, maxSelected);
+  return {
+    timezone: "Asia/Kolkata",
+    week_start: start,
+    week_end: end,
+    focus_areas: chosen.map(area => ({
+      name: area.name,
+      aliases: area.aliases || [],
+      micro_localities: area.micro_localities || [],
+    })),
+    rules: {
+      max_focus_areas: maxSelected,
+      require_focus_match_for_prompt: true,
+      allow_citywide_fallback: false,
+      prompt_instruction: "For this Sunday-to-Saturday focus week, prioritize only properties and prompt context that belong to the configured focus area(s) or their configured micro-localities. Do not broaden the prompt to unrelated Coimbatore areas.",
+    },
+  };
 }
 
 async function showFocusMenu(env: Env, chatId: string, messageId?: number): Promise<void> {
@@ -224,21 +279,15 @@ async function dispatchFocusCallback(update: TelegramUpdate, env: Env): Promise<
       if (callbackId) await telegram(env, "answerCallbackQuery", { callback_query_id: callbackId, text: "Select at least one area first." });
       return new Response("ok");
     }
-    const response = await githubDispatch(env, "weekly-focus-update", { areas: selected, source: "telegram-focus-selector" });
-    if (!response.ok) {
-      const detail = (await response.text()).slice(0, 300);
-      if (callbackId) await telegram(env, "answerCallbackQuery", { callback_query_id: callbackId, text: "Could not update weekly focus." });
-      console.error("Weekly focus dispatch failed", response.status, detail);
-      return new Response("dispatch failed", { status: 502 });
-    }
-    const names = catalog.areas.filter(area => selected.includes(area.slug)).map(area => area.name);
+    await env.PAIRING_STATE.put(ACTIVE_FOCUS_KEY, JSON.stringify(selected));
     await env.PAIRING_STATE.delete(focusSelectionKey(chatId));
-    if (callbackId) await telegram(env, "answerCallbackQuery", { callback_query_id: callbackId, text: "Weekly focus update started." });
+    const names = catalog.areas.filter(area => selected.includes(area.slug)).map(area => area.name);
+    if (callbackId) await telegram(env, "answerCallbackQuery", { callback_query_id: callbackId, text: "Weekly focus updated." });
     if (messageId) {
       await telegram(env, "editMessageText", {
         chat_id: chatId,
         message_id: messageId,
-        text: `✅ Weekly focus selected: ${names.join(" + ")}\nThe area aliases and saved micro-localities are being injected into the Sunday–Saturday focus config.`,
+        text: `✅ Weekly focus active: ${names.join(" + ")}\nArea aliases and saved micro-localities will be injected into every Property Monitor run for the current Sunday–Saturday week.`,
       });
     }
     return new Response("ok");
@@ -367,6 +416,15 @@ async function dispatchToGitHub(event: R2Event, env: Env): Promise<void> {
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
+    const url = new URL(request.url);
+    if (request.method === "GET" && url.pathname === "/weekly-focus-config") {
+      const catalog = await loadFocusCatalog(env);
+      const selected = await readJsonList(env, ACTIVE_FOCUS_KEY);
+      if (!selected.length) return new Response("No active weekly focus", { status: 404 });
+      return new Response(JSON.stringify(buildWeeklyFocusConfig(catalog, selected)), {
+        headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" },
+      });
+    }
     if (request.method === "GET") return new Response("coimbatore-property-social-trigger: healthy");
     if (request.method !== "POST") return new Response("Method not allowed", { status: 405 });
     let update: TelegramUpdate;
