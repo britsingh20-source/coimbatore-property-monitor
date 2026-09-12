@@ -214,9 +214,11 @@
     },
     "2ews-yAINDY": {
       "attempts": 0,
+      "completed_at": "2026-09-12T10:54:06.080382+00:00",
       "first_seen_at": "2026-09-12T09:37:27.006872+00:00",
+      "last_error": "",
       "next_retry_at": "2026-09-12T09:37:27.006872+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "2jHws5Fg5Ac": {
       "attempts": 0,

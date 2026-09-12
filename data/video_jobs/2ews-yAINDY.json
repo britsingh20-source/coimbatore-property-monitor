@@ -1,0 +1,162 @@
+{
+  "video_id": "2ews-yAINDY",
+  "source_url": "https://www.youtube.com/watch?v=2ews-yAINDY",
+  "property_location": "Papampatti, Coimbatore",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2 BHK",
+    "land_area": "2.75 Cents",
+    "built_up_area": "1000 Sq.ft",
+    "price": "₹49 Lakhs",
+    "facing": "East",
+    "road_width": "30 Feet",
+    "parking": "Covered Car Parking (10 ft x 20 ft)",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "2.75 Cents plot area with 1000 Sq.ft built-up area 2BHK simplex house., East-facing property in a corner site layout at Papampatti, Coimbatore., Includes 2 bedrooms with attached bathrooms and 1 outdoor common bathroom under staircase., Priced at ₹49 Lakhs (land + house included), with up to 85% bank loan availability., DTCP and Plan Approved house.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed conversational local property presenter speaking directly to camera with clear scene-matched B-roll footage",
+    "hook_strategy": "Lead directly with location and highly competitive pricing for a full house plus land package",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை பாப்பம்பட்டியில, திருச்சி ரோடு பக்கத்துல ஒரு Independent 2 BHK House விற்பனைக்கு வந்துருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "நிலமும் வீடும் சேர்த்து இதன் விலை 49 Lakhs மட்டுமே! இதுல up to 85% bank loan availability-யும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "price-tag",
+        "purpose": "value_proposition"
+      },
+      {
+        "name": "land",
+        "voice": "இது 2.75 Cents plot area-ல, compound wall-ோட ஒரு gated layout-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "land_details"
+      },
+      {
+        "name": "facing",
+        "voice": "முக்கியமான விஷயம், இது East-facing corner site property பாத்தீங்கனா.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "orientation"
+      },
+      {
+        "name": "road",
+        "voice": "முன்னாடி 30 Feet tar road, street lights, அப்புறம் 10 ft by 20 ft size-ல covered car parking கொடுத்திருக்காங்க.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "access_and_parking"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1000 Sq.ft built-up area-ல 2 bedrooms with attached bathrooms, அப்புறம் staircase அடியில 1 outdoor common bathroom-ம் வருது.",
+        "broll": [
+          "living_room",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "floorplan-overlay",
+        "purpose": "interior_layout"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP and Plan Approved house. Borewell with motor, 6,000 Litres water sump, 10,000 Litres septic tank-லாம் வசதியா அமைச்சிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "legal_and_utilities"
+      },
+      {
+        "name": "cta",
+        "voice": "பாப்பம்பட்டி four-road bus stop-ல இருந்து வெறும் 0.5 km தான். நேர்ல site visit மற்றும் details-க்கு உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/2ews-yAINDY/",
+  "optional_owned_audio": "assets/audio/2ews-yAINDY.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Papampatti, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house featuring a striking bright yellow, dark grey, and white facade with decorative exterior lighting, diamond wall feature, tile-clad veranda, and a brown wooden-styled metal folding main gate.. Neighbourhood: Peaceful gated residential layout in Papampatti with 30-foot paved tar roads, streetlights, developing surroundings with new constructions, and natural greenery with peacocks frequently spotted nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Papampatti, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house featuring a striking bright yellow, dark grey, and white facade with decorative exterior lighting, diamond wall feature, tile-clad veranda, and a brown wooden-styled metal folding main gate.. Neighbourhood: Peaceful gated residential layout in Papampatti with 30-foot paved tar roads, streetlights, developing surroundings with new constructions, and natural greenery with peacocks frequently spotted nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Papampatti, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house featuring a striking bright yellow, dark grey, and white facade with decorative exterior lighting, diamond wall feature, tile-clad veranda, and a brown wooden-styled metal folding main gate.. Neighbourhood: Peaceful gated residential layout in Papampatti with 30-foot paved tar roads, streetlights, developing surroundings with new constructions, and natural greenery with peacocks frequently spotted nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Papampatti, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house featuring a striking bright yellow, dark grey, and white facade with decorative exterior lighting, diamond wall feature, tile-clad veranda, and a brown wooden-styled metal folding main gate.. Neighbourhood: Peaceful gated residential layout in Papampatti with 30-foot paved tar roads, streetlights, developing surroundings with new constructions, and natural greenery with peacocks frequently spotted nearby.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
