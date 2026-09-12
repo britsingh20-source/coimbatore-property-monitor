@@ -1,0 +1,107 @@
+name: Update Weekly Focus
+
+on:
+  repository_dispatch:
+    types: [weekly-focus-update]
+  workflow_dispatch:
+    inputs:
+      areas:
+        description: Comma-separated focus area slugs (max 2)
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: property-automation-state
+  cancel-in-progress: false
+
+jobs:
+  update-focus:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Apply selected weekly focus
+        env:
+          SELECTED_AREAS: ${{ github.event_name == 'repository_dispatch' && join(github.event.client_payload.areas, ',') || inputs.areas }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import os
+          from datetime import datetime, timedelta
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          catalog = json.loads(Path('config/focus_areas.json').read_text(encoding='utf-8'))
+          by_slug = {area['slug']: area for area in catalog.get('areas', [])}
+          selected = [item.strip() for item in os.environ.get('SELECTED_AREAS', '').split(',') if item.strip()]
+          max_selected = int(catalog.get('rules', {}).get('max_selected', 2))
+          if not selected:
+              raise SystemExit('At least one focus area is required')
+          if len(selected) > max_selected:
+              raise SystemExit(f'Maximum {max_selected} focus areas allowed')
+          unknown = [slug for slug in selected if slug not in by_slug]
+          if unknown:
+              raise SystemExit(f'Unknown focus area(s): {unknown}')
+
+          now = datetime.now(ZoneInfo('Asia/Kolkata')).date()
+          days_since_sunday = (now.weekday() + 1) % 7
+          week_start = now - timedelta(days=days_since_sunday)
+          week_end = week_start + timedelta(days=6)
+
+          focus = {
+              'timezone': 'Asia/Kolkata',
+              'week_start': week_start.isoformat(),
+              'week_end': week_end.isoformat(),
+              'focus_areas': [
+                  {
+                      'name': by_slug[slug]['name'],
+                      'aliases': by_slug[slug].get('aliases', []),
+                      'micro_localities': by_slug[slug].get('micro_localities', []),
+                  }
+                  for slug in selected
+              ],
+              'rules': {
+                  'max_focus_areas': max_selected,
+                  'require_focus_match_for_prompt': True,
+                  'allow_citywide_fallback': False,
+                  'prompt_instruction': 'For this Sunday-to-Saturday focus week, prioritize only properties and prompt context that belong to the configured focus area(s) or their configured micro-localities. Do not broaden the prompt to unrelated Coimbatore areas.'
+              }
+          }
+          Path('config/weekly_focus.json').write_text(json.dumps(focus, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          print('Weekly focus:', ', '.join(area['name'] for area in focus['focus_areas']))
+          print('Week:', focus['week_start'], 'to', focus['week_end'])
+          PY
+
+      - name: Commit weekly focus
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "property-monitor-bot"
+          git config user.email "actions@github.com"
+          git add config/weekly_focus.json
+          if git diff --staged --quiet; then
+            echo "Weekly focus already matches selection."
+            exit 0
+          fi
+          areas="$(python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('config/weekly_focus.json').read_text())
+          print(' + '.join(x['name'] for x in d.get('focus_areas', [])))
+          PY
+          )"
+          git commit -m "chore: set weekly focus to ${areas}"
+          git pull --rebase origin main
+          git push origin main
