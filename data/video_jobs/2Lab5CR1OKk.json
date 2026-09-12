@@ -1,0 +1,129 @@
+{
+  "video_id": "2Lab5CR1OKk",
+  "source_url": "https://www.youtube.com/watch?v=2Lab5CR1OKk",
+  "property_location": "Sulur, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "1.25 to 3.50 Cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹10.40 Lakhs per Cent",
+    "facing": "NOT SPECIFIED",
+    "road_width": "30 feet and 33 feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Project Name: Sri Senthur Krishna Enclave (Chendur Krishna Enclave), Plot sizes range from 1.25 Cents to 3.50 Cents across 61 total sites spanning 3 Acres, Plot price is ₹10.40 Lakhs per Cent, Optional house construction packages advertised: 1 BHK on 1.50 Cent for ₹35 Lakhs, 2 BHK on 2.75 Cent for ₹55 Lakhs, Layout features 33 ft wide main road and 30 ft wide branch roads with asphalt paving, Includes 60,000 Litres overhead water tank with individual water pipeline to every plot, Located on Sulur-Kalangal Main Road, 5 minutes from Sulur Old Bus Stand and Trichy Road",
+  "content_plan": {
+    "target_duration_seconds": 38,
+    "style": "Relaxed and conversational local Tamil presenter speaking directly to camera with clear property and layout highlights.",
+    "hook_strategy": "Lead directly with the prime location on Sulur-Kalangal Main Road in Coimbatore.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை சுலூர்-களங்கல் மெயின் ரோட்ல இருக்குற ஸ்ரீ செந்தூர் கிருஷ்ணா என் கிளேவ் பத்தி தான் இன்னைக்கு பார்க்கப்போறோம்.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 3 ஏக்கர் பரப்பளவுல 61 பிளாட்ஸ் இருக்கு. இதுல 1.25 சென்ட்ல இருந்து 3.50 சென்ட் வரைக்கும் லேண்ட் சைஸ் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "plot-boundary-highlight",
+        "purpose": "layout_details"
+      },
+      {
+        "name": "road",
+        "voice": "லேஅவுட் உள்ள பாத்தீங்கனா 33 அடி மெயின் ரோடு, 30 அடி பிரான்ச் தார் ரோடு அமைச்சிருக்காங்க. அதோட 60,000 லிட்டர் ஓவர்ஹெட் வாட்டர் டேங்க் அண்ட் தனி வாட்டர் கனெக்ஷனும் இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "text-overlay-road-width",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "approval",
+        "voice": "இது கம்பவுண்ட் வாலோட வரக்கூடிய கேட்டட் கம்யூனிட்டி பிளாட்ஸ், பிளஸ் முழுசா DTCP approval வாங்குன ப்ராப்பர்ட்டி.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "approval-badge-overlay",
+        "purpose": "credibility"
+      },
+      {
+        "name": "price",
+        "voice": "இங்க ஒரு சென்ட் விலை ₹10.40 Lakhs. இதுல ஹவுஸ் கன்ஸ்ட்ரக்ஷன் பேக்கேஜஸும் ஆப்ஷனலா தராங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "price-card-pop-up",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பார்க்கவோ இல்ல மேலும் details தெரிஞ்சுக்கவோ உடனே காண்டாக்ட் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/2Lab5CR1OKk/",
+  "optional_owned_audio": "assets/audio/2Lab5CR1OKk.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Sulur, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A well-planned residential plot layout featuring freshly paved asphalt roads (30 ft and 33 ft), white lane markings, concrete street light poles, branded 60kL overhead water storage tank, boundary walls around the layout, and saplings planted at individual plot boundaries.. Neighbourhood: Residential land development situated near Sulur to Kalangal road in Coimbatore, close to schools, colleges, bus terminals, medical facilities, and major road links like Trichy Road.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Sulur, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A well-planned residential plot layout featuring freshly paved asphalt roads (30 ft and 33 ft), white lane markings, concrete street light poles, branded 60kL overhead water storage tank, boundary walls around the layout, and saplings planted at individual plot boundaries.. Neighbourhood: Residential land development situated near Sulur to Kalangal road in Coimbatore, close to schools, colleges, bus terminals, medical facilities, and major road links like Trichy Road.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Sulur, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A well-planned residential plot layout featuring freshly paved asphalt roads (30 ft and 33 ft), white lane markings, concrete street light poles, branded 60kL overhead water storage tank, boundary walls around the layout, and saplings planted at individual plot boundaries.. Neighbourhood: Residential land development situated near Sulur to Kalangal road in Coimbatore, close to schools, colleges, bus terminals, medical facilities, and major road links like Trichy Road.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Sulur, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A well-planned residential plot layout featuring freshly paved asphalt roads (30 ft and 33 ft), white lane markings, concrete street light poles, branded 60kL overhead water storage tank, boundary walls around the layout, and saplings planted at individual plot boundaries.. Neighbourhood: Residential land development situated near Sulur to Kalangal road in Coimbatore, close to schools, colleges, bus terminals, medical facilities, and major road links like Trichy Road.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
