@@ -1,0 +1,26 @@
+{
+  "timezone": "Asia/Kolkata",
+  "week_start": "2026-09-13",
+  "week_end": "2026-09-19",
+  "focus_areas": [
+    {
+      "name": "Karamadai",
+      "aliases": [
+        "karamadai",
+        "காரமடை"
+      ],
+      "micro_localities": [
+        "Saandhimedu",
+        "Santhimedu",
+        "Periyankampalayam",
+        "Peeches Colony"
+      ]
+    }
+  ],
+  "rules": {
+    "max_focus_areas": 2,
+    "require_focus_match_for_prompt": true,
+    "allow_citywide_fallback": false,
+    "prompt_instruction": "For this Sunday-to-Saturday focus week, prioritize only properties and prompt context that belong to the configured focus area(s) or their configured micro-localities. Do not broaden the prompt to unrelated Coimbatore areas."
+  }
+}
