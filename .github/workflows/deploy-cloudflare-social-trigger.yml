@@ -126,3 +126,12 @@ jobs:
             --data-urlencode "url=https://coimbatore-social-trigger.britsingh20.workers.dev/" \
             "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/setWebhook")"
           python3 -c "import json,sys; d=json.load(sys.stdin); assert d.get('ok'), d; print('Telegram webhook registered.')" <<<"$response"
+
+      - name: Verify live Worker health
+        run: |
+          set -euo pipefail
+          expected="coimbatore-property-social-trigger: healthy"
+          actual="$(curl --fail --silent --show-error --retry 5 --retry-delay 2 \
+            "https://coimbatore-social-trigger.britsingh20.workers.dev/")"
+          test "$actual" = "$expected"
+          echo "Live Worker health check passed."
