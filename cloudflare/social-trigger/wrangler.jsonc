@@ -3,7 +3,9 @@
   "name": "coimbatore-property-social-trigger",
   "main": "src/index.ts",
   "compatibility_date": "2026-09-10",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "vars": {
     "GITHUB_REPOSITORY": "britsingh20-source/coimbatore-property-monitor",
     "GITHUB_EVENT_TYPE": "r2-social-object-created"
@@ -17,5 +19,11 @@
         "max_retries": 5
       }
     ]
-  }
+  },
+  "kv_namespaces": [
+    {
+      "binding": "PAIRING_STATE",
+      "id": "PAIRING_STATE_NAMESPACE_ID"
+    }
+  ]
 }
