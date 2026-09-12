@@ -11,16 +11,11 @@ type R2Event = {
   account?: string;
   action?: string;
   bucket?: string;
-  object?: {
-    key?: string;
-    size?: number;
-    eTag?: string;
-  };
+  object?: { key?: string; size?: number; eTag?: string };
   eventTime?: string;
 };
 
 type QueueMessage = Message<R2Event>;
-
 const GITHUB_API = "https://api.github.com";
 const ACTIVE_FOCUS_KEY = "weekly-focus-active";
 
@@ -33,12 +28,7 @@ type TelegramMessage = {
   document?: { mime_type?: string; file_name?: string };
 };
 
-type TelegramCallbackQuery = {
-  id?: string;
-  data?: string;
-  message?: TelegramMessage;
-};
-
+type TelegramCallbackQuery = { id?: string; data?: string; message?: TelegramMessage };
 type TelegramUpdate = {
   update_id?: number;
   message?: TelegramMessage;
@@ -46,17 +36,8 @@ type TelegramUpdate = {
   callback_query?: TelegramCallbackQuery;
 };
 
-type FocusArea = {
-  slug: string;
-  name: string;
-  aliases?: string[];
-  micro_localities?: string[];
-};
-
-type FocusCatalog = {
-  areas: FocusArea[];
-  rules?: { max_selected?: number; selection_ttl_minutes?: number };
-};
+type FocusArea = { slug: string; name: string; aliases?: string[]; micro_localities?: string[] };
+type FocusCatalog = { areas: FocusArea[]; rules?: { max_selected?: number; selection_ttl_minutes?: number } };
 
 function extractVideoId(text: string): string {
   const labelled = text.match(/(?:video[\s_-]*id|id)[\s:=_-]+([A-Za-z0-9_-]{11})/i);
@@ -102,9 +83,7 @@ async function loadFocusCatalog(env: Env): Promise<FocusCatalog> {
   return await response.json() as FocusCatalog;
 }
 
-function focusSelectionKey(chatId: string): string {
-  return `weekly-focus-selection:${chatId}`;
-}
+function focusSelectionKey(chatId: string): string { return `weekly-focus-selection:${chatId}`; }
 
 async function readJsonList(env: Env, key: string): Promise<string[]> {
   const raw = await env.PAIRING_STATE.get(key);
@@ -112,15 +91,17 @@ async function readJsonList(env: Env, key: string): Promise<string[]> {
   try {
     const parsed = JSON.parse(raw);
     return Array.isArray(parsed) ? parsed.map(String) : [];
-  } catch {
-    return [];
-  }
+  } catch { return []; }
+}
+
+async function readActiveFocus(env: Env): Promise<string[]> {
+  return readJsonList(env, ACTIVE_FOCUS_KEY);
 }
 
 async function readFocusSelection(env: Env, chatId: string): Promise<string[]> {
   const pending = await readJsonList(env, focusSelectionKey(chatId));
   if (pending.length) return pending;
-  return readJsonList(env, ACTIVE_FOCUS_KEY);
+  return readActiveFocus(env);
 }
 
 async function writeFocusSelection(env: Env, chatId: string, selected: string[], ttlMinutes: number): Promise<void> {
@@ -131,6 +112,10 @@ async function writeFocusSelection(env: Env, chatId: string, selected: string[],
   );
 }
 
+function namesFor(catalog: FocusCatalog, selected: string[]): string[] {
+  return catalog.areas.filter(area => selected.includes(area.slug)).map(area => area.name);
+}
+
 function focusKeyboard(catalog: FocusCatalog, selected: string[]): object {
   const buttons = catalog.areas.map(area => ({
     text: `${selected.includes(area.slug) ? "✅ " : ""}${area.name}`,
@@ -139,44 +124,73 @@ function focusKeyboard(catalog: FocusCatalog, selected: string[]): object {
   const rows: object[][] = [];
   for (let i = 0; i < buttons.length; i += 2) rows.push(buttons.slice(i, i + 2));
   rows.push([
-    { text: "✅ Apply Weekly Focus", callback_data: "focus:apply" },
-    { text: "✖ Cancel", callback_data: "focus:cancel" },
+    { text: "✅ Apply Focus", callback_data: "focus:apply" },
+    { text: "✖ Close", callback_data: "focus:cancel" },
   ]);
   return { inline_keyboard: rows };
 }
 
 function focusText(catalog: FocusCatalog, selected: string[]): string {
   const max = Number(catalog.rules?.max_selected || 2);
-  const names = catalog.areas.filter(area => selected.includes(area.slug)).map(area => area.name);
+  const names = namesFor(catalog, selected);
   return [
-    "🎯 WEEKLY FOCUS",
-    `Select 1 or up to ${max} areas for the current Sunday–Saturday campaign.`,
+    "🎯 SELECT PROPERTY FOCUS",
+    `Choose 1 or up to ${max} areas.`,
     names.length ? `Selected: ${names.join(" + ")}` : "Selected: none",
-    "Tap Apply Weekly Focus when ready.",
+    "Only the selected area(s) will be allowed to generate property prompts.",
   ].join("\n");
+}
+
+function focusControllerText(catalog: FocusCatalog, active: string[]): string {
+  const names = namesFor(catalog, active);
+  const label = names.length ? names.join(" + ") : "Not selected";
+  return [
+    "📍 PROPERTY MONITOR",
+    `🎯 Current Focus: ${label}`,
+    names.length
+      ? `Only verified ${label} property prompts will be sent. If the trusted channels have no matching upload, public YouTube discovery will search the same focus area.`
+      : "Choose an area to start focused property monitoring.",
+  ].join("\n");
+}
+
+function focusControllerKeyboard(catalog: FocusCatalog, active: string[]): object {
+  const names = namesFor(catalog, active);
+  const label = names.length ? names.join(" + ") : "Choose Area";
+  return {
+    inline_keyboard: [[{
+      text: `🎯 Focus: ${label} ▾`,
+      callback_data: "focus:open",
+    }]],
+  };
+}
+
+async function showFocusController(env: Env, chatId: string, messageId?: number): Promise<void> {
+  const catalog = await loadFocusCatalog(env);
+  const active = await readActiveFocus(env);
+  const payload = {
+    chat_id: chatId,
+    text: focusControllerText(catalog, active),
+    reply_markup: focusControllerKeyboard(catalog, active),
+  };
+  if (messageId) await telegram(env, "editMessageText", { ...payload, message_id: messageId });
+  else await telegram(env, "sendMessage", payload);
 }
 
 function indiaDateParts(now = new Date()): { year: number; month: number; day: number } {
   const parts = new Intl.DateTimeFormat("en-CA", {
-    timeZone: "Asia/Kolkata",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
+    timeZone: "Asia/Kolkata", year: "numeric", month: "2-digit", day: "2-digit",
   }).formatToParts(now);
   const get = (type: string) => Number(parts.find(part => part.type === type)?.value || 0);
   return { year: get("year"), month: get("month"), day: get("day") };
 }
 
-function isoDateUtc(date: Date): string {
-  return date.toISOString().slice(0, 10);
-}
+function isoDateUtc(date: Date): string { return date.toISOString().slice(0, 10); }
 
 function currentSundaySaturday(): { start: string; end: string } {
   const p = indiaDateParts();
   const d = new Date(Date.UTC(p.year, p.month - 1, p.day));
-  const daysSinceSunday = d.getUTCDay();
   const start = new Date(d);
-  start.setUTCDate(d.getUTCDate() - daysSinceSunday);
+  start.setUTCDate(d.getUTCDate() - d.getUTCDay());
   const end = new Date(start);
   end.setUTCDate(start.getUTCDate() + 6);
   return { start: isoDateUtc(start), end: isoDateUtc(end) };
@@ -207,16 +221,9 @@ function buildWeeklyFocusConfig(catalog: FocusCatalog, selected: string[]): obje
 async function showFocusMenu(env: Env, chatId: string, messageId?: number): Promise<void> {
   const catalog = await loadFocusCatalog(env);
   const selected = await readFocusSelection(env, chatId);
-  const payload = {
-    chat_id: chatId,
-    text: focusText(catalog, selected),
-    reply_markup: focusKeyboard(catalog, selected),
-  };
-  if (messageId) {
-    await telegram(env, "editMessageText", { ...payload, message_id: messageId });
-  } else {
-    await telegram(env, "sendMessage", payload);
-  }
+  const payload = { chat_id: chatId, text: focusText(catalog, selected), reply_markup: focusKeyboard(catalog, selected) };
+  if (messageId) await telegram(env, "editMessageText", { ...payload, message_id: messageId });
+  else await telegram(env, "sendMessage", payload);
 }
 
 async function dispatchFocusCallback(update: TelegramUpdate, env: Env): Promise<Response> {
@@ -224,9 +231,7 @@ async function dispatchFocusCallback(update: TelegramUpdate, env: Env): Promise<
   const data = String(query?.data || "");
   const chatId = String(query?.message?.chat?.id || "");
   const messageId = query?.message?.message_id;
-  if (!query || chatId !== String(env.TELEGRAM_CHAT_ID) || !data.startsWith("focus:")) {
-    return new Response("ok");
-  }
+  if (!query || chatId !== String(env.TELEGRAM_CHAT_ID) || !data.startsWith("focus:")) return new Response("ok");
 
   const callbackId = String(query.id || "");
   const catalog = await loadFocusCatalog(env);
@@ -236,20 +241,14 @@ async function dispatchFocusCallback(update: TelegramUpdate, env: Env): Promise<
 
   if (data === "focus:open") {
     if (callbackId) await telegram(env, "answerCallbackQuery", { callback_query_id: callbackId });
-    await showFocusMenu(env, chatId);
+    await showFocusMenu(env, chatId, messageId);
     return new Response("ok");
   }
 
   if (data === "focus:cancel") {
     await env.PAIRING_STATE.delete(focusSelectionKey(chatId));
-    if (callbackId) await telegram(env, "answerCallbackQuery", { callback_query_id: callbackId, text: "Weekly focus selection cancelled." });
-    if (messageId) {
-      await telegram(env, "editMessageText", {
-        chat_id: chatId,
-        message_id: messageId,
-        text: "Weekly focus selection cancelled.",
-      });
-    }
+    if (callbackId) await telegram(env, "answerCallbackQuery", { callback_query_id: callbackId, text: "Focus menu closed." });
+    await showFocusController(env, chatId, messageId);
     return new Response("ok");
   }
 
@@ -260,17 +259,15 @@ async function dispatchFocusCallback(update: TelegramUpdate, env: Env): Promise<
       if (callbackId) await telegram(env, "answerCallbackQuery", { callback_query_id: callbackId, text: "Unknown area." });
       return new Response("ok");
     }
-    if (selected.includes(slug)) {
-      selected = selected.filter(item => item !== slug);
-    } else if (selected.length >= maxSelected) {
+    if (selected.includes(slug)) selected = selected.filter(item => item !== slug);
+    else if (selected.length >= maxSelected) {
       if (callbackId) await telegram(env, "answerCallbackQuery", { callback_query_id: callbackId, text: `Select maximum ${maxSelected} areas.` });
       return new Response("ok");
-    } else {
-      selected = [...selected, slug];
-    }
+    } else selected = [...selected, slug];
+
     await writeFocusSelection(env, chatId, selected, ttlMinutes);
     if (callbackId) await telegram(env, "answerCallbackQuery", { callback_query_id: callbackId });
-    if (messageId) await showFocusMenu(env, chatId, messageId);
+    await showFocusMenu(env, chatId, messageId);
     return new Response("ok");
   }
 
@@ -281,15 +278,9 @@ async function dispatchFocusCallback(update: TelegramUpdate, env: Env): Promise<
     }
     await env.PAIRING_STATE.put(ACTIVE_FOCUS_KEY, JSON.stringify(selected));
     await env.PAIRING_STATE.delete(focusSelectionKey(chatId));
-    const names = catalog.areas.filter(area => selected.includes(area.slug)).map(area => area.name);
-    if (callbackId) await telegram(env, "answerCallbackQuery", { callback_query_id: callbackId, text: "Weekly focus updated." });
-    if (messageId) {
-      await telegram(env, "editMessageText", {
-        chat_id: chatId,
-        message_id: messageId,
-        text: `✅ Weekly focus active: ${names.join(" + ")}\nArea aliases and saved micro-localities will be injected into every Property Monitor run for the current Sunday–Saturday week.`,
-      });
-    }
+    const names = namesFor(catalog, selected);
+    if (callbackId) await telegram(env, "answerCallbackQuery", { callback_query_id: callbackId, text: `Focus active: ${names.join(" + ")}` });
+    await showFocusController(env, chatId, messageId);
     return new Response("ok");
   }
 
@@ -298,7 +289,6 @@ async function dispatchFocusCallback(update: TelegramUpdate, env: Env): Promise<
 
 async function dispatchTelegram(update: TelegramUpdate, env: Env): Promise<Response> {
   if (update.callback_query) return dispatchFocusCallback(update, env);
-
   const message = update.message || update.edited_message;
   const chatId = String(message?.chat?.id || "");
   if (!message || chatId !== String(env.TELEGRAM_CHAT_ID)) return new Response("ok");
@@ -308,23 +298,20 @@ async function dispatchTelegram(update: TelegramUpdate, env: Env): Promise<Respo
   await env.PAIRING_STATE.put(updateKey, "1", { expirationTtl: 86400 });
 
   const text = String(message.caption || message.text || "").trim();
-  if (/^\/focus(?:@\w+)?$/i.test(text) || text === "🎯 Weekly Focus") {
-    await showFocusMenu(env, chatId);
+  if (/^\/focus(?:@\w+)?$/i.test(text) || text === "🎯 Weekly Focus" || text === "🎯 Focus Control") {
+    await showFocusController(env, chatId);
     return new Response("ok");
   }
 
   const explicit = extractVideoId(text);
   const attachment = videoAttachment(message);
-
   if (!attachment) {
     if (!explicit) return new Response("ok");
     await env.PAIRING_STATE.put(`pending-id:${chatId}`, explicit, { expirationTtl: 900 });
     await telegram(env, "sendMessage", {
       chat_id: chatId,
       text: `✅ VIDEO_ID saved: ${explicit}\nSend the MP4 within 15 minutes. It will publish immediately after pairing.`,
-      reply_markup: {
-        inline_keyboard: [[{ text: "🎯 Weekly Focus", callback_data: "focus:open" }]],
-      },
+      reply_markup: { inline_keyboard: [[{ text: "🎯 Focus Control", callback_data: "focus:open" }]] },
     });
     return new Response("ok");
   }
@@ -340,7 +327,6 @@ async function dispatchTelegram(update: TelegramUpdate, env: Env): Promise<Respo
 
   message.caption = `VIDEO_ID: ${videoId}`;
   const response = await githubDispatch(env, "telegram-property-upload", { update });
-
   if (!response.ok) {
     const detail = (await response.text()).slice(0, 300);
     await env.PAIRING_STATE.delete(updateKey);
@@ -356,24 +342,16 @@ async function dispatchTelegram(update: TelegramUpdate, env: Env): Promise<Respo
   await telegram(env, "sendMessage", {
     chat_id: chatId,
     text: `✅ ${videoId} paired. Live publishing started immediately. Duplicate protection is active.`,
-    reply_markup: {
-      inline_keyboard: [[{ text: "🎯 Weekly Focus", callback_data: "focus:open" }]],
-    },
+    reply_markup: { inline_keyboard: [[{ text: "🎯 Focus Control", callback_data: "focus:open" }]] },
   });
   return new Response("ok");
 }
 
-function normalizeKey(key: string): string {
-  return key.replace(/^\/+/, "");
-}
+function normalizeKey(key: string): string { return key.replace(/^\/+/, ""); }
 
 function isPublishableObject(event: R2Event): boolean {
   const key = normalizeKey(String(event.object?.key || ""));
-  return (
-    event.action !== "DeleteObject" &&
-    key.startsWith("social-ready/") &&
-    key.toLowerCase().endsWith(".mp4")
-  );
+  return event.action !== "DeleteObject" && key.startsWith("social-ready/") && key.toLowerCase().endsWith(".mp4");
 }
 
 async function dispatchToGitHub(event: R2Event, env: Env): Promise<void> {
@@ -387,30 +365,20 @@ async function dispatchToGitHub(event: R2Event, env: Env): Promise<void> {
     event_time: event.eventTime || new Date().toISOString(),
     source: "cloudflare-r2-event-notification",
   };
-
-  const response = await fetch(
-    `${GITHUB_API}/repos/${env.GITHUB_REPOSITORY}/dispatches`,
-    {
-      method: "POST",
-      headers: {
-        "Accept": "application/vnd.github+json",
-        "Authorization": `Bearer ${env.GITHUB_DISPATCH_TOKEN}`,
-        "X-GitHub-Api-Version": "2026-03-10",
-        "Content-Type": "application/json",
-        "User-Agent": "coimbatore-property-social-trigger",
-      },
-      body: JSON.stringify({
-        event_type: env.GITHUB_EVENT_TYPE,
-        client_payload: payload,
-      }),
+  const response = await fetch(`${GITHUB_API}/repos/${env.GITHUB_REPOSITORY}/dispatches`, {
+    method: "POST",
+    headers: {
+      "Accept": "application/vnd.github+json",
+      "Authorization": `Bearer ${env.GITHUB_DISPATCH_TOKEN}`,
+      "X-GitHub-Api-Version": "2026-03-10",
+      "Content-Type": "application/json",
+      "User-Agent": "coimbatore-property-social-trigger",
     },
-  );
-
+    body: JSON.stringify({ event_type: env.GITHUB_EVENT_TYPE, client_payload: payload }),
+  });
   if (!response.ok) {
     const body = await response.text();
-    throw new Error(
-      `GitHub repository_dispatch failed (${response.status}): ${body.slice(0, 1000)}`,
-    );
+    throw new Error(`GitHub repository_dispatch failed (${response.status}): ${body.slice(0, 1000)}`);
   }
 }
 
@@ -419,7 +387,7 @@ export default {
     const url = new URL(request.url);
     if (request.method === "GET" && url.pathname === "/weekly-focus-config") {
       const catalog = await loadFocusCatalog(env);
-      const selected = await readJsonList(env, ACTIVE_FOCUS_KEY);
+      const selected = await readActiveFocus(env);
       if (!selected.length) return new Response("No active weekly focus", { status: 404 });
       return new Response(JSON.stringify(buildWeeklyFocusConfig(catalog, selected)), {
         headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" },
@@ -437,12 +405,10 @@ export default {
     for (const message of batch.messages as QueueMessage[]) {
       const event = message.body;
       const key = normalizeKey(String(event.object?.key || ""));
-
       if (!isPublishableObject(event)) {
         message.ack();
         continue;
       }
-
       try {
         await dispatchToGitHub(event, env);
         console.log(`Dispatched ${key} to GitHub social autopilot`);
