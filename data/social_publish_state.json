@@ -2637,7 +2637,6 @@
         "c-4QPa4_U88",
         "FJXTDNnlWRs",
         "8D8vSvh_d2Y",
-        "Fs9ObmoAxhY",
         "bd4-PnKw_U0",
         "R5T3PnEnbbw",
         "paJe-u0ijw8"
@@ -2743,9 +2742,124 @@
       "video_id": "uAJus2hXLTo"
     },
     "social-ready/telegram-AgADkSEAAuovKVU.mp4": {
+      "content": {
+        "caption": "🏠 ₹16,50,000 per cent Residential Plot in Centhurapuram, Saravanampatti, Coimbatore, Tamil Nadu\n\n📍 Location: Centhurapuram, Saravanampatti, Coimbatore, Tamil Nadu\n🏡 Property: Residential Plot\n💰 Price: ₹16,50,000 per cent\n📐 Land: 6.12 Cents\n🧭 Facing: South\n🛣️ Road: 30 Feet\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CenthurapuramProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#CenthurapuramProperty",
+          "#CoimbatoreProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "₹16,50,000 per cent Residential Plot in Centhurapuram, Saravanampatti, Coimbatore, Tamil Nadu | Site",
+        "youtube_description": "₹16,50,000 per cent Residential Plot in Centhurapuram, Saravanampatti, Coimbatore, Tamil Nadu. Watch the complete property walkthrough.\n\n📍 Location: Centhurapuram, Saravanampatti, Coimbatore, Tamil Nadu\n🏡 Property: Residential Plot\n💰 Price: ₹16,50,000 per cent\n📐 Land: 6.12 Cents\n🧭 Facing: South\n🛣️ Road: 30 Feet\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CenthurapuramProperty #CoimbatoreProperty #CoimbatoreRealEstate"
+      },
       "etag": "c07f4377c1375066b440b407fbb5b3ff-3",
-      "platforms": {},
-      "status": "waiting_for_video_id"
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "channel": "real_estate",
+            "creation_id": "17897319105599708",
+            "media_id": "18025589606693305",
+            "processing": {
+              "id": "17897319105599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17897319255599708",
+            "media_id": "17945638923287020",
+            "processing": {
+              "id": "17897319255599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "₹16,50,000 per cent Residential Plot in Centhurapuram, Saravanampatti, Coimbatore, Tamil Nadu. Watch the complete property walkthrough.\n\n📍 Location: Centhurapuram, Saravanampatti, Coimbatore, Tamil Nadu\n🏡 Property: Residential Plot\n💰 Price: ₹16,50,000 per cent\n📐 Land: 6.12 Cents\n🧭 Facing: South\n🛣️ Road: 30 Feet\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CenthurapuramProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "₹16,50,000 per cent Residential Plot in Centhurapuram, Saravanampatti, Coimbatore, Tamil Nadu. Watch the complete property walkthrough.\n\n📍 Location: Centhurapuram, Saravanampatti, Coimbatore, Tamil Nadu\n🏡 Property: Residential Plot\n💰 Price: ₹16,50,000 per cent\n📐 Land: 6.12 Cents\n🧭 Facing: South\n🛣️ Road: 30 Feet\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #CenthurapuramProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+                "title": "₹16,50,000 per cent Residential Plot in Centhurapuram, Saravanampatti, Coimbatore, Tamil Nadu | Site"
+              },
+              "publishedAt": "2026-09-12T09:44:54Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/-bEyfaFkrG0/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/-bEyfaFkrG0/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/-bEyfaFkrG0/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "₹16,50,000 per cent Residential Plot in Centhurapuram, Saravanampatti, Coimbatore, Tamil Nadu | Site"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "-bEyfaFkrG0"
+          },
+          "status": "published"
+        }
+      },
+      "status": "matched",
+      "video_id": "Fs9ObmoAxhY",
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 249867,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 23.334,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 249824,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 23.333333,
+          "height": 1280,
+          "width": 720
+        }
+      }
     },
     "social-ready/telegram-AgADlB4AAmcz4VQ.mp4": {
       "content": {
