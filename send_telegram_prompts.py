@@ -15,7 +15,7 @@ from veo_prompt import build_veo_prompt, telegram_filename
 
 JOBS = Path("data/video_jobs")
 DEFAULT_QUEUE = Path("data/telegram_prompt_queue.json")
-WEEKLY_FOCUS = Path("config/weekly_focus.json")
+WEEKLY_FOCUS = Path(os.environ.get("WEEKLY_FOCUS_PATH", "config/weekly_focus.json"))
 
 
 def _ids(path: Path) -> list[str]:
@@ -121,14 +121,12 @@ def send_prompt(job: dict, bot_token: str, chat_id: str) -> None:
                 {
                     "text": "Copy VIDEO_ID",
                     "copy_text": {"text": video_id},
-                }
-            ],
-            [
+                },
                 {
                     "text": "🎯 Weekly Focus",
                     "callback_data": "focus:open",
-                }
-            ],
+                },
+            ]
         ]
     }
     payload = io.BytesIO(prompt.encode("utf-8"))
