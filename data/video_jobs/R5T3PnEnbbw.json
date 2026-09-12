@@ -1,0 +1,134 @@
+{
+  "video_id": "R5T3PnEnbbw",
+  "source_url": "https://www.youtube.com/watch?v=R5T3PnEnbbw",
+  "property_location": "Sulur, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "1.5 Cents to 8 Cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹5.5 Lakhs per cent (negotiable)",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "DTCP approved gated layout project named Gokulam Garden situated on the Sulur to Appanaickenpatti Road., Individual plot sizes available from 1.5 cents up to 8 cents., Land price is ₹5.5 Lakhs per cent with price negotiation option., Optional 2 BHK house construction offer available at ₹47 Lakhs on a 2.75 cent plot., Bank loan assistance supported with initial booking advance starting from ₹1 Lakh.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local real-estate presenter speaking directly to camera on location in natural spoken Tamil.",
+    "hook_strategy": "Highlighting a DTCP approved plot layout on Sulur to Appanaickenpatti Road near Karadivavi.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை Sulur to Appanaickenpatti Road-ல இருக்குற 'Gokulam Garden' project-க்கு தான் இன்னைக்கு நாம வந்திருக்கோம். Karadivavi-லிருந்து 5 km தூரத்துல இந்த location இருக்கு.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "approval",
+        "voice": "இது முழுசா DTCP approval பெற்ற gated layout. சுற்றிலும் perimeter compound wall, entrance arch, EB connection, தனி water pipe connections மற்றும் drainage வசதிகள் பண்ணியிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "interior"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_building"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல 1.5 cents-ல இருந்து 8 cents வரைக்கும் plot sizes அமைஞ்சிருக்கு. Layout உள்ள நல்ல tar roads போட்டிருக்காங்க.",
+        "broll": [
+          "land",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "plot-boundary-highlight",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இதுல முக்கியமான விஷயம், 2.75 cent plot-ல optional-ஆ 2 BHK house construction பண்ணி தர offer-உம் இருக்கு, ₹47 Lakhs-க்கு.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "house-option-text",
+        "purpose": "value_add"
+      },
+      {
+        "name": "price",
+        "voice": "Land price பாத்தீங்கனா per cent ₹5.5 Lakhs வருது, price negotiable. ₹1 Lakh advance-ல booking பண்ணலாம், bank loan assistance-உம் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "price-tag-pop",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ண அல்லது மேலும் details தெரிஞ்சுக்க உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "contact-card",
+        "purpose": "action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/R5T3PnEnbbw/",
+  "optional_owned_audio": "assets/audio/R5T3PnEnbbw.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Clear vacant residential plots with paved blacktop roads, concrete curbs, drainage system, electrical distribution poles, water outlets, perimeter wall, and a painted entrance gate arch.. Neighbourhood: Developing residential/commercial locality near main highway roads in the Sulur area of Coimbatore, close to educational institutions, hospitals, and commercial establishments.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Clear vacant residential plots with paved blacktop roads, concrete curbs, drainage system, electrical distribution poles, water outlets, perimeter wall, and a painted entrance gate arch.. Neighbourhood: Developing residential/commercial locality near main highway roads in the Sulur area of Coimbatore, close to educational institutions, hospitals, and commercial establishments.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Clear vacant residential plots with paved blacktop roads, concrete curbs, drainage system, electrical distribution poles, water outlets, perimeter wall, and a painted entrance gate arch.. Neighbourhood: Developing residential/commercial locality near main highway roads in the Sulur area of Coimbatore, close to educational institutions, hospitals, and commercial establishments.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Clear vacant residential plots with paved blacktop roads, concrete curbs, drainage system, electrical distribution poles, water outlets, perimeter wall, and a painted entrance gate arch.. Neighbourhood: Developing residential/commercial locality near main highway roads in the Sulur area of Coimbatore, close to educational institutions, hospitals, and commercial establishments.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
