@@ -15,6 +15,7 @@ from veo_prompt import build_veo_prompt, telegram_filename
 
 JOBS = Path("data/video_jobs")
 DEFAULT_QUEUE = Path("data/telegram_prompt_queue.json")
+WEEKLY_FOCUS = Path("config/weekly_focus.json")
 
 
 def _ids(path: Path) -> list[str]:
@@ -25,6 +26,21 @@ def _ids(path: Path) -> list[str]:
         for line in path.read_text(encoding="utf-8").splitlines()
         if line.strip() and not line.lstrip().startswith("#")
     ]
+
+
+def _weekly_focus_label() -> str:
+    if not WEEKLY_FOCUS.exists():
+        return ""
+    try:
+        config = json.loads(WEEKLY_FOCUS.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return ""
+    areas = [
+        str(area.get("name") or "").strip()
+        for area in config.get("focus_areas", [])
+        if str(area.get("name") or "").strip()
+    ]
+    return " + ".join(areas[:2])
 
 
 def _telegram_error(response: requests.Response) -> str:
@@ -63,6 +79,14 @@ def _queue_prompt(queue_path: Path, job: dict) -> None:
 
 def send_prompt(job: dict, bot_token: str, chat_id: str) -> None:
     prompt = build_veo_prompt(job)
+    focus_label = _weekly_focus_label()
+    if focus_label:
+        prompt = (
+            f"WEEKLY FOCUS: {focus_label}\n"
+            "Use this property only within the active weekly area campaign.\n\n"
+            + prompt
+        )
+
     prop = job.get("property") or {}
     location = str(job.get("property_location") or "Coimbatore")
     video_id = str(job.get("video_id") or "").strip()
@@ -74,8 +98,13 @@ def send_prompt(job: dict, bot_token: str, chat_id: str) -> None:
         )
         if part and part.upper() != "NOT SPECIFIED"
     )
+    focus_header = (
+        f"<b>🎯 WEEKLY FOCUS: {html.escape(focus_label.upper())}</b>\n\n"
+        if focus_label else ""
+    )
     caption = (
-        "<b>New 10-second Gemini/Veo property prompt</b>\n"
+        focus_header
+        + "<b>New 10-second Gemini/Veo property prompt</b>\n"
         f"<b>Property:</b> {html.escape(title)}\n"
         f"<b>Location:</b> {html.escape(location)}\n"
         f"<b>Video ID:</b> <code>{html.escape(video_id)}</code>\n"
