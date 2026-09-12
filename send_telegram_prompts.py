@@ -122,7 +122,13 @@ def send_prompt(job: dict, bot_token: str, chat_id: str) -> None:
                     "text": "Copy VIDEO_ID",
                     "copy_text": {"text": video_id},
                 }
-            ]
+            ],
+            [
+                {
+                    "text": "🎯 Weekly Focus",
+                    "callback_data": "focus:open",
+                }
+            ],
         ]
     }
     payload = io.BytesIO(prompt.encode("utf-8"))
