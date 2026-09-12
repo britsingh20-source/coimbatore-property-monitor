@@ -15,7 +15,6 @@ from veo_prompt import build_veo_prompt, telegram_filename
 
 JOBS = Path("data/video_jobs")
 DEFAULT_QUEUE = Path("data/telegram_prompt_queue.json")
-WEEKLY_FOCUS = Path(os.environ.get("WEEKLY_FOCUS_PATH", "config/weekly_focus.json"))
 
 
 def _ids(path: Path) -> list[str]:
@@ -28,21 +27,6 @@ def _ids(path: Path) -> list[str]:
     ]
 
 
-def _weekly_focus_label() -> str:
-    if not WEEKLY_FOCUS.exists():
-        return ""
-    try:
-        config = json.loads(WEEKLY_FOCUS.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return ""
-    areas = [
-        str(area.get("name") or "").strip()
-        for area in config.get("focus_areas", [])
-        if str(area.get("name") or "").strip()
-    ]
-    return " + ".join(areas[:2])
-
-
 def _telegram_error(response: requests.Response) -> str:
     try:
         body = response.json()
@@ -51,7 +35,7 @@ def _telegram_error(response: requests.Response) -> str:
     return str(body.get("description") or body)[:500]
 
 
-def _queue_prompt(queue_path: Path, job: dict) -> None:
+def _queue_prompt(queue_path: Path, job: dict, prompt_message_id: int) -> None:
     queue = {"prompts": []}
     if queue_path.exists():
         queue = json.loads(queue_path.read_text(encoding="utf-8"))
@@ -61,6 +45,7 @@ def _queue_prompt(queue_path: Path, job: dict) -> None:
     update = {
         "sent_at": datetime.now(timezone.utc).isoformat(),
         "status": "pending_mobile_upload",
+        "prompt_message_id": int(prompt_message_id),
     }
     if existing is None:
         prompts.append({"video_id": video_id, **update})
@@ -70,6 +55,8 @@ def _queue_prompt(queue_path: Path, job: dict) -> None:
         existing.pop("reference_frame_count", None)
         existing.pop("reference_status", None)
         existing.pop("reference_error", None)
+        existing.pop("prompt_deleted_at", None)
+        existing.pop("prompt_delete_error", None)
     queue_path.parent.mkdir(parents=True, exist_ok=True)
     queue_path.write_text(
         json.dumps(queue, ensure_ascii=False, indent=2) + "\n",
@@ -77,16 +64,8 @@ def _queue_prompt(queue_path: Path, job: dict) -> None:
     )
 
 
-def send_prompt(job: dict, bot_token: str, chat_id: str) -> None:
+def send_prompt(job: dict, bot_token: str, chat_id: str) -> int:
     prompt = build_veo_prompt(job)
-    focus_label = _weekly_focus_label()
-    if focus_label:
-        prompt = (
-            f"WEEKLY FOCUS: {focus_label}\n"
-            "Use this property only within the active weekly area campaign.\n\n"
-            + prompt
-        )
-
     prop = job.get("property") or {}
     location = str(job.get("property_location") or "Coimbatore")
     video_id = str(job.get("video_id") or "").strip()
@@ -98,13 +77,8 @@ def send_prompt(job: dict, bot_token: str, chat_id: str) -> None:
         )
         if part and part.upper() != "NOT SPECIFIED"
     )
-    focus_header = (
-        f"<b>🎯 WEEKLY FOCUS: {html.escape(focus_label.upper())}</b>\n\n"
-        if focus_label else ""
-    )
     caption = (
-        focus_header
-        + "<b>New 10-second Gemini/Veo property prompt</b>\n"
+        "<b>New 10-second Gemini/Veo property prompt</b>\n"
         f"<b>Property:</b> {html.escape(title)}\n"
         f"<b>Location:</b> {html.escape(location)}\n"
         f"<b>Video ID:</b> <code>{html.escape(video_id)}</code>\n"
@@ -116,18 +90,10 @@ def send_prompt(job: dict, bot_token: str, chat_id: str) -> None:
         "The mobile filename can remain unchanged."
     )
     keyboard = {
-        "inline_keyboard": [
-            [
-                {
-                    "text": "Copy VIDEO_ID",
-                    "copy_text": {"text": video_id},
-                },
-                {
-                    "text": "🎯 Weekly Focus",
-                    "callback_data": "focus:open",
-                },
-            ]
-        ]
+        "inline_keyboard": [[{
+            "text": "Copy VIDEO_ID",
+            "copy_text": {"text": video_id},
+        }]]
     }
     payload = io.BytesIO(prompt.encode("utf-8"))
     payload.name = telegram_filename(job)
@@ -152,6 +118,11 @@ def send_prompt(job: dict, bot_token: str, chat_id: str) -> None:
         raise RuntimeError(
             f"Telegram rejected prompt for {video_id}: {_telegram_error(response)}"
         )
+    result = body.get("result") or {}
+    message_id = result.get("message_id")
+    if not isinstance(message_id, int):
+        raise RuntimeError(f"Telegram prompt for {video_id} returned no message_id")
+    return message_id
 
 
 def main() -> None:
@@ -165,7 +136,7 @@ def main() -> None:
     if not bot_token or not chat_id:
         raise SystemExit("TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID are required")
     if not chat_id.lstrip("-").isdigit():
-        raise SystemExit("TELEGRAM_CHAT_ID must be the numeric chat id returned by getUpdates")
+        raise SystemExit("TELEGRAM_CHAT_ID must be numeric")
 
     video_ids = _ids(args.ids_file)
     if not video_ids:
@@ -177,9 +148,9 @@ def main() -> None:
         if not path.exists():
             raise FileNotFoundError(f"Missing video job: {path}")
         job = json.loads(path.read_text(encoding="utf-8"))
-        send_prompt(job, bot_token, chat_id)
-        _queue_prompt(args.queue_file, job)
-        print(f"Sent Gemini/Veo YouTube-reference prompt to Telegram: {video_id}")
+        message_id = send_prompt(job, bot_token, chat_id)
+        _queue_prompt(args.queue_file, job, message_id)
+        print(f"Sent Gemini/Veo prompt to Telegram: {video_id} message_id={message_id}")
 
 
 if __name__ == "__main__":
