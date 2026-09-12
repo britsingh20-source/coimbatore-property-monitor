@@ -62,19 +62,6 @@ jobs:
           fi
       - run: pip install -r requirements.txt
 
-      - name: Restore Telegram polling while webhook recovery is unavailable
-        if: github.event_name != 'repository_dispatch' || github.event.action == 'telegram-property-upload'
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          curl --fail --silent --show-error \
-            --request POST \
-            --data-urlencode "drop_pending_updates=false" \
-            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/deleteWebhook" >/dev/null
-          echo "Telegram polling mode is active."
-
       - name: Recover confirmed MANUAL_PUBLISH upload
         if: github.event_name != 'repository_dispatch' || github.event.action == 'telegram-property-upload'
         shell: bash
