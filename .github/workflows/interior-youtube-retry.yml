@@ -49,6 +49,12 @@ jobs:
               raise RuntimeError('No interior upload found in state')
           key, rec = list(state['objects'].items())[-1]
           source_id = str(rec.get('source_id') or '')
+          content = rec.get('content') or {}
+          title = str(content.get('youtube_title') or '').strip()
+          description = str(content.get('youtube_description') or '').strip()
+          tags = content.get('youtube_tags') or []
+          if not title or not description:
+              raise RuntimeError('No video-analyzed YouTube metadata is stored; refusing generic retry metadata')
           current = rec.get('youtube') or {}
           if current.get('status') == 'published' and current.get('video_id'):
               print('YouTube already published; skipping duplicate')
@@ -61,9 +67,9 @@ jobs:
               youtube = build('youtube', 'v3', credentials=creds, cache_discovery=False)
               body = {
                   'snippet': {
-                      'title': 'Smart Interior Idea | Home Space #Shorts',
-                      'description': 'Smart interior ideas for modern homes.\n\n#Shorts #InteriorDesign #CoimbatoreInteriors',
-                      'tags': ['Shorts','Interior Design','Coimbatore Interiors'],
+                      'title': title,
+                      'description': description,
+                      'tags': tags,
                       'categoryId': '26'
                   },
                   'status': {'privacyStatus': 'public', 'selfDeclaredMadeForKids': False}
