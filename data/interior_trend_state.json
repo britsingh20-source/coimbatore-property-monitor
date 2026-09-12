@@ -44,7 +44,8 @@
     "Ctv0AN5JqIA",
     "mP7jax3WrVA",
     "PjMRNwtNp60",
-    "mPkEnqQhDw4"
+    "mPkEnqQhDw4",
+    "mij1WbdNKfU"
   ],
   "history": [
     {
@@ -271,6 +272,11 @@
       "video_id": "mPkEnqQhDw4",
       "creator": "Interior Coach",
       "url": "https://www.youtube.com/watch?v=mPkEnqQhDw4"
+    },
+    {
+      "video_id": "mij1WbdNKfU",
+      "creator": "Interior Coach",
+      "url": "https://www.youtube.com/watch?v=mij1WbdNKfU"
     }
   ],
   "night_channel_cursor": 1
