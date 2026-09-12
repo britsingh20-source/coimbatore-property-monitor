@@ -1,0 +1,146 @@
+name: Weekly Focus E2E Test
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/weekly-focus-e2e-test.yml"
+      - "cloudflare/social-trigger/src/index.ts"
+      - ".github/workflows/update-weekly-focus.yml"
+      - "config/focus_areas.json"
+      - "config/weekly_focus.json"
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Verify focus catalog and current config
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          catalog=json.loads(Path('config/focus_areas.json').read_text(encoding='utf-8'))
+          focus=json.loads(Path('config/weekly_focus.json').read_text(encoding='utf-8'))
+          assert any(a.get('slug')=='karamadai' for a in catalog.get('areas', [])), 'Karamadai missing from focus catalog'
+          karam=next(a for a in catalog['areas'] if a['slug']=='karamadai')
+          assert karam.get('micro_localities'), 'Karamadai micro-localities missing'
+          assert focus.get('rules',{}).get('require_focus_match_for_prompt') is True
+          print('Catalog/config validation passed')
+          PY
+
+      - name: Verify live Worker health
+        run: |
+          set -euo pipefail
+          actual="$(curl --fail --silent --show-error --retry 5 --retry-delay 2 https://coimbatore-social-trigger.britsingh20.workers.dev/)"
+          test "$actual" = "coimbatore-property-social-trigger: healthy"
+          echo "Worker health passed"
+
+      - name: Open Weekly Focus menu in Telegram through live Worker
+        env:
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          set -euo pipefail
+          test -n "$TELEGRAM_CHAT_ID"
+          payload="$(python - <<'PY'
+          import json, os, time
+          print(json.dumps({
+            'update_id': int(time.time()) % 1000000000,
+            'message': {
+              'message_id': 900001,
+              'chat': {'id': int(os.environ['TELEGRAM_CHAT_ID'])},
+              'text': '/focus'
+            }
+          }))
+          PY
+          )"
+          code="$(curl --silent --show-error --output /tmp/focus-open.txt --write-out '%{http_code}' -X POST -H 'Content-Type: application/json' --data "$payload" https://coimbatore-social-trigger.britsingh20.workers.dev/)"
+          cat /tmp/focus-open.txt
+          test "$code" = "200"
+          echo "Live /focus menu request passed"
+
+      - name: Select Karamadai in live Worker state
+        env:
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          set -euo pipefail
+          payload="$(python - <<'PY'
+          import json, os, time
+          print(json.dumps({
+            'update_id': (int(time.time()) + 1) % 1000000000,
+            'callback_query': {
+              'data': 'focus:toggle:karamadai',
+              'message': {'chat': {'id': int(os.environ['TELEGRAM_CHAT_ID'])}}
+            }
+          }))
+          PY
+          )"
+          code="$(curl --silent --show-error --output /tmp/focus-toggle.txt --write-out '%{http_code}' -X POST -H 'Content-Type: application/json' --data "$payload" https://coimbatore-social-trigger.britsingh20.workers.dev/)"
+          cat /tmp/focus-toggle.txt
+          test "$code" = "200"
+          echo "Live Karamadai selection passed"
+
+      - name: Apply Karamadai through live Worker and GitHub dispatch
+        env:
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          set -euo pipefail
+          payload="$(python - <<'PY'
+          import json, os, time
+          print(json.dumps({
+            'update_id': (int(time.time()) + 2) % 1000000000,
+            'callback_query': {
+              'data': 'focus:apply',
+              'message': {'chat': {'id': int(os.environ['TELEGRAM_CHAT_ID'])}}
+            }
+          }))
+          PY
+          )"
+          code="$(curl --silent --show-error --output /tmp/focus-apply.txt --write-out '%{http_code}' -X POST -H 'Content-Type: application/json' --data "$payload" https://coimbatore-social-trigger.britsingh20.workers.dev/)"
+          cat /tmp/focus-apply.txt
+          test "$code" = "200"
+          echo "Live focus apply dispatch passed"
+
+      - name: Wait for Update Weekly Focus workflow success
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          start_epoch=$(date +%s)
+          for i in $(seq 1 24); do
+            json="$(curl --fail --silent --show-error \
+              -H "Authorization: Bearer ${GH_TOKEN}" \
+              -H 'Accept: application/vnd.github+json' \
+              "https://api.github.com/repos/${REPO}/actions/workflows/update-weekly-focus.yml/runs?event=repository_dispatch&per_page=10")"
+            result="$(printf '%s' "$json" | python - "$start_epoch" <<'PY'
+          import json, sys
+          from datetime import datetime, timezone
+          start=int(sys.argv[1])
+          d=json.load(sys.stdin)
+          for r in d.get('workflow_runs',[]):
+              created=datetime.fromisoformat(r['created_at'].replace('Z','+00:00')).timestamp()
+              if created >= start-10:
+                  print(r['id'], r['status'], r.get('conclusion') or '')
+                  break
+          PY
+          )"
+            if [ -n "$result" ]; then
+              echo "Update Weekly Focus run: $result"
+              status=$(echo "$result" | awk '{print $2}')
+              conclusion=$(echo "$result" | awk '{print $3}')
+              if [ "$status" = "completed" ]; then
+                test "$conclusion" = "success"
+                exit 0
+              fi
+            fi
+            sleep 10
+          done
+          echo "Timed out waiting for Update Weekly Focus workflow"
+          exit 1
