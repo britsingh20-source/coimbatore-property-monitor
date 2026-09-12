@@ -19,8 +19,8 @@ const replacements = [
     "  return source.video ? <Loop durationInFrames={72}><OffthreadVideo src={staticFile(source.src)} startFrom={source.startFrom || 0} muted style={style} /></Loop> : <Img src={staticFile(source.src)} style={style} />;",
   ],
   [
-    "      <PlotOutline />",
-    "      <BuildingScanOverlay />",
+    "      {mode === 'land' && <PlotOutline />}",
+    "      {mode === 'land' ? <PlotOutline /> : <BuildingScanOverlay />}",
   ],
   [
     "  const facts = props.facts;\n  const sceneNodes:",

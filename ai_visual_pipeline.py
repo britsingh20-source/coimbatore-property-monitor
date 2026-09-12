@@ -30,7 +30,28 @@ def scene_names(job: dict) -> list[str]:
     ptype = str(prop.get("property_type") or "property").lower()
     if any(word in ptype for word in ("plot", "land", "site")):
         return ["location", "road", "land", "exterior"]
-    return ["exterior", "location", "living", "kitchen", "bedroom", "road"]
+
+    scenes = ["location", "land", "living", "kitchen", "bedroom", "price", "facing", "road", "approval", "verify", "cta", "exterior"]
+    searchable = json.dumps(
+        {
+            "property": prop,
+            "content_plan": job.get("content_plan") or {},
+            "verified_facts": job.get("verified_facts") or [],
+        },
+        ensure_ascii=False,
+    ).lower()
+    feature_keywords = {
+        "false_ceiling": ("false ceiling", "false-ceiling", "ஃபால்ஸ் சீலிங்", "பால்ஸ் சீலிங்", "சீலிங்"),
+        "parking": ("car parking", "parking", "கார் பார்க்கிங்", "பார்க்கிங்"),
+        "bathroom": ("bathroom", "toilet", "பாத்ரூம்", "குளியலறை"),
+        "dining": ("dining", "டைனிங்"),
+        "balcony": ("balcony", "பால்கனி"),
+        "staircase": ("staircase", "stairs", "ஸ்டேர்கேஸ்", "படிக்கட்டு"),
+    }
+    for scene, keywords in feature_keywords.items():
+        if any(keyword in searchable for keyword in keywords):
+            scenes.append(scene)
+    return scenes
 
 
 def locality(job: dict) -> str:
@@ -42,7 +63,7 @@ def property_kind(job: dict) -> str:
     ptype = str((job.get("property") or {}).get("property_type") or "property").lower()
     if any(word in ptype for word in ("flat", "apartment")):
         return "flat"
-    if any(word in ptype for word in ("villa", "house", "independent")):
+    if any(word in ptype for word in ("villa", "house", "independent", "தனி வீடு", "வில்லா", "வீடு")):
         return "house"
     if any(word in ptype for word in ("plot", "land", "site")):
         return "land"
@@ -66,6 +87,26 @@ def floor_hint(job: dict) -> str:
     )
 
 
+def visual_blueprint_prompt(job: dict) -> str:
+    blueprint = job.get("visual_blueprint") or {}
+    if not isinstance(blueprint, dict) or not blueprint:
+        return ""
+    cleaned = {
+        str(key): value
+        for key, value in blueprint.items()
+        if value not in (None, "", [], {}, "NOT SPECIFIED", "UNKNOWN")
+    }
+    if not cleaned:
+        return ""
+    compact = json.dumps(cleaned, ensure_ascii=False, separators=(",", ":"))
+    return (
+        "Source-video visual blueprint (factual guidance only): " + compact[:2200] + ". "
+        "Preserve the verified property type, visible floor count, massing, colours, materials, gate, parking, "
+        "room character, plot and neighbourhood context. Generate a NEW similar-but-distinct property with a "
+        "different camera angle and non-identical details. Never reproduce a source frame, logo, person or text. "
+    )
+
+
 def common_prompt(job: dict) -> str:
     prop = job.get("property") or {}
     ptype = str(prop.get("property_type") or "residential property")
@@ -73,14 +114,17 @@ def common_prompt(job: dict) -> str:
     loc = locality(job)
     title = " ".join(x for x in (bhk, ptype) if x).strip()
     area = compact_size(job)
+    blueprint = visual_blueprint_prompt(job)
     return (
         f"Photorealistic representative real-estate advertising visual for a {title} in {loc}, Coimbatore, Tamil Nadu, India. "
         f"The listed built-up size is {area}; keep all spaces and architecture proportionate to that market segment. "
-        "Use authentic contemporary Tamil Nadu residential design, realistic Indian construction details, tropical daylight and believable local proportions. "
+        "Use authentic Coimbatore listing aesthetics: compact plots, close neighbouring independent houses, practical metal gates and compound walls, modest tar roads, red-brown soil, coconut/native tropical greenery and believable local proportions. "
+        "BHK is bedroom count only, never floor count. Do not infer two storeys from 2BHK or three storeys from 3BHK. "
         "Create an engaging premium property-marketing composition with foreground depth, leading lines, natural shadows and a clean focal point, while remaining physically plausible. "
         "Vertical 9:16 composition. No people, no text, no logos, no watermarks, no religious buildings, no flags, no mountains, no tea estates and no foreign suburban architecture. "
         "Do not create impossible cantilevers, floating rooms, buildings spanning over a public road, roads passing through a building, duplicate doors/windows, warped railings, fantasy geometry or luxury scale inconsistent with the property. "
         "Representative visual only; do not recreate or copy any real listing image. "
+        + blueprint
     )
 
 
@@ -126,13 +170,13 @@ def build_prompt(job: dict, scene: str) -> str:
         }
     elif kind == "house":
         details = {
-            "exterior": "Show one coherent contemporary Tamil Nadu independent house or villa entirely within its plot, flat-roof South Indian architecture, compound wall, gate and practical car parking. No impossible cantilevers or foreign suburban styling.",
+            "exterior": "Show one coherent compact SINGLE-STOREY Coimbatore independent house entirely within its plot, ground floor only, flat-roof South Indian architecture, compound wall, metal gate and practical car parking. No upper floor, balcony, staircase tower, apartment features, impossible cantilevers or foreign suburban styling.",
             "location": "Show a realistic Coimbatore residential neighbourhood with independent houses on both sides of an unobstructed local road, tropical greenery and utility poles.",
             "road": "Show a believable Tamil Nadu residential access road with houses set back on both sides, realistic utility poles and greenery, no highway, flyover or blocked carriageway.",
             "living": "Show a realistic modern Indian living room proportionate to the property, practical sofa and TV wall, warm wood accents, believable circulation and premium natural daylight.",
             "kitchen": "Show a practical premium Indian modular kitchen with realistic counters, cabinets, chimney and backsplash, no oversized foreign-style island unless the property scale supports it.",
             "bedroom": "Show a comfortable modern Tamil Nadu bedroom with realistic cot, wardrobe, side table and curtains, believable proportions and warm natural light.",
-            "land": "Show a believable residential house-site context in Tamil Nadu without fake measurements or survey markings.",
+            "land": "Show a clearly EMPTY compact residential plot in Coimbatore with unobstructed red-brown earth, four visible corners, front tar-road access, low boundary stones and neighbouring independent houses outside the site. No building inside the plot; leave the centre clear for graphic boundary lines.",
         }
     else:
         details = {
@@ -144,7 +188,25 @@ def build_prompt(job: dict, scene: str) -> str:
             "bedroom": "Show a realistic Indian bedroom proportionate to the stated property size.",
             "land": "Show believable residential plotted land in Tamil Nadu with local road access and modest surrounding houses, no plantation, mountain or fake measurements.",
         }
-    return base + details[scene]
+    special_details = {
+        "false_ceiling": "Show a tight, upward-looking architectural close-up of the actual room ceiling area: a professional modern Indian false ceiling with recessed LED downlights, warm cove lighting, clean gypsum profiles and one correctly proportioned ceiling fan. Keep walls and furniture secondary; the false ceiling must dominate the frame.",
+        "parking": "Show a clear eye-level close shot of practical covered or gated car parking at a compact Coimbatore residence, with one normal Indian passenger car correctly positioned inside the property boundary. Make parking access and usable clearance obvious; no showroom, highway or luxury fleet.",
+        "bathroom": "Show a realistic compact modern Indian bathroom close-up with anti-skid floor tile, wall tile, shower area, wash basin and practical ventilation. No oversized spa or hotel styling.",
+        "dining": "Show a realistic compact Indian dining space with a practical four-seat dining table adjoining the kitchen, believable circulation and warm residential lighting.",
+        "balcony": "Show a close architectural view of a practical Indian residential balcony with safe railing, tiled floor and believable neighbourhood context.",
+        "staircase": "Show a close architectural view of a safe modern Indian residential staircase with realistic tread proportions, handrail and landing.",
+    }
+    if scene in special_details:
+        return base + special_details[scene]
+
+    visual_alias = {
+        "price": "kitchen",
+        "facing": "bedroom",
+        "approval": "exterior",
+        "verify": "living",
+        "cta": "exterior",
+    }
+    return base + details[visual_alias.get(scene, scene)]
 
 
 def _validate_image_bytes(data: bytes, destination: Path) -> None:

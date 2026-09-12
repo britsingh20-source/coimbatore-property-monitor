@@ -52,7 +52,18 @@ is_property_listing (boolean), location, property_type, bhk, land_area,
 built_up_area, price, facing, road_width, floors, bedrooms, bathrooms,
 parking, approval, amenities (array), nearby_landmarks (array),
 contact_details, missing_fields (array), source_facts (array),
-visual_style, exterior_description, neighbourhood_description.
+visual_style, exterior_description, neighbourhood_description,
+visual_blueprint (object with keys: confidence, visible_floors, building_form,
+roof_style, facade_colours, facade_materials, gate_style, compound_wall,
+parking_layout, plot_shape, front_setback, road_surface, road_context,
+neighbouring_buildings, vegetation, living_room, kitchen, bedrooms,
+bathrooms, distinctive_features, prohibited_inferences).
+
+For visual_blueprint, describe only characteristics actually visible in the video.
+Do not copy a frame or request an identical recreation. Capture factual geometry,
+materials, colours and local context so a new similar-but-distinct representative
+property can be generated from different camera angles. BHK means bedroom count,
+not floor count. If floors are not visibly clear, use "NOT SPECIFIED".
 
 Classification rules:
 - property_type must describe one primary listing only. Never combine categories such as "House / Villa / Plot".
