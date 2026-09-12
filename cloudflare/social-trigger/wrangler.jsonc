@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/wrangler@latest/config-schema.json",
-  "name": "coimbatore-property-social-trigger",
+  "name": "coimbatore-social-trigger",
   "main": "src/index.ts",
   "compatibility_date": "2026-09-10",
   "compatibility_flags": [
