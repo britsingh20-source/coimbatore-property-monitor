@@ -82,11 +82,14 @@ def get_recent_videos(uploads_playlist: str, max_results: int = RECENT_UPLOADS) 
 
 def _focus_terms(focus: dict) -> list[str]:
     terms = []
+    normalized_seen = set()
     for area in focus.get("focus_areas", []):
         for value in [area.get("name"), *(area.get("aliases") or []), *(area.get("micro_localities") or [])]:
             value = str(value or "").strip()
-            if value and normalize(value) not in {normalize(term) for term in terms}:
+            normalized = normalize(value)
+            if value and normalized and normalized not in normalized_seen:
                 terms.append(value)
+                normalized_seen.add(normalized)
     return terms
 
 
@@ -106,10 +109,26 @@ def _published_after(focus: dict) -> str | None:
         return None
 
 
+def _published_in_focus_week(video: dict, focus: dict) -> bool:
+    start = str(focus.get("week_start") or "").strip()
+    end = str(focus.get("week_end") or "").strip()
+    published = str(video.get("published_at") or "").strip()
+    if not start or not published:
+        return False
+    try:
+        published_date = datetime.fromisoformat(published.replace("Z", "+00:00")).date()
+        start_date = datetime.fromisoformat(start).date()
+        if end:
+            end_date = datetime.fromisoformat(end).date()
+            return start_date <= published_date <= end_date
+        return published_date >= start_date
+    except ValueError:
+        return False
+
+
 def _focus_query(area: dict) -> str:
-    # YouTube search supports the | operator for OR. Include only a few locality
-    # variants so one search call can cover the main area and nearby pockets
-    # without burning quota on many search.list requests.
+    # YouTube search supports | as OR. One query per selected focus area keeps
+    # quota bounded while covering the main locality plus several saved pockets.
     raw_terms = [area.get("name"), *(area.get("micro_localities") or [])[:3]]
     terms = []
     for value in raw_terms:
@@ -169,8 +188,9 @@ def discover_focus_videos(focus: dict, seen_video_ids: set[str]) -> list[dict]:
                 "discovery_focus_area": area.get("name", ""),
                 "discovery_query": query,
             }
-            # Keep only search results whose metadata actually mentions one of
-            # the selected area terms. Gemini still performs final verification.
+            # Search relevance is not enough. Require the selected area or one
+            # of its configured micro-localities in metadata before spending a
+            # Gemini call; Gemini/location_matcher performs final verification.
             if not _metadata_has_focus(video, {"focus_areas": [area]}):
                 continue
             seen_video_ids.add(video_id)
@@ -187,9 +207,9 @@ def discover_focus_videos(focus: dict, seen_video_ids: set[str]) -> list[dict]:
 
 def main() -> list[dict]:
     """
-    Stage 1: scan configured trusted channels.
-    Stage 2: if those channels contain no metadata match for the active weekly
-    focus, search public YouTube for that focus area and nearby configured pockets.
+    Stage 1: scan the configured trusted channels.
+    Stage 2: if those channels have no upload THIS WEEK matching the active
+    focus, search public YouTube for that focus area and saved micro-localities.
     """
     config_path = "config/channels.json"
     if not os.path.exists(config_path):
@@ -234,11 +254,15 @@ def main() -> list[dict]:
 
     focus = active_weekly_focus()
     if focus:
-        trusted_focus = [video for video in results if _metadata_has_focus(video, focus)]
+        trusted_focus_this_week = [
+            video for video in results
+            if _metadata_has_focus(video, focus) and _published_in_focus_week(video, focus)
+        ]
         focus_names = [str(area.get("name") or "").strip() for area in focus.get("focus_areas", [])]
         print(f"Weekly focus active: {' + '.join(filter(None, focus_names))}")
-        print(f"Trusted-channel metadata matches for focus: {len(trusted_focus)}")
-        if not trusted_focus:
+        print(f"Trusted-channel THIS-WEEK metadata matches for focus: {len(trusted_focus_this_week)}")
+        if not trusted_focus_this_week:
+            print("No this-week trusted-channel focus upload; starting public YouTube focus discovery.")
             discovered = discover_focus_videos(focus, seen_video_ids)
             results.extend(discovered)
             if not discovered:
