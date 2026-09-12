@@ -12,6 +12,7 @@ on:
       - main
     paths:
       - ".github/workflows/monitor.yml"
+      - "youtube_monitor.py"
       - "veo_prompt.py"
       - "send_telegram_prompts.py"
       - "reference_frames.py"
@@ -22,8 +23,6 @@ on:
       - "config/locations.json"
 
 concurrency:
-  # The monitor and publisher both update repository-backed queue state. A
-  # shared group prevents simultaneous commits and state.json conflicts.
   group: property-automation-state
   cancel-in-progress: false
 
@@ -38,8 +37,6 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          # A re-run must start from current main, not the stale SHA belonging
-          # to the original run being retried.
           ref: main
           fetch-depth: 0
       - uses: actions/setup-python@v6
@@ -75,10 +72,9 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           WEEKLY_FOCUS_PATH: /tmp/weekly_focus.json
-          # Stay below the free Gemini project's daily request allowance while
-          # preserving new listings in retry_pending for later runs.
           MAX_VIDEOS_PER_RUN: "2"
           MAX_EXPLORATORY_PER_RUN: "1"
+          FOCUS_DISCOVERY_RESULTS: "10"
         run: python main.py
       - name: Commit state, records and approval jobs
         id: commit
