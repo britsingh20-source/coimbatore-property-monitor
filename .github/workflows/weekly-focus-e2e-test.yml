@@ -7,13 +7,11 @@ on:
     paths:
       - ".github/workflows/weekly-focus-e2e-test.yml"
       - "cloudflare/social-trigger/src/index.ts"
-      - ".github/workflows/update-weekly-focus.yml"
+      - "location_matcher.py"
       - "config/focus_areas.json"
-      - "config/weekly_focus.json"
 
 permissions:
   contents: read
-  actions: read
 
 jobs:
   test:
@@ -21,24 +19,21 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - name: Verify focus catalog and current config
+      - name: Verify focus catalog
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
           catalog=json.loads(Path('config/focus_areas.json').read_text(encoding='utf-8'))
-          focus=json.loads(Path('config/weekly_focus.json').read_text(encoding='utf-8'))
-          assert any(a.get('slug')=='karamadai' for a in catalog.get('areas', [])), 'Karamadai missing from focus catalog'
-          karam=next(a for a in catalog['areas'] if a['slug']=='karamadai')
+          karam=next(a for a in catalog.get('areas', []) if a.get('slug')=='karamadai')
           assert karam.get('micro_localities'), 'Karamadai micro-localities missing'
-          assert focus.get('rules',{}).get('require_focus_match_for_prompt') is True
-          print('Catalog/config validation passed')
+          print('Catalog validation passed')
           PY
 
       - name: Verify live Worker health
         run: |
           set -euo pipefail
-          actual="$(curl --fail --silent --show-error --retry 5 --retry-delay 2 https://coimbatore-social-trigger.britsingh20.workers.dev/)"
+          actual="$(curl --fail --silent --show-error --retry 6 --retry-delay 3 https://coimbatore-social-trigger.britsingh20.workers.dev/)"
           test "$actual" = "coimbatore-property-social-trigger: healthy"
           echo "Worker health passed"
 
@@ -65,12 +60,22 @@ jobs:
           test "$code" = "200"
           echo "Live /focus menu request passed"
 
-      - name: Select Karamadai in live Worker state
+      - name: Ensure Karamadai is selected in live Worker state
         env:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           set -euo pipefail
-          payload="$(python - <<'PY'
+          current_code="$(curl --silent --output /tmp/current-focus.json --write-out '%{http_code}' https://coimbatore-social-trigger.britsingh20.workers.dev/weekly-focus-config)"
+          if [ "$current_code" = "200" ] && python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('/tmp/current-focus.json').read_text())
+          raise SystemExit(0 if [x.get('name') for x in d.get('focus_areas',[])] == ['Karamadai'] else 1)
+          PY
+          then
+            echo "Karamadai already active; no toggle needed."
+          else
+            payload="$(python - <<'PY'
           import json, os, time
           print(json.dumps({
             'update_id': (int(time.time()) + 1) % 1000000000,
@@ -81,12 +86,13 @@ jobs:
           }))
           PY
           )"
-          code="$(curl --silent --show-error --output /tmp/focus-toggle.txt --write-out '%{http_code}' -X POST -H 'Content-Type: application/json' --data "$payload" https://coimbatore-social-trigger.britsingh20.workers.dev/)"
-          cat /tmp/focus-toggle.txt
-          test "$code" = "200"
-          echo "Live Karamadai selection passed"
+            code="$(curl --silent --show-error --output /tmp/focus-toggle.txt --write-out '%{http_code}' -X POST -H 'Content-Type: application/json' --data "$payload" https://coimbatore-social-trigger.britsingh20.workers.dev/)"
+            cat /tmp/focus-toggle.txt
+            test "$code" = "200"
+            echo "Live Karamadai selection passed"
+          fi
 
-      - name: Apply Karamadai through live Worker and GitHub dispatch
+      - name: Apply Karamadai in live Worker
         env:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
@@ -105,42 +111,36 @@ jobs:
           code="$(curl --silent --show-error --output /tmp/focus-apply.txt --write-out '%{http_code}' -X POST -H 'Content-Type: application/json' --data "$payload" https://coimbatore-social-trigger.britsingh20.workers.dev/)"
           cat /tmp/focus-apply.txt
           test "$code" = "200"
-          echo "Live focus apply dispatch passed"
+          echo "Live focus apply passed"
 
-      - name: Wait for Update Weekly Focus workflow success
-        env:
-          GH_TOKEN: ${{ github.token }}
-          REPO: ${{ github.repository }}
+      - name: Verify live focus config contains Karamadai micro-localities
         run: |
           set -euo pipefail
-          start_epoch=$(date +%s)
-          for i in $(seq 1 24); do
-            json="$(curl --fail --silent --show-error \
-              -H "Authorization: Bearer ${GH_TOKEN}" \
-              -H 'Accept: application/vnd.github+json' \
-              "https://api.github.com/repos/${REPO}/actions/workflows/update-weekly-focus.yml/runs?event=repository_dispatch&per_page=10")"
-            result="$(printf '%s' "$json" | python - "$start_epoch" <<'PY'
-          import json, sys
-          from datetime import datetime, timezone
-          start=int(sys.argv[1])
-          d=json.load(sys.stdin)
-          for r in d.get('workflow_runs',[]):
-              created=datetime.fromisoformat(r['created_at'].replace('Z','+00:00')).timestamp()
-              if created >= start-10:
-                  print(r['id'], r['status'], r.get('conclusion') or '')
-                  break
+          curl --fail --silent --show-error --retry 4 --retry-delay 2 \
+            https://coimbatore-social-trigger.britsingh20.workers.dev/weekly-focus-config \
+            -o /tmp/weekly_focus.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('/tmp/weekly_focus.json').read_text(encoding='utf-8'))
+          assert [x.get('name') for x in d.get('focus_areas',[])] == ['Karamadai'], d
+          micro=d['focus_areas'][0].get('micro_localities',[])
+          for required in ['Santhimedu','Periyankampalayam','Peeches Colony','Teachers Colony']:
+              assert required in micro, (required, micro)
+          assert d.get('rules',{}).get('require_focus_match_for_prompt') is True
+          print('Live focus config validation passed:', d['week_start'], 'to', d['week_end'])
           PY
-          )"
-            if [ -n "$result" ]; then
-              echo "Update Weekly Focus run: $result"
-              status=$(echo "$result" | awk '{print $2}')
-              conclusion=$(echo "$result" | awk '{print $3}')
-              if [ "$status" = "completed" ]; then
-                test "$conclusion" = "success"
-                exit 0
-              fi
-            fi
-            sleep 10
-          done
-          echo "Timed out waiting for Update Weekly Focus workflow"
-          exit 1
+
+      - name: Verify Property Monitor matcher uses live focus
+        env:
+          WEEKLY_FOCUS_PATH: /tmp/weekly_focus.json
+        run: |
+          python - <<'PY'
+          from location_matcher import match_location
+          inside=match_location('Teachers Colony, Karamadai, Coimbatore')
+          outside=match_location('Vadavalli, Coimbatore')
+          assert inside['is_target_location'] is True, inside
+          assert 'Karamadai' in inside['matched_focus_areas'], inside
+          assert outside['is_target_location'] is False, outside
+          print('Matcher end-to-end validation passed')
+          PY
