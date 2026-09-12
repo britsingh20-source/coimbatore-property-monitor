@@ -37,7 +37,6 @@ jobs:
           for pair in \
             "CLOUDFLARE_ACCOUNT_ID:$CF_ACCOUNT" \
             "CLOUDFLARE_API_TOKEN:$CF_TOKEN" \
-            "GITHUB_DISPATCH_TOKEN:$GH_TOKEN" \
             "R2_BUCKET_NAME:$R2_BUCKET" \
             "TELEGRAM_BOT_TOKEN:$TELEGRAM_TOKEN" \
             "TELEGRAM_CHAT_ID:$TELEGRAM_CHAT"; do
@@ -85,7 +84,11 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         working-directory: cloudflare/social-trigger
         run: |
-          printf '%s' "$GITHUB_DISPATCH_TOKEN" | npx wrangler secret put GITHUB_DISPATCH_TOKEN
+          if [ -n "$GITHUB_DISPATCH_TOKEN" ]; then
+            printf '%s' "$GITHUB_DISPATCH_TOKEN" | npx wrangler secret put GITHUB_DISPATCH_TOKEN
+          else
+            echo "Preserving the existing Cloudflare GITHUB_DISPATCH_TOKEN secret."
+          fi
           printf '%s' "$TELEGRAM_BOT_TOKEN" | npx wrangler secret put TELEGRAM_BOT_TOKEN
           printf '%s' "$TELEGRAM_CHAT_ID" | npx wrangler secret put TELEGRAM_CHAT_ID
 
