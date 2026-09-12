@@ -115,3 +115,14 @@ jobs:
             --queue coimbatore-property-social-events \
             --prefix "social-ready/" \
             --suffix ".mp4"
+
+      - name: Register Telegram webhook
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: |
+          set -euo pipefail
+          response="$(curl --fail --silent --show-error \
+            --request POST \
+            --data-urlencode "url=https://coimbatore-social-trigger.britsingh20.workers.dev/" \
+            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/setWebhook")"
+          python3 -c "import json,sys; d=json.load(sys.stdin); assert d.get('ok'), d; print('Telegram webhook registered.')" <<<"$response"
