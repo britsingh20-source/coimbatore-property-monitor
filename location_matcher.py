@@ -1,4 +1,5 @@
 import json
+import os
 import re
 import unicodedata
 from datetime import datetime, date
@@ -8,7 +9,7 @@ from zoneinfo import ZoneInfo
 
 
 CONFIG_PATH = Path("config/locations.json")
-WEEKLY_FOCUS_PATH = Path("config/weekly_focus.json")
+WEEKLY_FOCUS_PATH = Path(os.environ.get("WEEKLY_FOCUS_PATH", "config/weekly_focus.json"))
 
 
 def normalize(value: str) -> str:
