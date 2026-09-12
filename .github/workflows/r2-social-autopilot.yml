@@ -88,7 +88,9 @@ jobs:
 
       - name: Route Telegram uploads to Property or Interior publisher
         id: telegram_ingest
-        if: github.event_name != 'repository_dispatch' || github.event.action == 'telegram-property-upload'
+        # Telegram is webhook-driven now. Only process the exact webhook update
+        # forwarded by Cloudflare; never call getUpdates while the webhook is active.
+        if: github.event_name == 'repository_dispatch' && github.event.action == 'telegram-property-upload'
         continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -108,7 +110,7 @@ jobs:
           INTERIOR_YOUTUBE_CLIENT_SECRET: ${{ secrets.INTERIOR_YOUTUBE_CLIENT_SECRET }}
           INTERIOR_YOUTUBE_REFRESH_TOKEN: ${{ secrets.INTERIOR_YOUTUBE_REFRESH_TOKEN }}
           INTERIOR_YOUTUBE_PRIVACY_STATUS: public
-          TELEGRAM_WEBHOOK_UPDATE_JSON: ${{ github.event_name == 'repository_dispatch' && github.event.action == 'telegram-property-upload' && toJson(github.event.client_payload.update) || '' }}
+          TELEGRAM_WEBHOOK_UPDATE_JSON: ${{ toJson(github.event.client_payload.update) }}
         run: python telegram_router.py
 
       - name: Scan R2 and publish new property videos
