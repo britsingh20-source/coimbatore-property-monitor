@@ -1,0 +1,146 @@
+{
+  "video_id": "JKnlc0P5v1E",
+  "source_url": "https://www.youtube.com/watch?v=JKnlc0P5v1E",
+  "property_location": "Nariampalli, Annur to Avinashi Road, Coimbatore",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "2.75 Cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "7 Lakhs",
+    "facing": "North",
+    "road_width": "23 Feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "DTCP approved plot layout with total 6 sites available., Total land area of 2.75 cents with plot dimensions of 30 ft x 40 ft., Total price is 7 Lakhs for 2.75 cents., Located in Nariampalli on the Annur to Avinashi main road, within walkable distance from the main road., Features a 23 ft wide approach road., North-facing and corner plots are available.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera in natural conversational Tamil.",
+    "hook_strategy": "Highlighting walkable location from Annur to Avinashi main road at Nariampalli.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை அன்னூர் to அவிநாசி மெயின் ரோடு நாரியம்பள்ளில, மெயின் ரோடுல இருந்து நடந்து போற தூரத்துல ஒரு layout அமைஞ்சிருக்கு.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல மொத்தம் 6 sites இருக்கு. 30 feet by 40 feet dimensions-ல 2.75 Cents land area வருது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "",
+        "purpose": "fact"
+      },
+      {
+        "name": "road",
+        "voice": "இந்த plot-க்கு 23 feet wide approach road அமைஞ்சிருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "kitchen"
+        ],
+        "vfx": "",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "பாத்தீங்கனா, North facing மற்றும் corner plots-ம் இதுல available-ஆ இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "இது முழுசா DTCP approval பெற்ற layout.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "",
+        "purpose": "fact"
+      },
+      {
+        "name": "price",
+        "voice": "2.75 Cents plot-ோட total price 7 Lakhs.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "price-tag",
+        "purpose": "fact"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details தெரிஞ்சுக்கவும், site visit வரவும் உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "",
+        "purpose": "fact"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/JKnlc0P5v1E/",
+  "optional_owned_audio": "assets/audio/JKnlc0P5v1E.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Nariampalli, Annur to Avinashi Road, Coimbatore, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Flat, cleared plot area demarcated with yellow corner boundary stones, adjacent to a 23-foot dirt access road and surrounded by coconut trees.. Neighbourhood: Semi-rural residential location along the Annur-Avinashi road in Nariampalli, featuring coconut groves, open land, and low-density residential houses.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Nariampalli, Annur to Avinashi Road, Coimbatore, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Flat, cleared plot area demarcated with yellow corner boundary stones, adjacent to a 23-foot dirt access road and surrounded by coconut trees.. Neighbourhood: Semi-rural residential location along the Annur-Avinashi road in Nariampalli, featuring coconut groves, open land, and low-density residential houses.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Nariampalli, Annur to Avinashi Road, Coimbatore, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Flat, cleared plot area demarcated with yellow corner boundary stones, adjacent to a 23-foot dirt access road and surrounded by coconut trees.. Neighbourhood: Semi-rural residential location along the Annur-Avinashi road in Nariampalli, featuring coconut groves, open land, and low-density residential houses.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Nariampalli, Annur to Avinashi Road, Coimbatore, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Flat, cleared plot area demarcated with yellow corner boundary stones, adjacent to a 23-foot dirt access road and surrounded by coconut trees.. Neighbourhood: Semi-rural residential location along the Annur-Avinashi road in Nariampalli, featuring coconut groves, open land, and low-density residential houses.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
