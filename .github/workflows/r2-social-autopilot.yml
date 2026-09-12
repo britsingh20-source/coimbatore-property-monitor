@@ -14,6 +14,7 @@ on:
       - "r2_social_autopilot.py"
       - "telegram_r2_ingest.py"
       - "telegram_router.py"
+      - "telegram_prompt_cleanup.py"
       - "interior_social_autopilot.py"
       - "manual_video_intake.py"
       - "reference_frames.py"
@@ -88,8 +89,6 @@ jobs:
 
       - name: Route Telegram uploads to Property or Interior publisher
         id: telegram_ingest
-        # Telegram is webhook-driven now. Only process the exact webhook update
-        # forwarded by Cloudflare; never call getUpdates while the webhook is active.
         if: github.event_name == 'repository_dispatch' && github.event.action == 'telegram-property-upload'
         continue-on-error: true
         env:
@@ -138,6 +137,15 @@ jobs:
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
           YOUTUBE_PRIVACY_STATUS: public
         run: python r2_social_autopilot.py
+
+      - name: Delete only fully published Telegram prompt messages
+        if: always() && steps.autopilot.outcome == 'success'
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python telegram_prompt_cleanup.py
+
       - name: Commit ingestion and publishing state
         if: always()
         shell: bash
