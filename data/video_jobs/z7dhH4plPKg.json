@@ -1,0 +1,138 @@
+{
+  "video_id": "z7dhH4plPKg",
+  "source_url": "https://www.youtube.com/watch?v=z7dhH4plPKg",
+  "property_location": "Thudiyalur, near Pannimadai, Coimbatore",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "2.76 Cents (26 ft x 46 ft)",
+    "built_up_area": "2000 sq.ft",
+    "price": "Rs. 1.10 Crore",
+    "facing": "West facing site, North facing main door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking (10 ft x 17 ft)",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Property is a 3BHK Duplex Independent House with Courtyard near Thudiyalur, Coimbatore., West facing site with a North facing main door., Land area is 2.76 Cents (26 ft x 46 ft) and built-up area is 2,000 sq.ft., Includes a 7,000-liter drinking water sump and has DTCP approval., Asking price is Rs. 1.10 Crore with up to 75% loan assistance.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, conversational local Coimbatore property presenter speaking directly to camera.",
+    "hook_strategy": "Lead with prime location in Thudiyalur near Pannimadai paired with 3 BHK Duplex feature.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை துடியலூர் பண்ணிமடை கிட்ட இருக்கிற ஒரு 3 BHK Duplex Independent House பாக்கலாம்.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதோட land area பாத்தீங்கனா 2.76 Cents, அதாவது 26 ft x 46 ft அளவுல இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "dimension-overlay",
+        "purpose": "details"
+      },
+      {
+        "name": "facing",
+        "voice": "இது West facing site, அதே மாதிரி main door North facing-ல அமைச்சிருக்காங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Built-up area 2000 sq.ft வருது. இதுல Courtyard, Fall ceiling with LED lighting, Open balcony, 7000 Liters drinking water sump, அப்புறம் 10 ft x 17 ft Covered car parking இருக்கு.",
+        "broll": [
+          "living_room",
+          "interior",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "feature-callout",
+        "purpose": "details"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP Approved property. இதுல 75% Bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust"
+      },
+      {
+        "name": "price",
+        "voice": "இதுல முக்கியமான விஷயம், இதோட price 1.10 Crore.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "land"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "More details தெரிஞ்சுக்க அப்புறம் site visit பண்ண உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/z7dhH4plPKg/",
+  "optional_owned_audio": "assets/audio/z7dhH4plPKg.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-story contemporary independent duplex house finished in beige, white, and dark brown accent wall paneling, featuring a metal main entry gate, tiled car parking porch, and a upper-floor glass balcony railing.. Neighbourhood: Residential suburban locality in Coimbatore with paved access road and nearby residential houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-story contemporary independent duplex house finished in beige, white, and dark brown accent wall paneling, featuring a metal main entry gate, tiled car parking porch, and a upper-floor glass balcony railing.. Neighbourhood: Residential suburban locality in Coimbatore with paved access road and nearby residential houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-story contemporary independent duplex house finished in beige, white, and dark brown accent wall paneling, featuring a metal main entry gate, tiled car parking porch, and a upper-floor glass balcony railing.. Neighbourhood: Residential suburban locality in Coimbatore with paved access road and nearby residential houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-story contemporary independent duplex house finished in beige, white, and dark brown accent wall paneling, featuring a metal main entry gate, tiled car parking porch, and a upper-floor glass balcony railing.. Neighbourhood: Residential suburban locality in Coimbatore with paved access road and nearby residential houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
