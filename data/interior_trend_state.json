@@ -48,7 +48,8 @@
     "mij1WbdNKfU",
     "JdSd3jZRB10",
     "AoYJe6CI0I8",
-    "fqjoATGKYmU"
+    "fqjoATGKYmU",
+    "PIqHXu69Bmk"
   ],
   "history": [
     {
@@ -295,6 +296,11 @@
       "video_id": "fqjoATGKYmU",
       "creator": "Interior Coach",
       "url": "https://www.youtube.com/watch?v=fqjoATGKYmU"
+    },
+    {
+      "video_id": "PIqHXu69Bmk",
+      "creator": "DesignCafe",
+      "url": "https://www.youtube.com/watch?v=PIqHXu69Bmk"
     }
   ],
   "night_channel_cursor": 1
