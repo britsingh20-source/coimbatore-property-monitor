@@ -1,0 +1,146 @@
+{
+  "video_id": "5RQ3nmd63GU",
+  "source_url": "https://www.youtube.com/watch?v=5RQ3nmd63GU",
+  "property_location": "Idikarai, Thudiyalur, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2BHK",
+    "land_area": "2 Cents",
+    "built_up_area": "1100 sqft",
+    "price": "55 Lakhs",
+    "facing": "North-West Corner (North facing main door)",
+    "road_width": "NOT SPECIFIED",
+    "parking": "1 Covered Car Parking",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "2BHK Independent house in Idikarai, Thudiyalur, Coimbatore, Price: 55 Lakhs (Negotiable), 75% loan available, Land area: 2 Cents; Built-up area: 1100 sqft, North West corner site with North facing main door, DTCP approved site with water sump, Ground Floor: Car parking (10' x 15'), Living hall (10' x 16'), Kitchen (8' x 8'), 1 Bedroom (10' x 10'), 1 Attached bathroom (4' x 8'), 1 Outer bathroom (4' x 7'), First Floor: 1 Bedroom (10' x 16'), 1 Attached bathroom (5' x 8'), Front balcony, Terrace stairs access",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera with fast-paced retention flow",
+    "hook_strategy": "Lead directly with an independent 2BHK home in prime Thudiyalur Idikarai",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை துடியலூர் இடிகரையில அமைஞ்சிருக்கிற ஒரு 2BHK Independent House பாக்கலாம் வாங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1100 sqft built-up area. Ground floor-ல car parking, living hall, kitchen, ஒரு bedroom இருக்கு. First floor-ல front balcony-யோட இன்னொரு bedroom வருது.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "exterior"
+        ],
+        "vfx": "floorplan-highlight",
+        "purpose": "feature_walkthrough"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 2 Cents land area-ல water sump வசதியோட இந்த வீடு அமைச்சிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "text-land-size",
+        "purpose": "land_specs"
+      },
+      {
+        "name": "facing",
+        "voice": "இது North-West corner site, main door பாத்தீங்கனா North facing-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approval பெற்ற site. இதுக்கு 75% loan facility-யும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "approval-badge-animation",
+        "purpose": "trust_and_financing"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price பாத்தீங்கனா 55 Lakhs, negotiable தான்.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag-callout",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணவோ details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "contact-details-card",
+        "purpose": "action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/5RQ3nmd63GU/",
+  "optional_owned_audio": "assets/audio/5RQ3nmd63GU.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story newly constructed independent house featuring gray, cream, orange, and blue decorative wall paint, stylish gated entry, marble tile finish on driveway and interior floors, upper front balcony, and rooftop terrace access.. Neighbourhood: Residential neighborhood in Coimbatore surrounded by similar independent house properties.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story newly constructed independent house featuring gray, cream, orange, and blue decorative wall paint, stylish gated entry, marble tile finish on driveway and interior floors, upper front balcony, and rooftop terrace access.. Neighbourhood: Residential neighborhood in Coimbatore surrounded by similar independent house properties.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story newly constructed independent house featuring gray, cream, orange, and blue decorative wall paint, stylish gated entry, marble tile finish on driveway and interior floors, upper front balcony, and rooftop terrace access.. Neighbourhood: Residential neighborhood in Coimbatore surrounded by similar independent house properties.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Two-story newly constructed independent house featuring gray, cream, orange, and blue decorative wall paint, stylish gated entry, marble tile finish on driveway and interior floors, upper front balcony, and rooftop terrace access.. Neighbourhood: Residential neighborhood in Coimbatore surrounded by similar independent house properties.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

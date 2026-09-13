@@ -359,11 +359,12 @@
     },
     "5RQ3nmd63GU": {
       "attempts": 3,
+      "completed_at": "2026-09-13T02:52:54.764594+00:00",
       "first_seen_at": "2026-09-12T13:10:31.035081+00:00",
       "last_attempt_at": "2026-09-12T21:46:39.257170+00:00",
-      "last_error": "Server disconnected without sending a response.",
+      "last_error": "",
       "next_retry_at": "2026-09-13T05:46:39.257185+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "5guJn9bw07E": {
       "attempts": 1,
