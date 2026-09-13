@@ -12,6 +12,7 @@ on:
       - ".github/workflows/monitor.yml"
       - "youtube_monitor.py"
       - "property_analyzer.py"
+      - "state_store.py"
       - "veo_prompt.py"
       - "send_telegram_prompts.py"
       - "reference_frames.py"
