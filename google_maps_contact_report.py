@@ -4,6 +4,7 @@ import argparse
 import html
 import json
 import os
+from collections import Counter
 from pathlib import Path
 from urllib.parse import quote_plus
 
@@ -33,62 +34,94 @@ def _maps_search_url(job: dict) -> str:
     return f"https://www.google.com/maps/search/?api=1&query={quote_plus(query)}"
 
 
+def _dedupe_public_contacts(contacts):
+    best: dict[str, object] = {}
+    for item in contacts:
+        if not item.phone:
+            continue
+        existing = best.get(item.phone)
+        if existing is None or item.confidence > existing.confidence:
+            best[item.phone] = item
+    return best
+
+
+def _source_summary(contacts) -> str:
+    counts = Counter(item.source.split(" indexed ")[-1] if " indexed " in item.source else item.source for item in contacts)
+    if not counts:
+        return "none"
+    return ", ".join(f"{name}:{count}" for name, count in counts.most_common(8))
+
+
 def format_report(job: dict) -> str:
     contacts = find_google_maps_contacts(job)
     video_id = str(job.get("video_id") or "")
     location = str(job.get("property_location") or "Coimbatore")
     video_phone = _video_contact(job)
     maps_url = _maps_search_url(job)
+    best = _dedupe_public_contacts(contacts)
+    protected = [item for item in contacts if not item.phone and item.protected_contact]
 
     lines = [
-        "🗺️ <b>MAPS / PUBLIC CONTACT ENRICHMENT</b>",
+        "🔎 <b>PUBLIC OWNER / SOURCE ENRICHMENT</b>",
         f"<b>Video ID:</b> <code>{html.escape(video_id)}</code>",
         f"<b>Location:</b> {html.escape(location)}",
     ]
     if video_phone:
-        lines.append(f"<b>Video contact:</b> <code>{html.escape(video_phone)}</code> — source: original video; role not assumed")
+        lines.append(f"<b>Video contact:</b> <code>{html.escape(video_phone)}</code> — original video; role not assumed")
     lines.append(f'<a href="{html.escape(maps_url, quote=True)}">Open Google Maps search</a>')
     lines.append("")
 
-    if not contacts:
-        lines.extend([
-            "No additional complete public phone number was found automatically in indexed Maps/web text for this property.",
-            "The Maps search link is included so board/photo contacts can still be checked manually.",
-            "Status: public Maps-image OCR not yet available from an accessible image payload in this run.",
-        ])
-        return "\n".join(lines)
+    if best:
+        lines.append("<b>Complete public phone numbers found:</b>")
+        for item in sorted(best.values(), key=lambda x: x.confidence, reverse=True)[:10]:
+            pct = int(round(item.confidence * 100))
+            lines.extend([
+                f"• <code>{html.escape(item.phone)}</code> — {html.escape(item.classification)} — {pct}% evidence confidence",
+                f"  Source: {html.escape(item.source)}",
+            ])
+            if item.url:
+                lines.append(f'  <a href="{html.escape(item.url, quote=True)}">Open source</a>')
+            if item.evidence:
+                lines.append(f"  Evidence: {html.escape(item.evidence[:180])}")
+    else:
+        lines.append("No additional complete public phone number was found automatically in accessible public text.")
 
-    # Deduplicate numbers across search engines; keep strongest classification/confidence.
-    best: dict[str, object] = {}
-    for item in contacts:
-        existing = best.get(item.phone)
-        if existing is None or item.confidence > existing.confidence:
-            best[item.phone] = item
-
-    lines.append("<b>Public contacts found:</b>")
-    for item in sorted(best.values(), key=lambda x: x.confidence, reverse=True)[:8]:
-        pct = int(round(item.confidence * 100))
-        lines.extend([
-            f"• <code>{html.escape(item.phone)}</code> — {html.escape(item.classification)} — {pct}% source confidence",
-            f"  Source: {html.escape(item.source)}",
-        ])
-        if item.evidence:
-            lines.append(f"  Evidence: {html.escape(item.evidence[:180])}")
+    if protected:
+        lines.append("")
+        lines.append("<b>Listings found where contact is protected:</b>")
+        seen_urls: set[str] = set()
+        for item in protected:
+            if not item.url or item.url in seen_urls:
+                continue
+            seen_urls.add(item.url)
+            lines.append(f'• {html.escape(item.source)} — <a href="{html.escape(item.url, quote=True)}">open exact listing/source</a>')
+            if len(seen_urls) >= 8:
+                break
 
     if video_phone and video_phone in best:
         lines.append("")
-        lines.append("✅ One public-source number matches the original video contact.")
-    elif video_phone:
+        lines.append("✅ At least one independent public-source hit matches the original video contact.")
+    elif video_phone and best:
         lines.append("")
-        lines.append("ℹ️ Public-source contacts differ from the original video contact; treat them as separate owner/builder/agent leads until verified.")
+        lines.append("ℹ️ Public-source contacts differ from the original video contact. Keep them as separate owner/builder/agent leads until role is verified.")
 
-    lines.append("")
-    lines.append("Only complete phone numbers already exposed in public text are returned; no OTP/login/masked-number bypass is attempted.")
+    lines.extend([
+        "",
+        "Sources searched include Google Maps/public web, OLX, Housing, RealEstateIndia, 99acres, MagicBricks, Facebook, Instagram and YouTube-indexed public pages.",
+        "Only complete phone numbers already exposed publicly are returned. Masked/login/OTP/CAPTCHA-protected contacts are not bypassed; an exact public URL is returned when available.",
+    ])
     return "\n".join(lines)
 
 
-def send_report(job: dict, token: str, chat_id: str) -> int:
-    text = format_report(job)
+def send_report(job: dict, token: str, chat_id: str) -> tuple[int, list]:
+    contacts = find_google_maps_contacts(job)
+    # Avoid a second web scan by formatting from the already discovered results.
+    original_finder = find_google_maps_contacts
+    try:
+        globals()["find_google_maps_contacts"] = lambda _job: contacts
+        text = format_report(job)
+    finally:
+        globals()["find_google_maps_contacts"] = original_finder
     response = requests.post(
         f"https://api.telegram.org/bot{token}/sendMessage",
         data={"chat_id": chat_id, "text": text, "parse_mode": "HTML", "disable_web_page_preview": "true"},
@@ -97,12 +130,25 @@ def send_report(job: dict, token: str, chat_id: str) -> int:
     response.raise_for_status()
     body = response.json()
     if not body.get("ok"):
-        raise RuntimeError(f"Telegram rejected Maps contact report: {body}")
-    return int((body.get("result") or {}).get("message_id") or 0)
+        raise RuntimeError(f"Telegram rejected public contact report: {body}")
+    return int((body.get("result") or {}).get("message_id") or 0), contacts
+
+
+def _log_summary(video_id: str, contacts: list) -> None:
+    best = _dedupe_public_contacts(contacts)
+    protected = [item for item in contacts if item.protected_contact and not item.phone]
+    roles = Counter(item.classification for item in best.values())
+    role_text = ", ".join(f"{role}:{count}" for role, count in roles.items()) or "none"
+    # Do not print full phone numbers into Actions logs; Telegram receives the public numbers.
+    print(
+        f"PUBLIC_CONTACT_SUMMARY video_id={video_id} complete_public_numbers={len(best)} "
+        f"protected_links={len({item.url for item in protected if item.url})} roles=[{role_text}] "
+        f"sources=[{_source_summary(contacts)}]"
+    )
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Google Maps/public source phone enrichment")
+    parser = argparse.ArgumentParser(description="Google Maps/OLX/property-portal public phone enrichment")
     parser.add_argument("--ids-file", type=Path, default=Path("data/new_render_ids.txt"))
     parser.add_argument("--video-id", default="")
     parser.add_argument("--no-telegram", action="store_true")
@@ -110,7 +156,7 @@ def main() -> None:
 
     ids = [args.video_id.strip()] if args.video_id.strip() else _ids(args.ids_file)
     if not ids:
-        print("No property IDs supplied to Maps enrichment.")
+        print("No property IDs supplied to public contact enrichment.")
         return
 
     token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
@@ -119,14 +165,22 @@ def main() -> None:
     for video_id in ids:
         path = JOBS / f"{video_id}.json"
         if not path.exists():
-            print(f"Maps enrichment skipped missing job: {path}")
+            print(f"Public contact enrichment skipped missing job: {path}")
             continue
         job = json.loads(path.read_text(encoding="utf-8"))
         if args.no_telegram or not token or not chat_id:
-            print(format_report(job))
+            contacts = find_google_maps_contacts(job)
+            original_finder = find_google_maps_contacts
+            try:
+                globals()["find_google_maps_contacts"] = lambda _job: contacts
+                print(format_report(job))
+            finally:
+                globals()["find_google_maps_contacts"] = original_finder
+            _log_summary(video_id, contacts)
         else:
-            message_id = send_report(job, token, chat_id)
-            print(f"Sent Maps/public contact report: {video_id} message_id={message_id}")
+            message_id, contacts = send_report(job, token, chat_id)
+            _log_summary(video_id, contacts)
+            print(f"Sent public owner/source enrichment report: {video_id} message_id={message_id}")
 
 
 if __name__ == "__main__":
