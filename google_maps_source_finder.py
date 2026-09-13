@@ -16,7 +16,6 @@ HEADERS = {
     "Accept-Language": "en-IN,en;q=0.9",
 }
 
-# Public-source discovery only. A source may be searched/indexed even when its own contact UI is protected.
 PUBLIC_SOURCES = {
     "Google Maps": ("google.com", "maps.google.com"),
     "OLX": ("olx.in",),
@@ -60,7 +59,6 @@ def _clean_text(value: str) -> str:
 
 def _classify(text: str) -> str:
     lower = (text or "").lower()
-    # Explicit owner wording outranks generic layout/developer words.
     if any(x in lower for x in ("direct owner", "posted by owner", "owner property", "owner listing", "property owner")):
         return "OWNER"
     if any(x in lower for x in ("builder", "developer", "promoter", "layout promoter", "project sales", "site sale")):
@@ -72,29 +70,52 @@ def _classify(text: str) -> str:
     return "UNKNOWN"
 
 
-def _project_name(job: dict) -> str:
+def _project_aliases(job: dict) -> list[str]:
+    """Return compact exact project/layout aliases instead of one oversized quoted phrase."""
     facts = str(job.get("verified_facts") or "")
+    aliases: list[str] = []
     match = re.search(r"Project\s*Name\s*:\s*([^,;|]+)", facts, flags=re.I)
     if match:
-        return match.group(1).strip()
+        raw = match.group(1).strip()
+        # Example: Sri Senthur Krishna Enclave (Chendur Krishna Enclave)
+        outer = re.sub(r"\([^)]*\)", "", raw).strip(" -–—")
+        inside = re.findall(r"\(([^)]+)\)", raw)
+        aliases.extend([outer, *inside])
     location = str(job.get("property_location") or "").strip()
-    # Preserve a named enclave/nagar/layout in the location if the analyzer already identified it.
     first = location.split(",")[0].strip()
-    return first if any(k in first.lower() for k in ("enclave", "nagar", "garden", "layout", "avenue", "township")) else ""
+    if any(k in first.lower() for k in ("enclave", "nagar", "garden", "layout", "avenue", "township")):
+        aliases.append(first)
+
+    out: list[str] = []
+    seen: set[str] = set()
+    for alias in aliases:
+        alias = re.sub(r"\s+", " ", alias).strip()
+        if len(alias) >= 4 and alias.lower() not in seen:
+            seen.add(alias.lower())
+            out.append(alias)
+    return out[:5]
 
 
 def _search_terms(job: dict) -> list[str]:
     location = str(job.get("property_location") or "Coimbatore").strip()
-    project = _project_name(job)
+    locality = location.split(",")[0].strip() or "Coimbatore"
     prop = job.get("property") or {}
-    terms = [location]
-    if project and project.lower() not in location.lower():
-        terms.insert(0, f"{project} {location}")
     land = str(prop.get("land_area") or "").replace("NOT SPECIFIED", "").strip()
     price = str(prop.get("price") or "").replace("NOT SPECIFIED", "").strip()
-    if project:
-        terms.append(f"{project} Coimbatore {land} {price}".strip())
-    # Deduplicate while retaining order.
+
+    terms: list[str] = []
+    for alias in _project_aliases(job):
+        terms.extend([
+            f"{alias} {locality} Coimbatore",
+            f"{alias} Coimbatore",
+            alias,
+        ])
+        if land:
+            terms.append(f"{alias} {land}")
+        if price:
+            terms.append(f"{alias} {price}")
+    terms.extend([location, f"{locality} Coimbatore"])
+
     out: list[str] = []
     seen: set[str] = set()
     for item in terms:
@@ -102,7 +123,7 @@ def _search_terms(job: dict) -> list[str]:
         if item and item.lower() not in seen:
             seen.add(item.lower())
             out.append(item)
-    return out[:4]
+    return out[:12]
 
 
 def _source_for_url(url: str) -> str:
@@ -121,8 +142,6 @@ def _unwrap_search_url(url: str) -> str:
     if "duckduckgo.com" in parsed.netloc:
         target = parse_qs(parsed.query).get("uddg", [""])[0]
         return unquote(target) if target else url
-    if "bing.com" in parsed.netloc and parsed.path.startswith("/ck/"):
-        return url
     return url
 
 
@@ -139,7 +158,7 @@ def _extract_result_urls(raw: str) -> list[str]:
         if url not in seen:
             seen.add(url)
             urls.append(url)
-    return urls[:80]
+    return urls[:100]
 
 
 def _extract_contacts_from_text(source: str, query: str, url: str, text: str) -> list[MapSourceContact]:
@@ -191,19 +210,31 @@ def _search_html(endpoint: str, query: str, session: requests.Session) -> tuple[
 def _source_queries(job: dict) -> list[tuple[str, str]]:
     queries: list[tuple[str, str]] = []
     terms = _search_terms(job)
+    aliases = _project_aliases(job)
+
+    # First priority: exact named project/layout. These are much more useful for owner/developer numbers than broad locality queries.
+    for alias in aliases:
+        queries.extend([
+            ("Public web", f'"{alias}" phone'),
+            ("Public web", f'"{alias}" contact'),
+            ("Public web", f'"{alias}" owner'),
+            ("Public web", f'"{alias}" promoter'),
+            ("Public web", f'"{alias}" builder'),
+            ("Google Maps", f'"{alias}" "Google Maps"'),
+        ])
+
     for term in terms:
-        # General discovery captures builder sites and public business pages too.
         queries.extend([
             ("Public web", f'"{term}" phone'),
             ("Public web", f'"{term}" contact owner'),
             ("Public web", f'"{term}" builder developer contact'),
         ])
         for source, domains in PUBLIC_SOURCES.items():
-            # One primary domain is enough for site: discovery; aliases are caught when result URLs are parsed.
             queries.append((source, f'site:{domains[0]} "{term}"'))
             if source in {"OLX", "Housing", "RealEstateIndia", "99acres", "MagicBricks"}:
                 queries.append((source, f'site:{domains[0]} "{term}" owner'))
-    # Keep query count controlled for scheduled runs.
+                queries.append((source, f'site:{domains[0]} "{term}" phone'))
+
     seen: set[str] = set()
     output: list[tuple[str, str]] = []
     for source, query in queries:
@@ -211,7 +242,7 @@ def _source_queries(job: dict) -> list[tuple[str, str]]:
         if key not in seen:
             seen.add(key)
             output.append((source, query))
-    return output[:42]
+    return output[:72]
 
 
 def _inspect_public_page(source: str, query: str, url: str, session: requests.Session) -> list[MapSourceContact]:
@@ -241,8 +272,8 @@ def _inspect_public_page(source: str, query: str, url: str, session: requests.Se
 def find_google_maps_contacts(job: dict) -> list[MapSourceContact]:
     """Discover complete public phone numbers and exact public listing URLs across owner-source paths.
 
-    Historical name retained so existing imports/workflows remain compatible. No OTP/login/CAPTCHA or masked-number
-    bypass is attempted. Search-index snippets and publicly accessible pages are the only sources inspected.
+    Historical function name is retained for compatibility. Only public search snippets/pages are inspected;
+    masked/login/OTP/CAPTCHA-protected contacts are never bypassed.
     """
     endpoints = [
         ("Bing", "https://www.bing.com/search"),
@@ -260,7 +291,6 @@ def find_google_maps_contacts(job: dict) -> list[MapSourceContact]:
                 except requests.RequestException:
                     continue
 
-                # Search-result text itself can contain a public phone in the snippet.
                 result_text = _clean_text(raw)
                 for item in _extract_contacts_from_text(f"{engine} indexed {intended_source}", sq, result_url, result_text):
                     key = (item.phone, item.source, item.url)
@@ -268,8 +298,7 @@ def find_google_maps_contacts(job: dict) -> list[MapSourceContact]:
                         seen_contacts.add(key)
                         contacts.append(item)
 
-                # Inspect exact candidate pages when they are publicly reachable.
-                for candidate in _extract_result_urls(raw)[:12]:
+                for candidate in _extract_result_urls(raw)[:15]:
                     if candidate in seen_pages:
                         continue
                     seen_pages.add(candidate)
@@ -282,7 +311,6 @@ def find_google_maps_contacts(job: dict) -> list[MapSourceContact]:
                             seen_contacts.add(key)
                             contacts.append(item)
 
-        # Direct public Maps search remains a final source; useful when phone/place text exists in HTML payload.
         base_term = _search_terms(job)[0] if _search_terms(job) else "Coimbatore"
         maps_url = f"https://www.google.com/maps/search/?api=1&query={quote_plus(base_term)}"
         try:
@@ -297,7 +325,6 @@ def find_google_maps_contacts(job: dict) -> list[MapSourceContact]:
         except requests.RequestException:
             pass
 
-    # Cross-source corroboration increases confidence without changing the role label to OWNER automatically.
     phone_source_counts: Counter[str] = Counter()
     for item in contacts:
         if item.phone:
@@ -308,7 +335,7 @@ def find_google_maps_contacts(job: dict) -> list[MapSourceContact]:
             item.evidence = (item.evidence + f" | corroborated across {phone_source_counts[item.phone]} public hits").strip(" |")
 
     contacts.sort(key=lambda x: (bool(x.phone), x.confidence, x.classification == "OWNER"), reverse=True)
-    return contacts[:30]
+    return contacts[:40]
 
 
 def as_jsonable(contacts: list[MapSourceContact]) -> list[dict]:
