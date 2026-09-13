@@ -6,6 +6,20 @@ from pathlib import Path
 STATE_PATH = Path("data/state.json")
 RETRYABLE = {"discovered", "retry_pending"}
 
+TRANSIENT_ERROR_MARKERS = (
+    "server disconnected",
+    "connection reset",
+    "connection aborted",
+    "remote protocol error",
+    "network error",
+    "temporarily unavailable",
+    "timeout",
+    "timed out",
+    "502",
+    "503",
+    "504",
+)
+
 
 def utc_now() -> datetime:
     return datetime.now(timezone.utc)
@@ -40,10 +54,22 @@ def register_videos(state: dict, videos: list[dict]) -> None:
         })
 
 
+def _is_transient_provider_error(record: dict) -> bool:
+    message = str(record.get("last_error") or "").casefold()
+    return any(marker in message for marker in TRANSIENT_ERROR_MARKERS)
+
+
 def eligible(state: dict, video: dict) -> bool:
     record = state["videos"].get(video["video_id"], {})
     if record.get("status") not in RETRYABLE:
         return False
+
+    # Historical network disconnects were previously given a long exponential
+    # backoff. The analyzer now classifies them correctly as transient, so allow
+    # those already-waiting records to be retried on the next monitor run.
+    if record.get("status") == "retry_pending" and _is_transient_provider_error(record):
+        return True
+
     next_retry = record.get("next_retry_at")
     return not next_retry or datetime.fromisoformat(next_retry) <= utc_now()
 
