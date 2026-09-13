@@ -89,6 +89,10 @@ jobs:
         if: github.event_name == 'push' && contains(github.event.head_commit.message, '[telegram-resend-xTvjrweqpy4]')
         shell: bash
         run: printf '%s\n' "xTvjrweqpy4" > data/new_render_ids.txt
+      - name: Prepare requested Thondamuthur prompt regeneration
+        if: github.event_name == 'push' && contains(github.event.head_commit.message, '[telegram-resend-0-1lYKdK5dI]')
+        shell: bash
+        run: printf '%s\n' "0-1lYKdK5dI" > data/new_render_ids.txt
       - name: Send exact Gemini/Veo prompts to Telegram
         if: always() && steps.commit.outcome == 'success'
         env:
