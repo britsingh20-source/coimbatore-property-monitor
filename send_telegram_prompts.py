@@ -125,6 +125,20 @@ def send_prompt(job: dict, bot_token: str, chat_id: str) -> int:
     return message_id
 
 
+def _send_owner_enrichment(job: dict, bot_token: str, chat_id: str) -> None:
+    try:
+        from google_maps_contact_report import send_report
+        message_id = send_report(job, bot_token, chat_id)
+        print(
+            f"Sent owner/source enrichment to Telegram: "
+            f"{job.get('video_id') or ''} message_id={message_id}"
+        )
+    except Exception as exc:
+        print(
+            f"Owner/source enrichment failed for {job.get('video_id') or ''}: {exc}"
+        )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--ids-file", type=Path, default=Path("data/new_render_ids.txt"))
@@ -151,6 +165,7 @@ def main() -> None:
         message_id = send_prompt(job, bot_token, chat_id)
         _queue_prompt(args.queue_file, job, message_id)
         print(f"Sent Gemini/Veo prompt to Telegram: {video_id} message_id={message_id}")
+        _send_owner_enrichment(job, bot_token, chat_id)
 
 
 if __name__ == "__main__":
