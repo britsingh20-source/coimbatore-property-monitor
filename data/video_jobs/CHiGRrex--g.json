@@ -1,0 +1,117 @@
+{
+  "video_id": "CHiGRrex--g",
+  "source_url": "https://www.youtube.com/watch?v=CHiGRrex--g",
+  "property_location": "Devarayapuram, Thondamuthur, Coimbatore",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "2.75 Cent",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "6.5 Lakhs per cent",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Plot for sale located in Devarayapuram, Thondamuthur, Coimbatore, Land area available is 2.75 Cent, Price is 6.5 Lakhs per cent, DTCP approved plot layout, Contact number: 70926 66677",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera with smooth Tamil narrative.",
+    "hook_strategy": "Hook viewers immediately with the location in Thondamuthur Devarayapuram and the natural Western Ghats backdrop.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை தொண்டாமுத்தூர், தேவராயபுரம் location-ல Western Ghats mountain backdrop பக்கத்துல ஒரு residential plot விற்பனைக்கு வந்திருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "location-text-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம் என்னன்னா, இது ஒரு DTCP approved plot layout.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "living_room"
+        ],
+        "vfx": "approval-stamp-animation",
+        "purpose": "trust"
+      },
+      {
+        "name": "land",
+        "voice": "இதோட மொத்த land area பாத்தீங்கனா 2.75 cent இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "dimension-overlay",
+        "purpose": "property_size"
+      },
+      {
+        "name": "price",
+        "voice": "விலை பாத்தீங்கனா, ஒரு cent 6.5 Lakhs தராங்க.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "price-tag-pop",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "உங்களுக்கு இந்த plot பற்றிய மேலும் details வேணும்னாலோ இல்ல site visit வரணும்னாலோ 70926 66677-க்கு call பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "call-now-graphic",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/CHiGRrex--g/",
+  "optional_owned_audio": "assets/audio/CHiGRrex--g.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Devarayapuram, Thondamuthur, Coimbatore, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Level vacant land site situated directly adjacent to a paved asphalt road with electric infrastructure in place.. Neighbourhood: Suburban layout with clear road access, electricity lines, agricultural fields, and scenic mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Devarayapuram, Thondamuthur, Coimbatore, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Level vacant land site situated directly adjacent to a paved asphalt road with electric infrastructure in place.. Neighbourhood: Suburban layout with clear road access, electricity lines, agricultural fields, and scenic mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Devarayapuram, Thondamuthur, Coimbatore, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Level vacant land site situated directly adjacent to a paved asphalt road with electric infrastructure in place.. Neighbourhood: Suburban layout with clear road access, electricity lines, agricultural fields, and scenic mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Devarayapuram, Thondamuthur, Coimbatore, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Level vacant land site situated directly adjacent to a paved asphalt road with electric infrastructure in place.. Neighbourhood: Suburban layout with clear road access, electricity lines, agricultural fields, and scenic mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
