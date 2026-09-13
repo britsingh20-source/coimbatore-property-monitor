@@ -2,8 +2,6 @@ name: Property Monitor
 
 on:
   schedule:
-    # Two off-peak attempts per hour reduce the effect of GitHub dropping a
-    # queued schedule event during Actions service congestion.
     - cron: "17 * * * *"
     - cron: "47 * * * *"
   workflow_dispatch: {}
@@ -19,8 +17,6 @@ on:
       - "reference_frames.py"
       - "requirements.txt"
       - "location_matcher.py"
-      - "config/weekly_focus.json"
-      - "config/focus_areas.json"
       - "config/locations.json"
 
 concurrency:
@@ -44,27 +40,6 @@ jobs:
         with:
           python-version: "3.11"
           cache: pip
-      - name: Load live Telegram weekly focus
-        shell: bash
-        run: |
-          set -euo pipefail
-          if curl --fail --silent --show-error --retry 4 --retry-delay 2 \
-            https://coimbatore-social-trigger.britsingh20.workers.dev/weekly-focus-config \
-            -o /tmp/weekly_focus.json; then
-            python - <<'PY'
-          import json
-          from pathlib import Path
-          p=Path('/tmp/weekly_focus.json')
-          d=json.loads(p.read_text(encoding='utf-8'))
-          names=[x.get('name') for x in d.get('focus_areas', [])]
-          assert names, 'Live weekly focus has no areas'
-          assert d.get('rules',{}).get('require_focus_match_for_prompt') is True
-          print('Live weekly focus:', ' + '.join(names))
-          PY
-          else
-            cp config/weekly_focus.json /tmp/weekly_focus.json
-            echo "Live focus unavailable; using repository fallback."
-          fi
       - run: pip install -r requirements.txt
       - name: Run monitor
         id: monitor
@@ -72,10 +47,8 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          WEEKLY_FOCUS_PATH: /tmp/weekly_focus.json
           MAX_VIDEOS_PER_RUN: "2"
           MAX_EXPLORATORY_PER_RUN: "1"
-          FOCUS_DISCOVERY_RESULTS: "10"
         run: python main.py
       - name: Commit state, records and approval jobs
         id: commit
@@ -118,7 +91,6 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          WEEKLY_FOCUS_PATH: /tmp/weekly_focus.json
         shell: bash
         run: |
           set -euo pipefail
