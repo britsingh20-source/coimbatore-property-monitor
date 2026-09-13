@@ -38,7 +38,7 @@ def build_veo_prompt(job: dict) -> str:
 Create seven distinct, consistent plot-tour shots of approximately 1.4 seconds each using clean hard cuts.
 
 SHOT 1 — 0 TO 1.4 SECONDS — LOCATION APPROACH
-Moderately brisk gimbal approach along the verified local Sulur road toward the plotted development. Preserve the actual road surface, neighbouring buildings, EB poles and surroundings visible in the source.
+Moderately brisk gimbal approach along the verified local road toward the plotted development. Preserve the actual road surface, neighbouring buildings, EB poles and surroundings visible in the source.
 
 SHOT 2 — 1.4 TO 2.8 SECONDS — LAYOUT ENTRANCE
 Hard cut to the verified entrance or frontage of the layout. Show its real width, gate or boundary treatment and immediate surroundings without redesigning or beautifying it.
@@ -47,39 +47,41 @@ SHOT 3 — 2.8 TO 4.2 SECONDS — PLOTS
 Hard cut to the actual vacant residential plots and visible boundary markers. Use a controlled lateral move showing the real terrain, plot arrangement and scale. Do not place a house on the plots.
 
 SHOT 4 — 4.2 TO 5.6 SECONDS — INTERNAL ROAD
-Hard cut to a verified internal road. Show the advertised 33-ft or 40-ft road only when its scale is supported by the source. Preserve drainage, shoulders and plot edges.
+Hard cut to a verified internal road. Show an advertised road width only when its scale is supported by the source. Preserve drainage, shoulders and plot edges.
 
 SHOT 5 — 5.6 TO 7.0 SECONDS — UTILITIES
 Hard cut to visible water, electricity or other layout infrastructure. If it is not visible, use another distinct verified plot or road angle instead of inventing equipment.
 
 SHOT 6 — 7.0 TO 8.5 SECONDS — AMENITY OR SURROUNDINGS
-Hard cut to a cricket turf, yoga centre or neighbourhood feature only when visibly confirmed. Otherwise show a different genuine layout-wide angle.
+Hard cut to an amenity or neighbourhood feature only when visibly confirmed. Otherwise show a different genuine layout-wide angle.
 
 SHOT 7 — 8.5 TO 10 SECONDS — FINAL LAYOUT VIEW
 Hard cut to the strongest verified wide view of the plotted community. Hold the final 0.3 seconds almost motionless. No house walkthrough and no repeated angle."""
     else:
-        shot_plan = """Create seven clearly different, architecturally consistent shots of approximately 1.4 seconds each. Use clean hard cuts only. All seven shots must show the same property with identical elevation, tiles, wall colours, ceiling design, doors, windows, fixtures and room proportions.
+        shot_plan = """Create seven clearly different, architecturally consistent shots of approximately 1.4 seconds each. Use clean hard cuts only. All seven shots must show the same property with identical elevation, tiles, wall colours, ceiling design, built-in cabinetry, doors, windows, fixtures and room proportions.
+
+IMPORTANT: Present the property as a clean, neutral real-estate walkthrough. Reconstruct the BUILDING, not the current occupant's personal belongings. Movable furniture and personal décor are not part of the property's architectural identity and must not be copied into the generated video.
 
 SHOT 1 — 0 TO 1.4 SECONDS — EXTERIOR
-Moderately brisk forward gimbal reveal from the verified local residential road. Preserve the visible elevation, floor count, colours, gate, windows, parking and neighbourhood. Do not redesign or enlarge the property.
+Moderately brisk forward gimbal reveal from the verified local residential road. Preserve the visible elevation, floor count, colours, gate, windows, parking and neighbourhood. Do not redesign or enlarge the property. Ignore temporary decorations, religious/ceremonial markings, banners, people, vehicles or personal objects that are not permanent building features.
 
 SHOT 2 — 1.4 TO 2.8 SECONDS — PARKING OR PORTICO
-Hard cut to the verified gate, covered parking or portico with a controlled forward move. Preserve its visible tiles, pillars, gate and dimensions. Keep the entrance clean and free of ceremonial markings. Do not morph through the door.
+Hard cut to the verified gate, covered parking or portico with a controlled forward move. Preserve its visible tiles, pillars, gate and dimensions. Keep the entrance visually clean and neutral. Remove/omit all ceremonial markings, kolam/rangoli, garlands, deity symbols, religious stickers, footwear and loose household objects. Do not morph through the door.
 
 SHOT 3 — 2.8 TO 4.2 SECONDS — HALL
-Hard cut directly to the verified hall. Use a concise lateral gimbal slide showing its flooring, windows, TV wall and proportions. Do not reveal another room unless that connection is clearly visible.
+Hard cut directly to the verified hall. Use a concise lateral gimbal slide showing the flooring, windows, wall proportions and any permanently installed false ceiling or built-in TV panel. Do NOT reproduce televisions, deity photos, religious images, family photos, portraits, calendars, posters, wall art, loose tables, chairs, sofas, cots, beds, mattresses or other movable personal belongings. Do not reveal another room unless that connection is clearly visible.
 
-SHOT 4 — 4.2 TO 5.6 SECONDS — HALL DETAIL
-Hard cut to a verified false ceiling, lighting, TV wall or flooring detail. Use a short upward tilt or push-in. If unavailable, use another distinct verified angle.
+SHOT 4 — 4.2 TO 5.6 SECONDS — ARCHITECTURAL HALL DETAIL
+Hard cut to a verified permanent feature such as false ceiling, fixed lighting, built-in TV panel, wall finish or flooring. Use a short upward tilt or push-in. Keep walls neutral and free of generated artwork, portraits, religious symbols and decorative frames. If no permanent detail is verified, use another distinct verified architectural angle.
 
 SHOT 5 — 5.6 TO 7.0 SECONDS — KITCHEN OR DINING
-Hard cut to the verified kitchen or dining area. Show the visible cabinet layout, countertop, tiles and windows with a controlled sideways move. If it is not visible, substitute another verified feature.
+Hard cut to the verified kitchen or dining area. Show only permanent property features: built-in cabinet layout, countertop, fixed sink, backsplash/tiles, windows and room proportions. Omit vessels, food, loose appliances, chairs, dining tables, decorations and personal household items unless a fixed built-in element is essential to understand the property. If the area is not visible, substitute another verified architectural feature.
 
 SHOT 6 — 7.0 TO 8.5 SECONDS — NEXT VERIFIED FEATURE
-Hard cut to a verified bedroom, staircase, bathroom, balcony or parking detail. Use one concise push-in or lateral move and do not repeat an earlier angle.
+Hard cut to a verified bedroom, staircase, bathroom, balcony or parking detail. Show the permanent room/structure only. If this is a staircase shot, the staircase and surrounding architecture must remain clear and unobstructed: NEVER place or reproduce a cot, bed, mattress, chair, table, shrine, photo, idol, storage pile or any loose object under, beside or in front of the stairs. If this is a bedroom, show the verified room proportions, windows, doors and built-ins without inventing a bed or furniture. Use one concise push-in or lateral move and do not repeat an earlier angle.
 
 SHOT 7 — 8.5 TO 10 SECONDS — FINAL VERIFIED FEATURE
-Hard cut to one final distinct verified feature or a different exterior angle. Use a short reveal and keep the final 0.3 seconds almost motionless for a clean ending."""
+Hard cut to one final distinct verified permanent property feature or a different exterior angle. Keep the scene clean, neutral and free of personal belongings or religious décor. Use a short reveal and keep the final 0.3 seconds almost motionless for a clean ending."""
 
     return f"""MANDATORY OUTPUT FORMAT LOCK — READ THIS FIRST
 Generate a NATIVE PORTRAIT video only: vertical 9:16 aspect ratio, ideally 1080×1920 pixels. The frame must be taller than it is wide. Never generate landscape 16:9, horizontal video, square video, a rotated landscape frame, letterboxing, pillarboxing, or a landscape clip placed inside a portrait canvas. This format requirement overrides the orientation of every source or reference.
@@ -92,11 +94,20 @@ Open and use this exact YouTube property video as the visual reference before ge
 
 First analyse that linked YouTube property video frame-by-frame. Base the reconstruction on the property actually shown in that video, not on a generic property or only on the written listing details. If the link cannot be opened or visually analysed, do not generate a substitute property; ask the user to retry the reference.
 
-Identify only visually confirmed details: the exact exterior elevation, floor count, building colours and materials, gate, parking, entrance, hall, false ceiling, kitchen, bedrooms, bathrooms, staircase, terrace, doors, windows, flooring, neighbourhood and visible connections between areas. Never infer a feature or room connection that is not clearly visible.
+Identify only visually confirmed PERMANENT PROPERTY DETAILS: the exact exterior elevation, floor count, building colours and materials, gate, parking structure, entrance architecture, hall proportions, false ceiling, fixed lighting, built-in kitchen cabinetry, fixed bathroom fixtures, staircase structure, terrace, doors, windows, flooring, neighbourhood and visible connections between areas. Never infer a feature or room connection that is not clearly visible.
+
+ARCHITECTURE-ONLY RECONSTRUCTION FILTER — MANDATORY
+The source video may contain items belonging to the current owner/occupant. Treat ALL such items as visual noise, even when clearly visible. They are NOT verified property features and must NOT appear in the generated reconstruction.
+
+Always omit and never invent: deity/religious photographs, idols, shrines, puja items, religious symbols, sandal/kumkum marks, ceremonial door markings, garlands, kolam/rangoli, family photos, portraits, calendars, posters, artwork, personal text/signage, clothes, footwear, toys, vessels, storage clutter, cots, beds, mattresses, sofas, loose chairs/tables, movable cupboards and other loose furniture or belongings.
+
+This exclusion rule applies EVEN IF those objects are present in the YouTube reference. Preserve the building architecture around them, but remove the personal object itself. Do not replace a removed object with another decorative object. Leave the area clean, neutral and realistic.
+
+Never use cultural or religious styling as a way to make the property look "local", "traditional", "Indian" or "Coimbatore-style". Local realism must come only from verified architecture, street context, materials and construction details.
 
 VERIFIED PROPERTY INFORMATION
 Source: {source_url}
-Reference requirement: The generated property must retain the same visible architectural identity, layout type and local setting shown in this exact source.
+Reference requirement: The generated property must retain the same visible architectural identity, layout type and local setting shown in this exact source, after filtering out all personal belongings and non-architectural décor.
 Location: {location}
 Property type: {property_type}
 Bedrooms: {bhk}
@@ -108,7 +119,7 @@ Approval: {approval}
 Price: {price}
 Verified facts: {facts}
 
-Generate one completely new, highly photorealistic, exactly 10-second vertical 9:16 property walkthrough source clip at 60 fps. This clip will be slowed to 33.3% speed in VN Editor to create a smooth 30-second final video. Camera movement must be moderately brisk, stable and clear so it becomes natural after slowing. Do not reuse source frames directly. Reconstruct the property using only its visually confirmed architectural identity. It must resemble genuine smartphone footage recorded with a professional gimbal by a local Coimbatore property broker, not an architectural render, slideshow or AI-image animation.
+Generate one completely new, highly photorealistic, exactly 10-second vertical 9:16 property walkthrough source clip at 60 fps. This clip will be slowed to 33.3% speed in VN Editor to create a smooth 30-second final video. Camera movement must be moderately brisk, stable and clear so it becomes natural after slowing. Do not reuse source frames directly. Reconstruct the property's permanent architecture using only visually confirmed architectural identity. It must resemble genuine smartphone footage recorded with a professional gimbal by a local Coimbatore property broker, not an architectural render, slideshow or AI-image animation.
 
 {shot_plan}
 
@@ -124,8 +135,10 @@ If price or land area is unavailable, omit that label and value completely; neve
 AUDIO
 Generate no voiceover, dialogue, music, footsteps or ambience. The 10-second source clip must be silent because its speed will be reduced to 33.3% in VN Editor. Add the 30-second Tamil voiceover, music and sound effects only after slowing the visuals in VN.
 
-FIXED RULES
-Exactly 10 seconds; native 60 fps output; vertical 9:16; designed for smooth 3× slow motion; seven distinct approximately 1.4-second shots; photorealistic smartphone gimbal footage; preserve the source property identity; hard cuts between separate physical areas; never invent room connections; never reveal a kitchen through the entrance unless proven; never change floor count, exterior, room dimensions, furniture or amenities; no religious imagery; no people; no CGI appearance; no floating or spinning camera; no speed ramps; no whip pans; no zoom bursts; no morphing architecture; no repeated shots; no rotating captions; no oversized graphics; one persistent professional information footer only; no distorted doors, windows or cabinets; no spelling errors; no third-party phone numbers; no generated logos.
+FIXED RULES — HARD NEGATIVE CONSTRAINTS
+Exactly 10 seconds; native 60 fps output; vertical 9:16; designed for smooth 3× slow motion; seven distinct approximately 1.4-second shots; photorealistic smartphone gimbal footage; preserve the source property's permanent architectural identity; hard cuts between separate physical areas; never invent room connections; never reveal a kitchen through the entrance unless proven; never change floor count, exterior, room dimensions, built-in cabinetry or permanent fixtures; NEVER generate religious imagery, deity photos, idols, shrines, religious symbols, ritual/ceremonial markings or worship items, even when visible in the reference; NEVER generate cots, beds, mattresses or loose furniture beside/under a staircase; NEVER invent or copy movable furniture or personal belongings; no people; no CGI appearance; no floating or spinning camera; no speed ramps; no whip pans; no zoom bursts; no morphing architecture; no repeated shots; no rotating captions; no oversized graphics; one persistent professional information footer only; no distorted doors, windows or cabinets; no spelling errors; no third-party phone numbers; no generated logos.
+
+Before rendering, perform a final scene audit: if any planned shot contains a religious image/symbol, ceremonial marking, portrait, personal photo, cot, bed, mattress, loose furniture near a staircase, or any other personal belonging, REMOVE that object and regenerate the shot plan using only the verified architecture. Do not proceed with a violating scene.
 
 Each shot must have smooth natural motion, stable geometry, minimal motion blur and enough temporal detail to remain clean when slowed from 60 fps to a 30 fps timeline at 33.3% speed. When source information is unclear, exclude it. A simpler accurate reconstruction is always preferable to an attractive invented feature.
 
