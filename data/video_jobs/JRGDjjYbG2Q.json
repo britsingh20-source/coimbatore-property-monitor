@@ -1,0 +1,145 @@
+{
+  "video_id": "JRGDjjYbG2Q",
+  "source_url": "https://www.youtube.com/watch?v=JRGDjjYbG2Q",
+  "property_location": "Pannimadai, Near Thudiyalur, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "2.76 Cents (26 ft x 46 ft)",
+    "built_up_area": "2,000 sq ft",
+    "price": "Rs. 1.10 Crore",
+    "facing": "West facing plot, North facing main door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking (10 ft x 17 ft)",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Land area is 2.76 cents (26 feet by 46 feet)., Built-up area is 2,000 sq ft., Property features a 3BHK Duplex layout with an inner courtyard., Plot faces West and main entrance door faces North., Property is DTCP approved., 7,000 liters capacity drinking water sump is installed., Asking price is 1.10 Crore with up to 75% loan facility available.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking naturally to camera, mixing conversational Tamil with standard real-estate English terms.",
+    "hook_strategy": "Lead with the prime location of Pannimadai near Thudiyalur and the sought-after 3 BHK independent house property type.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை துடியாலூர் பக்கத்துல இருக்கற பன்னிமடையில ஒரு அருமையான 3 BHK Independent House விற்பனைக்கு வந்துருக்கு!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இதுல 2,000 sq ft built-up area இருக்கு. உள்ள பாத்தீங்கனா inner courtyard, modular kitchen, அப்புறம் false ceiling lighting-ஓட ரொம்ப நேர்த்தியா பண்ணிருக்காங்க.",
+        "broll": [
+          "interior",
+          "living_room",
+          "kitchen"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "text-slide-in",
+        "purpose": "property_interior_highlights"
+      },
+      {
+        "name": "land",
+        "voice": "நிலத்தோட land area 2.76 Cents, அதாவது 26 by 46 feet dimension. இதுல covered car parking வசதியும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "dimension-overlay",
+        "purpose": "land_and_parking_specs"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், plot facing West, அதே மாதிரி main door North facing-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "approval",
+        "voice": "இந்த property DTCP approved. மேலும் சொந்தமா borewell மற்றும் 7,000 liters capacity உள்ள water sump அமைச்சிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "approval_and_water_amenities"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price 1.10 Crore. இதுக்கு 75 percent வரைக்கும் bank loan facility-யும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-highlight",
+        "purpose": "pricing_and_financing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணவோ அல்லது கூடுதல் details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/JRGDjjYbG2Q/",
+  "optional_owned_audio": "assets/audio/JRGDjjYbG2Q.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-story duplex facade painted in beige, olive green, and dark brown accents, featuring a metal entry gate, concrete entrance ramp, glass balcony railing, and open terrace overlooking mountain surroundings.. Neighbourhood: Residential neighborhood in Pannimadai near Thudiyalur, Coimbatore, featuring newly constructed independent houses with background views of nearby hills.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-story duplex facade painted in beige, olive green, and dark brown accents, featuring a metal entry gate, concrete entrance ramp, glass balcony railing, and open terrace overlooking mountain surroundings.. Neighbourhood: Residential neighborhood in Pannimadai near Thudiyalur, Coimbatore, featuring newly constructed independent houses with background views of nearby hills.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-story duplex facade painted in beige, olive green, and dark brown accents, featuring a metal entry gate, concrete entrance ramp, glass balcony railing, and open terrace overlooking mountain surroundings.. Neighbourhood: Residential neighborhood in Pannimadai near Thudiyalur, Coimbatore, featuring newly constructed independent houses with background views of nearby hills.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-story duplex facade painted in beige, olive green, and dark brown accents, featuring a metal entry gate, concrete entrance ramp, glass balcony railing, and open terrace overlooking mountain surroundings.. Neighbourhood: Residential neighborhood in Pannimadai near Thudiyalur, Coimbatore, featuring newly constructed independent houses with background views of nearby hills.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
