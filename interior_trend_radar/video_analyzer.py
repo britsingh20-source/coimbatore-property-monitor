@@ -3,18 +3,68 @@ from __future__ import annotations
 import json
 import os
 import re
+import time
 
 from google import genai
 
 
 MODEL = os.environ.get("GEMINI_ANALYSIS_MODEL", "gemini-3.6-flash")
+TRANSIENT_RETRY_DELAYS = (35, 45, 60)
 
 
 def _parse_json(text: str) -> dict:
     cleaned = re.sub(r"^```(?:json)?\s*|\s*```$", "", (text or "").strip(), flags=re.I)
     start, end = cleaned.find("{"), cleaned.rfind("}")
-    if start < 0 or end < start: raise ValueError("Interior analysis did not return JSON")
+    if start < 0 or end < start:
+        raise ValueError("Interior analysis did not return JSON")
     return json.loads(cleaned[start:end + 1])
+
+
+def _is_transient_gemini_error(exc: Exception) -> bool:
+    text = str(exc).casefold()
+    return any(
+        marker in text
+        for marker in (
+            "429",
+            "too_many_requests",
+            "quota exceeded",
+            "rate limit",
+            "resource exhausted",
+            "500",
+            "502",
+            "503",
+            "504",
+            "server disconnected",
+            "connection reset",
+            "timed out",
+            "timeout",
+        )
+    )
+
+
+def _run_analysis(client: genai.Client, candidate: dict, prompt: str):
+    last_error = None
+    attempts = len(TRANSIENT_RETRY_DELAYS) + 1
+    for attempt in range(1, attempts + 1):
+        try:
+            return client.interactions.create(
+                model=MODEL,
+                input=[
+                    {"type": "video", "uri": candidate["url"]},
+                    {"type": "text", "text": prompt},
+                ],
+            )
+        except Exception as exc:
+            last_error = exc
+            if not _is_transient_gemini_error(exc) or attempt >= attempts:
+                raise
+            delay = TRANSIENT_RETRY_DELAYS[attempt - 1]
+            print(
+                f"Transient Gemini interior-analysis error for {candidate.get('video_id', '')}; "
+                f"retry {attempt}/{attempts - 1} in {delay}s: {exc}"
+            )
+            time.sleep(delay)
+    raise last_error or RuntimeError("Interior Gemini analysis failed")
 
 
 def analyze_interior_video(candidate: dict) -> dict:
@@ -50,10 +100,7 @@ Channel: {candidate.get('creator', '')}
 URL: {candidate.get('url', '')}
 """
     client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
-    interaction = client.interactions.create(
-        model=MODEL,
-        input=[{"type": "video", "uri": candidate["url"]}, {"type": "text", "text": prompt}],
-    )
+    interaction = _run_analysis(client, candidate, prompt)
     result = _parse_json(interaction.output_text)
     if not result.get("is_interior_topic"):
         raise ValueError("Selected video was not confirmed as interior-related")
