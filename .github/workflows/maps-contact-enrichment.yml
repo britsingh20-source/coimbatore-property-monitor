@@ -1,4 +1,4 @@
-name: Maps Contact Enrichment
+name: Public Owner Contact Enrichment
 
 on:
   workflow_dispatch:
@@ -6,7 +6,7 @@ on:
       video_id:
         description: Existing property video ID to enrich
         required: false
-        default: "0-1lYKdK5dI"
+        default: "2Lab5CR1OKk"
   push:
     branches: [main]
     paths:
@@ -17,7 +17,7 @@ on:
 jobs:
   enrich:
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6
@@ -25,11 +25,11 @@ jobs:
           python-version: "3.11"
           cache: pip
       - run: pip install -r requirements.txt
-      - name: Run Maps/public contact enrichment
+      - name: Run public owner/source enrichment
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          VIDEO_ID: ${{ inputs.video_id || '0-1lYKdK5dI' }}
+          VIDEO_ID: ${{ inputs.video_id || '2Lab5CR1OKk' }}
         run: |
           python -m py_compile google_maps_source_finder.py google_maps_contact_report.py
           python google_maps_contact_report.py --video-id "$VIDEO_ID"
