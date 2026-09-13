@@ -50,7 +50,8 @@
     "AoYJe6CI0I8",
     "fqjoATGKYmU",
     "PIqHXu69Bmk",
-    "szS1AmxVOoY"
+    "szS1AmxVOoY",
+    "SybwGjg5-Ds"
   ],
   "history": [
     {
@@ -307,6 +308,11 @@
       "video_id": "szS1AmxVOoY",
       "creator": "Ridhi Khosla Jalan",
       "url": "https://www.youtube.com/watch?v=szS1AmxVOoY"
+    },
+    {
+      "video_id": "SybwGjg5-Ds",
+      "creator": "Interior Coach",
+      "url": "https://www.youtube.com/watch?v=SybwGjg5-Ds"
     }
   ],
   "night_channel_cursor": 1
