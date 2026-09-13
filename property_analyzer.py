@@ -29,6 +29,14 @@ def _is_retryable_error(message: str) -> bool:
         "api_error",
         "temporarily unavailable",
         "internal server error",
+        "server disconnected",
+        "connection reset",
+        "connection aborted",
+        "connection closed",
+        "connection error",
+        "remote protocol",
+        "network error",
+        "incomplete read",
     )
     return any(marker in normalized for marker in retryable_markers)
 
