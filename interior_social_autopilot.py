@@ -14,6 +14,8 @@ from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
 
+from meta_publisher import publish_facebook_reel
+
 GRAPH = "https://graph.facebook.com/v23.0"
 STATE_PATH = Path("data/interior_social_publish_state.json")
 R2_PREFIX = "interior-social-ready/"
@@ -84,13 +86,11 @@ def interior_id(message: dict) -> str:
     return match.group(1) if match else ""
 
 
-FORBIDDEN_PUBLISH_WORDS = (
-    "reference video",
-    "reference inspiration",
-    "inspired by",
-    "source video",
-    "source creator",
-    "ai visual reconstruction",
+FORBIDDEN_PUBLIC_WORDING = re.compile(
+    r"\b(?:reference(?:d)?|inspir(?:ed|ation)|source\s+(?:video|channel|creator)|"
+    r"reconstruct(?:ed|ion)?|ai[-\s]?(?:generated|created|enhanced|visual)|"
+    r"artificial intelligence|copied footage)\b",
+    flags=re.I,
 )
 
 
@@ -103,17 +103,22 @@ def _json_object(text: str) -> dict:
 
 
 def _clean_hashtags(values: object, subject: str) -> list[str]:
-    hashtags: list[str] = []
+    subject_tags: list[str] = []
     if isinstance(values, list):
         for value in values:
             tag = "#" + re.sub(r"[^A-Za-z0-9]", "", str(value).lstrip("#"))
-            if len(tag) > 1 and tag.lower() not in {x.lower() for x in hashtags}:
-                hashtags.append(tag)
+            normalized = tag.lower()
+            if re.search(r"(?:reference|inspir|source|reconstruct|ai(?:generated|created|enhanced))", normalized):
+                continue
+            if normalized in {"#olivetreeinteriors", "#coimbatoreinteriors"}:
+                continue
+            if len(tag) > 1 and normalized not in {x.lower() for x in subject_tags}:
+                subject_tags.append(tag)
     fallback_subject = "#" + re.sub(r"[^A-Za-z0-9]", "", subject.title())[:40]
-    for tag in (fallback_subject, "#OliveTreeInteriors", "#CoimbatoreInteriors"):
-        if len(tag) > 1 and tag.lower() not in {x.lower() for x in hashtags}:
-            hashtags.append(tag)
-    return hashtags[:3]
+    topic_tag = subject_tags[0] if subject_tags else fallback_subject
+    if len(topic_tag) <= 1 or FORBIDDEN_PUBLIC_WORDING.search(topic_tag):
+        topic_tag = "#InteriorDesign"
+    return [topic_tag, "#OliveTreeInteriors", "#CoimbatoreInteriors"]
 
 
 def analyze_publish_content(video_path: Path) -> dict:
@@ -169,14 +174,14 @@ Rules:
     caption = str(result.get("instagram_caption") or "").strip()
     description = str(result.get("youtube_description") or "").strip()
     title = str(result.get("youtube_title") or subject).strip()[:85]
-    searchable = " ".join((caption, description, title)).lower()
-    if any(term in searchable for term in FORBIDDEN_PUBLISH_WORDS):
+    searchable = " ".join((caption, description, title, " ".join(hashtags)))
+    if FORBIDDEN_PUBLIC_WORDING.search(searchable):
         raise ValueError("Generated social copy contained prohibited reference/source wording")
     if not caption or not description or len(hashtags) != 3:
         raise ValueError("Generated interior social copy was incomplete")
     result["subject"] = subject
     result["instagram_caption"] = f"{caption}\n\n{' '.join(hashtags)}"
-    result["youtube_title"] = f"{title} #Shorts"[:100]
+    result["youtube_title"] = title
     result["youtube_description"] = f"{description}\n\n{' '.join(hashtags)}"
     result["hashtags"] = hashtags
     tags = result.get("youtube_tags")
@@ -344,6 +349,7 @@ def handle_update(update: dict) -> int:
             "source_id": source_id,
             "r2_key": key,
             "instagram": {},
+            "facebook": {},
             "instagram_story": {},
             "youtube": {},
         }
@@ -374,6 +380,16 @@ def handle_update(update: dict) -> int:
             save_state(state)
 
         try:
+            record["facebook"] = {
+                "status": "published",
+                **publish_facebook_reel(Path(handle.name), caption, channel="interior"),
+            }
+            save_state(state)
+        except Exception as error:
+            record["facebook"] = {"status": "failed", "error": str(error)[:3000]}
+            save_state(state)
+
+        try:
             record["instagram_story"] = {"status": "published", **publish_instagram_story(video_url)}
             save_state(state)
         except Exception as error:
@@ -389,7 +405,7 @@ def handle_update(update: dict) -> int:
 
     failures = [
         name
-        for name in ("instagram", "instagram_story", "youtube")
+        for name in ("instagram", "facebook", "instagram_story", "youtube")
         if record[name].get("status") != "published"
     ]
     if failures:
@@ -405,7 +421,7 @@ def handle_update(update: dict) -> int:
         chat_id,
         "✅ Interior video published successfully\n"
         f"INTERIOR_ID: {source_id}\n"
-        "Destinations: Instagram Reel + Instagram Story + YouTube Short",
+        "Destinations: Instagram Reel + Facebook Reel + Instagram Story + YouTube Short",
     )
     return 1
 

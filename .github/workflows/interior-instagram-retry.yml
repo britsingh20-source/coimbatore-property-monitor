@@ -70,12 +70,10 @@ jobs:
           )
           url=client.generate_presigned_url('get_object',Params={'Bucket':os.environ['R2_BUCKET_NAME'],'Key':key},ExpiresIn=21600)
 
-          caption=(
-              'Smart interior ideas for modern homes.\n\n'
-              'AI visual reconstruction inspired by a verified interior reference. '
-              'Design details should be adapted to actual site dimensions and requirements.\n\n'
-              '#OlivetreeInteriors #InteriorDesign #HomeInteriors #InteriorIdeas #ModernInteriors #CoimbatoreInteriors'
-          )
+          content=rec.get('content') or {}
+          caption=str(content.get('instagram_caption') or '').strip()
+          if not caption:
+              raise RuntimeError('No video-analyzed caption is stored; refusing a generic retry caption')
 
           r=requests.post(f'{GRAPH}/{igid}/media',data={
               'media_type':'REELS','video_url':url,'caption':caption,
