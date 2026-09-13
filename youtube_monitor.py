@@ -1,17 +1,11 @@
 import json
 import os
-from datetime import datetime, timezone
 
 import requests
 
-from location_matcher import active_weekly_focus, normalize
-
 
 YOUTUBE_API = "https://www.googleapis.com/youtube/v3"
-
-# Default: check the latest 5 uploads from each trusted channel.
 RECENT_UPLOADS = int(os.environ.get("RECENT_UPLOADS", "5"))
-FOCUS_DISCOVERY_RESULTS = int(os.environ.get("FOCUS_DISCOVERY_RESULTS", "10"))
 
 
 def get_channel(handle: str) -> dict:
@@ -80,137 +74,8 @@ def get_recent_videos(uploads_playlist: str, max_results: int = RECENT_UPLOADS) 
     return videos[:safe_max_results]
 
 
-def _focus_terms(focus: dict) -> list[str]:
-    terms = []
-    normalized_seen = set()
-    for area in focus.get("focus_areas", []):
-        for value in [area.get("name"), *(area.get("aliases") or []), *(area.get("micro_localities") or [])]:
-            value = str(value or "").strip()
-            normalized = normalize(value)
-            if value and normalized and normalized not in normalized_seen:
-                terms.append(value)
-                normalized_seen.add(normalized)
-    return terms
-
-
-def _metadata_has_focus(video: dict, focus: dict) -> bool:
-    text = normalize(f"{video.get('title', '')} {video.get('description', '')}")
-    return any(normalize(term) in text for term in _focus_terms(focus) if normalize(term))
-
-
-def _published_after(focus: dict) -> str | None:
-    start = str(focus.get("week_start") or "").strip()
-    if not start:
-        return None
-    try:
-        dt = datetime.fromisoformat(start).replace(tzinfo=timezone.utc)
-        return dt.isoformat().replace("+00:00", "Z")
-    except ValueError:
-        return None
-
-
-def _published_in_focus_week(video: dict, focus: dict) -> bool:
-    start = str(focus.get("week_start") or "").strip()
-    end = str(focus.get("week_end") or "").strip()
-    published = str(video.get("published_at") or "").strip()
-    if not start or not published:
-        return False
-    try:
-        published_date = datetime.fromisoformat(published.replace("Z", "+00:00")).date()
-        start_date = datetime.fromisoformat(start).date()
-        if end:
-            end_date = datetime.fromisoformat(end).date()
-            return start_date <= published_date <= end_date
-        return published_date >= start_date
-    except ValueError:
-        return False
-
-
-def _focus_query(area: dict) -> str:
-    # YouTube search supports | as OR. One query per selected focus area keeps
-    # quota bounded while covering the main locality plus several saved pockets.
-    raw_terms = [area.get("name"), *(area.get("micro_localities") or [])[:3]]
-    terms = []
-    for value in raw_terms:
-        value = str(value or "").strip()
-        if value and value.casefold() not in {item.casefold() for item in terms}:
-            terms.append(value)
-    locality = "|".join(terms) if terms else str(area.get("name") or "Coimbatore")
-    return f"{locality} property house villa plot for sale Coimbatore"
-
-
-def discover_focus_videos(focus: dict, seen_video_ids: set[str]) -> list[dict]:
-    """Search public YouTube beyond the trusted channel list for active focus areas."""
-    results = []
-    max_results = max(1, min(25, FOCUS_DISCOVERY_RESULTS))
-    published_after = _published_after(focus)
-
-    for area in focus.get("focus_areas", [])[:2]:
-        query = _focus_query(area)
-        params = {
-            "part": "snippet",
-            "q": query,
-            "type": "video",
-            "order": "date",
-            "maxResults": max_results,
-            "key": os.environ["YOUTUBE_API_KEY"],
-        }
-        if published_after:
-            params["publishedAfter"] = published_after
-
-        try:
-            response = requests.get(f"{YOUTUBE_API}/search", params=params, timeout=30)
-            response.raise_for_status()
-        except requests.RequestException as error:
-            print(f"FOCUS DISCOVERY ERROR - {area.get('name', 'unknown')}: {error}")
-            continue
-
-        found = 0
-        accepted = 0
-        for item in response.json().get("items", []):
-            found += 1
-            video_id = item.get("id", {}).get("videoId")
-            snippet = item.get("snippet", {})
-            if not video_id or video_id in seen_video_ids:
-                continue
-            video = {
-                "video_id": video_id,
-                "title": snippet.get("title", "UNTITLED"),
-                "description": snippet.get("description", ""),
-                "published_at": snippet.get("publishedAt", ""),
-                "channel_title": snippet.get("channelTitle", ""),
-                "thumbnail": _thumbnail(snippet),
-                "url": f"https://www.youtube.com/watch?v={video_id}",
-                "source_name": snippet.get("channelTitle", "YouTube focus discovery"),
-                "source_handle": "",
-                "channel_id": snippet.get("channelId", ""),
-                "source_type": "weekly_focus_discovery",
-                "discovery_focus_area": area.get("name", ""),
-                "discovery_query": query,
-            }
-            # Search relevance is not enough. Require the selected area or one
-            # of its configured micro-localities in metadata before spending a
-            # Gemini call; Gemini/location_matcher performs final verification.
-            if not _metadata_has_focus(video, {"focus_areas": [area]}):
-                continue
-            seen_video_ids.add(video_id)
-            results.append(video)
-            accepted += 1
-        print(
-            f"Focus discovery {area.get('name', 'unknown')}: search returned {found}, "
-            f"accepted {accepted} metadata-matching video(s)"
-        )
-
-    results.sort(key=lambda video: video.get("published_at", ""), reverse=True)
-    return results
-
-
 def main() -> list[dict]:
-    """
-    Stage 1: scan the configured trusted channels.
-    Stage 2: if those channels have no upload THIS WEEK matching the active
-    focus, search public YouTube for that focus area and saved micro-localities.
-    """
+    """Scan the configured trusted channels exactly as the original monitor did."""
     config_path = "config/channels.json"
     if not os.path.exists(config_path):
         raise FileNotFoundError(f"Channel config not found: {config_path}")
@@ -251,24 +116,6 @@ def main() -> list[dict]:
             print(f"ERROR - {channel_name}: network/API request failed - {error}")
         except Exception as error:
             print(f"ERROR - {channel_name}: {error}")
-
-    focus = active_weekly_focus()
-    if focus:
-        trusted_focus_this_week = [
-            video for video in results
-            if _metadata_has_focus(video, focus) and _published_in_focus_week(video, focus)
-        ]
-        focus_names = [str(area.get("name") or "").strip() for area in focus.get("focus_areas", [])]
-        print(f"Weekly focus active: {' + '.join(filter(None, focus_names))}")
-        print(f"Trusted-channel THIS-WEEK metadata matches for focus: {len(trusted_focus_this_week)}")
-        if not trusted_focus_this_week:
-            print("No this-week trusted-channel focus upload; starting public YouTube focus discovery.")
-            discovered = discover_focus_videos(focus, seen_video_ids)
-            results.extend(discovered)
-            if not discovered:
-                print("No verified-focus metadata candidate found outside the trusted channels in this scan.")
-    else:
-        print("No active weekly focus; public area discovery skipped.")
 
     results.sort(key=lambda video: video.get("published_at", ""), reverse=True)
     print(f"Total recent videos collected: {len(results)}")
