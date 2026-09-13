@@ -16,6 +16,7 @@ on:
       - "veo_prompt.py"
       - "send_telegram_prompts.py"
       - "property_source_finder.py"
+      - "property_source_finder_resilient.py"
       - "reference_frames.py"
       - "requirements.txt"
       - "location_matcher.py"
@@ -112,9 +113,11 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PROPERTY_FINDER_MAX_RESULTS_PER_PORTAL: "5"
           PROPERTY_FINDER_MIN_SCORE: "0.50"
           PROPERTY_FINDER_HIGH_CONFIDENCE: "0.78"
+          PROPERTY_FINDER_GEMINI_CANDIDATES: "8"
         shell: bash
         run: |
           set -euo pipefail
@@ -122,8 +125,8 @@ jobs:
             echo "No newly approved properties for source matching."
             exit 0
           fi
-          python -m py_compile property_source_finder.py
-          python property_source_finder.py --ids-file data/new_render_ids.txt
+          python -m py_compile property_source_finder.py property_source_finder_resilient.py
+          python property_source_finder_resilient.py --ids-file data/new_render_ids.txt
       - name: Commit Telegram mobile-upload queue
         if: always()
         shell: bash
