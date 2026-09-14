@@ -1,4 +1,4 @@
-# Portrait 9:16 Telegram verification: 2026-08-27
+# Portrait 9:16 Telegram verification: 2026-09-14
 name: Resend Property Prompt
 
 on:
@@ -7,7 +7,7 @@ on:
       video_id:
         description: Existing property VIDEO_ID to regenerate, send, and enrich
         required: true
-        default: 1FFIKWKtgRw
+        default: 2ews-yAINDY
         type: string
   push:
     branches:
@@ -40,7 +40,9 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          REQUESTED_VIDEO_ID: ${{ inputs.video_id || '1FFIKWKtgRw' }}
+          REQUESTED_VIDEO_ID: ${{ inputs.video_id || '2ews-yAINDY' }}
+          PUBLIC_IMAGE_MAX_PAGES: "8"
+          PUBLIC_IMAGE_MAX_IMAGES: "12"
         shell: bash
         run: |
           set -euo pipefail
