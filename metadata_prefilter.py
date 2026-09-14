@@ -6,6 +6,7 @@ from pathlib import Path
 
 LOCATION_CONFIG = Path("config/locations.json")
 MAX_EXPLORATORY_PER_RUN = int(os.environ.get("MAX_EXPLORATORY_PER_RUN", "1"))
+SPARSE_RECENT_FALLBACK = int(os.environ.get("SPARSE_RECENT_FALLBACK", "1"))
 
 PROPERTY_TERMS = (
     "villa", "house", "home", "property", "plot", "land", "site", "2bhk", "3bhk", "4bhk",
@@ -56,9 +57,6 @@ def metadata_score(video: dict) -> dict:
     if negative_hits:
         score -= 8
 
-    # A locality mention is the most valuable signal because only Coimbatore-area
-    # listings can ever become render jobs. Generic property videos remain eligible
-    # as a small exploratory pool so listings with sparse metadata are not lost.
     strong_target = bool(location_hits and property_hits and not negative_hits)
     exploratory = bool(property_hits and not negative_hits)
 
@@ -75,9 +73,16 @@ def metadata_score(video: dict) -> dict:
 
 def build_analysis_queue(videos: list[dict], recent_ids: set[str], max_per_run: int) -> list[dict]:
     ranked = []
+    sparse_recent = []
     for index, video in enumerate(videos):
         signals = metadata_score(video)
+        recent = video.get("video_id") in recent_ids
         if not signals["exploratory"] and not signals["strong_target"]:
+            # These monitored channels are property channels. A sparse YouTube title/description
+            # must not make the whole Gemini queue empty. Keep a very small recent fallback pool,
+            # while still excluding obvious non-listing content. Gemini remains the final listing gate.
+            if recent and not signals["negative_hits"]:
+                sparse_recent.append((video, signals, index))
             continue
         ranked.append((video, signals, index))
 
@@ -98,18 +103,27 @@ def build_analysis_queue(videos: list[dict], recent_ids: set[str], max_per_run: 
         video, signals, index = item
         return (-int(signals["score"]), index, str(video.get("published_at", "")))
 
-    for bucket in (strong_recent, strong_retry, exploratory_recent, exploratory_retry):
+    for bucket in (strong_recent, strong_retry, exploratory_recent, exploratory_retry, sparse_recent):
         bucket.sort(key=sort_key)
 
     selected = strong_recent + strong_retry
     remaining = max(0, max_per_run - len(selected))
     if remaining and MAX_EXPLORATORY_PER_RUN > 0:
         exploratory = exploratory_recent + exploratory_retry
-        selected.extend(exploratory[: min(remaining, MAX_EXPLORATORY_PER_RUN)])
+        take = exploratory[: min(remaining, MAX_EXPLORATORY_PER_RUN)]
+        selected.extend(take)
+        remaining = max(0, max_per_run - len(selected))
+
+    if remaining and SPARSE_RECENT_FALLBACK > 0:
+        selected_ids = {item[0].get("video_id") for item in selected}
+        fallback = [item for item in sparse_recent if item[0].get("video_id") not in selected_ids]
+        selected.extend(fallback[: min(remaining, SPARSE_RECENT_FALLBACK)])
 
     queue = []
     for video, signals, _ in selected[:max_per_run]:
         enriched = dict(video)
         enriched["metadata_prefilter"] = signals
+        if not signals["exploratory"] and not signals["strong_target"]:
+            enriched["metadata_prefilter"]["fallback_reason"] = "recent_property_channel_sparse_metadata"
         queue.append(enriched)
     return queue
