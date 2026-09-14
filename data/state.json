@@ -442,6 +442,14 @@
       "next_retry_at": "2026-08-09T01:49:10.002605+00:00",
       "status": "retry_pending"
     },
+    "6OAd8jNcQok": {
+      "attempts": 0,
+      "completed_at": "2026-09-14T11:00:09.953527+00:00",
+      "first_seen_at": "2026-09-14T10:59:46.871633+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-09-14T10:59:46.871633+00:00",
+      "status": "video_queued"
+    },
     "6RCA3cUaZ2Y": {
       "attempts": 0,
       "completed_at": "2026-08-22T09:46:36.208112+00:00",

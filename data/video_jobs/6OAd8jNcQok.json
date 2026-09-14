@@ -1,0 +1,142 @@
+{
+  "video_id": "6OAd8jNcQok",
+  "source_url": "https://www.youtube.com/watch?v=6OAd8jNcQok",
+  "property_location": "Lakshmi Garden, Karattumedu, Near Saravanampatti, Coimbatore",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "3.80 Cents (30x55 ft)",
+    "built_up_area": "3200 sq.ft",
+    "price": "₹1.85 Crore",
+    "facing": "East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking (16' x 20')",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "East facing 3BHK house on 3.80 cent site (30x55 feet)., Built-up area is 3200 sqft across Ground, First, and Second floors., Asking price is ₹1.85 Crore (negotiable)., Located in Lakshmi Garden, Karattumedu, near Saravanampatti, Coimbatore., Ground floor features car parking (16x20 ft), living hall (16x16 ft), pooja room (5x5 ft), kitchen & dining (20x11 ft), 1 bedroom (16x16 ft) with dressing & attached bath, plus an outside bath., First floor includes lounge (16x11 ft), 2 bedrooms (16x16 ft each) with attached bathrooms & dressing spaces, front balcony (19x10 ft), and laundry (8.25x5 ft)., Second floor features a rooftop gazebo area (16x11 ft)., Includes borewell, water sump, DTCP approval, and bank loan availability.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local Coimbatore property tour presenter",
+    "hook_strategy": "Highlight prime location near Saravanampatti paired with spacious 3200 sq.ft 3BHK configuration",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை சரவணம்பட்டி பக்கத்துல இருக்குற கரட்டுமேடு லக்ஷ்மி கார்டன் location-ல ஒரு அருமையான 3 BHK Independent House பாக்கப்போறோம்!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 3.80 Cents land area-ல, 30x55 feet அளவுல அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "dimension-overlay",
+        "purpose": "land-details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "built-up area பாத்தீங்கனா 3200 sq.ft! Ground, First, Second floors-ல spacious 3 BHK, Modular Kitchen, 16x20 Car Parking, மற்றும் Rooftop Gazebo-வோட கட்டிருக்காங்க.",
+        "broll": [
+          "interior",
+          "living_room",
+          "bedroom",
+          "kitchen"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-callout",
+        "purpose": "builtup-features"
+      },
+      {
+        "name": "facing",
+        "voice": "இந்த வீடு பாத்தீங்கனா East facing-ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing-details"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், இது DTCP approval வாங்குன property. Bank loan facility-யும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verified-badge",
+        "purpose": "legal-trust"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட asking price 1.85 Crore, negotiable-தான்.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "price-pop",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல site visit பண்ணவோ, further details தெரிஞ்சுக்கவோ உடனே contact பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "contact-card",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/6OAd8jNcQok/",
+  "optional_owned_audio": "assets/audio/6OAd8jNcQok.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-story house elevation with grey vertical louvers, deep red accent walls, glass balcony railing, a wood-finish main gate with butterfly cutout detailing, and an open rooftop with a covered gazebo.. Neighbourhood: Residential neighborhood in Saravanampatti with surrounding greenery and palm trees visible from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-story house elevation with grey vertical louvers, deep red accent walls, glass balcony railing, a wood-finish main gate with butterfly cutout detailing, and an open rooftop with a covered gazebo.. Neighbourhood: Residential neighborhood in Saravanampatti with surrounding greenery and palm trees visible from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-story house elevation with grey vertical louvers, deep red accent walls, glass balcony railing, a wood-finish main gate with butterfly cutout detailing, and an open rooftop with a covered gazebo.. Neighbourhood: Residential neighborhood in Saravanampatti with surrounding greenery and palm trees visible from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-story house elevation with grey vertical louvers, deep red accent walls, glass balcony railing, a wood-finish main gate with butterfly cutout detailing, and an open rooftop with a covered gazebo.. Neighbourhood: Residential neighborhood in Saravanampatti with surrounding greenery and palm trees visible from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
