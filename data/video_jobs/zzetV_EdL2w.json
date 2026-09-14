@@ -1,0 +1,154 @@
+{
+  "video_id": "zzetV_EdL2w",
+  "source_url": "https://www.youtube.com/watch?v=zzetV_EdL2w",
+  "property_location": "Appanaickenpatti, Sulur, near Trichy Road, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹5,80,000 per cent (Offer price till Sept 13) / ₹6,30,000 per cent (Regular price)",
+    "facing": "North, East, Corner",
+    "road_width": "33 feet and 40 feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Layout name is Olivia, located in Appanaickenpatti, Sulur, near Coimbatore Trichy Road., DTCP approved gated layout with perimeter fencing., Offer price of ₹5.80 Lakhs per cent for bookings before September 13th; regular price is ₹6.30 Lakhs per cent afterwards., 33 ft and 40 ft wide internal blacktop tar roads with street markings and zebra crossings., Includes common overhead water tank, children's park, and planned turf field., Individual plot options available in North, East, and Corner orientations., House construction service is also offered starting from ₹41 Lakhs.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, energetic local property presenter giving an authentic walkthrough on camera.",
+    "hook_strategy": "Lead with prime location near Trichy Road in Sulur and high-value limited-time plot pricing.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை திருச்சி ரோடு பக்கம், சூலூர் அப்பநாயக்கன்பட்டியில அமைஞ்சிருக்க 'Olivia' plot layout பத்தி தான் பார்க்க போறோம்!",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "approval",
+        "voice": "இது முழுசா DTCP approval வாங்குன, perimeter fencing மற்றும் grand entrance arch இருக்குற ஒரு gated layout.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_building"
+      },
+      {
+        "name": "road",
+        "voice": "இதுல 33 feet மற்றும் 40 feet அகலமான tar road வசதிகள் பண்ணிருக்காங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல பாத்தீங்கனா North, East மற்றும் Corner facing plots கிடைக்கும்.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "options"
+      },
+      {
+        "name": "land",
+        "voice": "அப்படியே overhead water tank, children's park, அப்புறம் turf playground எல்லாமே இதுல அமைச்சு தர்றாங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "amenities"
+      },
+      {
+        "name": "builtUp",
+        "voice": "அதே மாதிரி இங்க house construction service கூட 41 Lakhs-ல இருந்து ஸ்டார்ட் பண்ணி தர்றாங்க.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "value_add"
+      },
+      {
+        "name": "price",
+        "voice": "இதுல முக்கியமான விஷயம், September 13 வரைக்கும் சென்ட் 5.80 Lakhs-ன்ற offer price-ல தராய்ங்க! அப்புறம் regular price சென்ட் 6.30 Lakhs.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details தெரிஞ்சுக்க, நேர்ல site visit போக உடனே Call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/zzetV_EdL2w/",
+  "optional_owned_audio": "assets/audio/zzetV_EdL2w.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Appanaickenpatti, Sulur, near Trichy Road, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A newly developed gated residential layout with a modern entrance gate titled 'Olivia', blacktop tar roads with painted lanes, street lights, perimeter fencing, site office, and an overhead tank.. Neighbourhood: Open residential/investment layout landscape located in Appanaickenpatti near Sulur along the Trichy Road corridor in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Appanaickenpatti, Sulur, near Trichy Road, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A newly developed gated residential layout with a modern entrance gate titled 'Olivia', blacktop tar roads with painted lanes, street lights, perimeter fencing, site office, and an overhead tank.. Neighbourhood: Open residential/investment layout landscape located in Appanaickenpatti near Sulur along the Trichy Road corridor in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Appanaickenpatti, Sulur, near Trichy Road, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A newly developed gated residential layout with a modern entrance gate titled 'Olivia', blacktop tar roads with painted lanes, street lights, perimeter fencing, site office, and an overhead tank.. Neighbourhood: Open residential/investment layout landscape located in Appanaickenpatti near Sulur along the Trichy Road corridor in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Appanaickenpatti, Sulur, near Trichy Road, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A newly developed gated residential layout with a modern entrance gate titled 'Olivia', blacktop tar roads with painted lanes, street lights, perimeter fencing, site office, and an overhead tank.. Neighbourhood: Open residential/investment layout landscape located in Appanaickenpatti near Sulur along the Trichy Road corridor in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
