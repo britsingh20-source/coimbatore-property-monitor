@@ -12,11 +12,15 @@ on:
       - ".github/workflows/monitor.yml"
       - "youtube_monitor.py"
       - "property_analyzer.py"
+      - "metadata_prefilter.py"
       - "state_store.py"
       - "veo_prompt.py"
       - "send_telegram_prompts.py"
       - "property_source_finder.py"
       - "property_source_finder_resilient.py"
+      - "google_maps_source_finder.py"
+      - "google_maps_contact_report.py"
+      - "public_image_contact_finder.py"
       - "reference_frames.py"
       - "requirements.txt"
       - "location_matcher.py"
@@ -52,6 +56,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           MAX_VIDEOS_PER_RUN: "2"
           MAX_EXPLORATORY_PER_RUN: "1"
+          SPARSE_RECENT_FALLBACK: "1"
         run: python main.py
       - name: Commit state, records and approval jobs
         id: commit
@@ -98,6 +103,9 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PUBLIC_IMAGE_MAX_PAGES: "8"
+          PUBLIC_IMAGE_MAX_IMAGES: "12"
         shell: bash
         run: |
           set -euo pipefail
@@ -130,7 +138,7 @@ jobs:
             echo "No newly approved properties for source matching."
             exit 0
           fi
-          python -m py_compile property_source_finder.py property_source_finder_resilient.py
+          python -m py_compile property_source_finder.py property_source_finder_resilient.py public_image_contact_finder.py
           python property_source_finder_resilient.py --ids-file data/new_render_ids.txt
       - name: Commit Telegram mobile-upload queue
         if: always()
@@ -176,4 +184,4 @@ jobs:
             --data-urlencode "text=${message}" \
             "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage"
 
-# property-source diagnostic search v2
+# property-source diagnostic search v3
