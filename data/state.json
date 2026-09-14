@@ -3070,9 +3070,11 @@
     },
     "rqQZtUt5ps0": {
       "attempts": 0,
+      "completed_at": "2026-09-14T01:45:43.577198+00:00",
       "first_seen_at": "2026-09-13T12:03:54.291234+00:00",
+      "last_error": "",
       "next_retry_at": "2026-09-13T12:03:54.291234+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "rtMlE6Ncbac": {
       "attempts": 0,
