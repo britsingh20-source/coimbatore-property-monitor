@@ -12,6 +12,7 @@ import requests
 
 import property_source_finder as base
 from google_maps_source_finder import find_google_maps_contacts
+from public_image_contact_finder import find_public_image_contacts
 
 
 JOBS = Path("data/video_jobs")
@@ -52,8 +53,21 @@ def _source_summary(contacts) -> str:
     return ", ".join(f"{name}:{count}" for name, count in counts.most_common(8))
 
 
-def format_report(job: dict) -> str:
-    contacts = find_google_maps_contacts(job)
+def _all_contacts(job: dict):
+    contacts = list(find_google_maps_contacts(job))
+    try:
+        image_contacts = find_public_image_contacts(job)
+        contacts.extend(image_contacts)
+        print(
+            f"PUBLIC_IMAGE_CONTACT_SCAN video_id={job.get('video_id') or ''} "
+            f"complete_public_numbers={len({item.phone for item in image_contacts if item.phone})}"
+        )
+    except Exception as exc:
+        print(f"PUBLIC_IMAGE_CONTACT_SCAN_FAILED video_id={job.get('video_id') or ''} error={exc}")
+    return contacts
+
+
+def _format_report_from_contacts(job: dict, contacts) -> str:
     video_id = str(job.get("video_id") or "")
     location = str(job.get("property_location") or "Coimbatore")
     video_phone = _video_contact(job)
@@ -84,7 +98,7 @@ def format_report(job: dict) -> str:
             if item.evidence:
                 lines.append(f"  Evidence: {html.escape(item.evidence[:180])}")
     else:
-        lines.append("No additional complete public phone number was found automatically in accessible public text.")
+        lines.append("No additional complete public phone number was found automatically after text + public image/signboard checks.")
 
     if protected:
         lines.append("")
@@ -107,21 +121,19 @@ def format_report(job: dict) -> str:
 
     lines.extend([
         "",
-        "Sources searched include Google Maps/public web, OLX, Housing, RealEstateIndia, 99acres, MagicBricks, Facebook, Instagram and YouTube-indexed public pages.",
+        "Sources searched include Google Maps/public web, public property/project images and signboards, OLX, Housing, RealEstateIndia, 99acres, MagicBricks, Facebook, Instagram and YouTube-indexed public pages.",
         "Only complete phone numbers already exposed publicly are returned. Masked/login/OTP/CAPTCHA-protected contacts are not bypassed; an exact public URL is returned when available.",
     ])
     return "\n".join(lines)
 
 
+def format_report(job: dict) -> str:
+    return _format_report_from_contacts(job, _all_contacts(job))
+
+
 def send_report(job: dict, token: str, chat_id: str) -> tuple[int, list]:
-    contacts = find_google_maps_contacts(job)
-    # Avoid a second web scan by formatting from the already discovered results.
-    original_finder = find_google_maps_contacts
-    try:
-        globals()["find_google_maps_contacts"] = lambda _job: contacts
-        text = format_report(job)
-    finally:
-        globals()["find_google_maps_contacts"] = original_finder
+    contacts = _all_contacts(job)
+    text = _format_report_from_contacts(job, contacts)
     response = requests.post(
         f"https://api.telegram.org/bot{token}/sendMessage",
         data={"chat_id": chat_id, "text": text, "parse_mode": "HTML", "disable_web_page_preview": "true"},
@@ -139,7 +151,6 @@ def _log_summary(video_id: str, contacts: list) -> None:
     protected = [item for item in contacts if item.protected_contact and not item.phone]
     roles = Counter(item.classification for item in best.values())
     role_text = ", ".join(f"{role}:{count}" for role, count in roles.items()) or "none"
-    # Do not print full phone numbers into Actions logs; Telegram receives the public numbers.
     print(
         f"PUBLIC_CONTACT_SUMMARY video_id={video_id} complete_public_numbers={len(best)} "
         f"protected_links={len({item.url for item in protected if item.url})} roles=[{role_text}] "
@@ -169,13 +180,8 @@ def main() -> None:
             continue
         job = json.loads(path.read_text(encoding="utf-8"))
         if args.no_telegram or not token or not chat_id:
-            contacts = find_google_maps_contacts(job)
-            original_finder = find_google_maps_contacts
-            try:
-                globals()["find_google_maps_contacts"] = lambda _job: contacts
-                print(format_report(job))
-            finally:
-                globals()["find_google_maps_contacts"] = original_finder
+            contacts = _all_contacts(job)
+            print(_format_report_from_contacts(job, contacts))
             _log_summary(video_id, contacts)
         else:
             message_id, contacts = send_report(job, token, chat_id)
