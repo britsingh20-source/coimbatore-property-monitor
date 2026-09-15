@@ -81,7 +81,12 @@ def select_ids(
     elif event_name == "workflow_dispatch":
         selected = (requested & renderable) if requested else explicitly_approved
     elif event_name == "pull_request":
-        selected = explicitly_approved
+        # PR validation renders approved production properties only. Synthetic
+        # samples must be explicitly requested through workflow_dispatch.
+        selected = {
+            video_id for video_id in explicitly_approved
+            if not video_id.lower().endswith("-sample")
+        }
     else:
         selected = set()
 

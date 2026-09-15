@@ -127,7 +127,7 @@ def _normalize(path: Path) -> None:
         "-af",
         "highpass=f=70,lowpass=f=14500,"
         "acompressor=threshold=-18dB:ratio=2.0:attack=18:release=220:makeup=1.4,"
-        "loudnorm=I=-11:TP=-1:LRA=6",
+        "loudnorm=I=-9:TP=-1:LRA=5",
         "-ar", "48000", "-ac", "1",
         "-codec:a", "libmp3lame", "-b:a", "192k", str(normalized),
     ], check=True)

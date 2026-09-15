@@ -1,5 +1,6 @@
 export type Fact = {label: string; value: string};
-export type VoiceSegment = {scene: string; src: string; text?: string; durationInFrames?: number};
+export type VisualBeat = {category: string; fromFrame: number; durationInFrames: number};
+export type VoiceSegment = {scene: string; src: string; text?: string; durationInFrames?: number; visualBeats?: VisualBeat[]};
 export type DirectedShot = {src: string; startFrom?: number; category?: string};
 export type StyleVariant = 'cinematic' | 'fast-cut' | 'premium' | 'location-first' | 'price-first';
 export type LayerMedia = {background?: string; foreground?: string; stills?: string[]};

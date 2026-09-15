@@ -5,6 +5,7 @@ import io
 import json
 import os
 import re
+import time
 from pathlib import Path
 
 import requests
@@ -62,20 +63,47 @@ def _extract_context(prompt: str) -> tuple[str, str, str]:
     return title, locality, area
 
 
+def _extract_blueprint(prompt: str) -> str:
+    match = re.search(
+        r"Source-video visual blueprint \(factual guidance only\):\s*(\{.*?\})\.\s*Preserve",
+        prompt,
+        flags=re.I | re.S,
+    )
+    if not match:
+        return ""
+    return (
+        "SOURCE-VIDEO BLUEPRINT: " + match.group(1)[:1100] + ". "
+        "Follow these visible attributes while creating a new non-identical composition. "
+    )
+
+
 def _cloudflare_prompt(prompt: str, destination: Path) -> str:
     scene = destination.parent.name.lower()
     title, locality, area = _extract_context(prompt)
+    blueprint = _extract_blueprint(prompt)
+    title_lower = title.lower()
+    is_house = any(token in title_lower for token in ("villa", "house", "independent", "தனி வீடு", "வில்லா", "வீடு"))
+    exterior_subject = (
+        "one coherent compact SINGLE-STOREY Tamil Nadu independent house, ground floor only, "
+        "entirely within its own small plot, private compound wall and metal gate, practical single-car parking, "
+        "flat-roof South Indian architecture, no staircase tower, no upper floor, no balcony, no shared entrance and no apartment features"
+        if is_house else
+        "one coherent mid-rise Coimbatore apartment building, ground/stilt plus 3 to 5 floors, "
+        "practical compound gate, aligned balconies and realistic parking"
+    )
+    interior_type = "independent villa" if is_house else "apartment"
     common = (
         f"Property context: {title}, {area}, {locality}, Coimbatore, Tamil Nadu, India. "
-        "Photorealistic, realistic South Indian proportions, natural tropical daylight, centered main subject, vertical property-ad composition. "
+        + blueprint
+        + "Photorealistic Coimbatore property-listing style: compact plots, close neighbouring houses, red-brown soil, practical compound walls, modest tar roads, coconut or native tropical greenery, natural daylight, centered main subject, vertical property-ad composition. "
+        "BHK describes bedroom count only and must never be interpreted as floor count. Do not add an upper floor unless the verified prompt explicitly states a floor count. "
         "No people, text, logo, watermark, temple, church, mosque, shrine, religious tower, religious dome, religious statue, religious landmark, fantasy geometry, foreign suburban style or impossible structures, including in the distant background. "
         "Representative AI visual only, not the actual listing."
     )
     scene_prompts = {
         "exterior": (
-            "EXTERIOR BUILDING ONLY. Show one coherent mid-rise Coimbatore apartment building, ground/stilt plus 3 to 5 floors, "
-            "entirely behind the road edge, practical compound gate, realistic parking, aligned balconies and normal structural columns. "
-            "Keep the building centered for a portrait crop. Do not show an interior room. "
+            f"EXTERIOR BUILDING ONLY. Show {exterior_subject}. "
+            "Keep the complete property centered for a portrait crop. Do not show an interior room or a different property type. "
         ),
         "location": (
             f"LOCATION STREET ONLY. Show a realistic {locality} residential neighbourhood with an unobstructed local tar road, "
@@ -88,19 +116,43 @@ def _cloudflare_prompt(prompt: str, destination: Path) -> str:
             "No highway, flyover, temple, church, mosque, shrine, religious tower, dome or religious landmark anywhere, even far in the background. "
         ),
         "living": (
-            f"INTERIOR LIVING ROOM ONLY. Show a compact furnished Indian apartment living room appropriate to {area}. "
+            f"INTERIOR LIVING ROOM ONLY. Show a distinct furnished Indian {interior_type} living room appropriate to {area}. "
             "Include a practical 2-3 seat sofa, TV wall, vitrified floor, simple warm laminate details and believable walking clearance. "
             "Keep the room focal area centered. Absolutely no building exterior, facade, street, road or outdoor house view as the main subject. "
         ),
         "kitchen": (
-            f"INTERIOR KITCHEN ONLY. Show a compact practical Indian modular kitchen appropriate to {area}. "
+            f"INTERIOR KITCHEN ONLY. Show a distinct practical Indian {interior_type} modular kitchen appropriate to {area}. "
             "Use a straight or small L-shaped counter, upper and base cabinets, chimney, tiled backsplash, sink and realistic appliance clearance. "
             "Keep the working counter centered. Absolutely no building exterior, facade, street or house front. No oversized island. "
         ),
         "bedroom": (
-            f"INTERIOR BEDROOM ONLY. Show a compact furnished Indian apartment bedroom appropriate to {area}. "
+            f"INTERIOR BEDROOM ONLY. Show a distinct furnished Indian {interior_type} bedroom appropriate to {area}. "
             "Include one realistic cot, practical wardrobe, one small side table, simple curtains and believable walking clearance. "
             "Keep the cot and wardrobe composition centered. Absolutely no building exterior, facade, road or street as the main subject. "
+        ),
+        "price": (
+            f"INTERIOR DINING SPACE ONLY. Show a distinct compact premium Indian {interior_type} dining area appropriate to {area}, "
+            "with a four-seat dining table, crockery unit and warm natural light. No exterior, apartment facade or road. "
+        ),
+        "facing": (
+            f"INTERIOR SECOND BEDROOM ONLY. Show a distinct Indian {interior_type} bedroom different from the main bedroom, appropriate to {area}, "
+            "with wardrobe, study ledge and window daylight. No exterior, facade or road. "
+        ),
+        "approval": (
+            f"PROPERTY FRONTAGE ONLY. Show a different three-quarter view of {exterior_subject}, with a clear gate and parking. "
+            "No apartment if the property is an independent house. No text or document graphics. "
+        ),
+        "verify": (
+            f"INTERIOR FOYER ONLY. Show a distinct entrance foyer inside the {interior_type}, with a practical shoe cabinet and passage toward the living area. "
+            "No exterior building, street or road. "
+        ),
+        "cta": (
+            f"PROPERTY HERO VIEW ONLY. Show a dusk hero angle of {exterior_subject}, warm architectural lighting and premium realistic presentation. "
+            "No apartment if the property is an independent house. "
+        ),
+        "land": (
+            "EMPTY RESIDENTIAL PLOT ONLY. Show a clearly vacant compact individual-house site with unobstructed red-brown earth, four visible corners, no house or structure inside the plot, "
+            "a modest Coimbatore tar road along the front, low boundary stones and nearby independent houses only outside the plot. Leave the centre clear for animated boundary graphics. No apartment as the main subject. "
         ),
     }
     return (scene_prompts.get(scene, "REALISTIC RESIDENTIAL PROPERTY SCENE. ") + common)[:1800]
@@ -112,19 +164,35 @@ def generate_still_cloudflare(prompt: str, destination: Path, seed: int) -> None
         raise RuntimeError("CLOUDFLARE_ACCOUNT_ID/R2_ACCOUNT_ID and CLOUDFLARE_API_TOKEN are required")
 
     url = f"{CLOUDFLARE_API_BASE}/accounts/{account_id}/ai/run/{CLOUDFLARE_MODEL}"
-    response = requests.post(
-        url,
-        headers={
-            "Authorization": f"Bearer {token}",
-            "Content-Type": "application/json",
-        },
-        json={"prompt": _cloudflare_prompt(prompt, destination), "steps": 4},
-        timeout=180,
-    )
+    response = None
+    for attempt in range(4):
+        response = requests.post(
+            url,
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "prompt": _cloudflare_prompt(prompt, destination)
+                + f" Composition variation {attempt + 1}; use a fresh non-identical camera angle.",
+                "steps": 4,
+            },
+            timeout=180,
+        )
+        if response.status_code < 400:
+            break
+        if response.status_code not in {429, 500, 502, 503, 504} or attempt == 3:
+            detail = response.text[:700].replace("\n", " ")
+            raise RuntimeError(f"Cloudflare Workers AI request failed ({response.status_code}): {detail}")
+        wait_seconds = 2 ** attempt
+        print(
+            f"Cloudflare transient image error {response.status_code} for {destination}; "
+            f"retrying in {wait_seconds}s ({attempt + 1}/4)"
+        )
+        time.sleep(wait_seconds)
 
-    if response.status_code >= 400:
-        detail = response.text[:700].replace("\n", " ")
-        raise RuntimeError(f"Cloudflare Workers AI request failed ({response.status_code}): {detail}")
+    if response is None:
+        raise RuntimeError("Cloudflare Workers AI request was not attempted")
 
     try:
         payload = response.json()
