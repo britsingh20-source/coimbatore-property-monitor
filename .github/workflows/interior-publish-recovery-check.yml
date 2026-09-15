@@ -1,0 +1,97 @@
+name: Interior Publish Recovery Check
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/interior-publish-recovery-check.yml"
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: pip install boto3 requests
+      - name: Inspect dispatch access and recoverable Interior MP4
+        env:
+          DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          import boto3, requests
+          
+          target = "SybwGjg5-Ds"
+          filename = "1789403015372544.MP4"
+          headers = {
+              "Authorization": "Bearer " + os.environ["DISPATCH_TOKEN"],
+              "Accept": "application/vnd.github+json",
+              "X-GitHub-Api-Version": "2022-11-28",
+          }
+          # An intentionally incomplete request cannot create an event or publish anything.
+          probe = requests.post(
+              "https://api.github.com/repos/britsingh20-source/coimbatore-property-monitor/dispatches",
+              headers=headers, json={}, timeout=30,
+          )
+          print("Repository dispatch authorization probe HTTP:", probe.status_code)
+          print("Accepted repository permissions:", probe.headers.get("X-Accepted-GitHub-Permissions", "unavailable"))
+          if probe.status_code != 422:
+              print("Dispatch blocker:", probe.json().get("message", "Unexpected API response"))
+          else:
+              print("Dispatch endpoint reached payload validation; no event created.")
+          
+          client = boto3.client("s3",
+              endpoint_url="https://" + os.environ["R2_ACCOUNT_ID"] + ".r2.cloudflarestorage.com",
+              aws_access_key_id=os.environ["R2_ACCESS_KEY_ID"],
+              aws_secret_access_key=os.environ["R2_SECRET_ACCESS_KEY"], region_name="auto")
+          bucket = os.environ["R2_BUCKET_NAME"]
+          exact = []
+          recent = []
+          count = 0
+          for page in client.get_paginator("list_objects_v2").paginate(Bucket=bucket):
+              for item in page.get("Contents", []):
+                  key = item["Key"]
+                  if not key.lower().endswith(".mp4"):
+                      continue
+                  count += 1
+                  if target in key or filename.lower() in key.lower():
+                      exact.append(key)
+                  if item["LastModified"].isoformat() >= "2026-09-14":
+                      recent.append({"key": key, "size": item["Size"], "modified": item["LastModified"].isoformat()})
+          print("R2 MP4 count:", count)
+          print("Exact ID/filename matches:", json.dumps(exact))
+          print("Recent MP4 objects:", json.dumps(recent))
+          metadata_matches = []
+          for item in recent:
+              metadata = client.head_object(Bucket=bucket, Key=item["key"]).get("Metadata", {})
+              if target in json.dumps(metadata) or filename.lower() in json.dumps(metadata).lower():
+                  metadata_matches.append(item["key"])
+          print("Exact metadata matches:", json.dumps(metadata_matches))
+          for path in ("data/interior_social_publish_state.json", "data/telegram_ingest_state.json", "data/social_publish_state.json"):
+              text = Path(path).read_text()
+              print(path, "contains target:", target in text)
+          report = {
+              "interior_id": target, "dispatch_probe_http": probe.status_code,
+              "exact_r2_keys": exact, "metadata_r2_keys": metadata_matches, "recent_mp4": recent,
+          }
+          Path("recovery-report.json").write_text(json.dumps(report, indent=2))
+          if not exact and not metadata_matches:
+              print("RECOVERY BLOCKER: No R2 object can be linked to this Interior ID or original filename.")
+          if probe.status_code in (401, 403):
+              raise SystemExit("DISPATCH BLOCKER: repository dispatch token rejected; no publish attempted.")
+          
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: interior-recovery-report
+          path: recovery-report.json
