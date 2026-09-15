@@ -28,12 +28,18 @@
         "youtube_title": "Hidden Dangers: Why Proper Electrical Wiring Planning is Crucial for Home Safety #Shorts"
       },
       "instagram": {
-        "error": "Instagram Reel container creation failed: {'error': {'message': \"Unsupported post request. Object with ID '17841414802491676' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api\", 'type': 'GraphMethodException', 'code': 100, 'error_subcode': 33, 'fbtrace_id': 'AHkJkjxxeOYy0I4s8ajFMyk'}}",
-        "status": "failed"
+        "creation_id": "18165535300493417",
+        "media_id": "18113581645821604",
+        "permalink": "https://www.instagram.com/reel/DdShkpAjO1f/",
+        "status": "published",
+        "username": "olivetreeinteriors777"
       },
       "instagram_story": {
-        "error": "Instagram Story container creation failed: {'error': {'message': \"Unsupported post request. Object with ID '17841414802491676' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api\", 'type': 'GraphMethodException', 'code': 100, 'error_subcode': 33, 'fbtrace_id': 'AD-eO6SyuuYe5Da0-tu7-kM'}}",
-        "status": "failed"
+        "creation_id": "18165535465493417",
+        "media_id": "18019533110866540",
+        "permalink": "https://www.instagram.com/stories/olivetreeinteriors777/3986396630403797377",
+        "status": "published",
+        "username": "olivetreeinteriors777"
       },
       "r2_key": "interior-social-ready/SybwGjg5-Ds-AgADkiEAAvurQFU.mp4",
       "source_id": "SybwGjg5-Ds",
@@ -114,12 +120,18 @@
         "youtube_title": "Hidden Dangers: Why Proper Electrical Wiring Planning is Crucial for Home Safety #Shorts"
       },
       "instagram": {
-        "error": "Instagram Reel container creation failed: {'error': {'message': \"Unsupported post request. Object with ID '17841414802491676' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api\", 'type': 'GraphMethodException', 'code': 100, 'error_subcode': 33, 'fbtrace_id': 'AHkJkjxxeOYy0I4s8ajFMyk'}}",
-        "status": "failed"
+        "creation_id": "18165535300493417",
+        "media_id": "18113581645821604",
+        "permalink": "https://www.instagram.com/reel/DdShkpAjO1f/",
+        "status": "published",
+        "username": "olivetreeinteriors777"
       },
       "instagram_story": {
-        "error": "Instagram Story container creation failed: {'error': {'message': \"Unsupported post request. Object with ID '17841414802491676' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api\", 'type': 'GraphMethodException', 'code': 100, 'error_subcode': 33, 'fbtrace_id': 'AD-eO6SyuuYe5Da0-tu7-kM'}}",
-        "status": "failed"
+        "creation_id": "18165535465493417",
+        "media_id": "18019533110866540",
+        "permalink": "https://www.instagram.com/stories/olivetreeinteriors777/3986396630403797377",
+        "status": "published",
+        "username": "olivetreeinteriors777"
       },
       "r2_key": "interior-social-ready/SybwGjg5-Ds-AgADkiEAAvurQFU.mp4",
       "source_id": "SybwGjg5-Ds",
