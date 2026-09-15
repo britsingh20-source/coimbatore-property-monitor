@@ -21,6 +21,9 @@ jobs:
         with:
           node-version: 22
 
+      - name: Test Telegram upload routing and duplicate protection
+        run: node --test cloudflare/social-trigger/tests/routing.test.mjs
+
       - name: Install Wrangler
         run: npm install --global wrangler@latest
 

@@ -45,6 +45,15 @@ function extractVideoId(text: string): string {
   return /^[A-Za-z0-9_-]{11}$/.test(text) ? text : "";
 }
 
+type UploadPairing = { id: string; label: "VIDEO_ID" | "INTERIOR_ID" };
+
+function extractUploadPairing(text: string): UploadPairing | null {
+  const interior = text.match(/INTERIOR[\s_-]*ID\s*[:=\-]\s*([A-Za-z0-9_-]{6,32})(?![A-Za-z0-9_-])/i);
+  if (interior) return { id: interior[1], label: "INTERIOR_ID" };
+  const id = extractVideoId(text);
+  return id ? { id, label: "VIDEO_ID" } : null;
+}
+
 function videoAttachment(message: TelegramMessage): boolean {
   if (message.video) return true;
   const doc = message.document;
@@ -303,39 +312,42 @@ async function dispatchTelegram(update: TelegramUpdate, env: Env): Promise<Respo
     return new Response("ok");
   }
 
-  const explicit = extractVideoId(text);
+  const explicit = extractUploadPairing(text);
   const attachment = videoAttachment(message);
   if (!attachment) {
     if (!explicit) return new Response("ok");
-    await env.PAIRING_STATE.put(`pending-id:${chatId}`, explicit, { expirationTtl: 900 });
+    await env.PAIRING_STATE.put(`pending-id:${chatId}`, `${explicit.label}: ${explicit.id}`, { expirationTtl: 900 });
     await telegram(env, "sendMessage", {
       chat_id: chatId,
-      text: `✅ VIDEO_ID saved: ${explicit}\nSend the MP4 within 15 minutes. It will publish immediately after pairing.`,
+      text: `✅ ${explicit.label} saved: ${explicit.id}\nSend the MP4 within 15 minutes. It will publish immediately after pairing.`,
       reply_markup: { inline_keyboard: [[{ text: "🎯 Focus Control", callback_data: "focus:open" }]] },
     });
     return new Response("ok");
   }
 
-  const videoId = explicit || await env.PAIRING_STATE.get(`pending-id:${chatId}`);
-  if (!videoId) {
+  // Parse both labelled pairings and bare VIDEO_ID values saved by older deployments.
+  const pairing = explicit || extractUploadPairing(await env.PAIRING_STATE.get(`pending-id:${chatId}`) || "");
+  if (!pairing) {
     await telegram(env, "sendMessage", {
       chat_id: chatId,
-      text: "⚠️ Pairing failed. Send the exact 11-character VIDEO_ID, then resend the MP4 within 15 minutes. Nothing was published.",
+      text: "⚠️ Pairing failed. Send VIDEO_ID or INTERIOR_ID, then resend the MP4 within 15 minutes. Nothing was published.",
     });
     return new Response("ok");
   }
 
-  message.caption = `VIDEO_ID: ${videoId}`;
-  const response = await githubDispatch(env, "telegram-property-upload", { update });
+  const videoId = pairing.id;
+  message.caption = `${pairing.label}: ${videoId}`;
+  const eventType = pairing.label === "INTERIOR_ID" ? "telegram-interior-upload" : "telegram-property-upload";
+  const response = await githubDispatch(env, eventType, { update });
   if (!response.ok) {
     const detail = (await response.text()).slice(0, 300);
-    await env.PAIRING_STATE.delete(updateKey);
+    // Retain duplicate protection after a failed dispatch; Telegram must not replay it.
     await telegram(env, "sendMessage", {
       chat_id: chatId,
-      text: `⚠️ Upload paired to ${videoId}, but GitHub publishing could not start: ${response.status}. Please resend the MP4.`,
+      text: `⚠️ Upload paired to ${videoId}, but GitHub publishing could not start: ${response.status}. Do not resend repeatedly; fix publishing access before retrying once.`,
     });
     console.error("Telegram GitHub dispatch failed", response.status, detail);
-    return new Response("dispatch failed", { status: 502 });
+    return new Response("ok");
   }
 
   await env.PAIRING_STATE.delete(`pending-id:${chatId}`);

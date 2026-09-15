@@ -2,7 +2,7 @@ name: Interior Social Publishing
 
 on:
   repository_dispatch:
-    types: [telegram-property-upload]
+    types: [telegram-interior-upload]
 
 permissions:
   contents: write
