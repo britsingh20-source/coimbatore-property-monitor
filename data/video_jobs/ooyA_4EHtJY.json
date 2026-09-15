@@ -1,0 +1,142 @@
+{
+  "video_id": "ooyA_4EHtJY",
+  "source_url": "https://www.youtube.com/watch?v=ooyA_4EHtJY",
+  "property_location": "Saravanampatti, Karattumedu kovil Backside, Coimbatore",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3BHK",
+    "land_area": "3.44 Cents (30'0\" x 50'0\")",
+    "built_up_area": "2700 sq.ft",
+    "price": "₹1.60 Crore",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "2 Car Parking (21'0\" x 17'0\")",
+    "approval": "DTCP Approved Layout"
+  },
+  "verified_facts": "3BHK independent house in Saravanampatti, Coimbatore., Land area is 3.44 Cents with a built-up area of 2700 sq.ft., North facing site and North facing main door., Features 2 bedrooms equipped with attached jacuzzi bathrooms., Located 1.5 km from the local IT Park and behind Karattumedu Kovil., Offered price is ₹1.60 Crore with up to 75% bank loan availability.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local Tamil presenter speaking directly to camera with smooth natural phrasing.",
+    "hook_strategy": "Highlighting a 3BHK independent house just 1.5 km from Saravanampatti IT Park.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோயம்புத்தூர் சரவணம்பட்டியில IT Park-லிருந்து 1.5 km தூரத்துல, Karattumedu kovil backside-ல ஒரு 3BHK Independent House விற்பனைக்கு வந்துருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 3.44 Cents land area-ல, 2 car parking வசதியோட அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "dimension-text-overlay",
+        "purpose": "land_details"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், site மற்றும் main door ரெண்டுமே North facing பாத்தீங்கனா.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "compass-north-highlight",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "2700 sq.ft built-up area-ல modular kitchen, false ceiling, walk-in wardrobe, அப்புறம் 2 bedrooms-ல attached jacuzzi bathrooms வசதி இருக்கு.",
+        "broll": [
+          "interior",
+          "living_room",
+          "bedroom",
+          "kitchen"
+        ],
+        "avoid_broll": [
+          "exterior",
+          "road"
+        ],
+        "vfx": "feature-popups",
+        "purpose": "interior_highlights"
+      },
+      {
+        "name": "approval",
+        "voice": "அதே மாதிரி, இது DTCP approved layout பாத்தீங்கனா.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "dtcp-badge-overlay",
+        "purpose": "trust_verification"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price 1.60 Crore. இதுக்கு 75% வரைக்கும் bank loan availability இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag-card",
+        "purpose": "pricing_and_loan"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல site visit பண்ணவோ, மேலும் details தெரிஞ்சுக்கவோ call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "contact-card-pop",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/ooyA_4EHtJY/",
+  "optional_owned_audio": "assets/audio/ooyA_4EHtJY.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-storey home with modern dual-tone elevation, spacious covered car portico, purple accent gate, and open top terrace.. Neighbourhood: Developing residential layout in Saravanampatti with surrounding vacant plots, coconut trees, and distant mountain views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-storey home with modern dual-tone elevation, spacious covered car portico, purple accent gate, and open top terrace.. Neighbourhood: Developing residential layout in Saravanampatti with surrounding vacant plots, coconut trees, and distant mountain views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-storey home with modern dual-tone elevation, spacious covered car portico, purple accent gate, and open top terrace.. Neighbourhood: Developing residential layout in Saravanampatti with surrounding vacant plots, coconut trees, and distant mountain views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-storey home with modern dual-tone elevation, spacious covered car portico, purple accent gate, and open top terrace.. Neighbourhood: Developing residential layout in Saravanampatti with surrounding vacant plots, coconut trees, and distant mountain views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
