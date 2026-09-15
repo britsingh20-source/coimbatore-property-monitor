@@ -1,15 +1,15 @@
 name: Interior Instagram Retry
-
 on:
   push:
     branches: [main]
     paths:
       - ".github/workflows/interior-instagram-retry.yml"
   workflow_dispatch: {}
-
 permissions:
   contents: write
-
+concurrency:
+  group: interior-social-publishing
+  cancel-in-progress: false
 jobs:
   retry:
     runs-on: ubuntu-24.04
@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install boto3 requests
-      - name: Republish last interior upload to correct Instagram account
+      - name: Retry failed Reel and Story from saved R2 object
         env:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
@@ -31,112 +31,116 @@ jobs:
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
           INTERIOR_META_ACCESS_TOKEN: ${{ secrets.INTERIOR_META_ACCESS_TOKEN }}
           INTERIOR_IG_USER_ID: ${{ secrets.INTERIOR_IG_USER_ID }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           python - <<'PY'
           import json, os, time
           from pathlib import Path
           import boto3, requests
-
-          GRAPH='https://graph.facebook.com/v23.0'
-          EXPECTED_USERNAME='olivetreeinteriors777'
-          key='interior-social-ready/sUmQvFpBXVU-AgADbiQAAvCKGVU.mp4'
-          source_id='sUmQvFpBXVU'
-          igid=os.environ['INTERIOR_IG_USER_ID']
-          token=os.environ['INTERIOR_META_ACCESS_TOKEN']
-
-          def send(text):
-              requests.post(
-                  f"https://api.telegram.org/bot{os.environ['TELEGRAM_BOT_TOKEN']}/sendMessage",
-                  data={'chat_id':os.environ['TELEGRAM_CHAT_ID'],'text':text},timeout=30
-              ).raise_for_status()
-
-          # Safety check: never publish unless GitHub is now pointing at the requested account.
-          r=requests.get(f'{GRAPH}/{igid}',params={'fields':'id,username,name','access_token':token},timeout=30)
-          body=r.json()
-          if not r.ok or body.get('error'):
-              raise RuntimeError(f'Instagram account check failed: {body}')
-          username=str(body.get('username') or '').lower()
-          if username != EXPECTED_USERNAME:
-              raise RuntimeError(f'Refusing to publish: configured account is @{username}, expected @{EXPECTED_USERNAME}')
-
-          client=boto3.client(
-              's3',
-              endpoint_url=f"https://{os.environ['R2_ACCOUNT_ID']}.r2.cloudflarestorage.com",
-              aws_access_key_id=os.environ['R2_ACCESS_KEY_ID'],
-              aws_secret_access_key=os.environ['R2_SECRET_ACCESS_KEY'],
-              region_name='auto',
-          )
-          url=client.generate_presigned_url('get_object',Params={'Bucket':os.environ['R2_BUCKET_NAME'],'Key':key},ExpiresIn=21600)
-
-          caption=(
-              'Smart interior ideas for modern homes.\n\n'
-              'AI visual reconstruction inspired by a verified interior reference. '
-              'Design details should be adapted to actual site dimensions and requirements.\n\n'
-              '#OlivetreeInteriors #InteriorDesign #HomeInteriors #InteriorIdeas #ModernInteriors #CoimbatoreInteriors'
-          )
-
-          r=requests.post(f'{GRAPH}/{igid}/media',data={
-              'media_type':'REELS','video_url':url,'caption':caption,
-              'share_to_feed':'true','access_token':token,
-          },timeout=60)
-          body=r.json()
-          if not r.ok or body.get('error') or not body.get('id'):
-              raise RuntimeError(f'Instagram Reel container creation failed: {body}')
-          creation_id=str(body['id'])
-
-          for _ in range(30):
-              r=requests.get(f'{GRAPH}/{creation_id}',params={'fields':'status_code,status','access_token':token},timeout=30)
-              st=r.json()
-              if not r.ok or st.get('error'):
-                  raise RuntimeError(f'Instagram container status failed: {st}')
-              code=str(st.get('status_code') or '').upper()
-              if code=='FINISHED': break
-              if code in {'ERROR','EXPIRED'}:
-                  raise RuntimeError(f'Instagram container failed: {st}')
-              time.sleep(10)
-          else:
-              raise RuntimeError('Instagram container timed out')
-
-          r=requests.post(f'{GRAPH}/{igid}/media_publish',data={'creation_id':creation_id,'access_token':token},timeout=60)
-          pub=r.json()
-          if not r.ok or pub.get('error') or not pub.get('id'):
-              raise RuntimeError(f'Instagram Reel publish failed: {pub}')
-          media_id=str(pub['id'])
-
-          # Verify the published media really belongs to the correct username.
-          r=requests.get(f'{GRAPH}/{media_id}',params={'fields':'id,username,permalink,timestamp','access_token':token},timeout=30)
-          media=r.json()
-          if not r.ok or media.get('error'):
-              raise RuntimeError(f'Published media verification failed: {media}')
-          if str(media.get('username') or '').lower()!=EXPECTED_USERNAME:
-              raise RuntimeError(f'Published media belongs to wrong account: {media}')
-
-          state_path=Path('data/interior_social_publish_state.json')
-          state=json.loads(state_path.read_text()) if state_path.exists() else {'objects':{},'telegram_files':{}}
-          rec=state.setdefault('objects',{}).setdefault(key,{'source_id':source_id,'r2_key':key})
-          rec['instagram']={
-              'status':'published','creation_id':creation_id,'media_id':media_id,
-              'username':media.get('username'),'permalink':media.get('permalink'),
-          }
-          tg=state.setdefault('telegram_files',{}).setdefault('AgADbiQAAvCKGVU',rec)
-          tg['instagram']=dict(rec['instagram'])
-          state_path.write_text(json.dumps(state,ensure_ascii=False,indent=2,sort_keys=True)+'\n')
-
-          send('✅ Interior Instagram retry published successfully\nAccount: @'+EXPECTED_USERNAME+'\nINTERIOR_ID: '+source_id+'\n'+str(media.get('permalink') or ''))
-          print(json.dumps(media,ensure_ascii=False))
+          target="SybwGjg5-Ds"
+          key="interior-social-ready/SybwGjg5-Ds-AgADkiEAAvurQFU.mp4"
+          expected="olivetreeinteriors777"
+          graph="https://graph.facebook.com/v23.0"
+          token=os.environ["INTERIOR_META_ACCESS_TOKEN"]
+          igid=os.environ["INTERIOR_IG_USER_ID"]
+          path=Path("data/interior_social_publish_state.json")
+          state=json.loads(path.read_text())
+          record=state["objects"][key]
+          assert record["source_id"] == target
+          original_youtube=json.dumps(record.get("youtube"),sort_keys=True)
+          def save():
+              assert json.dumps(record.get("youtube"),sort_keys=True)==original_youtube
+              state["telegram_files"]["AgADkiEAAvurQFU"]=record
+              path.write_text(json.dumps(state,ensure_ascii=False,indent=2,sort_keys=True)+"\n")
+          def api(method, endpoint, **data):
+              kwargs={"params":data} if method=="GET" else {"data":data}
+              response=requests.request(method,graph+"/"+endpoint,
+                  headers={"Authorization":"Bearer "+token},timeout=60,**kwargs)
+              body=response.json()
+              if not response.ok or body.get("error"):
+                  e=body.get("error",{})
+                  raise RuntimeError(f"Meta HTTP {response.status_code}: code={e.get('code')} subcode={e.get('error_subcode')} {e.get('message')}")
+              return body
+          account=api("GET",igid,fields="id,username")
+          assert account.get("username","").lower()==expected, "Configured Instagram is not the intended account"
+          print("Verified Instagram account: @"+account["username"])
+          client=boto3.client("s3",endpoint_url="https://"+os.environ["R2_ACCOUNT_ID"]+".r2.cloudflarestorage.com",
+              aws_access_key_id=os.environ["R2_ACCESS_KEY_ID"],aws_secret_access_key=os.environ["R2_SECRET_ACCESS_KEY"],region_name="auto")
+          bucket=os.environ["R2_BUCKET_NAME"]
+          client.head_object(Bucket=bucket,Key=key)
+          url=client.generate_presigned_url("get_object",Params={"Bucket":bucket,"Key":key},ExpiresIn=21600)
+          caption=record["content"]["instagram_caption"]
+          assert caption
+          failures=[]
+          for destination,media_type in (("instagram","REELS"),("instagram_story","STORIES")):
+              item=record.get(destination,{})
+              if item.get("status")=="published":
+                  print(destination+": already published; skipped")
+                  continue
+              if item.get("publish_requested"):
+                  raise RuntimeError("Previous publish response uncertain; reconcile "+destination+" before retrying")
+              try:
+                  creation_id=item.get("creation_id")
+                  if not creation_id:
+                      payload={"media_type":media_type,"video_url":url}
+                      if destination=="instagram":
+                          payload.update(caption=caption,share_to_feed="true")
+                      creation_id=api("POST",igid+"/media",**payload)["id"]
+                      item={"status":"processing","creation_id":creation_id,"username":expected}
+                      record[destination]=item
+                      save()
+                  for _ in range(40):
+                      status=api("GET",str(creation_id),fields="status_code,status")
+                      code=status.get("status_code")
+                      if code=="FINISHED": break
+                      if code in ("ERROR","EXPIRED","PUBLISHED"):
+                          raise RuntimeError("Container requires review: "+json.dumps(status))
+                      time.sleep(10)
+                  else: raise RuntimeError("Container processing timed out")
+                  item["publish_requested"]=True
+                  save()
+                  published=api("POST",igid+"/media_publish",creation_id=creation_id)
+                  item.update(status="published",media_id=published["id"])
+                  item.pop("publish_requested",None)
+                  item.pop("error",None)
+                  save()
+                  print(destination+": published media_id="+str(published["id"]))
+                  try:
+                      media=api("GET",str(published["id"]),fields="id,username,permalink")
+                      if str(media.get("username","")).lower()!=expected:
+                          raise RuntimeError("Published media username did not match")
+                      item.update({k:media[k] for k in ("username","permalink") if k in media})
+                      save()
+                      print(destination+" verification: "+json.dumps(media))
+                  except Exception as error:
+                      item["verification_error"]=str(error)
+                      save()
+                      failures.append(destination+" verification")
+              except Exception as error:
+                  item["status"]="needs_review" if item.get("publish_requested") else "failed"
+                  item["error"]=str(error)
+                  record[destination]=item
+                  save()
+                  print(destination+" failed: "+str(error))
+                  failures.append(destination)
+          print("YouTube preserved: "+original_youtube)
+          if failures: raise SystemExit("Retry incomplete: "+", ".join(failures))
+          print("Interior Instagram Reel and Story recovery completed")
+          
           PY
-      - name: Commit corrected Instagram publishing state
+      - name: Preserve recovery state
         if: always()
         run: |
+          set -euo pipefail
           git config user.name "interior-social-bot"
           git config user.email "actions@github.com"
           git add data/interior_social_publish_state.json
-          if git diff --staged --quiet; then
-            echo "No state change"
-          else
-            git commit -m "Record corrected Olive Tree Interiors Instagram publish [automated]"
+          if ! git diff --staged --quiet; then
+            git commit -m "Record Interior Instagram recovery for SybwGjg5-Ds"
             git pull --rebase
             git push
           fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: interior-instagram-recovery-state
+          path: data/interior_social_publish_state.json
