@@ -22,50 +22,52 @@ jobs:
         env:
           TOKEN: ${{ secrets.INTERIOR_META_ACCESS_TOKEN }}
           CURRENT_PAGE_ID: ${{ secrets.INTERIOR_META_PAGE_ID }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          CURRENT_IG_ID: ${{ secrets.INTERIOR_IG_USER_ID }}
         run: |
           python - <<'PY'
           import json, os, requests
           graph='https://graph.facebook.com/v23.0'
           token=os.environ['TOKEN']
           target='olivetreeinteriors777'
-
-          def get(path, fields=None):
-              params={'access_token':token}
+          def get(path, fields=None, after=None):
+              params={}
               if fields: params['fields']=fields
-              r=requests.get(f'{graph}/{path}',params=params,timeout=30)
-              try: body=r.json()
-              except Exception: body={'raw':r.text[:1000]}
-              return r.status_code, body
-
-          results=[]
-          me_status, me=get('me','id,name')
-          results.append({'kind':'token_me','status':me_status,'data':me})
-
+              if after: params['after']=after
+              r=requests.get(f'{graph}/{path}',headers={'Authorization':'Bearer '+token},params=params,timeout=30)
+              body=r.json()
+              if not r.ok:
+                  e=body.get('error',{})
+                  print(json.dumps({'path':path,'http':r.status_code,'code':e.get('code'),'subcode':e.get('error_subcode'),'message':e.get('message')}))
+              return body
+          fields='id,name,instagram_business_account{id,username},connected_instagram_account{id,username}'
+          def summary(kind, body):
+              print(json.dumps({'kind':kind, **{k:body[k] for k in ('id','name','username','instagram_business_account','connected_instagram_account') if k in body}}))
+          summary('token_identity',get('me','id,name'))
+          summary('configured_instagram',get(os.environ['CURRENT_IG_ID'],'id,username,name'))
+          pages=[]
           page_id=os.environ.get('CURRENT_PAGE_ID','').strip()
           if page_id:
-              st, body=get(page_id,'id,name,instagram_business_account{id,username},connected_instagram_account{id,username}')
-              results.append({'kind':'configured_page','status':st,'data':body})
-
-          st, accounts=get('me/accounts','id,name,instagram_business_account{id,username},connected_instagram_account{id,username}')
-          results.append({'kind':'me_accounts','status':st,'data':accounts})
-
-          matches=[]
-          for page in (accounts.get('data') or []):
-              for k in ('instagram_business_account','connected_instagram_account'):
-                  ig=page.get(k) or {}
-                  if str(ig.get('username') or '').lower()==target:
-                      matches.append({'page_id':page.get('id'),'page_name':page.get('name'),'ig_id':ig.get('id'),'username':ig.get('username'),'link_type':k})
-
-          print('META_ACCOUNT_MAP='+json.dumps(results,ensure_ascii=False))
-          print('TARGET_MATCHES='+json.dumps(matches,ensure_ascii=False))
-
-          msg=['🔎 Olive Tree Interiors Meta mapping','Target: @'+target]
-          if matches:
-              for m in matches:
-                  msg += [f"MATCH FOUND",f"Facebook Page: {m['page_name']} ({m['page_id']})",f"Instagram: @{m['username']} ({m['ig_id']})"]
-          else:
-              msg += ['No accessible Meta page is linked to @'+target,'The current INTERIOR_META_ACCESS_TOKEN does not expose the correct account mapping.']
-          requests.post(f"https://api.telegram.org/bot{os.environ['TELEGRAM_BOT_TOKEN']}/sendMessage",data={'chat_id':os.environ['TELEGRAM_CHAT_ID'],'text':'\n'.join(msg)},timeout=30).raise_for_status()
+              page=get(page_id,fields)
+              summary('configured_page',page)
+              pages.append(page)
+          after=None
+          for _ in range(20):
+              body=get('me/accounts',fields,after)
+              for page in body.get('data',[]):
+                  summary('accessible_page',page)
+                  pages.append(page)
+              paging=body.get('paging',{})
+              after=paging.get('cursors',{}).get('after')
+              if not paging.get('next') or not after: break
+          permissions=get('me/permissions')
+          print('PERMISSIONS='+json.dumps(permissions.get('data',[])))
+          matches={}
+          for page in pages:
+              for field in ('instagram_business_account','connected_instagram_account'):
+                  ig=page.get(field) or {}
+                  if str(ig.get('username','')).lower()==target:
+                      matches[ig['id']]={'page_id':page['id'],'ig_id':ig['id'],'username':ig['username']}
+          print('TARGET_MATCHES='+json.dumps(list(matches.values())))
+          if not matches:
+              raise SystemExit('No accessible linked Instagram account matches @'+target)
           PY
