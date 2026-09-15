@@ -28,7 +28,7 @@ jobs:
         env:
           CF_ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          GH_TOKEN: ${{ secrets.GITHUB_DISPATCH_TOKEN }}
+          GH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
           R2_BUCKET: ${{ secrets.R2_BUCKET_NAME }}
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -37,6 +37,7 @@ jobs:
           for pair in \
             "CLOUDFLARE_ACCOUNT_ID:$CF_ACCOUNT" \
             "CLOUDFLARE_API_TOKEN:$CF_TOKEN" \
+            "DISPATCH_TOKEN:$GH_TOKEN" \
             "R2_BUCKET_NAME:$R2_BUCKET" \
             "TELEGRAM_BOT_TOKEN:$TELEGRAM_TOKEN" \
             "TELEGRAM_CHAT_ID:$TELEGRAM_CHAT"; do
@@ -79,16 +80,14 @@ jobs:
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          GITHUB_DISPATCH_TOKEN: ${{ secrets.GITHUB_DISPATCH_TOKEN }}
+          GITHUB_DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         working-directory: cloudflare/social-trigger
         run: |
-          if [ -n "$GITHUB_DISPATCH_TOKEN" ]; then
-            printf '%s' "$GITHUB_DISPATCH_TOKEN" | npx wrangler secret put GITHUB_DISPATCH_TOKEN
-          else
-            echo "Preserving the existing Cloudflare GITHUB_DISPATCH_TOKEN secret."
-          fi
+          set -euo pipefail
+          : "${GITHUB_DISPATCH_TOKEN:?Missing GitHub secret: DISPATCH_TOKEN}"
+          printf '%s' "$GITHUB_DISPATCH_TOKEN" | npx wrangler secret put GITHUB_DISPATCH_TOKEN
           printf '%s' "$TELEGRAM_BOT_TOKEN" | npx wrangler secret put TELEGRAM_BOT_TOKEN
           printf '%s' "$TELEGRAM_CHAT_ID" | npx wrangler secret put TELEGRAM_CHAT_ID
 
