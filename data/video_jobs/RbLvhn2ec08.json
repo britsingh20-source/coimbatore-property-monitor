@@ -1,0 +1,160 @@
+{
+  "video_id": "RbLvhn2ec08",
+  "source_url": "https://www.youtube.com/watch?v=RbLvhn2ec08",
+  "property_location": "Sulur Kadambadi, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": 3,
+    "land_area": "3 Cents",
+    "built_up_area": "2000 Sq.Ft.",
+    "price": "₹85 Lakhs",
+    "facing": "North",
+    "road_width": "30 & 33 Feet",
+    "parking": "Covered Parking (10x24 ft)",
+    "approval": "DTCP Approved & Plan Approved"
+  },
+  "verified_facts": "3 Cents land area with 2000 sq ft building area, New 3BHK duplex house priced at ₹85 Lakhs (Land + House included), Bank loan available up to 85%, Ground floor features 16x16 living hall, 10x10 kitchen, 10x16 master bedroom with attached bathroom (5x8), and 10x24 car parking, First floor features 6x16 living hall, two 10x16 master bedrooms with attached bathrooms (5x10 and 4x10), one common bathroom (4x6), balcony, and open terrace",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Conversational, local property presenter speaking directly to camera with smooth casual Tamil tone and natural real-estate English terms.",
+    "hook_strategy": "Highlight key Coimbatore location connected to Trichy Road followed immediately by space and price breakdown.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை Sulur Kadambadi-ல, Trichy Road மற்றும் Kendriya Vidyalaya பக்கத்துல இருக்குற ஒரு அருமையான 3BHK duplex house பாக்கலாம்!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இது 2000 Sq.Ft. built-up area கொண்ட 3BHK வீடு. Ground floor-ல 16x16 living hall, kitchen, master bedroom இருக்கு, first floor-ல ரெண்டு master bedrooms, balcony, open terrace இருக்கு.",
+        "broll": [
+          "living_room",
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "space breakdown"
+      },
+      {
+        "name": "land",
+        "voice": "பாத்தீங்கனா, 3 Cents land area-ல compound wall, 8,000 Litres water sump, மற்றும் borewell with motor வசதியோட அமைச்சிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "land details"
+      },
+      {
+        "name": "road",
+        "voice": "இங்க 30 & 33 Feet wide road access இருக்கு, அதே மாதிரி 10x24 ft-ல covered car parking கொடுத்திருக்காங்க.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "measurement-line",
+        "purpose": "road and parking"
+      },
+      {
+        "name": "facing",
+        "voice": "இது North facing property.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "kitchen"
+        ],
+        "vfx": "compass",
+        "purpose": "facing direction"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP Approved & Plan Approved property. 85% வரை bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "legal verification"
+      },
+      {
+        "name": "price",
+        "voice": "இதுல முக்கியமான விஷயம், Land + House சேர்த்து இதோட price வெறும் ₹85 Lakhs மட்டும்தான்!",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "value drop"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து பார்க்க site visit வர விரும்பினா, உடனே call பண்ணி details தெரிஞ்சுக்கோங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "call-action",
+        "purpose": "call to action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/RbLvhn2ec08/",
+  "optional_owned_audio": "assets/audio/RbLvhn2ec08.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Sulur Kadambadi, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone grey and dark brown duplex elevation with red structural accents, glass panel balcony railing, red tiled entrance ramp, sliding gate, and covered portico.. Neighbourhood: Developing residential layout in Sulur Kadambadi featuring wide tar roads, open green fields, coconut trees, and surrounding single/double-story residential homes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Sulur Kadambadi, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone grey and dark brown duplex elevation with red structural accents, glass panel balcony railing, red tiled entrance ramp, sliding gate, and covered portico.. Neighbourhood: Developing residential layout in Sulur Kadambadi featuring wide tar roads, open green fields, coconut trees, and surrounding single/double-story residential homes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Sulur Kadambadi, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone grey and dark brown duplex elevation with red structural accents, glass panel balcony railing, red tiled entrance ramp, sliding gate, and covered portico.. Neighbourhood: Developing residential layout in Sulur Kadambadi featuring wide tar roads, open green fields, coconut trees, and surrounding single/double-story residential homes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Sulur Kadambadi, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone grey and dark brown duplex elevation with red structural accents, glass panel balcony railing, red tiled entrance ramp, sliding gate, and covered portico.. Neighbourhood: Developing residential layout in Sulur Kadambadi featuring wide tar roads, open green fields, coconut trees, and surrounding single/double-story residential homes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
