@@ -1,0 +1,117 @@
+{
+  "video_id": "hDPyWA2dNXY",
+  "source_url": "https://www.youtube.com/watch?v=hDPyWA2dNXY",
+  "property_location": "Vadavalli, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Apartment",
+    "bhk": "3 BHK",
+    "land_area": "2.5 Cents UDS",
+    "built_up_area": "1350 sqft",
+    "price": "₹55 Lakhs",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "3BHK flat located on the first floor in Vadavalli, Coimbatore., Property age is 13 years., Land size is 2.5 Cents UDS out of a 9-cent plot containing 4 flats in total (G+1 layout)., Built-up area is 1350 sqft., Asking price is 55 Lakhs (slightly negotiable)., Bedroom dimensions: Bedroom 1 (10 ft x 11 ft), Bedroom 2 Master (10 ft x 16 ft), Bedroom 3 (10 ft x 11 ft).",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed conversational local real-estate presenter speaking naturally to camera with clear direct phrasing",
+    "hook_strategy": "Direct hook targeting buyers looking for a 3 BHK apartment in Vadavalli, Coimbatore",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை வடவள்ளில ஃபர்ஸ்ட் ஃபிளோர்ல அமைஞ்சிருக்கற ஒரு 3 BHK அபார்ட்மென்ட் பத்தி தான் இன்னைக்கு பாக்கப்போறோம்.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இது 1350 sqft built-up area கொண்டது. இதுல dining area, pooja space, balcony மற்றும் loft space இருக்கு. Master bedroom 10 by 16 feet, மத்த ரெண்டு bedrooms 10 by 11 feet size-ல attached bathrooms-ஓட வருது.",
+        "broll": [
+          "living_room",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "exterior",
+          "land"
+        ],
+        "vfx": "text-overlay-dimensions",
+        "purpose": "property_features"
+      },
+      {
+        "name": "land",
+        "voice": "இது 13 வருஷம் பழமையான property. மொத்தம் 9 சென்ட் லேண்ட்ல 4 flats மட்டுமே இருக்குற G+1 layout-ல, 2.5 Cents UDS வருது.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "text-overlay-uds",
+        "purpose": "land_details"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த 3 BHK ஃப்ளாட்டோட price பாத்தீங்கனா 55 Lakhs சொல்றாங்க, slightly negotiable.",
+        "broll": [
+          "living_room",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details தெரிஞ்சுக்கவோ இல்ல site visit வரவோ உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/hDPyWA2dNXY/",
+  "optional_owned_audio": "assets/audio/hDPyWA2dNXY.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey mini-apartment building painted in yellow and cream tones with traditional sloping tile roofs over balconies, black iron entrance gate, and front greenery.. Neighbourhood: Residential street featuring paved/earthen roads with mature shade trees and quiet residential surroundings.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey mini-apartment building painted in yellow and cream tones with traditional sloping tile roofs over balconies, black iron entrance gate, and front greenery.. Neighbourhood: Residential street featuring paved/earthen roads with mature shade trees and quiet residential surroundings.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey mini-apartment building painted in yellow and cream tones with traditional sloping tile roofs over balconies, black iron entrance gate, and front greenery.. Neighbourhood: Residential street featuring paved/earthen roads with mature shade trees and quiet residential surroundings.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey mini-apartment building painted in yellow and cream tones with traditional sloping tile roofs over balconies, black iron entrance gate, and front greenery.. Neighbourhood: Residential street featuring paved/earthen roads with mature shade trees and quiet residential surroundings.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
