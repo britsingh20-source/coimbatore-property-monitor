@@ -54,7 +54,8 @@
     "SybwGjg5-Ds",
     "g8qgP5Y0y14",
     "aNcPjUbH4yc",
-    "2aky3zpEAMU"
+    "2aky3zpEAMU",
+    "W0si7RKyg20"
   ],
   "history": [
     {
@@ -331,6 +332,11 @@
       "video_id": "2aky3zpEAMU",
       "creator": "Interior Coach",
       "url": "https://www.youtube.com/watch?v=2aky3zpEAMU"
+    },
+    {
+      "video_id": "W0si7RKyg20",
+      "creator": "DesignCafe",
+      "url": "https://www.youtube.com/watch?v=W0si7RKyg20"
     }
   ],
   "night_channel_cursor": 1
