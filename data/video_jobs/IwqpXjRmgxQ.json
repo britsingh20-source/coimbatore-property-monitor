@@ -1,0 +1,141 @@
+{
+  "video_id": "IwqpXjRmgxQ",
+  "source_url": "https://www.youtube.com/watch?v=IwqpXjRmgxQ",
+  "property_location": "Cheran Ma Nagar, Coimbatore",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "3.25 Cents (1420 sq. ft.)",
+    "built_up_area": "2600 sq. ft.",
+    "price": "₹1.90 Crore (Negotiable)",
+    "facing": "East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Car Parking (18' x 16')",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Property located in Cheran Ma Nagar, Coimbatore within Corporation limits., East-facing site and East-facing main door., Total land area is 3.25 Cents (30x47 ft / 1420 sq. ft.)., Total built-up area is 2600 sq. ft. duplex construction., Offered as a fully furnished home including electronics, furniture, appliances, and gym equipment., Ground floor includes car parking, 16'x16' living hall, 16'x10' kitchen & dining space, 16'x10' bedroom with 10'x5' attached bathroom, and 6'x4' outside bathroom., First floor includes 17'x10' lounge, 16'x16' master bedroom with walk-in wardrobe and 6'x5.25' attached bathroom, 16'x10' third bedroom, 10'x4.25' common bathroom, and 16'x15' balcony/gym., Includes borewell and water sump.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, local property presenter talking directly to camera in natural spoken Tamil with common English real-estate terms.",
+    "hook_strategy": "Highlight the prime Cheran Ma Nagar location combined with a ready-to-move fully furnished 3 BHK independent house.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை Cheran Ma Nagar-ல 3 BHK Fully Furnished Independent House விற்பனைக்கு வந்துருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "3.25 Cents land area-ல 18'x16' car parking space-ோட இந்த வீட அமைச்சிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "text-overlay-land-area",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "மொத்தம் 2600 sq.ft built-up area கொண்ட duplex home இது. L-shaped sofa, modular kitchen, walk-in wardrobe, அப்புறம் balcony gym area-வோட complete-ஆ ready-ஆ இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "exterior"
+        ],
+        "vfx": "text-overlay-builtup",
+        "purpose": "builtup_details"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், site-உம் main door-உம் East facing. borewell, underground water sump வசதிகளும் பண்ணிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass-east",
+        "purpose": "facing_and_utilities"
+      },
+      {
+        "name": "approval",
+        "voice": "DTCP approval கொண்ட இந்த வீட்டுக்கு bank loan facility-யும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "legality"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த வீட்டின் asking price 1.90 Crore, negotiable.",
+        "broll": [
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணவோ, details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "contact-details",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/IwqpXjRmgxQ/",
+  "optional_owned_audio": "assets/audio/IwqpXjRmgxQ.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Cheran Ma Nagar, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary two-story elevation with a dual-tone white and grey finish, laser-cut metal main gate, covered parking space with full-body tiles, glass-railing balcony, and red clay tiled open terrace.. Neighbourhood: Developed residential locality in Cheran Ma Nagar, Coimbatore, situated within corporation limits and surrounded by existing independent residences.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Cheran Ma Nagar, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary two-story elevation with a dual-tone white and grey finish, laser-cut metal main gate, covered parking space with full-body tiles, glass-railing balcony, and red clay tiled open terrace.. Neighbourhood: Developed residential locality in Cheran Ma Nagar, Coimbatore, situated within corporation limits and surrounded by existing independent residences.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Cheran Ma Nagar, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary two-story elevation with a dual-tone white and grey finish, laser-cut metal main gate, covered parking space with full-body tiles, glass-railing balcony, and red clay tiled open terrace.. Neighbourhood: Developed residential locality in Cheran Ma Nagar, Coimbatore, situated within corporation limits and surrounded by existing independent residences.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Cheran Ma Nagar, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary two-story elevation with a dual-tone white and grey finish, laser-cut metal main gate, covered parking space with full-body tiles, glass-railing balcony, and red clay tiled open terrace.. Neighbourhood: Developed residential locality in Cheran Ma Nagar, Coimbatore, situated within corporation limits and surrounded by existing independent residences.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
