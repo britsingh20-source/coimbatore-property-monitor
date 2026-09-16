@@ -55,7 +55,8 @@
     "g8qgP5Y0y14",
     "aNcPjUbH4yc",
     "2aky3zpEAMU",
-    "W0si7RKyg20"
+    "W0si7RKyg20",
+    "t7o8-VxPR9c"
   ],
   "history": [
     {
@@ -337,6 +338,11 @@
       "video_id": "W0si7RKyg20",
       "creator": "DesignCafe",
       "url": "https://www.youtube.com/watch?v=W0si7RKyg20"
+    },
+    {
+      "video_id": "t7o8-VxPR9c",
+      "creator": "DesignCafe",
+      "url": "https://www.youtube.com/watch?v=t7o8-VxPR9c"
     }
   ],
   "night_channel_cursor": 1
