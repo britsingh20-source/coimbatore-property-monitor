@@ -1,0 +1,62 @@
+name: Recover Failed Interior Publish
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/recover-failed-interior-publish.yml'
+  workflow_dispatch:
+    inputs:
+      interior_id:
+        description: 'INTERIOR_ID to recover'
+        required: true
+        default: '2aky3zpEAMU'
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Recover failed Interior publish
+        env:
+          RECOVER_INTERIOR_ID: ${{ inputs.interior_id || '2aky3zpEAMU' }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          INTERIOR_GEMINI_MODEL: gemini-2.5-flash
+          INTERIOR_META_ACCESS_TOKEN: ${{ secrets.INTERIOR_META_ACCESS_TOKEN }}
+          INTERIOR_META_PAGE_ID: ${{ secrets.INTERIOR_META_PAGE_ID }}
+          INTERIOR_IG_USER_ID: ${{ secrets.INTERIOR_IG_USER_ID }}
+          INTERIOR_YOUTUBE_CLIENT_ID: ${{ secrets.INTERIOR_YOUTUBE_CLIENT_ID }}
+          INTERIOR_YOUTUBE_CLIENT_SECRET: ${{ secrets.INTERIOR_YOUTUBE_CLIENT_SECRET }}
+          INTERIOR_YOUTUBE_REFRESH_TOKEN: ${{ secrets.INTERIOR_YOUTUBE_REFRESH_TOKEN }}
+          INTERIOR_YOUTUBE_PRIVACY_STATUS: public
+        run: python recover_failed_interior_publish.py
+      - name: Commit recovered publishing state
+        run: |
+          set -euo pipefail
+          git config user.name "interior-social-bot"
+          git config user.email "actions@github.com"
+          git add data/interior_social_publish_state.json
+          if git diff --staged --quiet; then
+            echo "No state changes."
+          else
+            git commit -m "Recover Interior social publishing state [automated]"
+            git pull --rebase
+            git push
+          fi
