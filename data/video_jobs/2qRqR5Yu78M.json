@@ -1,0 +1,153 @@
+{
+  "video_id": "2qRqR5Yu78M",
+  "source_url": "https://www.youtube.com/watch?v=2qRqR5Yu78M",
+  "property_location": "Papampatti, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2 BHK",
+    "land_area": "2.75 Cents",
+    "built_up_area": "1000 Sq.ft",
+    "price": "₹49,00,000",
+    "facing": "East",
+    "road_width": "30 Feet",
+    "parking": "1 Car Parking",
+    "approval": "DTCP Approved, Plan Approved"
+  },
+  "verified_facts": "2.75 cents land area in Papampatti, Coimbatore, 1000 sq.ft building area, East facing 2BHK house, Priced at ₹49 Lakhs, 30 feet tar road access in a DTCP approved layout, 6000 litres water sump and 10000 litres septic tank provided",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, authentic local property presenter speaking directly to camera with high conversational energy.",
+    "hook_strategy": "Highlight the rare combination of an independent 2 BHK house near Trichy Road in Papampatti priced at ₹49 Lakhs right in the first 3 seconds.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை Trichy Road, Papampatti Pirivu பக்கத்துல இருக்குற Papampatti location-ல 49 Lakhs-க்கு ஒரு 2 BHK Independent House பாக்கலாம்!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-tag",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 2.75 Cents land area-ல அமைஞ்சிருக்கு. சுத்தி Compound Wall-ோட 1 Car Parking வசதியும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "highlight-boundary",
+        "purpose": "property_overview"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Built-up area பாத்தீங்கனா 1000 Sq.ft. நல்ல Spacious-ஆன 2 BHK வீடா அமைச்சிருக்காங்க.",
+        "broll": [
+          "living_room",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay-area",
+        "purpose": "interior_details"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், இந்த House East facing-ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "compass-east",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "road",
+        "voice": "வீட்டுக்கு முன்னாடி நல்ல 30 Feet tar road access இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "road-width-indicator",
+        "purpose": "access_info"
+      },
+      {
+        "name": "approval",
+        "voice": "அதே மாதிரி, இது DTCP Approved மற்றும் Plan Approved layout.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_factor"
+      },
+      {
+        "name": "price",
+        "voice": "Borewell with motor, 6000 Litres Water Sump, 10000 Litres Septic Tank வசதிகளோட இதோட Price 49 Lakhs.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-pop",
+        "purpose": "value_proposition"
+      },
+      {
+        "name": "cta",
+        "voice": "Direct-ஆ Site visit வர இல்லனா Details தெரிஞ்சுக்க உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "call-button-animation",
+        "purpose": "action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/2qRqR5Yu78M/",
+  "optional_owned_audio": "assets/audio/2qRqR5Yu78M.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Papampatti, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house featuring a vibrant yellow and grey elevation with geometric accent tile, a dark iron foldable gate, patterned tile car parking floor, and grey ceramic tile walls.. Neighbourhood: Located in a gated community layout in Papampatti with a 30-foot wide tar road in front, surrounded by open plots and greenery.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Papampatti, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house featuring a vibrant yellow and grey elevation with geometric accent tile, a dark iron foldable gate, patterned tile car parking floor, and grey ceramic tile walls.. Neighbourhood: Located in a gated community layout in Papampatti with a 30-foot wide tar road in front, surrounded by open plots and greenery.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Papampatti, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house featuring a vibrant yellow and grey elevation with geometric accent tile, a dark iron foldable gate, patterned tile car parking floor, and grey ceramic tile walls.. Neighbourhood: Located in a gated community layout in Papampatti with a 30-foot wide tar road in front, surrounded by open plots and greenery.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Papampatti, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house featuring a vibrant yellow and grey elevation with geometric accent tile, a dark iron foldable gate, patterned tile car parking floor, and grey ceramic tile walls.. Neighbourhood: Located in a gated community layout in Papampatti with a 30-foot wide tar road in front, surrounded by open plots and greenery.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
