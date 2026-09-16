@@ -1,0 +1,128 @@
+{
+  "video_id": "HRsGPd4vIVU",
+  "source_url": "https://www.youtube.com/watch?v=HRsGPd4vIVU",
+  "property_location": "Pogalur, Annur to Mettupalayam Road, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2 BHK",
+    "land_area": "3 Cents",
+    "built_up_area": "1205 sqft",
+    "price": "53.5 Lakhs",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking (25' x 15')",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "2BHK Independent House in Pogalur on the Annur to Mettupalayam road near Coimbatore., Property built on a 3 Cents plot with a total built-up area of 1205 sqft., Offered at 53.5 Lakhs (negotiable) with up to 75% bank loan availability., Ground floor layout includes a 25' x 15' portico, 16' x 16' living hall, pooja unit, 16' x 8' kitchen with dining space, 10' x 11' bedroom, and a 5' x 6' attached bathroom., First floor consists of a 16' x 10' master bedroom, 8' x 5' attached bathroom, lobby, and an open balcony., Features traditional Kerala-style roof tiling at the entrance combined with modern elevation design and modular interior woodwork.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera in natural conversational Tamil with standard English real-estate terms.",
+    "hook_strategy": "Direct focus on a 2 BHK Independent house on the Annur to Mettupalayam Highway at Pogalur.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Annur to Mettupalayam road-ல Pogalur location-ல இந்த 2 BHK Independent House விற்பனைக்கு வந்திருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-tag",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "3 Cents land-ல 1205 sqft built-up area. Ground floor-ல living hall, pooja unit, modular kitchen, அப்புறம் first floor-ல master bedroom வித் balcony இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "area-callout",
+        "purpose": "property_details"
+      },
+      {
+        "name": "facing",
+        "voice": "இது North facing வீடு. Covered car parking, individual borewell, water sump, அப்புறம் modular woodwork எல்லாமே பண்ணிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass-north",
+        "purpose": "key_features"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், இது DTCP approval வாங்குன property. 75% வரைக்கும் bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "approval-seal",
+        "purpose": "trust"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price 53.5 Lakhs, negotiable-தான்.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-pop",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "Direct-ஆ site visit வர இல்லனா details தெரிஞ்சுக்க உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "phone-number-overlay",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/HRsGPd4vIVU/",
+  "optional_owned_audio": "assets/audio/HRsGPd4vIVU.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story residence with a traditional Kerala-style red tile portico overhang, two-tone cream and dark brown exterior paint with vertical louvers, and a wide cream and black metal entry gate.. Neighbourhood: Located within a 22-acre master-planned residential layout featuring multiple constructed homes, paved internal roads, community park area, local temple, and mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story residence with a traditional Kerala-style red tile portico overhang, two-tone cream and dark brown exterior paint with vertical louvers, and a wide cream and black metal entry gate.. Neighbourhood: Located within a 22-acre master-planned residential layout featuring multiple constructed homes, paved internal roads, community park area, local temple, and mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story residence with a traditional Kerala-style red tile portico overhang, two-tone cream and dark brown exterior paint with vertical louvers, and a wide cream and black metal entry gate.. Neighbourhood: Located within a 22-acre master-planned residential layout featuring multiple constructed homes, paved internal roads, community park area, local temple, and mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story residence with a traditional Kerala-style red tile portico overhang, two-tone cream and dark brown exterior paint with vertical louvers, and a wide cream and black metal entry gate.. Neighbourhood: Located within a 22-acre master-planned residential layout featuring multiple constructed homes, paved internal roads, community park area, local temple, and mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
