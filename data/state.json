@@ -796,11 +796,11 @@
       "status": "discovered"
     },
     "C-W7Cx-AI3M": {
-      "attempts": 2,
+      "attempts": 3,
       "first_seen_at": "2026-09-15T13:38:05.136784+00:00",
-      "last_attempt_at": "2026-09-16T00:50:45.470901+00:00",
-      "last_error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 14.549591893s.', 'code': 'too_many_requests'}}",
-      "next_retry_at": "2026-09-16T04:50:45.470916+00:00",
+      "last_attempt_at": "2026-09-16T20:36:23.061150+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 36.954029817s.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-09-17T04:36:23.061162+00:00",
       "status": "retry_pending"
     },
     "C-dsowCuNs0": {
