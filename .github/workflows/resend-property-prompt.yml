@@ -1,4 +1,4 @@
-# Portrait 9:16 Telegram verification: 2026-09-14
+# Religion-neutral Telegram resend verification: 2026-09-17
 name: Resend Property Prompt
 
 on:
@@ -7,7 +7,7 @@ on:
       video_id:
         description: Existing property VIDEO_ID to regenerate, send, and enrich
         required: true
-        default: 2ews-yAINDY
+        default: CCAZi6SNB-g
         type: string
   push:
     branches:
@@ -40,7 +40,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          REQUESTED_VIDEO_ID: ${{ inputs.video_id || '2ews-yAINDY' }}
+          REQUESTED_VIDEO_ID: ${{ inputs.video_id || 'CCAZi6SNB-g' }}
           PUBLIC_IMAGE_MAX_PAGES: "8"
           PUBLIC_IMAGE_MAX_IMAGES: "12"
         shell: bash
