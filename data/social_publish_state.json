@@ -150,7 +150,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
+        "confidence": 1.0,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
