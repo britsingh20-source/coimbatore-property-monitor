@@ -41,11 +41,9 @@ jobs:
               raise SystemExit(f'Expected Telegram regex defects were not found safely; changed={changed}')
           p.write_text(text, encoding='utf-8')
 
-          import ast, re
-          tree = ast.parse(text)
-          ns = {'re': re}
+          import re
           # Direct behavioral guard for the exact Cloudflare-injected caption.
-          m = re.search(r'(?:video[\\s_-]*id|id)\\s*[:=\\-]\\s*([A-Za-z0-9_-]{6,32})', 'VIDEO_ID: M0iRDEf_DfQ', flags=re.I)
+          m = re.search(r'(?:video[\s_-]*id|id)\s*[:=\-]\s*([A-Za-z0-9_-]{6,32})', 'VIDEO_ID: M0iRDEf_DfQ', flags=re.I)
           assert m and m.group(1) == 'M0iRDEf_DfQ'
           print('VIDEO_ID labelled-caption parser fixed and verified.')
           PY
