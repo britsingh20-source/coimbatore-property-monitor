@@ -57,7 +57,8 @@
     "2aky3zpEAMU",
     "W0si7RKyg20",
     "t7o8-VxPR9c",
-    "Bsq-ztogWhc"
+    "Bsq-ztogWhc",
+    "anDS2OkxuJs"
   ],
   "history": [
     {
@@ -349,6 +350,11 @@
       "video_id": "Bsq-ztogWhc",
       "creator": "Interior Coach",
       "url": "https://www.youtube.com/watch?v=Bsq-ztogWhc"
+    },
+    {
+      "video_id": "anDS2OkxuJs",
+      "creator": "DesignCafe",
+      "url": "https://www.youtube.com/watch?v=anDS2OkxuJs"
     }
   ],
   "night_channel_cursor": 1
