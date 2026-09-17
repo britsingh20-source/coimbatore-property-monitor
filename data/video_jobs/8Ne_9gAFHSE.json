@@ -1,0 +1,102 @@
+{
+  "video_id": "8Ne_9gAFHSE",
+  "source_url": "https://www.youtube.com/watch?v=8Ne_9gAFHSE",
+  "property_location": "Alandurai, Siruvani Road, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Farm Land",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹1.90 Lakhs per cent",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "Mango tree farmland for sale located near Alandurai, Coimbatore., Price listed at 1.90 Lakhs per cent., Property is near Isha Yoga Centre / Adiyogi statue., Equipped with borewell water connection and electricity infrastructure., Planted with mature mango trees and coconut palms., Contact number provided as 93454 25595 (Covaii Realestate).",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Alandurai, Siruvani Road, Coimbatore, Tamil Nadu, India சைட்ல Farm Land தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹1.90 Lakhs per cent.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/8Ne_9gAFHSE/",
+  "optional_owned_audio": "assets/audio/8Ne_9gAFHSE.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Alandurai, Siruvani Road, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Architecture consistent with: Extensive agricultural farmland cultivated with lush green mango trees and coconut palms, equipped with an on-site borewell pump setup and concrete power pole connection.. Neighbourhood: Rural farmland setting located in Alandurai along Siruvani Road near Coimbatore, featuring scenic green surroundings close to the Western Ghats.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Alandurai, Siruvani Road, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Architecture consistent with: Extensive agricultural farmland cultivated with lush green mango trees and coconut palms, equipped with an on-site borewell pump setup and concrete power pole connection.. Neighbourhood: Rural farmland setting located in Alandurai along Siruvani Road near Coimbatore, featuring scenic green surroundings close to the Western Ghats.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Alandurai, Siruvani Road, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Architecture consistent with: Extensive agricultural farmland cultivated with lush green mango trees and coconut palms, equipped with an on-site borewell pump setup and concrete power pole connection.. Neighbourhood: Rural farmland setting located in Alandurai along Siruvani Road near Coimbatore, featuring scenic green surroundings close to the Western Ghats.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Alandurai, Siruvani Road, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Architecture consistent with: Extensive agricultural farmland cultivated with lush green mango trees and coconut palms, equipped with an on-site borewell pump setup and concrete power pole connection.. Neighbourhood: Rural farmland setting located in Alandurai along Siruvani Road near Coimbatore, featuring scenic green surroundings close to the Western Ghats.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "needs_review",
+  "approval_mode": "automatic_fact_gate_v1"
+}
