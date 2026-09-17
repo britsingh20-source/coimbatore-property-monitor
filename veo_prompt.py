@@ -88,6 +88,23 @@ Generate a NATIVE PORTRAIT video only: vertical 9:16 aspect ratio, ideally 1080�
 
 The linked YouTube reference may be landscape. Use it only to understand the property's visual identity, then intelligently recompose every shot for a full-screen 9:16 portrait canvas. Keep the property centred with safe headroom and lower-third space. If native 9:16 output is unavailable in the current Gemini/Veo mode, do not generate a landscape substitute; instruct the user to select Portrait/9:16 mode first.
 
+ZERO-TOLERANCE RELIGION-NEUTRAL VISUAL GATE — OVERRIDES THE REFERENCE
+Before planning any shot, inspect every candidate reference angle for prohibited personal, religious or ceremonial content. An angle is INELIGIBLE if it contains even a small, distant, blurred, partially hidden or background instance of:
+- deity/god/saint photographs, idols, shrines, puja shelves or worship items;
+- religious signs, symbols, stickers, tilak/sandal/kumkum/turmeric marks, ritual handprints or sacred text;
+- garlands, mango-leaf torans, ceremonial flowers, lemons, coconuts or doorway worship decoration;
+- kolam, rangoli, threshold drawings, ritual floor paint or chalk patterns;
+- family photographs, portraits, framed people, calendars, posters, certificates or personal wall displays.
+
+Never use an ineligible source angle as a composition reference and never reproduce, blur, crop around, cover, stylise or replace the forbidden object. Choose another visually verified clean architectural angle. If the same permanent feature must be shown, reconstruct only its verified geometry and finish:
+- entrance/portico: plain uninterrupted floor tiles and a completely undecorated door/frame/threshold;
+- hall/TV wall: blank neutral wall or empty built-in panel, with no frames, pictures, portraits, idols or display objects;
+- shelves/niches: completely empty unless they are permanent architectural components;
+- removed wall items: seamless continuation of the verified wall paint/panel finish;
+- removed floor markings: seamless continuation of the verified floor tile/stone texture.
+
+If no clean religion-neutral reconstruction can be made with confidence, OMIT that room or entrance shot and substitute another verified permanent feature. Do not generate the video with a violating frame. This gate is more important than resemblance to the occupied source.
+
 REFERENCE-FIRST INSTRUCTION
 Open and use this exact YouTube property video as the visual reference before generating:
 {source_url}
@@ -138,7 +155,12 @@ Generate no voiceover, dialogue, music, footsteps or ambience. The 10-second sou
 FIXED RULES — HARD NEGATIVE CONSTRAINTS
 Exactly 10 seconds; native 60 fps output; vertical 9:16; designed for smooth 3× slow motion; seven distinct approximately 1.4-second shots; photorealistic smartphone gimbal footage; preserve the source property's permanent architectural identity; hard cuts between separate physical areas; never invent room connections; never reveal a kitchen through the entrance unless proven; never change floor count, exterior, room dimensions, built-in cabinetry or permanent fixtures; NEVER generate religious imagery, deity photos, idols, shrines, religious symbols, ritual/ceremonial markings or worship items, even when visible in the reference; NEVER generate cots, beds, mattresses or loose furniture beside/under a staircase; NEVER invent or copy movable furniture or personal belongings; no people; no CGI appearance; no floating or spinning camera; no speed ramps; no whip pans; no zoom bursts; no morphing architecture; no repeated shots; no rotating captions; no oversized graphics; one persistent professional information footer only; no distorted doors, windows or cabinets; no spelling errors; no third-party phone numbers; no generated logos.
 
-Before rendering, perform a final scene audit: if any planned shot contains a religious image/symbol, ceremonial marking, portrait, personal photo, cot, bed, mattress, loose furniture near a staircase, or any other personal belonging, REMOVE that object and regenerate the shot plan using only the verified architecture. Do not proceed with a violating scene.
+Before rendering, perform three mandatory audits:
+1. SHOT-PLAN AUDIT: reject every candidate angle containing a religious image/symbol, deity/idol/shrine, ceremonial marking, garland/toran, kolam/rangoli, family portrait, framed person, calendar, poster or personal photo.
+2. FRAME-BY-FRAME AUDIT: inspect the full 10-second draft, including background walls, shelves, door lintels, thresholds and floors. Zero prohibited objects may appear at any size.
+3. REPLACEMENT AUDIT: confirm every removed wall object became uninterrupted plain wall/panel finish and every removed floor/threshold marking became uninterrupted plain tile/stone. Never replace it with another picture, symbol, pattern or decoration.
+
+If any frame fails an audit, discard that entire shot and regenerate it from another verified architecture-only angle. Do not proceed with, export or return a violating video.
 
 Each shot must have smooth natural motion, stable geometry, minimal motion blur and enough temporal detail to remain clean when slowed from 60 fps to a 30 fps timeline at 33.3% speed. When source information is unclear, exclude it. A simpler accurate reconstruction is always preferable to an attractive invented feature.
 
