@@ -52,7 +52,12 @@ def test_prompt_filters_personal_religious_and_loose_furniture_details():
     assert "Do not replace a removed object with another decorative object" in prompt
     assert "the staircase and surrounding architecture must remain clear and unobstructed" in prompt
     assert "Do NOT reproduce televisions, deity photos, religious images" in prompt
-    assert "final scene audit" in prompt
+    assert "ZERO-TOLERANCE RELIGION-NEUTRAL VISUAL GATE" in prompt
+    assert "An angle is INELIGIBLE" in prompt
+    assert "plain uninterrupted floor tiles" in prompt
+    assert "blank neutral wall or empty built-in panel" in prompt
+    assert "perform three mandatory audits" in prompt
+    assert "discard that entire shot" in prompt
 
 
 def test_missing_values_are_explicitly_omitted():
