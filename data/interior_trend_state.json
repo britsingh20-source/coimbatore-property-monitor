@@ -58,7 +58,8 @@
     "W0si7RKyg20",
     "t7o8-VxPR9c",
     "Bsq-ztogWhc",
-    "anDS2OkxuJs"
+    "anDS2OkxuJs",
+    "6TZ9m8RCgE8"
   ],
   "history": [
     {
@@ -355,6 +356,11 @@
       "video_id": "anDS2OkxuJs",
       "creator": "DesignCafe",
       "url": "https://www.youtube.com/watch?v=anDS2OkxuJs"
+    },
+    {
+      "video_id": "6TZ9m8RCgE8",
+      "creator": "DesignCafe",
+      "url": "https://www.youtube.com/watch?v=6TZ9m8RCgE8"
     }
   ],
   "night_channel_cursor": 1
