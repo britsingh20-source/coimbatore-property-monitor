@@ -88,7 +88,7 @@ def _video_attachment(message: dict) -> dict | None:
 def _reference_video_id(message: dict) -> str:
     text = str(message.get("caption") or message.get("text") or "").strip()
     match = re.search(
-        r"reference[\\s_-]*id\\s*[:=\\-]\\s*([A-Za-z0-9_-]{6,32})",
+        r"reference[\s_-]*id\s*[:=\-]\s*([A-Za-z0-9_-]{6,32})",
         text,
         flags=re.I,
     )
@@ -97,7 +97,7 @@ def _reference_video_id(message: dict) -> str:
 
 def _explicit_video_id(message: dict) -> str:
     text = str(message.get("caption") or message.get("text") or "").strip()
-    match = re.search(r"(?:video[\\s_-]*id|id)\\s*[:=\\-]\\s*([A-Za-z0-9_-]{6,32})", text, flags=re.I)
+    match = re.search(r"(?:video[\s_-]*id|id)\s*[:=\-]\s*([A-Za-z0-9_-]{6,32})", text, flags=re.I)
     if match:
         return match.group(1)
     if re.fullmatch(r"[A-Za-z0-9_-]{11}", text):
@@ -127,7 +127,7 @@ def _explicit_video_id(message: dict) -> str:
     replied = message.get("reply_to_message") or {}
     replied_document = replied.get("document") or {}
     filename = str(replied_document.get("file_name") or "")
-    match = re.match(r"([A-Za-z0-9_-]{11})-gemini-veo-prompt\\.txt$", filename, flags=re.I)
+    match = re.match(r"([A-Za-z0-9_-]{11})-gemini-veo-prompt\.txt$", filename, flags=re.I)
     return match.group(1) if match else ""
 
 
