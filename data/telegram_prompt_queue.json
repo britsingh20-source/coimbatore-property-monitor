@@ -958,28 +958,31 @@
       "video_id": "M0iRDEf_DfQ"
     },
     {
-      "video_id": "9BzBTyvKXYE",
+      "prompt_message_id": 588,
       "sent_at": "2026-09-17T13:34:01.322016+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 588
+      "video_id": "9BzBTyvKXYE"
     },
     {
-      "video_id": "CLp9Pohl8No",
+      "prompt_message_id": 590,
+      "r2_key": "social-ready/CLp9Pohl8No.mp4",
       "sent_at": "2026-09-17T13:34:13.479979+00:00",
-      "status": "pending_mobile_upload",
-      "prompt_message_id": 590
+      "status": "assigned_to_r2_upload",
+      "telegram_file_unique_id": "AgADmCcAApsdYVU",
+      "uploaded_at": "2026-09-17T15:26:55.792604+00:00",
+      "video_id": "CLp9Pohl8No"
     },
     {
-      "video_id": "hoxa4vl9o-g",
+      "prompt_message_id": 597,
       "sent_at": "2026-09-17T14:50:38.450123+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 597
+      "video_id": "hoxa4vl9o-g"
     },
     {
-      "video_id": "CCAZi6SNB-g",
+      "prompt_message_id": 600,
       "sent_at": "2026-09-17T14:53:15.603343+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 600
+      "video_id": "CCAZi6SNB-g"
     }
   ]
 }
