@@ -956,6 +956,18 @@
       "telegram_file_unique_id": "AgAD7CEAAqd1YFU",
       "uploaded_at": "2026-09-17T03:49:55.547843+00:00",
       "video_id": "M0iRDEf_DfQ"
+    },
+    {
+      "video_id": "9BzBTyvKXYE",
+      "sent_at": "2026-09-17T13:34:01.322016+00:00",
+      "status": "pending_mobile_upload",
+      "prompt_message_id": 588
+    },
+    {
+      "video_id": "CLp9Pohl8No",
+      "sent_at": "2026-09-17T13:34:13.479979+00:00",
+      "status": "pending_mobile_upload",
+      "prompt_message_id": 590
     }
   ]
 }
