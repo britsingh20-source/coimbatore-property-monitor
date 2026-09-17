@@ -1,0 +1,123 @@
+{
+  "video_id": "sTrVIfdZoKE",
+  "source_url": "https://www.youtube.com/watch?v=sTrVIfdZoKE",
+  "property_location": "Golden India Golden Homes, near Palur & Villiambakkam Railway Stations, Singa Perumal Kovil, Chengalpattu, Chennai, Tamil Nadu",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "1 BHK, 2 BHK",
+    "land_area": "600 sq ft",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "Rs. 17 Lakhs - Rs. 23 Lakhs",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP & RERA Approved"
+  },
+  "verified_facts": "Golden India Golden Homes offers DTCP (DTCP-195/2025) and RERA approved independent houses and plots near Palur and Villiambakkam railway stations., 1 BHK independent houses are priced between Rs. 17 Lakhs and Rs. 18 Lakhs, with monthly EMI options starting from Rs. 10,000 to Rs. 15,000., 2 BHK independent houses are priced between Rs. 22 Lakhs and Rs. 23 Lakhs., Special promotional offers include free registration, MOD/EB fee waivers for specific down payment thresholds, and a 20g silver coin gift., Individual borewells and 3-phase electricity connections are arranged for constructed houses.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Golden India Golden Homes, near Palur & Villiambakkam Railway Stations, Singa Perumal Kovil, Chengalpattu, Chennai, Tamil Nadu சைட்ல 1 BHK, 2 BHK Independent House தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை Rs. 17 Lakhs - Rs. 23 Lakhs.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 600 sq ft லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP & RERA Approved இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/sTrVIfdZoKE/",
+  "optional_owned_audio": "assets/audio/sTrVIfdZoKE.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Golden India Golden Homes, near Palur & Villiambakkam Railway Stations, Singa Perumal Kovil, Chengalpattu, Chennai, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story low-rise independent houses with flat concrete terraces, external staircases, textured facade accent panels, blacktop internal asphalt roads with yellow-and-black painted kerbs, ongoing masonry construction, and surrounding concrete perimeter walls.. Neighbourhood: Serene suburban location surrounded by lush green fields and low-density residential development near Palur and Villiambakkam railway stations in the Chengalpattu belt, with direct access to public buses and share autos.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Golden India Golden Homes, near Palur & Villiambakkam Railway Stations, Singa Perumal Kovil, Chengalpattu, Chennai, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story low-rise independent houses with flat concrete terraces, external staircases, textured facade accent panels, blacktop internal asphalt roads with yellow-and-black painted kerbs, ongoing masonry construction, and surrounding concrete perimeter walls.. Neighbourhood: Serene suburban location surrounded by lush green fields and low-density residential development near Palur and Villiambakkam railway stations in the Chengalpattu belt, with direct access to public buses and share autos.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Golden India Golden Homes, near Palur & Villiambakkam Railway Stations, Singa Perumal Kovil, Chengalpattu, Chennai, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story low-rise independent houses with flat concrete terraces, external staircases, textured facade accent panels, blacktop internal asphalt roads with yellow-and-black painted kerbs, ongoing masonry construction, and surrounding concrete perimeter walls.. Neighbourhood: Serene suburban location surrounded by lush green fields and low-density residential development near Palur and Villiambakkam railway stations in the Chengalpattu belt, with direct access to public buses and share autos.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Golden India Golden Homes, near Palur & Villiambakkam Railway Stations, Singa Perumal Kovil, Chengalpattu, Chennai, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Single-story low-rise independent houses with flat concrete terraces, external staircases, textured facade accent panels, blacktop internal asphalt roads with yellow-and-black painted kerbs, ongoing masonry construction, and surrounding concrete perimeter walls.. Neighbourhood: Serene suburban location surrounded by lush green fields and low-density residential development near Palur and Villiambakkam railway stations in the Chengalpattu belt, with direct access to public buses and share autos.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
