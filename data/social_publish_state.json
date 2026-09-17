@@ -52,7 +52,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
+        "confidence": 0.95,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
@@ -2840,7 +2840,6 @@
         "eS6JjOgThHA",
         "xOPjWiJJ61c",
         "9BzBTyvKXYE",
-        "CLp9Pohl8No",
         "hoxa4vl9o-g",
         "CCAZi6SNB-g"
       ],
