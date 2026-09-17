@@ -1,4 +1,4 @@
-name: Hotfix Telegram GitHub Dispatch 401
+name: Hotfix Telegram VIDEO_ID Pairing
 
 on:
   push:
@@ -15,95 +15,52 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
 
-      - name: Patch Telegram retry loop and token validation
+      - name: Fix labelled VIDEO_ID parser
         shell: bash
         run: |
           set -euo pipefail
           python3 <<'PY'
           from pathlib import Path
+          p = Path('telegram_r2_ingest.py')
+          text = p.read_text(encoding='utf-8')
+          replacements = {
+              'r"reference[\\\\s_-]*id\\\\s*[:=\\\\-]\\\\s*([A-Za-z0-9_-]{6,32})"': 'r"reference[\\s_-]*id\\s*[:=\\-]\\s*([A-Za-z0-9_-]{6,32})"',
+              'r"(?:video[\\\\s_-]*id|id)\\\\s*[:=\\\\-]\\\\s*([A-Za-z0-9_-]{6,32})"': 'r"(?:video[\\s_-]*id|id)\\s*[:=\\-]\\s*([A-Za-z0-9_-]{6,32})"',
+              'r"([A-Za-z0-9_-]{11})-gemini-veo-prompt\\\\.txt$"': 'r"([A-Za-z0-9_-]{11})-gemini-veo-prompt\\.txt$"',
+          }
+          changed = 0
+          for old, new in replacements.items():
+              if old in text:
+                  text = text.replace(old, new)
+                  changed += 1
+          if changed < 2:
+              raise SystemExit(f'Expected Telegram regex defects were not found safely; changed={changed}')
+          p.write_text(text, encoding='utf-8')
 
-          worker = Path('cloudflare/social-trigger/src/index.ts')
-          text = worker.read_text()
-          old = '''  if (!response.ok) {
-    const detail = (await response.text()).slice(0, 300);
-    await env.PAIRING_STATE.delete(updateKey);
-    await telegram(env, "sendMessage", {
-      chat_id: chatId,
-      text: `⚠️ Upload paired to ${videoId}, but GitHub publishing could not start: ${response.status}. Please resend the MP4.`,
-    });
-    console.error("Telegram GitHub dispatch failed", response.status, detail);
-    return new Response("dispatch failed", { status: 502 });
-  }
-'''
-          new = '''  if (!response.ok) {
-    const detail = (await response.text()).slice(0, 300);
-    const authFailure = response.status === 401 || response.status === 403;
-    await telegram(env, "sendMessage", {
-      chat_id: chatId,
-      text: authFailure
-        ? `⚠️ ${videoId} is paired, but GitHub authorization failed (${response.status}). Do NOT resend the MP4 repeatedly. Refresh GITHUB_DISPATCH_TOKEN, redeploy the Cloudflare trigger, then resend once.`
-        : `⚠️ ${videoId} is paired, but GitHub publishing could not start (${response.status}). Do NOT resend repeatedly; retry once after the publishing service is healthy.`,
-    });
-    console.error("Telegram GitHub dispatch failed", response.status, detail);
-    // Telegram must receive 200 here. Returning 5xx causes Telegram to replay the same update
-    // and spam the same warning. The updateKey remains stored for duplicate protection.
-    return new Response("ok");
-  }
-'''
-          if old not in text:
-              raise SystemExit('Worker failure block did not match expected source; refusing unsafe patch.')
-          worker.write_text(text.replace(old, new, 1))
-
-          deploy = Path('.github/workflows/deploy-cloudflare-social-trigger.yml')
-          text = deploy.read_text()
-          needle = '''            "CLOUDFLARE_API_TOKEN:$CF_TOKEN" \\
-            "R2_BUCKET_NAME:$R2_BUCKET" \\
-'''
-          replacement = '''            "CLOUDFLARE_API_TOKEN:$CF_TOKEN" \\
-            "GITHUB_DISPATCH_TOKEN:$GH_TOKEN" \\
-            "R2_BUCKET_NAME:$R2_BUCKET" \\
-'''
-          if needle not in text:
-              raise SystemExit('Deploy secret validation block did not match expected source.')
-          text = text.replace(needle, replacement, 1)
-
-          marker = '''      - name: Create Cloudflare Queue if needed
-'''
-          preflight = '''      - name: Validate GitHub dispatch token credentials
-        env:
-          GITHUB_DISPATCH_TOKEN: ${{ secrets.GITHUB_DISPATCH_TOKEN }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          code="$(curl --silent --show-error --output /tmp/github-token-check.json --write-out '%{http_code}' \\
-            -H 'Accept: application/vnd.github+json' \\
-            -H "Authorization: Bearer ${GITHUB_DISPATCH_TOKEN}" \\
-            -H 'X-GitHub-Api-Version: 2022-11-28' \\
-            https://api.github.com/repos/britsingh20-source/coimbatore-property-monitor)"
-          if [[ "$code" != "200" ]]; then
-            echo "GITHUB_DISPATCH_TOKEN validation failed with HTTP $code"
-            cat /tmp/github-token-check.json || true
-            exit 1
-          fi
-          echo "GITHUB_DISPATCH_TOKEN accepted by GitHub."
-
-'''
-          if marker not in text:
-              raise SystemExit('Deploy workflow insertion marker not found.')
-          deploy.write_text(text.replace(marker, preflight + marker, 1))
+          import ast, re
+          tree = ast.parse(text)
+          ns = {'re': re}
+          # Direct behavioral guard for the exact Cloudflare-injected caption.
+          m = re.search(r'(?:video[\\s_-]*id|id)\\s*[:=\\-]\\s*([A-Za-z0-9_-]{6,32})', 'VIDEO_ID: M0iRDEf_DfQ', flags=re.I)
+          assert m and m.group(1) == 'M0iRDEf_DfQ'
+          print('VIDEO_ID labelled-caption parser fixed and verified.')
           PY
 
-      - name: Commit hotfix
+      - name: Commit pairing fix
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add cloudflare/social-trigger/src/index.ts .github/workflows/deploy-cloudflare-social-trigger.yml
+          git add telegram_r2_ingest.py
           if git diff --cached --quiet; then
-            echo "Hotfix already applied."
+            echo "Pairing parser already fixed."
             exit 0
           fi
-          git commit -m "Fix Telegram retry spam and validate dispatch token"
+          git commit -m "Fix Cloudflare labelled VIDEO_ID pairing"
+          git pull --rebase
           git push
