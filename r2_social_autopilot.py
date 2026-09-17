@@ -10,6 +10,7 @@ from typing import Callable
 
 import boto3
 import requests
+from google import genai
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
@@ -70,6 +71,61 @@ def _load_queue() -> dict:
 def _save_queue(queue: dict) -> None:
     QUEUE_PATH.parent.mkdir(parents=True, exist_ok=True)
     QUEUE_PATH.write_text(json.dumps(queue, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def _visual_compliance_check(video_path: Path) -> dict:
+    """Fail closed when a generated property video contains excluded personal/religious imagery."""
+    prompt = """Inspect every frame of this generated property marketing video, including small,
+distant, blurred and background details. Return JSON only with:
+compliant (boolean), religious_visuals_present (boolean), personal_photos_present (boolean),
+ceremonial_markings_present (boolean), findings (array), violating_timestamps (array),
+confidence (number from 0 to 1).
+
+Set compliant=false if ANY frame contains:
+- deity/god/saint photograph, idol, shrine, puja shelf or worship object;
+- religious sign/symbol/sticker, sacred text, sandal/kumkum/turmeric mark or ritual handprint;
+- garland, mango-leaf toran, ceremonial flowers, lemon/coconut doorway decoration;
+- kolam, rangoli, threshold drawing, ritual floor/chalk/paint pattern;
+- family photograph, portrait, framed person, calendar, poster, certificate or personal wall display.
+
+Ordinary architecture, plain doors, plain flooring, empty fixed shelves and neutral wall finishes are allowed.
+Do not treat the property's information footer, price, land area, location or company branding as a violation.
+When uncertain about a possible religious or personal image, mark the video non-compliant for manual review.
+"""
+    client = genai.Client(api_key=_required("GEMINI_API_KEY"))
+    uploaded = client.files.upload(file=str(video_path))
+    try:
+        for _ in range(45):
+            state = str(getattr(getattr(uploaded, "state", None), "name", "") or "").upper()
+            if state in {"", "ACTIVE"}:
+                break
+            if state == "FAILED":
+                raise RuntimeError("Gemini visual compliance processing failed")
+            time.sleep(2)
+            uploaded = client.files.get(name=uploaded.name)
+        response = client.models.generate_content(
+            model=os.environ.get("SOCIAL_COMPLIANCE_MODEL", "gemini-2.5-flash"),
+            contents=[uploaded, prompt],
+            config={"response_mime_type": "application/json", "temperature": 0},
+        )
+        text = (response.text or "").strip()
+        start, end = text.find("{"), text.rfind("}")
+        if start < 0 or end < start:
+            raise RuntimeError("Visual compliance check returned invalid JSON")
+        result = json.loads(text[start:end + 1])
+    finally:
+        try:
+            client.files.delete(name=uploaded.name)
+        except Exception:
+            pass
+
+    flags = (
+        bool(result.get("religious_visuals_present")),
+        bool(result.get("personal_photos_present")),
+        bool(result.get("ceremonial_markings_present")),
+    )
+    result["compliant"] = bool(result.get("compliant")) and not any(flags)
+    return result
 
 
 def _resolve_video_id(key: str, etag: str, video_url: str, state: dict, queue: dict) -> str:
@@ -554,6 +610,31 @@ def _publish_one(key: str, etag: str, client, bucket: str, state: dict, queue: d
         client.download_file(bucket, key, str(video_path))
         if video_path.stat().st_size < 100_000:
             raise RuntimeError(f"R2 video is too small: {key}")
+
+        try:
+            compliance = _visual_compliance_check(video_path)
+        except Exception as error:
+            record["visual_compliance"] = {
+                "status": "check_failed",
+                "error": str(error)[:1500],
+            }
+            record["status"] = "quarantined_visual_policy"
+            _save_state(state)
+            raise RuntimeError(
+                "Visual compliance check failed; publishing blocked for manual review"
+            ) from error
+        record["visual_compliance"] = compliance
+        if not compliance.get("compliant"):
+            record["status"] = "quarantined_visual_policy"
+            _save_state(state)
+            findings = ", ".join(str(x) for x in compliance.get("findings") or [])
+            raise RuntimeError(
+                "Religious/personal visual policy violation; publishing blocked"
+                + (f": {findings[:600]}" if findings else "")
+            )
+        record["status"] = "visual_policy_passed"
+        _save_state(state)
+
         youtube_media = prepare_youtube_short(video_path, youtube_path)
         record["youtube_media"] = youtube_media
         _save_state(state)
