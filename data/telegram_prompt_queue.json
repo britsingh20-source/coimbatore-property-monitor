@@ -983,6 +983,12 @@
       "sent_at": "2026-09-17T14:53:15.603343+00:00",
       "status": "pending_mobile_upload",
       "video_id": "CCAZi6SNB-g"
+    },
+    {
+      "video_id": "d4QvZyIfnXE",
+      "sent_at": "2026-09-17T17:18:48.224640+00:00",
+      "status": "pending_mobile_upload",
+      "prompt_message_id": 612
     }
   ]
 }
