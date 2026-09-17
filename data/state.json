@@ -800,9 +800,11 @@
     },
     "Bon0qpMG_kk": {
       "attempts": 0,
+      "completed_at": "2026-09-17T18:18:34.465367+00:00",
       "first_seen_at": "2026-09-17T13:32:47.605590+00:00",
+      "last_error": "",
       "next_retry_at": "2026-09-17T13:32:47.605590+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "BuJPw72h-nQ": {
       "attempts": 0,
