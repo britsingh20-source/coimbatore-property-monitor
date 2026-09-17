@@ -1,0 +1,137 @@
+{
+  "video_id": "M0iRDEf_DfQ",
+  "source_url": "https://www.youtube.com/watch?v=M0iRDEf_DfQ",
+  "property_location": "Sulur, Kannampalayam, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹6.50 Lakhs per cent",
+    "facing": "NOT SPECIFIED",
+    "road_width": "33 feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP & RERA Approved"
+  },
+  "verified_facts": "1 BHK constructed house package available for ₹24 Lakhs (includes registration, GST, EB connection, and plan approval)., 2 BHK constructed house package available for ₹27 Lakhs., Land plot price is ₹6.50 Lakhs per cent., Project name is Green City / Happy Town, comprising 500 plots in total., Located in Sulur Kannampalayam, about half an hour from Sulur main town.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera with clear spoken Tamil and natural real-estate terms.",
+    "hook_strategy": "Lead directly with the popular Sulur location and project name to capture local buyers instantly.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Sulur Kannampalayam-ல இருக்குற Green City / Happy Town project பத்திதான் இன்னைக்கு பாக்க போறோம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-pin-highlight",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இங்க land plot-ஓட price பாத்தீங்கனா, ஒரு சென்ட் 6.50 Lakhs-ல இருந்து ஆரம்பிக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "price-overlay",
+        "purpose": "value_proposition"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இதுல 1 BHK வீடு package 24 Lakhs-க்கும், 2 BHK 27 Lakhs-க்கும் தராங்க. இதுலயே registration, GST, EB connection, plan approval எல்லாமே அடங்கிடும்.",
+        "broll": [
+          "living_room",
+          "interior",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "feature-checklist-slide",
+        "purpose": "constructed_house_options"
+      },
+      {
+        "name": "road",
+        "voice": "மொத்தம் 500 plots கொண்ட இந்த gated community-ல 33 feet tar road, street lights, security service அப்புறம் common water tank வசதி இருக்கு.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "road-width-graphic",
+        "purpose": "infrastructure_and_amenities"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP அப்புறம் RERA approved project. Sulur main town மற்றும் KMCH Hospital-க்கு பக்கத்துல அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "dtcp-rera-badge",
+        "purpose": "trust_and_landmarks"
+      },
+      {
+        "name": "cta",
+        "voice": "நேரடியா site visit வரவும், details தெரிஞ்சுக்கவும் உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "contact-card-pop",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/M0iRDEf_DfQ/",
+  "optional_owned_audio": "assets/audio/M0iRDEf_DfQ.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Sulur, Kannampalayam, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A large DTCP approved gated layout with a dedicated main entrance arch reading 'Green City Happy Town', 33-foot blacktop internal roads, electric poles with street lights, security booth, overhead water tank, and marked plots.. Neighbourhood: Located in Sulur Kannampalayam, Coimbatore, featuring public bus connectivity, within 30 minutes of Sulur town center, close to KMCH Hospital and commercial establishments.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Sulur, Kannampalayam, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A large DTCP approved gated layout with a dedicated main entrance arch reading 'Green City Happy Town', 33-foot blacktop internal roads, electric poles with street lights, security booth, overhead water tank, and marked plots.. Neighbourhood: Located in Sulur Kannampalayam, Coimbatore, featuring public bus connectivity, within 30 minutes of Sulur town center, close to KMCH Hospital and commercial establishments.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Sulur, Kannampalayam, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A large DTCP approved gated layout with a dedicated main entrance arch reading 'Green City Happy Town', 33-foot blacktop internal roads, electric poles with street lights, security booth, overhead water tank, and marked plots.. Neighbourhood: Located in Sulur Kannampalayam, Coimbatore, featuring public bus connectivity, within 30 minutes of Sulur town center, close to KMCH Hospital and commercial establishments.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Sulur, Kannampalayam, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A large DTCP approved gated layout with a dedicated main entrance arch reading 'Green City Happy Town', 33-foot blacktop internal roads, electric poles with street lights, security booth, overhead water tank, and marked plots.. Neighbourhood: Located in Sulur Kannampalayam, Coimbatore, featuring public bus connectivity, within 30 minutes of Sulur town center, close to KMCH Hospital and commercial establishments.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
