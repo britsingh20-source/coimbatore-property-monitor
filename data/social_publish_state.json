@@ -1,5 +1,88 @@
 {
   "objects": {
+    "social-ready/CLp9Pohl8No.mp4": {
+      "content": {
+        "caption": "🏠 Rs. 67 Lakhs 2 BHK Independent Villa in Karamadai, Coimbatore, Tamil Nadu\n\n📍 Location: Karamadai, Coimbatore, Tamil Nadu\n🏡 Property: 2 BHK Independent Villa\n💰 Price: Rs. 67 Lakhs\n📐 Land: 3.5 Cents\n🏗️ Built-up: 1300 sqft\n🧭 Facing: West facing site, North facing main door\n🚗 Parking: Covered car and two-wheeler parking (12'0\" x 23'0\")\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#KaramadaiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#KaramadaiProperty",
+          "#CoimbatoreProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "Rs. 67 Lakhs 2 BHK Independent Villa in Karamadai, Coimbatore, Tamil Nadu | Site Visit 9003787621",
+        "youtube_description": "Rs. 67 Lakhs 2 BHK Independent Villa in Karamadai, Coimbatore, Tamil Nadu. Watch the complete property walkthrough.\n\n📍 Location: Karamadai, Coimbatore, Tamil Nadu\n🏡 Property: 2 BHK Independent Villa\n💰 Price: Rs. 67 Lakhs\n📐 Land: 3.5 Cents\n🏗️ Built-up: 1300 sqft\n🧭 Facing: West facing site, North facing main door\n🚗 Parking: Covered car and two-wheeler parking (12'0\" x 23'0\")\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #KaramadaiProperty #CoimbatoreProperty #CoimbatoreRealEstate"
+      },
+      "etag": "c25aad0327923e5eb8a2c362debd2a19-3",
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "channel": "real_estate",
+            "creation_id": "17898143598599708",
+            "media_id": "18471745372119244",
+            "processing": {
+              "id": "17898143598599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17898143769599708",
+            "media_id": "18632862229050871",
+            "processing": {
+              "id": "17898143769599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
+          "status": "failed"
+        }
+      },
+      "status": "visual_policy_passed",
+      "video_id": "CLp9Pohl8No",
+      "visual_compliance": {
+        "ceremonial_markings_present": false,
+        "compliant": true,
+        "confidence": 1,
+        "findings": [],
+        "personal_photos_present": false,
+        "religious_visuals_present": false,
+        "violating_timestamps": []
+      },
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 248707,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 26.667,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 248521,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 26.666667,
+          "height": 1280,
+          "width": 720
+        }
+      }
+    },
     "social-ready/KiJEPqoUCTw.mp4": {
       "content": {
         "caption": "🏠 ₹55 Lakhs 2BHK BHK Independent House in Othakalmandapam, Coimbatore, Tamil Nadu — would you visit this property?\n\n📍 Location: Othakalmandapam, Coimbatore, Tamil Nadu\n🏡 Property: 2BHK BHK Independent House\n💰 Price: ₹55 Lakhs\n📐 Land: 2.5 Cents\n🏗️ Built-up: 1400 sqft\n🧭 Facing: North\n🚗 Parking: Car parking (11' × 17')\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #OthakalmandapamCoimbatoreTamilNaduProperty #CoimbatoreRealEstate",
