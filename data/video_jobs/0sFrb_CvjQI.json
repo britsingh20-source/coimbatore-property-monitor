@@ -1,0 +1,146 @@
+{
+  "video_id": "0sFrb_CvjQI",
+  "source_url": "https://www.youtube.com/watch?v=0sFrb_CvjQI",
+  "property_location": "Lakshmi Garden, Karattumedu, Near Saravanampatti, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3",
+    "land_area": "3.80 Cent (1650 Sq.Ft)",
+    "built_up_area": "3200 Sq.Ft",
+    "price": "₹1.85 Crore (Negotiable)",
+    "facing": "East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "1 Covered Car Parking Portico (16' x 20')",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "The property is a 3BHK duplex independent house with 3200 sq.ft built-up area on a 3.8 cent (1650 sq.ft) east-facing plot in Lakshmi Garden, Karattumedu, near Saravanampatti, Coimbatore., Ground floor includes a 16'x20' car parking portico, 16'x16' living hall, 5'x5' east-facing pooja room, 20'x11' kitchen & dining area with modular cabinets and chimney, 16'x16' master bedroom with dressing room and attached bathroom, plus an outside bathroom., First floor comprises a 16'x11' lounge, two master bedrooms (16'x16' each) with attached dressing rooms and bathrooms, a 19'x10' front balcony with clay jali design, and an 8.25'x5' laundry room., Second floor/terrace features a 16'x11' covered gazebo with granite seating, planter boxes, utility space, and an RO water filtration setup., Key interior highlights include a high-ceiling staircase with a central skylight chandelier, LED profile lights, a sensor LED bathroom mirror, and custom wall moulding/decorations., The total negotiable asking price for the house including land is ₹1.85 Crore, with DTCP approval and bank loan facility available. Contact phone number: 9894456061.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Saravanampatti சைட்ல 3 Independent House தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹1.85 Crore (Negotiable).",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 3.80 Cent (1650 Sq.Ft) லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 3200 Sq.Ft இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு East ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP Approved இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 17.307446188s.', 'status': 'RESOURCE_EXHAUSTED"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/0sFrb_CvjQI/",
+  "optional_owned_audio": "assets/audio/0sFrb_CvjQI.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story duplex elevation featuring terracotta clay tiles, dark grey vertical stripe accents, beige texture finish walls, a glass balcony railing, and a large brown HPL & stainless steel entrance gate with a butterfly laser-cut design. The portico is fitted with stone-pattern floor tiles, wood-panelled false ceiling with a ceiling fan and spotlights, a borewell, and a water sump.. Neighbourhood: Residential developing area located in Lakshmi Garden, Karattumedu behind the temple near Saravanampatti, Coimbatore, surrounded by lush green coconut groves and adjacent independent houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story duplex elevation featuring terracotta clay tiles, dark grey vertical stripe accents, beige texture finish walls, a glass balcony railing, and a large brown HPL & stainless steel entrance gate with a butterfly laser-cut design. The portico is fitted with stone-pattern floor tiles, wood-panelled false ceiling with a ceiling fan and spotlights, a borewell, and a water sump.. Neighbourhood: Residential developing area located in Lakshmi Garden, Karattumedu behind the temple near Saravanampatti, Coimbatore, surrounded by lush green coconut groves and adjacent independent houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story duplex elevation featuring terracotta clay tiles, dark grey vertical stripe accents, beige texture finish walls, a glass balcony railing, and a large brown HPL & stainless steel entrance gate with a butterfly laser-cut design. The portico is fitted with stone-pattern floor tiles, wood-panelled false ceiling with a ceiling fan and spotlights, a borewell, and a water sump.. Neighbourhood: Residential developing area located in Lakshmi Garden, Karattumedu behind the temple near Saravanampatti, Coimbatore, surrounded by lush green coconut groves and adjacent independent houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-story duplex elevation featuring terracotta clay tiles, dark grey vertical stripe accents, beige texture finish walls, a glass balcony railing, and a large brown HPL & stainless steel entrance gate with a butterfly laser-cut design. The portico is fitted with stone-pattern floor tiles, wood-panelled false ceiling with a ceiling fan and spotlights, a borewell, and a water sump.. Neighbourhood: Residential developing area located in Lakshmi Garden, Karattumedu behind the temple near Saravanampatti, Coimbatore, surrounded by lush green coconut groves and adjacent independent houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
