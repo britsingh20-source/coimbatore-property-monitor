@@ -1,0 +1,144 @@
+{
+  "video_id": "GZOVO-HujE8",
+  "source_url": "https://www.youtube.com/watch?v=GZOVO-HujE8",
+  "property_location": "Arcadia Aerocity (Arcadia New City), Near Meenakshi Medical College, Chennai-Bangalore Highway, Kanchipuram, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "600 sq ft to 10,000 sq ft (180 Acre Township)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹2,490 per sq ft",
+    "facing": "North, East, North-East Corner plots available",
+    "road_width": "60 ft, 40 ft, 33 ft, 24 ft blacktop roads",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP & RERA Approved (RERA Reg No: TN/01/LAYOUT/2141/2023)"
+  },
+  "verified_facts": "Layout name: Arcadia Aerocity / Arcadia New City developed by Propshell, Total project area: 180 acres with ~1,500 plots (75% sold out), Plot size range: 600 sq ft to 10,000 sq ft, Price: ₹2,490 per sq ft; minimum down payment starting from ₹3 Lakhs, Approvals: RERA & DTCP approved layout, Bank loan support: 80% to 90% funding available via SBI, HDFC Bank, and Tata Capital Housing Finance, Booking offers mentioned: Free Dubai return flight tickets or choice of gifts (Dishwasher, Robotic Vacuum Cleaner, or 55-inch Smart TV Home Theatre setup) for eligible plot purchases",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Conversational, casual local property presenter speaking direct to camera with smooth natural Tamil transitions",
+    "hook_strategy": "Highlight location on Chennai-Bangalore Highway near Meenakshi Medical College in a massive 180-acre layout",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "காஞ்சிபுரம் சென்னை - பெங்களூர் ஹைவேல, மீனாட்சி மெடிக்கல் காலேஜ் பக்கத்துல இருக்க Arcadia Aerocity பாத்தீங்களா?",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "living_room"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 180 ஏக்கர் பிரமாண்டமான township layout. இங்க 600 sq ft-லிருந்து 10,000 sq ft வரைக்கும் plots கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "land_details"
+      },
+      {
+        "name": "road",
+        "voice": "Layout உள்ள பாத்தீங்கனா 60 அடி, 40 அடி, 33 அடி மற்றும் 24 அடி தார் சாலைகள் அமைச்சிருக்காங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior",
+          "living_room"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "road_infrastructure"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல North, East மற்றும் North-East corner facing plots கூட உங்களுக்கு கிடைக்கும்.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "compass",
+        "purpose": "facing_options"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP மற்றும் RERA approval பெற்ற layout. அதே மாதிரி 80% வரைக்கும் bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_and_financing"
+      },
+      {
+        "name": "price",
+        "voice": "விலை பாத்தீங்கனா sq ft-க்கு 2,490 ரூபாய் தான். Minimum down payment 3 லட்சத்துல இருந்து ஆரம்பிக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணவும், மத்த details தெரிஞ்சுக்கவும் உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "call-button",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/GZOVO-HujE8/",
+  "optional_owned_audio": "assets/audio/GZOVO-HujE8.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Arcadia Aerocity (Arcadia New City), Near Meenakshi Medical College, Chennai-Bangalore Highway, Kanchipuram, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: The township features a grand stone-clad entrance arch with security gates, neatly laid internal blacktop avenues lined with young trees, street lighting poles, designated green park zones with paved walking tracks, and fenced turf sports courts.. Neighbourhood: Located in Kanchipuram right behind Meenakshi Medical College and just 800 meters off the Chennai-Bangalore Highway (NH 48). The surrounding area features prominent educational institutions, medical facilities, commercial car showrooms, and ready public transportation access including frequent bus and auto services.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Arcadia Aerocity (Arcadia New City), Near Meenakshi Medical College, Chennai-Bangalore Highway, Kanchipuram, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: The township features a grand stone-clad entrance arch with security gates, neatly laid internal blacktop avenues lined with young trees, street lighting poles, designated green park zones with paved walking tracks, and fenced turf sports courts.. Neighbourhood: Located in Kanchipuram right behind Meenakshi Medical College and just 800 meters off the Chennai-Bangalore Highway (NH 48). The surrounding area features prominent educational institutions, medical facilities, commercial car showrooms, and ready public transportation access including frequent bus and auto services.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Arcadia Aerocity (Arcadia New City), Near Meenakshi Medical College, Chennai-Bangalore Highway, Kanchipuram, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: The township features a grand stone-clad entrance arch with security gates, neatly laid internal blacktop avenues lined with young trees, street lighting poles, designated green park zones with paved walking tracks, and fenced turf sports courts.. Neighbourhood: Located in Kanchipuram right behind Meenakshi Medical College and just 800 meters off the Chennai-Bangalore Highway (NH 48). The surrounding area features prominent educational institutions, medical facilities, commercial car showrooms, and ready public transportation access including frequent bus and auto services.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Arcadia Aerocity (Arcadia New City), Near Meenakshi Medical College, Chennai-Bangalore Highway, Kanchipuram, Tamil Nadu, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: The township features a grand stone-clad entrance arch with security gates, neatly laid internal blacktop avenues lined with young trees, street lighting poles, designated green park zones with paved walking tracks, and fenced turf sports courts.. Neighbourhood: Located in Kanchipuram right behind Meenakshi Medical College and just 800 meters off the Chennai-Bangalore Highway (NH 48). The surrounding area features prominent educational institutions, medical facilities, commercial car showrooms, and ready public transportation access including frequent bus and auto services.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
