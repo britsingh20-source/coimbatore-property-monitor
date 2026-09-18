@@ -1040,6 +1040,12 @@
       "sent_at": "2026-09-18T16:02:27.114653+00:00",
       "status": "pending_mobile_upload",
       "prompt_message_id": 667
+    },
+    {
+      "video_id": "Xjf67hGk-RM",
+      "sent_at": "2026-09-18T19:17:33.928152+00:00",
+      "status": "pending_mobile_upload",
+      "prompt_message_id": 669
     }
   ]
 }
