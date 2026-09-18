@@ -1815,6 +1815,14 @@
       "next_retry_at": "2026-08-25T13:14:26.423982+00:00",
       "status": "video_queued"
     },
+    "ScRJzg_z75Q": {
+      "attempts": 0,
+      "completed_at": "2026-09-18T06:42:50.330139+00:00",
+      "first_seen_at": "2026-09-18T06:42:37.178972+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-09-18T06:42:37.178972+00:00",
+      "status": "archived_non_target"
+    },
     "Sd3rsDie1c8": {
       "attempts": 0,
       "completed_at": "2026-09-17T12:13:46.350922+00:00",
