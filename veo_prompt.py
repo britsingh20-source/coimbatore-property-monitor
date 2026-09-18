@@ -69,10 +69,10 @@ SHOT 2 — 1.4 TO 2.8 SECONDS — PARKING OR PORTICO
 Hard cut to the verified gate, covered parking or portico with a controlled forward move. Preserve its visible tiles, pillars, gate and dimensions. Keep the entrance visually clean and neutral. Remove/omit all ceremonial markings, kolam/rangoli, garlands, deity symbols, religious stickers, footwear and loose household objects. Do not morph through the door.
 
 SHOT 3 — 2.8 TO 4.2 SECONDS — HALL
-Hard cut directly to the verified hall. Use a concise lateral gimbal slide showing the flooring, windows, wall proportions and any permanently installed false ceiling or built-in TV panel. Do NOT reproduce televisions, deity photos, religious images, family photos, portraits, calendars, posters, wall art, loose tables, chairs, sofas, cots, beds, mattresses or other movable personal belongings. Do not reveal another room unless that connection is clearly visible.
+Hard cut directly to the verified hall. Give this shot premium real-estate emphasis: bright, clean, highly polished and photorealistic while preserving the source architecture. Use a concise lateral gimbal slide showing polished flooring, windows, wall proportions, permanently installed false ceiling, fixed ceiling lighting and built-in TV panel/TV unit whenever those features are verified. Do NOT reproduce televisions, deity photos, religious images, family photos, portraits, calendars, posters, wall art, loose tables, chairs, sofas, cots, beds, mattresses or other movable personal belongings. Do not reveal another room unless that connection is clearly visible.
 
 SHOT 4 — 4.2 TO 5.6 SECONDS — ARCHITECTURAL HALL DETAIL
-Hard cut to a verified permanent feature such as false ceiling, fixed lighting, built-in TV panel, wall finish or flooring. Use a short upward tilt or push-in. Keep walls neutral and free of generated artwork, portraits, religious symbols and decorative frames. If no permanent detail is verified, use another distinct verified architectural angle.
+Hard cut to the strongest verified premium hall feature. PRIORITIZE the built-in TV unit/TV wall and false ceiling with fixed lighting whenever verified in the source; these must not disappear because a religious/personal object was located on or near them. Show the architectural feature cleanly after removing only the prohibited object. Otherwise use another verified permanent feature such as wall finish or flooring. Use a short upward tilt or push-in. Keep walls neutral and free of generated artwork, portraits, religious symbols and decorative frames. If no permanent detail is verified, use another distinct verified architectural angle.
 
 SHOT 5 — 5.6 TO 7.0 SECONDS — KITCHEN OR DINING
 Hard cut to the verified kitchen or dining area. Show only permanent property features: built-in cabinet layout, countertop, fixed sink, backsplash/tiles, windows and room proportions. Omit vessels, food, loose appliances, chairs, dining tables, decorations and personal household items unless a fixed built-in element is essential to understand the property. If the area is not visible, substitute another verified architectural feature.
@@ -88,22 +88,22 @@ Generate a NATIVE PORTRAIT video only: vertical 9:16 aspect ratio, ideally 1080�
 
 The linked YouTube reference may be landscape. Use it only to understand the property's visual identity, then intelligently recompose every shot for a full-screen 9:16 portrait canvas. Keep the property centred with safe headroom and lower-third space. If native 9:16 output is unavailable in the current Gemini/Veo mode, do not generate a landscape substitute; instruct the user to select Portrait/9:16 mode first.
 
-ZERO-TOLERANCE RELIGION-NEUTRAL VISUAL GATE — OVERRIDES THE REFERENCE
-Before planning any shot, inspect every candidate reference angle for prohibited personal, religious or ceremonial content. An angle is INELIGIBLE if it contains even a small, distant, blurred, partially hidden or background instance of:
+ZERO-TOLERANCE RELIGION-NEUTRAL OBJECT FILTER — PRESERVE THE ARCHITECTURE
+Before planning any shot, identify prohibited personal, religious or ceremonial OBJECTS in every candidate reference angle. IMPORTANT: the presence of such an object NEVER makes the room, TV unit, false ceiling, entrance, staircase, cabinetry, wall panel or other permanent architectural feature ineligible. Remove only the prohibited object and preserve/reconstruct the verified permanent feature around it. Prohibited objects include even small, distant, blurred, partially hidden or background instances of:
 - deity/god/saint photographs, idols, shrines, puja shelves or worship items;
 - religious signs, symbols, stickers, tilak/sandal/kumkum/turmeric marks, ritual handprints or sacred text;
 - garlands, mango-leaf torans, ceremonial flowers, lemons, coconuts or doorway worship decoration;
 - kolam, rangoli, threshold drawings, ritual floor paint or chalk patterns;
 - family photographs, portraits, framed people, calendars, posters, certificates or personal wall displays.
 
-Never use an ineligible source angle as a composition reference and never reproduce, blur, crop around, cover, stylise or replace the forbidden object. Choose another visually verified clean architectural angle. If the same permanent feature must be shown, reconstruct only its verified geometry and finish:
+Never reproduce, blur, cover, stylise or replace a forbidden object. Instead, cleanly remove only that object and reconstruct the verified surface behind it. KEEP using the source angle when it contains important verified architecture such as a TV unit, TV wall, false ceiling, lighting design, entrance treatment, cabinetry or staircase. Religious filtering must never delete or downgrade those property features. Reconstruct only their verified geometry and finish:
 - entrance/portico: plain uninterrupted floor tiles and a completely undecorated door/frame/threshold;
 - hall/TV wall: blank neutral wall or empty built-in panel, with no frames, pictures, portraits, idols or display objects;
 - shelves/niches: completely empty unless they are permanent architectural components;
 - removed wall items: seamless continuation of the verified wall paint/panel finish;
 - removed floor markings: seamless continuation of the verified floor tile/stone texture.
 
-If no clean religion-neutral reconstruction can be made with confidence, OMIT that room or entrance shot and substitute another verified permanent feature. Do not generate the video with a violating frame. This gate is more important than resemblance to the occupied source.
+If a prohibited object cannot be cleanly removed with confidence, choose another angle of THE SAME VERIFIED FEATURE first. Only omit the feature when no clean verified view exists. Never omit an otherwise verified TV unit, TV wall, false ceiling, premium hall feature, fixed lighting, cabinetry or entrance merely because religious/personal content appears nearby. Do not generate a violating frame.
 
 REFERENCE-FIRST INSTRUCTION
 Open and use this exact YouTube property video as the visual reference before generating:
@@ -156,7 +156,7 @@ FIXED RULES — HARD NEGATIVE CONSTRAINTS
 Exactly 10 seconds; native 60 fps output; vertical 9:16; designed for smooth 3× slow motion; seven distinct approximately 1.4-second shots; photorealistic smartphone gimbal footage; preserve the source property's permanent architectural identity; hard cuts between separate physical areas; never invent room connections; never reveal a kitchen through the entrance unless proven; never change floor count, exterior, room dimensions, built-in cabinetry or permanent fixtures; NEVER generate religious imagery, deity photos, idols, shrines, religious symbols, ritual/ceremonial markings or worship items, even when visible in the reference; NEVER generate cots, beds, mattresses or loose furniture beside/under a staircase; NEVER invent or copy movable furniture or personal belongings; no people; no CGI appearance; no floating or spinning camera; no speed ramps; no whip pans; no zoom bursts; no morphing architecture; no repeated shots; no rotating captions; no oversized graphics; one persistent professional information footer only; no distorted doors, windows or cabinets; no spelling errors; no third-party phone numbers; no generated logos.
 
 Before rendering, perform three mandatory audits:
-1. SHOT-PLAN AUDIT: reject every candidate angle containing a religious image/symbol, deity/idol/shrine, ceremonial marking, garland/toran, kolam/rangoli, family portrait, framed person, calendar, poster or personal photo.
+1. SHOT-PLAN AUDIT: identify and remove every religious image/symbol, deity/idol/shrine, ceremonial marking, garland/toran, kolam/rangoli, family portrait, framed person, calendar, poster or personal photo. DO NOT reject the whole angle when it contains valuable verified architecture; preserve the TV unit, TV wall, false ceiling, lighting, cabinetry, entrance and other permanent features.
 2. FRAME-BY-FRAME AUDIT: inspect the full 10-second draft, including background walls, shelves, door lintels, thresholds and floors. Zero prohibited objects may appear at any size.
 3. REPLACEMENT AUDIT: confirm every removed wall object became uninterrupted plain wall/panel finish and every removed floor/threshold marking became uninterrupted plain tile/stone. Never replace it with another picture, symbol, pattern or decoration.
 
