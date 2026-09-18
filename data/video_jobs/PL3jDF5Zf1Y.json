@@ -1,0 +1,143 @@
+{
+  "video_id": "PL3jDF5Zf1Y",
+  "source_url": "https://www.youtube.com/watch?v=PL3jDF5Zf1Y",
+  "property_location": "Veerapandi Pirivu, Mettupalayam Road, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "2.75 Cents",
+    "built_up_area": "1600 sq.ft",
+    "price": "73 Lakhs (Without Interior) / 78 Lakhs (With Interior)",
+    "facing": "South facing site, East facing main door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking (11' x 19')",
+    "approval": "DTCP approved"
+  },
+  "verified_facts": "3BHK Duplex Independent House on a 2.75 Cents plot with 1600 sq.ft built-up area., South facing site with East facing main entry door made of teak wood., DTCP approved property eligible for 75% bank loan., Pricing: ₹73 Lakhs without interior woodwork and ₹78 Lakhs with interior woodwork., Ground Floor features car parking (11' x 19'), living hall (16' x 16'), kitchen cum dining (8' x 16'), 1 bedroom (10' x 11') with attached bathroom (5' x 5'3\"), and an outer bathroom (3'6\" x 5')., First Floor includes 2 bedrooms (10' x 16' each) with attached bathrooms, an open balcony (5'6\" x 10'), utility area, and terrace access., Located at Veerapandi Pirivu, 1 km from Mettupalayam Main Road, close to Immaculate School.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, authentic local property presenter delivering a fast-paced walkthrough in natural spoken Tamil.",
+    "hook_strategy": "Lead with prime location near Mettupalayam Road and attractive 3 BHK Independent House offer.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Mettupalayam Road Veerapandi Pirivu-ல, main road-ல இருந்து வெறும் 1 km-ல ஒரு சூப்பரான 3 BHK Duplex Independent House விற்பனைக்கு வந்துருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தம் 2.75 Cents land area-ல அமைஞ்சிருக்குங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "text-overlay-land-size",
+        "purpose": "land-details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1600 sq.ft built-up area-ல ground floor-ல spacious living hall, kitchen, ஒரு bedroom, அப்புறம் first floor-ல 2 bedrooms வித் attached bathrooms இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "floor-plan-highlight",
+        "purpose": "property-layout"
+      },
+      {
+        "name": "facing",
+        "voice": "பாத்தீங்கனா, இது South facing site, teak wood-ல பண்ணின East facing main door கொடுத்திருக்காங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "compass-direction",
+        "purpose": "facing-details"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approved property, 75% வரைக்கும் bank loan வசதி இருக்கு. 7000 Litres water sump, borewell எல்லாமே ready-யா இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust-and-amenities"
+      },
+      {
+        "name": "price",
+        "voice": "இதுல முக்கியமான விஷயம் price தாங்க! Interior இல்லாமல் 73 Lakhs, interior woodwork-ோட வேணும்னா 78 Lakhs.",
+        "broll": [
+          "interior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-pop",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல site visit வரவோ, மேலும் details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call-to-action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/PL3jDF5Zf1Y/",
+  "optional_owned_audio": "assets/audio/PL3jDF5Zf1Y.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-storey duplex elevation featuring a combination of beige, brown, grey, and white accent paint panels, a covered ground-floor portico with geometric patterned tiles, a black and wood-finish metal gate, and an open balcony on the first floor.. Neighbourhood: A developing residential layout with newly constructed independent houses, paved access roads, electric power poles, and green open fields with coconut groves visible in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-storey duplex elevation featuring a combination of beige, brown, grey, and white accent paint panels, a covered ground-floor portico with geometric patterned tiles, a black and wood-finish metal gate, and an open balcony on the first floor.. Neighbourhood: A developing residential layout with newly constructed independent houses, paved access roads, electric power poles, and green open fields with coconut groves visible in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-storey duplex elevation featuring a combination of beige, brown, grey, and white accent paint panels, a covered ground-floor portico with geometric patterned tiles, a black and wood-finish metal gate, and an open balcony on the first floor.. Neighbourhood: A developing residential layout with newly constructed independent houses, paved access roads, electric power poles, and green open fields with coconut groves visible in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-storey duplex elevation featuring a combination of beige, brown, grey, and white accent paint panels, a covered ground-floor portico with geometric patterned tiles, a black and wood-finish metal gate, and an open balcony on the first floor.. Neighbourhood: A developing residential layout with newly constructed independent houses, paved access roads, electric power poles, and green open fields with coconut groves visible in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
