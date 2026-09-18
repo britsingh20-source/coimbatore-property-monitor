@@ -341,9 +341,123 @@
         "status": "published",
         "video_id": "GSRB_-oz0_Y"
       }
+    },
+    "interior-social-ready/vi1F3RGWhEM-AgADAScAApsdcVU.mp4": {
+      "content": {
+        "customer_benefits": [
+          "Effortless access to spices and daily essentials with smooth hydraulic lift operation",
+          "Durable and smart storage for frequently used items",
+          "Keeps the kitchen counter clutter-free by neatly concealing appliances",
+          "Provides an organized and modern aesthetic",
+          "Optimizes space, making the kitchen more efficient"
+        ],
+        "hashtags": [
+          "#ModularKitchen",
+          "#OliveTreeInteriors",
+          "#CoimbatoreInteriors"
+        ],
+        "hook": "Discover two essential units that transform your modular kitchen into a highly functional and stylish space!",
+        "instagram_caption": "Elevate your kitchen experience with Olive Tree Interiors! ✨ We're showcasing two must-have modular kitchen units designed for ultimate convenience and style. First, our top box with a smooth hydraulic lift offers effortless access to your spices and daily essentials, ensuring durable and smart storage. Then, behold the sleek rolling shutter unit – perfect for tucking away all your appliances like mixers, toasters, and coffee makers, keeping your countertops beautifully clutter-free. Achieve a modern, organized, and space-saving kitchen that truly enhances your daily living. Save this for your kitchen reno inspiration! DM us to design your dream kitchen in Coimbatore.\n\n#ModularKitchen #OliveTreeInteriors #CoimbatoreInteriors",
+        "interior_features": [
+          "White glossy overhead cabinets",
+          "Top box unit with hydraulic lift mechanism",
+          "Internal shelving for spice jars",
+          "Dark grey rolling shutter unit",
+          "Internal shelving and power outlets for kitchen appliances (mixers, toasters, coffee maker)",
+          "White marble-look kitchen backsplash"
+        ],
+        "subject": "Modular Kitchen Storage Solutions",
+        "youtube_description": "Transform your kitchen into a hub of efficiency and elegance with Olive Tree Interiors in Coimbatore! This video highlights two innovative modular kitchen solutions. Our hydraulic lift top box provides smooth, durable, and smart storage for your spices and frequently used items, making access effortless. Complementing this is our sleek rolling shutter unit, designed to neatly conceal all your kitchen appliances like mixers, toasters, and coffee makers. This ensures a clutter-free countertop, offering a modern, organized, and space-saving design. Experience the perfect blend of functionality and contemporary aesthetics. Contact Olive Tree Interiors today to bring your dream kitchen to life!\n\n#ModularKitchen #OliveTreeInteriors #CoimbatoreInteriors",
+        "youtube_tags": [
+          "kitchen storage",
+          "modular kitchen",
+          "hydraulic lift cabinet",
+          "rolling shutter kitchen",
+          "kitchen appliances storage",
+          "spice storage",
+          "modern kitchen",
+          "kitchen design",
+          "Coimbatore interiors",
+          "Olive Tree Interiors"
+        ],
+        "youtube_title": "Smart Kitchen Storage: Hydraulic Top Box & Rolling Shutter Unit #Shorts"
+      },
+      "instagram": {
+        "creation_id": "18166254370493417",
+        "media_id": "18029648855889693",
+        "status": "published"
+      },
+      "instagram_story": {
+        "creation_id": "18166254553493417",
+        "media_id": "17948085408054146",
+        "status": "published"
+      },
+      "r2_key": "interior-social-ready/vi1F3RGWhEM-AgADAScAApsdcVU.mp4",
+      "source_id": "vi1F3RGWhEM",
+      "youtube": {
+        "error": "('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})",
+        "status": "failed"
+      }
     }
   },
   "telegram_files": {
+    "AgADAScAApsdcVU": {
+      "content": {
+        "customer_benefits": [
+          "Effortless access to spices and daily essentials with smooth hydraulic lift operation",
+          "Durable and smart storage for frequently used items",
+          "Keeps the kitchen counter clutter-free by neatly concealing appliances",
+          "Provides an organized and modern aesthetic",
+          "Optimizes space, making the kitchen more efficient"
+        ],
+        "hashtags": [
+          "#ModularKitchen",
+          "#OliveTreeInteriors",
+          "#CoimbatoreInteriors"
+        ],
+        "hook": "Discover two essential units that transform your modular kitchen into a highly functional and stylish space!",
+        "instagram_caption": "Elevate your kitchen experience with Olive Tree Interiors! ✨ We're showcasing two must-have modular kitchen units designed for ultimate convenience and style. First, our top box with a smooth hydraulic lift offers effortless access to your spices and daily essentials, ensuring durable and smart storage. Then, behold the sleek rolling shutter unit – perfect for tucking away all your appliances like mixers, toasters, and coffee makers, keeping your countertops beautifully clutter-free. Achieve a modern, organized, and space-saving kitchen that truly enhances your daily living. Save this for your kitchen reno inspiration! DM us to design your dream kitchen in Coimbatore.\n\n#ModularKitchen #OliveTreeInteriors #CoimbatoreInteriors",
+        "interior_features": [
+          "White glossy overhead cabinets",
+          "Top box unit with hydraulic lift mechanism",
+          "Internal shelving for spice jars",
+          "Dark grey rolling shutter unit",
+          "Internal shelving and power outlets for kitchen appliances (mixers, toasters, coffee maker)",
+          "White marble-look kitchen backsplash"
+        ],
+        "subject": "Modular Kitchen Storage Solutions",
+        "youtube_description": "Transform your kitchen into a hub of efficiency and elegance with Olive Tree Interiors in Coimbatore! This video highlights two innovative modular kitchen solutions. Our hydraulic lift top box provides smooth, durable, and smart storage for your spices and frequently used items, making access effortless. Complementing this is our sleek rolling shutter unit, designed to neatly conceal all your kitchen appliances like mixers, toasters, and coffee makers. This ensures a clutter-free countertop, offering a modern, organized, and space-saving design. Experience the perfect blend of functionality and contemporary aesthetics. Contact Olive Tree Interiors today to bring your dream kitchen to life!\n\n#ModularKitchen #OliveTreeInteriors #CoimbatoreInteriors",
+        "youtube_tags": [
+          "kitchen storage",
+          "modular kitchen",
+          "hydraulic lift cabinet",
+          "rolling shutter kitchen",
+          "kitchen appliances storage",
+          "spice storage",
+          "modern kitchen",
+          "kitchen design",
+          "Coimbatore interiors",
+          "Olive Tree Interiors"
+        ],
+        "youtube_title": "Smart Kitchen Storage: Hydraulic Top Box & Rolling Shutter Unit #Shorts"
+      },
+      "instagram": {
+        "creation_id": "18166254370493417",
+        "media_id": "18029648855889693",
+        "status": "published"
+      },
+      "instagram_story": {
+        "creation_id": "18166254553493417",
+        "media_id": "17948085408054146",
+        "status": "published"
+      },
+      "r2_key": "interior-social-ready/vi1F3RGWhEM-AgADAScAApsdcVU.mp4",
+      "source_id": "vi1F3RGWhEM",
+      "youtube": {
+        "error": "('invalid_grant: Token has been expired or revoked.', {'error': 'invalid_grant', 'error_description': 'Token has been expired or revoked.'})",
+        "status": "failed"
+      }
+    },
     "AgADAyIAAvurQFU": {
       "content": {
         "customer_benefits": [
