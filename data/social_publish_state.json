@@ -1,5 +1,88 @@
 {
   "objects": {
+    "social-ready/CCAZi6SNB-g.mp4": {
+      "content": {
+        "caption": "🏠 1.05 Crore 3 BHK Villa in Karamadai, Mettupalayam Road, Coimbatore\n\n📍 Location: Karamadai, Mettupalayam Road, Coimbatore\n🏡 Property: 3 BHK Villa\n💰 Price: 1.05 Crore\n📐 Land: 3.75 Cents\n🏗️ Built-up: 2800 sqft\n🧭 Facing: Main Door: East, Site: South East Corner\n🚗 Parking: Covered Car Parking (20'0\" x 16'0\")\n✅ Approval: DTCP approved site\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#KaramadaiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#KaramadaiProperty",
+          "#CoimbatoreProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "1.05 Crore 3 BHK Villa in Karamadai, Mettupalayam Road, Coimbatore | Site Visit 9003787621",
+        "youtube_description": "1.05 Crore 3 BHK Villa in Karamadai, Mettupalayam Road, Coimbatore. Watch the complete property walkthrough.\n\n📍 Location: Karamadai, Mettupalayam Road, Coimbatore\n🏡 Property: 3 BHK Villa\n💰 Price: 1.05 Crore\n📐 Land: 3.75 Cents\n🏗️ Built-up: 2800 sqft\n🧭 Facing: Main Door: East, Site: South East Corner\n🚗 Parking: Covered Car Parking (20'0\" x 16'0\")\n✅ Approval: DTCP approved site\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #KaramadaiProperty #CoimbatoreProperty #CoimbatoreRealEstate"
+      },
+      "etag": "1e0d67aba6366aa3ff95ae237195660e-3",
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "channel": "real_estate",
+            "creation_id": "17898210003599708",
+            "media_id": "17906887365474298",
+            "processing": {
+              "id": "17898210003599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17898210156599708",
+            "media_id": "17958309429236317",
+            "processing": {
+              "id": "17898210156599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
+          "status": "failed"
+        }
+      },
+      "status": "visual_policy_passed",
+      "video_id": "CCAZi6SNB-g",
+      "visual_compliance": {
+        "ceremonial_markings_present": false,
+        "compliant": true,
+        "confidence": 1,
+        "findings": [],
+        "personal_photos_present": false,
+        "religious_visuals_present": false,
+        "violating_timestamps": []
+      },
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 245994,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 21.334,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 245764,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 21.333333,
+          "height": 1280,
+          "width": 720
+        }
+      }
+    },
     "social-ready/CLp9Pohl8No.mp4": {
       "content": {
         "caption": "🏠 Rs. 67 Lakhs 2 BHK Independent Villa in Karamadai, Coimbatore, Tamil Nadu\n\n📍 Location: Karamadai, Coimbatore, Tamil Nadu\n🏡 Property: 2 BHK Independent Villa\n💰 Price: Rs. 67 Lakhs\n📐 Land: 3.5 Cents\n🏗️ Built-up: 1300 sqft\n🧭 Facing: West facing site, North facing main door\n🚗 Parking: Covered car and two-wheeler parking (12'0\" x 23'0\")\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#KaramadaiProperty #CoimbatoreProperty #CoimbatoreRealEstate",

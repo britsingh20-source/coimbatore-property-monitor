@@ -1,5 +1,13 @@
 {
   "files": {
+    "AgAD-iEAApsdaVU": {
+      "r2_key": "social-ready/CCAZi6SNB-g.mp4",
+      "size": 17515463,
+      "status": "uploaded_exact_video_id",
+      "update_id": 789574124,
+      "uploaded_at": "2026-09-18T02:16:06.196929+00:00",
+      "video_id": "CCAZi6SNB-g"
+    },
     "AgAD3CEAAqd1YFU": {
       "candidate_video_ids": [
         "KiJEPqoUCTw",
@@ -707,5 +715,5 @@
       "video_id": "tTgkkQPNeCo"
     }
   },
-  "last_update_id": 789574122
+  "last_update_id": 789574124
 }
