@@ -1,0 +1,146 @@
+{
+  "video_id": "GS0uoS3DttI",
+  "source_url": "https://www.youtube.com/watch?v=GS0uoS3DttI",
+  "property_location": "Karamadai, Mettupalayam Road, Coimbatore",
+  "property": {
+    "property_type": "Independent Villa",
+    "bhk": "3BHK",
+    "land_area": "3.75 Cents",
+    "built_up_area": "2800 sqft",
+    "price": "1.05 Crore",
+    "facing": "East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "2 Cars",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "3BHK Independent Villa on a South East Corner site, East facing main teak wood door, Land Area: 3.75 Cents (30 ft x 55 ft), Built-up Area: 2800 sqft, 7000 Liters Water Sump and Borewell available, DTCP approved site, Property price: Rs. 1.05 Crore (negotiable), 75% bank loan facility available",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, authentic local property presentation in conversational Tamil mixed with standard English real estate terms",
+    "hook_strategy": "Direct visual entry framing the location and property type right off Mettupalayam Road in Karamadai",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை மேட்டுப்பாளையம் ரோடு, காரமடை டீச்சர்ஸ் காலனி கிட்ட இருக்குற ஒரு 3BHK Independent Villa பார்க்கப்போறோம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "location-pin-highlight",
+        "purpose": "hook"
+      },
+      {
+        "name": "facing",
+        "voice": "இது சவுத் ஈஸ்ட் கார்னர் சைட்ல, ஈஸ்ட் ஃபேசிங் டீக் வுட் மெயின் டோரோட அமைச்சிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "orientation"
+      },
+      {
+        "name": "land",
+        "voice": "லேண்ட் ஏரியா பாத்தீங்கனா 3.75 சென்ட், கரெக்டா 30-க்கு 55 அளவுகள்ல இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "interior"
+        ],
+        "vfx": "dimension-lines",
+        "purpose": "land-details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "2800 sqft built-up area-ல ஹை-ரூஃப் லிவிங் ரூம், மாடுலர் கிச்சன், பூஜா ரூம், பால்கனி, போர்வல் அப்புறம் 7000 லிட்டர் சம்ப் வசதியும் இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "text-callout-specs",
+        "purpose": "interior-value"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approved பண்ணப்பட்ட சைட். அதே மாதிரி 75% பேங்க் லோன் ஃபெசிலிட்டியும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "badge-overlay",
+        "purpose": "trust-building"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட ப்ரைஸ் 1.05 Crore, பேச்சுவார்த்தைக்கு உட்பட்டது.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணவும், மத்த details தெரிஞ்சுக்கவும் உடனே கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "contact-card",
+        "purpose": "action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/GS0uoS3DttI/",
+  "optional_owned_audio": "assets/audio/GS0uoS3DttI.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-story villa with grey, white, and yellow elevation accents, geometric line patterns on the side wall, covered car porch with tile flooring, a folding front gate, glass railing balcony, and a rooftop with dual water tanks.. Neighbourhood: Residential neighborhood located near Mettupalayam Road, surrounded by independent houses, open ground, and scenic hill views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-story villa with grey, white, and yellow elevation accents, geometric line patterns on the side wall, covered car porch with tile flooring, a folding front gate, glass railing balcony, and a rooftop with dual water tanks.. Neighbourhood: Residential neighborhood located near Mettupalayam Road, surrounded by independent houses, open ground, and scenic hill views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-story villa with grey, white, and yellow elevation accents, geometric line patterns on the side wall, covered car porch with tile flooring, a folding front gate, glass railing balcony, and a rooftop with dual water tanks.. Neighbourhood: Residential neighborhood located near Mettupalayam Road, surrounded by independent houses, open ground, and scenic hill views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-story villa with grey, white, and yellow elevation accents, geometric line patterns on the side wall, covered car porch with tile flooring, a folding front gate, glass railing balcony, and a rooftop with dual water tanks.. Neighbourhood: Residential neighborhood located near Mettupalayam Road, surrounded by independent houses, open ground, and scenic hill views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
