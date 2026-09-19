@@ -713,7 +713,15 @@
       "update_id": 789574032,
       "uploaded_at": "2026-08-22T13:00:19.075320+00:00",
       "video_id": "tTgkkQPNeCo"
+    },
+    "AgADyh4AAuXccFU": {
+      "r2_key": "social-ready/eChfOB4E7uw.mp4",
+      "size": 19096340,
+      "status": "uploaded_exact_video_id",
+      "update_id": 789574130,
+      "uploaded_at": "2026-09-19T03:29:29.460816+00:00",
+      "video_id": "eChfOB4E7uw"
     }
   },
-  "last_update_id": 789574124
+  "last_update_id": 789574130
 }
