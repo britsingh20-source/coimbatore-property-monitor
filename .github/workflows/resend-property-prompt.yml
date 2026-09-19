@@ -1,4 +1,4 @@
-# Telegram delivery recovery after BUTTON_COPY_TEXT_INVALID: 2026-09-19
+# Telegram delivery recovery after BUTTON_COPY_TEXT_INVALID: 2026-09-19\n# Test dispatch target refreshed: zclTKyhfHyE
 name: Resend Property Prompt
 
 on:
@@ -7,7 +7,7 @@ on:
       video_id:
         description: Existing property VIDEO_ID to regenerate, send, and enrich
         required: true
-        default: ypUzWtGSS2A
+        default: zclTKyhfHyE
         type: string
   push:
     branches:
@@ -40,7 +40,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          REQUESTED_VIDEO_ID: ${{ inputs.video_id || 'ypUzWtGSS2A' }}
+          REQUESTED_VIDEO_ID: ${{ inputs.video_id || 'zclTKyhfHyE' }}
           PUBLIC_IMAGE_MAX_PAGES: "8"
           PUBLIC_IMAGE_MAX_IMAGES: "12"
         shell: bash
