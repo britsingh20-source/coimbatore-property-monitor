@@ -1,4 +1,4 @@
-# Premium-interior preservation Telegram resend verification: 2026-09-18
+# Scale-lock + religion-neutral Telegram resend verification: 2026-09-19
 name: Resend Property Prompt
 
 on:
@@ -7,7 +7,7 @@ on:
       video_id:
         description: Existing property VIDEO_ID to regenerate, send, and enrich
         required: true
-        default: ybJJ9QTb11A
+        default: ypUzWtGSS2A
         type: string
   push:
     branches:
@@ -40,7 +40,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          REQUESTED_VIDEO_ID: ${{ inputs.video_id || 'ybJJ9QTb11A' }}
+          REQUESTED_VIDEO_ID: ${{ inputs.video_id || 'ypUzWtGSS2A' }}
           PUBLIC_IMAGE_MAX_PAGES: "8"
           PUBLIC_IMAGE_MAX_IMAGES: "12"
         shell: bash
