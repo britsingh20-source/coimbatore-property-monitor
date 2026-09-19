@@ -83,6 +83,19 @@ Hard cut to a verified bedroom, staircase, bathroom, balcony or parking detail. 
 SHOT 7 — 8.5 TO 10 SECONDS — FINAL VERIFIED FEATURE
 Hard cut to one final distinct verified permanent property feature or a different exterior angle. Keep the scene clean, neutral and free of personal belongings or religious décor. Use a short reveal and keep the final 0.3 seconds almost motionless for a clean ending."""
 
+    scale_lock = f"""PROPERTY SCALE / MARKET-REALISM LOCK — ZERO SIZE INFLATION
+The verified BHK count, land area, built-up area, floor count visible in the reference, parking dimensions and price are HARD PHYSICAL SCALE CONSTRAINTS. Never upscale the property to make the video look more premium.
+For this listing the governing facts are: {bhk} | land {land} | built-up {built_up} | price {price}.
+The generated exterior footprint, frontage, height, portico, balcony, rooms, hall, kitchen, bedrooms and circulation must remain believable for those exact facts AND must follow the source video's visible proportions.
+- A compact 2BHK / small-site / modest-price independent house must remain a compact local independent house. NEVER turn it into a grand villa, luxury bungalow, mansion, oversized duplex, broad-frontage residence or resort-style home.
+- Never add a second storey, double-height facade/hall, giant balcony, oversized columns, huge lawn/setback, double-car portico, unusually wide gate/frontage or oversized rooms unless each is visibly verified in the source.
+- Camera/lens choice must not fake extra size: avoid ultra-wide/fisheye views, stretched perspective, extreme low angles or framing that makes rooms/frontage appear materially larger. Prefer natural smartphone-equivalent perspective and truthful room scale.
+- Price is context, not permission to redesign. Do not make a property look richer, larger or more expensive than the actual reference.
+- "premium", "polished" and "photorealistic" describe IMAGE QUALITY / CLEANLINESS only, never building size or luxury class.
+- Preserve verified permanent finish quality: a compact house may still show its real false ceiling, fixed lighting, built-in TV unit, cabinetry and polished flooring. Clean presentation must not erase these features.
+If written facts and an AI aesthetic preference conflict, the verified source architecture and physical scale ALWAYS win.
+"""
+
     return f"""MANDATORY OUTPUT FORMAT LOCK — READ THIS FIRST
 Generate a NATIVE PORTRAIT video only: vertical 9:16 aspect ratio, ideally 1080×1920 pixels. The frame must be taller than it is wide. Never generate landscape 16:9, horizontal video, square video, a rotated landscape frame, letterboxing, pillarboxing, or a landscape clip placed inside a portrait canvas. This format requirement overrides the orientation of every source or reference.
 
@@ -158,7 +171,7 @@ Exactly 10 seconds; native 60 fps output; vertical 9:16; designed for smooth 3×
 Before rendering, perform three mandatory audits:
 1. SHOT-PLAN AUDIT: identify and remove every religious image/symbol, deity/idol/shrine, ceremonial marking, garland/toran, kolam/rangoli, family portrait, framed person, calendar, poster or personal photo. DO NOT reject the whole angle when it contains valuable verified architecture; preserve the TV unit, TV wall, false ceiling, lighting, cabinetry, entrance and other permanent features.
 2. FRAME-BY-FRAME AUDIT: inspect the full 10-second draft, including background walls, shelves, door lintels, thresholds and floors. Zero prohibited objects may appear at any size.
-3. REPLACEMENT AUDIT: confirm every removed wall object became uninterrupted plain wall/panel finish and every removed floor/threshold marking became uninterrupted plain tile/stone. Never replace it with another picture, symbol, pattern or decoration.
+3. REPLACEMENT AUDIT: confirm every removed wall object became uninterrupted plain wall/panel finish and every removed floor/threshold marking became uninterrupted plain tile/stone. Never replace it with another picture, symbol, pattern or decoration.\n4. SCALE AUDIT: compare the draft against BHK, land area, built-up area, floor count, parking and source-video proportions. Reject any shot that makes the house, frontage, hall, portico, balcony or rooms look materially larger, grander or more luxurious than the verified property.
 
 If any frame fails an audit, discard that entire shot and regenerate it from another verified architecture-only angle. Do not proceed with, export or return a violating video.
 
