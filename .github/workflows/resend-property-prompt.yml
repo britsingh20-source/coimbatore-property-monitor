@@ -1,4 +1,4 @@
-# Telegram full-prompt copy button rollout + corrected prompt resend: 2026-09-19
+# Telegram delivery recovery after BUTTON_COPY_TEXT_INVALID: 2026-09-19
 name: Resend Property Prompt
 
 on:
