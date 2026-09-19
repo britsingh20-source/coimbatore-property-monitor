@@ -89,11 +89,20 @@ def send_prompt(job: dict, bot_token: str, chat_id: str) -> int:
         f"Add this exact caption: <code>VIDEO_ID: {html.escape(video_id)}</code>. "
         "The mobile filename can remain unchanged."
     )
+    # Telegram Bot API copy_text buttons copy text directly to the user's
+    # clipboard. Keep VIDEO_ID and the complete generation prompt as separate
+    # one-tap actions.
     keyboard = {
-        "inline_keyboard": [[{
-            "text": "Copy VIDEO_ID",
-            "copy_text": {"text": video_id},
-        }]]
+        "inline_keyboard": [
+            [{
+                "text": "Copy VIDEO_ID",
+                "copy_text": {"text": video_id},
+            }],
+            [{
+                "text": "Copy Entire Prompt",
+                "copy_text": {"text": prompt},
+            }],
+        ]
     }
     payload = io.BytesIO(prompt.encode("utf-8"))
     payload.name = telegram_filename(job)
