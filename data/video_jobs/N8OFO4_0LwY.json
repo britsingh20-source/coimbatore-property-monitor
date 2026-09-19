@@ -1,0 +1,129 @@
+{
+  "video_id": "N8OFO4_0LwY",
+  "source_url": "https://www.youtube.com/watch?v=N8OFO4_0LwY",
+  "property_location": "Maniakarampalayam, Near Thudiyalur, Coimbatore",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2 BHK",
+    "land_area": "3 Cents",
+    "built_up_area": "1166 sqft",
+    "price": "₹65 Lakhs",
+    "facing": "South (Site), East (Main Door)",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "Built on 3 Cents land area with 1166 sqft built-up area in ground floor., Property features 2 master bedrooms with attached bathrooms, 1 outer bathroom, 16'x16' living hall, 8'x10' kitchen, and 13'9\"x16'6\" car parking., Quoted price is ₹65 Lakhs (negotiable) with 75% bank loan availability., South facing site with East facing main teak wood door.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, conversational, local Coimbatore presenter speaking directly to camera with clear walk-through visuals",
+    "hook_strategy": "Focus on an affordable 2 BHK Independent House for 65 Lakhs in the highly sought-after Thudiyalur location",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை துடியலூர், இடிகரை ரோடு பக்கத்துல இருக்கிற மணியகாரம்பாளையத்துல ஒரு 2 BHK Independent House விற்பனைக்கு வந்துருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தமா 3 Cents land-ல அமைஞ்சிருக்குங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Ground floor-ல 1166 sqft built-up area. 16'x16' living hall, modular kitchen, 2 master bedrooms, false ceiling work, அப்புறம் covered car parking-ஓட semi furnished-ஆ இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "interior_tour"
+      },
+      {
+        "name": "facing",
+        "voice": "Site facing தெற்கு, ஆனா main door பாத்தீங்கனா தேக்கு மரத்துல கிழக்கு பார்த்து அமைச்சிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price 65 Lakhs, negotiable தான். 75% bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing_info"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல site visit வரணும்னா இல்ல details தெரிஞ்சுக்க உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "call-button",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/N8OFO4_0LwY/",
+  "optional_owned_audio": "assets/audio/N8OFO4_0LwY.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary single-story house with a grey, yellow, and brown accent facade, covered porch with false ceiling lights, grey metal entry gate, red front ramp, and red external stairs leading to an open painted terrace.. Neighbourhood: Residential suburban locality in Maniakarampalayam near Thudiyalur with nearby independent houses, open plots, greenery, and mountain views in the backdrop.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary single-story house with a grey, yellow, and brown accent facade, covered porch with false ceiling lights, grey metal entry gate, red front ramp, and red external stairs leading to an open painted terrace.. Neighbourhood: Residential suburban locality in Maniakarampalayam near Thudiyalur with nearby independent houses, open plots, greenery, and mountain views in the backdrop.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary single-story house with a grey, yellow, and brown accent facade, covered porch with false ceiling lights, grey metal entry gate, red front ramp, and red external stairs leading to an open painted terrace.. Neighbourhood: Residential suburban locality in Maniakarampalayam near Thudiyalur with nearby independent houses, open plots, greenery, and mountain views in the backdrop.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary single-story house with a grey, yellow, and brown accent facade, covered porch with false ceiling lights, grey metal entry gate, red front ramp, and red external stairs leading to an open painted terrace.. Neighbourhood: Residential suburban locality in Maniakarampalayam near Thudiyalur with nearby independent houses, open plots, greenery, and mountain views in the backdrop.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
