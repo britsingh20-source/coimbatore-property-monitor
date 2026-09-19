@@ -83,26 +83,21 @@ def send_prompt(job: dict, bot_token: str, chat_id: str) -> int:
         f"<b>Location:</b> {html.escape(location)}\n"
         f"<b>Video ID:</b> <code>{html.escape(video_id)}</code>\n"
         "<b>Site visit:</b> 9003787621\n\n"
-        "Open Gemini mobile, paste the attached prompt, and allow Gemini to open "
+        "FULL PROMPT: open the attached .txt file, Select All → Copy, then paste in Gemini. "        "Telegram does not allow a copy_text button for a prompt this long. Allow Gemini to open "
         "the included YouTube reference. After generation, send the downloaded MP4 "
         "to this bot as a file. "
         f"Add this exact caption: <code>VIDEO_ID: {html.escape(video_id)}</code>. "
         "The mobile filename can remain unchanged."
     )
-    # Telegram Bot API copy_text buttons copy text directly to the user's
-    # clipboard. Keep VIDEO_ID and the complete generation prompt as separate
-    # one-tap actions.
+    # Telegram copy_text is limited to short text and rejects our long Veo
+    # prompt. Keep the reliable one-tap VIDEO_ID button. The full prompt is
+    # attached as a UTF-8 .txt document so Telegram can open/select/copy it
+    # without causing the whole sendDocument request to fail.
     keyboard = {
-        "inline_keyboard": [
-            [{
-                "text": "Copy VIDEO_ID",
-                "copy_text": {"text": video_id},
-            }],
-            [{
-                "text": "Copy Entire Prompt",
-                "copy_text": {"text": prompt},
-            }],
-        ]
+        "inline_keyboard": [[{
+            "text": "Copy VIDEO_ID",
+            "copy_text": {"text": video_id},
+        }]]
     }
     payload = io.BytesIO(prompt.encode("utf-8"))
     payload.name = telegram_filename(job)
