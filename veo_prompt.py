@@ -151,6 +151,14 @@ Verified facts: {facts}
 
 Generate one completely new, highly photorealistic, exactly 10-second vertical 9:16 property walkthrough source clip at 60 fps. This clip will be slowed to 33.3% speed in VN Editor to create a smooth 30-second final video. Camera movement must be moderately brisk, stable and clear so it becomes natural after slowing. Do not reuse source frames directly. Reconstruct the property's permanent architecture using only visually confirmed architectural identity. It must resemble genuine smartphone footage recorded with a professional gimbal by a local Coimbatore property broker, not an architectural render, slideshow or AI-image animation.
 
+REFERENCE RESEMBLANCE LOCK — 60/40
+Preserve approximately 60% of the source property's verified visual identity: floor count, overall massing, frontage proportions, elevation geometry, entrance/portico position, window/door placement, roof/parapet character, parking arrangement, room proportions, false-ceiling geometry, fixed lighting, built-in TV wall/unit, kitchen cabinetry and other permanent features. The remaining approximately 40% may vary only in non-structural presentation such as neutral paint shade, clean material finish, landscaping, empty-room staging and camera composition. The 40% variation must NEVER alter floor count, convert a single-storey house into a duplex, add rooms/floors, enlarge the footprint/frontage, or erase verified interior features.
+
+FLOOR-COUNT / BHK LAYOUT LOCK
+Determine floor count from the source video before writing the shots. If the complete verified ${bhk} layout is shown on the ground floor, the generated property MUST remain a single-storey ground-floor ${bhk} home. Never infer a duplex merely because the listing uses the word villa/house. A staircase may be shown only if visibly verified, and its presence must not be interpreted as proof that bedrooms or living areas exist on another floor. No invented upper-floor facade, balcony, bedroom, hall or double-height space.
+
+${scale_lock}
+
 {shot_plan}
 
 PROPERTY INFORMATION FOOTER — 0.3 TO 10 SECONDS
