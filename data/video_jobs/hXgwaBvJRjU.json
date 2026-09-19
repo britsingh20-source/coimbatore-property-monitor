@@ -1,0 +1,155 @@
+{
+  "video_id": "hXgwaBvJRjU",
+  "source_url": "https://www.youtube.com/watch?v=hXgwaBvJRjU",
+  "property_location": "Papampatti, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2 BHK",
+    "land_area": "2.75 Cents",
+    "built_up_area": "1000 Sq.ft",
+    "price": "₹55 LAKHS",
+    "facing": "East",
+    "road_width": "30 Feet",
+    "parking": "Covered Car Parking (10 x 17 ft)",
+    "approval": "DTCP & Plan Approved"
+  },
+  "verified_facts": "Plot size is 20 x 60 feet on a 2.75 cent plot with east-facing main entrance., Total built-up area is 1000 sq.ft across a single ground level., Property price is ₹55 Lakhs including land and house, with up to 85% bank loan availability., Car parking area measures 10 x 17 feet with natural stone floor tiling., Living hall measures 11 x 16 feet with ceiling lighting and decorative wall color., Kitchen measures 10 x 8 feet with L-shaped granite counter and full height wall tiles., Master bedroom is 10 x 16 feet with attached bathroom (5 x 6 feet)., Kids bedroom is 10 x 11 feet with attached bathroom (5 x 6 feet).",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and engaging local property walk-through with natural spoken Tamil",
+    "hook_strategy": "Highlight the highly sought-after Papampatti location and key price point right in the first sentence",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Papampatti-ல, Trichy Road அண்ட் L&T Bypass-க்கு மிக பக்கத்துல அமைஞ்சிருக்க இந்த 2 BHK Independent House பாப்போம்!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-tag",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 2.75 Cents land-ல, 20 feet-க்கு 60 feet plot size-ல அமைச்சிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "dimension-overlay",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1000 sq.ft built-up area-ல நல்ல spacious living room, L-shaped granite kitchen, அப்புறம் attached bathroom-ோட 2 bedrooms இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "floorplan-highlight",
+        "purpose": "interior_overview"
+      },
+      {
+        "name": "facing",
+        "voice": "இந்த வீட்டோட main entrance பார்த்தீங்கன்னா East facing-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass-east",
+        "purpose": "orientation"
+      },
+      {
+        "name": "road",
+        "voice": "வீட்டுக்கு முன்னாடி 30 feet road வசதியும், 10-க்கு 17 feet-ல covered car parking-உம் கொடுத்திருக்காங்க.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "text-banner",
+        "purpose": "access_and_parking"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP மற்றும் Plan Approved property. 85% வரை bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "legal_assurance"
+      },
+      {
+        "name": "price",
+        "voice": "நிலமும் வீடும் சேர்த்து இதன் total price வெறும் 55 Lakhs மட்டுமே!",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-pop",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேரடியா site visit பண்ணவோ, details தெரியவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "land"
+        ],
+        "vfx": "call-button",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/hXgwaBvJRjU/",
+  "optional_owned_audio": "assets/audio/hXgwaBvJRjU.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Papampatti, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-storey house elevation featuring vertical wood-finish panelling, grey and white painted plaster, terracotta/glass decorative elements, brown wooden-style dual gate, covered porch, and red-painted external staircase with stainless steel handrail.. Neighbourhood: Developing residential neighborhood facing a 30-foot wide asphalt road with nearby independent houses, open plots, overhead power lines, and good road connectivity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Papampatti, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-storey house elevation featuring vertical wood-finish panelling, grey and white painted plaster, terracotta/glass decorative elements, brown wooden-style dual gate, covered porch, and red-painted external staircase with stainless steel handrail.. Neighbourhood: Developing residential neighborhood facing a 30-foot wide asphalt road with nearby independent houses, open plots, overhead power lines, and good road connectivity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Papampatti, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-storey house elevation featuring vertical wood-finish panelling, grey and white painted plaster, terracotta/glass decorative elements, brown wooden-style dual gate, covered porch, and red-painted external staircase with stainless steel handrail.. Neighbourhood: Developing residential neighborhood facing a 30-foot wide asphalt road with nearby independent houses, open plots, overhead power lines, and good road connectivity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Papampatti, Coimbatore, Tamil Nadu, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-storey house elevation featuring vertical wood-finish panelling, grey and white painted plaster, terracotta/glass decorative elements, brown wooden-style dual gate, covered porch, and red-painted external staircase with stainless steel handrail.. Neighbourhood: Developing residential neighborhood facing a 30-foot wide asphalt road with nearby independent houses, open plots, overhead power lines, and good road connectivity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
