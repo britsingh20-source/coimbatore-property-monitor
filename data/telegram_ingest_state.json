@@ -528,6 +528,14 @@
       "uploaded_at": "2026-09-07T11:11:19.398586+00:00",
       "video_id": "manual-AgADfycAAinL-VQ"
     },
+    "AgADhiAAAuXccFU": {
+      "r2_key": "social-ready/hXgwaBvJRjU.mp4",
+      "size": 18118156,
+      "status": "uploaded_exact_video_id",
+      "update_id": 789574134,
+      "uploaded_at": "2026-09-19T15:36:34.794448+00:00",
+      "video_id": "hXgwaBvJRjU"
+    },
     "AgADjCEAAmSZyFQ": {
       "duplicate_of": "AgADriEAAmSZyFQ",
       "quarantine_reason": "older duplicate of user-confirmed latest Telegram upload",
@@ -723,5 +731,5 @@
       "video_id": "eChfOB4E7uw"
     }
   },
-  "last_update_id": 789574130
+  "last_update_id": 789574134
 }
