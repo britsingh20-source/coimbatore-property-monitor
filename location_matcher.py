@@ -24,14 +24,63 @@ def active_weekly_focus(*_args, **_kwargs) -> dict:
     return {}
 
 
+def _edit_distance_within(left: str, right: str, limit: int) -> bool:
+    """Return quickly when the words differ by no more than the allowed typo count."""
+    if abs(len(left) - len(right)) > limit:
+        return False
+    previous = list(range(len(right) + 1))
+    for row_index, left_char in enumerate(left, 1):
+        current = [row_index]
+        row_minimum = row_index
+        for column_index, right_char in enumerate(right, 1):
+            current.append(min(
+                current[-1] + 1,
+                previous[column_index] + 1,
+                previous[column_index - 1] + (left_char != right_char),
+            ))
+            row_minimum = min(row_minimum, current[-1])
+        if row_minimum > limit:
+            return False
+        previous = current
+    return previous[-1] <= limit
+
+
+def _word_matches(actual: str, expected: str) -> bool:
+    if actual == expected:
+        return True
+    longest = max(len(actual), len(expected))
+    if longest < 6:
+        return False
+    limit = 2 if longest >= 14 else 1
+    return _edit_distance_within(actual, expected, limit)
+
+
 def contains_phrase(text: str, candidate: str) -> bool:
-    """Match a normalized alias as complete words instead of as a substring."""
+    """Match exact aliases plus conservative Latin-script spelling mistakes."""
+    haystack = normalize(text)
     needle = normalize(candidate)
-    # Tamil place names commonly take suffixes such as -இல்/-யில் in titles;
-    # substring matching preserves those grammatical forms safely.
+    if not needle:
+        return False
+
+    # Tamil place names commonly take suffixes such as -இல்/-யில் in titles.
+    # Keep Tamil matching exact so fuzzy Latin transliteration never affects it.
     if re.search(r"[\u0b80-\u0bff]", needle):
-        return needle in text
-    return bool(needle and f" {needle} " in f" {text} ")
+        return needle in haystack
+
+    if f" {needle} " in f" {haystack} ":
+        return True
+
+    expected_words = needle.split()
+    actual_words = haystack.split()
+    width = len(expected_words)
+    if not width or len(actual_words) < width:
+        return False
+
+    for start in range(len(actual_words) - width + 1):
+        window = actual_words[start:start + width]
+        if all(_word_matches(actual, expected) for actual, expected in zip(window, expected_words)):
+            return True
+    return False
 
 
 def match_location(*values: str) -> dict:
@@ -40,7 +89,8 @@ def match_location(*values: str) -> dict:
     matched = []
 
     for locality, aliases in config["target_localities"].items():
-        if any(contains_phrase(text, alias) for alias in aliases):
+        candidates = [locality, *(aliases or [])]
+        if any(contains_phrase(text, candidate) for candidate in candidates):
             matched.append(locality)
 
     city_match = any(
