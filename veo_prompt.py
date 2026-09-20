@@ -100,13 +100,7 @@ The generated exterior footprint, frontage, height, portico, balcony, rooms, hal
 If written facts and an AI aesthetic preference conflict, the verified source architecture and physical scale ALWAYS win.
 """
 
-    return f"""VIDEO GENERATION MODE CHECK — DO THIS BEFORE PASTING
-In the Gemini mobile app, first tap the + button and select Video / Create video (Veo). Confirm that video generation mode is active. Do NOT submit this prompt in the normal Gemini Flash text chat: Flash cannot render a video and may reply, “I can't make that type of video.” Once Veo/Create video mode is active, submit the complete prompt below.
-
-VIDEO GENERATION REQUEST
-Create exactly one 10-second property walkthrough video using the instructions below.
-
-MANDATORY OUTPUT FORMAT LOCK
+    return f"""MANDATORY OUTPUT FORMAT LOCK — READ THIS FIRST
 Generate a NATIVE PORTRAIT video only: vertical 9:16 aspect ratio, ideally 1080×1920 pixels. The frame must be taller than it is wide. Never generate landscape 16:9, horizontal video, square video, a rotated landscape frame, letterboxing, pillarboxing, or a landscape clip placed inside a portrait canvas. This format requirement overrides the orientation of every source or reference.
 
 The linked YouTube reference may be landscape. Use it only to understand the property's visual identity, then intelligently recompose every shot for a full-screen 9:16 portrait canvas. Keep the property centred with safe headroom and lower-third space. If native 9:16 output is unavailable in the current Gemini/Veo mode, do not generate a landscape substitute; instruct the user to select Portrait/9:16 mode first.

@@ -19,9 +19,6 @@ def test_prompt_contains_dynamic_facts_and_fixed_contact():
         "verified_facts": "2 BHK villa on 3.5 cents",
     }
     prompt = build_veo_prompt(job)
-    assert prompt.startswith("VIDEO GENERATION MODE CHECK — DO THIS BEFORE PASTING")
-    assert "tap the + button and select Video / Create video (Veo)" in prompt
-    assert "Do NOT submit this prompt in the normal Gemini Flash text chat" in prompt
     assert "Karamadai" in prompt
     assert "₹67 Lakhs" in prompt
     assert "9003787621" in prompt
