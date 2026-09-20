@@ -40,6 +40,15 @@ def test_focus_belt_micro_locality_is_a_strong_target():
     assert "teachers colony" in signals["location_hits"]
 
 
+def test_misspelled_focus_area_is_still_a_strong_target():
+    for place in ("Idikarai", "Idigray", "Karmadai", "Periyanayakkanpalayam"):
+        signals = metadata_prefilter.metadata_score(
+            video("a", f"2BHK house for sale in {place}")
+        )
+        assert signals["strong_target"] is True
+        assert signals["location_hits"]
+
+
 def test_non_listing_is_filtered():
     signals = metadata_prefilter.metadata_score(video("a", "Real estate market update and property tips"))
     assert signals["strong_target"] is False
