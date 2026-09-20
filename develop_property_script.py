@@ -29,7 +29,7 @@ def _digits(value: Any) -> set[str]:
 
 
 def _fallback_plan(property_data: dict, location: dict) -> dict:
-    locality = (location.get("matched_localities") or [property_data.get("location") or "கோயம்புத்தூர்"])[0]
+    locality = property_data.get("location") if _present(property_data.get("location")) else (location.get("matched_localities") or ["கோயம்புத்தூர்"])[0]
     ptype = property_data.get("property_type") if _present(property_data.get("property_type")) else "வீடு"
     bhk = property_data.get("bhk") if _present(property_data.get("bhk")) else ""
     title = " ".join(str(x) for x in (bhk, ptype) if _present(x)).strip()
@@ -134,7 +134,7 @@ def develop_property_script(property_data: dict, location: dict) -> dict:
     if not api_key:
         return fallback
 
-    locality = (location.get("matched_localities") or [property_data.get("location", "Coimbatore")])[0]
+    locality = property_data.get("location") if _present(property_data.get("location")) else (location.get("matched_localities") or ["Coimbatore"])[0]
     verified = {
         key: property_data.get(key, "NOT SPECIFIED")
         for key in (
