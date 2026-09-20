@@ -1,7 +1,8 @@
 import json
 import os
-import re
 from pathlib import Path
+
+from location_matcher import contains_phrase, normalize
 
 
 LOCATION_CONFIG = Path("config/locations.json")
@@ -28,18 +29,24 @@ OBVIOUS_NON_LISTING_TERMS = (
 
 
 def _normalize(value: str) -> str:
-    return re.sub(r"\s+", " ", (value or "").casefold()).strip()
+    return normalize(value)
 
 
-def _location_terms() -> tuple[str, ...]:
+def _location_candidates() -> tuple[tuple[str, tuple[str, ...]], ...]:
     config = json.loads(LOCATION_CONFIG.read_text(encoding="utf-8"))
-    # City aliases are informational only. "Coimbatore" must never make a
-    # listing eligible without an explicit permanent-focus locality match.
-    terms = []
+    rows = []
     for canonical, aliases in (config.get("target_localities") or {}).items():
-        terms.append(canonical)
-        terms.extend(aliases or [])
-    return tuple(_normalize(term) for term in terms if str(term).strip())
+        candidates = (canonical, *(aliases or []))
+        rows.append((canonical, tuple(str(term) for term in candidates if str(term).strip())))
+    return tuple(rows)
+
+
+def _location_hits(text: str) -> list[str]:
+    hits = []
+    for canonical, candidates in _location_candidates():
+        if any(contains_phrase(text, candidate) for candidate in candidates):
+            hits.append(_normalize(canonical))
+    return hits
 
 
 def metadata_score(video: dict) -> dict:
@@ -47,7 +54,7 @@ def metadata_score(video: dict) -> dict:
     description = _normalize(video.get("description", ""))
     text = f"{title} {description}"
 
-    location_hits = [term for term in _location_terms() if term and term in text]
+    location_hits = _location_hits(text)
     property_hits = [term for term in PROPERTY_TERMS if term in text]
     sale_hits = [term for term in STRONG_SALE_TERMS if term in text]
     negative_hits = [term for term in OBVIOUS_NON_LISTING_TERMS if term in text]
@@ -85,9 +92,6 @@ def build_analysis_queue(videos: list[dict], recent_ids: set[str], max_per_run: 
         if STRICT_TARGET_ONLY and not signals["strong_target"]:
             continue
         if not signals["exploratory"] and not signals["strong_target"]:
-            # These monitored channels are property channels. A sparse YouTube title/description
-            # must not make the whole Gemini queue empty. Keep a very small recent fallback pool,
-            # while still excluding obvious non-listing content. Gemini remains the final listing gate.
             if recent and not signals["negative_hits"]:
                 sparse_recent.append((video, signals, index))
             continue
