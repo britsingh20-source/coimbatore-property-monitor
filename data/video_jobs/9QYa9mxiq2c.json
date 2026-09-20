@@ -1,0 +1,132 @@
+{
+  "video_id": "9QYa9mxiq2c",
+  "source_url": "https://www.youtube.com/watch?v=9QYa9mxiq2c",
+  "property_location": "Maniakarampalayam, Near Thudiyalur, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "2.5 Cents",
+    "built_up_area": "2100 sq ft",
+    "price": "₹86 Lakhs",
+    "facing": "South-West (Site), East (Main Door)",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking (10' x 20')",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "Location: Maniakarampalayam, near Thudiyalur, Coimbatore., Property Type: 3 BHK semi-furnished independent G+2 house., Land Area: 2.5 Cents (South-West corner plot)., Built-Up Area: 2100 sq ft., Price: ₹86 Lakhs (negotiable), with 75% bank loan availability., Main Door Facing: East., Car Parking: 10' x 20'., Layout includes formal living (16'x16'), family living (10'x16'), kitchen & dining (10'x16'), 3 bedrooms (16'x16', 10'x16', 10'x10'), 3 attached bathrooms + 1 outer bathroom, terrace utility room, borewell, and sump.",
+  "content_plan": {
+    "target_duration_seconds": 38,
+    "style": "Relaxed local property presenter speaking directly to camera with high retention visual cuts",
+    "hook_strategy": "Lead with key location and 3 BHK independent house opportunity in Coimbatore",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Thudiyalur பக்கத்துல இருக்கற Maniakarampalayam location-ல, ஒரு அருமையான 3 BHK independent house விற்பனைக்கு வந்திருக்கு!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "2100 sq ft built-up area-ல G+2 structure-ஆ இந்த வீடு அமைஞ்சிருக்கு. Modular kitchen, false ceiling, family living hall-னு ரொம்பவே நல்லா design பண்ணிருக்காங்க.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "avoid_broll": [
+          "exterior",
+          "land"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "feature_highlight"
+      },
+      {
+        "name": "land",
+        "voice": "2.5 Cents land area-ல அமைஞ்சிருக்கிற இந்த வீட்ல 10' x 20' covered car parking வசதியும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "dimension-overlay",
+        "purpose": "site_details"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், site பாத்தீங்கனா South-West corner plot, அப்புறம் main door East facing-ல வருது.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price 86 Lakhs negotiable. அதே மாதிரி 75% bank loan availability-யும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "land"
+        ],
+        "vfx": "price-tag",
+        "purpose": "value_proposition"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த வீட நேர்ல பாக்கறதுக்கு உடனே site visit book பண்ணுங்க. Call for details!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "call-action",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/9QYa9mxiq2c/",
+  "optional_owned_audio": "assets/audio/9QYa9mxiq2c.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern three-storey (G+2) house elevation painted in light beige/white with teal patterned vertical tile features, prominent Apple logo emblem on the facade, iron main gate, covered parking garage, and a terrace with glass/metal railing and overhead wooden-pergola shade.. Neighbourhood: Residential neighborhood in Maniakarampalayam near Thudiyalur, Coimbatore, surrounded by similar row houses/independent homes with paved access road and distant hill views visible from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern three-storey (G+2) house elevation painted in light beige/white with teal patterned vertical tile features, prominent Apple logo emblem on the facade, iron main gate, covered parking garage, and a terrace with glass/metal railing and overhead wooden-pergola shade.. Neighbourhood: Residential neighborhood in Maniakarampalayam near Thudiyalur, Coimbatore, surrounded by similar row houses/independent homes with paved access road and distant hill views visible from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern three-storey (G+2) house elevation painted in light beige/white with teal patterned vertical tile features, prominent Apple logo emblem on the facade, iron main gate, covered parking garage, and a terrace with glass/metal railing and overhead wooden-pergola shade.. Neighbourhood: Residential neighborhood in Maniakarampalayam near Thudiyalur, Coimbatore, surrounded by similar row houses/independent homes with paved access road and distant hill views visible from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern three-storey (G+2) house elevation painted in light beige/white with teal patterned vertical tile features, prominent Apple logo emblem on the facade, iron main gate, covered parking garage, and a terrace with glass/metal railing and overhead wooden-pergola shade.. Neighbourhood: Residential neighborhood in Maniakarampalayam near Thudiyalur, Coimbatore, surrounded by similar row houses/independent homes with paved access road and distant hill views visible from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
