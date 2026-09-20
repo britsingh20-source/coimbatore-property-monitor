@@ -1,0 +1,145 @@
+{
+  "video_id": "GDXIQczr1dA",
+  "source_url": "https://www.youtube.com/watch?v=GDXIQczr1dA",
+  "property_location": "Athipalayam, Saravanampatti, Coimbatore, Tamil Nadu",
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "2 Cent onwards",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹6.50 Lakhs / Cent",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved"
+  },
+  "verified_facts": "Located at SS Garden, Athipalayam near Saravanampatti IT Park, Coimbatore., Plot price is ₹6.50 Lakhs per cent., DTCP approved residential plots available in 2 Cent, 3 Cent, and 4 Cent plot sizes., Up to 80% bank loan assistance available.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational spoken Tamil local presenter style mixed naturally with standard English real-estate terms.",
+    "hook_strategy": "Hook viewers using the prime location near Saravanampatti IT Park coupled with an affordable per-cent entry price.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை சரவணம்பட்டி IT Park மற்றும் அத்திபாளையம் 4 Junction பக்கத்துல இருக்குற SS Garden Location பத்திதான் பாக்க போறோம்!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "living_room",
+          "interior"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல 2 Cent, 3 Cent, அப்புறம் 4 Cent sizes-ல Residential Plots கிடைக்கும்.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "plot-size-highlight",
+        "purpose": "overview"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட Price பாத்தீங்கனா, ஒரு Cent வெறும் 6.50 Lakhs தான்!",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "living_room",
+          "interior"
+        ],
+        "vfx": "price-tag-pop",
+        "purpose": "value"
+      },
+      {
+        "name": "road",
+        "voice": "இங்க Tar Road, Water Connection, 3 Phase EB Connection, அப்புறம் Welcome Arch எல்லாமே அமைச்சு குடுக்குறாங்க.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "living_room",
+          "interior"
+        ],
+        "vfx": "amenities-list-overlay",
+        "purpose": "feature"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP Approval வாங்குன Layout. அப்புறம் முக்கியமான விஷயம், 80% வரை Bank Loan Facility-யும் இருக்கு!",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "living_room",
+          "interior"
+        ],
+        "vfx": "approval-badge-animation",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "Site Visit போறதுக்கும், இதோட முழு Details தெரிஞ்சுக்கவும் உடனே Call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "living_room",
+          "interior"
+        ],
+        "vfx": "call-now-button",
+        "purpose": "conversion"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/GDXIQczr1dA/",
+  "optional_owned_audio": "assets/audio/GDXIQczr1dA.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Paved tar access road inside a gated layout with a welcome arch, electricity poles, palm trees, and residential structures surrounding the gated layout plots.. Neighbourhood: Developing residential locality in Athipalayam near Saravanampatti IT Park with houses, tar roads, and utility connections.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Paved tar access road inside a gated layout with a welcome arch, electricity poles, palm trees, and residential structures surrounding the gated layout plots.. Neighbourhood: Developing residential locality in Athipalayam near Saravanampatti IT Park with houses, tar roads, and utility connections.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Paved tar access road inside a gated layout with a welcome arch, electricity poles, palm trees, and residential structures surrounding the gated layout plots.. Neighbourhood: Developing residential locality in Athipalayam near Saravanampatti IT Park with houses, tar roads, and utility connections.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Paved tar access road inside a gated layout with a welcome arch, electricity poles, palm trees, and residential structures surrounding the gated layout plots.. Neighbourhood: Developing residential locality in Athipalayam near Saravanampatti IT Park with houses, tar roads, and utility connections.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
