@@ -7,13 +7,15 @@
     "bhk": "3 BHK",
     "land_area": "2.5 Cents",
     "built_up_area": "2100 sq ft",
-    "price": "₹86 Lakhs",
+    "price": "₹85 Lakhs",
     "facing": "South-West (Site), East (Main Door)",
     "road_width": "NOT SPECIFIED",
     "parking": "Covered Car Parking (10' x 20')",
-    "approval": "NOT SPECIFIED"
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex with open terrace utility room",
+    "layout_distribution": "Ground floor: formal living, kitchen/dining, one 10' x 10' bedroom with attached bathroom, covered parking and sit-out. First floor: family living and two bedrooms with attached bathrooms. Roof level: open terrace with a small utility room only; not a full residential second floor."
   },
-  "verified_facts": "Location: Maniakarampalayam, near Thudiyalur, Coimbatore., Property Type: 3 BHK semi-furnished independent G+2 house., Land Area: 2.5 Cents (South-West corner plot)., Built-Up Area: 2100 sq ft., Price: ₹86 Lakhs (negotiable), with 75% bank loan availability., Main Door Facing: East., Car Parking: 10' x 20'., Layout includes formal living (16'x16'), family living (10'x16'), kitchen & dining (10'x16'), 3 bedrooms (16'x16', 10'x16', 10'x10'), 3 attached bathrooms + 1 outer bathroom, terrace utility room, borewell, and sump.",
+  "verified_facts": "Location: Maniakarampalayam, near Thudiyalur, Coimbatore. Property type: compact 3 BHK G+1 duplex independent house; it is not an all-ground-floor 3 BHK and the terrace utility is not a full G+2 residential floor. Land area: 2.5 Cents (South-West corner plot). Built-up area: 2100 sq ft. Displayed price: ₹85 Lakhs. Main door facing: East. Covered car parking: 10' x 20'. Ground floor: formal living, kitchen/dining, one 10' x 10' bedroom with attached bathroom, parking and sit-out. First floor: family living and two bedrooms with attached bathrooms. Roof: open terrace with a small utility room only. Other verified features: one outer bathroom, borewell and sump.",
   "content_plan": {
     "target_duration_seconds": 38,
     "style": "Relaxed local property presenter speaking directly to camera with high retention visual cuts",
@@ -34,7 +36,7 @@
       },
       {
         "name": "builtUp",
-        "voice": "2100 sq ft built-up area-ல G+2 structure-ஆ இந்த வீடு அமைஞ்சிருக்கு. Modular kitchen, false ceiling, family living hall-னு ரொம்பவே நல்லா design பண்ணிருக்காங்க.",
+        "voice": "2100 sq ft built-up area-ல இது G+1 duplex வீடு. Ground floor-ல ஒரு bedroom, first floor-ல family living கூட இரண்டு bedrooms இருக்கு; மேலே open terrace-ல utility room மட்டும் இருக்கு.",
         "broll": [
           "living_room",
           "kitchen",
@@ -77,7 +79,7 @@
       },
       {
         "name": "price",
-        "voice": "இதோட price 86 Lakhs negotiable. அதே மாதிரி 75% bank loan availability-யும் இருக்கு.",
+        "voice": "இதோட displayed price 85 Lakhs. Exact price மற்றும் loan details-ஐ site visit முன்னாடி verify பண்ணிக்கோங்க.",
         "broll": [
           "exterior",
           "interior"
@@ -112,19 +114,19 @@
   "scenes": [
     {
       "name": "street",
-      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern three-storey (G+2) house elevation painted in light beige/white with teal patterned vertical tile features, prominent Apple logo emblem on the facade, iron main gate, covered parking garage, and a terrace with glass/metal railing and overhead wooden-pergola shade.. Neighbourhood: Residential neighborhood in Maniakarampalayam near Thudiyalur, Coimbatore, surrounded by similar row houses/independent homes with paved access road and distant hill views visible from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+      "prompt": "Photorealistic compact G+1 duplex independent house in Maniakarampalayam, Coimbatore, Tamil Nadu, on a 2.5-cent site with 2100 sq ft total built-up area. Preserve the source's two-storey beige, cream and grey elevation, narrow frontage, covered single-car portico, metal gate, first-floor parapet and horizontal railing. Hard layout lock: ground floor has living, kitchen/dining and one bedroom; first floor has family living and two bedrooms; roof is an open terrace with a small utility/headroom only. Never show all three bedrooms on the ground floor and never generate a full G+2 third residential storey. Clean religion-neutral entrance: no framed photo, icon, emblem, deity, symbol, sticker, ritual mark, toran, garland, shrine, lamp, kolam or rangoli anywhere on the portico, walls, pillars, gate, door, lintel, threshold or floor. No logos, no visible phone numbers, no misleading text. Natural tropical daylight, truthful smartphone perspective and vertical composition. Smooth establishing gimbal shot from the approach road."
     },
     {
       "name": "exterior",
-      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern three-storey (G+2) house elevation painted in light beige/white with teal patterned vertical tile features, prominent Apple logo emblem on the facade, iron main gate, covered parking garage, and a terrace with glass/metal railing and overhead wooden-pergola shade.. Neighbourhood: Residential neighborhood in Maniakarampalayam near Thudiyalur, Coimbatore, surrounded by similar row houses/independent homes with paved access road and distant hill views visible from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+      "prompt": "Photorealistic compact G+1 duplex independent house in Maniakarampalayam, Coimbatore, Tamil Nadu, on a 2.5-cent site with 2100 sq ft total built-up area. Preserve the source's two-storey beige, cream and grey elevation, narrow frontage, covered single-car portico, metal gate, first-floor parapet and horizontal railing. Hard layout lock: ground floor has living, kitchen/dining and one bedroom; first floor has family living and two bedrooms; roof is an open terrace with a small utility/headroom only. Never show all three bedrooms on the ground floor and never generate a full G+2 third residential storey. Slow truthful reveal of the front elevation and parking. The portico is a hard rejection gate: no framed photo, icon, emblem, deity, symbol, sticker, ritual mark, toran, garland, shrine, lamp, kolam or rangoli anywhere on its walls, pillars, gate, door, lintel, threshold or floor. Continue blank wall/tile finishes seamlessly after removing any source object. No logos, no visible phone numbers and no misleading text."
     },
     {
       "name": "living",
-      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern three-storey (G+2) house elevation painted in light beige/white with teal patterned vertical tile features, prominent Apple logo emblem on the facade, iron main gate, covered parking garage, and a terrace with glass/metal railing and overhead wooden-pergola shade.. Neighbourhood: Residential neighborhood in Maniakarampalayam near Thudiyalur, Coimbatore, surrounded by similar row houses/independent homes with paved access road and distant hill views visible from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+      "prompt": "Photorealistic interior of the same compact G+1 duplex in Maniakarampalayam. Hard floor distribution lock: ground-floor formal living, kitchen/dining and one bedroom; first-floor family living and two bedrooms; open roof terrace with utility only. Preserve verified room proportions, staircase, false ceiling, fixed lighting and built-in finishes without moving all three bedrooms to the ground floor. Remove every personal or religious object while retaining the surrounding architecture. No deity photo, framed image, icon, symbol, shrine, idol, ritual mark, logo or loose furniture. Natural tropical daylight, truthful smartphone perspective and vertical composition."
     },
     {
       "name": "kitchen",
-      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern three-storey (G+2) house elevation painted in light beige/white with teal patterned vertical tile features, prominent Apple logo emblem on the facade, iron main gate, covered parking garage, and a terrace with glass/metal railing and overhead wooden-pergola shade.. Neighbourhood: Residential neighborhood in Maniakarampalayam near Thudiyalur, Coimbatore, surrounded by similar row houses/independent homes with paved access road and distant hill views visible from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+      "prompt": "Photorealistic kitchen/dining walkthrough in the same compact G+1 duplex in Maniakarampalayam. Preserve the verified ground-floor kitchen/dining position, cabinetry, countertop, backsplash, windows and modest room scale. The ground floor also contains formal living and only one of the three bedrooms; the other two bedrooms and family living remain on the first floor. Roof level is open terrace with utility only, not a residential third floor. Remove every personal or religious object while retaining permanent architectural finishes. No framed image, deity, icon, symbol, shrine, ritual mark, logo or loose household item. Natural tropical daylight, truthful smartphone perspective and vertical composition."
     }
   ],
   "status": "auto_approved",

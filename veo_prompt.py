@@ -23,6 +23,10 @@ def build_veo_prompt(job: dict) -> str:
     parking = _value(prop.get("parking"))
     approval = _value(prop.get("approval"))
     price = _value(prop.get("price"))
+    floors = _value(prop.get("floors"))
+    layout_distribution = _value(
+        prop.get("layout_distribution") or job.get("layout_distribution")
+    )
     source_url = _value(job.get("source_url"), "Source video supplied separately")
     facts = _value(job.get("verified_facts"), "Use only facts confirmed in the source video")
 
@@ -65,8 +69,8 @@ IMPORTANT: Present the property as a clean, neutral real-estate walkthrough. Rec
 SHOT 1 — 0 TO 1.4 SECONDS — EXTERIOR
 Moderately brisk forward gimbal reveal from the verified local residential road. Preserve the visible elevation, floor count, colours, gate, windows, parking and neighbourhood. Do not redesign or enlarge the property. Ignore temporary decorations, religious/ceremonial markings, banners, people, vehicles or personal objects that are not permanent building features.
 
-SHOT 2 — 1.4 TO 2.8 SECONDS — PARKING OR PORTICO
-Hard cut to the verified gate, covered parking or portico with a controlled forward move. Preserve its visible tiles, pillars, gate and dimensions. Keep the entrance visually clean and neutral. Remove/omit all ceremonial markings, kolam/rangoli, garlands, deity symbols, religious stickers, footwear and loose household objects. Do not morph through the door.
+SHOT 2 — 1.4 TO 2.8 SECONDS — PARKING OR PORTICO — HARD REJECTION GATE
+Hard cut to the verified gate, covered parking or portico with a controlled forward move. Preserve its visible tiles, pillars, gate and dimensions. The entrance must be completely clean and religion-neutral: no framed image, photo, icon, emblem, symbol, sticker, idol, shrine, niche display, sacred text, Om/Aum, religious swastika, cross, crescent, tilak, sandal/kumkum/turmeric mark, handprint, toran, garland, ritual lamp, kolam or rangoli on any wall, pillar, gate, door, lintel, threshold or floor. Remove the object only and continue the verified wall, tile, wood or stone finish seamlessly. If a clean reconstruction cannot be guaranteed, use another verified clean portico angle. Reject and regenerate Shot 2 before output if any prohibited item appears at any size. Remove footwear and loose household objects. Do not morph through the door.
 
 SHOT 3 — 2.8 TO 4.2 SECONDS — HALL
 Hard cut directly to the verified hall. Give this shot premium real-estate emphasis: bright, clean, highly polished and photorealistic while preserving the source architecture. Use a concise lateral gimbal slide showing polished flooring, windows, wall proportions, permanently installed false ceiling, fixed ceiling lighting and built-in TV panel/TV unit whenever those features are verified. INTERIOR DETAIL LOCK: preserve the verified richness of the TV wall and ceiling — layered panels, grooves/fluting, laminate/wood/stone accents, floating console, niches, profiles, cove/recessed lighting and material contrast when visible. Never simplify a detailed verified TV unit into a plain ivory slab or a detailed false ceiling into a flat/plain ceiling. Do NOT reproduce televisions, deity photos, religious images, family photos, portraits, calendars, posters, wall art, loose tables, chairs, sofas, cots, beds, mattresses or other movable personal belongings. Do not reveal another room unless that connection is clearly visible.
@@ -85,7 +89,7 @@ Hard cut to one final distinct verified permanent property feature or a differen
 
     scale_lock = f"""PROPERTY SCALE / MARKET-REALISM LOCK — ZERO SIZE INFLATION
 The verified BHK count, land area, built-up area, floor count visible in the reference, parking dimensions and price are HARD PHYSICAL SCALE CONSTRAINTS. Never upscale the property to make the video look more premium.
-For this listing the governing facts are: {bhk} | land {land} | built-up {built_up} | price {price}.
+For this listing the governing facts are: {bhk} | land {land} | built-up {built_up} | floors {floors} | layout {layout_distribution} | price {price}.
 The generated exterior footprint, frontage, height, portico, balcony, rooms, hall, kitchen, bedrooms and circulation must remain believable for those exact facts AND must follow the source video's visible proportions.
 - A compact 2BHK / small-site / modest-price independent house must remain a compact local independent house. NEVER turn it into a grand villa, luxury bungalow, mansion, oversized duplex, broad-frontage residence or resort-style home.
 - Never add a second storey, double-height facade/hall, giant balcony, oversized columns, huge lawn/setback, double-car portico, unusually wide gate/frontage or oversized rooms unless each is visibly verified in the source.
@@ -101,7 +105,7 @@ Generate a NATIVE PORTRAIT video only: vertical 9:16 aspect ratio, ideally 1080�
 
 The linked YouTube reference may be landscape. Use it only to understand the property's visual identity, then intelligently recompose every shot for a full-screen 9:16 portrait canvas. Keep the property centred with safe headroom and lower-third space. If native 9:16 output is unavailable in the current Gemini/Veo mode, do not generate a landscape substitute; instruct the user to select Portrait/9:16 mode first.
 
-ZERO-TOLERANCE RELIGION-NEUTRAL OBJECT FILTER — PRESERVE THE ARCHITECTURE
+ZERO-TOLERANCE RELIGION-NEUTRAL VISUAL GATE — PRESERVE THE ARCHITECTURE
 Before planning any shot, identify prohibited personal, religious or ceremonial OBJECTS in every candidate reference angle. IMPORTANT: the presence of such an object NEVER makes the room, TV unit, false ceiling, entrance, staircase, cabinetry, wall panel or other permanent architectural feature ineligible. Remove only the prohibited object and preserve/reconstruct the verified permanent feature around it. Prohibited objects include even small, distant, blurred, partially hidden or background instances of:
 - deity/god/saint photographs, idols, shrines, puja shelves or worship items;
 - religious signs, symbols, stickers, tilak/sandal/kumkum/turmeric marks, ritual handprints or sacred text;
@@ -117,6 +121,8 @@ Never reproduce, blur, cover, stylise or replace a forbidden object. Instead, cl
 - removed floor markings: seamless continuation of the verified floor tile/stone texture.
 
 If a prohibited object cannot be cleanly removed with confidence, choose another angle of THE SAME VERIFIED FEATURE first. Only omit the feature when no clean verified view exists. Never omit an otherwise verified TV unit, TV wall, false ceiling, premium hall feature, fixed lighting, cabinetry or entrance merely because religious/personal content appears nearby. Do not generate a violating frame.
+
+An angle is INELIGIBLE for final output whenever any prohibited religious or ceremonial object remains visible after cleanup, even as a tiny, blurred, distant or partial background detail. The entrance/portico shot is a separate hard rejection gate: inspect its walls, pillars, gate, door, lintel, threshold and floor before accepting it.
 
 REFERENCE-FIRST INSTRUCTION
 Open and use this exact YouTube property video as the visual reference before generating:
@@ -147,6 +153,8 @@ Facing: {facing}
 Parking: {parking}
 Approval: {approval}
 Price: {price}
+Verified floors: {floors}
+Verified floor-by-floor layout: {layout_distribution}
 Verified facts: {facts}
 
 Generate one completely new, highly photorealistic, exactly 10-second vertical 9:16 property walkthrough source clip at 60 fps. This clip will be slowed to 33.3% speed in VN Editor to create a smooth 30-second final video. Camera movement must be moderately brisk, stable and clear so it becomes natural after slowing. Do not reuse source frames directly. Reconstruct the property's permanent architecture using only visually confirmed architectural identity. It must resemble genuine smartphone footage recorded with a professional gimbal by a local Coimbatore property broker, not an architectural render, slideshow or AI-image animation.
@@ -160,7 +168,7 @@ REFERENCE RESEMBLANCE LOCK — 60/40
 Preserve approximately 60% of the source property's verified visual identity: floor count, overall massing, frontage proportions, elevation geometry, entrance/portico position, window/door placement, roof/parapet character, parking arrangement, room proportions, false-ceiling geometry, fixed lighting, built-in TV wall/unit, kitchen cabinetry and other permanent features. The remaining approximately 40% may vary only in non-structural presentation such as neutral paint shade, clean material finish, landscaping, empty-room staging and camera composition. The 40% variation must NEVER alter floor count, convert a single-storey house into a duplex, add rooms/floors, enlarge the footprint/frontage, or erase verified interior features.
 
 FLOOR-COUNT / BHK LAYOUT LOCK
-Determine floor count from the source video before writing the shots. If the complete verified ${bhk} layout is shown on the ground floor, the generated property MUST remain a single-storey ground-floor ${bhk} home. Never infer a duplex merely because the listing uses the word villa/house. A staircase may be shown only if visibly verified, and its presence must not be interpreted as proof that bedrooms or living areas exist on another floor. No invented upper-floor facade, balcony, bedroom, hall or double-height space.
+Determine the HABITABLE floor count and bedroom distribution from the source video before writing the shots. Treat the verified floors and floor-by-floor layout above as hard constraints. MONITOR ARCHITECTURE POLICY: every 3 BHK independent house or villa must be represented as a G+1 duplex with habitable ground and first floors; never generate an all-ground-floor 3 BHK. If the source cannot establish a credible ground/first-floor distribution, stop for review instead of inventing or compressing the layout. For verified duplexes, retain the exact floor-by-floor room allocation and compact two-storey massing. An open roof terrace, stair headroom or small terrace utility room is NOT a full residential second floor: never inflate it into G+2 massing, a third-storey facade, bedroom, hall or balcony. For non-3-BHK properties, follow the source-verified habitable floor count and never infer an upper floor merely from the word villa/house. A staircase is evidence only when its destination and floor usage are visibly or verbally confirmed. No invented upper-floor room, double-height space or floor.
 
 ${scale_lock}
 
@@ -181,10 +189,12 @@ Generate no voiceover, dialogue, music, footsteps or ambience. The 10-second sou
 FIXED RULES — HARD NEGATIVE CONSTRAINTS
 Exactly 10 seconds; native 60 fps output; vertical 9:16; designed for smooth 3× slow motion; seven distinct approximately 1.4-second shots; photorealistic smartphone gimbal footage; preserve the source property's permanent architectural identity; hard cuts between separate physical areas; never invent room connections; never reveal a kitchen through the entrance unless proven; never change floor count, exterior, room dimensions, built-in cabinetry or permanent fixtures; NEVER generate religious imagery, deity photos, idols, shrines, religious symbols, ritual/ceremonial markings or worship items, even when visible in the reference; NEVER generate cots, beds, mattresses or loose furniture beside/under a staircase; NEVER invent or copy movable furniture or personal belongings; no people; no CGI appearance; no floating or spinning camera; no speed ramps; no whip pans; no zoom bursts; no morphing architecture; no repeated shots; no rotating captions; no oversized graphics; one persistent professional information footer only; no distorted doors, windows or cabinets; no spelling errors; no third-party phone numbers; no generated logos.
 
-Before rendering, perform three mandatory audits:
+Before rendering, perform five mandatory audits:
 1. SHOT-PLAN AUDIT: identify and remove every religious image/symbol, deity/idol/shrine, ceremonial marking, garland/toran, kolam/rangoli, family portrait, framed person, calendar, poster or personal photo. DO NOT reject the whole angle when it contains valuable verified architecture; preserve the TV unit, TV wall, false ceiling, lighting, cabinetry, entrance and other permanent features.
 2. FRAME-BY-FRAME AUDIT: inspect the full 10-second draft, including background walls, shelves, door lintels, thresholds and floors. Zero prohibited objects may appear at any size.
-3. REPLACEMENT AUDIT: confirm every removed wall object became uninterrupted plain wall/panel finish and every removed floor/threshold marking became uninterrupted plain tile/stone. Never replace it with another picture, symbol, pattern or decoration.\n4. SCALE AUDIT: compare the draft against BHK, land area, built-up area, floor count, parking and source-video proportions. Reject any shot that makes the house, frontage, hall, portico, balcony or rooms look materially larger, grander or more luxurious than the verified property.
+3. SHOT-2 ENTRANCE AUDIT: inspect every portico/entrance wall, pillar, gate, door, lintel, threshold and floor. Reject Shot 2 if any framed picture, photo, icon, emblem, religious symbol, sticker, ritual mark, shrine-like niche, lamp, toran, garland, kolam or rangoli is visible.
+4. REPLACEMENT AUDIT: confirm every removed wall object became uninterrupted plain wall/panel finish and every removed floor/threshold marking became uninterrupted plain tile/stone. Never replace it with another picture, symbol, pattern or decoration.
+5. SCALE / FLOOR AUDIT: compare the draft against BHK, land area, built-up area, verified habitable floor count, floor-by-floor room distribution, parking and source-video proportions. Reject any shot that compresses a verified duplex onto one floor, turns a terrace utility into a full floor, or makes the house, frontage, hall, portico, balcony or rooms look materially larger, grander or more luxurious than the verified property.
 
 If any frame fails an audit, discard that entire shot and regenerate it from another verified architecture-only angle. Do not proceed with, export or return a violating video.
 

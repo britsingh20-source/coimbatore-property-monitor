@@ -60,7 +60,7 @@ is_property_listing (boolean), location, property_type, bhk, land_area,
 built_up_area, price, facing, road_width, floors, bedrooms, bathrooms,
 parking, approval, amenities (array), nearby_landmarks (array),
 contact_details, missing_fields (array), source_facts (array),
-visual_style, exterior_description, neighbourhood_description.
+layout_distribution, visual_style, exterior_description, neighbourhood_description.
 
 Classification rules:
 - property_type must describe one primary listing only. Never combine categories such as "House / Villa / Plot".
@@ -68,6 +68,10 @@ Classification rules:
 - Use "Independent House", "Villa" or "Apartment" only when that completed or under-construction dwelling itself is the listing.
 - For a plot listing, never place house-construction package pricing in the price field. Use the confirmed plot price or "NOT SPECIFIED", and put the separate construction offer in source_facts.
 - For plots, interiors, BHK and built-up area must be "NOT SPECIFIED" unless the listing is actually selling a dwelling.
+- Determine HABITABLE floor count from the complete visual walkthrough and narration, not from a casual marketing label alone. Use precise values such as "single-storey", "G+1 duplex", or "G+2 residence".
+- An open roof terrace, stair headroom, water-tank level or small terrace utility room is not a full residential floor. For example, ground-floor rooms + first-floor rooms + an open terrace utility must be classified as "G+1 duplex with open terrace utility", not G+2.
+- layout_distribution must state the verified floor-by-floor room allocation, including which floor contains each bedroom/living area and whether the roof level is only open terrace/utility. Never compress rooms from multiple floors onto one floor and never promote a terrace utility to a residential storey.
+- When narration and visible evidence conflict, describe the visually verified habitable layout in floors and layout_distribution and note the wording conflict in source_facts.
 
 Title: {video.get('title', '')}
 Description: {video.get('description', '')}

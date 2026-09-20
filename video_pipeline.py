@@ -53,12 +53,15 @@ def build_video_job(video: dict, property_data: dict, location: dict) -> Path:
             {"name": "internal_road", "prompt": base + " Show verified internal roads, drainage, utilities and plot edges only."},
         ]
     else:
+        floor_lock = property_data.get("floors", "NOT SPECIFIED")
+        layout_lock = property_data.get("layout_distribution", "NOT SPECIFIED")
         base = (
             f"Photorealistic contemporary residential property in {locality}, Coimbatore, Tamil Nadu. "
             f"Architecture consistent with: {property_data.get('exterior_description', 'the verified listing facts')}. "
+            f"Hard floor/layout lock: {floor_lock}; {layout_lock}. "
             f"Neighbourhood: {property_data.get('neighbourhood_description', 'a realistic Coimbatore residential street')}. "
             "Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, "
-            "no logos, no visible phone numbers, no misleading text, vertical composition."
+            "no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition."
         )
         scenes = [
             {"name": "street", "prompt": base + " Smooth establishing gimbal shot from the approach road, ambient city sounds."},
@@ -76,7 +79,8 @@ def build_video_job(video: dict, property_data: dict, location: dict) -> Path:
             key: property_data.get(key, "NOT SPECIFIED")
             for key in (
                 "property_type", "bhk", "land_area", "built_up_area", "price",
-                "facing", "road_width", "parking", "approval"
+                "facing", "road_width", "parking", "approval", "floors",
+                "layout_distribution"
             )
         },
         "verified_facts": facts,

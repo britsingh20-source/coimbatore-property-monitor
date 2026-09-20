@@ -140,7 +140,7 @@ def develop_property_script(property_data: dict, location: dict) -> dict:
         for key in (
             "location", "property_type", "bhk", "land_area", "built_up_area", "price",
             "facing", "road_width", "parking", "approval", "amenities", "nearby_landmarks",
-            "source_facts",
+            "floors", "layout_distribution", "source_facts",
         )
     }
     prompt = f"""
@@ -149,6 +149,7 @@ Develop the extracted property facts into a NATURAL SPOKEN TAMIL presentation. D
 
 Hard rules:
 - Never invent or infer a fact, number, amenity, landmark, approval, distance, road width or property feature.
+- Preserve the verified habitable floor count and floor-by-floor room distribution exactly. Never describe a verified G+1 duplex as an all-ground-floor home, and never describe an open terrace/utility level as a full G+2 residential floor.
 - Use only the VERIFIED INPUT below. If a field is NOT SPECIFIED, do not mention it.
 - Keep common real-estate words naturally mixed in Tamil speech: location, built-up, facing, road, approval, site visit, details.
 - Sound like a relaxed local property presenter speaking to camera, not a formal announcer and not a database.
