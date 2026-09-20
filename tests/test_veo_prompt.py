@@ -82,6 +82,22 @@ def test_prompt_forbids_duplicate_tv_lived_in_kitchen_and_open_bathroom():
     assert "BATHROOM-LOGIC AUDIT" in prompt
 
 
+def test_second_shot_excludes_ritual_prone_entrance_door_completely():
+    prompt = build_veo_prompt({
+        "video_id": "clean-portico",
+        "source_url": "https://www.youtube.com/watch?v=clean-portico",
+        "property_location": "Coimbatore",
+        "property": {"property_type": "New Independent House", "bhk": 2},
+    })
+
+    assert "PARKING / PORTICO STRUCTURE, NOT THE ENTRANCE DOOR" in prompt
+    assert "keep the main entrance door, doorframe, lintel, doorstep and threshold completely OUTSIDE THE FRAME" in prompt
+    assert "SECOND-SHOT PORTICO OVERRIDE" in prompt
+    assert "The door is not required to represent the portico" in prompt
+    assert "special zero-tolerance audit from 1.4 to 2.8 seconds" in prompt
+    assert "door-free parking/gate angle" in prompt
+
+
 def test_missing_values_are_explicitly_omitted():
     prompt = build_veo_prompt({
         "video_id": "missing",
