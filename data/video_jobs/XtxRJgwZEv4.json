@@ -1,0 +1,119 @@
+{
+  "video_id": "XtxRJgwZEv4",
+  "source_url": "https://www.youtube.com/watch?v=XtxRJgwZEv4",
+  "property_location": "Maniakarampalayam, Near Thudiyalur, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "2100 sq ft",
+    "price": "Rs. 86 Lakhs",
+    "facing": "East facing main door (South West corner site)",
+    "road_width": "NOT SPECIFIED",
+    "parking": "1 Car parking (10' x 20')",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex with open terrace",
+    "layout_distribution": "Ground Floor: Covered car parking portico, formal living hall, kitchen & dining area, 1st bedroom, outer bathroom, and internal staircase. First Floor: Family living area, 2 bedrooms with bathrooms, utility space, and staircase to upper level. Roof Level: Open terrace with stair headroom."
+  },
+  "verified_facts": "3BHK Independent house situated in Maniakarampalayam, near Thudiyalur, Coimbatore., Built-up area is 2100 sq ft on a South-West corner site with an East-facing main door., Offered price is 86 Lakhs (negotiable) with up to 75% bank loan availability., Includes car parking, individual borewell, drinking water sump, and semi-furnished interiors.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local Tamil property presenter speaking directly to camera with high retention visual pacing.",
+    "hook_strategy": "Highlighting a 3 BHK independent house in a prime Coimbatore location near Thudiyalur.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை துடியலூர் பக்கத்துல இருக்குற மணியகாரம்பாளையம் location-ல ஒரு சூப்பரான 3 BHK independent house பாக்கப்போறோம்!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "facing",
+        "voice": "இது South West corner site-ல, East facing main door-ோட அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing and site orientation"
+      },
+      {
+        "name": "builtUp",
+        "voice": "2100 sq ft built-up area! G+1 duplex structure. Ground floor-ல car parking, living hall, modular kitchen, 1 bedroom இருக்கு. First floor-ல family living, 2 bedrooms, utility space-ோட மேல open terrace-உம் வருது.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "floor-plan-text",
+        "purpose": "layout distribution"
+      },
+      {
+        "name": "price",
+        "voice": "Semi-furnished interiors, borewell, water sump வசதியோட இந்த வீட்டின் price 86 Lakhs. Bank loan availability-யும் இருக்கு.",
+        "broll": [
+          "interior",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "price presentation"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணவோ, details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "contact-card",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/XtxRJgwZEv4/",
+  "optional_owned_audio": "assets/audio/XtxRJgwZEv4.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern home with light grey wall render, vertical teal patterned accent tiles on front facade, dark grey window frames, glass balcony railing, and gated parking portico.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Covered car parking portico, formal living hall, kitchen & dining area, 1st bedroom, outer bathroom, and internal staircase. First Floor: Family living area, 2 bedrooms with bathrooms, utility space, and staircase to upper level. Roof Level: Open terrace with stair headroom.. Neighbourhood: Developing residential neighborhood in Maniakarampalayam, Coimbatore, surrounded by low-rise residences and open plots.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern home with light grey wall render, vertical teal patterned accent tiles on front facade, dark grey window frames, glass balcony railing, and gated parking portico.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Covered car parking portico, formal living hall, kitchen & dining area, 1st bedroom, outer bathroom, and internal staircase. First Floor: Family living area, 2 bedrooms with bathrooms, utility space, and staircase to upper level. Roof Level: Open terrace with stair headroom.. Neighbourhood: Developing residential neighborhood in Maniakarampalayam, Coimbatore, surrounded by low-rise residences and open plots.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern home with light grey wall render, vertical teal patterned accent tiles on front facade, dark grey window frames, glass balcony railing, and gated parking portico.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Covered car parking portico, formal living hall, kitchen & dining area, 1st bedroom, outer bathroom, and internal staircase. First Floor: Family living area, 2 bedrooms with bathrooms, utility space, and staircase to upper level. Roof Level: Open terrace with stair headroom.. Neighbourhood: Developing residential neighborhood in Maniakarampalayam, Coimbatore, surrounded by low-rise residences and open plots.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern home with light grey wall render, vertical teal patterned accent tiles on front facade, dark grey window frames, glass balcony railing, and gated parking portico.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Covered car parking portico, formal living hall, kitchen & dining area, 1st bedroom, outer bathroom, and internal staircase. First Floor: Family living area, 2 bedrooms with bathrooms, utility space, and staircase to upper level. Roof Level: Open terrace with stair headroom.. Neighbourhood: Developing residential neighborhood in Maniakarampalayam, Coimbatore, surrounded by low-rise residences and open plots.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
