@@ -1,0 +1,105 @@
+{
+  "video_id": "hY7G55OaWys",
+  "source_url": "https://www.youtube.com/watch?v=hY7G55OaWys",
+  "property_location": "Thudiyalur",
+  "entrance_contaminated": true,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "3 BHK",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹86 Lakhs",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered portico parking",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex with open terrace utility",
+    "layout_distribution": "Ground floor: Covered portico parking, living hall with pooja cupboard and TV unit, 1 bedroom, 1 bathroom, internal staircase. First floor: Living hall with decorative hexagon ceiling lights, 2 bedrooms with wardrobes and attached bathrooms, balcony. Roof level: Open terrace with pergola shading and utility access."
+  },
+  "verified_facts": "Title offers a 3BHK Villa for sale near Thudiyalur priced at ₹86 Lakhs with contact number 9952850155., Video displays Aram Realtors branding and contact 99528 50155 overlay on screen., Property is a G+1 duplex structure featuring ground floor living space, 1 bedroom, bathroom, pooja unit, first floor living area with 2 bedrooms and attached bathrooms, balcony, and staircase access to top open roof terrace with pergola.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Thudiyalur சைட்ல 3 BHK Villa தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹86 Lakhs.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 46.126750337s.', 'status': 'RESOURCE_EXHAUSTED"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/hY7G55OaWys/",
+  "optional_owned_audio": "assets/audio/hY7G55OaWys.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern white duplex villa elevation with turquoise-green floral vertical design panels, Apple logo feature on front facade, glass balcony railing, and terrace pergola.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground floor: Covered portico parking, living hall with pooja cupboard and TV unit, 1 bedroom, 1 bathroom, internal staircase. First floor: Living hall with decorative hexagon ceiling lights, 2 bedrooms with wardrobes and attached bathrooms, balcony. Roof level: Open terrace with pergola shading and utility access.. Neighbourhood: Residential locality near Thudiyalur surrounded by greenery and neighboring residential buildings.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern white duplex villa elevation with turquoise-green floral vertical design panels, Apple logo feature on front facade, glass balcony railing, and terrace pergola.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground floor: Covered portico parking, living hall with pooja cupboard and TV unit, 1 bedroom, 1 bathroom, internal staircase. First floor: Living hall with decorative hexagon ceiling lights, 2 bedrooms with wardrobes and attached bathrooms, balcony. Roof level: Open terrace with pergola shading and utility access.. Neighbourhood: Residential locality near Thudiyalur surrounded by greenery and neighboring residential buildings.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern white duplex villa elevation with turquoise-green floral vertical design panels, Apple logo feature on front facade, glass balcony railing, and terrace pergola.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground floor: Covered portico parking, living hall with pooja cupboard and TV unit, 1 bedroom, 1 bathroom, internal staircase. First floor: Living hall with decorative hexagon ceiling lights, 2 bedrooms with wardrobes and attached bathrooms, balcony. Roof level: Open terrace with pergola shading and utility access.. Neighbourhood: Residential locality near Thudiyalur surrounded by greenery and neighboring residential buildings.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern white duplex villa elevation with turquoise-green floral vertical design panels, Apple logo feature on front facade, glass balcony railing, and terrace pergola.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground floor: Covered portico parking, living hall with pooja cupboard and TV unit, 1 bedroom, 1 bathroom, internal staircase. First floor: Living hall with decorative hexagon ceiling lights, 2 bedrooms with wardrobes and attached bathrooms, balcony. Roof level: Open terrace with pergola shading and utility access.. Neighbourhood: Residential locality near Thudiyalur surrounded by greenery and neighboring residential buildings.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "needs_review",
+  "approval_mode": "automatic_fact_gate_v1"
+}
