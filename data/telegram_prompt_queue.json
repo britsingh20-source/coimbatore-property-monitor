@@ -1097,8 +1097,11 @@
     },
     {
       "prompt_message_id": 713,
+      "r2_key": "social-ready/N8OFO4_0LwY.mp4",
       "sent_at": "2026-09-19T13:06:41.719166+00:00",
-      "status": "pending_mobile_upload",
+      "status": "assigned_to_r2_upload",
+      "telegram_file_unique_id": "AgADzB0AAuXceFU",
+      "uploaded_at": "2026-09-20T01:57:44.730702+00:00",
       "video_id": "N8OFO4_0LwY"
     },
     {
@@ -1108,10 +1111,10 @@
       "video_id": "r2oVfH94bnw"
     },
     {
-      "video_id": "MxgZKbdxPEw",
+      "prompt_message_id": 731,
       "sent_at": "2026-09-20T01:14:28.143717+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 731
+      "video_id": "MxgZKbdxPEw"
     }
   ]
 }

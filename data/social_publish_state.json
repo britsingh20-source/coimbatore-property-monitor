@@ -332,6 +332,89 @@
         }
       }
     },
+    "social-ready/N8OFO4_0LwY.mp4": {
+      "content": {
+        "caption": "🏠 ₹65 Lakhs 2 BHK Independent House in Maniakarampalayam, Near Thudiyalur, Coimbatore\n\n📍 Location: Maniakarampalayam, Near Thudiyalur, Coimbatore\n🏡 Property: 2 BHK Independent House\n💰 Price: ₹65 Lakhs\n📐 Land: 3 Cents\n🏗️ Built-up: 1166 sqft\n🧭 Facing: South (Site), East (Main Door)\n🚗 Parking: Covered Car Parking\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#ManiakarampalayamProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#ManiakarampalayamProperty",
+          "#CoimbatoreProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "₹65 Lakhs 2 BHK Independent House in Maniakarampalayam, Near Thudiyalur, Coimbatore | Site Visit 900",
+        "youtube_description": "₹65 Lakhs 2 BHK Independent House in Maniakarampalayam, Near Thudiyalur, Coimbatore. Watch the complete property walkthrough.\n\n📍 Location: Maniakarampalayam, Near Thudiyalur, Coimbatore\n🏡 Property: 2 BHK Independent House\n💰 Price: ₹65 Lakhs\n📐 Land: 3 Cents\n🏗️ Built-up: 1166 sqft\n🧭 Facing: South (Site), East (Main Door)\n🚗 Parking: Covered Car Parking\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #ManiakarampalayamProperty #CoimbatoreProperty #CoimbatoreRealEstate"
+      },
+      "etag": "272562f671e3904471f08bd0d3830a54-3",
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "channel": "real_estate",
+            "creation_id": "17898520320599708",
+            "media_id": "18194583352384318",
+            "processing": {
+              "id": "17898520320599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17898520479599708",
+            "media_id": "18108007391232070",
+            "processing": {
+              "id": "17898520479599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
+          "status": "failed"
+        }
+      },
+      "status": "visual_policy_passed",
+      "video_id": "N8OFO4_0LwY",
+      "visual_compliance": {
+        "ceremonial_markings_present": false,
+        "compliant": true,
+        "confidence": 1.0,
+        "findings": [],
+        "personal_photos_present": false,
+        "religious_visuals_present": false,
+        "violating_timestamps": []
+      },
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 247856,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 21.17,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 247708,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 21.2,
+          "height": 1280,
+          "width": 720
+        }
+      }
+    },
     "social-ready/YeuCzhxC-j0.mp4": {
       "content": {
         "caption": "🏠 ₹67 Lakhs 2 BHK Independent Villa in Karamadai, Mettupalayam Road, Coimbatore, Tamil Nadu, India — would you visit this property?\n\n📍 Location: Karamadai, Mettupalayam Road, Coimbatore, Tamil Nadu, India\n🏡 Property: 2 BHK Independent Villa\n💰 Price: ₹67 Lakhs\n📐 Land: 3.5 Cents\n🏗️ Built-up: 1,300 sq.ft.\n🧭 Facing: East\n🚗 Parking: Covered Car & Two-Wheeler Parking (21'0\" x 14'0\")\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #KaramadaiMettupalayamRoadCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
