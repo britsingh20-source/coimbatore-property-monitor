@@ -1,110 +1,44 @@
 {
   "areas": [
     {
-      "slug": "karamadai",
-      "name": "Karamadai",
-      "aliases": ["karamadai", "காரமடை"],
-      "micro_localities": ["Saandhimedu", "Santhimedu", "Periyankampalayam", "Peeches Colony", "Teachers Colony"]
-    },
-    {
       "slug": "saravanampatti",
       "name": "Saravanampatti",
-      "aliases": ["saravanampatti", "சரவணம்பட்டி"],
-      "micro_localities": []
-    },
-    {
-      "slug": "thudiyalur",
-      "name": "Thudiyalur",
-      "aliases": ["thudiyalur", "துடியலூர்"],
-      "micro_localities": []
-    },
-    {
-      "slug": "pannimadai",
-      "name": "Pannimadai",
-      "aliases": ["pannimadai", "pannirmadai", "பன்னிமடை"],
-      "micro_localities": []
+      "aliases": ["saravanampatti", "saravanampatty", "saranampatti", "saravanam patti", "சரவணம்பட்டி"],
+      "micro_localities": ["Maniyakarampalayam", "Athipalayam"]
     },
     {
       "slug": "idigarai",
       "name": "Idigarai",
-      "aliases": ["idigarai", "இடிகரை"],
-      "micro_localities": []
+      "aliases": ["idigarai", "idigirai", "edigarai", "இடிகரை"],
+      "micro_localities": ["Urumandampalayam", "NGGO Colony", "Pannimadai", "Thudiyalur", "Kurudampalayam"]
     },
     {
-      "slug": "narasimhanaickenpalayam",
-      "name": "Narasimhanaickenpalayam",
-      "aliases": ["narasimhanaickenpalayam", "narasimmanaickenpalayam", "என்.எஸ்.என்.பாளையம்"],
-      "micro_localities": []
+      "slug": "karamadai",
+      "name": "Karamadai",
+      "aliases": ["karamadai", "காரமடை"],
+      "micro_localities": ["Teachers Colony", "Shanthimedu", "Santhimedu", "Saandhimedu", "Periyankampalayam", "Peeches Colony", "Bellathi", "Chikkarampalayam", "Kannarpalayam", "Marudur", "Narasimhanaickenpalayam", "Narasimhanagar Palayam", "Sri Narasima Nagar", "Veerapandi Pirivu", "Veeramandi Pirivu"]
     },
     {
       "slug": "periyanaickenpalayam",
       "name": "Periyanaickenpalayam",
-      "aliases": ["periyanaickenpalayam", "periyanaicken palayam"],
+      "aliases": ["periyanaickenpalayam", "periyanaicken palayam", "periyanaickanpalayam", "periyanaickenpalyam", "பெரியநாயக்கன்பாளையம்"],
+      "micro_localities": ["Narasimhanaickenpalayam", "Narasimhanagar Palayam", "Sri Narasima Nagar", "Andaalpuram", "Press Colony", "Pilichi Panchayat", "T N Palayam", "Veerapandi Pirivu", "Veeramandi Pirivu"]
+    },
+    {
+      "slug": "mettupalayam",
+      "name": "Mettupalayam",
+      "aliases": ["mettupalayam", "mettuppalayam", "metupalayam", "மேட்டுப்பாளையம்"],
       "micro_localities": []
     },
     {
-      "slug": "vadavalli",
-      "name": "Vadavalli",
-      "aliases": ["vadavalli", "வடவள்ளி"],
-      "micro_localities": ["Somayampalayam", "Bommanampalayam", "Marudhamalai Road"]
-    },
-    {
-      "slug": "kalapatti",
-      "name": "Kalapatti",
-      "aliases": ["kalapatti", "காளப்பட்டி", "காலப்பட்டி"],
-      "micro_localities": []
-    },
-    {
-      "slug": "kovilpalayam",
-      "name": "Kovilpalayam",
-      "aliases": ["kovilpalayam", "kovil palayam"],
-      "micro_localities": []
-    },
-    {
-      "slug": "annur",
-      "name": "Annur",
-      "aliases": ["annur", "அன்னூர்"],
-      "micro_localities": []
-    },
-    {
-      "slug": "mettupalayam-road",
-      "name": "Mettupalayam Road",
-      "aliases": ["mettupalayam road", "mtp road"],
-      "micro_localities": []
-    },
-    {
-      "slug": "sulur",
-      "name": "Sulur",
-      "aliases": ["sulur", "சூலூர்"],
-      "micro_localities": []
-    },
-    {
-      "slug": "pattanam",
-      "name": "Pattanam",
-      "aliases": ["pattanam", "பட்டணம்"],
-      "micro_localities": []
-    },
-    {
-      "slug": "malumichampatti",
-      "name": "Malumichampatti",
-      "aliases": ["malumichampatti", "malumichampatty"],
-      "micro_localities": []
-    },
-    {
-      "slug": "othakalmandapam",
-      "name": "Othakalmandapam",
-      "aliases": ["othakalmandapam", "othakkalmandapam", "othakal mandapam"],
-      "micro_localities": ["Seerapalayam"]
-    },
-    {
-      "slug": "rs-puram",
-      "name": "RS Puram",
-      "aliases": ["rs puram", "r.s. puram", "ஆர்.எஸ்.புரம்"],
+      "slug": "mettupalayam-annur-road",
+      "name": "Mettupalayam–Annur Road",
+      "aliases": ["mettupalayam annur road", "mettupalayam to annur road", "annur mettupalayam road", "annur to mettupalayam road", "mettupalayam annur main road", "மேட்டுப்பாளையம் அன்னூர் சாலை", "அன்னூர் மேட்டுப்பாளையம் சாலை"],
       "micro_localities": []
     }
   ],
   "rules": {
-    "max_selected": 2,
+    "max_selected": 6,
     "selection_ttl_minutes": 15
   }
 }

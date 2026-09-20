@@ -20,8 +20,18 @@ def load_locations() -> dict:
 
 
 def active_weekly_focus(*_args, **_kwargs) -> dict:
-    """Weekly focus is intentionally disabled; monitor all Coimbatore areas."""
+    """Dynamic weekly focus is disabled; the static locality whitelist is authoritative."""
     return {}
+
+
+def contains_phrase(text: str, candidate: str) -> bool:
+    """Match a normalized alias as complete words instead of as a substring."""
+    needle = normalize(candidate)
+    # Tamil place names commonly take suffixes such as -இல்/-யில் in titles;
+    # substring matching preserves those grammatical forms safely.
+    if re.search(r"[\u0b80-\u0bff]", needle):
+        return needle in text
+    return bool(needle and f" {needle} " in f" {text} ")
 
 
 def match_location(*values: str) -> dict:
@@ -30,15 +40,17 @@ def match_location(*values: str) -> dict:
     matched = []
 
     for locality, aliases in config["target_localities"].items():
-        if any(normalize(alias) in text for alias in aliases):
+        if any(contains_phrase(text, alias) for alias in aliases):
             matched.append(locality)
 
     city_match = any(
-        normalize(alias) in text for alias in config.get("city_aliases", [])
+        contains_phrase(text, alias) for alias in config.get("city_aliases", [])
     )
 
-    is_target = bool(matched or city_match)
-    score = 1.0 if matched else (0.75 if city_match else 0.0)
+    # Coimbatore alone is deliberately not enough. A prompt is approved only
+    # when one of the permanent focus localities/corridors is explicitly found.
+    is_target = bool(matched)
+    score = 1.0 if matched else 0.0
 
     return {
         "is_target_location": is_target,

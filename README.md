@@ -10,7 +10,12 @@ vertical marketing videos with Remotion.
 2. It checks the configured YouTube channels and processes at most three eligible videos.
 3. Gemini extracts the property type, location, land area, built-up area, price,
    facing, road width, parking, approval and source facts.
-4. The locality matcher rejects listings outside the configured Coimbatore areas.
+4. The metadata gate and final locality matcher both reject listings outside
+   Saravanampatti, Idigarai, Karamadai, Periyanaickenpalayam, Mettupalayam and
+   the Mettupalayam–Annur Road corridor, including their configured nearby
+   micro-localities. The matched micro-locality is retained as the actual
+   property location; it is not renamed to the parent town. A generic
+   "Coimbatore" mention is not sufficient to generate a prompt.
 5. A target listing with a property type, source facts and at least two usable
    property facts becomes `auto_approved`.
 6. Sparse or ambiguous listings become `needs_review` and are not rendered.

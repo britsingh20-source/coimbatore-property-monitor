@@ -1,26 +1,41 @@
 {
   "timezone": "Asia/Kolkata",
-  "week_start": "2026-09-13",
-  "week_end": "2026-09-19",
   "focus_areas": [
     {
+      "name": "Saravanampatti",
+      "aliases": ["saravanampatti", "saravanampatty", "saranampatti", "saravanam patti", "சரவணம்பட்டி"],
+      "micro_localities": ["Maniyakarampalayam", "Athipalayam"]
+    },
+    {
+      "name": "Idigarai",
+      "aliases": ["idigarai", "idigirai", "edigarai", "இடிகரை"],
+      "micro_localities": ["Urumandampalayam", "NGGO Colony", "Pannimadai", "Thudiyalur", "Kurudampalayam"]
+    },
+    {
       "name": "Karamadai",
-      "aliases": [
-        "karamadai",
-        "காரமடை"
-      ],
-      "micro_localities": [
-        "Saandhimedu",
-        "Santhimedu",
-        "Periyankampalayam",
-        "Peeches Colony"
-      ]
+      "aliases": ["karamadai", "காரமடை"],
+      "micro_localities": ["Teachers Colony", "Shanthimedu", "Santhimedu", "Saandhimedu", "Periyankampalayam", "Peeches Colony", "Bellathi", "Chikkarampalayam", "Kannarpalayam", "Marudur", "Narasimhanaickenpalayam", "Narasimhanagar Palayam", "Sri Narasima Nagar", "Veerapandi Pirivu", "Veeramandi Pirivu"]
+    },
+    {
+      "name": "Periyanaickenpalayam",
+      "aliases": ["periyanaickenpalayam", "periyanaicken palayam", "periyanaickanpalayam", "periyanaickenpalyam", "பெரியநாயக்கன்பாளையம்"],
+      "micro_localities": ["Narasimhanaickenpalayam", "Narasimhanagar Palayam", "Sri Narasima Nagar", "Andaalpuram", "Press Colony", "Pilichi Panchayat", "T N Palayam", "Veerapandi Pirivu", "Veeramandi Pirivu"]
+    },
+    {
+      "name": "Mettupalayam",
+      "aliases": ["mettupalayam", "mettuppalayam", "metupalayam", "மேட்டுப்பாளையம்"],
+      "micro_localities": []
+    },
+    {
+      "name": "Mettupalayam–Annur Road",
+      "aliases": ["mettupalayam annur road", "mettupalayam to annur road", "annur mettupalayam road", "annur to mettupalayam road", "mettupalayam annur main road", "மேட்டுப்பாளையம் அன்னூர் சாலை", "அன்னூர் மேட்டுப்பாளையம் சாலை"],
+      "micro_localities": []
     }
   ],
   "rules": {
-    "max_focus_areas": 2,
+    "max_focus_areas": 6,
     "require_focus_match_for_prompt": true,
     "allow_citywide_fallback": false,
-    "prompt_instruction": "For this Sunday-to-Saturday focus week, prioritize only properties and prompt context that belong to the configured focus area(s) or their configured micro-localities. Do not broaden the prompt to unrelated Coimbatore areas."
+    "prompt_instruction": "Generate property prompts only for the configured north-Coimbatore focus belts: Saravanampatti, Idigarai, Karamadai, Periyanaickenpalayam, Mettupalayam and the Mettupalayam–Annur Road corridor, including their listed nearby micro-localities. Never broaden to unrelated Coimbatore areas."
   }
 }

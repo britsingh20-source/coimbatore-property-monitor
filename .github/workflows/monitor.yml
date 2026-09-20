@@ -24,7 +24,9 @@ on:
       - "reference_frames.py"
       - "requirements.txt"
       - "location_matcher.py"
+      - "config/focus_areas.json"
       - "config/locations.json"
+      - "config/weekly_focus.json"
 
 concurrency:
   group: property-automation-state
@@ -55,8 +57,9 @@ jobs:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           MAX_VIDEOS_PER_RUN: "2"
-          MAX_EXPLORATORY_PER_RUN: "1"
-          SPARSE_RECENT_FALLBACK: "1"
+          STRICT_TARGET_ONLY: "1"
+          MAX_EXPLORATORY_PER_RUN: "0"
+          SPARSE_RECENT_FALLBACK: "0"
         run: python main.py
       - name: Commit state, records and approval jobs
         id: commit

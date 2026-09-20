@@ -7,6 +7,9 @@ from pathlib import Path
 LOCATION_CONFIG = Path("config/locations.json")
 MAX_EXPLORATORY_PER_RUN = int(os.environ.get("MAX_EXPLORATORY_PER_RUN", "1"))
 SPARSE_RECENT_FALLBACK = int(os.environ.get("SPARSE_RECENT_FALLBACK", "1"))
+STRICT_TARGET_ONLY = os.environ.get("STRICT_TARGET_ONLY", "1").strip().casefold() not in {
+    "0", "false", "no", "off",
+}
 
 PROPERTY_TERMS = (
     "villa", "house", "home", "property", "plot", "land", "site", "2bhk", "3bhk", "4bhk",
@@ -30,7 +33,9 @@ def _normalize(value: str) -> str:
 
 def _location_terms() -> tuple[str, ...]:
     config = json.loads(LOCATION_CONFIG.read_text(encoding="utf-8"))
-    terms = list(config.get("city_aliases", []))
+    # City aliases are informational only. "Coimbatore" must never make a
+    # listing eligible without an explicit permanent-focus locality match.
+    terms = []
     for canonical, aliases in (config.get("target_localities") or {}).items():
         terms.append(canonical)
         terms.extend(aliases or [])
@@ -77,6 +82,8 @@ def build_analysis_queue(videos: list[dict], recent_ids: set[str], max_per_run: 
     for index, video in enumerate(videos):
         signals = metadata_score(video)
         recent = video.get("video_id") in recent_ids
+        if STRICT_TARGET_ONLY and not signals["strong_target"]:
+            continue
         if not signals["exploratory"] and not signals["strong_target"]:
             # These monitored channels are property channels. A sparse YouTube title/description
             # must not make the whole Gemini queue empty. Keep a very small recent fallback pool,
