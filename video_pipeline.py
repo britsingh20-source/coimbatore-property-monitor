@@ -13,6 +13,10 @@ def _present(value) -> bool:
     return str(value or "").strip().upper() not in MISSING
 
 
+def _truthy(value) -> bool:
+    return value is True or str(value or "").strip().lower() in {"1", "true", "yes"}
+
+
 def automatic_approval_ready(property_data: dict) -> bool:
     """Approve only listings with a property type and at least two usable facts.
 
@@ -55,6 +59,11 @@ def build_video_job(video: dict, property_data: dict, location: dict) -> Path:
     else:
         floor_lock = property_data.get("floors", "NOT SPECIFIED")
         layout_lock = property_data.get("layout_distribution", "NOT SPECIFIED")
+        entrance_contaminated = _truthy(property_data.get("entrance_contaminated"))
+        entrance_rule = (
+            " Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame."
+            if entrance_contaminated else ""
+        )
         base = (
             f"Photorealistic contemporary residential property in {locality}, Coimbatore, Tamil Nadu. "
             f"Architecture consistent with: {property_data.get('exterior_description', 'the verified listing facts')}. "
@@ -62,6 +71,7 @@ def build_video_job(video: dict, property_data: dict, location: dict) -> Path:
             f"Neighbourhood: {property_data.get('neighbourhood_description', 'a realistic Coimbatore residential street')}. "
             "Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, "
             "no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition."
+            f"{entrance_rule}"
         )
         scenes = [
             {"name": "street", "prompt": base + " Smooth establishing gimbal shot from the approach road, ambient city sounds."},
@@ -75,6 +85,7 @@ def build_video_job(video: dict, property_data: dict, location: dict) -> Path:
         "video_id": video["video_id"],
         "source_url": video["url"],
         "property_location": property_data.get("location", "NOT SPECIFIED"),
+        "entrance_contaminated": _truthy(property_data.get("entrance_contaminated")),
         "property": {
             key: property_data.get(key, "NOT SPECIFIED")
             for key in (

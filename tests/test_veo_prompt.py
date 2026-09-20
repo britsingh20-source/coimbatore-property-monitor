@@ -66,3 +66,35 @@ def test_missing_values_are_explicitly_omitted():
         "property": {"property_type": "Villa", "bhk": 3},
     })
     assert "Not specified — omit from video" in prompt
+
+
+def test_contaminated_entrance_uses_door_free_parking_shot():
+    prompt = build_veo_prompt({
+        "video_id": "contaminated-entrance",
+        "source_url": "https://www.youtube.com/watch?v=contaminated-entrance",
+        "property_location": "Maniakarampalayam",
+        "entrance_contaminated": True,
+        "property": {
+            "property_type": "Independent House",
+            "bhk": "3 BHK",
+            "floors": "G+1 duplex",
+        },
+        "verified_facts": "Ground floor one bedroom; first floor two bedrooms",
+    })
+
+    assert "GATE / PARKING STRUCTURE ONLY" in prompt
+    assert "Keep the main entrance door, doorframe, lintel and threshold completely outside" in prompt
+    assert "blank uninterrupted wall or tile finishes" in prompt
+    assert "Do not point the camera toward the entrance" in prompt
+
+
+def test_clean_entrance_preserves_standard_parking_shot():
+    prompt = build_veo_prompt({
+        "video_id": "clean-entrance",
+        "source_url": "https://www.youtube.com/watch?v=clean-entrance",
+        "property_location": "Karamadai",
+        "property": {"property_type": "Independent House", "bhk": "2 BHK"},
+    })
+
+    assert "SHOT 2 — 1.4 TO 2.8 SECONDS — PARKING OR PORTICO" in prompt
+    assert "GATE / PARKING STRUCTURE ONLY" not in prompt

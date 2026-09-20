@@ -12,8 +12,15 @@ def _value(value: Any, fallback: str = "Not specified — omit from video") -> s
     return fallback if text.upper() in MISSING else text
 
 
+def _truthy(value: Any) -> bool:
+    return value is True or str(value or "").strip().lower() in {"1", "true", "yes"}
+
+
 def build_veo_prompt(job: dict) -> str:
     prop = job.get("property") or {}
+    entrance_contaminated = _truthy(
+        job.get("entrance_contaminated", prop.get("entrance_contaminated"))
+    )
     location = _value(job.get("property_location"), "Coimbatore")
     property_type = _value(prop.get("property_type"), "Property")
     bhk = _value(prop.get("bhk"), "")
@@ -58,15 +65,21 @@ Hard cut to an amenity or neighbourhood feature only when visibly confirmed. Oth
 SHOT 7 — 8.5 TO 10 SECONDS — FINAL LAYOUT VIEW
 Hard cut to the strongest verified wide view of the plotted community. Hold the final 0.3 seconds almost motionless. No house walkthrough and no repeated angle."""
     else:
-        shot_plan = """Create seven clearly different, architecturally consistent shots of approximately 1.4 seconds each. Use clean hard cuts only. All seven shots must show the same property with identical elevation, tiles, wall colours, ceiling design, built-in cabinetry, doors, windows, fixtures and room proportions.
+        if entrance_contaminated:
+            entrance_shot = """SHOT 2 — 1.4 TO 2.8 SECONDS — GATE / PARKING STRUCTURE ONLY
+Hard cut to the verified gate and covered parking bay. Frame only the gate, driveway, empty parking surface, portico ceiling, structural pillars and blank uninterrupted wall or tile finishes. Keep the main entrance door, doorframe, lintel and threshold completely outside the camera frame. Use plain continuous floor tiles and empty pillars and walls. Do not point the camera toward the entrance or reveal it in the background. If this exact clean composition is unavailable, replace Shot 2 with a different verified exterior angle."""
+        else:
+            entrance_shot = """SHOT 2 — 1.4 TO 2.8 SECONDS — PARKING OR PORTICO
+Hard cut to the verified gate, covered parking or portico with a controlled forward move. Preserve its visible tiles, pillars, gate and dimensions. Keep the entrance visually clean and neutral. Remove/omit all ceremonial markings, kolam/rangoli, garlands, deity symbols, religious stickers, footwear and loose household objects. Do not morph through the door."""
+
+        shot_plan = f"""Create seven clearly different, architecturally consistent shots of approximately 1.4 seconds each. Use clean hard cuts only. All seven shots must show the same property with identical elevation, tiles, wall colours, ceiling design, built-in cabinetry, doors, windows, fixtures and room proportions.
 
 IMPORTANT: Present the property as a clean, neutral real-estate walkthrough. Reconstruct the BUILDING, not the current occupant's personal belongings. Movable furniture and personal décor are not part of the property's architectural identity and must not be copied into the generated video.
 
 SHOT 1 — 0 TO 1.4 SECONDS — EXTERIOR
 Moderately brisk forward gimbal reveal from the verified local residential road. Preserve the visible elevation, floor count, colours, gate, windows, parking and neighbourhood. Do not redesign or enlarge the property. Ignore temporary decorations, religious/ceremonial markings, banners, people, vehicles or personal objects that are not permanent building features.
 
-SHOT 2 — 1.4 TO 2.8 SECONDS — PARKING OR PORTICO
-Hard cut to the verified gate, covered parking or portico with a controlled forward move. Preserve its visible tiles, pillars, gate and dimensions. Keep the entrance visually clean and neutral. Remove/omit all ceremonial markings, kolam/rangoli, garlands, deity symbols, religious stickers, footwear and loose household objects. Do not morph through the door.
+{entrance_shot}
 
 SHOT 3 — 2.8 TO 4.2 SECONDS — HALL
 Hard cut directly to the verified hall. Give this shot premium real-estate emphasis: bright, clean, highly polished and photorealistic while preserving the source architecture. Use a concise lateral gimbal slide showing polished flooring, windows, wall proportions, permanently installed false ceiling, fixed ceiling lighting and built-in TV panel/TV unit whenever those features are verified. INTERIOR DETAIL LOCK: preserve the verified richness of the TV wall and ceiling — layered panels, grooves/fluting, laminate/wood/stone accents, floating console, niches, profiles, cove/recessed lighting and material contrast when visible. Never simplify a detailed verified TV unit into a plain ivory slab or a detailed false ceiling into a flat/plain ceiling. Do NOT reproduce televisions, deity photos, religious images, family photos, portraits, calendars, posters, wall art, loose tables, chairs, sofas, cots, beds, mattresses or other movable personal belongings. Do not reveal another room unless that connection is clearly visible.
