@@ -61,5 +61,26 @@ class LocationMatcherTests(unittest.TestCase):
                 self.assertIn(expected, result["matched_localities"])
 
 
+    def test_common_transliteration_and_typing_mistakes(self):
+        cases = {
+            "2BHK sale in Idikarai": "Idigarai",
+            "Villa at Idigray": "Idigarai",
+            "Plot in Periyanayakkanpalayam": "Periyanaickenpalayam",
+            "House at Saravanampati": "Saravanampatti",
+            "Land in Karmadai": "Karamadai",
+            "Home near Mettupalaiyam": "Mettupalayam",
+            "Villa at Narasimhanaickenpalaym": "Narasimhanaickenpalayam",
+        }
+        for title, expected in cases.items():
+            with self.subTest(title=title):
+                result = match_location(title)
+                self.assertTrue(result["is_target_location"])
+                self.assertIn(expected, result["matched_localities"])
+
+    def test_unrelated_area_typo_is_still_rejected(self):
+        result = match_location("Villa for sale in Vadavali, Coimbatore")
+        self.assertFalse(result["is_target_location"])
+
+
 if __name__ == "__main__":
     unittest.main()
