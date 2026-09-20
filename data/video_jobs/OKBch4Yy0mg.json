@@ -1,0 +1,134 @@
+{
+  "video_id": "OKBch4Yy0mg",
+  "source_url": "https://www.youtube.com/watch?v=OKBch4Yy0mg",
+  "property_location": "Maniakarampalayam, Near Thudiyalur, Coimbatore, Tamil Nadu, India",
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3BHK",
+    "land_area": "2.5 Cents (1123 sq ft)",
+    "built_up_area": "1950 sq ft",
+    "price": "85 Lakhs",
+    "facing": "North facing main door, West corner site",
+    "road_width": "NOT SPECIFIED",
+    "parking": "2 Car Parking Space (21' x 16')",
+    "approval": "NOT SPECIFIED"
+  },
+  "verified_facts": "3BHK independent house built on 2.5 Cents (1123 sq ft) land with 1950 sq ft built-up area, Located at Maniakarampalayam, near Thudiyalur, Coimbatore, West corner site with North-facing main teak wood door, Asking price is Rs. 85 Lakhs (negotiable), with 75% bank loan facility available, Spacious car parking area measuring 21' x 16' suitable for two cars, Includes individual borewell, drinking water sump, and outer utility/bathroom, Ground floor layout: Living hall (15.5' x 17'), Kitchen cum dining (16' x 8'), Kids bedroom (10' x 11') with attached bathroom (6.5' x 4.25'), First floor layout: Living hall (16' x 16'), Second bedroom (17' x 16') with attached bathroom (6.5' x 4.25'), Third master bedroom (10' x 16') with attached bathroom (4' x 8'), and Balcony (10' x 10')",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking naturally to camera in conversational Tamil with property terms",
+    "hook_strategy": "Lead directly with 3BHK Independent House availability in prime Maniakarampalayam near Thudiyalur",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை துடியலூர் பக்கத்துல இருக்குற மணியகாரம்பாளையம் location-ல ஒரு அருமையான 3BHK Independent House விற்பனைக்கு வந்துருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதுல முக்கியமான விஷயம், இதோட price 85 Lakhs negotiable, அதுமட்டுமில்லாம 75% bank loan facility இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "land"
+        ],
+        "vfx": "price-tag-pop",
+        "purpose": "value_proposition"
+      },
+      {
+        "name": "land",
+        "voice": "2.5 Cents அதாவது 1123 sq ft land-ல, 2 car parking space வசதியோட இந்த வீடு அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "dimension-overlay",
+        "purpose": "land_details"
+      },
+      {
+        "name": "facing",
+        "voice": "அதே மாதிரி இது West corner site. Main door பாத்தீங்கனா North facing teak wood door கொடுத்துருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room"
+        ],
+        "vfx": "compass-graphic",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1950 sq ft built-up area-ல false ceiling, LED lights, modular kitchen, semi-furnished interiors, borewell, sump அப்புறம் balcony-யோட சூப்பரா பண்ணிருக்காங்க.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "exterior",
+          "road"
+        ],
+        "vfx": "feature-text-highlights",
+        "purpose": "interior_walkthrough"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த வீட்டை நேர்ல வந்து பாக்க, உடனே site visit schedule பண்ணுங்க. Call for details.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "contact-card-pop",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/OKBch4Yy0mg/",
+  "optional_owned_audio": "assets/audio/OKBch4Yy0mg.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+1 independent house with a beige and brown exterior palette, stencil floral artwork, LED spotlighting, wide metal gate with CNC cut designs, double car ramp, and an open terrace with views of surrounding hills. Neighbourhood: Established residential locality in Maniakarampalayam near Thudiyalur, Coimbatore, surrounded by similar independent homes, paved roads, and scenic mountain backdrops. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+1 independent house with a beige and brown exterior palette, stencil floral artwork, LED spotlighting, wide metal gate with CNC cut designs, double car ramp, and an open terrace with views of surrounding hills. Neighbourhood: Established residential locality in Maniakarampalayam near Thudiyalur, Coimbatore, surrounded by similar independent homes, paved roads, and scenic mountain backdrops. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+1 independent house with a beige and brown exterior palette, stencil floral artwork, LED spotlighting, wide metal gate with CNC cut designs, double car ramp, and an open terrace with views of surrounding hills. Neighbourhood: Established residential locality in Maniakarampalayam near Thudiyalur, Coimbatore, surrounded by similar independent homes, paved roads, and scenic mountain backdrops. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+1 independent house with a beige and brown exterior palette, stencil floral artwork, LED spotlighting, wide metal gate with CNC cut designs, double car ramp, and an open terrace with views of surrounding hills. Neighbourhood: Established residential locality in Maniakarampalayam near Thudiyalur, Coimbatore, surrounded by similar independent homes, paved roads, and scenic mountain backdrops. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
