@@ -52,12 +52,50 @@ def test_prompt_filters_personal_religious_and_loose_furniture_details():
     assert "Do not replace a removed object with another decorative object" in prompt
     assert "the staircase and surrounding architecture must remain clear and unobstructed" in prompt
     assert "Do NOT reproduce televisions, deity photos, religious images" in prompt
-    assert "ZERO-TOLERANCE RELIGION-NEUTRAL VISUAL GATE" in prompt
-    assert "An angle is INELIGIBLE" in prompt
+    assert "ZERO-TOLERANCE RELIGION-NEUTRAL OBJECT FILTER" in prompt
     assert "plain uninterrupted floor tiles" in prompt
     assert "blank neutral wall or empty built-in panel" in prompt
-    assert "perform three mandatory audits" in prompt
+    assert "perform seven mandatory audits" in prompt
     assert "discard that entire shot" in prompt
+
+
+def test_prompt_forbids_duplicate_tv_lived_in_kitchen_and_open_bathroom():
+    prompt = build_veo_prompt({
+        "video_id": "new-home-logic",
+        "source_url": "https://www.youtube.com/watch?v=new-home-logic",
+        "property_location": "Coimbatore",
+        "property": {
+            "property_type": "New Independent House",
+            "bhk": 2,
+            "built_up_area": "950 sq.ft",
+        },
+        "verified_facts": "New home with hall, modular kitchen and enclosed bathroom",
+    })
+
+    assert "STRICT NO-DUPLICATE-TV RULE" in prompt
+    assert "TV unit/TV wall appears in more than one shot" in prompt
+    assert "BRAND-NEW, UNOCCUPIED, NEVER-USED home" in prompt
+    assert "spice bottles/jars" in prompt
+    assert "NEW-HOME KITCHEN AUDIT" in prompt
+    assert "BATHROOM PRIVACY / ENCLOSURE LOCK" in prompt
+    assert "never generate an open bathroom beside a separate toilet" in prompt
+    assert "BATHROOM-LOGIC AUDIT" in prompt
+
+
+def test_second_shot_excludes_ritual_prone_entrance_door_completely():
+    prompt = build_veo_prompt({
+        "video_id": "clean-portico",
+        "source_url": "https://www.youtube.com/watch?v=clean-portico",
+        "property_location": "Coimbatore",
+        "property": {"property_type": "New Independent House", "bhk": 2},
+    })
+
+    assert "PARKING / PORTICO STRUCTURE, NOT THE ENTRANCE DOOR" in prompt
+    assert "keep the main entrance door, doorframe, lintel, doorstep and threshold completely OUTSIDE THE FRAME" in prompt
+    assert "SECOND-SHOT PORTICO OVERRIDE" in prompt
+    assert "The door is not required to represent the portico" in prompt
+    assert "special zero-tolerance audit from 1.4 to 2.8 seconds" in prompt
+    assert "door-free parking/gate angle" in prompt
 
 
 def test_missing_values_are_explicitly_omitted():
