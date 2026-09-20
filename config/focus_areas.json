@@ -3,37 +3,122 @@
     {
       "slug": "saravanampatti",
       "name": "Saravanampatti",
-      "aliases": ["saravanampatti", "saravanampatty", "saranampatti", "saravanam patti", "சரவணம்பட்டி"],
-      "micro_localities": ["Maniyakarampalayam", "Athipalayam"]
+      "aliases": [
+        "saravanampatti",
+        "saravanampatty",
+        "saranampatti",
+        "saravanam patti",
+        "சரவணம்பட்டி",
+        "saravanampati",
+        "saranampatty",
+        "saravanampathy"
+      ],
+      "micro_localities": [
+        "Maniyakarampalayam",
+        "Athipalayam"
+      ]
     },
     {
       "slug": "idigarai",
       "name": "Idigarai",
-      "aliases": ["idigarai", "idigirai", "edigarai", "இடிகரை"],
-      "micro_localities": ["Urumandampalayam", "NGGO Colony", "Pannimadai", "Thudiyalur", "Kurudampalayam"]
+      "aliases": [
+        "idigarai",
+        "idigirai",
+        "edigarai",
+        "இடிகரை",
+        "idikarai",
+        "idigrai",
+        "idigray",
+        "edigirai",
+        "edigrai"
+      ],
+      "micro_localities": [
+        "Urumandampalayam",
+        "NGGO Colony",
+        "Pannimadai",
+        "Thudiyalur",
+        "Kurudampalayam"
+      ]
     },
     {
       "slug": "karamadai",
       "name": "Karamadai",
-      "aliases": ["karamadai", "காரமடை"],
-      "micro_localities": ["Teachers Colony", "Shanthimedu", "Santhimedu", "Saandhimedu", "Periyankampalayam", "Peeches Colony", "Bellathi", "Chikkarampalayam", "Kannarpalayam", "Marudur", "Narasimhanaickenpalayam", "Narasimhanagar Palayam", "Sri Narasima Nagar", "Veerapandi Pirivu", "Veeramandi Pirivu"]
+      "aliases": [
+        "karamadai",
+        "காரமடை",
+        "karmadai",
+        "karamadi",
+        "kaaramadai"
+      ],
+      "micro_localities": [
+        "Teachers Colony",
+        "Shanthimedu",
+        "Santhimedu",
+        "Saandhimedu",
+        "Periyankampalayam",
+        "Peeches Colony",
+        "Bellathi",
+        "Chikkarampalayam",
+        "Kannarpalayam",
+        "Marudur",
+        "Narasimhanaickenpalayam",
+        "Narasimhanagar Palayam",
+        "Sri Narasima Nagar",
+        "Veerapandi Pirivu",
+        "Veeramandi Pirivu"
+      ]
     },
     {
       "slug": "periyanaickenpalayam",
       "name": "Periyanaickenpalayam",
-      "aliases": ["periyanaickenpalayam", "periyanaicken palayam", "periyanaickanpalayam", "periyanaickenpalyam", "பெரியநாயக்கன்பாளையம்"],
-      "micro_localities": ["Narasimhanaickenpalayam", "Narasimhanagar Palayam", "Sri Narasima Nagar", "Andaalpuram", "Press Colony", "Pilichi Panchayat", "T N Palayam", "Veerapandi Pirivu", "Veeramandi Pirivu"]
+      "aliases": [
+        "periyanaickenpalayam",
+        "periyanaicken palayam",
+        "periyanaickanpalayam",
+        "periyanaickenpalyam",
+        "பெரியநாயக்கன்பாளையம்",
+        "periyanayakkanpalayam",
+        "periya naicken palayam",
+        "periya nayakkan palayam",
+        "periyanaickan palayam"
+      ],
+      "micro_localities": [
+        "Narasimhanaickenpalayam",
+        "Narasimhanagar Palayam",
+        "Sri Narasima Nagar",
+        "Andaalpuram",
+        "Press Colony",
+        "Pilichi Panchayat",
+        "T N Palayam",
+        "Veerapandi Pirivu",
+        "Veeramandi Pirivu"
+      ]
     },
     {
       "slug": "mettupalayam",
       "name": "Mettupalayam",
-      "aliases": ["mettupalayam", "mettuppalayam", "metupalayam", "மேட்டுப்பாளையம்"],
+      "aliases": [
+        "mettupalayam",
+        "mettuppalayam",
+        "metupalayam",
+        "மேட்டுப்பாளையம்",
+        "mettupalaiyam",
+        "mettupallayam"
+      ],
       "micro_localities": []
     },
     {
       "slug": "mettupalayam-annur-road",
       "name": "Mettupalayam–Annur Road",
-      "aliases": ["mettupalayam annur road", "mettupalayam to annur road", "annur mettupalayam road", "annur to mettupalayam road", "mettupalayam annur main road", "மேட்டுப்பாளையம் அன்னூர் சாலை", "அன்னூர் மேட்டுப்பாளையம் சாலை"],
+      "aliases": [
+        "mettupalayam annur road",
+        "mettupalayam to annur road",
+        "annur mettupalayam road",
+        "annur to mettupalayam road",
+        "mettupalayam annur main road",
+        "மேட்டுப்பாளையம் அன்னூர் சாலை",
+        "அன்னூர் மேட்டுப்பாளையம் சாலை"
+      ],
       "micro_localities": []
     }
   ],
