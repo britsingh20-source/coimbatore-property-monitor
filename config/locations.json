@@ -1,33 +1,205 @@
 {
   "city": "Coimbatore",
-  "city_aliases": ["coimbatore", "covai", "kovai", "கோவை", "கோயம்புத்தூர்"],
+  "city_aliases": [
+    "coimbatore",
+    "covai",
+    "kovai",
+    "கோவை",
+    "கோயம்புத்தூர்"
+  ],
   "target_localities": {
-    "Saravanampatti": ["saravanampatti", "saravanampatty", "saranampatti", "saravanam patti", "சரவணம்பட்டி"],
-    "Maniyakarampalayam": ["maniyakarampalayam", "maniyakaranpalayam", "manikarampalayam", "manikaranpalayam", "மணிகரம்பாளையம்", "மணியகாரம்பாளையம்"],
-    "Athipalayam": ["athipalayam", "atthipalayam", "athipalayam pirivu", "அத்திபாளையம்", "அத்திப்பாளையம்", "அத்திப்பாளையம் பிரிவு"],
-    "Idigarai": ["idigarai", "idigirai", "edigarai", "இடிகரை"],
-    "Urumandampalayam": ["urumandampalayam", "urumanthampalayam", "urmandampalayam", "உருமாண்டாம்பாளையம்", "உருமாண்டம்பாளையம்"],
-    "NGGO Colony": ["nggo colony", "n g g o colony", "என் ஜி ஜி ஓ காலனி"],
-    "Pannimadai": ["pannimadai", "pannirmadai", "pannimadai road", "பன்னிமடை"],
-    "Thudiyalur": ["thudiyalur", "thudiyaloor", "துடியலூர்"],
-    "Kurudampalayam": ["kurudampalayam", "kurudam palayam", "குருடம்பாளையம்"],
-    "Karamadai": ["karamadai", "காரமடை"],
-    "Teachers Colony": ["teachers colony", "teacher's colony", "teachers colony karamadai", "டீச்சர்ஸ் காலனி"],
-    "Shanthimedu": ["shanthimedu", "santhimedu", "saandhimedu", "shanti medu", "santhi medu", "சாந்திமேடு"],
-    "Periyankampalayam": ["periyankampalayam", "periyankam palayam", "பெரியாங்கம்பாளையம்"],
-    "Peeches Colony": ["peeches colony", "peaches colony", "பீச்சஸ் காலனி"],
-    "Bellathi": ["bellathi", "belathi", "பெள்ளாதி", "பெல்லாதி"],
-    "Chikkarampalayam": ["chikkarampalayam", "chikkaram palayam", "சிக்காரம்பாளையம்"],
-    "Kannarpalayam": ["kannarpalayam", "kannar palayam", "கண்ணார்பாளையம்"],
-    "Marudur": ["marudur karamadai", "maruthur karamadai", "மருதூர் காரமடை"],
-    "Periyanaickenpalayam": ["periyanaickenpalayam", "periyanaicken palayam", "periyanaickanpalayam", "periyanaickenpalyam", "பெரியநாயக்கன்பாளையம்"],
-    "Narasimhanaickenpalayam": ["narasimhanaickenpalayam", "narasimmanaickenpalayam", "narasimhanaicken palayam", "narasimhanagar palayam", "narasimha nagar palayam", "என் எஸ் என் பாளையம்", "நரசிம்மநாயக்கன்பாளையம்"],
-    "Veerapandi Pirivu": ["veerapandi pirivu", "veeramandi pirivu", "veerapandi junction", "வீரபாண்டி பிரிவு"],
-    "Sri Narasima Nagar": ["sri narasima nagar", "sri narasimha nagar", "ஸ்ரீ நரசிம்மா நகர்"],
-    "Andaalpuram / Press Colony": ["andaalpuram", "andalpuram", "press colony", "ஆண்டாள்புரம்", "பிரஸ் காலனி"],
-    "Pilichi Panchayat": ["pilichi panchayat", "pilichi", "பிளிச்சி ஊராட்சி", "பிளிச்சி"],
-    "T N Palayam": ["t n palayam", "tn palayam", "t.n. palayam", "டி என் பாளையம்"],
-    "Mettupalayam": ["mettupalayam", "mettuppalayam", "metupalayam", "மேட்டுப்பாளையம்"],
-    "Mettupalayam–Annur Road": ["mettupalayam annur road", "mettupalayam to annur road", "annur mettupalayam road", "annur to mettupalayam road", "mettupalayam annur main road", "மேட்டுப்பாளையம் அன்னூர் சாலை", "அன்னூர் மேட்டுப்பாளையம் சாலை"]
+    "Saravanampatti": [
+      "saravanampatti",
+      "saravanampatty",
+      "saranampatti",
+      "saravanam patti",
+      "சரவணம்பட்டி",
+      "saravanampati",
+      "saranampatty",
+      "saravanampathy"
+    ],
+    "Maniyakarampalayam": [
+      "maniyakarampalayam",
+      "maniyakaranpalayam",
+      "manikarampalayam",
+      "manikaranpalayam",
+      "மணிகரம்பாளையம்",
+      "மணியகாரம்பாளையம்",
+      "maniyakaran palayam",
+      "maniyakaram palayam"
+    ],
+    "Athipalayam": [
+      "athipalayam",
+      "atthipalayam",
+      "athipalayam pirivu",
+      "அத்திபாளையம்",
+      "அத்திப்பாளையம்",
+      "அத்திப்பாளையம் பிரிவு"
+    ],
+    "Idigarai": [
+      "idigarai",
+      "idigirai",
+      "edigarai",
+      "இடிகரை",
+      "idikarai",
+      "idigrai",
+      "idigray",
+      "edigirai",
+      "edigrai"
+    ],
+    "Urumandampalayam": [
+      "urumandampalayam",
+      "urumanthampalayam",
+      "urmandampalayam",
+      "உருமாண்டாம்பாளையம்",
+      "உருமாண்டம்பாளையம்",
+      "urumandam palayam",
+      "urumandampalyam"
+    ],
+    "NGGO Colony": [
+      "nggo colony",
+      "n g g o colony",
+      "என் ஜி ஜி ஓ காலனி"
+    ],
+    "Pannimadai": [
+      "pannimadai",
+      "pannirmadai",
+      "pannimadai road",
+      "பன்னிமடை"
+    ],
+    "Thudiyalur": [
+      "thudiyalur",
+      "thudiyaloor",
+      "துடியலூர்"
+    ],
+    "Kurudampalayam": [
+      "kurudampalayam",
+      "kurudam palayam",
+      "குருடம்பாளையம்"
+    ],
+    "Karamadai": [
+      "karamadai",
+      "காரமடை",
+      "karmadai",
+      "karamadi",
+      "kaaramadai"
+    ],
+    "Teachers Colony": [
+      "teachers colony",
+      "teacher's colony",
+      "teachers colony karamadai",
+      "டீச்சர்ஸ் காலனி"
+    ],
+    "Shanthimedu": [
+      "shanthimedu",
+      "santhimedu",
+      "saandhimedu",
+      "shanti medu",
+      "santhi medu",
+      "சாந்திமேடு"
+    ],
+    "Periyankampalayam": [
+      "periyankampalayam",
+      "periyankam palayam",
+      "பெரியாங்கம்பாளையம்"
+    ],
+    "Peeches Colony": [
+      "peeches colony",
+      "peaches colony",
+      "பீச்சஸ் காலனி"
+    ],
+    "Bellathi": [
+      "bellathi",
+      "belathi",
+      "பெள்ளாதி",
+      "பெல்லாதி"
+    ],
+    "Chikkarampalayam": [
+      "chikkarampalayam",
+      "chikkaram palayam",
+      "சிக்காரம்பாளையம்"
+    ],
+    "Kannarpalayam": [
+      "kannarpalayam",
+      "kannar palayam",
+      "கண்ணார்பாளையம்"
+    ],
+    "Marudur": [
+      "marudur karamadai",
+      "maruthur karamadai",
+      "மருதூர் காரமடை"
+    ],
+    "Periyanaickenpalayam": [
+      "periyanaickenpalayam",
+      "periyanaicken palayam",
+      "periyanaickanpalayam",
+      "periyanaickenpalyam",
+      "பெரியநாயக்கன்பாளையம்",
+      "periyanayakkanpalayam",
+      "periya naicken palayam",
+      "periya nayakkan palayam",
+      "periyanaickan palayam"
+    ],
+    "Narasimhanaickenpalayam": [
+      "narasimhanaickenpalayam",
+      "narasimmanaickenpalayam",
+      "narasimhanaicken palayam",
+      "narasimhanagar palayam",
+      "narasimha nagar palayam",
+      "என் எஸ் என் பாளையம்",
+      "நரசிம்மநாயக்கன்பாளையம்",
+      "narasimmanayakkanpalayam",
+      "narasimhanaickanpalayam"
+    ],
+    "Veerapandi Pirivu": [
+      "veerapandi pirivu",
+      "veeramandi pirivu",
+      "veerapandi junction",
+      "வீரபாண்டி பிரிவு",
+      "veerappandi pirivu",
+      "veerapandipirivu",
+      "veerappandi"
+    ],
+    "Sri Narasima Nagar": [
+      "sri narasima nagar",
+      "sri narasimha nagar",
+      "ஸ்ரீ நரசிம்மா நகர்"
+    ],
+    "Andaalpuram / Press Colony": [
+      "andaalpuram",
+      "andalpuram",
+      "press colony",
+      "ஆண்டாள்புரம்",
+      "பிரஸ் காலனி"
+    ],
+    "Pilichi Panchayat": [
+      "pilichi panchayat",
+      "pilichi",
+      "பிளிச்சி ஊராட்சி",
+      "பிளிச்சி"
+    ],
+    "T N Palayam": [
+      "t n palayam",
+      "tn palayam",
+      "t.n. palayam",
+      "டி என் பாளையம்"
+    ],
+    "Mettupalayam": [
+      "mettupalayam",
+      "mettuppalayam",
+      "metupalayam",
+      "மேட்டுப்பாளையம்",
+      "mettupalaiyam",
+      "mettupallayam"
+    ],
+    "Mettupalayam–Annur Road": [
+      "mettupalayam annur road",
+      "mettupalayam to annur road",
+      "annur mettupalayam road",
+      "annur to mettupalayam road",
+      "mettupalayam annur main road",
+      "மேட்டுப்பாளையம் அன்னூர் சாலை",
+      "அன்னூர் மேட்டுப்பாளையம் சாலை"
+    ]
   }
 }
