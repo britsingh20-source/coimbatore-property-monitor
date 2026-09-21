@@ -1,0 +1,137 @@
+{
+  "video_id": "CAOQ6QqzuB8",
+  "source_url": "https://www.youtube.com/watch?v=CAOQ6QqzuB8",
+  "property_location": "Kalapatti Road, Coimbatore, Tamil Nadu, India",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹19.95 Lakhs per cent",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP & RERA Approved",
+    "floors": "NOT SPECIFIED",
+    "layout_distribution": "Residential plot layout containing sub-divided vacant plots, paved internal roads, street lights, and community park facilities."
+  },
+  "verified_facts": "Luxury residential plot sale located 1 km from SVB Tech Park near Kalapatti Road., Priced at ₹19.95 Lakhs per cent., DTCP and RERA approved gated layout., Features wide blacktop roads, solar street lights, red soil plots, and a children's play park.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local Tamil property presenter speaking directly to camera with high retention visual cuts",
+    "hook_strategy": "Highlighting prime location advantage of being just 1 km from SVB Tech Park on Kalapatti Road",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Kalapatti Road-ல, SVB Tech Park-க்கு வெறும் 1 km தூரத்துல ஒரு சூப்பரான residential plot location பாக்கப்போறோம்!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "location-pin-highlight",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது ஒரு அமைதியான gated community layout. நல்ல red soil plots, குழந்தைகள் விளையாட children's play area மற்றும் landscaped garden வசதிகளோட இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "kitchen"
+        ],
+        "vfx": "amenities-pop-in",
+        "purpose": "layout_overview"
+      },
+      {
+        "name": "road",
+        "voice": "லேஅவுட் உள்ள பாத்தீங்கனா, அகலமான blacktop roads அப்புறம் solar street lights எல்லாமே நீட்டா அமைச்சு குடுத்துருக்காங்க.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "road-width-text",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், இந்த layout முழுசா DTCP மற்றும் RERA approval பெற்றது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_building"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price பாத்தீங்கனா, ஒரு cent ₹19.95 Lakhs-ல இருந்து start ஆகுது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "living_room"
+        ],
+        "vfx": "price-tag-reveal",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேரடியா வந்து பார்க்க அல்லது மேலும் details அறிய உடனே call பண்ணுங்க, site visit arrange பண்றோம்!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "call-now-button",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/CAOQ6QqzuB8/",
+  "optional_owned_audio": "assets/audio/CAOQ6QqzuB8.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Well-developed plot community featuring blacktop roads with white center markings, roadside saplings, solar street lighting, and a gated park area with playground equipment.. Neighbourhood: Residential area close to SVB Tech Park off Kalapatti Road in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Well-developed plot community featuring blacktop roads with white center markings, roadside saplings, solar street lighting, and a gated park area with playground equipment.. Neighbourhood: Residential area close to SVB Tech Park off Kalapatti Road in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Well-developed plot community featuring blacktop roads with white center markings, roadside saplings, solar street lighting, and a gated park area with playground equipment.. Neighbourhood: Residential area close to SVB Tech Park off Kalapatti Road in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Well-developed plot community featuring blacktop roads with white center markings, roadside saplings, solar street lighting, and a gated park area with playground equipment.. Neighbourhood: Residential area close to SVB Tech Park off Kalapatti Road in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
