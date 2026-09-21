@@ -611,18 +611,39 @@ def _publish_one(key: str, etag: str, client, bucket: str, state: dict, queue: d
         if video_path.stat().st_size < 100_000:
             raise RuntimeError(f"R2 video is too small: {key}")
 
-        try:
-            compliance = _visual_compliance_check(video_path)
-        except Exception as error:
+        compliance = None
+        compliance_error = None
+        for compliance_attempt in range(3):
+            try:
+                compliance = _visual_compliance_check(video_path)
+                compliance_error = None
+                break
+            except Exception as error:
+                compliance_error = error
+                error_text = str(error)
+                transient = any(
+                    marker in error_text
+                    for marker in ("503", "UNAVAILABLE", "high demand", "429", "RESOURCE_EXHAUSTED")
+                )
+                if transient and compliance_attempt < 2:
+                    wait_seconds = 15 * (compliance_attempt + 1)
+                    print(
+                        f"Visual compliance service temporarily unavailable; "
+                        f"retrying in {wait_seconds}s"
+                    )
+                    time.sleep(wait_seconds)
+                    continue
+                break
+        if compliance is None:
             record["visual_compliance"] = {
-                "status": "check_failed",
-                "error": str(error)[:1500],
+                "status": "check_failed_retryable",
+                "error": str(compliance_error)[:1500],
             }
-            record["status"] = "quarantined_visual_policy"
+            record["status"] = "visual_policy_check_retryable"
             _save_state(state)
             raise RuntimeError(
-                "Visual compliance check failed; publishing blocked for manual review"
-            ) from error
+                "Visual compliance service unavailable after retries; upload remains retryable"
+            ) from compliance_error
         record["visual_compliance"] = compliance
         if not compliance.get("compliant"):
             record["status"] = "quarantined_visual_policy"
