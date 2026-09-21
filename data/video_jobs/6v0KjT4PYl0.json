@@ -1,0 +1,139 @@
+{
+  "video_id": "6v0KjT4PYl0",
+  "source_url": "https://www.youtube.com/watch?v=6v0KjT4PYl0",
+  "property_location": "L&T Bypass, Near Karpagam College, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": true,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "3 BHK",
+    "land_area": "1500 sq ft (3.5 Cents)",
+    "built_up_area": "1890 sq ft",
+    "price": "₹97 Lakhs to ₹1.30 Crores",
+    "facing": "West facing plot with North facing main entrance",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered parking for 2 cars and two-wheelers",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex with covered balcony and roof terrace",
+    "layout_distribution": "Ground Floor: Covered parking porch (17x20 ft), foyer (5x5 ft), living room (16x16 ft), dedicated pooja room (3x6.5 ft), dining hall (10x10 ft), modular kitchen (10x11 ft) with internal utility space, ground floor master bedroom (10x16 ft) with attached Western bathroom, exterior setback space with service sink, gas cylinder cage, and an outdoor Indian-style toilet (4x6 ft). First Floor: Upstairs landing hallway, second master bedroom (10x16 ft) with attached Western bathroom, third bedroom (10x11 ft) with sliding wardrobe and attached Western bathroom (4x10 ft), and a large covered balcony/utility lounge. Roof Level: Open terrace featuring a steel-framed gazebo roof, 3 kW solar panel grid, solar water heater, water filtration system, and overhead tanks."
+  },
+  "verified_facts": "1500 sq ft land area (3.5 Cents), 1890 sq ft built-up area 3 BHK villa, Located in a private gated community of 20 villa units near Karpagam College, L&T Bypass, Coimbatore, West-facing plot with North-facing teak wood main entrance door, Ground floor includes covered car parking (17x20 ft), foyer (5x5 ft), living room (16x16 ft), pooja room (3x6.5 ft), dining area (10x10 ft), modular kitchen (10x11 ft), utility nook, master bedroom (10x16 ft) with attached bath, rear setback, and outdoor Indian toilet (4x6 ft), First floor includes a second master bedroom (10x16 ft) with attached bath, kids bedroom (10x11 ft) with sliding wardrobe and attached bath (4x10 ft), and a spacious covered balcony/utility space, Terrace floor includes gazebo seating structure, 3 kW solar panels, solar water heater, water tanks, water softener, and pressure pump, Pricing ranges from ₹97 Lakhs to ₹1.30 Crores",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "L&T Bypass, Near Karpagam College, Coimbatore, Tamil Nadu சைட்ல 3 BHK Villa தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹97 Lakhs to ₹1.30 Crores.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 1500 sq ft (3.5 Cents) லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 1890 sq ft இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு West facing plot with North facing main entrance ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 920.965372ms.', 'status': 'RESOURCE_EXHAUSTED'"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/6v0KjT4PYl0/",
+  "optional_owned_audio": "assets/audio/6v0KjT4PYl0.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary multi-tone villa facade styled in grey, white, and peach vertical paneling, equipped with a folding wooden-slat front gate, checkerboard tiled parking garage, side setback access paths, and top terrace solar panel setup.. Hard floor/layout lock: G+1 duplex with covered balcony and roof terrace; Ground Floor: Covered parking porch (17x20 ft), foyer (5x5 ft), living room (16x16 ft), dedicated pooja room (3x6.5 ft), dining hall (10x10 ft), modular kitchen (10x11 ft) with internal utility space, ground floor master bedroom (10x16 ft) with attached Western bathroom, exterior setback space with service sink, gas cylinder cage, and an outdoor Indian-style toilet (4x6 ft). First Floor: Upstairs landing hallway, second master bedroom (10x16 ft) with attached Western bathroom, third bedroom (10x11 ft) with sliding wardrobe and attached Western bathroom (4x10 ft), and a large covered balcony/utility lounge. Roof Level: Open terrace featuring a steel-framed gazebo roof, 3 kW solar panel grid, solar water heater, water filtration system, and overhead tanks.. Neighbourhood: Suburban gated residential enclave featuring uniform row villas, asphalt internal roads, street lighting, and open green surroundings adjacent to the L&T Bypass highway.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary multi-tone villa facade styled in grey, white, and peach vertical paneling, equipped with a folding wooden-slat front gate, checkerboard tiled parking garage, side setback access paths, and top terrace solar panel setup.. Hard floor/layout lock: G+1 duplex with covered balcony and roof terrace; Ground Floor: Covered parking porch (17x20 ft), foyer (5x5 ft), living room (16x16 ft), dedicated pooja room (3x6.5 ft), dining hall (10x10 ft), modular kitchen (10x11 ft) with internal utility space, ground floor master bedroom (10x16 ft) with attached Western bathroom, exterior setback space with service sink, gas cylinder cage, and an outdoor Indian-style toilet (4x6 ft). First Floor: Upstairs landing hallway, second master bedroom (10x16 ft) with attached Western bathroom, third bedroom (10x11 ft) with sliding wardrobe and attached Western bathroom (4x10 ft), and a large covered balcony/utility lounge. Roof Level: Open terrace featuring a steel-framed gazebo roof, 3 kW solar panel grid, solar water heater, water filtration system, and overhead tanks.. Neighbourhood: Suburban gated residential enclave featuring uniform row villas, asphalt internal roads, street lighting, and open green surroundings adjacent to the L&T Bypass highway.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary multi-tone villa facade styled in grey, white, and peach vertical paneling, equipped with a folding wooden-slat front gate, checkerboard tiled parking garage, side setback access paths, and top terrace solar panel setup.. Hard floor/layout lock: G+1 duplex with covered balcony and roof terrace; Ground Floor: Covered parking porch (17x20 ft), foyer (5x5 ft), living room (16x16 ft), dedicated pooja room (3x6.5 ft), dining hall (10x10 ft), modular kitchen (10x11 ft) with internal utility space, ground floor master bedroom (10x16 ft) with attached Western bathroom, exterior setback space with service sink, gas cylinder cage, and an outdoor Indian-style toilet (4x6 ft). First Floor: Upstairs landing hallway, second master bedroom (10x16 ft) with attached Western bathroom, third bedroom (10x11 ft) with sliding wardrobe and attached Western bathroom (4x10 ft), and a large covered balcony/utility lounge. Roof Level: Open terrace featuring a steel-framed gazebo roof, 3 kW solar panel grid, solar water heater, water filtration system, and overhead tanks.. Neighbourhood: Suburban gated residential enclave featuring uniform row villas, asphalt internal roads, street lighting, and open green surroundings adjacent to the L&T Bypass highway.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary multi-tone villa facade styled in grey, white, and peach vertical paneling, equipped with a folding wooden-slat front gate, checkerboard tiled parking garage, side setback access paths, and top terrace solar panel setup.. Hard floor/layout lock: G+1 duplex with covered balcony and roof terrace; Ground Floor: Covered parking porch (17x20 ft), foyer (5x5 ft), living room (16x16 ft), dedicated pooja room (3x6.5 ft), dining hall (10x10 ft), modular kitchen (10x11 ft) with internal utility space, ground floor master bedroom (10x16 ft) with attached Western bathroom, exterior setback space with service sink, gas cylinder cage, and an outdoor Indian-style toilet (4x6 ft). First Floor: Upstairs landing hallway, second master bedroom (10x16 ft) with attached Western bathroom, third bedroom (10x11 ft) with sliding wardrobe and attached Western bathroom (4x10 ft), and a large covered balcony/utility lounge. Roof Level: Open terrace featuring a steel-framed gazebo roof, 3 kW solar panel grid, solar water heater, water filtration system, and overhead tanks.. Neighbourhood: Suburban gated residential enclave featuring uniform row villas, asphalt internal roads, street lighting, and open green surroundings adjacent to the L&T Bypass highway.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
