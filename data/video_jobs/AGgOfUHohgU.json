@@ -1,0 +1,94 @@
+{
+  "video_id": "AGgOfUHohgU",
+  "source_url": "https://www.youtube.com/watch?v=AGgOfUHohgU",
+  "property_location": "Veerapandi Pirivu, Coimbatore",
+  "entrance_contaminated": true,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "NOT SPECIFIED",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex",
+    "layout_distribution": "Ground Floor: Car parking porch, entrance foyer, living room, modular kitchen, dining/wash area, 1 bedroom with attached bathroom, and under-stairs storage. First Floor: Upper lounge/hall, 2 bedrooms with attached bathrooms, and a covered front balcony."
+  },
+  "verified_facts": "Title advertises a White Bungalow 3BHK House sale in Veerapandi Pirivu, Coimbatore, On-screen overlay provides contact number +91 99435 34364, Property is a G+1 duplex home with 3 bedrooms and attached bathrooms",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Veerapandi Pirivu, Coimbatore சைட்ல 3 BHK Independent House தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/AGgOfUHohgU/",
+  "optional_owned_audio": "assets/audio/AGgOfUHohgU.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Veerapandi Pirivu, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern house featuring a white exterior with dark grey border accents, front compound gate, covered parking bay, and first-floor glass balcony.. Hard floor/layout lock: G+1 duplex; Ground Floor: Car parking porch, entrance foyer, living room, modular kitchen, dining/wash area, 1 bedroom with attached bathroom, and under-stairs storage. First Floor: Upper lounge/hall, 2 bedrooms with attached bathrooms, and a covered front balcony.. Neighbourhood: Residential area in Veerapandi Pirivu, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Veerapandi Pirivu, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern house featuring a white exterior with dark grey border accents, front compound gate, covered parking bay, and first-floor glass balcony.. Hard floor/layout lock: G+1 duplex; Ground Floor: Car parking porch, entrance foyer, living room, modular kitchen, dining/wash area, 1 bedroom with attached bathroom, and under-stairs storage. First Floor: Upper lounge/hall, 2 bedrooms with attached bathrooms, and a covered front balcony.. Neighbourhood: Residential area in Veerapandi Pirivu, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Veerapandi Pirivu, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern house featuring a white exterior with dark grey border accents, front compound gate, covered parking bay, and first-floor glass balcony.. Hard floor/layout lock: G+1 duplex; Ground Floor: Car parking porch, entrance foyer, living room, modular kitchen, dining/wash area, 1 bedroom with attached bathroom, and under-stairs storage. First Floor: Upper lounge/hall, 2 bedrooms with attached bathrooms, and a covered front balcony.. Neighbourhood: Residential area in Veerapandi Pirivu, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Veerapandi Pirivu, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern house featuring a white exterior with dark grey border accents, front compound gate, covered parking bay, and first-floor glass balcony.. Hard floor/layout lock: G+1 duplex; Ground Floor: Car parking porch, entrance foyer, living room, modular kitchen, dining/wash area, 1 bedroom with attached bathroom, and under-stairs storage. First Floor: Upper lounge/hall, 2 bedrooms with attached bathrooms, and a covered front balcony.. Neighbourhood: Residential area in Veerapandi Pirivu, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "needs_review",
+  "approval_mode": "automatic_fact_gate_v1"
+}
