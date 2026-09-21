@@ -1,3 +1,7 @@
+import hashlib
+import json
+from pathlib import Path
+
 from veo_prompt import build_veo_prompt, telegram_filename
 
 
@@ -31,7 +35,7 @@ def test_prompt_contains_dynamic_facts_and_fixed_contact():
     assert telegram_filename(job) == "abc123-gemini-veo-prompt.txt"
 
 
-def test_prompt_filters_personal_religious_and_loose_furniture_details():
+def test_prompt_uses_the_proven_september_10_source_first_rules():
     job = {
         "video_id": "clean-architecture",
         "source_url": "https://www.youtube.com/watch?v=clean-architecture",
@@ -45,18 +49,22 @@ def test_prompt_filters_personal_religious_and_loose_furniture_details():
     }
     prompt = build_veo_prompt(job)
 
-    assert "ARCHITECTURE-ONLY RECONSTRUCTION FILTER — MANDATORY" in prompt
-    assert "This exclusion rule applies EVEN IF those objects are present" in prompt
-    assert "NEVER generate religious imagery" in prompt
-    assert "NEVER generate cots, beds, mattresses or loose furniture beside/under a staircase" in prompt
-    assert "Do not replace a removed object with another decorative object" in prompt
-    assert "the staircase and surrounding architecture must remain clear and unobstructed" in prompt
-    assert "Do NOT reproduce televisions, deity photos, religious images" in prompt
-    assert "ZERO-TOLERANCE RELIGION-NEUTRAL OBJECT FILTER" in prompt
-    assert "plain uninterrupted floor tiles" in prompt
-    assert "blank neutral wall or empty built-in panel" in prompt
-    assert "perform three mandatory audits" in prompt
-    assert "discard that entire shot" in prompt
+    assert "First analyse that linked YouTube property video frame-by-frame" in prompt
+    assert "never change floor count, exterior, room dimensions, furniture or amenities" in prompt
+    assert "no religious imagery" in prompt
+    assert "FLOOR-COUNT / BHK LAYOUT LOCK" not in prompt
+    assert "PROPERTY SCALE / MARKET-REALISM LOCK" not in prompt
+    assert "ARCHITECTURE-ONLY RECONSTRUCTION FILTER" not in prompt
+
+
+def test_echf_prompt_matches_the_september_10_reference_exactly():
+    job = json.loads(Path("data/video_jobs/eChfOB4E7uw.json").read_text(encoding="utf-8"))
+    prompt = build_veo_prompt(job)
+
+    assert len(prompt) == 7977
+    assert hashlib.sha256(prompt.encode("utf-8")).hexdigest() == (
+        "6bfd6235aa1bf8f54d7acf091760473ae75efc688258c69d09f64d2d1398a930"
+    )
 
 
 def test_missing_values_are_explicitly_omitted():
