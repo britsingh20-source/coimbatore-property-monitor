@@ -706,12 +706,12 @@
       "video_id": "Wk1_a_IgZQY"
     },
     {
-      "r2_key": "social-ready/eChfOB4E7uw.mp4",
-      "sent_at": "2026-09-10T16:29:28.820997+00:00",
-      "status": "assigned_to_r2_upload",
+      "sent_at": "2026-09-21T01:58:03.265198+00:00",
+      "status": "pending_mobile_upload",
       "telegram_file_unique_id": "AgADyh4AAuXccFU",
       "uploaded_at": "2026-09-19T03:29:29.460816+00:00",
-      "video_id": "eChfOB4E7uw"
+      "video_id": "eChfOB4E7uw",
+      "prompt_message_id": 804
     },
     {
       "sent_at": "2026-09-10T22:39:50.428385+00:00",
