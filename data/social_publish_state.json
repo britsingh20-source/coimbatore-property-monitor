@@ -522,43 +522,73 @@
         "title": "₹98 Lakhs to ₹1.15 Crore 3 BHK Villa in Idikarai, near Athipalayam Four Corner, Thudiyalur to Kovilp",
         "youtube_description": "₹98 Lakhs to ₹1.15 Crore 3 BHK Villa in Idikarai, near Athipalayam Four Corner, Thudiyalur to Kovilpalayam Main Road, Coimbatore. Watch the complete property walkthrough.\n\n📍 Location: Idikarai, near Athipalayam Four Corner, Thudiyalur to Kovilpalayam Main Road, Coimbatore\n🏡 Property: 3 BHK Villa\n💰 Price: ₹98 Lakhs to ₹1.15 Crore\n📐 Land: 5 Cent\n🏗️ Built-up: 2200 sqft\n🧭 Facing: East\n🚗 Parking: Covered Car Parking (17' x 12')\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #IdikaraiProperty #CoimbatoreProperty #CoimbatoreRealEstate"
       },
-      "etag": "1ca018d438df3917d17ce95eb67e758e-3",
+      "etag": "9292583e7086cc9b04f6f3c54ad9e7a5-3",
       "match_analysis": {
         "confidence": 1,
         "method": "telegram_exact_video_id"
       },
       "platforms": {
+        "instagram_reel": {
+          "result": {
+            "channel": "real_estate",
+            "creation_id": "17898726756599708",
+            "media_id": "18131086987673180",
+            "processing": {
+              "id": "17898726756599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17898726930599708",
+            "media_id": "18031906223847128",
+            "processing": {
+              "id": "17898726930599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            }
+          },
+          "status": "published"
+        },
         "youtube_short": {
           "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
           "status": "failed"
         }
       },
-      "status": "matched",
+      "status": "visual_policy_passed",
       "video_id": "eChfOB4E7uw",
       "visual_compliance": {
-        "status": "retry_requested",
-        "reason": "previous Gemini 503 was transient; retry publishing"
+        "ceremonial_markings_present": false,
+        "compliant": true,
+        "confidence": 0.95,
+        "findings": [],
+        "personal_photos_present": false,
+        "religious_visuals_present": false,
+        "violating_timestamps": []
       },
       "youtube_media": {
         "audio_handling": "copied_original_aac",
         "layout": "portrait_crop",
         "output": {
-          "audio_bit_rate": 249847,
+          "audio_bit_rate": 249436,
           "audio_channel_layout": "stereo",
           "audio_channels": 2,
           "audio_codec": "aac",
           "audio_sample_rate": 48000,
-          "duration": 24.24,
+          "duration": 26.667,
           "height": 1920,
           "width": 1080
         },
         "source": {
-          "audio_bit_rate": 249696,
+          "audio_bit_rate": 249250,
           "audio_channel_layout": "stereo",
           "audio_channels": 2,
           "audio_codec": "aac",
           "audio_sample_rate": 48000,
-          "duration": 24.266667,
+          "duration": 26.666667,
           "height": 1280,
           "width": 720
         }
