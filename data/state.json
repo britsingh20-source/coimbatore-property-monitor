@@ -192,6 +192,12 @@
       "next_retry_at": "2026-08-08T13:04:12.220998+00:00",
       "status": "video_queued"
     },
+    "1aZKfp5rpQ8": {
+      "attempts": 0,
+      "first_seen_at": "2026-09-21T14:15:54.596400+00:00",
+      "next_retry_at": "2026-09-21T14:15:54.596400+00:00",
+      "status": "discovered"
+    },
     "1cY7ek7fPfo": {
       "attempts": 0,
       "completed_at": "2026-08-18T01:53:40.668331+00:00",
@@ -633,6 +639,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-08T18:51:41.114164+00:00",
       "status": "archived_non_target"
+    },
+    "8CwdmdCQ5Bw": {
+      "attempts": 0,
+      "first_seen_at": "2026-09-21T14:15:54.596400+00:00",
+      "next_retry_at": "2026-09-21T14:15:54.596400+00:00",
+      "status": "discovered"
     },
     "8D8vSvh_d2Y": {
       "attempts": 2,
@@ -2009,10 +2021,12 @@
       "status": "video_queued"
     },
     "S25AD4RI46s": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-09-21T11:08:50.579132+00:00",
-      "next_retry_at": "2026-09-21T11:08:50.579132+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-09-21T14:21:46.127342+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry in 13s or upgrade your tier at https://ai.dev/rate-limit.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-09-21T16:21:46.127352+00:00",
+      "status": "retry_pending"
     },
     "S7lv4VP4ym8": {
       "attempts": 0,
@@ -2394,6 +2408,12 @@
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
       "status": "archived_non_target"
     },
+    "YIrKuHi7m0k": {
+      "attempts": 0,
+      "first_seen_at": "2026-09-21T14:15:54.596400+00:00",
+      "next_retry_at": "2026-09-21T14:15:54.596400+00:00",
+      "status": "discovered"
+    },
     "YLNC27PNfDE": {
       "attempts": 0,
       "first_seen_at": "2026-08-26T02:00:59.472474+00:00",
@@ -2600,6 +2620,12 @@
       "last_error": "",
       "next_retry_at": "2026-09-20T20:02:59.595757+00:00",
       "status": "video_queued"
+    },
+    "bP-GUis0HYg": {
+      "attempts": 0,
+      "first_seen_at": "2026-09-21T14:15:54.596400+00:00",
+      "next_retry_at": "2026-09-21T14:15:54.596400+00:00",
+      "status": "discovered"
     },
     "b_vJJCLaCbQ": {
       "attempts": 0,
