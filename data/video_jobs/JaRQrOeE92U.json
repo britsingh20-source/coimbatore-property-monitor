@@ -1,0 +1,121 @@
+{
+  "video_id": "JaRQrOeE92U",
+  "source_url": "https://www.youtube.com/watch?v=JaRQrOeE92U",
+  "property_location": "Ellapalayam Pirivu, Ganeshapuram, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "3 BHK",
+    "land_area": "3.90 Cents",
+    "built_up_area": "2050 Sq.ft",
+    "price": "₹83.50 Lakhs",
+    "facing": "East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking in portico",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex with open terrace",
+    "layout_distribution": "Ground Floor: Portico (13'5\"x16'9\"), Living Hall (17'x16'), Kitchen (10'x16'), Store Room (6'x4'), Pooja Room (6'x5'), Master Bedroom (16'x11') with attached toilet (6'x6'3\"). First Floor: Foyer (7'x16'), Bedroom 2 (16'x11') with attached toilet (5'8\"x7'7\"), Bedroom 3 (16'x8') with attached toilet (5'9\"x7'7\"). Roof Level: Open terrace with spiral staircase leading to upper terrace deck."
+  },
+  "verified_facts": "Land Area: 3.90 Cents, Built-up Area: 2050 Sq.ft, Facing: East, Price: 83.50 Lakhs, Location: Ellapalayam Pirivu, Ganeshapuram, Coimbatore, Contact: 9952850155",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking naturally to camera",
+    "hook_strategy": "Showcasing a 2050 Sq.ft 3 BHK Duplex Villa in Ellapalayam Pirivu, Ganeshapuram within the first 3 seconds.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை கணேசபுரம், எல்லப்பாளையம் பிரிவுல 2050 Sq.ft 3 BHK duplex villa விற்பனைக்கு வந்திருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 3.90 Cents land-ல, East facing-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "facing-compass",
+        "purpose": "site-overview"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Ground floor-ல portico-வோட covered car parking, living hall, kitchen, store room, pooja room, அப்புறம் attached toilet-ோட master bedroom இருக்கு. First floor-ல foyer-ோட ரெண்டு attached bedrooms இருக்கு. Open terrace-ல upper deck போக spiral staircase-உம் இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "floor-plan-highlight",
+        "purpose": "layout-tour"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த வீடோட price பாத்தீங்கனா ₹83.50 Lakhs.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "price-tag-pop",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "Direct-ஆ site visit வந்து பாக்கவோ, மேலும் details பெறவோ 9952850155-க்கு call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "phone-number-overlay",
+        "purpose": "call-to-action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/JaRQrOeE92U/",
+  "optional_owned_audio": "assets/audio/JaRQrOeE92U.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-storey villa featuring a white and purple painted facade, tiled portico, perimeter compound wall with black metal entrance gate, and a tiled roof terrace equipped with a black spiral staircase.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Portico (13'5\"x16'9\"), Living Hall (17'x16'), Kitchen (10'x16'), Store Room (6'x4'), Pooja Room (6'x5'), Master Bedroom (16'x11') with attached toilet (6'x6'3\"). First Floor: Foyer (7'x16'), Bedroom 2 (16'x11') with attached toilet (5'8\"x7'7\"), Bedroom 3 (16'x8') with attached toilet (5'9\"x7'7\"). Roof Level: Open terrace with spiral staircase leading to upper terrace deck.. Neighbourhood: Suburban residential layout featuring paved roads, vacant plots, and independent homes under clear skies.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-storey villa featuring a white and purple painted facade, tiled portico, perimeter compound wall with black metal entrance gate, and a tiled roof terrace equipped with a black spiral staircase.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Portico (13'5\"x16'9\"), Living Hall (17'x16'), Kitchen (10'x16'), Store Room (6'x4'), Pooja Room (6'x5'), Master Bedroom (16'x11') with attached toilet (6'x6'3\"). First Floor: Foyer (7'x16'), Bedroom 2 (16'x11') with attached toilet (5'8\"x7'7\"), Bedroom 3 (16'x8') with attached toilet (5'9\"x7'7\"). Roof Level: Open terrace with spiral staircase leading to upper terrace deck.. Neighbourhood: Suburban residential layout featuring paved roads, vacant plots, and independent homes under clear skies.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-storey villa featuring a white and purple painted facade, tiled portico, perimeter compound wall with black metal entrance gate, and a tiled roof terrace equipped with a black spiral staircase.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Portico (13'5\"x16'9\"), Living Hall (17'x16'), Kitchen (10'x16'), Store Room (6'x4'), Pooja Room (6'x5'), Master Bedroom (16'x11') with attached toilet (6'x6'3\"). First Floor: Foyer (7'x16'), Bedroom 2 (16'x11') with attached toilet (5'8\"x7'7\"), Bedroom 3 (16'x8') with attached toilet (5'9\"x7'7\"). Roof Level: Open terrace with spiral staircase leading to upper terrace deck.. Neighbourhood: Suburban residential layout featuring paved roads, vacant plots, and independent homes under clear skies.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-storey villa featuring a white and purple painted facade, tiled portico, perimeter compound wall with black metal entrance gate, and a tiled roof terrace equipped with a black spiral staircase.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Portico (13'5\"x16'9\"), Living Hall (17'x16'), Kitchen (10'x16'), Store Room (6'x4'), Pooja Room (6'x5'), Master Bedroom (16'x11') with attached toilet (6'x6'3\"). First Floor: Foyer (7'x16'), Bedroom 2 (16'x11') with attached toilet (5'8\"x7'7\"), Bedroom 3 (16'x8') with attached toilet (5'9\"x7'7\"). Roof Level: Open terrace with spiral staircase leading to upper terrace deck.. Neighbourhood: Suburban residential layout featuring paved roads, vacant plots, and independent homes under clear skies.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
