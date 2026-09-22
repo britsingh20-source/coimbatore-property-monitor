@@ -43,8 +43,7 @@
           "status": "published"
         },
         "youtube_short": {
-          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "failed"
+          "status": "dry_run"
         }
       },
       "status": "visual_policy_passed",
@@ -637,8 +636,7 @@
           "status": "published"
         },
         "youtube_short": {
-          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "failed"
+          "status": "dry_run"
         }
       },
       "status": "visual_policy_passed",
@@ -646,7 +644,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1.0,
+        "confidence": 1,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
@@ -3260,7 +3258,6 @@
         "bIFJ3xftFrE",
         "JaRQrOeE92U",
         "CAOQ6QqzuB8",
-        "6aIppls2lBU",
         "f_iIIAXgCC4",
         "pTFXJy_xT_I",
         "6v0KjT4PYl0",
