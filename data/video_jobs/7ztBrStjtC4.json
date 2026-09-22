@@ -1,0 +1,162 @@
+{
+  "video_id": "7ztBrStjtC4",
+  "source_url": "https://www.youtube.com/watch?v=7ztBrStjtC4",
+  "property_location": "Pachapalayam, near Kurumbapalayam (Sathy Road) & Arasur (Avinashi Road), Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "Plots available from 1.5 Cents up to 5+ Cents in a 30-acre township layout",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹6.95 Lakhs/Cent",
+    "facing": "North, East & Corner plots available",
+    "road_width": "30 ft, 33 ft, 40 ft tar roads",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP & RERA Approved",
+    "floors": "NOT SPECIFIED",
+    "layout_distribution": "NOT SPECIFIED"
+  },
+  "verified_facts": "Project name: Royal Legacy, a 30-acre residential township layout., Phase 1 development covers 10 acres., Plot pricing is fixed at ₹6.95 Lakhs per cent., DTCP and RERA approval obtained., Land purchase as well as custom land + house construction package options are offered., Located within 10 minutes drive from Kurumbapalayam (Sathy Road) and 10 minutes drive from Arasur (Avinashi Road).",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, direct-to-camera conversational local Tamil property walkthrough",
+    "hook_strategy": "Highlighting the strategic location between Sathy Road & Avinashi Road within a massive 30-acre township layout",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை பச்சப்பாளையம்ல, சத்யாரோடு குரும்பபாளையம் மற்றும் அவினாசி ரோடு அரசூர் ரெண்டுக்கும் நடுவுல 10 நிமிஷ டிரைவ்ல அமையுற ஒரு பிரம்மாண்டமான 30 ஏக்கர் டவுன்ஷிப் லேஅவுட் பாக்க போறோம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "ராயல் லெகசி-யோட ஃபேஸ் 1-ல 1.5 சென்ட்ல இருந்து 5 சென்ட்டுக்கும் மேல பிளாட்ஸ் கிடைக்குது. பிளாட்டா வேணும்னாலும் வாங்கலாம், இல்ல கஸ்டம் ஹவுஸ் கான்ஸ்ட்ரக்ஷன் பேக்கேஜும் தராங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "detail"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல நார்த், ஈஸ்ட் மற்றும் கார்னர் ஃபேசிங் பிளாட்ஸ் அவெய்லபிளா இருக்கு.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "compass",
+        "purpose": "detail"
+      },
+      {
+        "name": "road",
+        "voice": "லேஅவுட் உள்ள 30 அடி, 33 அடி, மற்றும் 40 அடி தார் ரோட்ஸ், என்ட்ரன்ஸ் ஆர்ச், காம்பவுண்ட் வால்னு எல்லாமே பிராப்பரா செட் பண்ணிருக்காங்க.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "detail"
+      },
+      {
+        "name": "approval",
+        "voice": "இது முழுசா DTCP மற்றும் RERA அப்ரூவல் வாங்குன லேஅவுட்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "detail"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட பிரைஸ் பாத்தீங்கனா ஒரு சென்ட் வெறும் 6.95 லட்ச ரூபாய் மட்டும்தான்.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "price-tag",
+        "purpose": "detail"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் விவரங்களுக்கும் சைட் விசிட்க்கும் உடனே கால் பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "call-to-action",
+        "purpose": "action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/7ztBrStjtC4/",
+  "optional_owned_audio": "assets/audio/7ztBrStjtC4.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Extensive 30-acre land development site with red soil, perimeter fencing, compound walls, ongoing road levelling, and coconut trees lining the borders.. Neighbourhood: Residential and developing suburban neighborhood surrounded by coconut groves, paved bus routes, and existing individual houses (100–200 houses nearby).. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Extensive 30-acre land development site with red soil, perimeter fencing, compound walls, ongoing road levelling, and coconut trees lining the borders.. Neighbourhood: Residential and developing suburban neighborhood surrounded by coconut groves, paved bus routes, and existing individual houses (100–200 houses nearby).. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Extensive 30-acre land development site with red soil, perimeter fencing, compound walls, ongoing road levelling, and coconut trees lining the borders.. Neighbourhood: Residential and developing suburban neighborhood surrounded by coconut groves, paved bus routes, and existing individual houses (100–200 houses nearby).. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Extensive 30-acre land development site with red soil, perimeter fencing, compound walls, ongoing road levelling, and coconut trees lining the borders.. Neighbourhood: Residential and developing suburban neighborhood surrounded by coconut groves, paved bus routes, and existing individual houses (100–200 houses nearby).. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

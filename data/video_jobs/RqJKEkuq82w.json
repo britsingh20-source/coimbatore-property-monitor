@@ -1,0 +1,149 @@
+{
+  "video_id": "RqJKEkuq82w",
+  "source_url": "https://www.youtube.com/watch?v=RqJKEkuq82w",
+  "property_location": "Pannimadai, Near Thudiyalur, Coimbatore, Tamil Nadu, India",
+  "entrance_contaminated": true,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "2.5 Cents",
+    "built_up_area": "2020 sq ft",
+    "price": "Rs. 1.10 Crore",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking space",
+    "approval": "DTCP approved",
+    "floors": "G+1 duplex with open terrace utility",
+    "layout_distribution": "Ground Floor: Car parking portico, living hall with TV console and Pooja unit, kitchen with U-shaped counter and dining space, 1 bedroom with attached bathroom, and internal granite staircase with under-stairs storage. First Floor: Central passage, 2 bedrooms with attached bathrooms (including a master bedroom with full-wall wardrobes and window seating), dedicated dressing nook, and access to a semi-covered front balcony. Terrace Level: Stair headroom leading to an open terrace with washing area, water tank slab, and metal ladder access."
+  },
+  "verified_facts": "3BHK Duplex Independent House built on 2.5 Cents of land with a 2,020 sq.ft built-up area., Site and main entry door are North-facing., DTCP approved plot with borewell and a 7,000-litre drinking water sump., Ground floor features 12'x16' car parking portico, 16'x16' living hall, 8'x16' kitchen cum dining, and 1 bedroom (8'x16') with attached bath (5'x4')., First floor includes passage, 2nd bedroom (11'x16') with attached bath (5'x8') and dressing area (4'x4'), 3rd master bedroom (16'x16') with attached bath (5'x9'), and a semi-covered balcony (6'6\"x16\")., Roof level features stair headroom, open terrace, washing area, and elevated concrete slab for water tank., Quoted price is Rs. 1.10 Crore with up to 75% home loan support.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Pannimadai, Near Thudiyalur, Coimbatore, Tamil Nadu, India சைட்ல 3 BHK Independent House தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை Rs. 1.10 Crore.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 2.5 Cents லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 2020 sq ft இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு North ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP approved இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/RqJKEkuq82w/",
+  "optional_owned_audio": "assets/audio/RqJKEkuq82w.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Pannimadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-level facade painted in charcoal grey and warm brown tones, decorated with yellow diamond geometric accent lines, stone cladding tiles, glass-panelled balcony handrails, CNC cut metal terrace parapet grill, and a grey metal sliding/swing gate.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Car parking portico, living hall with TV console and Pooja unit, kitchen with U-shaped counter and dining space, 1 bedroom with attached bathroom, and internal granite staircase with under-stairs storage. First Floor: Central passage, 2 bedrooms with attached bathrooms (including a master bedroom with full-wall wardrobes and window seating), dedicated dressing nook, and access to a semi-covered front balcony. Terrace Level: Stair headroom leading to an open terrace with washing area, water tank slab, and metal ladder access.. Neighbourhood: Suburban residential layout in Pannimadai near Thudiyalur, surrounded by open plots, coconut groves, and newly constructed independent houses under clear sky conditions.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Pannimadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-level facade painted in charcoal grey and warm brown tones, decorated with yellow diamond geometric accent lines, stone cladding tiles, glass-panelled balcony handrails, CNC cut metal terrace parapet grill, and a grey metal sliding/swing gate.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Car parking portico, living hall with TV console and Pooja unit, kitchen with U-shaped counter and dining space, 1 bedroom with attached bathroom, and internal granite staircase with under-stairs storage. First Floor: Central passage, 2 bedrooms with attached bathrooms (including a master bedroom with full-wall wardrobes and window seating), dedicated dressing nook, and access to a semi-covered front balcony. Terrace Level: Stair headroom leading to an open terrace with washing area, water tank slab, and metal ladder access.. Neighbourhood: Suburban residential layout in Pannimadai near Thudiyalur, surrounded by open plots, coconut groves, and newly constructed independent houses under clear sky conditions.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Pannimadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-level facade painted in charcoal grey and warm brown tones, decorated with yellow diamond geometric accent lines, stone cladding tiles, glass-panelled balcony handrails, CNC cut metal terrace parapet grill, and a grey metal sliding/swing gate.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Car parking portico, living hall with TV console and Pooja unit, kitchen with U-shaped counter and dining space, 1 bedroom with attached bathroom, and internal granite staircase with under-stairs storage. First Floor: Central passage, 2 bedrooms with attached bathrooms (including a master bedroom with full-wall wardrobes and window seating), dedicated dressing nook, and access to a semi-covered front balcony. Terrace Level: Stair headroom leading to an open terrace with washing area, water tank slab, and metal ladder access.. Neighbourhood: Suburban residential layout in Pannimadai near Thudiyalur, surrounded by open plots, coconut groves, and newly constructed independent houses under clear sky conditions.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Pannimadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-level facade painted in charcoal grey and warm brown tones, decorated with yellow diamond geometric accent lines, stone cladding tiles, glass-panelled balcony handrails, CNC cut metal terrace parapet grill, and a grey metal sliding/swing gate.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Car parking portico, living hall with TV console and Pooja unit, kitchen with U-shaped counter and dining space, 1 bedroom with attached bathroom, and internal granite staircase with under-stairs storage. First Floor: Central passage, 2 bedrooms with attached bathrooms (including a master bedroom with full-wall wardrobes and window seating), dedicated dressing nook, and access to a semi-covered front balcony. Terrace Level: Stair headroom leading to an open terrace with washing area, water tank slab, and metal ladder access.. Neighbourhood: Suburban residential layout in Pannimadai near Thudiyalur, surrounded by open plots, coconut groves, and newly constructed independent houses under clear sky conditions.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

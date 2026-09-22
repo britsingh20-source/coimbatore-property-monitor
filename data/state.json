@@ -652,6 +652,14 @@
       "next_retry_at": "2026-08-09T08:01:36.048088+00:00",
       "status": "archived_non_target"
     },
+    "7ztBrStjtC4": {
+      "attempts": 0,
+      "completed_at": "2026-09-22T10:28:05.100840+00:00",
+      "first_seen_at": "2026-09-22T10:27:22.430121+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-09-22T10:27:22.430121+00:00",
+      "status": "video_queued"
+    },
     "87uFw3SsJKs": {
       "attempts": 2,
       "completed_at": "2026-08-08T19:02:02.970717+00:00",
@@ -2029,9 +2037,11 @@
     },
     "RqJKEkuq82w": {
       "attempts": 0,
+      "completed_at": "2026-09-22T10:28:39.779579+00:00",
       "first_seen_at": "2026-09-22T10:03:27.247014+00:00",
+      "last_error": "",
       "next_retry_at": "2026-09-22T10:03:27.247014+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "RwicCx91SWg": {
       "attempts": 0,
