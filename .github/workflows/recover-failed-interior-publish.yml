@@ -10,7 +10,7 @@ on:
       interior_id:
         description: 'INTERIOR_ID to recover'
         required: true
-        default: '2aky3zpEAMU'
+        default: 'T_VXVClPoPw'
 
 permissions:
   contents: write
@@ -30,7 +30,7 @@ jobs:
       - run: pip install -r requirements.txt
       - name: Recover failed Interior publish
         env:
-          RECOVER_INTERIOR_ID: ${{ inputs.interior_id || '2aky3zpEAMU' }}
+          RECOVER_INTERIOR_ID: ${{ inputs.interior_id || 'T_VXVClPoPw' }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
@@ -48,11 +48,14 @@ jobs:
           INTERIOR_YOUTUBE_PRIVACY_STATUS: public
         run: python recover_failed_interior_publish.py
       - name: Commit recovered publishing state
+        if: always()
         run: |
           set -euo pipefail
           git config user.name "interior-social-bot"
           git config user.email "actions@github.com"
-          git add data/interior_social_publish_state.json
+          if [[ -f data/interior_social_publish_state.json ]]; then
+            git add data/interior_social_publish_state.json
+          fi
           if git diff --staged --quiet; then
             echo "No state changes."
           else
