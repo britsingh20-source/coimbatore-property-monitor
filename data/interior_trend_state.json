@@ -64,7 +64,8 @@
     "vtDfxbbxNOg",
     "5lvX7gEuwBw",
     "0gVBe9MSZn4",
-    "T_VXVClPoPw"
+    "T_VXVClPoPw",
+    "1z3ZnNMITNA"
   ],
   "history": [
     {
@@ -391,6 +392,11 @@
       "video_id": "T_VXVClPoPw",
       "creator": "Ridhi Khosla Jalan",
       "url": "https://www.youtube.com/watch?v=T_VXVClPoPw"
+    },
+    {
+      "video_id": "1z3ZnNMITNA",
+      "creator": "DesignCafe",
+      "url": "https://www.youtube.com/watch?v=1z3ZnNMITNA"
     }
   ],
   "night_channel_cursor": 1
