@@ -263,11 +263,39 @@
     },
     "interior-social-ready/T_VXVClPoPw-AgADdSAAAvJ7kVU.mp4": {
       "content": {
-        "error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'The service is currently unavailable.', 'status': 'UNAVAILABLE'}}",
-        "status": "failed"
+        "customer_benefits": "Elevate your home decor with these unique, non-edible dessert-shaped terrazzo pieces that bring a playful yet sophisticated touch. Perfect for adding a comforting and artistic vibe to dining tables, kids' bedrooms, or any living space. Enjoy the beauty of custom-designed, handmade stone art that is both durable and visually captivating, allowing for personalized interior statements.",
+        "hashtags": [
+          "#TerrazzoDecor",
+          "#OliveTreeInteriors",
+          "#CoimbatoreInteriors"
+        ],
+        "hook": "Imagine a table full of delicious-looking desserts you can't eat!",
+        "instagram_caption": "Imagine a table full of delicious-looking desserts you can't eat! 🍩🍦🍰\n\nAt Olive Tree Interiors, we transform stone into art with our exquisite dessert-shaped terrazzo collection. These aren't just decor; they're handcrafted sculptural accents designed to bring a unique, playful, and sophisticated charm to your home.\n\nEach piece, from charming donuts to elegant cake slices, features a vibrant mosaic of natural stone chips. We also create stunning custom terrazzo wall art, meticulously hand-placed to form intricate patterns. Perfect for your dining table, kids' room, or as a statement piece.\n\nReady to add a touch of sweet artistry to your space? Save this post for inspiration, share it with a friend, or DM us to explore custom designs for your home in Coimbatore!\n\n#TerrazzoDecor #OliveTreeInteriors #CoimbatoreInteriors",
+        "interior_features": "These stunning sculptural accents are crafted from terrazzo, featuring a vibrant mix of natural stone chips in various colors, set against a white or grey base. The collection includes playful dessert shapes like donuts, macarons, ice cream bars, and cake slices, often displayed on matching terrazzo cake stands and trays. The video also showcases a large, intricate terrazzo wall art panel with flowing, mosaic-like patterns, demonstrating exceptional hand-craftsmanship where individual stone pieces are meticulously placed to form custom designs.",
+        "subject": "Dessert-shaped terrazzo decor and custom terrazzo wall art",
+        "youtube_description": "Discover the unique charm of dessert-shaped terrazzo decor and custom wall art by Olive Tree Interiors in Coimbatore. This video showcases our exquisite collection of non-edible, handcrafted sculptural accents, including donuts, macarons, ice cream bars, and cake slices, all meticulously made from vibrant terrazzo stone.\n\nWitness the intricate craftsmanship as individual stone chips are hand-placed to create stunning mosaic-like patterns, perfect for adding a playful yet sophisticated touch to your dining table, kids' bedroom, or any interior space. We specialize in custom designs, transforming natural stone into captivating art pieces that bring comfort and unique style to your home. Contact Olive Tree Interiors for personalized terrazzo solutions.\n\n#TerrazzoDecor #OliveTreeInteriors #CoimbatoreInteriors",
+        "youtube_tags": [
+          "terrazzo decor",
+          "dessert shaped decor",
+          "terrazzo wall art",
+          "handmade stone art",
+          "sculptural accents",
+          "interior design coimbatore",
+          "custom terrazzo",
+          "olive tree interiors"
+        ],
+        "youtube_title": "Dessert-Shaped Terrazzo Decor & Wall Art #Shorts"
       },
-      "instagram": {},
-      "instagram_story": {},
+      "instagram": {
+        "creation_id": "18166972993493417",
+        "media_id": "17897331003670739",
+        "status": "published"
+      },
+      "instagram_story": {
+        "creation_id": "18166973158493417",
+        "media_id": "18089604941196876",
+        "status": "published"
+      },
       "r2_key": "interior-social-ready/T_VXVClPoPw-AgADdSAAAvJ7kVU.mp4",
       "source_id": "T_VXVClPoPw",
       "youtube": {}
