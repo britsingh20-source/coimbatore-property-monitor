@@ -184,6 +184,39 @@ Rules:
     return result
 
 
+def analyze_publish_content_with_retry(video_path: Path, attempts: int = 5) -> dict:
+    """Retry only temporary Gemini failures; preserve hard validation failures."""
+    last_error: Exception | None = None
+    for attempt in range(1, attempts + 1):
+        try:
+            return analyze_publish_content(video_path)
+        except Exception as error:
+            last_error = error
+            message = str(error).lower()
+            transient = any(
+                marker in message
+                for marker in (
+                    "429",
+                    "503",
+                    "deadline_exceeded",
+                    "high demand",
+                    "resource_exhausted",
+                    "service unavailable",
+                    "timeout",
+                    "unavailable",
+                )
+            )
+            if not transient or attempt == attempts:
+                raise
+            delay = min(60, 10 * attempt)
+            print(
+                f"Transient Gemini analysis failure on attempt {attempt}/{attempts}; "
+                f"retrying in {delay}s: {error}"
+            )
+            time.sleep(delay)
+    raise last_error or RuntimeError("Interior video analysis failed")
+
+
 def wait_instagram_container(creation_id: str, token: str) -> None:
     for _ in range(30):
         response = requests.get(
@@ -352,7 +385,7 @@ def handle_update(update: dict) -> int:
         save_state(state)
 
         try:
-            content = analyze_publish_content(Path(handle.name))
+            content = analyze_publish_content_with_retry(Path(handle.name))
             record["content"] = content
             save_state(state)
         except Exception as error:
