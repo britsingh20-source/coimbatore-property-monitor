@@ -54,7 +54,8 @@
         "compliant": true,
         "confidence": 0.95,
         "findings": [
-          "The video showcases a 3 BHK duplex house in Coimbatore with modern amenities and no religious or personal imagery visible in any frame."
+          "The video showcases a 3 BHK duplex house in Thoppampatti, Coimbatore, with details like land area, built-up area, amenities, and pricing.",
+          "All visible spaces, including the exterior, living room, ceiling, kitchen, corridors, and balcony, are free of religious items, shrines, idols, personal photos, posters, and ceremonial floor patterns."
         ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
@@ -561,12 +562,8 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.98,
-        "findings": [
-          "The video showcases a 3 BHK villa in Thoppampatti, Coimbatore.",
-          "The video features standard property marketing overlays including price, land area, and architectural features.",
-          "No religious idols, shrines, symbols, kolams, or personal photos are visible throughout the video."
-        ],
+        "confidence": 0.95,
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -749,7 +746,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.95,
+        "confidence": 1,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
