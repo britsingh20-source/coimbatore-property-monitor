@@ -874,12 +874,85 @@
         "confidence": 1.0,
         "method": "telegram_exact_video_id"
       },
-      "platforms": {},
-      "status": "visual_policy_check_retryable",
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "channel": "real_estate",
+            "creation_id": "17899068606599708",
+            "media_id": "18078039941651340",
+            "processing": {
+              "id": "17899068606599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "verification": {
+              "id": "18078039941651340",
+              "media_product_type": "REELS",
+              "media_type": "VIDEO",
+              "permalink": "https://www.instagram.com/reel/DdolyICDvPw/",
+              "timestamp": "2026-09-23T15:05:17+0000"
+            }
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17899068840599708",
+            "media_id": "18036831383833726",
+            "processing": {
+              "id": "17899068840599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "verification": {
+              "id": "18036831383833726",
+              "media_product_type": "STORY",
+              "media_type": "VIDEO",
+              "permalink": "https://www.instagram.com/stories/smartbuycart7/3992607914850216727",
+              "timestamp": "2026-09-23T15:06:41+0000"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
+          "status": "failed"
+        }
+      },
+      "status": "visual_policy_passed",
       "video_id": "ouPPfBoU6WU",
       "visual_compliance": {
-        "error": "404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}}",
-        "status": "check_failed_retryable"
+        "ceremonial_markings_present": false,
+        "compliant": true,
+        "confidence": 1,
+        "findings": [],
+        "personal_photos_present": false,
+        "religious_visuals_present": false,
+        "violating_timestamps": []
+      },
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 248539,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 23.334,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 248497,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 23.333333,
+          "height": 1280,
+          "width": 720
+        }
       }
     },
     "social-ready/telegram-AgAD3CEAAqd1YFU.mp4": {
