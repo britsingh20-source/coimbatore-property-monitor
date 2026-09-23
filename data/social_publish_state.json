@@ -52,11 +52,8 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.95,
-        "findings": [
-          "The video showcases a 3 BHK duplex house for sale in Thoppampatti, Coimbatore.",
-          "Exterior and interior shots show modern architecture, clean walls, tiled flooring, modular kitchen, and balcony with glass railing without any religious or personal items."
-        ],
+        "confidence": 1,
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
