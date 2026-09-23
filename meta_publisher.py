@@ -86,7 +86,46 @@ def publish_instagram_reel(video_url: str, caption: str, channel: str = "real_es
         raise RuntimeError(f"{channel}: Instagram container did not finish processing: {json.dumps(last, ensure_ascii=False)}")
     publish = requests.post(f"{GRAPH}/{ig_user_id}/media_publish", data={"creation_id": creation_id, "access_token": token}, timeout=60)
     result = _response_json(publish)
-    return {"creation_id": creation_id, "media_id": result.get("id"), "processing": last, "channel": channel}
+    media_id = str(result.get("id") or "")
+    if not media_id:
+        raise RuntimeError(
+            f"{channel}: Instagram publish response did not confirm a media id: "
+            + json.dumps(result, ensure_ascii=False)[:1000]
+        )
+    verification = verify_instagram_media(media_id, token, "REEL", channel)
+    return {
+        "creation_id": creation_id,
+        "media_id": media_id,
+        "processing": last,
+        "verification": verification,
+        "channel": channel,
+    }
+
+
+def verify_instagram_media(media_id: str, token: str, expected: str, channel: str) -> dict:
+    """Confirm the published media is resolvable before reporting success."""
+    last_error: Exception | None = None
+    for attempt in range(1, 6):
+        try:
+            response = requests.get(
+                f"{GRAPH}/{media_id}",
+                params={
+                    "fields": "id,media_type,media_product_type,permalink,timestamp",
+                    "access_token": token,
+                },
+                timeout=30,
+            )
+            payload = _response_json(response)
+            if str(payload.get("id") or "") != media_id:
+                raise RuntimeError(f"{channel}: Instagram {expected} verification returned the wrong media id")
+            return payload
+        except Exception as error:
+            last_error = error
+            if attempt < 5:
+                time.sleep(5 * attempt)
+    raise RuntimeError(
+        f"{channel}: Instagram {expected} was not verifiable after publishing: {last_error}"
+    )
 
 
 def publish_facebook_reel(video_path: Path, caption: str, channel: str = "real_estate") -> dict:

@@ -103,11 +103,47 @@ When uncertain about a possible religious or personal image, mark the video non-
                 raise RuntimeError("Gemini visual compliance processing failed")
             time.sleep(2)
             uploaded = client.files.get(name=uploaded.name)
-        response = client.models.generate_content(
-            model=os.environ.get("SOCIAL_COMPLIANCE_MODEL", "gemini-2.5-flash"),
-            contents=[uploaded, prompt],
-            config={"response_mime_type": "application/json", "temperature": 0},
-        )
+        primary_model = os.environ.get("SOCIAL_COMPLIANCE_MODEL", "gemini-2.5-flash").strip()
+        fallback_models = [
+            item.strip()
+            for item in os.environ.get(
+                "SOCIAL_COMPLIANCE_FALLBACK_MODELS",
+                os.environ.get("GEMINI_SOCIAL_MATCH_MODEL", "gemini-3.5-flash-lite")
+                + ",gemini-2.5-flash-lite",
+            ).split(",")
+            if item.strip()
+        ]
+        models = list(dict.fromkeys([primary_model, *fallback_models]))
+        response = None
+        last_error: Exception | None = None
+        for model in models:
+            try:
+                response = client.models.generate_content(
+                    model=model,
+                    contents=[uploaded, prompt],
+                    config={"response_mime_type": "application/json", "temperature": 0},
+                )
+                print(f"Visual compliance completed with {model}")
+                break
+            except Exception as error:
+                last_error = error
+                error_text = str(error).lower()
+                transient = any(
+                    marker in error_text
+                    for marker in (
+                        "429",
+                        "503",
+                        "resource_exhausted",
+                        "unavailable",
+                        "high demand",
+                        "quota",
+                    )
+                )
+                if not transient:
+                    raise
+                print(f"Visual compliance model {model} unavailable; trying fallback")
+        if response is None:
+            raise last_error or RuntimeError("No Gemini compliance model was available")
         text = (response.text or "").strip()
         start, end = text.find("{"), text.rfind("}")
         if start < 0 or end < start:
@@ -292,7 +328,43 @@ def publish_instagram_story(video_url: str) -> dict:
         timeout=60,
     )
     result = _response_json(response)
-    return {"creation_id": creation_id, "media_id": result.get("id"), "processing": processing}
+    media_id = str(result.get("id") or "")
+    if not media_id:
+        raise RuntimeError(
+            "Instagram Story publish response did not confirm a media id: "
+            + json.dumps(result, ensure_ascii=False)[:1000]
+        )
+    verification = _verify_instagram_media(media_id, token, "STORY")
+    return {
+        "creation_id": creation_id,
+        "media_id": media_id,
+        "processing": processing,
+        "verification": verification,
+    }
+
+
+def _verify_instagram_media(media_id: str, token: str, expected: str) -> dict:
+    """Confirm Meta can resolve the published media before recording success."""
+    last_error: Exception | None = None
+    for attempt in range(1, 6):
+        try:
+            response = requests.get(
+                f"{GRAPH}/{media_id}",
+                params={
+                    "fields": "id,media_type,media_product_type,permalink,timestamp",
+                    "access_token": token,
+                },
+                timeout=30,
+            )
+            payload = _response_json(response)
+            if str(payload.get("id") or "") != media_id:
+                raise RuntimeError(f"Instagram {expected} verification returned the wrong media id")
+            return payload
+        except Exception as error:
+            last_error = error
+            if attempt < 5:
+                time.sleep(5 * attempt)
+    raise RuntimeError(f"Instagram {expected} was not verifiable after publishing: {last_error}")
 
 
 def delete_instagram_media(media_id: str) -> dict:
