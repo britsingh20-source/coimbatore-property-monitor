@@ -733,16 +733,11 @@
           "status": "failed"
         }
       },
-      "status": "visual_policy_passed",
+      "status": "visual_policy_check_retryable",
       "video_id": "eChfOB4E7uw",
       "visual_compliance": {
-        "ceremonial_markings_present": false,
-        "compliant": true,
-        "confidence": 1.0,
-        "findings": [],
-        "personal_photos_present": false,
-        "religious_visuals_present": false,
-        "violating_timestamps": []
+        "error": "404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}}",
+        "status": "check_failed_retryable"
       },
       "youtube_media": {
         "audio_handling": "copied_original_aac",
