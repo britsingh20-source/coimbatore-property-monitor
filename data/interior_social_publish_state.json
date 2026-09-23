@@ -365,11 +365,38 @@
     },
     "interior-social-ready/fyj_tIAyYPw-AgADhyAAAlpnoFU.mp4": {
       "content": {
-        "error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
-        "status": "failed"
+        "customer_benefits": "100 percent pure cotton fabric provides soft comfort for kids, dual-print reversible quilted bedding offers two distinct designs in one, and foldable storage bins keep the bedroom organized and clutter-free.",
+        "hashtags": [
+          "#OliveTreeInteriors",
+          "#CoimbatoreInteriors",
+          "#KidsBedroomDesign"
+        ],
+        "hook": "Transform your child's room with adorable reversible dual-print bedding and smart storage ideas.",
+        "instagram_caption": "Give your child's bedroom a playful yet organized upgrade with 100 percent pure cotton quilted bedding. Featuring delightful dual-print designs, you can instantly switch up the room's look while keeping your little ones cozy.\n\nCombined with neat modular cube storage and soft neutral tones, this setup balances charm with practical everyday tidying. Perfect for growing kids who love fun themes.\n\nSave this post for kids room inspiration and DM us to design your child's bedroom with Olive Tree Interiors in Coimbatore.\n\n#OliveTreeInteriors #CoimbatoreInteriors #KidsBedroomDesign",
+        "interior_features": "Children's bedroom featuring wooden flooring, white headboard bed, open wooden shelving unit, neutral wall paint, and modular white cube storage benches with foldable fabric storage bins.",
+        "subject": "Kids bedroom styling and reversible dual-print quilted bedding by Olive Tree Interiors in Coimbatore",
+        "youtube_description": "Explore cozy and practical design ideas for kids bedrooms by Olive Tree Interiors in Coimbatore. Discover 100 percent pure cotton reversible quilted bedding featuring playful dinosaur, animal, and space prints that bring cheerful character to children's rooms. See how modular wooden shelving and neutral-toned foldable storage bins help keep toys, bedding, and daily essentials neatly organized while maintaining a clean aesthetic.\n\nIf you want to create a functional, premium, and kid-friendly bedroom for your home in Coimbatore, contact Olive Tree Interiors today. DM us to start your interior design journey.\n\n#OliveTreeInteriors #CoimbatoreInteriors #KidsBedroomDesign",
+        "youtube_tags": [
+          "kids bedroom design",
+          "children room interior",
+          "kids bedding ideas",
+          "reversible quilted bedding",
+          "kids room storage solutions",
+          "olive tree interiors",
+          "coimbatore interior designers"
+        ],
+        "youtube_title": "Kids Bedroom Design & Reversible Quilted Bedding | Olive Tree Interiors #Shorts"
       },
-      "instagram": {},
-      "instagram_story": {},
+      "instagram": {
+        "creation_id": "18167302666493417",
+        "media_id": "17885090418685986",
+        "status": "published"
+      },
+      "instagram_story": {
+        "creation_id": "18167302945493417",
+        "media_id": "18183814687416177",
+        "status": "published"
+      },
       "r2_key": "interior-social-ready/fyj_tIAyYPw-AgADhyAAAlpnoFU.mp4",
       "source_id": "fyj_tIAyYPw",
       "youtube": {}
