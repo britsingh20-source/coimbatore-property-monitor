@@ -150,7 +150,8 @@ jobs:
           SOCIAL_MAX_PER_RUN: ${{ github.event_name == 'repository_dispatch' && '1' || '5' }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_SOCIAL_MATCH_MODEL: gemini-3.5-flash-lite
-          SOCIAL_COMPLIANCE_FALLBACK_MODELS: gemini-3.5-flash-lite,gemini-2.5-flash-lite
+          SOCIAL_COMPLIANCE_MODEL: gemini-3.5-flash-lite
+          SOCIAL_COMPLIANCE_FALLBACK_MODELS: gemini-3.5-flash-lite
           SOCIAL_MATCH_MIN_CONFIDENCE: "0.85"
           SOCIAL_DRY_RUN: ${{ github.event_name == 'repository_dispatch' && 'false' || (github.event_name == 'workflow_dispatch' && inputs.dry_run || (github.event_name == 'push' && !contains(github.event.head_commit.message, '[social-live-test]'))) }}
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
