@@ -43,8 +43,7 @@
           "status": "published"
         },
         "youtube_short": {
-          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "failed"
+          "status": "dry_run"
         }
       },
       "status": "visual_policy_passed",
@@ -52,7 +51,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
+        "confidence": 0.95,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
@@ -740,8 +739,7 @@
           "status": "published"
         },
         "youtube_short": {
-          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "failed"
+          "status": "dry_run"
         }
       },
       "status": "visual_policy_passed",
@@ -750,7 +748,12 @@
         "ceremonial_markings_present": false,
         "compliant": true,
         "confidence": 1,
-        "findings": [],
+        "findings": [
+          "The video showcases a 3 BHK premium villa located in Idikarai, Coimbatore, featuring exterior views, living spaces, ceiling designs, kitchen, and a hallway with wardrobes.",
+          "No religious visuals, idols, shrines, or sacred symbols are present.",
+          "No personal photos, family portraits, certificates, or personal wall displays are visible.",
+          "No ceremonial markings, kolams, rangolis, or doorway decorations are detected."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -919,16 +922,11 @@
           "status": "failed"
         }
       },
-      "status": "visual_policy_passed",
+      "status": "visual_policy_check_retryable",
       "video_id": "ouPPfBoU6WU",
       "visual_compliance": {
-        "ceremonial_markings_present": false,
-        "compliant": true,
-        "confidence": 1,
-        "findings": [],
-        "personal_photos_present": false,
-        "religious_visuals_present": false,
-        "violating_timestamps": []
+        "error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "status": "check_failed_retryable"
       },
       "youtube_media": {
         "audio_handling": "copied_original_aac",
