@@ -52,8 +52,14 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.95,
-        "findings": [],
+        "confidence": 0.98,
+        "findings": [
+          "The video showcases a 3 BHK duplex house for sale.",
+          "No religious visuals, shrines, idols, or symbols are visible in any frame.",
+          "No personal photographs, framed portraits, or certificates are displayed on the walls.",
+          "No ceremonial markings, kolams, or ritual doorway decorations are present.",
+          "All visible interior surfaces, ceilings, balconies, kitchens, and living areas are neutral and free of restricted items."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -931,7 +937,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.95,
+        "confidence": 1,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
