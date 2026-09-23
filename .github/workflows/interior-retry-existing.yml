@@ -1,0 +1,92 @@
+name: Retry Existing Interior Publish
+
+on:
+  push:
+    paths:
+      - data/interior_retry_trigger.txt
+
+permissions:
+  contents: write
+
+concurrency:
+  group: interior-social-publishing
+  cancel-in-progress: false
+
+jobs:
+  retry-existing:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Retry existing R2 interior video
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          INTERIOR_GEMINI_MODEL: gemini-3.5-flash-lite
+          INTERIOR_META_ACCESS_TOKEN: ${{ secrets.INTERIOR_META_ACCESS_TOKEN }}
+          INTERIOR_META_PAGE_ID: ${{ secrets.INTERIOR_META_PAGE_ID }}
+          INTERIOR_IG_USER_ID: ${{ secrets.INTERIOR_IG_USER_ID }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import tempfile
+          from pathlib import Path
+          import interior_social_autopilot as m
+
+          source_id = "fyj_tIAyYPw"
+          state = m.load_state()
+          matches = [(k,v) for k,v in state.get("objects",{}).items() if v.get("source_id")==source_id]
+          if not matches:
+              raise RuntimeError("Existing interior R2 object not found")
+          key, record = matches[-1]
+          if record.get("instagram",{}).get("status")=="published" and record.get("instagram_story",{}).get("status")=="published":
+              print("Already published; duplicate prevented")
+              raise SystemExit(0)
+
+          client=m.r2_client()
+          bucket=m.required("R2_BUCKET_NAME")
+          with tempfile.NamedTemporaryFile(prefix="interior-retry-",suffix=".mp4") as h:
+              client.download_file(bucket,key,h.name)
+              content=record.get("content") or {}
+              if content.get("status")=="failed" or not content.get("instagram_caption"):
+                  content=m.analyze_publish_content_with_retry(Path(h.name))
+                  record["content"]=content
+                  m.save_state(state)
+              video_url=client.generate_presigned_url("get_object",Params={"Bucket":bucket,"Key":key},ExpiresIn=21600)
+              if record.get("instagram",{}).get("status")!="published":
+                  record["instagram"]={"status":"published",**m.publish_instagram_reel(video_url,content["instagram_caption"])}
+                  m.save_state(state)
+              if record.get("instagram_story",{}).get("status")!="published":
+                  record["instagram_story"]={"status":"published",**m.publish_instagram_story(video_url)}
+                  m.save_state(state)
+
+          if record.get("instagram",{}).get("status")!="published" or record.get("instagram_story",{}).get("status")!="published":
+              raise RuntimeError("Instagram Reel/Story not both published")
+          m.send_message(m.required("TELEGRAM_BOT_TOKEN"),m.required("TELEGRAM_CHAT_ID"),
+              "✅ Interior retry published successfully\nINTERIOR_ID: fyj_tIAyYPw\nDestinations: Instagram Reel + Instagram Story")
+          print("PUBLISHED",record["instagram"],record["instagram_story"])
+          PY
+      - name: Commit publishing state
+        if: always()
+        run: |
+          git config user.name "interior-social-bot"
+          git config user.email "actions@github.com"
+          git add data/interior_social_publish_state.json || true
+          if ! git diff --staged --quiet; then
+            git commit -m "Update interior retry publishing state [automated]"
+            git pull --rebase
+            git push
+          fi
