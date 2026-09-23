@@ -1,0 +1,144 @@
+{
+  "video_id": "kASVxzODaoU",
+  "source_url": "https://www.youtube.com/watch?v=kASVxzODaoU",
+  "property_location": "Periyanaickenpalayam, Mettupalayam Road, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": true,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "4.66 Cents (37 ft x 55 ft)",
+    "built_up_area": "1850 sq.ft",
+    "price": "Rs. 95 Lakhs",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking (21 ft x 24 ft portico)",
+    "approval": "DTCP approved",
+    "floors": "Single-storey with open roof terrace",
+    "layout_distribution": "Ground Floor: Portico / car parking (21 ft x 24 ft), living hall (21 ft x 16 ft), pooja cabinet, kitchen cum dining (10 ft x 16 ft), side utility area (4 ft x 24 ft), Master Bedroom 1 (10 ft x 16 ft) with attached bathroom (5 ft x 6 ft), Kids Bedroom 2 (10 ft x 11 ft) with attached bathroom (6 ft x 5 ft), Master Bedroom 3 (10 ft x 16 ft) with attached bathroom (5 ft x 6 ft), and an outer toilet under/near staircase area. Roof Level: Open terrace with future floor expansion pillars."
+  },
+  "verified_facts": "Single-storey 3BHK house on 4.66 Cents land (37 ft x 55 ft) with 1850 sq.ft built-up area., North-facing site with North-facing main door., Ground floor layout includes 21 ft x 24 ft portico, 21 ft x 16 ft living hall with TV unit & pooja cabinet, 10 ft x 16 ft kitchen with dining & attached utility area (4 ft x 24 ft), 3 bedrooms with attached bathrooms, and 1 outer toilet., 7000 litres drinking water sump and borewell setup present., Open roof terrace with raised pillars ready for future floor construction., Quoted price is Rs. 95 Lakhs with up to 75% loan facility available.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Conversational local property presenter speaking directly to camera with relaxed energy.",
+    "hook_strategy": "Highlight a 3 BHK independent house in Periyanaickenpalayam on Mettupalayam Road.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Mettupalayam Road, Periyanaickenpalayam-ல ஒரு அருமையான 3 BHK Independent House விற்பனைக்கு வந்திருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "4.66 Cents land-ல, 37 by 55 dimension-ல DTCP approval-ோட இந்த வீடு அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1850 sq.ft built-up area! Ground floor-லயே spacious living hall, modular kitchen, 3 bedrooms with attached bathrooms, அப்புறம் பெரிய car parking portico-வும் இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "interior_layout"
+      },
+      {
+        "name": "facing",
+        "voice": "North facing site, North facing main door. Open terrace-ல ஃபியூச்சர்ல மேல வீடு கட்ட வசதியா pillars-ம் எழுப்பியிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass",
+        "purpose": "facing_and_terrace"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், borewell வசதி மற்றும் 7000 Liters water sump-ம் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "amenities_and_water"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price பாத்தீங்கனா 95 Lakhs. 75% வரைக்கும் bank loan facility பண்ணி தரலாம்.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த வீட்டை site visit பண்ணவோ, மேலும் details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/kASVxzODaoU/",
+  "optional_owned_audio": "assets/audio/kASVxzODaoU.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Pannimadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary elevation with purple and beige dual-tone paint, orange geometric canopy accent, wooden-patterned wall panels, metal entrance gate, painted concrete ramp, spacious tiled portico with strip LED lighting, and an open painted roof terrace.. Hard floor/layout lock: Single-storey with open roof terrace; Ground Floor: Portico / car parking (21 ft x 24 ft), living hall (21 ft x 16 ft), pooja cabinet, kitchen cum dining (10 ft x 16 ft), side utility area (4 ft x 24 ft), Master Bedroom 1 (10 ft x 16 ft) with attached bathroom (5 ft x 6 ft), Kids Bedroom 2 (10 ft x 11 ft) with attached bathroom (6 ft x 5 ft), Master Bedroom 3 (10 ft x 16 ft) with attached bathroom (5 ft x 6 ft), and an outer toilet under/near staircase area. Roof Level: Open terrace with future floor expansion pillars.. Neighbourhood: Residential neighborhood located off Mettupalayam Road in Periyanaickenpalayam / Thudiyalur area with surrounding green trees and adjacent residential buildings.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Pannimadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary elevation with purple and beige dual-tone paint, orange geometric canopy accent, wooden-patterned wall panels, metal entrance gate, painted concrete ramp, spacious tiled portico with strip LED lighting, and an open painted roof terrace.. Hard floor/layout lock: Single-storey with open roof terrace; Ground Floor: Portico / car parking (21 ft x 24 ft), living hall (21 ft x 16 ft), pooja cabinet, kitchen cum dining (10 ft x 16 ft), side utility area (4 ft x 24 ft), Master Bedroom 1 (10 ft x 16 ft) with attached bathroom (5 ft x 6 ft), Kids Bedroom 2 (10 ft x 11 ft) with attached bathroom (6 ft x 5 ft), Master Bedroom 3 (10 ft x 16 ft) with attached bathroom (5 ft x 6 ft), and an outer toilet under/near staircase area. Roof Level: Open terrace with future floor expansion pillars.. Neighbourhood: Residential neighborhood located off Mettupalayam Road in Periyanaickenpalayam / Thudiyalur area with surrounding green trees and adjacent residential buildings.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Pannimadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary elevation with purple and beige dual-tone paint, orange geometric canopy accent, wooden-patterned wall panels, metal entrance gate, painted concrete ramp, spacious tiled portico with strip LED lighting, and an open painted roof terrace.. Hard floor/layout lock: Single-storey with open roof terrace; Ground Floor: Portico / car parking (21 ft x 24 ft), living hall (21 ft x 16 ft), pooja cabinet, kitchen cum dining (10 ft x 16 ft), side utility area (4 ft x 24 ft), Master Bedroom 1 (10 ft x 16 ft) with attached bathroom (5 ft x 6 ft), Kids Bedroom 2 (10 ft x 11 ft) with attached bathroom (6 ft x 5 ft), Master Bedroom 3 (10 ft x 16 ft) with attached bathroom (5 ft x 6 ft), and an outer toilet under/near staircase area. Roof Level: Open terrace with future floor expansion pillars.. Neighbourhood: Residential neighborhood located off Mettupalayam Road in Periyanaickenpalayam / Thudiyalur area with surrounding green trees and adjacent residential buildings.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Pannimadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary elevation with purple and beige dual-tone paint, orange geometric canopy accent, wooden-patterned wall panels, metal entrance gate, painted concrete ramp, spacious tiled portico with strip LED lighting, and an open painted roof terrace.. Hard floor/layout lock: Single-storey with open roof terrace; Ground Floor: Portico / car parking (21 ft x 24 ft), living hall (21 ft x 16 ft), pooja cabinet, kitchen cum dining (10 ft x 16 ft), side utility area (4 ft x 24 ft), Master Bedroom 1 (10 ft x 16 ft) with attached bathroom (5 ft x 6 ft), Kids Bedroom 2 (10 ft x 11 ft) with attached bathroom (6 ft x 5 ft), Master Bedroom 3 (10 ft x 16 ft) with attached bathroom (5 ft x 6 ft), and an outer toilet under/near staircase area. Roof Level: Open terrace with future floor expansion pillars.. Neighbourhood: Residential neighborhood located off Mettupalayam Road in Periyanaickenpalayam / Thudiyalur area with surrounding green trees and adjacent residential buildings.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
