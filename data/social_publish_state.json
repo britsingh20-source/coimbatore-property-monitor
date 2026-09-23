@@ -47,21 +47,17 @@
           "status": "failed"
         }
       },
-      "status": "visual_policy_passed",
+      "status": "quarantined_visual_policy",
       "video_id": "6aIppls2lBU",
       "visual_compliance": {
         "ceremonial_markings_present": false,
-        "compliant": true,
-        "confidence": 0.98,
+        "compliant": false,
+        "confidence": 0.85,
         "findings": [
-          "The video showcases a 3 BHK duplex house for sale.",
-          "No religious visuals, shrines, idols, or symbols are visible in any frame.",
-          "No personal photographs, framed portraits, or certificates are displayed on the walls.",
-          "No ceremonial markings, kolams, or ritual doorway decorations are present.",
-          "All visible interior surfaces, ceilings, balconies, kitchens, and living areas are neutral and free of restricted items."
+          "A religious threshold drawing (kolam) is visible on the floor near the entrance doorway in the video."
         ],
         "personal_photos_present": false,
-        "religious_visuals_present": false,
+        "religious_visuals_present": true,
         "violating_timestamps": []
       },
       "youtube_media": {
