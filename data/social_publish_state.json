@@ -52,8 +52,11 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
-        "findings": [],
+        "confidence": 0.95,
+        "findings": [
+          "The video showcases a 3 BHK duplex house for sale in Thoppampatti, Coimbatore.",
+          "Exterior and interior shots show modern architecture, clean walls, tiled flooring, modular kitchen, and balcony with glass railing without any religious or personal items."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -3372,7 +3375,9 @@
         "VGow3nawwPM",
         "ouPPfBoU6WU",
         "0g8Ae23uwfA",
-        "4GyjS0MjVdI"
+        "4GyjS0MjVdI",
+        "Vkxx6zbGDiE",
+        "kASVxzODaoU"
       ],
       "etag": "f1e5be806c51dc666a1e99e1a36df1d9-3",
       "match_error": "Error code: 400 - {'error': {'message': 'Request contains an invalid argument.', 'code': 'invalid_request'}}",
