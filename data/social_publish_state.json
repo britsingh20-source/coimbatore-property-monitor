@@ -52,8 +52,13 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
-        "findings": [],
+        "confidence": 0.99,
+        "findings": [
+          "The video showcases a 3 BHK duplex house located in Thoppampatti, Coimbatore, Tamil Nadu.",
+          "All frames display exterior and interior architectural shots of the house, including living room, kitchen, stairs, balcony, and parking area.",
+          "No deities, religious symbols, prayer spaces, rituals, or personal photos are present in any of the frames.",
+          "The information overlay at the bottom and the footer are part of the property marketing template and do not violate compliance rules."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -559,7 +564,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
+        "confidence": 0.95,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
@@ -743,7 +748,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.95,
+        "confidence": 1,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
