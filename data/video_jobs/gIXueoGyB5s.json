@@ -1,0 +1,148 @@
+{
+  "video_id": "gIXueoGyB5s",
+  "source_url": "https://www.youtube.com/watch?v=gIXueoGyB5s",
+  "property_location": "Periyanaickenpalayam, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": true,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "4.75 Cents",
+    "built_up_area": "1850 sq.ft",
+    "price": "95 Lakhs",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking",
+    "approval": "DTCP Approved",
+    "floors": "single-storey",
+    "layout_distribution": "Ground Floor: Covered car parking (21'x24'), spacious living hall (16'x20'), kitchen (11'x16') with utility area (4'x21'), 3 bedrooms with attached bathrooms, dressing room (4'x4'), and an outer toilet."
+  },
+  "verified_facts": "DTCP approved site, Land area: 4.75 Cents (37'0\" x 55'0\"), Built-up area: 1850 sq.ft, Drinking water sump: 7000 Litres, 75% loan facility available, Price: 95 Lakhs",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and authentic local Coimbatore property walkthrough",
+    "hook_strategy": "Highlight location and land area immediately to capture local buyers looking for single-storey independent houses",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை பெரியநாயக்கன்பாளையத்துல, பண்ணிமடை மற்றும் துடியலூர் பக்கத்துல ஒரு அருமையான 3 BHK Independent House விற்பனைக்கு வந்துருக்கு!",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல 4.75 Cents Land area இருக்கு. முன்னாடி 21-க்கு 24 அடியில விசாலமான Covered Car Parking வசதியும் அமைச்சிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "property-overview"
+      },
+      {
+        "name": "builtUp",
+        "voice": "மொத்தம் 1850 sq.ft Built-up area! உள்ள வந்தா Accent lighting-ஓட Living hall, Chandelier, Utility வசதியோட Modular kitchen, 3 Bedrooms வித் attached bathrooms எல்லாமே ஒரே Ground floor-ல அமையப்பெற்றிருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "floor-plan-highlight",
+        "purpose": "interior-showcase"
+      },
+      {
+        "name": "facing",
+        "voice": "இந்த வீடு North facing நோக்கியது. இதுகூட 7000 Litres குடிநீர் Sump, Dressing room, மற்றும் Outer toilet வசதிகளும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "compass-north",
+        "purpose": "specifications"
+      },
+      {
+        "name": "approval",
+        "voice": "இது முழுமையா DTCP Approval பெற்ற Site. இதுக்கு 75% Loan facility வாய்ப்பும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "badge-check",
+        "purpose": "trust-building"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த 3 BHK வீட்டின் விலை 95 Lakhs.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road",
+          "bedroom"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து Site visit பண்ணணும்னாலோ அல்லது மேலதிக Details வேணும்னாலோ உடனே Call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "call-button",
+        "purpose": "action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/gIXueoGyB5s/",
+  "optional_owned_audio": "assets/audio/gIXueoGyB5s.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Pannimadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern facade painted in lavender and mustard yellow accents, decorative wall paneling, automated/gated car parking portico, and an external staircase leading to the roof level.. Hard floor/layout lock: single-storey; Ground Floor: Covered car parking (21'x24'), spacious living hall (16'x20'), kitchen (11'x16') with utility area (4'x21'), 3 bedrooms with attached bathrooms, dressing room (4'x4'), and an outer toilet.. Neighbourhood: Residential street context located in Periyanaickenpalayam, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Pannimadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern facade painted in lavender and mustard yellow accents, decorative wall paneling, automated/gated car parking portico, and an external staircase leading to the roof level.. Hard floor/layout lock: single-storey; Ground Floor: Covered car parking (21'x24'), spacious living hall (16'x20'), kitchen (11'x16') with utility area (4'x21'), 3 bedrooms with attached bathrooms, dressing room (4'x4'), and an outer toilet.. Neighbourhood: Residential street context located in Periyanaickenpalayam, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Pannimadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern facade painted in lavender and mustard yellow accents, decorative wall paneling, automated/gated car parking portico, and an external staircase leading to the roof level.. Hard floor/layout lock: single-storey; Ground Floor: Covered car parking (21'x24'), spacious living hall (16'x20'), kitchen (11'x16') with utility area (4'x21'), 3 bedrooms with attached bathrooms, dressing room (4'x4'), and an outer toilet.. Neighbourhood: Residential street context located in Periyanaickenpalayam, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Pannimadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern facade painted in lavender and mustard yellow accents, decorative wall paneling, automated/gated car parking portico, and an external staircase leading to the roof level.. Hard floor/layout lock: single-storey; Ground Floor: Covered car parking (21'x24'), spacious living hall (16'x20'), kitchen (11'x16') with utility area (4'x21'), 3 bedrooms with attached bathrooms, dressing room (4'x4'), and an outer toilet.. Neighbourhood: Residential street context located in Periyanaickenpalayam, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
