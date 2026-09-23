@@ -488,6 +488,30 @@
         }
       }
     },
+    "social-ready/TJ2hnhs0k88.mp4": {
+      "content": {
+        "caption": "🏠 ₹1.10 Crore 3 BHK Villa in Thoppampatti, Thudiyalur, Coimbatore, Tamil Nadu\n\n📍 Location: Thoppampatti, Thudiyalur, Coimbatore, Tamil Nadu\n🏡 Property: 3 BHK Villa\n💰 Price: ₹1.10 Crore\n📐 Land: 2.64 Cents\n🏗️ Built-up: 2300 Sq.ft\n🧭 Facing: West (Plot) / North (Main Entrance Door)\n🚗 Parking: Covered Car Parking (14' x 20')\n✅ Approval: DTCP Approved, Plan Approval\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#ThoppampattiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#ThoppampattiProperty",
+          "#CoimbatoreProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "₹1.10 Crore 3 BHK Villa in Thoppampatti, Thudiyalur, Coimbatore, Tamil Nadu | Site Visit 9003787621",
+        "youtube_description": "₹1.10 Crore 3 BHK Villa in Thoppampatti, Thudiyalur, Coimbatore, Tamil Nadu. Watch the complete property walkthrough.\n\n📍 Location: Thoppampatti, Thudiyalur, Coimbatore, Tamil Nadu\n🏡 Property: 3 BHK Villa\n💰 Price: ₹1.10 Crore\n📐 Land: 2.64 Cents\n🏗️ Built-up: 2300 Sq.ft\n🧭 Facing: West (Plot) / North (Main Entrance Door)\n🚗 Parking: Covered Car Parking (14' x 20')\n✅ Approval: DTCP Approved, Plan Approval\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #ThoppampattiProperty #CoimbatoreProperty #CoimbatoreRealEstate"
+      },
+      "etag": "ad153c9b2dc74a03845ffb333ba67bb4-3",
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {},
+      "status": "visual_policy_check_retryable",
+      "video_id": "TJ2hnhs0k88",
+      "visual_compliance": {
+        "error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\nPlease retry in 8.064710187s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '8s'}]}}",
+        "status": "check_failed_retryable"
+      }
+    },
     "social-ready/YeuCzhxC-j0.mp4": {
       "content": {
         "caption": "🏠 ₹67 Lakhs 2 BHK Independent Villa in Karamadai, Mettupalayam Road, Coimbatore, Tamil Nadu, India — would you visit this property?\n\n📍 Location: Karamadai, Mettupalayam Road, Coimbatore, Tamil Nadu, India\n🏡 Property: 2 BHK Independent Villa\n💰 Price: ₹67 Lakhs\n📐 Land: 3.5 Cents\n🏗️ Built-up: 1,300 sq.ft.\n🧭 Facing: East\n🚗 Parking: Covered Car & Two-Wheeler Parking (21'0\" x 14'0\")\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#CoimbatoreProperty #KaramadaiMettupalayamRoadCoimbatoreTamilNaduIndiaProperty #CoimbatoreRealEstate",
