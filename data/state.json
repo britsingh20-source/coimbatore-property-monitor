@@ -818,6 +818,12 @@
       "next_retry_at": "2026-09-21T05:33:30.189349+00:00",
       "status": "video_queued"
     },
+    "AHjZS39hxhw": {
+      "attempts": 0,
+      "first_seen_at": "2026-09-23T17:09:20.470260+00:00",
+      "next_retry_at": "2026-09-23T17:09:20.470260+00:00",
+      "status": "discovered"
+    },
     "AIolIZydXTU": {
       "attempts": 0,
       "completed_at": "2026-08-24T13:20:17.127313+00:00",
@@ -923,6 +929,14 @@
       "first_seen_at": "2026-09-20T14:22:03.107114+00:00",
       "next_retry_at": "2026-09-20T14:22:03.107114+00:00",
       "status": "discovered"
+    },
+    "BZQkKnqV75o": {
+      "attempts": 1,
+      "first_seen_at": "2026-09-23T17:09:20.470260+00:00",
+      "last_attempt_at": "2026-09-23T17:12:04.119978+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry in 55s or upgrade your tier at https://ai.dev/rate-limit.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-09-23T19:12:04.119988+00:00",
+      "status": "retry_pending"
     },
     "BgIePN-H4Kk": {
       "attempts": 0,
@@ -2566,6 +2580,12 @@
       "next_retry_at": "2026-09-11T16:33:22.186980+00:00",
       "status": "video_queued"
     },
+    "YTp5ovNWqy0": {
+      "attempts": 0,
+      "first_seen_at": "2026-09-23T17:09:20.470260+00:00",
+      "next_retry_at": "2026-09-23T17:09:20.470260+00:00",
+      "status": "discovered"
+    },
     "YW_1IWC4aEk": {
       "attempts": 1,
       "completed_at": "2026-09-03T00:44:52.621025+00:00",
@@ -2643,6 +2663,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-25T08:01:18.323923+00:00",
       "status": "video_queued"
+    },
+    "ZmWrx8l36R8": {
+      "attempts": 0,
+      "first_seen_at": "2026-09-23T17:09:20.470260+00:00",
+      "next_retry_at": "2026-09-23T17:09:20.470260+00:00",
+      "status": "discovered"
     },
     "ZpnuesKsc3s": {
       "attempts": 0,
@@ -3875,6 +3901,12 @@
       "attempts": 0,
       "first_seen_at": "2026-08-11T17:15:19.796976+00:00",
       "next_retry_at": "2026-08-11T17:15:19.796976+00:00",
+      "status": "discovered"
+    },
+    "pn8WdJXBHSQ": {
+      "attempts": 0,
+      "first_seen_at": "2026-09-23T17:09:20.470260+00:00",
+      "next_retry_at": "2026-09-23T17:09:20.470260+00:00",
       "status": "discovered"
     },
     "psLArviRnI4": {
