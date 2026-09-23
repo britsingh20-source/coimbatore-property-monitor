@@ -43,7 +43,8 @@
           "status": "published"
         },
         "youtube_short": {
-          "status": "dry_run"
+          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
+          "status": "failed"
         }
       },
       "status": "visual_policy_passed",
@@ -739,7 +740,8 @@
           "status": "published"
         },
         "youtube_short": {
-          "status": "dry_run"
+          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
+          "status": "failed"
         }
       },
       "status": "visual_policy_passed",
@@ -747,12 +749,11 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
+        "confidence": 0.98,
         "findings": [
-          "The video showcases a 3 BHK premium villa located in Idikarai, Coimbatore, featuring exterior views, living spaces, ceiling designs, kitchen, and a hallway with wardrobes.",
-          "No religious visuals, idols, shrines, or sacred symbols are present.",
-          "No personal photos, family portraits, certificates, or personal wall displays are visible.",
-          "No ceremonial markings, kolams, rangolis, or doorway decorations are detected."
+          "The video showcases a 3 BHK premium villa located in Idikarai, Coimbatore, featuring exterior views, a parking space, living room interiors, false ceilings, a kitchen, and bedroom/wardrobe areas.",
+          "Property details and pricing (98 Lakhs to 1.15 Crore) are displayed in the footer overlays throughout the video.",
+          "No deity, puja shelf, ritual marking, kolam, threshold decoration, or personal/family photographs are visible in any frame."
         ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
@@ -3470,7 +3471,6 @@
         "S25AD4RI46s",
         "BxSFOoXOLXE",
         "VGow3nawwPM",
-        "ouPPfBoU6WU",
         "0g8Ae23uwfA",
         "4GyjS0MjVdI",
         "Vkxx6zbGDiE",
