@@ -532,6 +532,14 @@
       "uploaded_at": "2026-09-07T11:02:21.249722+00:00",
       "video_id": "manual-AgADfCcAAinL-VQ"
     },
+    "AgADfSAAAlpnoFU": {
+      "r2_key": "social-ready/ouPPfBoU6WU.mp4",
+      "size": 17192653,
+      "status": "uploaded_exact_video_id",
+      "update_id": 789574148,
+      "uploaded_at": "2026-09-23T15:02:07.608736+00:00",
+      "video_id": "ouPPfBoU6WU"
+    },
     "AgADfycAAinL-VQ": {
       "manual_audio": {
         "analysis_model": "user_verified_video_footer",
@@ -763,5 +771,5 @@
       "video_id": "N8OFO4_0LwY"
     }
   },
-  "last_update_id": 789574146
+  "last_update_id": 789574148
 }

@@ -858,6 +858,30 @@
         }
       }
     },
+    "social-ready/ouPPfBoU6WU.mp4": {
+      "content": {
+        "caption": "🏠 ₹1.05 Crore 3BHK BHK Independent House in Pannimadai, Thudiyalur, Coimbatore\n\n📍 Location: Pannimadai, Thudiyalur, Coimbatore\n🏡 Property: 3BHK BHK Independent House\n💰 Price: ₹1.05 Crore\n🏗️ Built-up: 2000 sq ft\n🧭 Facing: North\n🚗 Parking: Covered car parking\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#PannimadaiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#PannimadaiProperty",
+          "#CoimbatoreProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "₹1.05 Crore 3BHK BHK Independent House in Pannimadai, Thudiyalur, Coimbatore | Site Visit 9003787621",
+        "youtube_description": "₹1.05 Crore 3BHK BHK Independent House in Pannimadai, Thudiyalur, Coimbatore. Watch the complete property walkthrough.\n\n📍 Location: Pannimadai, Thudiyalur, Coimbatore\n🏡 Property: 3BHK BHK Independent House\n💰 Price: ₹1.05 Crore\n🏗️ Built-up: 2000 sq ft\n🧭 Facing: North\n🚗 Parking: Covered car parking\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #PannimadaiProperty #CoimbatoreProperty #CoimbatoreRealEstate"
+      },
+      "etag": "422bee80ad9b16f9dd8d6caf8c694937-3",
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {},
+      "status": "visual_policy_check_retryable",
+      "video_id": "ouPPfBoU6WU",
+      "visual_compliance": {
+        "error": "404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/gemini-2.5-flash-lite is no longer available to new users. Please update your code to use models/gemini-3.5-flash-lite for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}}",
+        "status": "check_failed_retryable"
+      }
+    },
     "social-ready/telegram-AgAD3CEAAqd1YFU.mp4": {
       "etag": "043b39bc1a8b9cd5654457fabe105b30-3",
       "platforms": {},
