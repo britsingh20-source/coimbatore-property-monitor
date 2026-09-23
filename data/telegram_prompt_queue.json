@@ -1281,6 +1281,12 @@
       "sent_at": "2026-09-23T11:51:20.207490+00:00",
       "status": "pending_mobile_upload",
       "video_id": "kASVxzODaoU"
+    },
+    {
+      "video_id": "gIXueoGyB5s",
+      "sent_at": "2026-09-23T23:16:32.897043+00:00",
+      "status": "pending_mobile_upload",
+      "prompt_message_id": 958
     }
   ]
 }
