@@ -855,7 +855,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
+        "confidence": 1.0,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
@@ -1031,7 +1031,11 @@
         "ceremonial_markings_present": false,
         "compliant": true,
         "confidence": 0.95,
-        "findings": [],
+        "findings": [
+          "The video displays a modern 3 BHK duplex house for sale in Coimbatore.",
+          "Exterior, interior, living room, kitchen, and staircase areas are shown.",
+          "Property details footer indicates price, area, and location, with no religious or personal imagery visible."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
