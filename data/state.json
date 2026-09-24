@@ -933,11 +933,11 @@
       "status": "discovered"
     },
     "BZQkKnqV75o": {
-      "attempts": 2,
+      "attempts": 3,
       "first_seen_at": "2026-09-23T17:09:20.470260+00:00",
-      "last_attempt_at": "2026-09-23T20:30:29.457419+00:00",
-      "last_error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry in 30s or upgrade your tier at https://ai.dev/rate-limit.', 'code': 'too_many_requests'}}",
-      "next_retry_at": "2026-09-24T00:30:29.457430+00:00",
+      "last_attempt_at": "2026-09-24T01:43:00.058208+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry in 59s or upgrade your tier at https://ai.dev/rate-limit.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-09-24T09:43:00.058218+00:00",
       "status": "retry_pending"
     },
     "BgIePN-H4Kk": {
@@ -2389,6 +2389,12 @@
       "last_error": "",
       "next_retry_at": "2026-09-23T11:45:21.727537+00:00",
       "status": "video_queued"
+    },
+    "VqAOWnutUI4": {
+      "attempts": 0,
+      "first_seen_at": "2026-09-24T01:40:39.583721+00:00",
+      "next_retry_at": "2026-09-24T01:40:39.583721+00:00",
+      "status": "discovered"
     },
     "VqP-0KSc1Uw": {
       "attempts": 0,
