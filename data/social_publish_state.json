@@ -1030,10 +1030,8 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.95,
-        "findings": [
-          "The video displays exterior and interior shots of a modern independent house with a price and property details footer. No religious, ceremonial, or personal images are detected."
-        ],
+        "confidence": 1,
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
