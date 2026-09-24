@@ -855,8 +855,13 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.95,
-        "findings": [],
+        "confidence": 0.98,
+        "findings": [
+          "Exterior and interior shots of a modern independent house property in Coimbatore.",
+          "Property features include 3 BHK, 4.75 cents, 1850 sq ft built-up area, North facing, covered car parking, and DTCP approval.",
+          "Rooms shown include parking area, living room with TV unit, false ceiling, and kitchen.",
+          "No religious items, icons, deity images, kolams, or personal photos found in any frame."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -1030,7 +1035,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
+        "confidence": 0.95,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
