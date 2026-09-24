@@ -1283,10 +1283,13 @@
       "video_id": "kASVxzODaoU"
     },
     {
-      "video_id": "gIXueoGyB5s",
+      "prompt_message_id": 958,
+      "r2_key": "social-ready/gIXueoGyB5s.mp4",
       "sent_at": "2026-09-23T23:16:32.897043+00:00",
-      "status": "pending_mobile_upload",
-      "prompt_message_id": 958
+      "status": "assigned_to_r2_upload",
+      "telegram_file_unique_id": "AgAD6CEAAlpnqFU",
+      "uploaded_at": "2026-09-24T01:57:36.980002+00:00",
+      "video_id": "gIXueoGyB5s"
     }
   ]
 }

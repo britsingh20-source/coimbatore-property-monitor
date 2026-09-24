@@ -789,6 +789,103 @@
         }
       }
     },
+    "social-ready/gIXueoGyB5s.mp4": {
+      "content": {
+        "caption": "🏠 95 Lakhs 3 BHK Independent House in Periyanaickenpalayam, Coimbatore, Tamil Nadu\n\n📍 Location: Periyanaickenpalayam, Coimbatore, Tamil Nadu\n🏡 Property: 3 BHK Independent House\n💰 Price: 95 Lakhs\n📐 Land: 4.75 Cents\n🏗️ Built-up: 1850 sq.ft\n🧭 Facing: North\n🚗 Parking: Covered Car Parking\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#PeriyanaickenpalayamProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#PeriyanaickenpalayamProperty",
+          "#CoimbatoreProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "95 Lakhs 3 BHK Independent House in Periyanaickenpalayam, Coimbatore, Tamil Nadu | Site Visit 900378",
+        "youtube_description": "95 Lakhs 3 BHK Independent House in Periyanaickenpalayam, Coimbatore, Tamil Nadu. Watch the complete property walkthrough.\n\n📍 Location: Periyanaickenpalayam, Coimbatore, Tamil Nadu\n🏡 Property: 3 BHK Independent House\n💰 Price: 95 Lakhs\n📐 Land: 4.75 Cents\n🏗️ Built-up: 1850 sq.ft\n🧭 Facing: North\n🚗 Parking: Covered Car Parking\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #PeriyanaickenpalayamProperty #CoimbatoreProperty #CoimbatoreRealEstate"
+      },
+      "etag": "7974ce4bf964ef710aebe279a63c5b73-3",
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "channel": "real_estate",
+            "creation_id": "17899129710599708",
+            "media_id": "18448590373127706",
+            "processing": {
+              "id": "17899129710599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "verification": {
+              "id": "18448590373127706",
+              "media_product_type": "REELS",
+              "media_type": "VIDEO",
+              "permalink": "https://www.instagram.com/reel/DdpwkRHAaTG/",
+              "timestamp": "2026-09-24T01:58:46+0000"
+            }
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17899129863599708",
+            "media_id": "17985956520071261",
+            "processing": {
+              "id": "17899129863599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "verification": {
+              "id": "17985956520071261",
+              "media_product_type": "STORY",
+              "media_type": "VIDEO",
+              "permalink": "https://www.instagram.com/stories/smartbuycart7/3992936597406600567",
+              "timestamp": "2026-09-24T01:59:44+0000"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
+          "status": "failed"
+        }
+      },
+      "status": "visual_policy_passed",
+      "video_id": "gIXueoGyB5s",
+      "visual_compliance": {
+        "ceremonial_markings_present": false,
+        "compliant": true,
+        "confidence": 1,
+        "findings": [],
+        "personal_photos_present": false,
+        "religious_visuals_present": false,
+        "violating_timestamps": []
+      },
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 249875,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 26.665,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 249674,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 26.666667,
+          "height": 1280,
+          "width": 720
+        }
+      }
+    },
     "social-ready/hXgwaBvJRjU.mp4": {
       "content": {
         "caption": "🏠 ₹55 LAKHS 2 BHK Independent House in Papampatti, Coimbatore, Tamil Nadu\n\n📍 Location: Papampatti, Coimbatore, Tamil Nadu\n🏡 Property: 2 BHK Independent House\n💰 Price: ₹55 LAKHS\n📐 Land: 2.75 Cents\n🏗️ Built-up: 1000 Sq.ft\n🧭 Facing: East\n🛣️ Road: 30 Feet\n🚗 Parking: Covered Car Parking (10 x 17 ft)\n✅ Approval: DTCP & Plan Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#PapampattiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
