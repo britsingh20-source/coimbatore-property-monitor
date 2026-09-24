@@ -1030,14 +1030,8 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.98,
-        "findings": [
-          "The video displays a modern 3 BHK duplex house for sale in Coimbatore.",
-          "The footage covers the exterior facade, porch/parking area, living room with false ceiling, kitchen, and staircase.",
-          "No religious visuals, shrines, idols, deities, or ritual markings were detected in any frame.",
-          "No personal photos, family portraits, certificates, or calendars are displayed.",
-          "The property listing footer contains standard text, icons, price (1.10 Crore), and location details, which are non-violating."
-        ],
+        "confidence": 0.95,
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
