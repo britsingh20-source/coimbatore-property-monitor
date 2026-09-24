@@ -850,21 +850,11 @@
           "status": "failed"
         }
       },
-      "status": "visual_policy_passed",
+      "status": "visual_policy_check_retryable",
       "video_id": "gIXueoGyB5s",
       "visual_compliance": {
-        "ceremonial_markings_present": false,
-        "compliant": true,
-        "confidence": 1,
-        "findings": [
-          "The video showcases an independent house property for sale with modern architecture, interior spaces like living room, kitchen, and exterior views.",
-          "No religious visuals, idols, puja shelves, or symbols are visible in any of the frames.",
-          "No personal photographs, framed portraits, or certificates are present.",
-          "No ceremonial markings such as kolam, rangoli, or ritual decorations appear on the floors or walls."
-        ],
-        "personal_photos_present": false,
-        "religious_visuals_present": false,
-        "violating_timestamps": []
+        "error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+        "status": "check_failed_retryable"
       },
       "youtube_media": {
         "audio_handling": "copied_original_aac",
@@ -1036,7 +1026,10 @@
         "ceremonial_markings_present": false,
         "compliant": true,
         "confidence": 1.0,
-        "findings": [],
+        "findings": [
+          "The video shows a duplex independent house for sale with exterior views, parking, living room, ceiling details, kitchen, and staircase.",
+          "No religious symbols, deities, puja areas, ritual marks, kolam, or personal photos were found in any frame."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
