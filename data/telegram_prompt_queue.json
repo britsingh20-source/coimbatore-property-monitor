@@ -1290,6 +1290,12 @@
       "telegram_file_unique_id": "AgAD6CEAAlpnqFU",
       "uploaded_at": "2026-09-24T01:57:36.980002+00:00",
       "video_id": "gIXueoGyB5s"
+    },
+    {
+      "video_id": "UahQ_oE5QRo",
+      "sent_at": "2026-09-24T10:09:34.349254+00:00",
+      "status": "pending_mobile_upload",
+      "prompt_message_id": 980
     }
   ]
 }
