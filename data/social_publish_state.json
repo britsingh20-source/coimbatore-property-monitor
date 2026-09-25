@@ -855,7 +855,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
+        "confidence": 0.95,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
@@ -1031,10 +1031,7 @@
         "ceremonial_markings_present": false,
         "compliant": true,
         "confidence": 0.95,
-        "findings": [
-          "The video displays exterior and interior shots of an independent house for sale.",
-          "No deities, religious symbols, rituals, or personal portraits/photographs were observed across all frames."
-        ],
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
