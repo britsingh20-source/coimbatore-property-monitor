@@ -856,7 +856,12 @@
         "ceremonial_markings_present": false,
         "compliant": true,
         "confidence": 1.0,
-        "findings": [],
+        "findings": [
+          "The video showcases an independent house property for sale with modern architectural elements, clean interior spaces, kitchen setups, and structural overviews.",
+          "No religious visuals, shrines, sacred texts, ritual symbols, or cultural marks appear in any frame.",
+          "No personal photographs, framed portraits, certificates, or posters are found on the walls or surfaces.",
+          "The information overlay at the bottom lists property details (3 BHK, area, price, features) without triggering non-compliance rules."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -1030,7 +1035,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.95,
+        "confidence": 1.0,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
