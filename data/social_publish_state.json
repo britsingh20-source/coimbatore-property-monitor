@@ -1030,12 +1030,8 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.99,
-        "findings": [
-          "The video shows an independent 3 BHK duplex house in Coimbatore.",
-          "It includes exteriors, parking, hall, kitchen, and staircase.",
-          "No religious symbols, deities, puja items, or personal photographs were identified in any frame."
-        ],
+        "confidence": 0.95,
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
