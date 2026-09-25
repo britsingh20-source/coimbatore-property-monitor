@@ -1030,8 +1030,14 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.95,
-        "findings": [],
+        "confidence": 1,
+        "findings": [
+          "The video shows an independent 3 BHK duplex house for sale.",
+          "No religious visuals, shrines, symbols, or ritual items were observed.",
+          "No personal photos, portraits, framed certificates, or calendars were found.",
+          "No ceremonial markings, kolams, thresholds, or doorway decorations were present.",
+          "The interior and exterior shots show plain modern architecture and finishes."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
