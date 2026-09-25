@@ -1,0 +1,142 @@
+{
+  "video_id": "CDYVel8QnUk",
+  "source_url": "https://www.youtube.com/watch?v=CDYVel8QnUk",
+  "property_location": "Teachers Colony, Gandhi Nagar, Karamadai, Coimbatore, Tamil Nadu, India",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "3 cents (1,280 sq.ft.)",
+    "built_up_area": "2,150 sq.ft.",
+    "price": "₹87 Lakhs (Negotiable)",
+    "facing": "North (Main Door) / West (Site)",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Portico (10' x 31')",
+    "approval": "DTCP Approved",
+    "floors": "G+1 duplex with open terrace",
+    "layout_distribution": "Ground Floor: Covered portico (10' x 31'), double-height living hall (16' x 16'), kitchen with dining area (16' x 10'), Bedroom 1 (16' x 10') with attached bathroom (4' x 10'), pooja cabinet, under-stair storage, and exterior bathroom (6' x 3.5'). First Floor: Mezzanine passage overlooking the living hall, Bedroom 2 (16' x 10') with attached bathroom (10' x 4'), Bedroom 3 (11' x 10') with attached bathroom (10' x 4.25'), and front balcony (27' x 10'). Roof Level: Open terrace with overhead water storage tanks accessed by external steel stairs from the balcony."
+  },
+  "verified_facts": "Site facing is West, while the main door faces North., Land area is 3 cents (32 feet x 40 feet, total 1,280 sq.ft.)., Total built-up area is 2,150 sq.ft. structured as a G+1 duplex., Ground Floor includes a 10' x 31' car portico, 16' x 16' double-height living hall, 16' x 10' kitchen & dining area, 16' x 10' bedroom with 4' x 10' attached bathroom, pooja unit, and a 6' x 3.5' outside toilet., First Floor includes a 16' x 10' bedroom with 10' x 4' attached bathroom, 11' x 10' bedroom with 10' x 4.25' attached bathroom, and a 27' x 10' front balcony., External metal staircase leads from the balcony to the open roof terrace with water tanks., Asking price is ₹87 Lakhs (negotiable) with bank loan facilities available.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Energetic and authentic local presenter walkthrough in natural spoken Tamil",
+    "hook_strategy": "Highlight 2,150 sq.ft. spacious 3 BHK duplex in Karamadai at ₹87 Lakhs with double-height living hall",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை காரமடை காந்தி நகர் Teachers Colony-ல அமைஞ்சிருக்கிற ஒரு சூப்பரான 3 BHK duplex house பாக்கப்போறோம்!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தம் 3 cent land area, அதாவது 1,280 sq.ft. plot-ல அமைச்சிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "land-area-highlight",
+        "purpose": "property_dimensions"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Total built-up area 2,150 sq.ft.! Ground floor-ல 31-foot car portico, double height living hall, modular kitchen, அப்புறம் 1 bedroom வித் attached bathroom இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen"
+        ],
+        "avoid_broll": [
+          "exterior"
+        ],
+        "vfx": "text-overlay-features",
+        "purpose": "ground_floor_walkthrough"
+      },
+      {
+        "name": "facing",
+        "voice": "Site facing பாத்தீங்கனா West, main door North facing-ல அமைச்சிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approved property, bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "dtcp-approved-badge",
+        "purpose": "trust_and_legal"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த வீட்டின் asking price ₹87 Lakhs, negotiable தான்!",
+        "broll": [
+          "living_room",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag-graphic",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல site visit வரணும்னா இல்ல details வேணும்னா உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "contact-card-overlay",
+        "purpose": "action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/CDYVel8QnUk/",
+  "optional_owned_audio": "assets/audio/CDYVel8QnUk.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary G+1 duplex exterior painted in dual-shade green and sandal/cream tones with textured accent walls, compound wall with laser-cut metal gate, tiled portico floor, stainless steel railing on the upper balcony, and an open roof terrace.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Covered portico (10' x 31'), double-height living hall (16' x 16'), kitchen with dining area (16' x 10'), Bedroom 1 (16' x 10') with attached bathroom (4' x 10'), pooja cabinet, under-stair storage, and exterior bathroom (6' x 3.5'). First Floor: Mezzanine passage overlooking the living hall, Bedroom 2 (16' x 10') with attached bathroom (10' x 4'), Bedroom 3 (11' x 10') with attached bathroom (10' x 4.25'), and front balcony (27' x 10'). Roof Level: Open terrace with overhead water storage tanks accessed by external steel stairs from the balcony.. Neighbourhood: Located in a developing residential colony in Karamadai near Teachers Colony/Gandhi Nagar off Mettupalayam Road, surrounded by open greenery, coconut groves, and newly built individual houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary G+1 duplex exterior painted in dual-shade green and sandal/cream tones with textured accent walls, compound wall with laser-cut metal gate, tiled portico floor, stainless steel railing on the upper balcony, and an open roof terrace.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Covered portico (10' x 31'), double-height living hall (16' x 16'), kitchen with dining area (16' x 10'), Bedroom 1 (16' x 10') with attached bathroom (4' x 10'), pooja cabinet, under-stair storage, and exterior bathroom (6' x 3.5'). First Floor: Mezzanine passage overlooking the living hall, Bedroom 2 (16' x 10') with attached bathroom (10' x 4'), Bedroom 3 (11' x 10') with attached bathroom (10' x 4.25'), and front balcony (27' x 10'). Roof Level: Open terrace with overhead water storage tanks accessed by external steel stairs from the balcony.. Neighbourhood: Located in a developing residential colony in Karamadai near Teachers Colony/Gandhi Nagar off Mettupalayam Road, surrounded by open greenery, coconut groves, and newly built individual houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary G+1 duplex exterior painted in dual-shade green and sandal/cream tones with textured accent walls, compound wall with laser-cut metal gate, tiled portico floor, stainless steel railing on the upper balcony, and an open roof terrace.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Covered portico (10' x 31'), double-height living hall (16' x 16'), kitchen with dining area (16' x 10'), Bedroom 1 (16' x 10') with attached bathroom (4' x 10'), pooja cabinet, under-stair storage, and exterior bathroom (6' x 3.5'). First Floor: Mezzanine passage overlooking the living hall, Bedroom 2 (16' x 10') with attached bathroom (10' x 4'), Bedroom 3 (11' x 10') with attached bathroom (10' x 4.25'), and front balcony (27' x 10'). Roof Level: Open terrace with overhead water storage tanks accessed by external steel stairs from the balcony.. Neighbourhood: Located in a developing residential colony in Karamadai near Teachers Colony/Gandhi Nagar off Mettupalayam Road, surrounded by open greenery, coconut groves, and newly built individual houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary G+1 duplex exterior painted in dual-shade green and sandal/cream tones with textured accent walls, compound wall with laser-cut metal gate, tiled portico floor, stainless steel railing on the upper balcony, and an open roof terrace.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Covered portico (10' x 31'), double-height living hall (16' x 16'), kitchen with dining area (16' x 10'), Bedroom 1 (16' x 10') with attached bathroom (4' x 10'), pooja cabinet, under-stair storage, and exterior bathroom (6' x 3.5'). First Floor: Mezzanine passage overlooking the living hall, Bedroom 2 (16' x 10') with attached bathroom (10' x 4'), Bedroom 3 (11' x 10') with attached bathroom (10' x 4.25'), and front balcony (27' x 10'). Roof Level: Open terrace with overhead water storage tanks accessed by external steel stairs from the balcony.. Neighbourhood: Located in a developing residential colony in Karamadai near Teachers Colony/Gandhi Nagar off Mettupalayam Road, surrounded by open greenery, coconut groves, and newly built individual houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
