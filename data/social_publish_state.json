@@ -855,8 +855,11 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
-        "findings": [],
+        "confidence": 0.98,
+        "findings": [
+          "The video showcases a modern 3 BHK independent house for sale with standard architectural finishes, clean rooms, kitchen setup, parking area, and exterior view.",
+          "No religious visuals, personal photographs, portraits, framed certificates, or ceremonial floor designs are present in any of the frames."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
