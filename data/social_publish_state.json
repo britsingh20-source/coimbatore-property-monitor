@@ -855,8 +855,12 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
-        "findings": [],
+        "confidence": 0.98,
+        "findings": [
+          "The video showcases a modern independent house for sale in Coimbatore.",
+          "The footage covers exterior views, parking area, living room, false ceiling, kitchen, and staircase hallway.",
+          "No deity, religious symbols, kolam, ritual markings, or personal photographs are observed in any frame."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -1030,8 +1034,11 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1.0,
-        "findings": [],
+        "confidence": 0.98,
+        "findings": [
+          "The video displays a modern 3 BHK duplex house in Coimbatore.",
+          "No deity, worship object, religious symbol, ritual mark, kolam, or personal photograph was found across all frames."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
