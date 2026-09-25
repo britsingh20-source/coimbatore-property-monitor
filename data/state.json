@@ -379,11 +379,11 @@
       "status": "video_queued"
     },
     "43uj7V6HZJg": {
-      "attempts": 2,
+      "attempts": 3,
       "first_seen_at": "2026-09-24T15:11:47.240751+00:00",
-      "last_attempt_at": "2026-09-24T21:53:59.441341+00:00",
+      "last_attempt_at": "2026-09-25T06:45:59.497286+00:00",
       "last_error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry later or upgrade your tier at https://ai.dev/rate-limit.', 'code': 'too_many_requests'}}",
-      "next_retry_at": "2026-09-25T01:53:59.441353+00:00",
+      "next_retry_at": "2026-09-25T14:45:59.497296+00:00",
       "status": "retry_pending"
     },
     "4GyjS0MjVdI": {
@@ -2619,11 +2619,12 @@
     },
     "Xz1Yf4HlfME": {
       "attempts": 3,
+      "completed_at": "2026-09-25T06:42:13.675498+00:00",
       "first_seen_at": "2026-09-24T15:11:47.240751+00:00",
       "last_attempt_at": "2026-09-24T22:32:59.277560+00:00",
-      "last_error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry later or upgrade your tier at https://ai.dev/rate-limit.', 'code': 'too_many_requests'}}",
+      "last_error": "",
       "next_retry_at": "2026-09-25T06:32:59.277571+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "Y-EY53Lpnsg": {
       "attempts": 0,
@@ -4131,6 +4132,12 @@
       "next_retry_at": "2026-08-10T13:48:09.568513+00:00",
       "status": "video_queued"
     },
+    "qwDjKCK6Qlo": {
+      "attempts": 0,
+      "first_seen_at": "2026-09-25T06:41:46.680094+00:00",
+      "next_retry_at": "2026-09-25T06:41:46.680094+00:00",
+      "status": "discovered"
+    },
     "r2oVfH94bnw": {
       "attempts": 0,
       "completed_at": "2026-09-19T13:06:39.092595+00:00",
@@ -4368,6 +4375,12 @@
       "attempts": 0,
       "first_seen_at": "2026-09-25T00:54:40.157392+00:00",
       "next_retry_at": "2026-09-25T00:54:40.157392+00:00",
+      "status": "discovered"
+    },
+    "uPOkLa75cos": {
+      "attempts": 0,
+      "first_seen_at": "2026-09-25T06:41:46.680094+00:00",
+      "next_retry_at": "2026-09-25T06:41:46.680094+00:00",
       "status": "discovered"
     },
     "uRYjtyrCvF4": {
