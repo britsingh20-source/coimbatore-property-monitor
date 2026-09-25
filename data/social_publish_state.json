@@ -856,12 +856,7 @@
         "ceremonial_markings_present": false,
         "compliant": true,
         "confidence": 1.0,
-        "findings": [
-          "The video showcases an independent house property for sale with modern architectural elements, clean interior spaces, kitchen setups, and structural overviews.",
-          "No religious visuals, shrines, sacred texts, ritual symbols, or cultural marks appear in any frame.",
-          "No personal photographs, framed portraits, certificates, or posters are found on the walls or surfaces.",
-          "The information overlay at the bottom lists property details (3 BHK, area, price, features) without triggering non-compliance rules."
-        ],
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -1035,8 +1030,13 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1.0,
-        "findings": [],
+        "confidence": 0.95,
+        "findings": [
+          "The video displays a 3 BHK independent duplex villa for sale in Coimbatore.",
+          "Features shown include the exterior facade, porch/car parking, living room, ceiling details, kitchen, and staircase.",
+          "No religious visuals, shrines, sacred marks, threshold patterns, or personal portraits were found across any frame.",
+          "All wall decorations and posters are absent except for the real estate property info banner at the bottom."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -3584,7 +3584,8 @@
         "kASVxzODaoU",
         "UahQ_oE5QRo",
         "Ry54KEc0PUU",
-        "UwSLZBFR8cI"
+        "UwSLZBFR8cI",
+        "Xz1Yf4HlfME"
       ],
       "etag": "f1e5be806c51dc666a1e99e1a36df1d9-3",
       "match_error": "Error code: 400 - {'error': {'message': 'Request contains an invalid argument.', 'code': 'invalid_request'}}",
