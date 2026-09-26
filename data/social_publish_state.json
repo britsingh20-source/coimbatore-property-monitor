@@ -855,7 +855,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1.0,
+        "confidence": 1,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
@@ -1030,8 +1030,12 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
-        "findings": [],
+        "confidence": 1.0,
+        "findings": [
+          "The video shows a modern 3 BHK independent duplex house in Coimbatore.",
+          "Features include a spacious hall, kitchen with dining area, and good architectural finishes.",
+          "No religious symbols, idols, pujas, kolams, or personal portraits/family photos are detected across any frames."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
