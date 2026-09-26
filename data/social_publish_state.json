@@ -855,7 +855,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
+        "confidence": 1.0,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
@@ -1030,8 +1030,10 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
-        "findings": [],
+        "confidence": 0.95,
+        "findings": [
+          "The video showcases a modern 3BHK independent duplex house with standard architecture, including living area, kitchen, stairs, and exterior views without any religious items, cultural markings, or personal photos visible."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
