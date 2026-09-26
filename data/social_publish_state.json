@@ -855,7 +855,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1.0,
+        "confidence": 1,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
@@ -1030,14 +1030,8 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.95,
-        "findings": [
-          "The video shows an independent duplex house in Coimbatore.",
-          "The house features a living room, kitchen, stairs, and parking area.",
-          "No religious visuals, shrines, idols, or symbols are observed.",
-          "No personal photos, portraits, posters, or certificates are observed.",
-          "No ceremonial markings, kolams, or doorway decorations are observed."
-        ],
+        "confidence": 1,
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
