@@ -1,0 +1,120 @@
+{
+  "video_id": "P-JNk5WlOIs",
+  "source_url": "https://www.youtube.com/watch?v=P-JNk5WlOIs",
+  "property_location": "Karamadai",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "2 BHK",
+    "land_area": "3.50 Cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "NOT SPECIFIED",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking porch",
+    "approval": "NOT SPECIFIED",
+    "floors": "single-storey with open roof terrace",
+    "layout_distribution": "Ground Floor: Covered parking porch, living room, kitchen, 2 bedrooms with attached bathrooms. Roof level: Open roof terrace accessed via external stairs."
+  },
+  "verified_facts": "Property title advertises a 3.50 Cent North Facing Villa for sale in Karamadai., Contact number listed as 99528 50155 (Aram Realtors)., Walkthrough demonstrates ground floor with covered porch, living hall, kitchen, 2 bedrooms with attached bathrooms, and open terrace.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera with smooth room-by-room walkthrough transitions",
+    "hook_strategy": "Immediate location and property specification hook highlighting a 2 BHK Villa in Karamadai",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை காரமடையில 3.50 சென்ட் இடத்துல அமைஞ்சிருக்கிற ஒரு 2 BHK villa பாக்கலாம் வாங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "facing",
+        "voice": "இந்த villa பாத்தீங்கனா, நல்ல வாஸ்துபடி North facing-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "compass-north-highlight",
+        "purpose": "facing-highlight"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 3.50 cent land area-ல, single-storey வீடா open roof terrace-ோட கட்டியிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "land-area-callout",
+        "purpose": "land-details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "வீட்டுக்குள்ள covered car parking porch, false ceiling அப்புறம் wooden TV unit வச்ச living hall, kitchen cabinets, அப்புறம் attached bathroom இருக்குற 2 bedrooms கொடுத்திருக்காங்க. வெளிப்படியா open terrace-க்கும் போகலாம்.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "feature-text-popups",
+        "purpose": "interior-walkthrough"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த villa-வை நேர்ல site visit பண்ணவோ, details தெரிஞ்சுக்கவோ Aram Realtors 99528 50155 எண்ணுக்கு உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "contact-card-overlay",
+        "purpose": "call-to-action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/P-JNk5WlOIs/",
+  "optional_owned_audio": "assets/audio/P-JNk5WlOIs.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house with orange, brown, and beige exterior accents, decorative front gate, covered parking area, and external staircase to the roof terrace.. Hard floor/layout lock: single-storey with open roof terrace; Ground Floor: Covered parking porch, living room, kitchen, 2 bedrooms with attached bathrooms. Roof level: Open roof terrace accessed via external stairs.. Neighbourhood: Residential locality in Karamadai with surrounding low-rise homes and open lands visible from the roof terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house with orange, brown, and beige exterior accents, decorative front gate, covered parking area, and external staircase to the roof terrace.. Hard floor/layout lock: single-storey with open roof terrace; Ground Floor: Covered parking porch, living room, kitchen, 2 bedrooms with attached bathrooms. Roof level: Open roof terrace accessed via external stairs.. Neighbourhood: Residential locality in Karamadai with surrounding low-rise homes and open lands visible from the roof terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house with orange, brown, and beige exterior accents, decorative front gate, covered parking area, and external staircase to the roof terrace.. Hard floor/layout lock: single-storey with open roof terrace; Ground Floor: Covered parking porch, living room, kitchen, 2 bedrooms with attached bathrooms. Roof level: Open roof terrace accessed via external stairs.. Neighbourhood: Residential locality in Karamadai with surrounding low-rise homes and open lands visible from the roof terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house with orange, brown, and beige exterior accents, decorative front gate, covered parking area, and external staircase to the roof terrace.. Hard floor/layout lock: single-storey with open roof terrace; Ground Floor: Covered parking porch, living room, kitchen, 2 bedrooms with attached bathrooms. Roof level: Open roof terrace accessed via external stairs.. Neighbourhood: Residential locality in Karamadai with surrounding low-rise homes and open lands visible from the roof terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

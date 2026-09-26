@@ -1,0 +1,132 @@
+{
+  "video_id": "1UxW-abeyHA",
+  "source_url": "https://www.youtube.com/watch?v=1UxW-abeyHA",
+  "property_location": "Kanuvai Road, Thudiyalur, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "3.4 Cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹1.48 Crore",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex",
+    "layout_distribution": "Ground Floor: Covered parking portico, main hall, pooja unit, modular kitchen, dining area, 1 bedroom with attached bathroom, and external porch bathroom. First Floor: Upper living space, balcony, and 2 bedrooms with attached bathrooms."
+  },
+  "verified_facts": "Title mentions 3.4 CENTS EXTRAORDINARY NORTH FACING 3BHK HOUSE ☎️97896-94896 KANUVAI RD #thudiyalur 1.48 CRORE, Ground floor features portico parking, living room, pooja nook, kitchen with dining area, and 1 bedroom with attached bathroom., First floor features an upper hall, balcony access, and 2 bedrooms with attached bathrooms.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local real-estate presenter speaking directly to camera with natural Tamil phrasing.",
+    "hook_strategy": "Highlight the highly sought-after 3 BHK independent house in Kanuvai Road, Thudiyalur right at the start.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Thudiyalur, Kanuvai Road-ல ஒரு 3 BHK independent house விற்பனைக்கு வந்துருக்கு!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 3.4 Cents land-ல அமைஞ்சிருக்கிற G+1 duplex வீடுங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room"
+        ],
+        "vfx": "",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Ground floor-ல covered car parking, main hall, pooja unit, modular kitchen, dining area, 1 bedroom வித் attached bathroom இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "exterior",
+          "land"
+        ],
+        "vfx": "",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "North facing property-ல digital lock, false ceiling, TV unit, wardrobes-னு தேவையான வசதிகள் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "",
+        "purpose": "fact"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த வீட்டின் விலை 1.48 Crore.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "",
+        "purpose": "fact"
+      },
+      {
+        "name": "cta",
+        "voice": "Site visit பண்ணணும்னா இல்ல details வேணும்னா உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "",
+        "purpose": "fact"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/1UxW-abeyHA/",
+  "optional_owned_audio": "assets/audio/1UxW-abeyHA.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-storey house with grey and dark brown facade elements, glass panel balcony railings, and a gated compound with covered portico.. Hard floor/layout lock: G+1 duplex; Ground Floor: Covered parking portico, main hall, pooja unit, modular kitchen, dining area, 1 bedroom with attached bathroom, and external porch bathroom. First Floor: Upper living space, balcony, and 2 bedrooms with attached bathrooms.. Neighbourhood: Residential street context near Kanuvai Road, Thudiyalur.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-storey house with grey and dark brown facade elements, glass panel balcony railings, and a gated compound with covered portico.. Hard floor/layout lock: G+1 duplex; Ground Floor: Covered parking portico, main hall, pooja unit, modular kitchen, dining area, 1 bedroom with attached bathroom, and external porch bathroom. First Floor: Upper living space, balcony, and 2 bedrooms with attached bathrooms.. Neighbourhood: Residential street context near Kanuvai Road, Thudiyalur.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-storey house with grey and dark brown facade elements, glass panel balcony railings, and a gated compound with covered portico.. Hard floor/layout lock: G+1 duplex; Ground Floor: Covered parking portico, main hall, pooja unit, modular kitchen, dining area, 1 bedroom with attached bathroom, and external porch bathroom. First Floor: Upper living space, balcony, and 2 bedrooms with attached bathrooms.. Neighbourhood: Residential street context near Kanuvai Road, Thudiyalur.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-storey house with grey and dark brown facade elements, glass panel balcony railings, and a gated compound with covered portico.. Hard floor/layout lock: G+1 duplex; Ground Floor: Covered parking portico, main hall, pooja unit, modular kitchen, dining area, 1 bedroom with attached bathroom, and external porch bathroom. First Floor: Upper living space, balcony, and 2 bedrooms with attached bathrooms.. Neighbourhood: Residential street context near Kanuvai Road, Thudiyalur.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
