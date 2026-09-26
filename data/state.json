@@ -1043,10 +1043,12 @@
       "status": "video_queued"
     },
     "Bp1-8ddjgKQ": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-09-24T10:06:44.411617+00:00",
-      "next_retry_at": "2026-09-24T10:06:44.411617+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-09-26T13:25:59.796332+00:00",
+      "last_error": "Error code: 503 - {'error': {'message': 'gemini-3.6-flash is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.', 'code': 'service_unavailable'}}",
+      "next_retry_at": "2026-09-26T15:25:59.796343+00:00",
+      "status": "retry_pending"
     },
     "BuJPw72h-nQ": {
       "attempts": 0,
