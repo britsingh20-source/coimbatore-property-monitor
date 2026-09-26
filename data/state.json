@@ -1045,6 +1045,12 @@
       "next_retry_at": "2026-08-18T13:11:18.332814+00:00",
       "status": "discovered"
     },
+    "BwweXeBcBEA": {
+      "attempts": 0,
+      "first_seen_at": "2026-09-26T01:38:02.045029+00:00",
+      "next_retry_at": "2026-09-26T01:38:02.045029+00:00",
+      "status": "discovered"
+    },
     "BxSFOoXOLXE": {
       "attempts": 0,
       "completed_at": "2026-09-22T05:05:34.170133+00:00",
@@ -1463,11 +1469,12 @@
     },
     "HUVGtKCgqmY": {
       "attempts": 1,
+      "completed_at": "2026-09-26T01:38:28.745831+00:00",
       "first_seen_at": "2026-09-25T13:53:36.893041+00:00",
       "last_attempt_at": "2026-09-25T20:48:59.483209+00:00",
-      "last_error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry later or upgrade your tier at https://ai.dev/rate-limit.', 'code': 'too_many_requests'}}",
+      "last_error": "",
       "next_retry_at": "2026-09-25T22:48:59.483219+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "HW4vtv-wgGs": {
       "attempts": 2,
@@ -3752,11 +3759,11 @@
       "status": "archived_non_target"
     },
     "jyQcPGmdLWw": {
-      "attempts": 1,
+      "attempts": 2,
       "first_seen_at": "2026-09-25T07:54:57.360976+00:00",
-      "last_attempt_at": "2026-09-25T22:28:29.630590+00:00",
-      "last_error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry in 30s or upgrade your tier at https://ai.dev/rate-limit.', 'code': 'too_many_requests'}}",
-      "next_retry_at": "2026-09-26T00:28:29.630599+00:00",
+      "last_attempt_at": "2026-09-26T01:39:59.778972+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry later or upgrade your tier at https://ai.dev/rate-limit.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-09-26T05:39:59.778982+00:00",
       "status": "retry_pending"
     },
     "kASVxzODaoU": {
