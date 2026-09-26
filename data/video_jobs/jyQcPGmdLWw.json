@@ -1,0 +1,145 @@
+{
+  "video_id": "jyQcPGmdLWw",
+  "source_url": "https://www.youtube.com/watch?v=jyQcPGmdLWw",
+  "property_location": "Karamadai, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": true,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2 BHK",
+    "land_area": "3.50 Cents",
+    "built_up_area": "1300 Sq.ft",
+    "price": "₹67 Lakhs",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking (18.5 ft × 15 ft)",
+    "approval": "DTCP Approved",
+    "floors": "Single-storey residence with open terrace",
+    "layout_distribution": "Ground Floor: Covered parking porch on the front right, opening into a spacious 16'x16' living room. A central hallway leads to a dedicated 4'x4' pooja room, an open 16'x10' modular kitchen with dining area, a 16'x10' master bedroom with an attached bathroom (7'x4.5'), and a second 16'x8' bedroom with an attached bathroom (8'x4'). Exterior: An outdoor bathroom (6'x4') is located under the external staircase leading to the full open roof terrace with parapet walls and an overhead water tank."
+  },
+  "verified_facts": "Plot size is 3.50 cents with a 1,300 sq.ft built-up area as stated in the listing metadata., House and site face North direction with North-facing main door., Ground floor contains a 18.5'x15' car parking area, 16'x16' living hall, 4'x4' pooja room, 16'x10' kitchen with dining area, two bedrooms (16'x10' and 16'x8'), two attached bathrooms (7'x4.5' and 8'x4'), and one outdoor toilet (6'x4')., Water amenities include an individual borewell and an underground water sump., Property is situated directly on the Karamadai to Annur main road bus route.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and authentic local property presenter standing on-camera, speaking natural conversational Tamil with common English real-estate terms.",
+    "hook_strategy": "Highlight the prime location on the Karamadai-Annur bus route along with DTCP approval and affordable 2 BHK single-storey house specifications.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை காரமடையில், காரமடை - அண்ணூர் மெயின் ரோடு பஸ் ரூட்ல அமைஞ்சிருக்கிற ஒரு 2 BHK independent house பாக்கப்போறோம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approval வாங்குன 3.50 சென்ட் land-ல, 1300 sq.ft built-up கொண்ட single-storey வீடுங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "text-highlight-approval",
+        "purpose": "property-specs"
+      },
+      {
+        "name": "facing",
+        "voice": "இந்த house மற்றும் main door ரெண்டுமே North facing. பிரண்ட்ல பெரிய covered car parking வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "compass-north-indicator",
+        "purpose": "orientation"
+      },
+      {
+        "name": "builtUp",
+        "voice": "உள்ளே 16x16 living room, LED lights உடன் false ceiling, pooja room, modular kitchen, மற்றும் 2 bedrooms வித் 2 attached bathrooms இருக்கு.",
+        "broll": [
+          "living_room",
+          "interior",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "room-dimension-text",
+        "purpose": "interior-walkthrough"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல சொந்தமா borewell, underground water sump, மற்றும் மேல open roof terrace வசதியும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "amenities-badge",
+        "purpose": "amenities-highlight"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த 2 BHK வீட்டின் விலை 67 Lakhs.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "price-pop-up",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details தெரிஞ்சுக்க மற்றும் direct site visit வர உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "contact-card-overlay",
+        "purpose": "call-to-action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/jyQcPGmdLWw/",
+  "optional_owned_audio": "assets/audio/jyQcPGmdLWw.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary elevation painted in orange, cream, and brown accents with horizontal groove detailing. Includes a decorative MS entry gate, tiled driveway porch, wall tiles extending up to 10 feet along the parking walls, external staircase with MS handrails, and a spacious painted open terrace.. Hard floor/layout lock: Single-storey residence with open terrace; Ground Floor: Covered parking porch on the front right, opening into a spacious 16'x16' living room. A central hallway leads to a dedicated 4'x4' pooja room, an open 16'x10' modular kitchen with dining area, a 16'x10' master bedroom with an attached bathroom (7'x4.5'), and a second 16'x8' bedroom with an attached bathroom (8'x4'). Exterior: An outdoor bathroom (6'x4') is located under the external staircase leading to the full open roof terrace with parapet walls and an overhead water tank.. Neighbourhood: Located in a developing residential area facing an asphalt main road with passing public transport, surrounding vacant land plots, scattered single-family houses, and visible mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary elevation painted in orange, cream, and brown accents with horizontal groove detailing. Includes a decorative MS entry gate, tiled driveway porch, wall tiles extending up to 10 feet along the parking walls, external staircase with MS handrails, and a spacious painted open terrace.. Hard floor/layout lock: Single-storey residence with open terrace; Ground Floor: Covered parking porch on the front right, opening into a spacious 16'x16' living room. A central hallway leads to a dedicated 4'x4' pooja room, an open 16'x10' modular kitchen with dining area, a 16'x10' master bedroom with an attached bathroom (7'x4.5'), and a second 16'x8' bedroom with an attached bathroom (8'x4'). Exterior: An outdoor bathroom (6'x4') is located under the external staircase leading to the full open roof terrace with parapet walls and an overhead water tank.. Neighbourhood: Located in a developing residential area facing an asphalt main road with passing public transport, surrounding vacant land plots, scattered single-family houses, and visible mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary elevation painted in orange, cream, and brown accents with horizontal groove detailing. Includes a decorative MS entry gate, tiled driveway porch, wall tiles extending up to 10 feet along the parking walls, external staircase with MS handrails, and a spacious painted open terrace.. Hard floor/layout lock: Single-storey residence with open terrace; Ground Floor: Covered parking porch on the front right, opening into a spacious 16'x16' living room. A central hallway leads to a dedicated 4'x4' pooja room, an open 16'x10' modular kitchen with dining area, a 16'x10' master bedroom with an attached bathroom (7'x4.5'), and a second 16'x8' bedroom with an attached bathroom (8'x4'). Exterior: An outdoor bathroom (6'x4') is located under the external staircase leading to the full open roof terrace with parapet walls and an overhead water tank.. Neighbourhood: Located in a developing residential area facing an asphalt main road with passing public transport, surrounding vacant land plots, scattered single-family houses, and visible mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary elevation painted in orange, cream, and brown accents with horizontal groove detailing. Includes a decorative MS entry gate, tiled driveway porch, wall tiles extending up to 10 feet along the parking walls, external staircase with MS handrails, and a spacious painted open terrace.. Hard floor/layout lock: Single-storey residence with open terrace; Ground Floor: Covered parking porch on the front right, opening into a spacious 16'x16' living room. A central hallway leads to a dedicated 4'x4' pooja room, an open 16'x10' modular kitchen with dining area, a 16'x10' master bedroom with an attached bathroom (7'x4.5'), and a second 16'x8' bedroom with an attached bathroom (8'x4'). Exterior: An outdoor bathroom (6'x4') is located under the external staircase leading to the full open roof terrace with parapet walls and an overhead water tank.. Neighbourhood: Located in a developing residential area facing an asphalt main road with passing public transport, surrounding vacant land plots, scattered single-family houses, and visible mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
