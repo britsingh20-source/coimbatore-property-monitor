@@ -1,0 +1,122 @@
+{
+  "video_id": "g_S0bLWurYE",
+  "source_url": "https://www.youtube.com/watch?v=g_S0bLWurYE",
+  "property_location": "Periyanaickenpalayam, Coimbatore, Tamil Nadu, India",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "3.1 Acres (Total Layout Area)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "NOT SPECIFIED",
+    "facing": "NOT SPECIFIED",
+    "road_width": "30 ft & 33 ft",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP and RERA Approved",
+    "floors": "NOT SPECIFIED",
+    "layout_distribution": "NOT SPECIFIED"
+  },
+  "verified_facts": "Project name is Heritage Grand Vista located in Periyanaickenpalayam, Coimbatore., Located 2 km from Periyanaickenpalayam BSNL Office on Coimbatore-Mettupalayam Main Road., Total project area is 3.1 acres containing 70 plots., DTCP and RERA approved gated community layout., Road widths within layout are 30 feet and 33 feet wide tar roads., Includes 3-phase EB line, street lights, drainage, tree plantation, and entrance arch., Up to 80% bank loan facility available.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local Coimbatore property presenter speaking directly to camera, fast-paced and natural conversational Tamil with common real estate terms.",
+    "hook_strategy": "Highlight prime location on Coimbatore-Mettupalayam Main Road near BSNL Office within the first 3 seconds.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை மேட்டுப்பாளையம் மெயின் ரோட்ல, பெரியநாயக்கன்பாளையம் BSNL ஆஃபீஸ்ல இருந்து வெறும் 2 km தொலைவுல ஒரு சூப்பர் location பாக்கலாம் வாங்க!",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 3.1 acre-ல அமைஞ்ச ஹெரிட்டேஜ் கிராண்ட் விஸ்டா gated community. மொத்தம் 70 plots இருக்கு, வித் welcome arch, compound wall, water connection மற்றும் tree plantation-ஓட அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "living_room"
+        ],
+        "vfx": "layout-highlight",
+        "purpose": "layout_overview"
+      },
+      {
+        "name": "road",
+        "voice": "Layout உள்ள பாத்தீங்கனா 30 feet மற்றும் 33 feet wide tar roads, 3-phase EB line, street lights அப்புறம் நல்ல drainage system-உம் பண்ணிருக்காங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "road-width-text",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், இது DTCP மற்றும் RERA approval வாங்குன layout. அதுமட்டும் இல்லாம 80% வரை bank loan facility-யும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_building"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல site visit வரணும்னா இல்ல மேலும் details வேணும்னா உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "contact-details",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/g_S0bLWurYE/",
+  "optional_owned_audio": "assets/audio/g_S0bLWurYE.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Periyanaickenpalayam, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Plotted land development featuring paved blacktop tar roads, concrete curbed pathways, street light poles, electrical line poles, drainage channels, tree plantations, perimeter compound wall, and a yellow-black painted welcome arch titled 'HERITAGE GRAND VISTA'.. Neighbourhood: Suburban layout setting in Periyanaickenpalayam surrounded by open lands, greenery, palm trees, and scenic mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Periyanaickenpalayam, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Plotted land development featuring paved blacktop tar roads, concrete curbed pathways, street light poles, electrical line poles, drainage channels, tree plantations, perimeter compound wall, and a yellow-black painted welcome arch titled 'HERITAGE GRAND VISTA'.. Neighbourhood: Suburban layout setting in Periyanaickenpalayam surrounded by open lands, greenery, palm trees, and scenic mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Periyanaickenpalayam, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Plotted land development featuring paved blacktop tar roads, concrete curbed pathways, street light poles, electrical line poles, drainage channels, tree plantations, perimeter compound wall, and a yellow-black painted welcome arch titled 'HERITAGE GRAND VISTA'.. Neighbourhood: Suburban layout setting in Periyanaickenpalayam surrounded by open lands, greenery, palm trees, and scenic mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Periyanaickenpalayam, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Plotted land development featuring paved blacktop tar roads, concrete curbed pathways, street light poles, electrical line poles, drainage channels, tree plantations, perimeter compound wall, and a yellow-black painted welcome arch titled 'HERITAGE GRAND VISTA'.. Neighbourhood: Suburban layout setting in Periyanaickenpalayam surrounded by open lands, greenery, palm trees, and scenic mountain views in the background.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

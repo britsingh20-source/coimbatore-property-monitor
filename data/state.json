@@ -1044,11 +1044,12 @@
     },
     "Bp1-8ddjgKQ": {
       "attempts": 2,
+      "completed_at": "2026-09-26T22:56:16.841852+00:00",
       "first_seen_at": "2026-09-24T10:06:44.411617+00:00",
       "last_attempt_at": "2026-09-26T17:21:29.457897+00:00",
-      "last_error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry in 30s or upgrade your tier at https://ai.dev/rate-limit.', 'code': 'too_many_requests'}}",
+      "last_error": "",
       "next_retry_at": "2026-09-26T21:21:29.457905+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "BuJPw72h-nQ": {
       "attempts": 0,
@@ -3518,11 +3519,12 @@
     },
     "g_S0bLWurYE": {
       "attempts": 3,
+      "completed_at": "2026-09-26T22:56:38.330701+00:00",
       "first_seen_at": "2026-09-20T09:59:03.454590+00:00",
       "last_attempt_at": "2026-09-21T05:35:59.373227+00:00",
-      "last_error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry later or upgrade your tier at https://ai.dev/rate-limit.', 'code': 'too_many_requests'}}",
+      "last_error": "",
       "next_retry_at": "2026-09-21T13:35:59.373237+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "gieIQ9wpTYQ": {
       "attempts": 0,
