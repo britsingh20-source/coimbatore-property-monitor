@@ -855,8 +855,12 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
-        "findings": [],
+        "confidence": 0.95,
+        "findings": [
+          "The video showcases a modern 3 BHK independent house for sale with exterior and interior views.",
+          "Details such as price (95 Lakhs), square footage (1850 Sq.Ft), location (Periyanaickenpalayam, Coimbatore), and amenities are presented in the footer overlay throughout the video.",
+          "Interior clips show living room space, false ceiling, modular kitchen, and common areas without any religious items or personal photographs."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -1030,7 +1034,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
+        "confidence": 1.0,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
