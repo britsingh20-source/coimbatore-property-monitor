@@ -856,12 +856,7 @@
         "ceremonial_markings_present": false,
         "compliant": true,
         "confidence": 1.0,
-        "findings": [
-          "The video showcases a modern 3 BHK independent house in Periyanaickenpalayam, Coimbatore.",
-          "Exterior, garage, living room, false ceiling, kitchen, and staircase areas are shown.",
-          "Property details overlays and promotional text are present at the bottom, which are permissible.",
-          "No religious visuals, personal photographs, or ceremonial markings were identified in any frame."
-        ],
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -1036,12 +1031,7 @@
         "ceremonial_markings_present": false,
         "compliant": true,
         "confidence": 1.0,
-        "findings": [
-          "The video displays a 3 BHK independent house in Coimbatore with clean architectural elements, living spaces, and a kitchen.",
-          "No religious visuals, shrines, pooja setups, symbols, or ritual markings are present in any frame.",
-          "No personal photos, family portraits, posters, calendars, or certificates are visible.",
-          "The footer contains standard property sale specifications, price, and location details without any policy-violating content."
-        ],
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
