@@ -71,7 +71,8 @@
     "Z1X71skzHxE",
     "2-H20IlbWcg",
     "JBO2RHtZ934",
-    "ZQ4M6Shwh2c"
+    "ZQ4M6Shwh2c",
+    "n6SKkFy-jdk"
   ],
   "history": [
     {
@@ -433,6 +434,11 @@
       "video_id": "ZQ4M6Shwh2c",
       "creator": "Ridhi Khosla Jalan",
       "url": "https://www.youtube.com/watch?v=ZQ4M6Shwh2c"
+    },
+    {
+      "video_id": "n6SKkFy-jdk",
+      "creator": "DesignCafe",
+      "url": "https://www.youtube.com/watch?v=n6SKkFy-jdk"
     }
   ],
   "night_channel_cursor": 1
