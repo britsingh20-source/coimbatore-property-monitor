@@ -73,7 +73,8 @@
     "JBO2RHtZ934",
     "ZQ4M6Shwh2c",
     "n6SKkFy-jdk",
-    "NN5Aw1Xjg0A"
+    "NN5Aw1Xjg0A",
+    "ZATWEzHm2FI"
   ],
   "history": [
     {
@@ -445,6 +446,11 @@
       "video_id": "NN5Aw1Xjg0A",
       "creator": "Ridhi Khosla Jalan",
       "url": "https://www.youtube.com/watch?v=NN5Aw1Xjg0A"
+    },
+    {
+      "video_id": "ZATWEzHm2FI",
+      "creator": "DesignCafe",
+      "url": "https://www.youtube.com/watch?v=ZATWEzHm2FI"
     }
   ],
   "night_channel_cursor": 1
