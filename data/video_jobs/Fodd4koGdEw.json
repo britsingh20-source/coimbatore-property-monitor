@@ -1,0 +1,150 @@
+{
+  "video_id": "Fodd4koGdEw",
+  "source_url": "https://www.youtube.com/watch?v=Fodd4koGdEw",
+  "property_location": "Neelambur, Avinashi Road, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "1.5 Cents to 5.5 Cents (6-Acre Layout, 110 Plots)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹16.5 Lakhs / Cent",
+    "facing": "North, East",
+    "road_width": "30 Feet, 33 Feet, 40 Feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved, RERA Approved",
+    "floors": "NOT SPECIFIED",
+    "layout_distribution": "A 6-acre gated residential plot township named 'Airport City' containing 110 individual plot divisions ranging from 1.5 cents to 5.5 cents, equipped with internal 30ft, 33ft, and 40ft wide blacktop roads."
+  },
+  "verified_facts": "Located in Neelambur near Coimbatore International Airport (approx. 5 minutes drive, 2 km from Avinashi Road)., Total project area is 6 acres divided into 110 DTCP and RERA approved plots., Plot sizes range from 1.5 cents, 2.5 cents, 3.5 cents, 4.5 cents up to 5.5 cents., Pre-launch offer price is quoted at ₹16.5 Lakhs per cent., Bank loan facilities up to 80% for land purchase and up to 90% for land plus house construction., Custom villa construction services are also available through the developer.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and engaging local property presenter speaking directly to camera with smooth real-estate Tamil narration.",
+    "hook_strategy": "Highlight the prime location near Coimbatore International Airport in Neelambur on Avinashi Road.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை அவினாசி ரோடு நீலாம்பூர்ல, ஏர்போர்ட் பக்கத்துல ஒரு பிரைம் லொகேஷன்ல லேஅவுட் பிளாட் தேடுறீங்களா?",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தம் 6 ஏக்கர்ல அமைஞ்ச 110 பிளாட்ஸ் கொண்ட கேட்டட் கம்யூனிட்டி. இதுல 1.5 சென்ட்ல இருந்து 5.5 சென்ட் வரை பிளாட்ஸ் கிடைக்குது.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "overview"
+      },
+      {
+        "name": "road",
+        "voice": "லேஅவுட் உள்ள பார்த்தீங்கனா 30 அடி, 33 அடி மற்றும் 40 அடி அகலமான பிளாக் டாப் தார் ரோட்ஸ் அமைச்சிருக்காங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "facing",
+        "voice": "இங்க நார்த் மற்றும் ஈஸ்ட் பேசிங் பிளாட்ஸ் அவெய்லபிளா இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "compass",
+        "purpose": "orientation"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், இது DTCP மற்றும் RERA அப்ரூவல் பெற்ற லேஅவுட். 80% வரை பேங்க் லோன் பெசிலிட்டியும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "badge-overlay",
+        "purpose": "trust"
+      },
+      {
+        "name": "price",
+        "voice": "பிரீ-லான்ச் ஆஃபர் விலை பாத்தீங்கனா, ஒரு சென்ட் 16.5 லட்சம் ரூபாய்.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேரடியா சைட் விசிட் வரவோ இல்ல details பெறவோ உடனே கீழ இருக்கிற நம்பருக்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "kitchen"
+        ],
+        "vfx": "call-to-action",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/Fodd4koGdEw/",
+  "optional_owned_audio": "assets/audio/Fodd4koGdEw.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed gated plot community featuring an entrance archway with security booth, paved tar roads, underground drainage, water tank, solar light poles, boundary fencing, and an under-construction turf and children's park area.. Neighbourhood: A rapidly developing suburban residential area in Neelambur near Avinashi Road, surrounded by engineering colleges, super-speciality hospitals, highways, and existing independent houses.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed gated plot community featuring an entrance archway with security booth, paved tar roads, underground drainage, water tank, solar light poles, boundary fencing, and an under-construction turf and children's park area.. Neighbourhood: A rapidly developing suburban residential area in Neelambur near Avinashi Road, surrounded by engineering colleges, super-speciality hospitals, highways, and existing independent houses.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed gated plot community featuring an entrance archway with security booth, paved tar roads, underground drainage, water tank, solar light poles, boundary fencing, and an under-construction turf and children's park area.. Neighbourhood: A rapidly developing suburban residential area in Neelambur near Avinashi Road, surrounded by engineering colleges, super-speciality hospitals, highways, and existing independent houses.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed gated plot community featuring an entrance archway with security booth, paved tar roads, underground drainage, water tank, solar light poles, boundary fencing, and an under-construction turf and children's park area.. Neighbourhood: A rapidly developing suburban residential area in Neelambur near Avinashi Road, surrounded by engineering colleges, super-speciality hospitals, highways, and existing independent houses.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
