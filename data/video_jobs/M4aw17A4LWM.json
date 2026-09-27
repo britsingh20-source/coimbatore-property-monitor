@@ -1,0 +1,134 @@
+{
+  "video_id": "M4aw17A4LWM",
+  "source_url": "https://www.youtube.com/watch?v=M4aw17A4LWM",
+  "property_location": "Maniakarampalayam, Near Thudiyalur, Coimbatore, Tamil Nadu, India",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "2 Cents (28 ft x 32 ft / approx 871 sq.ft)",
+    "built_up_area": "1500 sq.ft",
+    "price": "71 Lakhs (Negotiable)",
+    "facing": "South (Site) / East (Main Door)",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking portico (10 ft x 16 ft)",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex with open terrace utility",
+    "layout_distribution": "Ground Floor: Car parking portico (10 ft x 16 ft), living hall (16 ft x 16 ft) with TV unit and Pooja cabinet, L-shaped kitchen (8 ft x 11 ft), bedroom 1 (10 ft x 11 ft) with attached bathroom (4 ft x 8 ft). First Floor: Passage hallway, bedroom 2 (10 ft x 16 ft) with attached bathroom (6.5 ft x 6 ft), bedroom 3 (10 ft x 16 ft) with attached bathroom (6.5 ft x 6 ft), balcony (10 ft x 16 ft). Terrace Level: Open terrace accessed via a metal spiral staircase from the balcony."
+  },
+  "verified_facts": "Site dimensions are 28 feet by 32 feet (2 Cents)., Total built-up area is 1500 sq.ft constructed as a 3BHK duplex house., Property features individual borewell and drinking water sump in the northeast corner., House price is quoted at 71 Lakhs negotiable with 75% bank loan availability.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local real-estate presenter talking naturally to camera with brisk floor-by-floor visuals.",
+    "hook_strategy": "Direct local hook featuring a 3 BHK duplex home in Maniakarampalayam near Thudiyalur.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை துடியலூர் பக்கத்துல இருக்குற மணிஅகாரம்பாளையம் location-ல அமைஞ்ச ஒரு 3 BHK duplex வீட தான் இன்னைக்கு பாக்கப்போறோம்.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-text-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தம் 2 cent land-ல, 28 by 32 feet dimension-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room"
+        ],
+        "vfx": "dimension-overlay",
+        "purpose": "land-details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "மொத்தம் 1500 sq.ft built-up area! Ground floor-ல hall, modular kitchen, ஒரு bedroom வருது. First floor-ல 2 bedrooms அப்புறம் balcony அமைஞ்சிருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "exterior",
+          "road"
+        ],
+        "vfx": "built-up-text-overlay",
+        "purpose": "property-tour"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், site facing South அண்ட் main door East facing-ல கொடுத்திருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing-details"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price 71 Lakhs, negotiable. 75% bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "price-tag-overlay",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த வீட்டை நேர்ல வந்து site visit பண்ணவோ, details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "call-now-overlay",
+        "purpose": "call-to-action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/M4aw17A4LWM/",
+  "optional_owned_audio": "assets/audio/M4aw17A4LWM.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-storey elevation rendered in off-white and charcoal gray with dark brown geometric accent panels, glass-railed first-floor balcony, tiled car portico, and teakwood main entrance door.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Car parking portico (10 ft x 16 ft), living hall (16 ft x 16 ft) with TV unit and Pooja cabinet, L-shaped kitchen (8 ft x 11 ft), bedroom 1 (10 ft x 11 ft) with attached bathroom (4 ft x 8 ft). First Floor: Passage hallway, bedroom 2 (10 ft x 16 ft) with attached bathroom (6.5 ft x 6 ft), bedroom 3 (10 ft x 16 ft) with attached bathroom (6.5 ft x 6 ft), balcony (10 ft x 16 ft). Terrace Level: Open terrace accessed via a metal spiral staircase from the balcony.. Neighbourhood: Developing residential neighborhood in Maniakarampalayam near Thudiyalur Corporation limits, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-storey elevation rendered in off-white and charcoal gray with dark brown geometric accent panels, glass-railed first-floor balcony, tiled car portico, and teakwood main entrance door.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Car parking portico (10 ft x 16 ft), living hall (16 ft x 16 ft) with TV unit and Pooja cabinet, L-shaped kitchen (8 ft x 11 ft), bedroom 1 (10 ft x 11 ft) with attached bathroom (4 ft x 8 ft). First Floor: Passage hallway, bedroom 2 (10 ft x 16 ft) with attached bathroom (6.5 ft x 6 ft), bedroom 3 (10 ft x 16 ft) with attached bathroom (6.5 ft x 6 ft), balcony (10 ft x 16 ft). Terrace Level: Open terrace accessed via a metal spiral staircase from the balcony.. Neighbourhood: Developing residential neighborhood in Maniakarampalayam near Thudiyalur Corporation limits, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-storey elevation rendered in off-white and charcoal gray with dark brown geometric accent panels, glass-railed first-floor balcony, tiled car portico, and teakwood main entrance door.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Car parking portico (10 ft x 16 ft), living hall (16 ft x 16 ft) with TV unit and Pooja cabinet, L-shaped kitchen (8 ft x 11 ft), bedroom 1 (10 ft x 11 ft) with attached bathroom (4 ft x 8 ft). First Floor: Passage hallway, bedroom 2 (10 ft x 16 ft) with attached bathroom (6.5 ft x 6 ft), bedroom 3 (10 ft x 16 ft) with attached bathroom (6.5 ft x 6 ft), balcony (10 ft x 16 ft). Terrace Level: Open terrace accessed via a metal spiral staircase from the balcony.. Neighbourhood: Developing residential neighborhood in Maniakarampalayam near Thudiyalur Corporation limits, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern 2-storey elevation rendered in off-white and charcoal gray with dark brown geometric accent panels, glass-railed first-floor balcony, tiled car portico, and teakwood main entrance door.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Car parking portico (10 ft x 16 ft), living hall (16 ft x 16 ft) with TV unit and Pooja cabinet, L-shaped kitchen (8 ft x 11 ft), bedroom 1 (10 ft x 11 ft) with attached bathroom (4 ft x 8 ft). First Floor: Passage hallway, bedroom 2 (10 ft x 16 ft) with attached bathroom (6.5 ft x 6 ft), bedroom 3 (10 ft x 16 ft) with attached bathroom (6.5 ft x 6 ft), balcony (10 ft x 16 ft). Terrace Level: Open terrace accessed via a metal spiral staircase from the balcony.. Neighbourhood: Developing residential neighborhood in Maniakarampalayam near Thudiyalur Corporation limits, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

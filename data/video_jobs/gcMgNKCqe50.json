@@ -1,0 +1,139 @@
+{
+  "video_id": "gcMgNKCqe50",
+  "source_url": "https://www.youtube.com/watch?v=gcMgNKCqe50",
+  "property_location": "Kondayampalayam, Coimbatore, Tamil Nadu, India",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "3 BHK",
+    "land_area": "3.50 Cents",
+    "built_up_area": "1850 Sq.ft",
+    "price": "₹1.20 Crore",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking (17' x 13'9\")",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex with open terrace utility",
+    "layout_distribution": "Ground Floor: Covered car parking, setback area with outer toilet, spacious living hall with TV unit and interior staircase, modular kitchen with dining area, and 1 master bedroom with attached bathroom. First Floor: Foyer corridor, 2 master bedrooms each with attached bathrooms and built-in wardrobes, open balcony, and utility balcony with metal stairs leading to the open roof terrace."
+  },
+  "verified_facts": "3.50 cents plot area with 1850 sq.ft built-up area north-facing 3BHK duplex villa., Located in a gated community in Kondayampalayam, near Saravanampatti IT Park corridor, Coimbatore., Price listed at ₹1.20 Crore., Ground floor consists of car parking (17' x 13'9\"), setback utility area, outer toilet, living hall (16'7.5\" x 16'), kitchen & dining (11' x 16'), and ground floor master bedroom (10' x 16') with attached bathroom., First floor consists of foyer hallway, second master bedroom (11' x 16') with attached bathroom, third master bedroom (10' x 16') with attached bathroom, open balcony, and utility balcony with metal stairs leading to open terrace.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Kondayampalayam, Coimbatore, Tamil Nadu, India சைட்ல 3 BHK Villa தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹1.20 Crore.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 3.50 Cents லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 1850 Sq.ft இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு North ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/gcMgNKCqe50/",
+  "optional_owned_audio": "assets/audio/gcMgNKCqe50.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern villa featuring a dual-tone beige and dark brown elevation with textured accent wall, fold-out metallic driveway gate, tiled car porch and setbacks, perimeter compound wall, and open terrace with dual water storage tanks.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking, setback area with outer toilet, spacious living hall with TV unit and interior staircase, modular kitchen with dining area, and 1 master bedroom with attached bathroom. First Floor: Foyer corridor, 2 master bedrooms each with attached bathrooms and built-in wardrobes, open balcony, and utility balcony with metal stairs leading to the open roof terrace.. Neighbourhood: Situated within a gated residential layout in Kondayampalayam, adjacent to Saravanampatti IT corridor in Coimbatore North, surrounded by quiet residential developments and open plots.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern villa featuring a dual-tone beige and dark brown elevation with textured accent wall, fold-out metallic driveway gate, tiled car porch and setbacks, perimeter compound wall, and open terrace with dual water storage tanks.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking, setback area with outer toilet, spacious living hall with TV unit and interior staircase, modular kitchen with dining area, and 1 master bedroom with attached bathroom. First Floor: Foyer corridor, 2 master bedrooms each with attached bathrooms and built-in wardrobes, open balcony, and utility balcony with metal stairs leading to the open roof terrace.. Neighbourhood: Situated within a gated residential layout in Kondayampalayam, adjacent to Saravanampatti IT corridor in Coimbatore North, surrounded by quiet residential developments and open plots.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern villa featuring a dual-tone beige and dark brown elevation with textured accent wall, fold-out metallic driveway gate, tiled car porch and setbacks, perimeter compound wall, and open terrace with dual water storage tanks.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking, setback area with outer toilet, spacious living hall with TV unit and interior staircase, modular kitchen with dining area, and 1 master bedroom with attached bathroom. First Floor: Foyer corridor, 2 master bedrooms each with attached bathrooms and built-in wardrobes, open balcony, and utility balcony with metal stairs leading to the open roof terrace.. Neighbourhood: Situated within a gated residential layout in Kondayampalayam, adjacent to Saravanampatti IT corridor in Coimbatore North, surrounded by quiet residential developments and open plots.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern villa featuring a dual-tone beige and dark brown elevation with textured accent wall, fold-out metallic driveway gate, tiled car porch and setbacks, perimeter compound wall, and open terrace with dual water storage tanks.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking, setback area with outer toilet, spacious living hall with TV unit and interior staircase, modular kitchen with dining area, and 1 master bedroom with attached bathroom. First Floor: Foyer corridor, 2 master bedrooms each with attached bathrooms and built-in wardrobes, open balcony, and utility balcony with metal stairs leading to the open roof terrace.. Neighbourhood: Situated within a gated residential layout in Kondayampalayam, adjacent to Saravanampatti IT corridor in Coimbatore North, surrounded by quiet residential developments and open plots.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
