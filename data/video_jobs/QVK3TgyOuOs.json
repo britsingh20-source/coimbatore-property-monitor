@@ -1,0 +1,132 @@
+{
+  "video_id": "QVK3TgyOuOs",
+  "source_url": "https://www.youtube.com/watch?v=QVK3TgyOuOs",
+  "property_location": "Saravanampatti, Coimbatore, Tamil Nadu, India",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2 BHK",
+    "land_area": "3.5 Cents",
+    "built_up_area": "1300 Sq. Ft.",
+    "price": "97 Lakhs",
+    "facing": "East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking (Portico: 14' x 19')",
+    "approval": "NOT SPECIFIED",
+    "floors": "Single-storey with open terrace",
+    "layout_distribution": "Ground Floor: Portico parking, sit-out, common bathroom under exterior stairs, living hall, modular kitchen with dining area, master bedroom with attached bathroom, second bedroom with attached bathroom. Exterior Staircase leading to open roof terrace."
+  },
+  "verified_facts": "Located near Saravanampatti IT Park (1.5 km) and Keeranatham Bus Stop (500 meters) in Coimbatore., Property is a brand new East-facing 2BHK independent house on a 3.5 Cent plot (27' x 55')., Built-up area stated as 1,300 sq. ft. in video speech (description notes 1,600 sq. ft.)., Portico size: 14' x 19', capable of parking an Innova or two small cars., Sit-out area size: 5.5' x 5.5' with teak wood main door., Living Hall size: 16' x 16' with built-in TV unit and dual windows., Kitchen size: 10' x 16' modular kitchen with dining area and upper cabinet/loft cupboard work., Bedroom 1 (Master) size: 11' x 16' with attached bathroom (5.5' x 5.5') and fitted wardrobes.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, energetic local property presenter speaking directly to camera with engaging visual cuts.",
+    "hook_strategy": "Highlight the ultra-prime location just 1.5 km from Saravanampatti IT Park to grab immediate interest from homebuyers and IT professionals.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "சரவணம்பட்டி IT Park-லிருந்து வெறும் 1.5 km தூரத்துல, ஒரு செம location-ல இருக்குற வீடு தான் இன்னைக்கு பாக்க போறோம்!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-highlight",
+        "purpose": "hook"
+      },
+      {
+        "name": "facing",
+        "voice": "இது 3.5 Cent plot-ல அமைஞ்சிருக்கிற ஒரு brand new East facing 2BHK single-storey வீடு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "east-facing-arrow",
+        "purpose": "property_type_and_facing"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1300 Sq. Ft. built-up area-ல TV unit-ஓட பெரிய living hall, modular kitchen, அப்புறம் 2 bedrooms-மே attached bathroom மற்றும் wardrobes வசதியோட இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road",
+          "exterior"
+        ],
+        "vfx": "text-overlay-1300sqft",
+        "purpose": "interior_layout"
+      },
+      {
+        "name": "land",
+        "voice": "வெளியே பெரிய car parking portico, dedicated borewell, அப்புறம் 10,000 Litre water tank வசதியும் கொடுத்திருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "parking-icon",
+        "purpose": "amenities"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த வீட்டோட price பாத்தீங்கனா 97 Lakhs சொல்றாங்க, அதுவும் negotiable தான்!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag-pop",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "முழு details தெரிஞ்சுக்க மற்றும் நேர்ல site visit போக, உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "contact-details-slide",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/QVK3TgyOuOs/",
+  "optional_owned_audio": "assets/audio/QVK3TgyOuOs.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-storey home with beige and brown exterior wall tiles, decorative elevation panels, a paved portico, teak main entry door, and an exterior grey staircase leading to an open terrace with glass-railing perimeter wall.. Hard floor/layout lock: Single-storey with open terrace; Ground Floor: Portico parking, sit-out, common bathroom under exterior stairs, living hall, modular kitchen with dining area, master bedroom with attached bathroom, second bedroom with attached bathroom. Exterior Staircase leading to open roof terrace.. Neighbourhood: Suburban residential neighborhood in Saravanampatti with nearby independent houses, open plots, and power transmission lines visible from the roof terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-storey home with beige and brown exterior wall tiles, decorative elevation panels, a paved portico, teak main entry door, and an exterior grey staircase leading to an open terrace with glass-railing perimeter wall.. Hard floor/layout lock: Single-storey with open terrace; Ground Floor: Portico parking, sit-out, common bathroom under exterior stairs, living hall, modular kitchen with dining area, master bedroom with attached bathroom, second bedroom with attached bathroom. Exterior Staircase leading to open roof terrace.. Neighbourhood: Suburban residential neighborhood in Saravanampatti with nearby independent houses, open plots, and power transmission lines visible from the roof terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-storey home with beige and brown exterior wall tiles, decorative elevation panels, a paved portico, teak main entry door, and an exterior grey staircase leading to an open terrace with glass-railing perimeter wall.. Hard floor/layout lock: Single-storey with open terrace; Ground Floor: Portico parking, sit-out, common bathroom under exterior stairs, living hall, modular kitchen with dining area, master bedroom with attached bathroom, second bedroom with attached bathroom. Exterior Staircase leading to open roof terrace.. Neighbourhood: Suburban residential neighborhood in Saravanampatti with nearby independent houses, open plots, and power transmission lines visible from the roof terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-storey home with beige and brown exterior wall tiles, decorative elevation panels, a paved portico, teak main entry door, and an exterior grey staircase leading to an open terrace with glass-railing perimeter wall.. Hard floor/layout lock: Single-storey with open terrace; Ground Floor: Portico parking, sit-out, common bathroom under exterior stairs, living hall, modular kitchen with dining area, master bedroom with attached bathroom, second bedroom with attached bathroom. Exterior Staircase leading to open roof terrace.. Neighbourhood: Suburban residential neighborhood in Saravanampatti with nearby independent houses, open plots, and power transmission lines visible from the roof terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
