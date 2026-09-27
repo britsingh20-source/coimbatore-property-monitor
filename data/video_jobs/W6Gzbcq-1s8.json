@@ -1,0 +1,145 @@
+{
+  "video_id": "W6Gzbcq-1s8",
+  "source_url": "https://www.youtube.com/watch?v=W6Gzbcq-1s8",
+  "property_location": "Idikarai, Thudiyalur to Kovilpalayam Main Road, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": true,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "3 BHK",
+    "land_area": "5 Cent",
+    "built_up_area": "2200 sq.ft",
+    "price": "₹98 Lakhs - ₹1.15 Crore",
+    "facing": "East Facing",
+    "road_width": "30 feet",
+    "parking": "Covered Car Parking",
+    "approval": "DTCP & RERA Approved",
+    "floors": "G+1 duplex with open terrace utility",
+    "layout_distribution": "Ground Floor: Covered car parking, double-height living hall, pooja room, kitchen, dining area, 1 bedroom with walk-in wardrobe and attached bathroom, and 1 outside bathroom. First Floor: Lounge overlooking living hall, 2 bedrooms with walk-in wardrobes and attached bathrooms, and a front balcony. Roof Level: Open terrace with staircase access."
+  },
+  "verified_facts": "Japandi philosophy inspired interior design, DTCP and RERA approved project 'Turiya' by Era Properties, 3 BHK duplex villa with 2,200 sq.ft built-up area on 5 cents land, Ground floor includes living hall, pooja room, kitchen, dining, 1 bedroom with walk-in wardrobe & attached bathroom, plus 1 outside bathroom, First floor includes lounge, 2 bedrooms with walk-in wardrobes and attached bathrooms, plus front balcony, 10 years maintenance provided by the developer",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local property presenter walking through key features with natural Tamil speech.",
+    "hook_strategy": "Highlight the prime location on Thudiyalur to Kovilpalayam Main Road followed immediately by the spacious 2200 sq.ft built-up area.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை Thudiyalur to Kovilpalayam Main Road-ல, Idikarai பகுதியில அமைஞ்சிருக்கிற ஒரு 3 BHK duplex villa பாக்கப்போறோம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "5 cent land-ல 2200 sq.ft built-up area! Ground floor-ல double-height living hall, pooja room, kitchen, dining, walk-in wardrobe-ோட 1 bedroom, அப்புறம் 1 outside bathroom இருக்கு.",
+        "broll": [
+          "living_room",
+          "interior",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "floor-plan-highlight",
+        "purpose": "feature_showcase"
+      },
+      {
+        "name": "facing",
+        "voice": "First floor-ல lounge, front balcony, walk-in wardrobe-ோட 2 bedrooms இருக்கு. Roof level-ல open terrace வருது. இது East facing villa.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "compass-east",
+        "purpose": "property_orientation"
+      },
+      {
+        "name": "road",
+        "voice": "Community உள்ள 30 feet paver block road, 24/7 security, CCTV surveillance, அப்புறம் park sitting area வசதிகள் இருக்கு.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "text-overlay-amenities",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "approval",
+        "voice": "Era Properties-ோட 'Turiya' project, DTCP மற்றும் RERA approval பெற்றது. Developer 10 years maintenance தராங்க.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_building"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price பாத்தீங்கனா 98 Lakhs-ல இருந்து 1.15 Crore வரைக்கும் வருது.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag-overlay",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல site visit பண்ணவோ, details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "contact-details-slide",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/W6Gzbcq-1s8/",
+  "optional_owned_audio": "assets/audio/W6Gzbcq-1s8.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Athipalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern elevation featuring light cream textured walls, wood-panelled balcony soffit, glass balcony railing, open covered car porch, paved driveway, and landscaped community garden.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking, double-height living hall, pooja room, kitchen, dining area, 1 bedroom with walk-in wardrobe and attached bathroom, and 1 outside bathroom. First Floor: Lounge overlooking living hall, 2 bedrooms with walk-in wardrobes and attached bathrooms, and a front balcony. Roof Level: Open terrace with staircase access.. Neighbourhood: Residential gated community setting off Thudiyalur-Kovilpalayam main road in Idikarai, surrounded by lush green plots and open views near Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Athipalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern elevation featuring light cream textured walls, wood-panelled balcony soffit, glass balcony railing, open covered car porch, paved driveway, and landscaped community garden.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking, double-height living hall, pooja room, kitchen, dining area, 1 bedroom with walk-in wardrobe and attached bathroom, and 1 outside bathroom. First Floor: Lounge overlooking living hall, 2 bedrooms with walk-in wardrobes and attached bathrooms, and a front balcony. Roof Level: Open terrace with staircase access.. Neighbourhood: Residential gated community setting off Thudiyalur-Kovilpalayam main road in Idikarai, surrounded by lush green plots and open views near Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Athipalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern elevation featuring light cream textured walls, wood-panelled balcony soffit, glass balcony railing, open covered car porch, paved driveway, and landscaped community garden.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking, double-height living hall, pooja room, kitchen, dining area, 1 bedroom with walk-in wardrobe and attached bathroom, and 1 outside bathroom. First Floor: Lounge overlooking living hall, 2 bedrooms with walk-in wardrobes and attached bathrooms, and a front balcony. Roof Level: Open terrace with staircase access.. Neighbourhood: Residential gated community setting off Thudiyalur-Kovilpalayam main road in Idikarai, surrounded by lush green plots and open views near Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Athipalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern elevation featuring light cream textured walls, wood-panelled balcony soffit, glass balcony railing, open covered car porch, paved driveway, and landscaped community garden.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking, double-height living hall, pooja room, kitchen, dining area, 1 bedroom with walk-in wardrobe and attached bathroom, and 1 outside bathroom. First Floor: Lounge overlooking living hall, 2 bedrooms with walk-in wardrobes and attached bathrooms, and a front balcony. Roof Level: Open terrace with staircase access.. Neighbourhood: Residential gated community setting off Thudiyalur-Kovilpalayam main road in Idikarai, surrounded by lush green plots and open views near Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

@@ -1,0 +1,140 @@
+{
+  "video_id": "KcOsaCqCOFY",
+  "source_url": "https://www.youtube.com/watch?v=KcOsaCqCOFY",
+  "property_location": "Kalikkanaickanpalayam, Vedapatti, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹15.5 Lakhs per cent",
+    "facing": "North, East, Corner",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP and RERA Approved",
+    "floors": "NOT SPECIFIED",
+    "layout_distribution": "NOT SPECIFIED"
+  },
+  "verified_facts": "VN Residency project is spread across 2.5 acres containing 48 DTCP & RERA approved plots., Located at Kalikkanaickanpalayam near Vedapatti, within 10–15 minutes travel time from RS Puram, Saibaba Colony, and Gandhi Park., Price is ₹15.5 Lakhs per cent., North, East, and Corner facing plot orientations are available., 80% bank loan available for plot purchase, and up to 90% loan available for land plus construction.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local property presenter speaking directly to camera in natural Coimbatore spoken Tamil, seamlessly blending real estate keywords.",
+    "hook_strategy": "Highlight key location proximity (10-15 mins from RS Puram & Saibaba Colony) and DTCP/RERA plot availability right in the first 3 seconds.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை வேடபட்டி பக்கத்துல இருக்குற காலிக்கநாயக்கன்பாளையம் location-ல, RS Puram மற்றும் Saibaba Colony-ல இருந்து 10 to 15 mins travel time-ல அமைஞ்சிருக்கு இந்த VN Residency.",
+        "broll": [
+          "land",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 2.5 acres-ல 48 residential plots கொண்டுவந்திருக்காங்க. இதுல gated entrance arch, perimeter compound wall, street lights, அப்புறம் gazebo seating pavilion-லாம் வசதியா அமைச்சிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "plot-boundary-highlight",
+        "purpose": "plot-overview-and-amenities"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல North, East மற்றும் Corner facing plot orientations கிடைக்குது. அதே மாதிரி உள்ளே blacktop internal roads போட்டு கொடுத்திருக்காங்க.",
+        "broll": [
+          "road",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "interior"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "orientations-and-roads"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், இது DTCP and RERA approved project. plot வாங்க 80% bank loan, land plus construction-க்கு 90% வரைக்கும் loan வசதி இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust-and-bank-loan"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price பாத்தீங்கனா per cent ₹15.5 Lakhs.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "living_room"
+        ],
+        "vfx": "price-tag-overlay",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த project பற்றிய மேலும் details தெரிஞ்சுக்கவோ, site visit arrange பண்ணவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "contact-details-card",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/KcOsaCqCOFY/",
+  "optional_owned_audio": "assets/audio/KcOsaCqCOFY.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed plot layout named VN Residency with a modern arch entrance, wide paved blacktop roads with painted white lane markers, perimeter block compound walls, utility poles, and a red-roofed open pavilion.. Neighbourhood: A residential layout near Vedapatti and Kalikkanaickanpalayam with approximately 2,000 existing houses nearby, set in a scenic environment near the Western Ghats hills and well connected to central Coimbatore city.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed plot layout named VN Residency with a modern arch entrance, wide paved blacktop roads with painted white lane markers, perimeter block compound walls, utility poles, and a red-roofed open pavilion.. Neighbourhood: A residential layout near Vedapatti and Kalikkanaickanpalayam with approximately 2,000 existing houses nearby, set in a scenic environment near the Western Ghats hills and well connected to central Coimbatore city.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed plot layout named VN Residency with a modern arch entrance, wide paved blacktop roads with painted white lane markers, perimeter block compound walls, utility poles, and a red-roofed open pavilion.. Neighbourhood: A residential layout near Vedapatti and Kalikkanaickanpalayam with approximately 2,000 existing houses nearby, set in a scenic environment near the Western Ghats hills and well connected to central Coimbatore city.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed plot layout named VN Residency with a modern arch entrance, wide paved blacktop roads with painted white lane markers, perimeter block compound walls, utility poles, and a red-roofed open pavilion.. Neighbourhood: A residential layout near Vedapatti and Kalikkanaickanpalayam with approximately 2,000 existing houses nearby, set in a scenic environment near the Western Ghats hills and well connected to central Coimbatore city.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
