@@ -1,0 +1,94 @@
+{
+  "video_id": "SSvtLw9Ehto",
+  "source_url": "https://www.youtube.com/watch?v=SSvtLw9Ehto",
+  "property_location": "Athipalayam, Coimbatore",
+  "entrance_contaminated": true,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "3 BHK",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "NOT SPECIFIED",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered parking portico",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex",
+    "layout_distribution": "Ground floor: Gated entrance portico for parking, living room with false ceiling, modular kitchen, and 1 bedroom with attached bathroom. First floor: Staircase access, decorative hallway lobby, 2 bedrooms with attached bathrooms, and upper balcony."
+  },
+  "verified_facts": "Title advertises a Duplex Model 3BHK Villa in Athipalayam, Coimbatore, On-screen overlay displays contact number +91 99440 47089, Ground floor contains a living room, modular kitchen, and 1 bedroom with attached bathroom, First floor contains 2 bedrooms with attached bathrooms, lobby area, and balcony",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, engaging local property presenter speaking directly to camera with smooth natural Tamil speech.",
+    "hook_strategy": "Highlight the core property identity—a 3 BHK G+1 Duplex Villa in Athipalayam, Coimbatore—within the first 3 seconds.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை ஆத்திபாளையத்துல அமைஞ்சிருக்கிற ஒரு அருமையான 3 BHK G+1 Duplex Villa தான் இது.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-text-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "கிரவுண்ட் ஃப்ளோர்ல பாத்தீங்கனா, கவர்டு பார்க்கிங் போர்டிகோ, பால்ஸ் சீலிங் அமைக்கப்பட்ட லிவிங் ரூம், பூஜா நூக், மாடுலர் கிச்சன், அப்புறம் அட்டாச்டு பாத்ரூமோட ஒரு பெட்ரூம் இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "ground-floor-highlight",
+        "purpose": "ground_floor_tour"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த வீட்டோட மத்த details தெரிஞ்சுக்கவோ அல்லது நேர்ல site visit போகவோ screen-ல தெரியுற 99440 47089 நம்பருக்கு உடனே கால் பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "phone-number-pop-up",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/SSvtLw9Ehto/",
+  "optional_owned_audio": "assets/audio/SSvtLw9Ehto.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Athipalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey contemporary facade featuring dual-tone brown, grey, and orange paint accents, modern metal front gate, glass-paneled upper balcony, and concrete driveway approach.. Hard floor/layout lock: G+1 duplex; Ground floor: Gated entrance portico for parking, living room with false ceiling, modular kitchen, and 1 bedroom with attached bathroom. First floor: Staircase access, decorative hallway lobby, 2 bedrooms with attached bathrooms, and upper balcony.. Neighbourhood: Residential road setting in Athipalayam, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Athipalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey contemporary facade featuring dual-tone brown, grey, and orange paint accents, modern metal front gate, glass-paneled upper balcony, and concrete driveway approach.. Hard floor/layout lock: G+1 duplex; Ground floor: Gated entrance portico for parking, living room with false ceiling, modular kitchen, and 1 bedroom with attached bathroom. First floor: Staircase access, decorative hallway lobby, 2 bedrooms with attached bathrooms, and upper balcony.. Neighbourhood: Residential road setting in Athipalayam, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Athipalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey contemporary facade featuring dual-tone brown, grey, and orange paint accents, modern metal front gate, glass-paneled upper balcony, and concrete driveway approach.. Hard floor/layout lock: G+1 duplex; Ground floor: Gated entrance portico for parking, living room with false ceiling, modular kitchen, and 1 bedroom with attached bathroom. First floor: Staircase access, decorative hallway lobby, 2 bedrooms with attached bathrooms, and upper balcony.. Neighbourhood: Residential road setting in Athipalayam, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Athipalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey contemporary facade featuring dual-tone brown, grey, and orange paint accents, modern metal front gate, glass-paneled upper balcony, and concrete driveway approach.. Hard floor/layout lock: G+1 duplex; Ground floor: Gated entrance portico for parking, living room with false ceiling, modular kitchen, and 1 bedroom with attached bathroom. First floor: Staircase access, decorative hallway lobby, 2 bedrooms with attached bathrooms, and upper balcony.. Neighbourhood: Residential road setting in Athipalayam, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "needs_review",
+  "approval_mode": "automatic_fact_gate_v1"
+}

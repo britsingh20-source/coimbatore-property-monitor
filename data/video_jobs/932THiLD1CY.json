@@ -1,0 +1,118 @@
+{
+  "video_id": "932THiLD1CY",
+  "source_url": "https://www.youtube.com/watch?v=932THiLD1CY",
+  "property_location": "Keeranatham, Saravanampatti, Coimbatore, Tamil Nadu, India",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "2100 sq ft",
+    "price": "₹1.10 Crore",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking portico",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex",
+    "layout_distribution": "Ground Floor: Covered car parking portico, main entrance, spacious living hall with TV unit, kitchen with dining partition, and 1 bedroom with attached bathroom. First Floor: Staircase landing, 2 bedrooms with attached bathrooms, and access to a front balcony."
+  },
+  "verified_facts": "Title specifies a 2100 SQFT, North-facing 3BHK house listed at 1.10 CR in Keeranatham, Saravanampatti., Contact phone number provided in title: 97896-94896., Video tour confirms G+1 duplex structure containing a ground floor living hall, kitchen, 1 bedroom with attached bathroom, and upper floor with 2 bedrooms with attached bathrooms and front balcony.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed conversational local presenter speaking directly to camera in natural Coimbatore spoken Tamil",
+    "hook_strategy": "Highlighting a spacious 3 BHK independent duplex house in the prime Saravanampatti Keeranatham location right away",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Saravanampatti, Keeranatham location-ல ஒரு அருமையான 3 BHK Independent House பாக்கலாம் வாங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இது மொத்தமா 2100 sq ft built-up area கொண்ட G+1 duplex வீடு. Ground floor-ல TV unit-ஓட பெரிய living hall, dining partition வச்ச kitchen, அப்புறம் 1 attached bathroom bedroom இருக்கு. First floor-ல 2 attached bathroom bedrooms, அப்புறம் front balcony-யும் இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay-area",
+        "purpose": "layout_overview"
+      },
+      {
+        "name": "facing",
+        "voice": "இந்த வீடு North facing அமைஞ்சிருக்கு. அதே மாதிரி முன்பக்கம் covered car parking portico வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "compass-north",
+        "purpose": "facing_and_parking"
+      },
+      {
+        "name": "price",
+        "voice": "இதுல false ceiling, LED lighting, fitted wardrobes-னு எல்லாமே பண்ணிருக்காங்க. இதோட price பாத்தீங்கனா 1.10 Crore.",
+        "broll": [
+          "interior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த வீட்டை நேர்ல வந்து site visit பண்ணவோ, இல்ல details தெரிஞ்சுக்கவோ 97896 94896 நம்பருக்கு call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/932THiLD1CY/",
+  "optional_owned_audio": "assets/audio/932THiLD1CY.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey contemporary elevation with beige and brown cladding, ground-floor parking portico with main gate, and an upper covered balcony with glass railing.. Hard floor/layout lock: G+1 duplex; Ground Floor: Covered car parking portico, main entrance, spacious living hall with TV unit, kitchen with dining partition, and 1 bedroom with attached bathroom. First Floor: Staircase landing, 2 bedrooms with attached bathrooms, and access to a front balcony.. Neighbourhood: Residential area with adjacent independent houses visible.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey contemporary elevation with beige and brown cladding, ground-floor parking portico with main gate, and an upper covered balcony with glass railing.. Hard floor/layout lock: G+1 duplex; Ground Floor: Covered car parking portico, main entrance, spacious living hall with TV unit, kitchen with dining partition, and 1 bedroom with attached bathroom. First Floor: Staircase landing, 2 bedrooms with attached bathrooms, and access to a front balcony.. Neighbourhood: Residential area with adjacent independent houses visible.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey contemporary elevation with beige and brown cladding, ground-floor parking portico with main gate, and an upper covered balcony with glass railing.. Hard floor/layout lock: G+1 duplex; Ground Floor: Covered car parking portico, main entrance, spacious living hall with TV unit, kitchen with dining partition, and 1 bedroom with attached bathroom. First Floor: Staircase landing, 2 bedrooms with attached bathrooms, and access to a front balcony.. Neighbourhood: Residential area with adjacent independent houses visible.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey contemporary elevation with beige and brown cladding, ground-floor parking portico with main gate, and an upper covered balcony with glass railing.. Hard floor/layout lock: G+1 duplex; Ground Floor: Covered car parking portico, main entrance, spacious living hall with TV unit, kitchen with dining partition, and 1 bedroom with attached bathroom. First Floor: Staircase landing, 2 bedrooms with attached bathrooms, and access to a front balcony.. Neighbourhood: Residential area with adjacent independent houses visible.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
