@@ -2962,11 +2962,11 @@
       "status": "video_queued"
     },
     "ZmWrx8l36R8": {
-      "attempts": 4,
+      "attempts": 5,
       "first_seen_at": "2026-09-23T17:09:20.470260+00:00",
-      "last_attempt_at": "2026-09-26T20:13:29.450250+00:00",
-      "last_error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry in 30s or upgrade your tier at https://ai.dev/rate-limit.', 'code': 'too_many_requests'}}",
-      "next_retry_at": "2026-09-27T12:13:29.450259+00:00",
+      "last_attempt_at": "2026-09-27T14:24:55.913832+00:00",
+      "last_error": "Server disconnected without sending a response.",
+      "next_retry_at": "2026-09-28T06:24:55.913846+00:00",
       "status": "retry_pending"
     },
     "ZpnuesKsc3s": {
@@ -3784,9 +3784,11 @@
     },
     "iNSUWSrWF_s": {
       "attempts": 0,
+      "completed_at": "2026-09-27T14:19:55.446193+00:00",
       "first_seen_at": "2026-09-27T14:06:28.003593+00:00",
+      "last_error": "",
       "next_retry_at": "2026-09-27T14:06:28.003593+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "iNlaHoWV2Hw": {
       "attempts": 0,
