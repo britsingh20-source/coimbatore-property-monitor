@@ -856,12 +856,7 @@
         "ceremonial_markings_present": false,
         "compliant": true,
         "confidence": 1,
-        "findings": [
-          "The video showcases an independent house with exterior and interior views including living room, ceiling, kitchen, and corridor.",
-          "No religious visuals, shrines, or worship items are present.",
-          "No personal photos, portraits, or certificates are visible.",
-          "No ceremonial markings, kolams, or doorway decorations are found."
-        ],
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -3609,7 +3604,8 @@
         "kArJobgJdsg",
         "iNSUWSrWF_s",
         "my3N0qqdcx4",
-        "932THiLD1CY"
+        "932THiLD1CY",
+        "lCGeuHSd4jM"
       ],
       "etag": "f1e5be806c51dc666a1e99e1a36df1d9-3",
       "match_error": "Error code: 400 - {'error': {'message': 'Request contains an invalid argument.', 'code': 'invalid_request'}}",
