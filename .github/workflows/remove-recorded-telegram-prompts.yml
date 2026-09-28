@@ -1,0 +1,85 @@
+name: Remove Recorded Telegram Prompts
+on:
+  workflow_dispatch:
+    inputs:
+      delete_prompts:
+        description: Permanently delete eligible recorded property prompts
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: manual-telegram-prompt-cleanup
+  cancel-in-progress: false
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Preview or delete recorded prompts
+        env:
+          BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DELETE_PROMPTS: ${{ inputs.delete_prompts }}
+        run: |
+          python - <<'PY'
+          import json, os, time, urllib.request, urllib.error
+          from datetime import datetime, timezone
+          from pathlib import Path
+          rows = json.loads(Path('data/telegram_prompt_queue.json').read_text())['prompts']
+          now = datetime.now(timezone.utc)
+          eligible = set()
+          old = missing = 0
+          for row in rows:
+              mid = row.get('prompt_message_id')
+              if type(mid) is not int or mid <= 0:
+                  missing += 1
+                  continue
+              if row.get('prompt_deleted_at'):
+                  continue
+              try:
+                  sent = datetime.fromisoformat(row['sent_at'].replace('Z', '+00:00'))
+                  age = (now - sent).total_seconds()
+              except (KeyError, ValueError, TypeError):
+                  missing += 1
+                  continue
+              if 0 <= age < 48 * 3600:
+                  eligible.add(mid)
+              else:
+                  old += 1
+          execute = os.environ.get('DELETE_PROMPTS') == 'true'
+          deleted = failed = 0
+          if execute:
+              token, chat = os.environ.get('BOT_TOKEN', ''), os.environ.get('CHAT_ID', '')
+              if not token or not chat:
+                  raise SystemExit('Required bot configuration is missing')
+              for mid in sorted(eligible):
+                  payload = json.dumps({'chat_id': chat, 'message_id': mid}).encode()
+                  req = urllib.request.Request('https://api.telegram.org/bot' + token + '/deleteMessage', data=payload, headers={'Content-Type': 'application/json'})
+                  try:
+                      with urllib.request.urlopen(req, timeout=20) as response:
+                          result = json.load(response)
+                      if result.get('ok'):
+                          deleted += 1
+                      else:
+                          failed += 1
+                  except urllib.error.HTTPError as error:
+                      failed += 1
+                      if error.code in (401, 403, 429):
+                          print('Stopped: Telegram authorization or rate limit error', error.code)
+                          break
+                  except Exception:
+                      failed += 1
+                      print('Stopped: request failed; credentials omitted')
+                      break
+                  time.sleep(0.1)
+          report = json.dumps({"eligible": len(eligible), "older_than_48h": old, "missing_ids_or_dates": missing, "execute": execute, "confirmed_deletions": deleted, "failed_requests": failed}, indent=2)
+          print(report)
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write(report)
+          if execute and deleted != len(eligible):
+              raise SystemExit('Cleanup incomplete; see summary')
+          PY
