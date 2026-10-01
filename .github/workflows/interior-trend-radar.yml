@@ -7,6 +7,11 @@ on:
       - "data/interior_trend_test.trigger"
   workflow_dispatch:
     inputs:
+      single_prompt:
+        description: Limit this manual run to one interior prompt
+        required: true
+        type: boolean
+        default: true
       deliver_to_telegram:
         description: Send the production pack to Telegram
         required: true
@@ -52,6 +57,9 @@ jobs:
         run: |
           args=()
           slot="manual"
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ inputs.single_prompt }}" == "true" ]]; then
+            slot="morning"
+          fi
           if [[ "${{ github.event_name }}" == "push" ]]; then
             slot="morning"
           fi
