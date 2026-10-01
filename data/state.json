@@ -4303,11 +4303,11 @@
       "status": "discovered"
     },
     "mnD_nJT81j4": {
-      "attempts": 1,
+      "attempts": 2,
       "first_seen_at": "2026-10-01T11:50:29.430555+00:00",
-      "last_attempt_at": "2026-10-01T11:52:01.801614+00:00",
-      "last_error": "Error code: 429 - {'error': {'message': 'Your project has exceeded a quota. See https://ai.dev/rate-limit to manage your rate limits.', 'code': 'too_many_requests'}}",
-      "next_retry_at": "2026-10-01T13:52:01.801626+00:00",
+      "last_attempt_at": "2026-10-01T23:22:59.222043+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry later or upgrade your tier at https://ai.dev/rate-limit.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-10-02T03:22:59.222053+00:00",
       "status": "retry_pending"
     },
     "mqu3geG_F1U": {
