@@ -1,0 +1,80 @@
+name: Single Telegram Property Delivery Test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: single-telegram-property-delivery-test
+  cancel-in-progress: false
+
+jobs:
+  send-one:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - name: Send exactly one existing prompt and verify configured chat
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          import requests
+          from send_telegram_prompts import send_prompt
+
+          if os.environ.get("GITHUB_RUN_ATTEMPT") != "1":
+              raise SystemExit("Reruns are blocked to prevent duplicate delivery. Review the original result.")
+          token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+          chat = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
+          if not token or not chat.lstrip("-").isdigit():
+              raise SystemExit("Telegram repository secrets are missing or invalid.")
+          video_id = "zclTKyhfHyE"
+          job = json.loads(Path(f"data/video_jobs/{video_id}.json").read_text())
+          if job.get("video_id") != video_id:
+              raise SystemExit("Existing job ID mismatch.")
+          original_post = requests.post
+          calls = 0
+
+          def verified_post(url, **kwargs):
+              global calls
+              calls += 1
+              if calls != 1 or url != f"https://api.telegram.org/bot{token}/sendDocument":
+                  raise RuntimeError("Only one prompt request is permitted.")
+              try:
+                  response = original_post(url, **kwargs)
+              except requests.RequestException:
+                  raise RuntimeError("Transport failure; delivery status unknown. Do not retry without checking Telegram.") from None
+              try:
+                  body = response.json()
+              except ValueError:
+                  raise RuntimeError("Non-JSON Telegram response; delivery status unknown.") from None
+              if not response.ok or not body.get("ok"):
+                  description = str(body.get("description", "No description"))
+                  description = description.replace(token, "[redacted]").replace(chat, "[redacted]")
+                  raise RuntimeError(f"Telegram rejected delivery: HTTP {response.status_code}: {description}")
+              result = body.get("result") or {}
+              if str((result.get("chat") or {}).get("id")) != str(int(chat)):
+                  raise RuntimeError("Telegram accepted a message but returned an unexpected chat; do not retry.")
+              print("Telegram ok=true; returned chat matches configured TELEGRAM_CHAT_ID.")
+              return response
+
+          requests.post = verified_post
+          message_id = send_prompt(job, token, chat)
+          print(f"DELIVERY_CONFIRMED video_id={video_id} message_id={message_id} prompt_count={calls}")
+          print("No queue read/write, owner enrichment, webhook changes, or automatic workflow enablement.")
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as summary:
+              summary.write(f"One existing property prompt accepted by Telegram.\n\nVideo ID: {video_id}\n\nMessage ID: {message_id}\n\nReturned chat matches the configured repository secret. Queue unchanged.\n")
+          PY
