@@ -110,9 +110,27 @@ def _send_prompt(prompt: str, candidate: dict, token: str, chat_id: str, positio
     import requests
     payload = io.BytesIO(prompt.encode()); payload.name = f"interior-{candidate['video_id']}-gemini-prompt.txt"
     caption = f"<b>Olive Tree Interiors — daily prompt {position}/{total}</b>\n<b>Source:</b> {candidate.get('creator', 'Interior channel')}\nNo image attachment is required. Paste this prompt in Gemini, allow it to open the included YouTube link, select Portrait/9:16, and generate the 10-second silent source clip."
-    response = requests.post(f"https://api.telegram.org/bot{token}/sendDocument", data={"chat_id": chat_id, "caption": caption, "parse_mode": "HTML"}, files={"document": (payload.name, payload, "text/plain")}, timeout=90)
-    response.raise_for_status()
-    if not response.json().get("ok"): raise RuntimeError(response.text)
+    try:
+        response = requests.post(f"https://api.telegram.org/bot{token}/sendDocument", data={"chat_id": chat_id, "caption": caption, "parse_mode": "HTML"}, files={"document": (payload.name, payload, "text/plain")}, timeout=90)
+    except requests.RequestException:
+        raise RuntimeError("Telegram transport failure; delivery status unknown. Check Telegram before retrying.") from None
+    try:
+        body = response.json()
+    except ValueError:
+        raise RuntimeError("Telegram returned a non-JSON response; delivery status unknown.") from None
+    if not response.ok or not body.get("ok"):
+        description = str(body.get("description", "No description"))
+        for secret in (token, chat_id):
+            if secret:
+                description = description.replace(secret, "[redacted]")
+        raise RuntimeError(f"Telegram rejected interior prompt: HTTP {response.status_code}: {description}")
+    result = body.get("result") or {}
+    if str((result.get("chat") or {}).get("id")) != str(int(chat_id)):
+        raise RuntimeError("Telegram accepted the prompt but returned an unexpected chat; do not retry.")
+    message_id = result.get("message_id")
+    if not isinstance(message_id, int):
+        raise RuntimeError("Telegram accepted the prompt but returned no message ID; do not retry.")
+    print(f"INTERIOR_DELIVERY_CONFIRMED video_id={candidate['video_id']} message_id={message_id} prompt={position}/{total} configured_chat_match=true")
 
 
 def _load_state(path: Path) -> dict:
