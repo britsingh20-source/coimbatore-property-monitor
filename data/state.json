@@ -1645,11 +1645,11 @@
       "status": "video_queued"
     },
     "ITba_KyfVHY": {
-      "attempts": 1,
+      "attempts": 2,
       "first_seen_at": "2026-10-01T13:10:37.496740+00:00",
-      "last_attempt_at": "2026-10-01T13:13:36.306374+00:00",
-      "last_error": "Error code: 429 - {'error': {'message': 'Your project has exceeded a quota. See https://ai.dev/rate-limit to manage your rate limits.', 'code': 'too_many_requests'}}",
-      "next_retry_at": "2026-10-01T15:13:36.306383+00:00",
+      "last_attempt_at": "2026-10-01T18:40:05.237214+00:00",
+      "last_error": "Error code: 503 - {'error': {'message': 'gemini-3.6-flash is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.', 'code': 'service_unavailable'}}",
+      "next_retry_at": "2026-10-01T22:40:05.237226+00:00",
       "status": "retry_pending"
     },
     "IwawHfduYf0": {
@@ -2616,6 +2616,14 @@
       "next_retry_at": "2026-08-28T13:23:47.984592+00:00",
       "status": "video_queued"
     },
+    "TxfvE75rWNg": {
+      "attempts": 0,
+      "completed_at": "2026-10-01T18:37:13.369507+00:00",
+      "first_seen_at": "2026-10-01T18:35:41.192383+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-10-01T18:35:41.192383+00:00",
+      "status": "video_queued"
+    },
     "UAMtU52eMag": {
       "attempts": 2,
       "completed_at": "2026-08-16T13:03:39.948450+00:00",
@@ -3041,6 +3049,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-18T13:11:18.332814+00:00",
       "status": "video_queued"
+    },
+    "YwtzHW3tZBE": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-01T18:35:41.192383+00:00",
+      "next_retry_at": "2026-10-01T18:35:41.192383+00:00",
+      "status": "discovered"
     },
     "YxTt5-I6FRw": {
       "attempts": 1,
