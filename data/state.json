@@ -1875,10 +1875,12 @@
       "status": "archived_non_target"
     },
     "LOvfnF76Pkc": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-10-01T11:50:29.430555+00:00",
-      "next_retry_at": "2026-10-01T11:50:29.430555+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-10-02T02:36:17.753622+00:00",
+      "last_error": "[Errno 104] Connection reset by peer",
+      "next_retry_at": "2026-10-02T04:36:17.753638+00:00",
+      "status": "retry_pending"
     },
     "Lg97ZolwTI4": {
       "attempts": 0,
