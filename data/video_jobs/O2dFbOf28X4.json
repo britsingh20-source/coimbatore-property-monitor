@@ -1,0 +1,144 @@
+{
+  "video_id": "O2dFbOf28X4",
+  "source_url": "https://www.youtube.com/watch?v=O2dFbOf28X4",
+  "property_location": "Vinayakapuram, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "4 BHK",
+    "land_area": "3.75 Cents",
+    "built_up_area": "2800 Sq.Ft",
+    "price": "₹1.90 Crore",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking (2 Cars)",
+    "approval": "Coimbatore Corporation",
+    "floors": "G+1",
+    "layout_distribution": "Ground Floor: Covered parking space (17'x18') for 2 cars, living hall (16'x16'), dedicated pooja room, modular kitchen & dining (10'x16'), 2 master bedrooms (10'x16' each) with attached bathrooms, plus an under-stairs outer toilet. First Floor: External staircase leading to two independent 1BHK units; each unit includes a hall (10'x16'), kitchen (8'x16' or 10'x10'), 1 bedroom (10'x16'), attached bathroom, and corridor passage."
+  },
+  "verified_facts": "Total land area is 3.75 cents with a 2800 sq.ft built-up area under Coimbatore Corporation limits., Ground floor has a 2BHK portion, while the first floor features two separate 1BHK portions designed for rental income., Expected combined monthly rental income from the property is ₹45,000., Property features north-facing entrance with east-facing main doors for upper units.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local real estate presenter speaking to camera, blending high-retention storytelling with exact visual matches.",
+    "hook_strategy": "Highlight the prime Vinayakapuram location near Prozone Mall along with the double-benefit of a 4 BHK independent house and rental income potential.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Vinayakapuram-ல Prozone Mall பக்கத்துல ஒரு அருமையான G+1 4 BHK Independent House விற்பனைக்கு வந்திருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தம் 3.75 Cents land-ல அமைஞ்சிருக்கு. பாத்தீங்கனா, 2 கார்கள் வசதியா நிறுத்துற அளவுக்கு Covered Car Parking space இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "land_and_parking_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "2800 Sq.Ft built-up area! Ground floor-ல 2 BHK வீடு, First floor-ல 2 தனித்தனி 1 BHK portions இருக்கு. இதுல மாசம் ₹45,000 rental income எதிர்பார்க்கலாம்.",
+        "broll": [
+          "living_room",
+          "interior",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "highlight-text",
+        "purpose": "layout_and_rental_income"
+      },
+      {
+        "name": "facing",
+        "voice": "North facing entrance, upper units-க்கு East facing doors இருக்கு. Modular kitchen, false ceiling, wardrobes-னு interior எல்லாம் பண்ணிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "compass-north",
+        "purpose": "facing_and_interior_features"
+      },
+      {
+        "name": "approval",
+        "voice": "Coimbatore Corporation approval கொண்ட இந்த வீட்ல Borewell மற்றும் Water Sump வசதிகளும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_and_water_facilities"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த சொத்தின் விலை ₹1.90 Crore.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேரடியா வந்து site visit பண்ண அல்லது மேலும் details தெரிஞ்சுக்க உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/O2dFbOf28X4/",
+  "optional_owned_audio": "assets/audio/O2dFbOf28X4.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-storey building with brown, beige, and geometric panel façade, stainless steel entrance gate with wooden-finish panels, granite-clad external stairs with brass-tone handrails, and tiled balcony corridors.. Hard floor/layout lock: G+1; Ground Floor: Covered parking space (17'x18') for 2 cars, living hall (16'x16'), dedicated pooja room, modular kitchen & dining (10'x16'), 2 master bedrooms (10'x16' each) with attached bathrooms, plus an under-stairs outer toilet. First Floor: External staircase leading to two independent 1BHK units; each unit includes a hall (10'x16'), kitchen (8'x16' or 10'x10'), 1 bedroom (10'x16'), attached bathroom, and corridor passage.. Neighbourhood: Urban residential street in Vinayakapuram, located within 5 minutes drive from Prozone Mall in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-storey building with brown, beige, and geometric panel façade, stainless steel entrance gate with wooden-finish panels, granite-clad external stairs with brass-tone handrails, and tiled balcony corridors.. Hard floor/layout lock: G+1; Ground Floor: Covered parking space (17'x18') for 2 cars, living hall (16'x16'), dedicated pooja room, modular kitchen & dining (10'x16'), 2 master bedrooms (10'x16' each) with attached bathrooms, plus an under-stairs outer toilet. First Floor: External staircase leading to two independent 1BHK units; each unit includes a hall (10'x16'), kitchen (8'x16' or 10'x10'), 1 bedroom (10'x16'), attached bathroom, and corridor passage.. Neighbourhood: Urban residential street in Vinayakapuram, located within 5 minutes drive from Prozone Mall in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-storey building with brown, beige, and geometric panel façade, stainless steel entrance gate with wooden-finish panels, granite-clad external stairs with brass-tone handrails, and tiled balcony corridors.. Hard floor/layout lock: G+1; Ground Floor: Covered parking space (17'x18') for 2 cars, living hall (16'x16'), dedicated pooja room, modular kitchen & dining (10'x16'), 2 master bedrooms (10'x16' each) with attached bathrooms, plus an under-stairs outer toilet. First Floor: External staircase leading to two independent 1BHK units; each unit includes a hall (10'x16'), kitchen (8'x16' or 10'x10'), 1 bedroom (10'x16'), attached bathroom, and corridor passage.. Neighbourhood: Urban residential street in Vinayakapuram, located within 5 minutes drive from Prozone Mall in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-storey building with brown, beige, and geometric panel façade, stainless steel entrance gate with wooden-finish panels, granite-clad external stairs with brass-tone handrails, and tiled balcony corridors.. Hard floor/layout lock: G+1; Ground Floor: Covered parking space (17'x18') for 2 cars, living hall (16'x16'), dedicated pooja room, modular kitchen & dining (10'x16'), 2 master bedrooms (10'x16' each) with attached bathrooms, plus an under-stairs outer toilet. First Floor: External staircase leading to two independent 1BHK units; each unit includes a hall (10'x16'), kitchen (8'x16' or 10'x10'), 1 bedroom (10'x16'), attached bathroom, and corridor passage.. Neighbourhood: Urban residential street in Vinayakapuram, located within 5 minutes drive from Prozone Mall in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
