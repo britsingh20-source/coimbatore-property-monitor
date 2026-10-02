@@ -1,0 +1,133 @@
+{
+  "video_id": "AzJRF8w6ONM",
+  "source_url": "https://www.youtube.com/watch?v=AzJRF8w6ONM",
+  "property_location": "Kurumbapalayam, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "Rs. 13 Lakhs per cent",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP & RERA Approved",
+    "floors": "NOT SPECIFIED",
+    "layout_distribution": "NOT SPECIFIED"
+  },
+  "verified_facts": "DTCP & RERA Approved residential plot development, Location: Kurumbapalayam, behind Kumaran Hospital, 1.5 km from Sathy NH, Coimbatore, Price: 13 Lakhs per cent, Contact person: Padmini - 9600 52 7765",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking naturally to camera, fast-paced real estate reel",
+    "hook_strategy": "Highlight prime location near Sathy NH and hospital in Kurumbapalayam within the first 3 seconds",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore குரும்பபாளையத்துல, Sathy NH-லிருந்து வெறும் 1.5 km தூரத்துல ஒரு அருமையான residential plot அமைஞ்சிருக்கு!",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "Kumaran Hospital பின்புறம் அமைஞ்சிருக்கிற இந்த gated community-ல, paved internal roads, street lights, overhead water tank, அப்புறம் அழகான avenue trees எல்லாமே வசதியா பண்ணிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "features"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம் என்னன்னா, இது முழுமையா DTCP மற்றும் RERA approval பெற்ற plot layout.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட விலை பாத்தீங்கனா, ஒரு சென்ட் 13 Lakhs-க்கு தர்றாங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "உங்களுக்கு மேலும் details வேணும்னாலோ இல்ல site visit போகணும்னாலோ, உடனே Padmini-க்கு 9600 52 7765 அப்படிங்கற நம்பர்ல கால் பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/AzJRF8w6ONM/",
+  "optional_owned_audio": "assets/audio/AzJRF8w6ONM.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Well-developed gated layout featuring wide asphalt internal roads, street light poles, compound boundary walls, and an overhead water tower.. Neighbourhood: Residential plot layout situated in Kurumbapalayam, Coimbatore, near Kumaran Hospital and 1.5 km off Sathy National Highway.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Well-developed gated layout featuring wide asphalt internal roads, street light poles, compound boundary walls, and an overhead water tower.. Neighbourhood: Residential plot layout situated in Kurumbapalayam, Coimbatore, near Kumaran Hospital and 1.5 km off Sathy National Highway.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Well-developed gated layout featuring wide asphalt internal roads, street light poles, compound boundary walls, and an overhead water tower.. Neighbourhood: Residential plot layout situated in Kurumbapalayam, Coimbatore, near Kumaran Hospital and 1.5 km off Sathy National Highway.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Well-developed gated layout featuring wide asphalt internal roads, street light poles, compound boundary walls, and an overhead water tower.. Neighbourhood: Residential plot layout situated in Kurumbapalayam, Coimbatore, near Kumaran Hospital and 1.5 km off Sathy National Highway.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
