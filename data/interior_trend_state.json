@@ -75,7 +75,8 @@
     "n6SKkFy-jdk",
     "NN5Aw1Xjg0A",
     "ZATWEzHm2FI",
-    "skfBqSkAc5Y"
+    "skfBqSkAc5Y",
+    "dCeAkKggo6c"
   ],
   "history": [
     {
@@ -457,6 +458,11 @@
       "video_id": "skfBqSkAc5Y",
       "creator": "DesignCafe",
       "url": "https://www.youtube.com/watch?v=skfBqSkAc5Y"
+    },
+    {
+      "video_id": "dCeAkKggo6c",
+      "creator": "Ridhi Khosla Jalan",
+      "url": "https://www.youtube.com/watch?v=dCeAkKggo6c"
     }
   ],
   "night_channel_cursor": 1
