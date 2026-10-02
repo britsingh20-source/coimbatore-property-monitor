@@ -3235,9 +3235,11 @@
     },
     "_Coj45m2DLc": {
       "attempts": 0,
+      "completed_at": "2026-10-02T21:07:51.913199+00:00",
       "first_seen_at": "2026-10-02T20:43:42.771744+00:00",
+      "last_error": "",
       "next_retry_at": "2026-10-02T20:43:42.771744+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "_F0wCRKb9wk": {
       "attempts": 0,
