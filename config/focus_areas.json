@@ -123,7 +123,7 @@
     }
   ],
   "rules": {
-    "max_selected": 6,
+    "max_selected": 3,
     "selection_ttl_minutes": 15
   }
 }
