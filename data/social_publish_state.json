@@ -855,12 +855,12 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.98,
+        "confidence": 1.0,
         "findings": [
-          "The video shows an exterior and interior architectural walkthrough of a modern residential property in Coimbatore.",
-          "Visual elements include a gate, parking area, living room with TV unit, false ceiling lighting, modular kitchen, and staircase.",
-          "Property details overlays ('3 BHK', '95 Lakhs', amenities icons) are present at the bottom of the frames.",
-          "No religious artifacts, deity images, personal portraits, family photos, kolams, or ceremonial markings are visible anywhere in the video."
+          "No deity, idol, puja shelf, or religious sign found in any frame.",
+          "No personal photos, portraits, certificates, or calendars visible on walls.",
+          "No threshold kolam, ritual patterns, garlands, or door decorations present.",
+          "Property information footer and badges are standard real estate overlay, not violations."
         ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
@@ -3625,7 +3625,9 @@
         "_Coj45m2DLc",
         "ZemeaBcOlUk",
         "sxt7oe1k29Q",
-        "uBVIhueISRk"
+        "uBVIhueISRk",
+        "2XOQEXh7XYo",
+        "kwgPorjDGRU"
       ],
       "etag": "f1e5be806c51dc666a1e99e1a36df1d9-3",
       "match_error": "Error code: 400 - {'error': {'message': 'Request contains an invalid argument.', 'code': 'invalid_request'}}",
