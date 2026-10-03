@@ -4824,9 +4824,11 @@
     },
     "pq7oDWotfH4": {
       "attempts": 0,
+      "completed_at": "2026-10-03T17:16:08.953011+00:00",
       "first_seen_at": "2026-10-03T08:51:14.624873+00:00",
+      "last_error": "",
       "next_retry_at": "2026-10-03T08:51:14.624873+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "psLArviRnI4": {
       "attempts": 0,
