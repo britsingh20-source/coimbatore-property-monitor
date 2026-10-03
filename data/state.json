@@ -47,6 +47,12 @@
       "next_retry_at": "2026-09-02T05:53:05.863271+00:00",
       "status": "discovered"
     },
+    "-TtBe4OlUeI": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-03T08:51:14.624873+00:00",
+      "next_retry_at": "2026-10-03T08:51:14.624873+00:00",
+      "status": "discovered"
+    },
     "-ZveRaGaOCk": {
       "attempts": 0,
       "completed_at": "2026-09-01T00:54:04.206295+00:00",
@@ -295,6 +301,12 @@
       "last_error": "",
       "next_retry_at": "2026-09-12T14:11:46.839507+00:00",
       "status": "video_queued"
+    },
+    "2XOQEXh7XYo": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-03T08:51:14.624873+00:00",
+      "next_retry_at": "2026-10-03T08:51:14.624873+00:00",
+      "status": "discovered"
     },
     "2Z03p-Zr7Gs": {
       "attempts": 0,
@@ -808,6 +820,12 @@
       "last_error": "",
       "next_retry_at": "2026-09-19T09:45:06.056357+00:00",
       "status": "archived_non_target"
+    },
+    "8unrZD23gbA": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-03T08:51:14.624873+00:00",
+      "next_retry_at": "2026-10-03T08:51:14.624873+00:00",
+      "status": "discovered"
     },
     "91y0q3A7G8s": {
       "attempts": 0,
@@ -1336,6 +1354,12 @@
       "next_retry_at": "2026-08-09T03:01:52.622314+00:00",
       "status": "archived_non_target"
     },
+    "EMf1IUVBN08": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-03T08:51:14.624873+00:00",
+      "next_retry_at": "2026-10-03T08:51:14.624873+00:00",
+      "status": "discovered"
+    },
     "EWtCDdLGAZE": {
       "attempts": 1,
       "completed_at": "2026-08-08T19:47:17.548172+00:00",
@@ -1780,6 +1804,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-11T17:15:19.796976+00:00",
       "status": "video_queued"
+    },
+    "JT8oqClXOIw": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-03T08:51:14.624873+00:00",
+      "next_retry_at": "2026-10-03T08:51:14.624873+00:00",
+      "status": "discovered"
     },
     "JXXag271wMU": {
       "attempts": 0,
@@ -4288,6 +4318,14 @@
       "next_retry_at": "2026-08-21T14:01:36.721963+00:00",
       "status": "video_queued"
     },
+    "kwgPorjDGRU": {
+      "attempts": 1,
+      "first_seen_at": "2026-10-03T08:51:14.624873+00:00",
+      "last_attempt_at": "2026-10-03T08:52:48.025057+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'Your project has exceeded a quota. See https://ai.dev/rate-limit to manage your rate limits.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-10-03T10:52:48.025067+00:00",
+      "status": "retry_pending"
+    },
     "kwn-l0ry9Ec": {
       "attempts": 0,
       "first_seen_at": "2026-10-01T11:50:29.430555+00:00",
@@ -4727,6 +4765,12 @@
       "next_retry_at": "2026-09-23T17:09:20.470260+00:00",
       "status": "discovered"
     },
+    "pq7oDWotfH4": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-03T08:51:14.624873+00:00",
+      "next_retry_at": "2026-10-03T08:51:14.624873+00:00",
+      "status": "discovered"
+    },
     "psLArviRnI4": {
       "attempts": 0,
       "completed_at": "2026-09-07T01:20:38.064565+00:00",
@@ -4892,6 +4936,18 @@
       "last_error": "",
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
       "status": "video_queued"
+    },
+    "rkejFcRkI1o": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-03T08:51:14.624873+00:00",
+      "next_retry_at": "2026-10-03T08:51:14.624873+00:00",
+      "status": "discovered"
+    },
+    "rm48a_Y9kFs": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-03T08:51:14.624873+00:00",
+      "next_retry_at": "2026-10-03T08:51:14.624873+00:00",
+      "status": "discovered"
     },
     "rnDvWTY7jH4": {
       "attempts": 1,
@@ -5115,6 +5171,12 @@
       "attempts": 0,
       "first_seen_at": "2026-10-01T11:50:29.430555+00:00",
       "next_retry_at": "2026-10-01T11:50:29.430555+00:00",
+      "status": "discovered"
+    },
+    "uviOnEi3RAM": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-03T08:51:14.624873+00:00",
+      "next_retry_at": "2026-10-03T08:51:14.624873+00:00",
       "status": "discovered"
     },
     "uvwmHdLbBbM": {
