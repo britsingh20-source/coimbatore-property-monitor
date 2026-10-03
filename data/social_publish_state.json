@@ -855,13 +855,12 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1.0,
+        "confidence": 0.98,
         "findings": [
-          "The video shows an exterior and interior tour of an independent residential house for sale.",
-          "Property details displayed in overlays include 3 BHK, land area, built-up area, facing, parking, DTCP approval, and price.",
-          "No religious idols, shrines, symbols, prayers items, or rituals are present.",
-          "No personal photographs, wall portraits, certificates, or calendars are displayed.",
-          "No ceremonial decorations such as kolam, torans, or threshold marks are visible."
+          "The video shows an exterior and interior architectural walkthrough of a modern residential property in Coimbatore.",
+          "Visual elements include a gate, parking area, living room with TV unit, false ceiling lighting, modular kitchen, and staircase.",
+          "Property details overlays ('3 BHK', '95 Lakhs', amenities icons) are present at the bottom of the frames.",
+          "No religious artifacts, deity images, personal portraits, family photos, kolams, or ceremonial markings are visible anywhere in the video."
         ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
