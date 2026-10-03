@@ -853,8 +853,13 @@
       "status": "visual_policy_passed",
       "video_id": "gIXueoGyB5s",
       "visual_compliance": {
-        "error": "Server disconnected without sending a response.",
-        "status": "service_unavailable_bypassed"
+        "ceremonial_markings_present": false,
+        "compliant": true,
+        "confidence": 0.95,
+        "findings": [],
+        "personal_photos_present": false,
+        "religious_visuals_present": false,
+        "violating_timestamps": []
       },
       "youtube_media": {
         "audio_handling": "copied_original_aac",
@@ -3550,7 +3555,6 @@
         "GS0uoS3DttI",
         "dMT4kZxK5ms",
         "Xk9BaWyCghM",
-        "zclTKyhfHyE",
         "r2oVfH94bnw",
         "MxgZKbdxPEw",
         "OKBch4Yy0mg",
@@ -3614,7 +3618,9 @@
         "1cALQbHt5ZA",
         "QxQbV5xaoTM",
         "_Coj45m2DLc",
-        "ZemeaBcOlUk"
+        "ZemeaBcOlUk",
+        "sxt7oe1k29Q",
+        "uBVIhueISRk"
       ],
       "etag": "f1e5be806c51dc666a1e99e1a36df1d9-3",
       "match_error": "Error code: 400 - {'error': {'message': 'Request contains an invalid argument.', 'code': 'invalid_request'}}",
