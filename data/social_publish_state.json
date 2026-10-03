@@ -855,12 +855,8 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.98,
-        "findings": [
-          "The video showcases a modern independent house in Coimbatore, Tamil Nadu.",
-          "Property features visible include the exterior front elevation, car parking porch, living hall with TV unit, false ceiling lighting, kitchen cabinets, staircase, and entrance door.",
-          "Inspection of all frames confirms the absence of deity images, religious symbols, prayer shrines, kolam, ritual decorations, and personal photographs or framed portraits."
-        ],
+        "confidence": 0.95,
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -4760,7 +4756,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
+        "confidence": 0.95,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
