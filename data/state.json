@@ -49,9 +49,11 @@
     },
     "-TtBe4OlUeI": {
       "attempts": 0,
+      "completed_at": "2026-10-03T19:33:03.735683+00:00",
       "first_seen_at": "2026-10-03T08:51:14.624873+00:00",
+      "last_error": "",
       "next_retry_at": "2026-10-03T08:51:14.624873+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "-ZveRaGaOCk": {
       "attempts": 0,
