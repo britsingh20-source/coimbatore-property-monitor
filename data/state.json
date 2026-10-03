@@ -1563,6 +1563,12 @@
       "next_retry_at": "2026-09-19T01:14:29.294488+00:00",
       "status": "video_queued"
     },
+    "GSh2WR7GB-8": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-03T00:54:43.020188+00:00",
+      "next_retry_at": "2026-10-03T00:54:43.020188+00:00",
+      "status": "discovered"
+    },
     "GVnw2N29VYw": {
       "attempts": 2,
       "completed_at": "2026-08-07T23:51:23.175323+00:00",
@@ -3207,9 +3213,11 @@
     },
     "ZemeaBcOlUk": {
       "attempts": 0,
+      "completed_at": "2026-10-03T00:55:58.522692+00:00",
       "first_seen_at": "2026-10-02T20:43:42.771744+00:00",
+      "last_error": "",
       "next_retry_at": "2026-10-02T20:43:42.771744+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "ZmWrx8l36R8": {
       "attempts": 6,
