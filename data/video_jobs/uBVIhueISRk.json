@@ -1,0 +1,131 @@
+{
+  "video_id": "uBVIhueISRk",
+  "source_url": "https://www.youtube.com/watch?v=uBVIhueISRk",
+  "property_location": "Idikarai, Maniyakaranpalayam, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "2 BHK",
+    "land_area": "2.50 - 2.75 Cents",
+    "built_up_area": "1000 Sq. Ft. & Above",
+    "price": "₹60 Lakhs - ₹65 Lakhs",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking",
+    "approval": "NOT SPECIFIED",
+    "floors": "Single-storey",
+    "layout_distribution": "Ground Floor: Gated parking portico, main entry, spacious living hall, dedicated pooja space, kitchen, and two bedrooms with attached bathrooms."
+  },
+  "verified_facts": "Three villas offered at prices of ₹60 Lakhs, ₹63 Lakhs, and ₹65 Lakhs., Located in Idikarai, Maniyakaranpalayam, Coimbatore, within 1 km from Maniyakaranpalayam Junction., Land size ranges from 2.50 to 2.75 cents., Built-up area is 1000 sq. ft. and above., 80% to 90% bank loan facility available., Athikadavu drinking water supply line connection available.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local Coimbatore property presenter speaking directly to camera.",
+    "hook_strategy": "Highlight the key location proximity to Maniyakaranpalayam Junction along with Athikadavu drinking water line availability in Idikarai.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை மணியகாரன்பாளையம் ஜங்ஷன்ல இருந்து ஜஸ்ட் 1 km-ல, இடிகரை location-ல Athikadavu drinking water line வசதியோட இருக்குற 2 BHK Single-storey Villa பாக்கப்போறோம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல 2.50 முதல் 2.75 Cents land-ல, gated covered car parking portico-வோட இந்த house அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "land-details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "Built-up area 1000 Sq. Ft. & above வருது. உள்ள பாத்தீங்கனா false ceiling செஞ்ச spacious living hall, dedicated pooja space, modular kitchen storage, மற்றும் wardrobes வசதியோட ரெண்டு attached bathroom bedrooms இருக்கு.",
+        "broll": [
+          "living_room",
+          "interior",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "floorplan-highlight",
+        "purpose": "interior-tour"
+      },
+      {
+        "name": "price",
+        "voice": "இங்க மொத்தம் மூணு villas இருக்கு. Price பாத்தீங்கனா ₹60 Lakhs, ₹63 Lakhs, மற்றும் ₹65 Lakhs.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "verify",
+        "voice": "இதுல முக்கியமான விஷயம், 80% முதல் 90% வரை bank loan facility இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "checkmark",
+        "purpose": "loan-info"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ண அல்லது மேலும் details தெரிஞ்சுக்க உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call-to-action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/uBVIhueISRk/",
+  "optional_owned_audio": "assets/audio/uBVIhueISRk.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Newly constructed modern single-storey villas featuring geometric front facades, painted accent panels, gated compound wall, tiled portico floor, and exterior staircase.. Hard floor/layout lock: Single-storey; Ground Floor: Gated parking portico, main entry, spacious living hall, dedicated pooja space, kitchen, and two bedrooms with attached bathrooms.. Neighbourhood: Residential locality situated in Maniyakaranpalayam, Idikarai, surrounded by existing individual residences.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Newly constructed modern single-storey villas featuring geometric front facades, painted accent panels, gated compound wall, tiled portico floor, and exterior staircase.. Hard floor/layout lock: Single-storey; Ground Floor: Gated parking portico, main entry, spacious living hall, dedicated pooja space, kitchen, and two bedrooms with attached bathrooms.. Neighbourhood: Residential locality situated in Maniyakaranpalayam, Idikarai, surrounded by existing individual residences.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Newly constructed modern single-storey villas featuring geometric front facades, painted accent panels, gated compound wall, tiled portico floor, and exterior staircase.. Hard floor/layout lock: Single-storey; Ground Floor: Gated parking portico, main entry, spacious living hall, dedicated pooja space, kitchen, and two bedrooms with attached bathrooms.. Neighbourhood: Residential locality situated in Maniyakaranpalayam, Idikarai, surrounded by existing individual residences.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Newly constructed modern single-storey villas featuring geometric front facades, painted accent panels, gated compound wall, tiled portico floor, and exterior staircase.. Hard floor/layout lock: Single-storey; Ground Floor: Gated parking portico, main entry, spacious living hall, dedicated pooja space, kitchen, and two bedrooms with attached bathrooms.. Neighbourhood: Residential locality situated in Maniyakaranpalayam, Idikarai, surrounded by existing individual residences.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
