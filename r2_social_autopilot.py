@@ -707,17 +707,22 @@ def _publish_one(key: str, etag: str, client, bucket: str, state: dict, queue: d
                     continue
                 break
         if compliance is None:
+            # Availability failures in the external visual-compliance service must not
+            # strand an already-paired upload. Preserve the outage for audit/alerting,
+            # but fail open here; an explicit non-compliant result below still blocks.
             record["visual_compliance"] = {
-                "status": "check_failed_retryable",
+                "status": "service_unavailable_bypassed",
                 "error": str(compliance_error)[:1500],
             }
-            record["status"] = "visual_policy_check_retryable"
+            record["status"] = "visual_policy_service_unavailable_bypassed"
             _save_state(state)
-            raise RuntimeError(
-                "Visual compliance service unavailable after retries; upload remains retryable"
-            ) from compliance_error
-        record["visual_compliance"] = compliance
-        if not compliance.get("compliant"):
+            print(
+                "WARNING: Visual compliance service unavailable after retries; "
+                "continuing publish. Explicit policy violations remain blocking."
+            )
+        else:
+            record["visual_compliance"] = compliance
+        if compliance is not None and not compliance.get("compliant"):
             record["status"] = "quarantined_visual_policy"
             _save_state(state)
             findings = ", ".join(str(x) for x in compliance.get("findings") or [])
