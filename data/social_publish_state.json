@@ -855,8 +855,14 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.95,
-        "findings": [],
+        "confidence": 1.0,
+        "findings": [
+          "The video shows an exterior and interior tour of an independent residential house for sale.",
+          "Property details displayed in overlays include 3 BHK, land area, built-up area, facing, parking, DTCP approval, and price.",
+          "No religious idols, shrines, symbols, prayers items, or rituals are present.",
+          "No personal photographs, wall portraits, certificates, or calendars are displayed.",
+          "No ceremonial decorations such as kolam, torans, or threshold marks are visible."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
