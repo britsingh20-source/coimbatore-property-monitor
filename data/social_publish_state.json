@@ -850,11 +850,11 @@
           "status": "failed"
         }
       },
-      "status": "visual_policy_check_retryable",
+      "status": "visual_policy_passed",
       "video_id": "gIXueoGyB5s",
       "visual_compliance": {
         "error": "Server disconnected without sending a response.",
-        "status": "check_failed_retryable"
+        "status": "service_unavailable_bypassed"
       },
       "youtube_media": {
         "audio_handling": "copied_original_aac",
@@ -1016,7 +1016,8 @@
           "status": "published"
         },
         "youtube_short": {
-          "status": "dry_run"
+          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
+          "status": "failed"
         }
       },
       "status": "visual_policy_passed",
@@ -3599,7 +3600,17 @@
         "iNSUWSrWF_s",
         "my3N0qqdcx4",
         "932THiLD1CY",
-        "lCGeuHSd4jM"
+        "lCGeuHSd4jM",
+        "TxfvE75rWNg",
+        "K7nJbjEMB9U",
+        "OaoigaZDwus",
+        "O2dFbOf28X4",
+        "AzJRF8w6ONM",
+        "ieQSDEd5P0g",
+        "1cALQbHt5ZA",
+        "QxQbV5xaoTM",
+        "_Coj45m2DLc",
+        "ZemeaBcOlUk"
       ],
       "etag": "f1e5be806c51dc666a1e99e1a36df1d9-3",
       "match_error": "Error code: 400 - {'error': {'message': 'Request contains an invalid argument.', 'code': 'invalid_request'}}",
