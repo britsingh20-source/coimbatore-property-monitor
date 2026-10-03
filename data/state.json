@@ -5006,9 +5006,11 @@
     },
     "rm48a_Y9kFs": {
       "attempts": 0,
+      "completed_at": "2026-10-03T22:30:43.892729+00:00",
       "first_seen_at": "2026-10-03T08:51:14.624873+00:00",
+      "last_error": "",
       "next_retry_at": "2026-10-03T08:51:14.624873+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "rnDvWTY7jH4": {
       "attempts": 1,
