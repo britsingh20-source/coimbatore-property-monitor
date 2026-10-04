@@ -1,0 +1,159 @@
+{
+  "video_id": "1kx8ICo6k-g",
+  "source_url": "https://www.youtube.com/watch?v=1kx8ICo6k-g",
+  "property_location": "Keeranatham, Saravanampatti, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "2.5 Cents (1100 sq ft, 22 ft x 50 ft)",
+    "built_up_area": "1900 sq ft",
+    "price": "₹1.20 Crore (Negotiable)",
+    "facing": "East",
+    "road_width": "30 feet",
+    "parking": "Covered Car Parking Portico (16.25 ft x 10.5 ft)",
+    "approval": "DTCP Approved",
+    "floors": "G+1 duplex with open terrace head room",
+    "layout_distribution": "Ground Floor: Portico / car parking, spacious double-height living hall with wooden TV panel, modular kitchen with dining section and wooden partition wall, dedicated north-facing pooja room, first bedroom with sliding wardrobe and attached bathroom, plus an exterior bathroom in the side passage. First Floor: Open lounge area overlooking the living hall chandelier, second bedroom with attached dressing area and bathroom, third bedroom with built-in headboard, wardrobes, attached bathroom, and direct access to the front balcony. Terrace Level: Headroom with internal staircase access, water storage tanks, and open terrace area."
+  },
+  "verified_facts": "Land area is 2.50 cents (1,100 sq ft) measuring 22 ft x 50 ft., Total built-up area is 1,900 sq ft structured as a G+1 duplex., House and site are East facing., Ground floor contains a covered portico, double-height living hall (16x16 ft), kitchen cum dining (16x8.5 ft), pooja room (4.5x4 ft), first bedroom (10x11 ft) with attached bathroom (6.5x4 ft), and an outside bathroom (5x4 ft)., First floor includes a lounge/lobby (16x7 ft), second bedroom (16x10 ft) with dressing area (4.5x4 ft) and attached bathroom (6.5x4 ft), third bedroom (16x10 ft) with attached bathroom (4x8 ft), and front balcony (10x6 ft)., Terrace level features an inner staircase headroom, water tank, and open terrace area., Location is Keeranatham, near Saravanampatti, Coimbatore., Total asking price is ₹1.20 Crore (negotiable).",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Keeranatham, Saravanampatti, Coimbatore, Tamil Nadu சைட்ல 3 BHK Independent House தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹1.20 Crore (Negotiable).",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 2.5 Cents (1100 sq ft, 22 ft x 50 ft) லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 1900 sq ft இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "road",
+        "voice": "இதுல முக்கியமான விஷயம், முன்னாடி 30 feet ரோடு வசதி இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [],
+        "vfx": "road-measure",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு East ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP Approved இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "Script invented numeric facts in price: ['20']"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/1kx8ICo6k-g/",
+  "optional_owned_audio": "assets/audio/1kx8ICo6k-g.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary elevation clad in white with accent paneling in blue, grey, and wood-grain textures, featuring a laser-cut decorative grill on the first-floor balcony, recessed soffit lighting, and a wide metal main gate with HPL wood-textured panels.. Hard floor/layout lock: G+1 duplex with open terrace head room; Ground Floor: Portico / car parking, spacious double-height living hall with wooden TV panel, modular kitchen with dining section and wooden partition wall, dedicated north-facing pooja room, first bedroom with sliding wardrobe and attached bathroom, plus an exterior bathroom in the side passage. First Floor: Open lounge area overlooking the living hall chandelier, second bedroom with attached dressing area and bathroom, third bedroom with built-in headboard, wardrobes, attached bathroom, and direct access to the front balcony. Terrace Level: Headroom with internal staircase access, water storage tanks, and open terrace area.. Neighbourhood: Planned residential row-house development with paved access, 30-ft wide road, and adjacent modern duplex residences in a quiet neighborhood in Keeranatham, Saravanampatti.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary elevation clad in white with accent paneling in blue, grey, and wood-grain textures, featuring a laser-cut decorative grill on the first-floor balcony, recessed soffit lighting, and a wide metal main gate with HPL wood-textured panels.. Hard floor/layout lock: G+1 duplex with open terrace head room; Ground Floor: Portico / car parking, spacious double-height living hall with wooden TV panel, modular kitchen with dining section and wooden partition wall, dedicated north-facing pooja room, first bedroom with sliding wardrobe and attached bathroom, plus an exterior bathroom in the side passage. First Floor: Open lounge area overlooking the living hall chandelier, second bedroom with attached dressing area and bathroom, third bedroom with built-in headboard, wardrobes, attached bathroom, and direct access to the front balcony. Terrace Level: Headroom with internal staircase access, water storage tanks, and open terrace area.. Neighbourhood: Planned residential row-house development with paved access, 30-ft wide road, and adjacent modern duplex residences in a quiet neighborhood in Keeranatham, Saravanampatti.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary elevation clad in white with accent paneling in blue, grey, and wood-grain textures, featuring a laser-cut decorative grill on the first-floor balcony, recessed soffit lighting, and a wide metal main gate with HPL wood-textured panels.. Hard floor/layout lock: G+1 duplex with open terrace head room; Ground Floor: Portico / car parking, spacious double-height living hall with wooden TV panel, modular kitchen with dining section and wooden partition wall, dedicated north-facing pooja room, first bedroom with sliding wardrobe and attached bathroom, plus an exterior bathroom in the side passage. First Floor: Open lounge area overlooking the living hall chandelier, second bedroom with attached dressing area and bathroom, third bedroom with built-in headboard, wardrobes, attached bathroom, and direct access to the front balcony. Terrace Level: Headroom with internal staircase access, water storage tanks, and open terrace area.. Neighbourhood: Planned residential row-house development with paved access, 30-ft wide road, and adjacent modern duplex residences in a quiet neighborhood in Keeranatham, Saravanampatti.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary elevation clad in white with accent paneling in blue, grey, and wood-grain textures, featuring a laser-cut decorative grill on the first-floor balcony, recessed soffit lighting, and a wide metal main gate with HPL wood-textured panels.. Hard floor/layout lock: G+1 duplex with open terrace head room; Ground Floor: Portico / car parking, spacious double-height living hall with wooden TV panel, modular kitchen with dining section and wooden partition wall, dedicated north-facing pooja room, first bedroom with sliding wardrobe and attached bathroom, plus an exterior bathroom in the side passage. First Floor: Open lounge area overlooking the living hall chandelier, second bedroom with attached dressing area and bathroom, third bedroom with built-in headboard, wardrobes, attached bathroom, and direct access to the front balcony. Terrace Level: Headroom with internal staircase access, water storage tanks, and open terrace area.. Neighbourhood: Planned residential row-house development with paved access, 30-ft wide road, and adjacent modern duplex residences in a quiet neighborhood in Keeranatham, Saravanampatti.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
