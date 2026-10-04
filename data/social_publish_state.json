@@ -855,11 +855,11 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1.0,
+        "confidence": 0.98,
         "findings": [
-          "The video displays a modern independent house for sale in Coimbatore.",
-          "Property features shown include exterior views, parking space, living room with false ceiling, kitchen, and staircase area.",
-          "No religious visuals, shrines, sacred symbols, ritual markings, or personal photos were found in any of the frames."
+          "The video displays a newly constructed independent duplex house in Coimbatore.",
+          "Property features visible include exterior facade, covered car parking, living room with false ceiling, kitchen, and staircase area.",
+          "No religious idols, shrines, symbols, pictures, personal portraits, family photos, or ceremonial threshold markings/kolams were observed in any frame."
         ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
@@ -4769,7 +4769,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.95,
+        "confidence": 1,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
