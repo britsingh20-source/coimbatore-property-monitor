@@ -1,0 +1,144 @@
+{
+  "video_id": "PXcON9S10Ic",
+  "source_url": "https://www.youtube.com/watch?v=PXcON9S10Ic",
+  "property_location": "Maniakarampalayam, Near Thudiyalur, Coimbatore",
+  "entrance_contaminated": true,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2 BHK",
+    "land_area": "2.75 Cents",
+    "built_up_area": "1100 sqft",
+    "price": "₹65 Lakhs",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Car parking (9'0\" x 20'0\")",
+    "approval": "NOT SPECIFIED",
+    "floors": "single-storey",
+    "layout_distribution": "Ground floor features a covered car parking space, living hall (16'x16'), kitchen (8'x11'), two bedrooms (8'x16' each) with attached bathrooms (4'x8' each), and an outer bathroom (3'x6') beneath the staircase. Exterior stairs lead to the terrace."
+  },
+  "verified_facts": "Price: Rs. 65 Lakhs (negotiable), 75% bank loan available, Land Area: 2.75 Cents, Built-up Area: 1100 sq ft, North facing site and North facing main door, Layout includes 2 bedrooms with attached bathrooms, living hall, kitchen, outer bathroom, and car parking",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local Coimbatore property presenter speaking directly to camera, using casual spoken Tamil mixed with standard English real-estate terms.",
+    "hook_strategy": "Highlighting a 2 BHK independent house in Maniakarampalayam near Thudiyalur right at the start.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை துடியலூர் பக்கத்துல இருக்குற மணியகாரம்பாளையத்துல ஒரு 2 BHK independent house விற்பனைக்கு வந்திருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட விலை பார்த்தீங்கனா 65 Lakhs, negotiable! 75% bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "price-badge",
+        "purpose": "pricing_highlight"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 2.75 Cents land area-ல இந்த வீடு அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "land-area-callout",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1100 sqft built-up area. 16x16 living hall-ல false ceiling lights, wall mural இருக்கு. 8x11 kitchen, அப்புறம் இரண்டு bedrooms-லயும் attached bathrooms இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "floor-plan-popups",
+        "purpose": "interior_tour"
+      },
+      {
+        "name": "verify",
+        "voice": "இதுல 9x20 covered car parking, individual borewell, drinking water sump, staircase அடியில outer bathroom-உம் வருது.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "feature-checklist",
+        "purpose": "utility_details"
+      },
+      {
+        "name": "facing",
+        "voice": "North facing site மற்றும் North facing main door கொண்ட semi-furnished வீடு இது.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "compass-direction",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணவோ details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "contact-card",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/PXcON9S10Ic/",
+  "optional_owned_audio": "assets/audio/PXcON9S10Ic.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house elevation featuring olive green and tan painted walls, yellow horizontal accent stripes, decorative laser-cut white jaali panel, and a grey metallic sliding main gate.. Hard floor/layout lock: single-storey; Ground floor features a covered car parking space, living hall (16'x16'), kitchen (8'x11'), two bedrooms (8'x16' each) with attached bathrooms (4'x8' each), and an outer bathroom (3'x6') beneath the staircase. Exterior stairs lead to the terrace.. Neighbourhood: Located in a residential area in Maniakarampalayam, near Thudiyalur, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house elevation featuring olive green and tan painted walls, yellow horizontal accent stripes, decorative laser-cut white jaali panel, and a grey metallic sliding main gate.. Hard floor/layout lock: single-storey; Ground floor features a covered car parking space, living hall (16'x16'), kitchen (8'x11'), two bedrooms (8'x16' each) with attached bathrooms (4'x8' each), and an outer bathroom (3'x6') beneath the staircase. Exterior stairs lead to the terrace.. Neighbourhood: Located in a residential area in Maniakarampalayam, near Thudiyalur, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house elevation featuring olive green and tan painted walls, yellow horizontal accent stripes, decorative laser-cut white jaali panel, and a grey metallic sliding main gate.. Hard floor/layout lock: single-storey; Ground floor features a covered car parking space, living hall (16'x16'), kitchen (8'x11'), two bedrooms (8'x16' each) with attached bathrooms (4'x8' each), and an outer bathroom (3'x6') beneath the staircase. Exterior stairs lead to the terrace.. Neighbourhood: Located in a residential area in Maniakarampalayam, near Thudiyalur, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Maniyakarampalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house elevation featuring olive green and tan painted walls, yellow horizontal accent stripes, decorative laser-cut white jaali panel, and a grey metallic sliding main gate.. Hard floor/layout lock: single-storey; Ground floor features a covered car parking space, living hall (16'x16'), kitchen (8'x11'), two bedrooms (8'x16' each) with attached bathrooms (4'x8' each), and an outer bathroom (3'x6') beneath the staircase. Exterior stairs lead to the terrace.. Neighbourhood: Located in a residential area in Maniakarampalayam, near Thudiyalur, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
