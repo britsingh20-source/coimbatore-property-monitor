@@ -855,14 +855,8 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.98,
-        "findings": [
-          "The video showcases a modern independent house for sale in Coimbatore.",
-          "Property features: 3 BHK, 4.75 cents, 1850 sq ft built-up area, North facing, covered car parking, DTCP approved.",
-          "Visuals include exterior architecture, porch area, living room with TV unit, false ceiling, and modular kitchen.",
-          "No religious idols, symbols, puja rooms, kolams, or personal family photos were detected in any frame.",
-          "Property marketing text overlays and footer badges present as standard real estate presentation elements."
-        ],
+        "confidence": 1.0,
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -3634,7 +3628,9 @@
         "rm48a_Y9kFs",
         "rkejFcRkI1o",
         "uviOnEi3RAM",
-        "ITba_KyfVHY"
+        "ITba_KyfVHY",
+        "1kx8ICo6k-g",
+        "uWj4EtPOulA"
       ],
       "etag": "f1e5be806c51dc666a1e99e1a36df1d9-3",
       "match_error": "Error code: 400 - {'error': {'message': 'Request contains an invalid argument.', 'code': 'invalid_request'}}",
