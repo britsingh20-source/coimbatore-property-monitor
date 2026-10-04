@@ -855,8 +855,14 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
-        "findings": [],
+        "confidence": 1.0,
+        "findings": [
+          "The video displays a modern 3 BHK independent house for sale in Periyanaickenpalayam, Coimbatore.",
+          "Property features include 4.75 cents land area, 1850 Sq.Ft built-up area, North facing, covered car parking, and DTCP approval.",
+          "Interior scenes show the living area with TV unit, false ceiling with lighting, kitchen cabinetry, and staircase area.",
+          "No religious visuals, deities, symbols, or ritual markings are present in any frame.",
+          "No personal photos, portraits, framed certificates, or calendars are visible."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -4767,14 +4773,8 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.99,
-        "findings": [
-          "The video shows an independent house property listing in Coimbatore, Tamil Nadu.",
-          "Various rooms are displayed including the exterior, parking area, living room, false ceiling, kitchen, bedroom, and balcony/terrace area.",
-          "No religious visuals, idols, puja shelves, religious symbols, kolams, or doorway decorations are present.",
-          "No personal photos, family portraits, certificates, or personal wall displays are visible in any of the frames.",
-          "Property marketing overlays (footer, price, specifications) are present as part of the video presentation."
-        ],
+        "confidence": 0.95,
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
