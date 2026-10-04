@@ -855,12 +855,8 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.99,
-        "findings": [
-          "The video shows an exterior and interior tour of an independent 3 BHK duplex house for sale.",
-          "All visible interior walls, ceilings, flooring, and kitchen elements are neutral and lack any religious idols, puja rooms, personal portraits, family photographs, or ceremonial markings.",
-          "The branding overlay at the bottom and information panels on properties are standard promotional elements and do not contain restricted religious or personal items."
-        ],
+        "confidence": 0.95,
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
