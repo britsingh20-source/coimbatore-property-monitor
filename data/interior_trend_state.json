@@ -77,7 +77,8 @@
     "ZATWEzHm2FI",
     "skfBqSkAc5Y",
     "dCeAkKggo6c",
-    "aaZ8_2KzVd8"
+    "aaZ8_2KzVd8",
+    "Lw6xJSbddPM"
   ],
   "history": [
     {
@@ -469,6 +470,11 @@
       "video_id": "aaZ8_2KzVd8",
       "creator": "Ridhi Khosla Jalan",
       "url": "https://www.youtube.com/watch?v=aaZ8_2KzVd8"
+    },
+    {
+      "video_id": "Lw6xJSbddPM",
+      "creator": "Ridhi Khosla Jalan",
+      "url": "https://www.youtube.com/watch?v=Lw6xJSbddPM"
     }
   ],
   "night_channel_cursor": 1
