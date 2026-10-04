@@ -4292,9 +4292,11 @@
     },
     "ing97frQ9hw": {
       "attempts": 0,
+      "completed_at": "2026-10-04T15:21:50.977762+00:00",
       "first_seen_at": "2026-10-01T11:50:29.430555+00:00",
+      "last_error": "",
       "next_retry_at": "2026-10-01T11:50:29.430555+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "irzAYfjz6ow": {
       "attempts": 0,
