@@ -1,6 +1,10 @@
 name: Interior Social Publishing
 
 "on":
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/interior-social-publish.yml"
   repository_dispatch:
     types: [telegram-interior-upload]
   workflow_dispatch:
@@ -19,7 +23,13 @@ concurrency:
 
 jobs:
   publish-interior:
+    if: ${{ github.event_name != 'push' }}
     runs-on: ubuntu-24.04
+  register-workflow:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Interior Social Publishing workflow registered."
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v5
