@@ -36,6 +36,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           TELEGRAM_WEBHOOK_UPDATE_JSON: ${{ toJson(github.event.client_payload.update) }}
+          INTERIOR_RECOVERY_ID: ${{ inputs.interior_id || '' }}
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
@@ -49,7 +50,12 @@ jobs:
           INTERIOR_YOUTUBE_CLIENT_SECRET: ${{ secrets.INTERIOR_YOUTUBE_CLIENT_SECRET }}
           INTERIOR_YOUTUBE_REFRESH_TOKEN: ${{ secrets.INTERIOR_YOUTUBE_REFRESH_TOKEN }}
           INTERIOR_YOUTUBE_PRIVACY_STATUS: public
-        run: python interior_social_autopilot.py
+        run: |
+          if [[ -n "${INTERIOR_RECOVERY_ID}" && -z "${TELEGRAM_WEBHOOK_UPDATE_JSON}" ]]; then
+            echo "::error::Recovery for ${INTERIOR_RECOVERY_ID} needs a stored Telegram/R2 upload record. Refusing to publish a guessed file."
+            exit 1
+          fi
+          python interior_social_autopilot.py
       - name: Commit Interior publishing state
         if: always()
         shell: bash
