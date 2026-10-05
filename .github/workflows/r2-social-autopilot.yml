@@ -3,7 +3,7 @@ name: R2 Social Publishing Autopilot
 
 on:
   repository_dispatch:
-    types: [telegram-property-upload, r2-social-object-created]
+    types: [telegram-property-upload, telegram-interior-upload, r2-social-object-created]
   schedule:
     - cron: "7,17,27,37,47,57 * * * *"
   push:
@@ -88,7 +88,7 @@ jobs:
 
       - name: Route Telegram uploads to Property or Interior publisher
         id: telegram_ingest
-        if: github.event_name == 'repository_dispatch' && github.event.action == 'telegram-property-upload'
+        if: github.event_name == 'repository_dispatch' && github.event.action == 'telegram-interior-upload'
         continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -109,7 +109,7 @@ jobs:
           INTERIOR_YOUTUBE_REFRESH_TOKEN: ${{ secrets.INTERIOR_YOUTUBE_REFRESH_TOKEN }}
           INTERIOR_YOUTUBE_PRIVACY_STATUS: public
           TELEGRAM_WEBHOOK_UPDATE_JSON: ${{ toJson(github.event.client_payload.update) }}
-        run: python telegram_router.py
+        run: python interior_social_autopilot.py
 
       - name: Resolve exact Telegram R2 object
         id: telegram_target
