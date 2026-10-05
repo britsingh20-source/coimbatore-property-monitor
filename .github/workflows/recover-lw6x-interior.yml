@@ -1,0 +1,131 @@
+name: Recover exact Interior upload Lw6xJSbddPM
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/recover-lw6x-interior.yml"]
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: property-automation-state
+  cancel-in-progress: false
+jobs:
+  recover:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Recover exact uploaded MP4 and publish Instagram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          INTERIOR_GEMINI_MODEL: gemini-2.5-flash
+          INTERIOR_META_ACCESS_TOKEN: ${{ secrets.INTERIOR_META_ACCESS_TOKEN }}
+          INTERIOR_META_PAGE_ID: ${{ secrets.INTERIOR_META_PAGE_ID }}
+          INTERIOR_IG_USER_ID: ${{ secrets.INTERIOR_IG_USER_ID }}
+        run: |
+          python - <<'PY'
+          import tempfile
+          from pathlib import Path
+          import requests
+          import interior_social_autopilot as m
+          source_id = "Lw6xJSbddPM"
+          filename = "1791169010842380.MP4"
+          token, chat = m.required("TELEGRAM_BOT_TOKEN"), m.required("TELEGRAM_CHAT_ID")
+          state = m.load_state()
+          matches = [(k,v) for k,v in state.get("objects",{}).items() if v.get("source_id")==source_id]
+          client, bucket = m.r2_client(), m.required("R2_BUCKET_NAME")
+          if matches:
+              key, record = matches[-1]
+          else:
+              attachment = None
+              for message_id in range(176, 119, -1):
+                  try:
+                      forwarded = m.telegram("forwardMessage", token, {
+                          "chat_id":chat, "from_chat_id":chat, "message_id":message_id,
+                          "disable_notification":"true"
+                      })["result"]
+                  except RuntimeError as e:
+                      if "message to forward not found" in str(e).lower():
+                          continue
+                      raise
+                  try:
+                      candidate = m.video_attachment(forwarded)
+                      if candidate and str(candidate.get("file_name","")).lower()==filename.lower():
+                          attachment = candidate
+                          print("Recovered exact uploaded filename from Telegram message", message_id)
+                  finally:
+                      m.telegram("deleteMessage", token, {"chat_id":chat,"message_id":forwarded["message_id"]})
+                  if attachment:
+                      break
+              if not attachment:
+                  raise RuntimeError("Exact MP4 not found in recent Telegram messages; no unrelated video published")
+              info = m.telegram("getFile", token, {"file_id":attachment["file_id"]})["result"]
+              response = requests.get(f"https://api.telegram.org/file/bot{token}/{info['file_path']}",timeout=180)
+              response.raise_for_status()
+              unique_id = attachment["file_unique_id"]
+              key = f"{m.R2_PREFIX}{source_id}-{unique_id}.mp4"
+              with tempfile.NamedTemporaryFile(suffix=".mp4") as h:
+                  h.write(response.content)
+                  h.flush()
+                  client.upload_file(h.name,bucket,key,ExtraArgs={"ContentType":"video/mp4"})
+              record = {"source_id":source_id,"r2_key":key,"instagram":{},"instagram_story":{},"youtube":{}}
+              state.setdefault("objects",{})[key]=record
+              state.setdefault("telegram_files",{})[unique_id]=record
+              m.save_state(state)
+          with tempfile.NamedTemporaryFile(suffix=".mp4") as h:
+              client.download_file(bucket,key,h.name)
+              content=record.get("content") or {}
+              if not content.get("instagram_caption"):
+                  content=m.analyze_publish_content_with_retry(Path(h.name))
+                  record["content"]=content
+                  m.save_state(state)
+              url=client.generate_presigned_url("get_object",Params={"Bucket":bucket,"Key":key},ExpiresIn=21600)
+              for platform, publish in (
+                  ("instagram",lambda:m.publish_instagram_reel(url,content["instagram_caption"])),
+                  ("instagram_story",lambda:m.publish_instagram_story(url)),
+              ):
+                  if record.get(platform,{}).get("status")!="published":
+                      try:
+                          record[platform]={"status":"published",**publish()}
+                      except Exception as e:
+                          record[platform]={"status":"failed","error":str(e)[:3000]}
+                      m.save_state(state)
+                  details=record.get(platform,{})
+                  if details.get("status")=="published":
+                      fields="id,media_type,permalink,timestamp" if platform=="instagram" else "id,media_type,timestamp"
+                      resp=requests.get(f"{m.GRAPH}/{details['media_id']}",params={"fields":fields,"access_token":m.required("INTERIOR_META_ACCESS_TOKEN")},timeout=30)
+                      body=resp.json()
+                      if not resp.ok or body.get("error") or str(body.get("id"))!=str(details["media_id"]):
+                          raise RuntimeError(f"Instagram verification failed: {body}")
+                      details["verification"]=body
+                      m.save_state(state)
+                      print("VERIFIED",platform,body)
+              failures=[p for p in ("instagram","instagram_story") if record.get(p,{}).get("status")!="published"]
+              if failures:
+                  raise RuntimeError(str({p:record[p] for p in failures}))
+          print("Instagram Reel and Story published and verified",source_id)
+          PY
+      - name: Preserve recovery state
+        if: always()
+        run: |
+          git config user.name "interior-social-bot"
+          git config user.email "actions@github.com"
+          git add data/interior_social_publish_state.json
+          if ! git diff --staged --quiet; then
+            git commit -m "Record exact Interior upload recovery and Instagram verification"
+            git pull --rebase
+            git push
+          fi
