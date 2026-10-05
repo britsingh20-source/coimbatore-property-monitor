@@ -3,6 +3,12 @@ name: Interior Social Publishing
 on:
   repository_dispatch:
     types: [telegram-interior-upload]
+  workflow_dispatch:
+    inputs:
+      interior_id:
+        description: Interior ID for recovery/manual publish
+        required: false
+        type: string
 
 permissions:
   contents: write
