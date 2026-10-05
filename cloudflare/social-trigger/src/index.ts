@@ -340,6 +340,7 @@ async function dispatchTelegram(update: TelegramUpdate, env: Env): Promise<Respo
   message.caption = `${pairing.label}: ${videoId}`;
   const eventType = pairing.label === "INTERIOR_ID" ? "telegram-interior-upload" : "telegram-property-upload";
   const response = await githubDispatch(env, eventType, { update });
+  console.log(`Telegram dispatch ${eventType} for ${videoId}: GitHub HTTP ${response.status}`);
   if (!response.ok) {
     const detail = (await response.text()).slice(0, 300);
     // Retain duplicate protection after a failed dispatch; Telegram must not replay it.
@@ -354,7 +355,7 @@ async function dispatchTelegram(update: TelegramUpdate, env: Env): Promise<Respo
   await env.PAIRING_STATE.delete(`pending-id:${chatId}`);
   await telegram(env, "sendMessage", {
     chat_id: chatId,
-    text: `✅ ${videoId} paired. Live publishing started immediately. Duplicate protection is active.`,
+    text: `✅ ${videoId} paired and GitHub accepted ${eventType}. Live publishing dispatch started. Duplicate protection is active.`,
     reply_markup: { inline_keyboard: [[{ text: "🎯 Focus Control", callback_data: "focus:open" }]] },
   });
   return new Response("ok");
