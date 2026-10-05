@@ -1,0 +1,119 @@
+{
+  "video_id": "VTxwo5uwKfU",
+  "source_url": "https://www.youtube.com/watch?v=VTxwo5uwKfU",
+  "property_location": "Shanthimedu, Mettupalayam Road, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "2 BHK",
+    "land_area": "1.50 Cent",
+    "built_up_area": "1000 Sq.Ft",
+    "price": "₹40 Lakhs",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Car parking (9' x 11')",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex with open terrace access",
+    "layout_distribution": "Ground Floor: Car parking porch (9'x11'), outer toilet room on left, teak frame main door leading to living room (10'x16'), kitchen (8'x10'), ground floor bedroom (10'x8') with attached western toilet, and internal staircase. First Floor: Lobby area (6'x10'), master bedroom (10'x16') with attached western toilet, balcony utility area with washing machine provision, and external metal stairs to open roof terrace."
+  },
+  "verified_facts": "Located 1.5 km from Shanthimedu bus stop, past Veerapandi Pirivu on Mettupalayam Road, Coimbatore., Property offered for sale at ₹40 Lakhs., Land area is 1.50 Cent with a total built-up area of 1000 sq.ft., Ground floor contains car parking (9'x11'), outer toilet, living room (10'x16'), kitchen (8'x10'), and a small bedroom (10'x8') with attached toilet., First floor contains a lobby (6'x10'), master bedroom (10'x16') with attached toilet, utility balcony area, and an MS staircase to the terrace.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local real-estate presenter walking through the home with energetic conversational Tamil pitch",
+    "hook_strategy": "Highlighting a 2 BHK G+1 Duplex Villa in Coimbatore near Mettupalayam Road for ₹40 Lakhs",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை மேட்டுப்பாளையம் ரோடு வீரபாண்டி பிரிவு தாண்டி, சாந்திமேடு பஸ் ஸ்டாப்ல இருந்து வெறும் 1.5 km-ல இந்த 2 BHK duplex villa அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-highlight",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1000 sq.ft built-up area! Ground floor-ல 10x16 living room, kitchen, attached toilet கூட ஒரு bedroom இருக்கு. First floor-ல 10x16 master bedroom அப்புறம் balcony utility space-உம் கொடுத்திருக்காங்க.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "room-dimension-popups",
+        "purpose": "property-tour"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 1.50 Cent land area. Teak wood main door frame, 9 by 11 car parking porch, அப்புறம் terrace போறதுக்கு metal staircase-உம் அமைச்சிருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "area-highlight-overlay",
+        "purpose": "land-and-amenities"
+      },
+      {
+        "name": "price",
+        "voice": "இதுல முக்கியமான விஷயம், இந்த G+1 duplex villa-வோட விலை வெறும் ₹40 Lakhs தான்.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag-card",
+        "purpose": "price-reveal"
+      },
+      {
+        "name": "cta",
+        "voice": "முழு details தெரிஞ்சுக்க அப்புறம் நேர்ல site visit பண்ண உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [],
+        "vfx": "contact-button",
+        "purpose": "call-to-action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/VTxwo5uwKfU/",
+  "optional_owned_audio": "assets/audio/VTxwo5uwKfU.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Shanthimedu, Coimbatore, Tamil Nadu. Architecture consistent with: Modern white single-dwelling villa with yellow iron front gate, tiled car parking porch, white exterior walls, side outer toilet, and external metal staircase connecting the first-floor balcony to the roof terrace.. Hard floor/layout lock: G+1 duplex with open terrace access; Ground Floor: Car parking porch (9'x11'), outer toilet room on left, teak frame main door leading to living room (10'x16'), kitchen (8'x10'), ground floor bedroom (10'x8') with attached western toilet, and internal staircase. First Floor: Lobby area (6'x10'), master bedroom (10'x16') with attached western toilet, balcony utility area with washing machine provision, and external metal stairs to open roof terrace.. Neighbourhood: Suburban residential neighborhood situated roughly 1.5 km off Mettupalayam Road near Shanthimedu bus stop in Coimbatore, featuring low-rise residential houses and utility infrastructure.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Shanthimedu, Coimbatore, Tamil Nadu. Architecture consistent with: Modern white single-dwelling villa with yellow iron front gate, tiled car parking porch, white exterior walls, side outer toilet, and external metal staircase connecting the first-floor balcony to the roof terrace.. Hard floor/layout lock: G+1 duplex with open terrace access; Ground Floor: Car parking porch (9'x11'), outer toilet room on left, teak frame main door leading to living room (10'x16'), kitchen (8'x10'), ground floor bedroom (10'x8') with attached western toilet, and internal staircase. First Floor: Lobby area (6'x10'), master bedroom (10'x16') with attached western toilet, balcony utility area with washing machine provision, and external metal stairs to open roof terrace.. Neighbourhood: Suburban residential neighborhood situated roughly 1.5 km off Mettupalayam Road near Shanthimedu bus stop in Coimbatore, featuring low-rise residential houses and utility infrastructure.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Shanthimedu, Coimbatore, Tamil Nadu. Architecture consistent with: Modern white single-dwelling villa with yellow iron front gate, tiled car parking porch, white exterior walls, side outer toilet, and external metal staircase connecting the first-floor balcony to the roof terrace.. Hard floor/layout lock: G+1 duplex with open terrace access; Ground Floor: Car parking porch (9'x11'), outer toilet room on left, teak frame main door leading to living room (10'x16'), kitchen (8'x10'), ground floor bedroom (10'x8') with attached western toilet, and internal staircase. First Floor: Lobby area (6'x10'), master bedroom (10'x16') with attached western toilet, balcony utility area with washing machine provision, and external metal stairs to open roof terrace.. Neighbourhood: Suburban residential neighborhood situated roughly 1.5 km off Mettupalayam Road near Shanthimedu bus stop in Coimbatore, featuring low-rise residential houses and utility infrastructure.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Shanthimedu, Coimbatore, Tamil Nadu. Architecture consistent with: Modern white single-dwelling villa with yellow iron front gate, tiled car parking porch, white exterior walls, side outer toilet, and external metal staircase connecting the first-floor balcony to the roof terrace.. Hard floor/layout lock: G+1 duplex with open terrace access; Ground Floor: Car parking porch (9'x11'), outer toilet room on left, teak frame main door leading to living room (10'x16'), kitchen (8'x10'), ground floor bedroom (10'x8') with attached western toilet, and internal staircase. First Floor: Lobby area (6'x10'), master bedroom (10'x16') with attached western toilet, balcony utility area with washing machine provision, and external metal stairs to open roof terrace.. Neighbourhood: Suburban residential neighborhood situated roughly 1.5 km off Mettupalayam Road near Shanthimedu bus stop in Coimbatore, featuring low-rise residential houses and utility infrastructure.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
