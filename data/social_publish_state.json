@@ -855,8 +855,12 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
-        "findings": [],
+        "confidence": 1.0,
+        "findings": [
+          "The video shows an exterior and interior architectural walkthrough of a modern independent house in Coimbatore.",
+          "No deity, idol, religious symbols, kolam, doorways with ritual decorations, or personal photos were found in any frame.",
+          "The elements present are standard structural and architectural components, neutral walls, kitchen fittings, tiles, and informational overlays."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -3634,7 +3638,9 @@
         "FLWh3FCKzVQ",
         "PXcON9S10Ic",
         "19yUwHxKMpI",
-        "ing97frQ9hw"
+        "ing97frQ9hw",
+        "ZG9r3Cu7Kn4",
+        "aWE1gc8uf9Y"
       ],
       "etag": "f1e5be806c51dc666a1e99e1a36df1d9-3",
       "match_error": "Error code: 400 - {'error': {'message': 'Request contains an invalid argument.', 'code': 'invalid_request'}}",
