@@ -86,9 +86,9 @@ jobs:
               print(f'No recovery state change needed for {unique_id}: {item}')
           PY
 
-      - name: Route Telegram uploads to Property or Interior publisher
+      - name: Route Property Telegram upload
         id: telegram_ingest
-        if: github.event_name == 'repository_dispatch' && github.event.action == 'telegram-interior-upload'
+        if: github.event_name == 'repository_dispatch' && github.event.action == 'telegram-property-upload'
         continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -101,6 +101,23 @@ jobs:
           TELEGRAM_MAX_VIDEO_BYTES: "20971520"
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MANUAL_AUDIO_MODEL: gemini-2.5-flash
+          TELEGRAM_WEBHOOK_UPDATE_JSON: ${{ toJson(github.event.client_payload.update) }}
+        run: python telegram_router.py
+
+      - name: Publish Interior Telegram upload
+        id: interior_publish
+        if: github.event_name == 'repository_dispatch' && github.event.action == 'telegram-interior-upload'
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_WEBHOOK_UPDATE_JSON: ${{ toJson(github.event.client_payload.update) }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          INTERIOR_GEMINI_MODEL: gemini-3.5-flash-lite
           INTERIOR_META_ACCESS_TOKEN: ${{ secrets.INTERIOR_META_ACCESS_TOKEN }}
           INTERIOR_META_PAGE_ID: ${{ secrets.INTERIOR_META_PAGE_ID }}
           INTERIOR_IG_USER_ID: ${{ secrets.INTERIOR_IG_USER_ID }}
@@ -108,7 +125,6 @@ jobs:
           INTERIOR_YOUTUBE_CLIENT_SECRET: ${{ secrets.INTERIOR_YOUTUBE_CLIENT_SECRET }}
           INTERIOR_YOUTUBE_REFRESH_TOKEN: ${{ secrets.INTERIOR_YOUTUBE_REFRESH_TOKEN }}
           INTERIOR_YOUTUBE_PRIVACY_STATUS: public
-          TELEGRAM_WEBHOOK_UPDATE_JSON: ${{ toJson(github.event.client_payload.update) }}
         run: python interior_social_autopilot.py
 
       - name: Resolve exact Telegram R2 object
@@ -192,6 +208,11 @@ jobs:
         if: steps.telegram_ingest.outcome == 'failure'
         run: |
           echo "::error::Telegram video ingestion failed. No unconfirmed upload will be published."
+          exit 1
+      - name: Preserve Interior publishing failure
+        if: steps.interior_publish.outcome == 'failure'
+        run: |
+          echo "::error::Interior social publishing failed. Successful destinations were recorded and will not be duplicated."
           exit 1
       - name: Preserve publishing failure
         if: steps.autopilot.outcome == 'failure'
