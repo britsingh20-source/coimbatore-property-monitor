@@ -1,6 +1,6 @@
 name: Interior Social Publishing
 
-on:
+"on":
   repository_dispatch:
     types: [telegram-interior-upload]
   workflow_dispatch:
