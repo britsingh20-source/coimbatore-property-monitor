@@ -1,3 +1,4 @@
+// Deployment marker: Interior ID + next MP4 must route to telegram-interior-upload.
 export interface Env {
   GITHUB_DISPATCH_TOKEN: string;
   GITHUB_REPOSITORY: string;
