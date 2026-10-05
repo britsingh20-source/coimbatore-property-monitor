@@ -1,0 +1,145 @@
+{
+  "video_id": "aWE1gc8uf9Y",
+  "source_url": "https://www.youtube.com/watch?v=aWE1gc8uf9Y",
+  "property_location": "Athipalayam, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": true,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3BHK",
+    "land_area": "2.25 Cents",
+    "built_up_area": "1850 sq ft",
+    "price": "Rs. 78 Lakhs",
+    "facing": "East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking",
+    "approval": "DTCP approved",
+    "floors": "G+1 duplex with open terrace utility",
+    "layout_distribution": "Ground Floor: Covered car parking portico, outer toilet, living hall, kitchen, dining area with breakfast counter, 1 bedroom with attached bathroom. First Floor: Secondary living hall, 2 bedrooms with attached bathrooms, covered balcony area. Terrace Level: Headroom, open terrace, and water storage tanks."
+  },
+  "verified_facts": "2.25 Cents plot with 1850 sq ft built-up area 3BHK independent house., DTCP approved site with East-facing plot and East-facing main door., Quoted price is Rs. 78 Lakhs (negotiable) with up to 75% loan availability., Located within walking distance of Athipalayam Bus Stand and approximately 10 minutes from IT Park in Coimbatore.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking direct-to-camera in natural Coimbatore Tamil speech.",
+    "hook_strategy": "Highlight key location advantage (walking distance to Bus Stand and 10 mins from IT Park) combined with property type.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோயம்புத்தூர் ஆத்திபாளையம் பஸ் ஸ்டாண்ட் பக்கத்துலயே, IT Park-லிருந்து 10 நிமிஷ தூரத்துல ஒரு சூப்பர் 3BHK duplex வீடு பார்க்கப்போறோம்!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 2.25 சென்ட் லேண்ட்ல கட்டப்பட்டிருக்கிற independent house பாத்தீங்கனா.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "land-highlight",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "மொத்தமா 1850 sq ft built-up area! Ground floor-ல covered parking, living, modular kitchen, breakfast counter-ோட dining, 1 attached bedroom இருக்கு. First floor-ல secondary living, 2 attached bedrooms, balcony-யும் அமைஞ்சிருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "floor-plan-overlay",
+        "purpose": "interior_tour"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், Plot மற்றும் main door ரெண்டுமே East facing!",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "compass-east",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "approval",
+        "voice": "அதே மாதிரி இது DTCP approved site! Borewell மற்றும் 7000 lit capacity உள்ள குடிநீர் sump வசதியும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "legality_and_amenities"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட quoted price 78 Lakhs, negotiable! 75% வரைக்கும் bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணவோ, details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "call-now",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/aWE1gc8uf9Y/",
+  "optional_owned_audio": "assets/audio/aWE1gc8uf9Y.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Athipalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-storey duplex structure with grey and yellow painted facade, decorative stone-cladding tiles, black metal main gate, covered portico parking, and first-floor balcony featuring CNC laser-cut screen design.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking portico, outer toilet, living hall, kitchen, dining area with breakfast counter, 1 bedroom with attached bathroom. First Floor: Secondary living hall, 2 bedrooms with attached bathrooms, covered balcony area. Terrace Level: Headroom, open terrace, and water storage tanks.. Neighbourhood: Developing residential locality in Athipalayam, Coimbatore, situated close to the main road and bus stop, with distant views of IT park structures from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Athipalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-storey duplex structure with grey and yellow painted facade, decorative stone-cladding tiles, black metal main gate, covered portico parking, and first-floor balcony featuring CNC laser-cut screen design.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking portico, outer toilet, living hall, kitchen, dining area with breakfast counter, 1 bedroom with attached bathroom. First Floor: Secondary living hall, 2 bedrooms with attached bathrooms, covered balcony area. Terrace Level: Headroom, open terrace, and water storage tanks.. Neighbourhood: Developing residential locality in Athipalayam, Coimbatore, situated close to the main road and bus stop, with distant views of IT park structures from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Athipalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-storey duplex structure with grey and yellow painted facade, decorative stone-cladding tiles, black metal main gate, covered portico parking, and first-floor balcony featuring CNC laser-cut screen design.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking portico, outer toilet, living hall, kitchen, dining area with breakfast counter, 1 bedroom with attached bathroom. First Floor: Secondary living hall, 2 bedrooms with attached bathrooms, covered balcony area. Terrace Level: Headroom, open terrace, and water storage tanks.. Neighbourhood: Developing residential locality in Athipalayam, Coimbatore, situated close to the main road and bus stop, with distant views of IT park structures from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Athipalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-storey duplex structure with grey and yellow painted facade, decorative stone-cladding tiles, black metal main gate, covered portico parking, and first-floor balcony featuring CNC laser-cut screen design.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking portico, outer toilet, living hall, kitchen, dining area with breakfast counter, 1 bedroom with attached bathroom. First Floor: Secondary living hall, 2 bedrooms with attached bathrooms, covered balcony area. Terrace Level: Headroom, open terrace, and water storage tanks.. Neighbourhood: Developing residential locality in Athipalayam, Coimbatore, situated close to the main road and bus stop, with distant views of IT park structures from the terrace.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
