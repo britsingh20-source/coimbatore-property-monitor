@@ -1,0 +1,150 @@
+{
+  "video_id": "n2YmUJwnBu4",
+  "source_url": "https://www.youtube.com/watch?v=n2YmUJwnBu4",
+  "property_location": "Malumichampatti, Coimbatore, Tamil Nadu, India",
+  "entrance_contaminated": true,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "4 BHK",
+    "land_area": "4 Cents",
+    "built_up_area": "1920 sq.ft.",
+    "price": "NOT SPECIFIED",
+    "facing": "East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "1 Covered Car Parking",
+    "approval": "DTCP Approved",
+    "floors": "G+1 duplex with open terrace utility",
+    "layout_distribution": "Ground Floor: Covered car parking, living room, pooja room, kitchen with dining area, 2 bedrooms with attached bathrooms, 1 outer bathroom, and side utility passage. First Floor: 2 bedrooms with attached bathrooms and an open balcony. Second Level: Open roof terrace with gazebo overhead shelter."
+  },
+  "verified_facts": "4BHK Independent house located in Malumichampatti, Coimbatore near Karpagam College, East facing site and main entrance door, Land area is 4 cents; built-up area is 1920 sq.ft., DTCP approved site with individual borewell and water sump, Ground floor layout includes car parking, living room, pooja room, kitchen, dining area, 2 bedrooms with attached bathrooms, 1 outer bathroom, and utility area, First floor includes 2 bedrooms with attached bathrooms and an open balcony, Roof level features an open terrace with gazebo structure",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local property presenter speaking directly to camera with clear Tamil speech.",
+    "hook_strategy": "Lead directly with the popular location in Malumichampatti near Karpagam College and key feature as a 4 BHK independent house.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை மளுமிச்சம்பட்டில Karpagam College மற்றும் L&T Bypass பக்கத்துல இருக்குற ஒரு 4 BHK independent house பாக்கலாம்!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "4 cents land-ல அமைஞ்ச இந்த வீட்டுல, சொந்தமா individual borewell மற்றும் water sump வசதிகளும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "kitchen"
+        ],
+        "vfx": "text-highlight",
+        "purpose": "land_details"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல site மற்றும் main entrance ரெண்டுமே East facing-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_info"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1920 sq.ft built-up area கொண்ட இந்த G+1 duplex-ல, ground floor-ல living, modular kitchen, pooja room மற்றும் 2 bedrooms இருக்கு. First floor-ல 2 bedrooms வித் balcony, top level-ல gazebo terrace-உம் இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "exterior"
+        ],
+        "vfx": "floorplan-highlight",
+        "purpose": "property_layout"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம், இந்த property DTCP approved.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "badge-overlay",
+        "purpose": "legal_approval"
+      },
+      {
+        "name": "verify",
+        "voice": "நேர்ல வந்து இந்த வீட்டை பாக்கணும்னா உடனே எங்களை connect பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "verification"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details தெரிஞ்சுக்க அப்புறம் site visit book பண்ண உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "phone-number-pop",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/n2YmUJwnBu4/",
+  "optional_owned_audio": "assets/audio/n2YmUJwnBu4.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Two-level elevation featuring a wooden-finish compound gate, tiled porch, side setbacks, upper balcony with glass/metal railing, and an open roof terrace equipped with a metal gazebo canopy.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking, living room, pooja room, kitchen with dining area, 2 bedrooms with attached bathrooms, 1 outer bathroom, and side utility passage. First Floor: 2 bedrooms with attached bathrooms and an open balcony. Second Level: Open roof terrace with gazebo overhead shelter.. Neighbourhood: Suburban residential neighborhood in Malumichampatti near L&T Bypass and Karpagam College, lined with newly constructed independent homes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Two-level elevation featuring a wooden-finish compound gate, tiled porch, side setbacks, upper balcony with glass/metal railing, and an open roof terrace equipped with a metal gazebo canopy.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking, living room, pooja room, kitchen with dining area, 2 bedrooms with attached bathrooms, 1 outer bathroom, and side utility passage. First Floor: 2 bedrooms with attached bathrooms and an open balcony. Second Level: Open roof terrace with gazebo overhead shelter.. Neighbourhood: Suburban residential neighborhood in Malumichampatti near L&T Bypass and Karpagam College, lined with newly constructed independent homes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Two-level elevation featuring a wooden-finish compound gate, tiled porch, side setbacks, upper balcony with glass/metal railing, and an open roof terrace equipped with a metal gazebo canopy.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking, living room, pooja room, kitchen with dining area, 2 bedrooms with attached bathrooms, 1 outer bathroom, and side utility passage. First Floor: 2 bedrooms with attached bathrooms and an open balcony. Second Level: Open roof terrace with gazebo overhead shelter.. Neighbourhood: Suburban residential neighborhood in Malumichampatti near L&T Bypass and Karpagam College, lined with newly constructed independent homes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Two-level elevation featuring a wooden-finish compound gate, tiled porch, side setbacks, upper balcony with glass/metal railing, and an open roof terrace equipped with a metal gazebo canopy.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking, living room, pooja room, kitchen with dining area, 2 bedrooms with attached bathrooms, 1 outer bathroom, and side utility passage. First Floor: 2 bedrooms with attached bathrooms and an open balcony. Second Level: Open roof terrace with gazebo overhead shelter.. Neighbourhood: Suburban residential neighborhood in Malumichampatti near L&T Bypass and Karpagam College, lined with newly constructed independent homes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
