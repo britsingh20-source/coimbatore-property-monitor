@@ -1,0 +1,149 @@
+{
+  "video_id": "xaIiKrGjTLk",
+  "source_url": "https://www.youtube.com/watch?v=xaIiKrGjTLk",
+  "property_location": "Karamadai, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "3.90 Cents (1,680 sq.ft.)",
+    "built_up_area": "2,250 sq.ft.",
+    "price": "₹97 Lakhs (Negotiable)",
+    "facing": "House: East Facing / Site: South Facing",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking (Portico: 24' x 12')",
+    "approval": "DTCP Approved",
+    "floors": "G+1 duplex with open roof terrace",
+    "layout_distribution": "Ground Floor: Covered car parking portico (24' x 12'), spacious living hall (16' x 16') with fluted panel TV unit, modular kitchen cum dining space (16' x 8'), pooja room (5' x 5'), Bedroom 1 (16' x 10') with attached bathroom (10' x 4.5'), Bedroom 2 (16' x 10') with attached bathroom (7' x 4.5'), rear utility area with borewell and water sump, and an external bathroom (7' x 3'). First Floor: Master Bedroom (16' x 16') with attached bathroom (11' x 8'), front balcony (12' x 8') featuring a geometric skylight ceiling and L-shaped seating ledge, side balcony (12' x 7'), and staircase access to the open roof terrace with water tank."
+  },
+  "verified_facts": "Land area is 3.90 cents (30 ft x 56 ft / 1,680 sq.ft.) and total built-up area is 2,250 sq.ft., Property is a G+1 duplex house with South-facing plot and East-facing main entrance door., Ground floor layout includes car parking portico (24' x 12'), living hall (16' x 16'), kitchen & dining (16' x 8'), pooja room (5' x 5'), two bedrooms (each 16' x 10') with attached bathrooms, rear utility, and an outside bathroom (7' x 3')., First floor layout includes a master bedroom (16' x 16') with attached bathroom (11' x 8'), front balcony (12' x 8') with geometric skylight, and side balcony (12' x 7')., Site has DTCP approval, borewell, underground water sump, and bank loan facilities.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Karamadai, Coimbatore, Tamil Nadu சைட்ல 3 BHK Independent House தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹97 Lakhs (Negotiable).",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 3.90 Cents (1,680 sq.ft.) லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 2,250 sq.ft. இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு House: East Facing / Site: South Facing ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP Approved இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 23h9m35.923101417s.', 'status': 'RESOURCE_EXHA"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/xaIiKrGjTLk/",
+  "optional_owned_audio": "assets/audio/xaIiKrGjTLk.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+1 duplex structure with a South-facing entry, brown laser-cut metal compound gate, white wall finish with textured ivory and tile paneling, covered portico, upper floor balconies with glass safety railings, and a prominent geometric skylight structure over the front balcony.. Hard floor/layout lock: G+1 duplex with open roof terrace; Ground Floor: Covered car parking portico (24' x 12'), spacious living hall (16' x 16') with fluted panel TV unit, modular kitchen cum dining space (16' x 8'), pooja room (5' x 5'), Bedroom 1 (16' x 10') with attached bathroom (10' x 4.5'), Bedroom 2 (16' x 10') with attached bathroom (7' x 4.5'), rear utility area with borewell and water sump, and an external bathroom (7' x 3'). First Floor: Master Bedroom (16' x 16') with attached bathroom (11' x 8'), front balcony (12' x 8') featuring a geometric skylight ceiling and L-shaped seating ledge, side balcony (12' x 7'), and staircase access to the open roof terrace with water tank.. Neighbourhood: Developing residential colony situated in Karamadai near Teachers Colony and Gandhi Nagar along the Mettupalayam Road arterial route in Coimbatore, featuring independent houses and open land plots.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+1 duplex structure with a South-facing entry, brown laser-cut metal compound gate, white wall finish with textured ivory and tile paneling, covered portico, upper floor balconies with glass safety railings, and a prominent geometric skylight structure over the front balcony.. Hard floor/layout lock: G+1 duplex with open roof terrace; Ground Floor: Covered car parking portico (24' x 12'), spacious living hall (16' x 16') with fluted panel TV unit, modular kitchen cum dining space (16' x 8'), pooja room (5' x 5'), Bedroom 1 (16' x 10') with attached bathroom (10' x 4.5'), Bedroom 2 (16' x 10') with attached bathroom (7' x 4.5'), rear utility area with borewell and water sump, and an external bathroom (7' x 3'). First Floor: Master Bedroom (16' x 16') with attached bathroom (11' x 8'), front balcony (12' x 8') featuring a geometric skylight ceiling and L-shaped seating ledge, side balcony (12' x 7'), and staircase access to the open roof terrace with water tank.. Neighbourhood: Developing residential colony situated in Karamadai near Teachers Colony and Gandhi Nagar along the Mettupalayam Road arterial route in Coimbatore, featuring independent houses and open land plots.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+1 duplex structure with a South-facing entry, brown laser-cut metal compound gate, white wall finish with textured ivory and tile paneling, covered portico, upper floor balconies with glass safety railings, and a prominent geometric skylight structure over the front balcony.. Hard floor/layout lock: G+1 duplex with open roof terrace; Ground Floor: Covered car parking portico (24' x 12'), spacious living hall (16' x 16') with fluted panel TV unit, modular kitchen cum dining space (16' x 8'), pooja room (5' x 5'), Bedroom 1 (16' x 10') with attached bathroom (10' x 4.5'), Bedroom 2 (16' x 10') with attached bathroom (7' x 4.5'), rear utility area with borewell and water sump, and an external bathroom (7' x 3'). First Floor: Master Bedroom (16' x 16') with attached bathroom (11' x 8'), front balcony (12' x 8') featuring a geometric skylight ceiling and L-shaped seating ledge, side balcony (12' x 7'), and staircase access to the open roof terrace with water tank.. Neighbourhood: Developing residential colony situated in Karamadai near Teachers Colony and Gandhi Nagar along the Mettupalayam Road arterial route in Coimbatore, featuring independent houses and open land plots.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+1 duplex structure with a South-facing entry, brown laser-cut metal compound gate, white wall finish with textured ivory and tile paneling, covered portico, upper floor balconies with glass safety railings, and a prominent geometric skylight structure over the front balcony.. Hard floor/layout lock: G+1 duplex with open roof terrace; Ground Floor: Covered car parking portico (24' x 12'), spacious living hall (16' x 16') with fluted panel TV unit, modular kitchen cum dining space (16' x 8'), pooja room (5' x 5'), Bedroom 1 (16' x 10') with attached bathroom (10' x 4.5'), Bedroom 2 (16' x 10') with attached bathroom (7' x 4.5'), rear utility area with borewell and water sump, and an external bathroom (7' x 3'). First Floor: Master Bedroom (16' x 16') with attached bathroom (11' x 8'), front balcony (12' x 8') featuring a geometric skylight ceiling and L-shaped seating ledge, side balcony (12' x 7'), and staircase access to the open roof terrace with water tank.. Neighbourhood: Developing residential colony situated in Karamadai near Teachers Colony and Gandhi Nagar along the Mettupalayam Road arterial route in Coimbatore, featuring independent houses and open land plots.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
