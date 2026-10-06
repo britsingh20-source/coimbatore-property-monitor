@@ -4777,12 +4777,7 @@
         "ceremonial_markings_present": false,
         "compliant": true,
         "confidence": 1.0,
-        "findings": [
-          "The video showcases a 3 BHK independent house in Coimbatore, Tamil Nadu.",
-          "Property features include 3.5 cents land area, 2000 Sq.Ft built-up area, South-facing door, East-facing property, covered car parking, and DTCP approval.",
-          "The house has an exterior view, a parking area, living room with false ceiling, kitchen with tiled backsplash and granite countertop, bedroom, and terrace balcony.",
-          "No religious visuals, shrines, sacred symbols, ritual markings, floral/leaf decorations, kolams, or personal photos are present in any frame."
-        ],
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
