@@ -4776,7 +4776,9 @@
         "ceremonial_markings_present": false,
         "compliant": true,
         "confidence": 0.95,
-        "findings": [],
+        "findings": [
+          "Exterior, interior, and surroundings of a 3 BHK independent house without any religious symbols, ceremonial objects, or personal portraits."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
