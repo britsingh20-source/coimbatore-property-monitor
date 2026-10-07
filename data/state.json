@@ -4844,9 +4844,11 @@
     },
     "n2rczWpRrz8": {
       "attempts": 0,
+      "completed_at": "2026-10-07T00:41:37.914965+00:00",
       "first_seen_at": "2026-10-06T21:54:39.381692+00:00",
+      "last_error": "",
       "next_retry_at": "2026-10-06T21:54:39.381692+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "n8Tl4Rmg7pU": {
       "attempts": 0,
