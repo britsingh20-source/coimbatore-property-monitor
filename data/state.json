@@ -205,6 +205,12 @@
       "next_retry_at": "2026-08-11T01:53:15.058398+00:00",
       "status": "video_queued"
     },
+    "1G9CUKsmtik": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-07T14:30:02.946318+00:00",
+      "next_retry_at": "2026-10-07T14:30:02.946318+00:00",
+      "status": "discovered"
+    },
     "1H6eIdAeax0": {
       "attempts": 0,
       "completed_at": "2026-08-07T18:05:42.577560+00:00",
@@ -1171,6 +1177,12 @@
       "next_retry_at": "2026-09-24T09:43:00.058218+00:00",
       "status": "retry_pending"
     },
+    "Bf62SOIRJ0Y": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-07T14:30:02.946318+00:00",
+      "next_retry_at": "2026-10-07T14:30:02.946318+00:00",
+      "status": "discovered"
+    },
     "BgIePN-H4Kk": {
       "attempts": 0,
       "completed_at": "2026-09-05T01:02:18.607979+00:00",
@@ -1970,6 +1982,12 @@
       "next_retry_at": "2026-10-01T13:10:37.496740+00:00",
       "status": "video_queued"
     },
+    "K7ry3zriiAM": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-07T14:30:02.946318+00:00",
+      "next_retry_at": "2026-10-07T14:30:02.946318+00:00",
+      "status": "discovered"
+    },
     "K9UjPyeZZr8": {
       "attempts": 0,
       "completed_at": "2026-09-03T01:09:36.538729+00:00",
@@ -2272,6 +2290,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
       "status": "video_queued"
+    },
+    "NFHcMM3F0N0": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-07T14:30:02.946318+00:00",
+      "next_retry_at": "2026-10-07T14:30:02.946318+00:00",
+      "status": "discovered"
     },
     "NFe3Ng3T7Ac": {
       "attempts": 1,
@@ -2953,6 +2977,12 @@
       "next_retry_at": "2026-08-10T14:02:38.483403+00:00",
       "status": "video_queued"
     },
+    "UJ4Tj3nXck8": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-07T14:30:02.946318+00:00",
+      "next_retry_at": "2026-10-07T14:30:02.946318+00:00",
+      "status": "discovered"
+    },
     "UahQ_oE5QRo": {
       "attempts": 0,
       "completed_at": "2026-09-24T10:07:37.469277+00:00",
@@ -3626,6 +3656,14 @@
       "next_retry_at": "2026-10-06T09:35:02.218911+00:00",
       "status": "retry_pending"
     },
+    "aQZgazKlaMk": {
+      "attempts": 1,
+      "first_seen_at": "2026-10-07T14:30:02.946318+00:00",
+      "last_attempt_at": "2026-10-07T14:32:25.446868+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry in 9h27m34s or upgrade your tier at https://ai.dev/rate-limit.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-10-07T16:32:25.446879+00:00",
+      "status": "retry_pending"
+    },
     "aRYO8ai1Yfo": {
       "attempts": 0,
       "first_seen_at": "2026-09-26T13:10:17.458198+00:00",
@@ -3908,6 +3946,12 @@
       "last_error": "",
       "next_retry_at": "2026-09-05T16:51:14.841578+00:00",
       "status": "video_queued"
+    },
+    "dHohnJ8kXg4": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-07T14:30:02.946318+00:00",
+      "next_retry_at": "2026-10-07T14:30:02.946318+00:00",
+      "status": "discovered"
     },
     "dMT4kZxK5ms": {
       "attempts": 0,
@@ -4235,6 +4279,12 @@
       "last_error": "",
       "next_retry_at": "2026-09-01T12:47:08.289699+00:00",
       "status": "video_queued"
+    },
+    "gWTJdSLoz9o": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-07T14:30:02.946318+00:00",
+      "next_retry_at": "2026-10-07T14:30:02.946318+00:00",
+      "status": "discovered"
     },
     "g_S0bLWurYE": {
       "attempts": 3,
@@ -5748,6 +5798,12 @@
       "next_retry_at": "2026-08-11T17:15:19.796976+00:00",
       "status": "archived_non_target"
     },
+    "wZMGOcmMV8M": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-07T14:30:02.946318+00:00",
+      "next_retry_at": "2026-10-07T14:30:02.946318+00:00",
+      "status": "discovered"
+    },
     "wiwb_-hkXLQ": {
       "attempts": 0,
       "first_seen_at": "2026-10-01T11:50:29.430555+00:00",
@@ -5924,6 +5980,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
       "status": "video_queued"
+    },
+    "zF1n1Man1EY": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-07T14:30:02.946318+00:00",
+      "next_retry_at": "2026-10-07T14:30:02.946318+00:00",
+      "status": "discovered"
     },
     "zNEpuBkyb3o": {
       "attempts": 0,
