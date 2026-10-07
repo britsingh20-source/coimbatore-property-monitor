@@ -4777,14 +4777,8 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.98,
-        "findings": [
-          "The video showcases a 3 BHK independent house in Coimbatore, Tamil Nadu.",
-          "No religious visuals, shrines, or puja shelves were detected in any frame.",
-          "No personal photos, portraits, framed certificates, or calendars were found.",
-          "No ceremonial markings, kolams, rangolis, or doorway decorations were present.",
-          "The interior and exterior shots reveal clean architectural features without any prohibited elements."
-        ],
+        "confidence": 1.0,
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
