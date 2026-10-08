@@ -3645,7 +3645,9 @@
         "WmvXsmFGLvA",
         "xaIiKrGjTLk",
         "n2YmUJwnBu4",
-        "aQZgazKlaMk"
+        "aQZgazKlaMk",
+        "1G9CUKsmtik",
+        "Bf62SOIRJ0Y"
       ],
       "etag": "f1e5be806c51dc666a1e99e1a36df1d9-3",
       "match_error": "Error code: 500 - {'error': {'message': 'Internal error encountered.', 'code': 'api_error'}}",
@@ -4778,7 +4780,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1.0,
+        "confidence": 1,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
