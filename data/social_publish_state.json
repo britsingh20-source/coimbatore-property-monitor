@@ -4780,11 +4780,8 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.95,
-        "findings": [
-          "The video showcases an independent house property with exterior, porch, living room, false ceiling, kitchen, bedroom, and balcony views.",
-          "No religious visuals, shrines, ritual markings, kolams, or personal family photographs/portraits were detected in any frame."
-        ],
+        "confidence": 1.0,
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
