@@ -4780,8 +4780,11 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
-        "findings": [],
+        "confidence": 0.95,
+        "findings": [
+          "The video tour shows a newly constructed 3 BHK independent house in Coimbatore.",
+          "It displays general exterior shots, car parking, hall, kitchen, bedroom, and terrace/balcony areas without any religious or personal items."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
