@@ -3705,10 +3705,12 @@
       "status": "video_queued"
     },
     "_ga0AFvU0cw": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-10-09T09:01:22.514588+00:00",
-      "next_retry_at": "2026-10-09T09:01:22.514588+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-10-09T09:41:38.583891+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'Your project has exceeded a quota. See https://ai.dev/rate-limit to manage your rate limits.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-10-09T11:41:38.583900+00:00",
+      "status": "retry_pending"
     },
     "_lWCQGKqEWc": {
       "attempts": 0,
