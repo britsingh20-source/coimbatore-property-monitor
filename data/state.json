@@ -2500,9 +2500,11 @@
     },
     "O10W8qpIjQM": {
       "attempts": 0,
+      "completed_at": "2026-10-10T14:01:35.887512+00:00",
       "first_seen_at": "2026-10-10T13:39:29.990521+00:00",
+      "last_error": "",
       "next_retry_at": "2026-10-10T13:39:29.990521+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "O2dFbOf28X4": {
       "attempts": 0,
@@ -3985,6 +3987,12 @@
       "last_error": "",
       "next_retry_at": "2026-09-12T05:53:08.206655+00:00",
       "status": "video_queued"
+    },
+    "bfSxCBaI8OI": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-10T14:00:01.941664+00:00",
+      "next_retry_at": "2026-10-10T14:00:01.941664+00:00",
+      "status": "discovered"
     },
     "bmjfFotaX_0": {
       "attempts": 0,
@@ -5779,11 +5787,12 @@
     },
     "sOtSCtSWcHQ": {
       "attempts": 1,
+      "completed_at": "2026-10-10T14:00:29.727573+00:00",
       "first_seen_at": "2026-10-10T13:39:29.990521+00:00",
       "last_attempt_at": "2026-10-10T13:42:31.042350+00:00",
-      "last_error": "Error code: 503 - {'error': {'message': 'gemini-3.6-flash is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.', 'code': 'service_unavailable'}}",
+      "last_error": "",
       "next_retry_at": "2026-10-10T15:42:31.042361+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "sRT1HtHKWnQ": {
       "attempts": 0,

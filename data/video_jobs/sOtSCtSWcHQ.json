@@ -1,0 +1,149 @@
+{
+  "video_id": "sOtSCtSWcHQ",
+  "source_url": "https://www.youtube.com/watch?v=sOtSCtSWcHQ",
+  "property_location": "Annur, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "18 Acres (Total Gated Layout)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹4,99,000 per cent",
+    "facing": "North, East, Corner",
+    "road_width": "30 ft",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved, RERA Registered",
+    "floors": "NOT SPECIFIED",
+    "layout_distribution": "NOT SPECIFIED"
+  },
+  "verified_facts": "18-acre DTCP and RERA approved gated layout (Madhuram Avenue) located opposite Mondipalayam Perumal Temple on Annur - Sathyamangalam Road., Plots offered at pre-launch offer price of ₹4,99,000 per cent with an initial booking amount of ₹1,00,000., EMI facility available at ₹7,000/month for land plots and ₹15,000/month for house package., Optional house construction service offered at ₹2,100 per sq. ft. (1 BHK house + land option starts around ₹17 Lakhs).",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local presenter speaking directly to camera, using clear spoken Tamil mixed with standard real-estate terms.",
+    "hook_strategy": "Highlighting the prime location on Annur-Sathyamangalam Highway with a large 18-acre DTCP and RERA approved layout.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை அண்ணூர் - சத்தியமங்கலம் ஹைவேல, மொண்டிபாளையம் பெருமாள் கோவில் பக்கத்துல ஒரு பிரம்மாண்டமான 18 ஏக்ரா Gated Layout வந்துருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "location-pin-highlight",
+        "purpose": "hook"
+      },
+      {
+        "name": "approval",
+        "voice": "மதுரம் அவென்யூனு பேர்ல அமையுற இந்த Project முழுசாவே DTCP Approved மற்றும் RERA Registered Layout.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "approval-badge-overlay",
+        "purpose": "trust"
+      },
+      {
+        "name": "road",
+        "voice": "Layout உள்ள பார்த்தீங்கன்னா 30 ft தார் ரோடு, Concrete Stormwater Drain வசதிகள்லாம் பக்காவா அமைச்சிருக்காங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "road-width-text",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல Grand Entrance Arch, 24/7 Security, Compound Wall, 3-Phase Electricity, அப்புறம் Children Play Area வசதிகளும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "amenities-icons",
+        "purpose": "features"
+      },
+      {
+        "name": "facing",
+        "voice": "உங்களுக்கு விருப்பமான North, East மற்றும் Corner Plots-ம் இங்க கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "options"
+      },
+      {
+        "name": "price",
+        "voice": "Pre-launch offer-ஆ ஒரு சென்ட் வெறும் ₹4,99,000 மட்டுமே! ₹1,00,000 கொடுத்து Book பண்ணலாம், நிலத்துக்கு மாசம் ₹7,000 EMI வசதியும் இருக்கு.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "price-card-animation",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "உடனே Site Visit பண்ணவும் Details தெரிஞ்சுக்கவும் கீழே இருக்கிற நம்பருக்கு Call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "call-to-action-banner",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/sOtSCtSWcHQ/",
+  "optional_owned_audio": "assets/audio/sOtSCtSWcHQ.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: An 18-acre plotted development featuring paved 30-foot internal tar roads, street tree planting, 3-phase electricity lines, concrete drainage channels, a children's park, and a grand entrance gate with security setup.. Neighbourhood: Situated off the Annur-Sathyamangalam road directly opposite Mondipalayam Perumal Temple in a developing, greenery-rich area of Annur, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: An 18-acre plotted development featuring paved 30-foot internal tar roads, street tree planting, 3-phase electricity lines, concrete drainage channels, a children's park, and a grand entrance gate with security setup.. Neighbourhood: Situated off the Annur-Sathyamangalam road directly opposite Mondipalayam Perumal Temple in a developing, greenery-rich area of Annur, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: An 18-acre plotted development featuring paved 30-foot internal tar roads, street tree planting, 3-phase electricity lines, concrete drainage channels, a children's park, and a grand entrance gate with security setup.. Neighbourhood: Situated off the Annur-Sathyamangalam road directly opposite Mondipalayam Perumal Temple in a developing, greenery-rich area of Annur, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: An 18-acre plotted development featuring paved 30-foot internal tar roads, street tree planting, 3-phase electricity lines, concrete drainage channels, a children's park, and a grand entrance gate with security setup.. Neighbourhood: Situated off the Annur-Sathyamangalam road directly opposite Mondipalayam Perumal Temple in a developing, greenery-rich area of Annur, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

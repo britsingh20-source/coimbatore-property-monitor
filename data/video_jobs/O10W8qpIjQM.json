@@ -1,0 +1,149 @@
+{
+  "video_id": "O10W8qpIjQM",
+  "source_url": "https://www.youtube.com/watch?v=O10W8qpIjQM",
+  "property_location": "Annur, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "Plots starting from 1.5 Cents to 2.75 Cents (18-Acre Total Community)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹4.9 Lakhs per cent (Negotiable Pre-launch Offer)",
+    "facing": "North, East, Corner plots available",
+    "road_width": "30 ft",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved & RERA Registered",
+    "floors": "NOT SPECIFIED",
+    "layout_distribution": "NOT SPECIFIED"
+  },
+  "verified_facts": "Project name is Maduram Avenue, an 18-acre gated community in Annur, Coimbatore., DTCP and RERA approvals are obtained with clear legal titles., Plots available at a pre-launch offer of ₹4,90,000 per cent., Booking/advance amount required is ₹1 Lakh., Monthly EMI option available starting at ₹6,000 - ₹7,000 for a 1.5 cent plot., Optional home construction package available at ₹2,100 per sq. ft., 1BHK house package (land + home) starts from ₹17 Lakhs with ₹15,000 EMI., 2BHK house package starts at ₹25 Lakhs (on 1.5 cent) or ₹28-30 Lakhs (on 2.5-2.75 cents).",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local property presenter speaking directly to camera in natural spoken Tamil mixed with common real estate terms.",
+    "hook_strategy": "Highlight the 18-acre DTCP and RERA approved gated community plots in Annur starting at a pre-launch price.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை அன்னூர், சத்தி மெயின் ரோட்ல இருக்குற 18 ஏக்கர் கேடட் கம்யூனிட்டி 'மதுரம் அவென்யூ' பிளாட்ஸ் பத்தி தான் பார்க்கப்போறோம்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல 1.5 சென்ட்ல இருந்து 2.75 சென்ட் வரைக்கும் பிளாட்ஸ் கிடைக்குது.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "dimension-highlights",
+        "purpose": "land_details"
+      },
+      {
+        "name": "road",
+        "voice": "30 அடி பிளாக் டாப் ரோடு, Rainwater Drainage, அப்புறம் 24/7 CCTV செக்யூரிட்டி வசதிகள் எல்லாம் அமைச்சு தராங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room"
+        ],
+        "vfx": "feature-badge",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "facing",
+        "voice": "உங்க சாய்ஸ்க்கு ஏத்த மாதிரி நார்த், ஈஸ்ட் மற்றும் கார்னர் பிளாட்ஸ் கூட அவெய்லபிளா இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "plot_orientation"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP அப்ரூவ்ட் மற்றும் RERA ரெஜிஸ்டர்டு பிராப்பர்ட்டி. முன்னணி வங்கிகள் மூலமா பேங்க் லோன் வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "approval-stamp",
+        "purpose": "trust_and_legality"
+      },
+      {
+        "name": "price",
+        "voice": "விலை பாத்தீங்கனா, ஒரு சென்ட் 4.9 லட்சம் pre-launch ஆஃபர்ல தருராங்க. 1 லட்சம் அட்வான்ஸ் பண்ணி புக் பண்ணிக்கலாம்.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "price-tag-pop",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல site visit வரவும், மத்த details தெரிஞ்சுக்கவும் உடனே கால் பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/O10W8qpIjQM/",
+  "optional_owned_audio": "assets/audio/O10W8qpIjQM.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A well-planned 18-acre residential layout with 30-foot paved blacktop internal roads featuring white line markings, curbside tree plantations, concrete drainage channels, utility power poles, a decorated gated archway with 'MADURAM' branding, and a dedicated children's playground equipped with colorful play structures.. Neighbourhood: Located in Annur along the Annur-Sathyamangalam Highway directly opposite the popular Mondipalayam Perumal Temple, surrounded by rural landscape, farmland, and convenient road connectivity to Avinashi, Tirupur, Erode, Salem, and Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A well-planned 18-acre residential layout with 30-foot paved blacktop internal roads featuring white line markings, curbside tree plantations, concrete drainage channels, utility power poles, a decorated gated archway with 'MADURAM' branding, and a dedicated children's playground equipped with colorful play structures.. Neighbourhood: Located in Annur along the Annur-Sathyamangalam Highway directly opposite the popular Mondipalayam Perumal Temple, surrounded by rural landscape, farmland, and convenient road connectivity to Avinashi, Tirupur, Erode, Salem, and Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A well-planned 18-acre residential layout with 30-foot paved blacktop internal roads featuring white line markings, curbside tree plantations, concrete drainage channels, utility power poles, a decorated gated archway with 'MADURAM' branding, and a dedicated children's playground equipped with colorful play structures.. Neighbourhood: Located in Annur along the Annur-Sathyamangalam Highway directly opposite the popular Mondipalayam Perumal Temple, surrounded by rural landscape, farmland, and convenient road connectivity to Avinashi, Tirupur, Erode, Salem, and Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A well-planned 18-acre residential layout with 30-foot paved blacktop internal roads featuring white line markings, curbside tree plantations, concrete drainage channels, utility power poles, a decorated gated archway with 'MADURAM' branding, and a dedicated children's playground equipped with colorful play structures.. Neighbourhood: Located in Annur along the Annur-Sathyamangalam Highway directly opposite the popular Mondipalayam Perumal Temple, surrounded by rural landscape, farmland, and convenient road connectivity to Avinashi, Tirupur, Erode, Salem, and Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
