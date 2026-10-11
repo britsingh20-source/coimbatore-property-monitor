@@ -1,0 +1,149 @@
+{
+  "video_id": "sz2StDaYOck",
+  "source_url": "https://www.youtube.com/watch?v=sz2StDaYOck",
+  "property_location": "Maniyakaranpalayam, near Thudiyalur, Coimbatore",
+  "entrance_contaminated": true,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "3BHK",
+    "land_area": "2.75 Cents",
+    "built_up_area": "1850 Sq.ft",
+    "price": "₹89 Lakhs",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "2 Car Parking",
+    "approval": "DTCP Approved",
+    "floors": "G+1 duplex with open terrace utility",
+    "layout_distribution": "Ground Floor: Covered double car parking (15' x 28') with outer toilet, Living hall (16' x 17'), Kitchen & Dining (8' x 16'), Master bedroom (8' x 16') with attached bathroom, internal staircase. First Floor: Headroom landing area, Master bedroom 2 (16' x 16') with attached bathroom, Master bedroom 3 (10' x 16') with attached bathroom. Roof Level: Tiled open terrace area with external metal staircase."
+  },
+  "verified_facts": "Land area is 2.75 Cents, Built-up area is 1850 Sq.ft, Facing is North, Quoted price is ₹89 Lakhs (negotiable), DTCP approved property with bank loan facility, Double car parking dimensions are 15' x 28'",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, authentic local property presenter speaking naturally to camera in spoken Tamil mixed with common English real-estate terms.",
+    "hook_strategy": "Highlight the highly sought-after 3BHK Villa configuration in Maniyakaranpalayam near Thudiyalur immediately in the first 3 seconds.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Thudiyalur பக்கத்துல இருக்குற Maniyakaranpalayam location-ல ஒரு அழகான 3BHK Villa பார்க்கலாமா!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-thudiyalur",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1850 Sq.ft built-up area கொண்ட G+1 duplex வீடு இது. Ground floor-ல 15' x 28' double car parking, outer toilet, living hall, modular kitchen, ஒரு master bedroom இருக்கு. First floor-ல 2 master bedrooms, மேல tiled open terrace, கூடவே false ceiling மற்றும் borewell வசதியும் இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "floor-plan-highlight",
+        "purpose": "property-details"
+      },
+      {
+        "name": "land",
+        "voice": "இது மொத்தம் 2.75 Cents land-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "land-area-tag",
+        "purpose": "land-specs"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு பார்த்தீங்கனா North facing-ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "compass-north",
+        "purpose": "orientation"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approval பெற்ற property, bank loan facility-யும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "dtcp-approved-badge",
+        "purpose": "legality-and-trust"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட quoted price 89 Lakhs, negotiable-தான்.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "land"
+        ],
+        "vfx": "price-overlay",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "Site visit போகவோ details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "contact-animation",
+        "purpose": "call-to-action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/sz2StDaYOck/",
+  "optional_owned_audio": "assets/audio/sz2StDaYOck.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Double-storey contemporary villa elevation with brown and black compound gate, covered parking porch with false ceiling lights, textured wall accents, and an open tiled upper terrace.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered double car parking (15' x 28') with outer toilet, Living hall (16' x 17'), Kitchen & Dining (8' x 16'), Master bedroom (8' x 16') with attached bathroom, internal staircase. First Floor: Headroom landing area, Master bedroom 2 (16' x 16') with attached bathroom, Master bedroom 3 (10' x 16') with attached bathroom. Roof Level: Tiled open terrace area with external metal staircase.. Neighbourhood: Residential neighborhood in Maniyakaranpalayam near Thudiyalur with surrounding independent homes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Double-storey contemporary villa elevation with brown and black compound gate, covered parking porch with false ceiling lights, textured wall accents, and an open tiled upper terrace.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered double car parking (15' x 28') with outer toilet, Living hall (16' x 17'), Kitchen & Dining (8' x 16'), Master bedroom (8' x 16') with attached bathroom, internal staircase. First Floor: Headroom landing area, Master bedroom 2 (16' x 16') with attached bathroom, Master bedroom 3 (10' x 16') with attached bathroom. Roof Level: Tiled open terrace area with external metal staircase.. Neighbourhood: Residential neighborhood in Maniyakaranpalayam near Thudiyalur with surrounding independent homes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Double-storey contemporary villa elevation with brown and black compound gate, covered parking porch with false ceiling lights, textured wall accents, and an open tiled upper terrace.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered double car parking (15' x 28') with outer toilet, Living hall (16' x 17'), Kitchen & Dining (8' x 16'), Master bedroom (8' x 16') with attached bathroom, internal staircase. First Floor: Headroom landing area, Master bedroom 2 (16' x 16') with attached bathroom, Master bedroom 3 (10' x 16') with attached bathroom. Roof Level: Tiled open terrace area with external metal staircase.. Neighbourhood: Residential neighborhood in Maniyakaranpalayam near Thudiyalur with surrounding independent homes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Double-storey contemporary villa elevation with brown and black compound gate, covered parking porch with false ceiling lights, textured wall accents, and an open tiled upper terrace.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered double car parking (15' x 28') with outer toilet, Living hall (16' x 17'), Kitchen & Dining (8' x 16'), Master bedroom (8' x 16') with attached bathroom, internal staircase. First Floor: Headroom landing area, Master bedroom 2 (16' x 16') with attached bathroom, Master bedroom 3 (10' x 16') with attached bathroom. Roof Level: Tiled open terrace area with external metal staircase.. Neighbourhood: Residential neighborhood in Maniyakaranpalayam near Thudiyalur with surrounding independent homes.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
