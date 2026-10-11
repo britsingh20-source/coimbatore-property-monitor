@@ -4788,8 +4788,12 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
-        "findings": [],
+        "confidence": 0.95,
+        "findings": [
+          "The video showcases a 3 BHK independent house for sale in Coimbatore with standard interior and exterior shots.",
+          "No religious visuals, shrines, sacred symbols, or ritual markings are found.",
+          "No personal photos, family portraits, certificates, or personal wall displays are visible."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
