@@ -664,8 +664,12 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.95,
-        "findings": [],
+        "confidence": 0.98,
+        "findings": [
+          "The video shows property marketing visuals of a 2 BHK villa in Karamadai, Tamil Nadu.",
+          "Internal and external architecture, parking, rooms, kitchen, and false ceiling designs are visible.",
+          "No religious visuals, idols, shrines, ritual marks, kolam/rangoli, or personal photos were found in any frame."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -3710,7 +3714,6 @@
         "my3N0qqdcx4",
         "932THiLD1CY",
         "lCGeuHSd4jM",
-        "TxfvE75rWNg",
         "K7nJbjEMB9U",
         "OaoigaZDwus",
         "O2dFbOf28X4",
@@ -4889,7 +4892,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1.0,
+        "confidence": 0.95,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
