@@ -1470,8 +1470,11 @@
     },
     {
       "prompt_message_id": 9,
+      "r2_key": "social-ready/TxfvE75rWNg.mp4",
       "sent_at": "2026-10-01T18:40:08.461409+00:00",
-      "status": "pending_mobile_upload",
+      "status": "assigned_to_r2_upload",
+      "telegram_file_unique_id": "AgADBCQAAh91YFY",
+      "uploaded_at": "2026-10-12T13:56:41.794341+00:00",
       "video_id": "TxfvE75rWNg"
     },
     {
@@ -1529,226 +1532,226 @@
       "video_id": "ZemeaBcOlUk"
     },
     {
-      "video_id": "sxt7oe1k29Q",
+      "prompt_message_id": 75,
       "sent_at": "2026-10-03T12:05:07.588190+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 75
+      "video_id": "sxt7oe1k29Q"
     },
     {
-      "video_id": "uBVIhueISRk",
+      "prompt_message_id": 77,
       "sent_at": "2026-10-03T12:05:17.865687+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 77
+      "video_id": "uBVIhueISRk"
     },
     {
-      "video_id": "2XOQEXh7XYo",
+      "prompt_message_id": 84,
       "sent_at": "2026-10-03T16:50:56.850314+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 84
+      "video_id": "2XOQEXh7XYo"
     },
     {
-      "video_id": "kwgPorjDGRU",
+      "prompt_message_id": 86,
       "sent_at": "2026-10-03T16:51:08.774510+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 86
+      "video_id": "kwgPorjDGRU"
     },
     {
-      "video_id": "pq7oDWotfH4",
+      "prompt_message_id": 91,
       "sent_at": "2026-10-03T17:40:24.098360+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 91
+      "video_id": "pq7oDWotfH4"
     },
     {
-      "video_id": "-TtBe4OlUeI",
+      "prompt_message_id": 96,
       "sent_at": "2026-10-03T19:57:23.814848+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 96
+      "video_id": "-TtBe4OlUeI"
     },
     {
-      "video_id": "rm48a_Y9kFs",
+      "prompt_message_id": 101,
       "sent_at": "2026-10-03T22:54:25.832505+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 101
+      "video_id": "rm48a_Y9kFs"
     },
     {
-      "video_id": "rkejFcRkI1o",
+      "prompt_message_id": 107,
       "sent_at": "2026-10-04T02:01:48.034727+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 107
+      "video_id": "rkejFcRkI1o"
     },
     {
-      "video_id": "uviOnEi3RAM",
+      "prompt_message_id": 109,
       "sent_at": "2026-10-04T02:01:59.699533+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 109
+      "video_id": "uviOnEi3RAM"
     },
     {
-      "video_id": "ITba_KyfVHY",
+      "prompt_message_id": 114,
       "sent_at": "2026-10-04T03:02:13.702407+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 114
+      "video_id": "ITba_KyfVHY"
     },
     {
-      "video_id": "1kx8ICo6k-g",
+      "prompt_message_id": 119,
       "sent_at": "2026-10-04T08:51:58.016232+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 119
+      "video_id": "1kx8ICo6k-g"
     },
     {
-      "video_id": "uWj4EtPOulA",
+      "prompt_message_id": 121,
       "sent_at": "2026-10-04T08:52:11.862430+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 121
+      "video_id": "uWj4EtPOulA"
     },
     {
-      "video_id": "FLWh3FCKzVQ",
+      "prompt_message_id": 126,
       "sent_at": "2026-10-04T09:48:26.722504+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 126
+      "video_id": "FLWh3FCKzVQ"
     },
     {
-      "video_id": "PXcON9S10Ic",
+      "prompt_message_id": 128,
       "sent_at": "2026-10-04T09:48:38.477817+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 128
+      "video_id": "PXcON9S10Ic"
     },
     {
-      "video_id": "19yUwHxKMpI",
+      "prompt_message_id": 138,
       "sent_at": "2026-10-04T15:02:31.285489+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 138
+      "video_id": "19yUwHxKMpI"
     },
     {
-      "video_id": "ing97frQ9hw",
+      "prompt_message_id": 142,
       "sent_at": "2026-10-04T15:46:21.673216+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 142
+      "video_id": "ing97frQ9hw"
     },
     {
-      "video_id": "ZG9r3Cu7Kn4",
+      "prompt_message_id": 181,
       "sent_at": "2026-10-05T07:46:23.025432+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 181
+      "video_id": "ZG9r3Cu7Kn4"
     },
     {
-      "video_id": "aWE1gc8uf9Y",
+      "prompt_message_id": 183,
       "sent_at": "2026-10-05T07:46:33.286958+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 183
+      "video_id": "aWE1gc8uf9Y"
     },
     {
-      "video_id": "VTxwo5uwKfU",
+      "prompt_message_id": 188,
       "sent_at": "2026-10-05T09:03:22.473145+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 188
+      "video_id": "VTxwo5uwKfU"
     },
     {
-      "video_id": "WmvXsmFGLvA",
+      "prompt_message_id": 190,
       "sent_at": "2026-10-05T09:03:37.125556+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 190
+      "video_id": "WmvXsmFGLvA"
     },
     {
-      "video_id": "xaIiKrGjTLk",
+      "prompt_message_id": 204,
       "sent_at": "2026-10-06T01:13:08.992140+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 204
+      "video_id": "xaIiKrGjTLk"
     },
     {
-      "video_id": "n2YmUJwnBu4",
+      "prompt_message_id": 217,
       "sent_at": "2026-10-06T22:19:29.872847+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 217
+      "video_id": "n2YmUJwnBu4"
     },
     {
-      "video_id": "aQZgazKlaMk",
+      "prompt_message_id": 237,
       "sent_at": "2026-10-07T22:42:30.671934+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 237
+      "video_id": "aQZgazKlaMk"
     },
     {
-      "video_id": "1G9CUKsmtik",
+      "prompt_message_id": 242,
       "sent_at": "2026-10-08T01:01:17.003380+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 242
+      "video_id": "1G9CUKsmtik"
     },
     {
-      "video_id": "Bf62SOIRJ0Y",
+      "prompt_message_id": 244,
       "sent_at": "2026-10-08T01:01:32.381752+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 244
+      "video_id": "Bf62SOIRJ0Y"
     },
     {
-      "video_id": "UcO_Ati3xgQ",
+      "prompt_message_id": 280,
       "sent_at": "2026-10-10T13:42:34.260135+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 280
+      "video_id": "UcO_Ati3xgQ"
     },
     {
-      "video_id": "O10W8qpIjQM",
+      "prompt_message_id": 284,
       "sent_at": "2026-10-10T14:01:38.960741+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 284
+      "video_id": "O10W8qpIjQM"
     },
     {
-      "video_id": "sOtSCtSWcHQ",
+      "prompt_message_id": 286,
       "sent_at": "2026-10-10T14:01:58.169817+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 286
+      "video_id": "sOtSCtSWcHQ"
     },
     {
-      "video_id": "Ch6ijwZx4fU",
+      "prompt_message_id": 296,
       "sent_at": "2026-10-10T22:55:13.865797+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 296
+      "video_id": "Ch6ijwZx4fU"
     },
     {
-      "video_id": "RnDgJIVf3Ds",
+      "prompt_message_id": 304,
       "sent_at": "2026-10-11T08:49:49.206553+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 304
+      "video_id": "RnDgJIVf3Ds"
     },
     {
-      "video_id": "sz2StDaYOck",
+      "prompt_message_id": 306,
       "sent_at": "2026-10-11T08:49:59.142867+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 306
+      "video_id": "sz2StDaYOck"
     },
     {
-      "video_id": "QZx3x695dpA",
+      "prompt_message_id": 311,
       "sent_at": "2026-10-11T09:21:10.195020+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 311
+      "video_id": "QZx3x695dpA"
     },
     {
-      "video_id": "w0TtIXJvnb8",
+      "prompt_message_id": 313,
       "sent_at": "2026-10-11T09:21:21.955290+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 313
+      "video_id": "w0TtIXJvnb8"
     },
     {
-      "video_id": "HLo8g-KFLKg",
+      "prompt_message_id": 330,
       "sent_at": "2026-10-12T00:00:47.804328+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 330
+      "video_id": "HLo8g-KFLKg"
     },
     {
-      "video_id": "WAtFGxONo3Y",
+      "prompt_message_id": 332,
       "sent_at": "2026-10-12T00:01:05.148736+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 332
+      "video_id": "WAtFGxONo3Y"
     },
     {
-      "video_id": "_ga0AFvU0cw",
+      "prompt_message_id": 339,
       "sent_at": "2026-10-12T06:37:09.744630+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 339
+      "video_id": "_ga0AFvU0cw"
     },
     {
-      "video_id": "yys_lY3ZqNA",
+      "prompt_message_id": 341,
       "sent_at": "2026-10-12T06:37:21.110514+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 341
+      "video_id": "yys_lY3ZqNA"
     }
   ]
 }
