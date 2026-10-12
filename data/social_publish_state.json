@@ -664,11 +664,8 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.99,
-        "findings": [
-          "The video displays a modern 2 BHK villa with architectural shots including exterior, parking, living room, false ceiling, kitchen, bedroom, and staircase.",
-          "No religious visuals, personal photographs, portraits, framed certificates, sacred markings, kolam, or doorway decorations were observed in any frame."
-        ],
+        "confidence": 1.0,
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -4891,7 +4888,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
+        "confidence": 0.95,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
