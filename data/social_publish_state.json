@@ -4790,8 +4790,12 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1.0,
-        "findings": [],
+        "confidence": 0.95,
+        "findings": [
+          "The video showcases a 3 BHK independent house with exterior and interior views including living area, kitchen, bedroom, parking area, and balcony.",
+          "There are no religious idols, symbols, shrines, kolams, personal photos, or ceremonial decorations visible in any frame.",
+          "All walls and surfaces are standard architectural finishes without restricted visual elements."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
