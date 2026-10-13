@@ -34,6 +34,7 @@ STATE_PATH = Path(os.environ.get("SOCIAL_STATE_PATH", "data/social_publish_state
 QUEUE_PATH = Path(os.environ.get("TELEGRAM_PROMPT_QUEUE", "data/telegram_prompt_queue.json"))
 MAX_PER_RUN = max(1, int(os.environ.get("SOCIAL_MAX_PER_RUN", "1")))
 DRY_RUN = os.environ.get("SOCIAL_DRY_RUN", "false").lower() == "true"
+RECHECK_QUARANTINED = os.environ.get("SOCIAL_RECHECK_QUARANTINED", "false").lower() == "true"
 PUBLIC_PLATFORMS = ("instagram_reel", "instagram_story", "youtube_short")
 YOUTUBE_SHORT_MAX_SECONDS = 180.0
 YOUTUBE_SHORT_WIDTH = 1080
@@ -903,9 +904,14 @@ def main() -> None:
         record_status = str(
             state.get("objects", {}).get(key, {}).get("status") or ""
         )
-        if record_status.startswith("quarantined_"):
+        exact_target = PREFIX == key
+        if record_status.startswith("quarantined_") and not (
+            RECHECK_QUARANTINED and exact_target
+        ):
             print(f"SKIPPING quarantined upload {key}: {record_status}")
             continue
+        if record_status.startswith("quarantined_"):
+            print(f"RECHECKING quarantined exact target {key}: {record_status}")
         platforms = state.get("objects", {}).get(key, {}).get("platforms", {})
         correction_pending = bool(state.get("objects", {}).get(key, {}).get("correction_pending"))
         replacement_delete_only_pending = bool(
