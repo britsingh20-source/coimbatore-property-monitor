@@ -561,10 +561,9 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.95,
+        "confidence": 1.0,
         "findings": [
-          "The video showcases a modern 2 BHK villa with clean architectural lines, open hall space, false ceiling lighting, modular kitchen setup, bedrooms, and bathrooms.",
-          "No religious idols, shrines, ritual marks, kolam patterns, or personal family photographs are visible across any frames."
+          "The video showcases a 2BHK villa with standard architectural features like car parking, false ceiling with lighting, and modern interiors without any religious shrines, ceremonial markings, or personal photos."
         ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
@@ -764,12 +763,8 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.98,
-        "findings": [
-          "The video presents a walk-through and interior/exterior shots of a 2 BHK villa in Karamadai, Coimbatore.",
-          "The video frames include the entrance, hall, false ceiling details, kitchen, bedroom, and external staircase.",
-          "No religious visuals, idols, posters, personal photographs, kolams, or ceremonial doorway markings are present in any frame."
-        ],
+        "confidence": 0.95,
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -4991,7 +4986,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
+        "confidence": 0.95,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
