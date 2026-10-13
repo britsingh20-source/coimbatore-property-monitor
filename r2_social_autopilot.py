@@ -149,18 +149,72 @@ When uncertain about a possible religious or personal image, mark the video non-
         if start < 0 or end < start:
             raise RuntimeError("Visual compliance check returned invalid JSON")
         result = json.loads(text[start:end + 1])
+
+        flag_names = (
+            "religious_visuals_present",
+            "personal_photos_present",
+            "ceremonial_markings_present",
+        )
+        first_flags_are_explicit = all(
+            isinstance(result.get(name), bool) for name in flag_names
+        )
+        first_flags = tuple(result.get(name) for name in flag_names)
+        if (
+            first_flags_are_explicit
+            and result.get("compliant") is False
+            and not any(first_flags)
+        ):
+            # Do not reinterpret or weaken a fail-closed decision. Ask the model
+            # for a clean second inspection when its own fields contradict each
+            # other, and require the second response to pass in full.
+            review_prompt = prompt + """
+
+This is a mandatory second inspection because a previous response was internally
+contradictory: compliant was false while every prohibited-category flag was false.
+Inspect the video again independently. Do not speculate about hidden or merely
+possible objects. If a prohibited object is actually visible, set its category
+flag true, set compliant=false, and give its timestamp. If none is visibly
+present, set all three category flags false and compliant=true.
+"""
+            review_response = client.models.generate_content(
+                model=model,
+                contents=[uploaded, review_prompt],
+                config={"response_mime_type": "application/json", "temperature": 0},
+            )
+            review_text = (review_response.text or "").strip()
+            review_start, review_end = review_text.find("{"), review_text.rfind("}")
+            if review_start < 0 or review_end < review_start:
+                raise RuntimeError("Second visual compliance check returned invalid JSON")
+            reviewed = json.loads(review_text[review_start:review_end + 1])
+            reviewed["initial_review"] = result
+            reviewed["review_reason"] = "contradictory_initial_result"
+            result = reviewed
     finally:
         try:
             client.files.delete(name=uploaded.name)
         except Exception:
             pass
 
-    flags = (
-        bool(result.get("religious_visuals_present")),
-        bool(result.get("personal_photos_present")),
-        bool(result.get("ceremonial_markings_present")),
+    flag_names = (
+        "religious_visuals_present",
+        "personal_photos_present",
+        "ceremonial_markings_present",
     )
-    result["compliant"] = bool(result.get("compliant")) and not any(flags)
+    invalid_fields = [
+        name
+        for name in (*flag_names, "compliant")
+        if not isinstance(result.get(name), bool)
+    ]
+    if invalid_fields:
+        raise RuntimeError(
+            "Visual compliance check returned invalid boolean fields: "
+            + ", ".join(invalid_fields)
+        )
+
+    # Keep the gate fail-closed: the final review must explicitly approve the
+    # video and must report every prohibited category as absent.
+    flags = tuple(result[name] for name in flag_names)
+    result["compliant"] = result["compliant"] and not any(flags)
     return result
 
 
