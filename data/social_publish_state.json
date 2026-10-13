@@ -697,7 +697,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
+        "confidence": 1.0,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
@@ -3744,7 +3744,6 @@
         "932THiLD1CY",
         "lCGeuHSd4jM",
         "K7nJbjEMB9U",
-        "OaoigaZDwus",
         "O2dFbOf28X4",
         "AzJRF8w6ONM",
         "ieQSDEd5P0g",
@@ -4921,13 +4920,14 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.98,
+        "confidence": 0.95,
         "findings": [
-          "The video displays a 3 BHK independent house property advertisement located in Vadavalli South, Coimbatore, Tamil Nadu.",
-          "Frames show exterior views, parking space, living room, false ceiling, kitchen, bedroom, and terrace area.",
-          "There are no religious visuals, shrines, idols, or symbols present throughout the video.",
-          "No personal photos, portraits, or framed wall certificates are visible in any frame.",
-          "No ceremonial markings, kolams, or doorway decorations are present."
+          "The video displays exterior and interior shots of an independent house (3 BHK) in Coimbatore.",
+          "No deity, idol, shrine, or worship object is visible in any frame.",
+          "No religious signs, symbols, stickers, sandal marks, kumkum, turmeric markings, or ritual handprints are present.",
+          "No ceremonial decorations such as flower garlands, mango-leaf torans, lemons, or coconuts are shown.",
+          "No kolams, rangoli, or threshold drawings are visible.",
+          "No personal photographs, family portraits, posters, certificates, or personal wall displays are detected."
         ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
