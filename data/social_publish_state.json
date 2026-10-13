@@ -553,7 +553,7 @@
         },
         "youtube_short": {
           "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "failed"
+          "status": "credential_blocked"
         }
       },
       "status": "visual_policy_passed",

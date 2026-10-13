@@ -35,6 +35,9 @@ QUEUE_PATH = Path(os.environ.get("TELEGRAM_PROMPT_QUEUE", "data/telegram_prompt_
 MAX_PER_RUN = max(1, int(os.environ.get("SOCIAL_MAX_PER_RUN", "1")))
 DRY_RUN = os.environ.get("SOCIAL_DRY_RUN", "false").lower() == "true"
 RECHECK_QUARANTINED = os.environ.get("SOCIAL_RECHECK_QUARANTINED", "false").lower() == "true"
+RETRY_CREDENTIAL_BLOCKED = (
+    os.environ.get("SOCIAL_RETRY_CREDENTIAL_BLOCKED", "false").lower() == "true"
+)
 PUBLIC_PLATFORMS = ("instagram_reel", "instagram_story", "youtube_short")
 YOUTUBE_SHORT_MAX_SECONDS = 180.0
 YOUTUBE_SHORT_WIDTH = 1080
@@ -838,7 +841,13 @@ def _publish_one(key: str, etag: str, client, bucket: str, state: dict, queue: d
             ),
         }
         for platform in PUBLIC_PLATFORMS:
-            if record["platforms"].get(platform, {}).get("status") == "published":
+            existing_status = record["platforms"].get(platform, {}).get("status")
+            if existing_status == "published":
+                continue
+            if existing_status == "credential_blocked" and not RETRY_CREDENTIAL_BLOCKED:
+                print(
+                    f"WAITING {platform}: credentials must be corrected before an exact recovery"
+                )
                 continue
             if not _available(platform):
                 record["platforms"][platform] = {"status": "waiting_for_secrets"}
@@ -852,8 +861,17 @@ def _publish_one(key: str, etag: str, client, bucket: str, state: dict, queue: d
                 record["platforms"][platform] = {"status": "published", "result": result}
                 print(f"PUBLISHED {video_id} -> {platform}")
             except Exception as error:
-                record["platforms"][platform] = {"status": "failed", "error": str(error)[:1500]}
-                print(f"FAILED {video_id} -> {platform}: {error}")
+                error_text = str(error)
+                credential_error = platform == "youtube_short" and any(
+                    marker in error_text.lower()
+                    for marker in ("invalid_client", "invalid_grant", "unauthorized_client")
+                )
+                status = "credential_blocked" if credential_error else "failed"
+                record["platforms"][platform] = {
+                    "status": status,
+                    "error": error_text[:1500],
+                }
+                print(f"{status.upper()} {video_id} -> {platform}: {error}")
             finally:
                 _save_state(state)
 
