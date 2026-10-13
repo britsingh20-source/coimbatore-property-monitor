@@ -511,21 +511,102 @@
         "confidence": 1.0,
         "method": "telegram_exact_video_id"
       },
-      "platforms": {},
-      "status": "quarantined_visual_policy",
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "channel": "real_estate",
+            "creation_id": "17902161498599708",
+            "media_id": "18112433051126986",
+            "processing": {
+              "id": "17902161498599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "verification": {
+              "id": "18112433051126986",
+              "media_product_type": "REELS",
+              "media_type": "VIDEO",
+              "permalink": "https://www.instagram.com/reel/DeasWV0jydS/",
+              "timestamp": "2026-10-13T02:05:00+0000"
+            }
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17902161663599708",
+            "media_id": "18463992484140742",
+            "processing": {
+              "id": "17902161663599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "verification": {
+              "id": "18463992484140742",
+              "media_product_type": "STORY",
+              "media_type": "VIDEO",
+              "permalink": "https://www.instagram.com/stories/smartbuycart7/4006710288752771071",
+              "timestamp": "2026-10-13T02:05:40+0000"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
+          "status": "failed"
+        }
+      },
+      "status": "visual_policy_passed",
       "video_id": "OaoigaZDwus",
       "visual_compliance": {
         "ceremonial_markings_present": false,
-        "compliant": false,
-        "confidence": 0.85,
-        "findings": [
-          "A religious idol, deity representation, or puja setup is not explicitly detected, but threshold decorations, kolams, or small wall shrines cannot be fully ruled out without manual inspection of secondary elements.",
-          "Property listing text, contact numbers, and footers are visible at the bottom of frames, which are allowed.",
-          "Personal photos or wall certificates are not visibly identified in the given video frames."
-        ],
+        "compliant": true,
+        "confidence": 1.0,
+        "findings": [],
+        "initial_review": {
+          "ceremonial_markings_present": false,
+          "compliant": false,
+          "confidence": 0.85,
+          "findings": [
+            {
+              "description": "Framed picture or artwork hanging on the wall of the living area.",
+              "timestamp": "00:06"
+            }
+          ],
+          "personal_photos_present": false,
+          "religious_visuals_present": false,
+          "violating_timestamps": [
+            "00:06"
+          ]
+        },
         "personal_photos_present": false,
         "religious_visuals_present": false,
+        "review_reason": "contradictory_initial_result",
         "violating_timestamps": []
+      },
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 250107,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 24.889,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 250049,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 24.9,
+          "height": 1280,
+          "width": 720
+        }
       }
     },
     "social-ready/TJ2hnhs0k88.mp4": {
