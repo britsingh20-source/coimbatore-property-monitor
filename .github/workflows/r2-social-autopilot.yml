@@ -30,6 +30,11 @@ on:
         required: true
         default: true
         type: boolean
+      r2_key:
+        description: Optional exact R2 object key to recover without scanning other uploads
+        required: false
+        default: ""
+        type: string
 
 concurrency:
   group: property-automation-state
@@ -161,8 +166,8 @@ jobs:
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
-          R2_SOCIAL_PREFIX: ${{ steps.telegram_target.outputs.r2_key || (github.event_name == 'repository_dispatch' && github.event.action == 'r2-social-object-created' && github.event.client_payload.r2_key || 'social-ready/') }}
-          SOCIAL_MAX_PER_RUN: ${{ github.event_name == 'repository_dispatch' && '1' || '5' }}
+          R2_SOCIAL_PREFIX: ${{ steps.telegram_target.outputs.r2_key || (github.event_name == 'repository_dispatch' && github.event.action == 'r2-social-object-created' && github.event.client_payload.r2_key) || (github.event_name == 'workflow_dispatch' && inputs.r2_key) || (github.event_name == 'push' && contains(github.event.head_commit.message, '[recover-OaoigaZDwus]') && 'social-ready/OaoigaZDwus.mp4') || 'social-ready/' }}
+          SOCIAL_MAX_PER_RUN: ${{ (github.event_name == 'repository_dispatch' || (github.event_name == 'workflow_dispatch' && inputs.r2_key != '') || (github.event_name == 'push' && contains(github.event.head_commit.message, '[recover-OaoigaZDwus]'))) && '1' || '5' }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_SOCIAL_MATCH_MODEL: gemini-3.5-flash-lite
           SOCIAL_COMPLIANCE_MODEL: gemini-3.5-flash-lite
@@ -237,20 +242,27 @@ jobs:
           key = sys.argv[1]
           state = json.loads(Path('data/social_publish_state.json').read_text(encoding='utf-8'))
           record = (state.get('objects') or {}).get(key) or {}
+          platforms = record.get('platforms') or {}
           labels = {
               'instagram_reel': 'Instagram Reel',
               'instagram_story': 'Instagram Story',
               'youtube_short': 'YouTube Short',
           }
           lines = []
-          for platform, label in labels.items():
-              details = (record.get('platforms') or {}).get(platform) or {}
-              status = str(details.get('status') or 'not attempted')
-              if status == 'published':
-                  lines.append(f'✅ {label}: published and verified')
-              else:
-                  error = str(details.get('error') or status).replace('\n', ' ')[:220]
-                  lines.append(f'⚠️ {label}: {error}')
+          if not platforms and record.get('status') == 'quarantined_visual_policy':
+              findings = '; '.join(
+                  str(item) for item in (record.get('visual_compliance') or {}).get('findings') or []
+              )
+              lines.append('⛔ Publishing blocked by visual-policy review: ' + findings[:500])
+          else:
+              for platform, label in labels.items():
+                  details = platforms.get(platform) or {}
+                  status = str(details.get('status') or 'not attempted')
+                  if status == 'published':
+                      lines.append(f'✅ {label}: published and verified')
+                  else:
+                      error = str(details.get('error') or status).replace('\n', ' ')[:220]
+                      lines.append(f'⚠️ {label}: {error}')
           print('\n'.join(lines))
           PY
             )"
