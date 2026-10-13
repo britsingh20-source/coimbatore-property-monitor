@@ -561,27 +561,13 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1.0,
-        "findings": [],
-        "initial_review": {
-          "ceremonial_markings_present": false,
-          "compliant": false,
-          "confidence": 0.85,
-          "findings": [
-            {
-              "description": "Framed picture or artwork hanging on the wall of the living area.",
-              "timestamp": "00:06"
-            }
-          ],
-          "personal_photos_present": false,
-          "religious_visuals_present": false,
-          "violating_timestamps": [
-            "00:06"
-          ]
-        },
+        "confidence": 0.95,
+        "findings": [
+          "The video showcases a modern 2 BHK villa with clean architectural lines, open hall space, false ceiling lighting, modular kitchen setup, bedrooms, and bathrooms.",
+          "No religious idols, shrines, ritual marks, kolam patterns, or personal family photographs are visible across any frames."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
-        "review_reason": "contradictory_initial_result",
         "violating_timestamps": []
       },
       "youtube_media": {
@@ -770,7 +756,7 @@
         },
         "youtube_short": {
           "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "failed"
+          "status": "credential_blocked"
         }
       },
       "status": "visual_policy_passed",
@@ -778,8 +764,12 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1.0,
-        "findings": [],
+        "confidence": 0.98,
+        "findings": [
+          "The video presents a walk-through and interior/exterior shots of a 2 BHK villa in Karamadai, Coimbatore.",
+          "The video frames include the entrance, hall, false ceiling details, kitchen, bedroom, and external staircase.",
+          "No religious visuals, idols, posters, personal photographs, kolams, or ceremonial doorway markings are present in any frame."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -4993,7 +4983,7 @@
         },
         "youtube_short": {
           "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "failed"
+          "status": "credential_blocked"
         }
       },
       "status": "visual_policy_passed",
@@ -5001,15 +4991,8 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.95,
-        "findings": [
-          "The video displays exterior and interior shots of an independent house (3 BHK) in Coimbatore.",
-          "No deity, idol, shrine, or worship object is visible in any frame.",
-          "No religious signs, symbols, stickers, sandal marks, kumkum, turmeric markings, or ritual handprints are present.",
-          "No ceremonial decorations such as flower garlands, mango-leaf torans, lemons, or coconuts are shown.",
-          "No kolams, rangoli, or threshold drawings are visible.",
-          "No personal photographs, family portraits, posters, certificates, or personal wall displays are detected."
-        ],
+        "confidence": 1,
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
