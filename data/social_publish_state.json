@@ -563,22 +563,8 @@
         "compliant": true,
         "confidence": 1,
         "findings": [],
-        "initial_review": {
-          "ceremonial_markings_present": false,
-          "compliant": false,
-          "confidence": 0.95,
-          "findings": [
-            "A religious wall art/painting is visible in the background of the living room at 00:07."
-          ],
-          "personal_photos_present": false,
-          "religious_visuals_present": false,
-          "violating_timestamps": [
-            7
-          ]
-        },
         "personal_photos_present": false,
         "religious_visuals_present": false,
-        "review_reason": "contradictory_initial_result",
         "violating_timestamps": []
       },
       "youtube_media": {
@@ -776,7 +762,12 @@
         "ceremonial_markings_present": false,
         "compliant": true,
         "confidence": 1.0,
-        "findings": [],
+        "findings": [
+          "The video showcases a 2 BHK villa in Karamadai, Coimbatore, Tamil Nadu.",
+          "No religious visuals, idols, shrines, or sacred symbols are present.",
+          "No personal photos, family portraits, certificates, or personal wall displays are found.",
+          "No ceremonial markings like kolam, rangoli, kumkum, or garlands are visible in any frame."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
