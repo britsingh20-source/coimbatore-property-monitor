@@ -129,10 +129,10 @@
         },
         "youtube_short": {
           "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "failed"
+          "status": "credential_blocked"
         }
       },
-      "status": "quarantined_visual_policy",
+      "status": "ready_to_publish",
       "video_id": "CCAZi6SNB-g",
       "visual_compliance": {
         "error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
@@ -207,10 +207,10 @@
         },
         "youtube_short": {
           "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "failed"
+          "status": "credential_blocked"
         }
       },
-      "status": "quarantined_visual_policy",
+      "status": "ready_to_publish",
       "video_id": "CLp9Pohl8No",
       "visual_compliance": {
         "error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
@@ -430,10 +430,10 @@
         },
         "youtube_short": {
           "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "failed"
+          "status": "credential_blocked"
         }
       },
-      "status": "quarantined_visual_policy",
+      "status": "ready_to_publish",
       "video_id": "M0iRDEf_DfQ",
       "visual_compliance": {
         "error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
@@ -508,10 +508,10 @@
         },
         "youtube_short": {
           "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "failed"
+          "status": "credential_blocked"
         }
       },
-      "status": "quarantined_visual_policy",
+      "status": "ready_to_publish",
       "video_id": "N8OFO4_0LwY",
       "visual_compliance": {
         "error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
@@ -1175,10 +1175,10 @@
         },
         "youtube_short": {
           "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "failed"
+          "status": "credential_blocked"
         }
       },
-      "status": "quarantined_visual_policy",
+      "status": "ready_to_publish",
       "video_id": "hXgwaBvJRjU",
       "visual_compliance": {
         "error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
@@ -1193,7 +1193,7 @@
           "audio_channels": 2,
           "audio_codec": "aac",
           "audio_sample_rate": 48000,
-          "duration": 24,
+          "duration": 24.0,
           "height": 1920,
           "width": 1080
         },
@@ -1203,7 +1203,7 @@
           "audio_channels": 2,
           "audio_codec": "aac",
           "audio_sample_rate": 48000,
-          "duration": 24,
+          "duration": 24.0,
           "height": 1280,
           "width": 720
         }
