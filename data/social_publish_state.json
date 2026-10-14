@@ -257,7 +257,51 @@
         "confidence": 1,
         "method": "telegram_exact_video_id"
       },
-      "platforms": {},
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "channel": "real_estate",
+            "creation_id": "17902349955599708",
+            "media_id": "18119905375963009",
+            "processing": {
+              "id": "17902349955599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "verification": {
+              "id": "18119905375963009",
+              "media_product_type": "REELS",
+              "media_type": "VIDEO",
+              "permalink": "https://www.instagram.com/reel/DedsZPDDEN2/",
+              "timestamp": "2026-10-14T06:02:49+0000"
+            }
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17902350096599708",
+            "media_id": "17994850197046835",
+            "processing": {
+              "id": "17902350096599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "verification": {
+              "id": "17994850197046835",
+              "media_product_type": "STORY",
+              "media_type": "VIDEO",
+              "permalink": "https://www.instagram.com/stories/smartbuycart7/4007554773954975514",
+              "timestamp": "2026-10-14T06:03:31+0000"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
+          "status": "credential_blocked"
+        }
+      },
       "status": "ready_to_publish",
       "video_id": "K7nJbjEMB9U",
       "visual_compliance": {
@@ -286,6 +330,30 @@
           "00:03",
           "00:17"
         ]
+      },
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 251151,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 20.0,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 251034,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 20.0,
+          "height": 1280,
+          "width": 720
+        }
       }
     },
     "social-ready/KiJEPqoUCTw.mp4": {
