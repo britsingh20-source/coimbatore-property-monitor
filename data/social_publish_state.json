@@ -608,13 +608,8 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.95,
-        "findings": [
-          "The video presents a 2BHK villa located in Veerapandi, Coimbatore, Tamil Nadu.",
-          "No religious symbols, idols, or worship objects are visible in any frame.",
-          "No personal photographs, framed portraits, certificates, or personal wall displays are found.",
-          "No ceremonial markings such as kolam, rangoli, or ritual doorways are visible."
-        ],
+        "confidence": 1,
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -813,12 +808,8 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.98,
-        "findings": [
-          "The video showcases a 2 BHK villa in Karamadai, Coimbatore, Tamil Nadu.",
-          "Property features include 3 cents land area, East facing, 2 bedrooms, covered car parking, and external staircase to terrace.",
-          "Interiors show plain walls, tiled flooring, false ceiling, and modular kitchen elements without any religious or personal items."
-        ],
+        "confidence": 0.95,
+        "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -3863,7 +3854,6 @@
         "my3N0qqdcx4",
         "932THiLD1CY",
         "lCGeuHSd4jM",
-        "K7nJbjEMB9U",
         "O2dFbOf28X4",
         "AzJRF8w6ONM",
         "ieQSDEd5P0g",
@@ -5038,13 +5028,8 @@
       "status": "visual_policy_passed",
       "video_id": "zclTKyhfHyE",
       "visual_compliance": {
-        "ceremonial_markings_present": false,
-        "compliant": true,
-        "confidence": 0.95,
-        "findings": [],
-        "personal_photos_present": false,
-        "religious_visuals_present": false,
-        "violating_timestamps": []
+        "error": "500 INTERNAL. {'error': {'code': 500, 'message': 'Failed to convert server response to JSON', 'status': 'INTERNAL'}}",
+        "status": "service_unavailable_bypassed"
       },
       "youtube_media": {
         "audio_handling": "copied_original_aac",
