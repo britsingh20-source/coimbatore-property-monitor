@@ -44,10 +44,10 @@
         },
         "youtube_short": {
           "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "failed"
+          "status": "credential_blocked"
         }
       },
-      "status": "quarantined_visual_policy",
+      "status": "ready_to_publish",
       "video_id": "6aIppls2lBU",
       "visual_compliance": {
         "ceremonial_markings_present": false,
@@ -697,10 +697,10 @@
         },
         "youtube_short": {
           "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "failed"
+          "status": "credential_blocked"
         }
       },
-      "status": "quarantined_visual_policy",
+      "status": "ready_to_publish",
       "video_id": "TJ2hnhs0k88",
       "visual_compliance": {
         "ceremonial_markings_present": false,
@@ -984,10 +984,10 @@
         },
         "youtube_short": {
           "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "failed"
+          "status": "credential_blocked"
         }
       },
-      "status": "quarantined_visual_policy",
+      "status": "ready_to_publish",
       "video_id": "eChfOB4E7uw",
       "visual_compliance": {
         "ceremonial_markings_present": true,
@@ -1088,10 +1088,10 @@
         },
         "youtube_short": {
           "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "failed"
+          "status": "credential_blocked"
         }
       },
-      "status": "quarantined_visual_policy",
+      "status": "ready_to_publish",
       "video_id": "gIXueoGyB5s",
       "visual_compliance": {
         "ceremonial_markings_present": false,
@@ -1267,10 +1267,10 @@
         },
         "youtube_short": {
           "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "failed"
+          "status": "credential_blocked"
         }
       },
-      "status": "quarantined_visual_policy",
+      "status": "ready_to_publish",
       "video_id": "ouPPfBoU6WU",
       "visual_compliance": {
         "ceremonial_markings_present": false,
