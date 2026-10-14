@@ -51,6 +51,7 @@ class PublicationTests(unittest.TestCase):
         held, complete = "social-ready/held.mp4", "social-ready/complete.mp4"
         platforms = ("instagram_reel", "instagram_story", "youtube_short")
         state = {"objects": {held: {"status": "quarantined_visual_policy", "platforms": {}}, complete: {"platforms": {p: {"status": "published"} for p in platforms}}}}
+        state["objects"][complete]["platforms"]["youtube_short"] = {"status": "credential_blocked"}
         client = Mock()
         client.list_objects_v2.return_value = {"Contents": [{"Key": key, "ETag": "same", "LastModified": index} for index, key in enumerate((held, complete))]}
         publish = Mock(return_value=True)
@@ -58,7 +59,7 @@ class PublicationTests(unittest.TestCase):
             {"main"}, _required=Mock(return_value="bucket"), _r2=Mock(return_value=client),
             _load_state=Mock(return_value=state), _load_queue=Mock(return_value={"prompts": []}),
             _save_state=Mock(), _save_queue=Mock(), _publish_one=publish,
-            PREFIX="social-ready/", RECHECK_QUARANTINED=False, MAX_PER_RUN=5, PUBLIC_PLATFORMS=platforms,
+            PREFIX="social-ready/", RECHECK_QUARANTINED=False, RETRY_CREDENTIAL_BLOCKED=False, MAX_PER_RUN=5, PUBLIC_PLATFORMS=platforms,
         )
         ns["main"]()
         publish.assert_called_once_with(held, "same", client, "bucket", state, {"prompts": []})

@@ -755,6 +755,10 @@ def main() -> None:
             and not youtube_republish_pending
             and all(
                 platforms.get(p, {}).get("status") == "published"
+                or (
+                    platforms.get(p, {}).get("status") == "credential_blocked"
+                    and not RETRY_CREDENTIAL_BLOCKED
+                )
                 for p in PUBLIC_PLATFORMS
             )
         ):
