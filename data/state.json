@@ -760,6 +760,12 @@
       "next_retry_at": "2026-09-21T17:12:47.611407+00:00",
       "status": "video_queued"
     },
+    "72HHde1-NKE": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-14T08:03:05.177278+00:00",
+      "next_retry_at": "2026-10-14T08:03:05.177278+00:00",
+      "status": "discovered"
+    },
     "7TdsOQaOsSE": {
       "attempts": 3,
       "completed_at": "2026-09-16T06:51:15.974382+00:00",
@@ -900,6 +906,12 @@
       "last_error": "",
       "next_retry_at": "2026-09-17T07:00:31.988498+00:00",
       "status": "video_queued"
+    },
+    "8NyOCghfIs0": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-14T08:03:05.177278+00:00",
+      "next_retry_at": "2026-10-14T08:03:05.177278+00:00",
+      "status": "discovered"
     },
     "8gKjM9SmMzQ": {
       "attempts": 0,
@@ -1836,6 +1848,14 @@
       "first_seen_at": "2026-10-03T00:54:43.020188+00:00",
       "next_retry_at": "2026-10-03T00:54:43.020188+00:00",
       "status": "discovered"
+    },
+    "GVFQSRxHUgY": {
+      "attempts": 1,
+      "first_seen_at": "2026-10-14T08:03:05.177278+00:00",
+      "last_attempt_at": "2026-10-14T08:04:38.965322+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'Your project has exceeded a quota. See https://ai.dev/rate-limit to manage your rate limits.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-10-14T10:04:38.965332+00:00",
+      "status": "retry_pending"
     },
     "GVnw2N29VYw": {
       "attempts": 2,
@@ -5139,6 +5159,12 @@
       "next_retry_at": "2026-08-21T07:10:39.897839+00:00",
       "status": "video_queued"
     },
+    "ivOR3HRxa9g": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-14T08:03:05.177278+00:00",
+      "next_retry_at": "2026-10-14T08:03:05.177278+00:00",
+      "status": "discovered"
+    },
     "j1s8tnvbOHs": {
       "attempts": 0,
       "first_seen_at": "2026-09-12T05:53:08.206655+00:00",
@@ -5825,6 +5851,12 @@
       "last_error": "",
       "next_retry_at": "2026-09-07T01:19:35.331341+00:00",
       "status": "video_queued"
+    },
+    "putT9SbyF00": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-14T08:03:05.177278+00:00",
+      "next_retry_at": "2026-10-14T08:03:05.177278+00:00",
+      "status": "discovered"
     },
     "q4Kbfxf2-a4": {
       "attempts": 4,
