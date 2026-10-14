@@ -258,7 +258,7 @@
         "method": "telegram_exact_video_id"
       },
       "platforms": {},
-      "status": "quarantined_visual_policy",
+      "status": "ready_to_publish",
       "video_id": "K7nJbjEMB9U",
       "visual_compliance": {
         "ceremonial_markings_present": true,
