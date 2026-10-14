@@ -258,8 +258,21 @@
         "method": "telegram_exact_video_id"
       },
       "platforms": {},
-      "status": "pending_visual_policy_recheck",
+      "status": "quarantined_visual_policy",
       "video_id": "K7nJbjEMB9U",
+      "visual_compliance": {
+        "ceremonial_markings_present": true,
+        "compliant": false,
+        "confidence": 0.95,
+        "findings": [
+          "At timestamp 00:03, on the right side door frame, ceremonial decorations/toran and a doorway marking/puja related element are visible."
+        ],
+        "personal_photos_present": false,
+        "religious_visuals_present": true,
+        "violating_timestamps": [
+          "00:03"
+        ]
+      },
       "visual_compliance_previous": {
         "ceremonial_markings_present": true,
         "compliant": false,
@@ -597,9 +610,10 @@
         "compliant": true,
         "confidence": 0.95,
         "findings": [
-          "The property video shows a modern 2BHK villa for sale.",
-          "Exteriors, hall interior, false ceilings, kitchen, bedroom, and bathroom are shown.",
-          "No religious idols, symbols, kolams, personal photos, framed certificates, or doorways decorations are visible throughout the video."
+          "The video presents a 2BHK villa located in Veerapandi, Coimbatore, Tamil Nadu.",
+          "No religious symbols, idols, or worship objects are visible in any frame.",
+          "No personal photographs, framed portraits, certificates, or personal wall displays are found.",
+          "No ceremonial markings such as kolam, rangoli, or ritual doorways are visible."
         ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
@@ -799,8 +813,12 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 0.95,
-        "findings": [],
+        "confidence": 0.98,
+        "findings": [
+          "The video showcases a 2 BHK villa in Karamadai, Coimbatore, Tamil Nadu.",
+          "Property features include 3 cents land area, East facing, 2 bedrooms, covered car parking, and external staircase to terrace.",
+          "Interiors show plain walls, tiled flooring, false ceiling, and modular kitchen elements without any religious or personal items."
+        ],
         "personal_photos_present": false,
         "religious_visuals_present": false,
         "violating_timestamps": []
@@ -814,7 +832,7 @@
           "audio_channels": 2,
           "audio_codec": "aac",
           "audio_sample_rate": 48000,
-          "duration": 20,
+          "duration": 20.0,
           "height": 1920,
           "width": 1080
         },
@@ -824,7 +842,7 @@
           "audio_channels": 2,
           "audio_codec": "aac",
           "audio_sample_rate": 48000,
-          "duration": 20,
+          "duration": 20.0,
           "height": 1280,
           "width": 720
         }
@@ -5022,7 +5040,7 @@
       "visual_compliance": {
         "ceremonial_markings_present": false,
         "compliant": true,
-        "confidence": 1,
+        "confidence": 0.95,
         "findings": [],
         "personal_photos_present": false,
         "religious_visuals_present": false,
