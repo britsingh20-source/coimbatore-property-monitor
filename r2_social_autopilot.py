@@ -87,12 +87,12 @@ confidence (number from 0 to 1).
 
 Set compliant=false if ANY frame contains:
 - deity/god/saint photograph, idol, shrine, puja shelf or worship object;
-- religious sign/symbol/sticker, sacred text, sandal/kumkum/turmeric mark or ritual handprint;
+- prominent religious sign/symbol/sticker, sacred text or ritual handprint;
 - garland, mango-leaf toran, ceremonial flowers, lemon/coconut doorway decoration;
 - kolam, rangoli, threshold drawing, ritual floor/chalk/paint pattern;
 - family photograph, portrait, framed person, calendar, poster, certificate or personal wall display.
 
-Ordinary architecture, plain doors, plain flooring, empty fixed shelves and neutral wall finishes are allowed.
+Ordinary architecture, plain doors, plain flooring, empty fixed shelves and neutral wall finishes are allowed. Small customary sandal, kumkum or turmeric dots/lines on a door frame are allowed and must NOT alone cause non-compliance; do not set ceremonial_markings_present=true solely for these. Keep all other exclusions in effect.
 Do not treat the property's information footer, price, land area, location or company branding as a violation.
 When uncertain about a possible religious or personal image, mark the video non-compliant for manual review.
 """
