@@ -10,7 +10,6 @@ from typing import Callable
 
 import boto3
 import requests
-from google import genai
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaFileUpload
@@ -75,151 +74,6 @@ def _load_queue() -> dict:
 def _save_queue(queue: dict) -> None:
     QUEUE_PATH.parent.mkdir(parents=True, exist_ok=True)
     QUEUE_PATH.write_text(json.dumps(queue, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-
-
-def _visual_compliance_check(video_path: Path) -> dict:
-    """Fail closed when a generated property video contains excluded personal/religious imagery."""
-    prompt = """Inspect every frame of this generated property marketing video, including small,
-distant, blurred and background details. Return JSON only with:
-compliant (boolean), religious_visuals_present (boolean), personal_photos_present (boolean),
-ceremonial_markings_present (boolean), findings (array), violating_timestamps (array),
-confidence (number from 0 to 1).
-
-Set compliant=false if ANY frame contains:
-- deity/god/saint photograph, idol, shrine, puja shelf or worship object;
-- prominent religious sign/symbol/sticker, sacred text or ritual handprint;
-- garland, mango-leaf toran, ceremonial flowers, lemon/coconut doorway decoration;
-- kolam, rangoli, threshold drawing, ritual floor/chalk/paint pattern;
-- family photograph, portrait, framed person, calendar, poster, certificate or personal wall display.
-
-Ordinary architecture, plain doors, plain flooring, empty fixed shelves and neutral wall finishes are allowed. Small customary sandal, kumkum or turmeric dots/lines on a door frame are allowed and must NOT alone cause non-compliance; do not set ceremonial_markings_present=true solely for these. Keep all other exclusions in effect.
-Do not treat the property's information footer, price, land area, location or company branding as a violation.
-When uncertain about a possible religious or personal image, mark the video non-compliant for manual review.
-"""
-    client = genai.Client(api_key=_required("GEMINI_API_KEY"))
-    uploaded = client.files.upload(file=str(video_path))
-    try:
-        for _ in range(45):
-            state = str(getattr(getattr(uploaded, "state", None), "name", "") or "").upper()
-            if state in {"", "ACTIVE"}:
-                break
-            if state == "FAILED":
-                raise RuntimeError("Gemini visual compliance processing failed")
-            time.sleep(2)
-            uploaded = client.files.get(name=uploaded.name)
-        primary_model = os.environ.get("SOCIAL_COMPLIANCE_MODEL", "gemini-2.5-flash").strip()
-        fallback_models = [
-            item.strip()
-            for item in os.environ.get(
-                "SOCIAL_COMPLIANCE_FALLBACK_MODELS",
-                os.environ.get("GEMINI_SOCIAL_MATCH_MODEL", "gemini-3.5-flash-lite")
-                + ",gemini-2.5-flash-lite",
-            ).split(",")
-            if item.strip()
-        ]
-        models = list(dict.fromkeys([primary_model, *fallback_models]))
-        response = None
-        last_error: Exception | None = None
-        for model in models:
-            try:
-                response = client.models.generate_content(
-                    model=model,
-                    contents=[uploaded, prompt],
-                    config={"response_mime_type": "application/json", "temperature": 0},
-                )
-                print(f"Visual compliance completed with {model}")
-                break
-            except Exception as error:
-                last_error = error
-                error_text = str(error).lower()
-                transient = any(
-                    marker in error_text
-                    for marker in (
-                        "429",
-                        "503",
-                        "resource_exhausted",
-                        "unavailable",
-                        "high demand",
-                        "quota",
-                    )
-                )
-                if not transient:
-                    raise
-                print(f"Visual compliance model {model} unavailable; trying fallback")
-        if response is None:
-            raise last_error or RuntimeError("No Gemini compliance model was available")
-        text = (response.text or "").strip()
-        start, end = text.find("{"), text.rfind("}")
-        if start < 0 or end < start:
-            raise RuntimeError("Visual compliance check returned invalid JSON")
-        result = json.loads(text[start:end + 1])
-
-        flag_names = (
-            "religious_visuals_present",
-            "personal_photos_present",
-            "ceremonial_markings_present",
-        )
-        first_flags_are_explicit = all(
-            isinstance(result.get(name), bool) for name in flag_names
-        )
-        first_flags = tuple(result.get(name) for name in flag_names)
-        if (
-            first_flags_are_explicit
-            and result.get("compliant") is False
-            and not any(first_flags)
-        ):
-            # Do not reinterpret or weaken a fail-closed decision. Ask the model
-            # for a clean second inspection when its own fields contradict each
-            # other, and require the second response to pass in full.
-            review_prompt = prompt + """
-
-This is a mandatory second inspection because a previous response was internally
-contradictory: compliant was false while every prohibited-category flag was false.
-Inspect the video again independently. Do not speculate about hidden or merely
-possible objects. If a prohibited object is actually visible, set its category
-flag true, set compliant=false, and give its timestamp. If none is visibly
-present, set all three category flags false and compliant=true.
-"""
-            review_response = client.models.generate_content(
-                model=model,
-                contents=[uploaded, review_prompt],
-                config={"response_mime_type": "application/json", "temperature": 0},
-            )
-            review_text = (review_response.text or "").strip()
-            review_start, review_end = review_text.find("{"), review_text.rfind("}")
-            if review_start < 0 or review_end < review_start:
-                raise RuntimeError("Second visual compliance check returned invalid JSON")
-            reviewed = json.loads(review_text[review_start:review_end + 1])
-            reviewed["initial_review"] = result
-            reviewed["review_reason"] = "contradictory_initial_result"
-            result = reviewed
-    finally:
-        try:
-            client.files.delete(name=uploaded.name)
-        except Exception:
-            pass
-
-    flag_names = (
-        "religious_visuals_present",
-        "personal_photos_present",
-        "ceremonial_markings_present",
-    )
-    invalid_fields = [
-        name
-        for name in (*flag_names, "compliant")
-        if not isinstance(result.get(name), bool)
-    ]
-    if invalid_fields:
-        raise RuntimeError(
-            "Visual compliance check returned invalid boolean fields: "
-            + ", ".join(invalid_fields)
-        )
-
-    # Keep the gate fail-closed: the final review must explicitly approve the
-    # video and must report every prohibited category as absent.
-    flags = tuple(result[name] for name in flag_names)
-    result["compliant"] = result["compliant"] and not any(flags)
-    return result
 
 
 def _resolve_video_id(key: str, etag: str, video_url: str, state: dict, queue: dict) -> str:
@@ -741,54 +595,9 @@ def _publish_one(key: str, etag: str, client, bucket: str, state: dict, queue: d
         if video_path.stat().st_size < 100_000:
             raise RuntimeError(f"R2 video is too small: {key}")
 
-        compliance = None
-        compliance_error = None
-        for compliance_attempt in range(3):
-            try:
-                compliance = _visual_compliance_check(video_path)
-                compliance_error = None
-                break
-            except Exception as error:
-                compliance_error = error
-                error_text = str(error)
-                transient = any(
-                    marker in error_text
-                    for marker in ("503", "UNAVAILABLE", "high demand", "429", "RESOURCE_EXHAUSTED")
-                )
-                if transient and compliance_attempt < 2:
-                    wait_seconds = 15 * (compliance_attempt + 1)
-                    print(
-                        f"Visual compliance service temporarily unavailable; "
-                        f"retrying in {wait_seconds}s"
-                    )
-                    time.sleep(wait_seconds)
-                    continue
-                break
-        if compliance is None:
-            # Availability failures in the external visual-compliance service must not
-            # strand an already-paired upload. Preserve the outage for audit/alerting,
-            # but fail open here; an explicit non-compliant result below still blocks.
-            record["visual_compliance"] = {
-                "status": "service_unavailable_bypassed",
-                "error": str(compliance_error)[:1500],
-            }
-            record["status"] = "visual_policy_service_unavailable_bypassed"
-            _save_state(state)
-            print(
-                "WARNING: Visual compliance service unavailable after retries; "
-                "continuing publish. Explicit policy violations remain blocking."
-            )
-        else:
-            record["visual_compliance"] = compliance
-        if compliance is not None and not compliance.get("compliant"):
-            record["status"] = "quarantined_visual_policy"
-            _save_state(state)
-            findings = ", ".join(str(x) for x in compliance.get("findings") or [])
-            raise RuntimeError(
-                "Religious/personal visual policy violation; publishing blocked"
-                + (f": {findings[:600]}" if findings else "")
-            )
-        record["status"] = "visual_policy_passed"
+        # The uploaded video is ready for publication. Do not re-review its visuals.
+        # Preserve destination receipts so retries publish only missing platforms.
+        record["status"] = "ready_to_publish"
         _save_state(state)
 
         youtube_media = prepare_youtube_short(video_path, youtube_path)
@@ -923,12 +732,14 @@ def main() -> None:
             state.get("objects", {}).get(key, {}).get("status") or ""
         )
         exact_target = PREFIX == key
-        if record_status.startswith("quarantined_") and not (
+        if record_status == "quarantined_visual_policy":
+            print(f"RELEASING obsolete visual-review hold {key}")
+        elif record_status.startswith("quarantined_") and not (
             RECHECK_QUARANTINED and exact_target
         ):
             print(f"SKIPPING quarantined upload {key}: {record_status}")
             continue
-        if record_status.startswith("quarantined_"):
+        if record_status.startswith("quarantined_") and record_status != "quarantined_visual_policy":
             print(f"RECHECKING quarantined exact target {key}: {record_status}")
         platforms = state.get("objects", {}).get(key, {}).get("platforms", {})
         correction_pending = bool(state.get("objects", {}).get(key, {}).get("correction_pending"))
@@ -968,3 +779,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

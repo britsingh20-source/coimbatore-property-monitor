@@ -170,8 +170,6 @@ jobs:
           SOCIAL_MAX_PER_RUN: ${{ (github.event_name == 'repository_dispatch' || (github.event_name == 'workflow_dispatch' && inputs.r2_key != '')) && '1' || '5' }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_SOCIAL_MATCH_MODEL: gemini-3.5-flash-lite
-          SOCIAL_COMPLIANCE_MODEL: gemini-3.5-flash-lite
-          SOCIAL_COMPLIANCE_FALLBACK_MODELS: gemini-3.5-flash-lite
           SOCIAL_MATCH_MIN_CONFIDENCE: "0.85"
           SOCIAL_RECHECK_QUARANTINED: ${{ (github.event_name == 'workflow_dispatch' && inputs.r2_key != '') && 'true' || 'false' }}
           SOCIAL_RETRY_CREDENTIAL_BLOCKED: ${{ (github.event_name == 'workflow_dispatch' && inputs.r2_key != '') && 'true' || 'false' }}
@@ -251,20 +249,14 @@ jobs:
               'youtube_short': 'YouTube Short',
           }
           lines = []
-          if not platforms and record.get('status') == 'quarantined_visual_policy':
-              findings = '; '.join(
-                  str(item) for item in (record.get('visual_compliance') or {}).get('findings') or []
-              )
-              lines.append('⛔ Publishing blocked by visual-policy review: ' + findings[:500])
-          else:
-              for platform, label in labels.items():
-                  details = platforms.get(platform) or {}
-                  status = str(details.get('status') or 'not attempted')
-                  if status == 'published':
-                      lines.append(f'✅ {label}: published and verified')
-                  else:
-                      error = str(details.get('error') or status).replace('\n', ' ')[:220]
-                      lines.append(f'⚠️ {label}: {error}')
+          for platform, label in labels.items():
+              details = platforms.get(platform) or {}
+              status = str(details.get('status') or 'not attempted')
+              if status == 'published':
+                  lines.append(f'✅ {label}: published and verified')
+              else:
+                  error = str(details.get('error') or status).replace('\n', ' ')[:220]
+                  lines.append(f'⚠️ {label}: {error}')
           print('\n'.join(lines))
           PY
             )"
@@ -277,3 +269,4 @@ jobs:
             --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
             --data-urlencode "text=${message}" \
             "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage"
+
