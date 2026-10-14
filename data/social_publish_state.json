@@ -13,7 +13,7 @@
       },
       "etag": "37d762824ce1b26eafeacbf060a55556-3",
       "match_analysis": {
-        "confidence": 1.0,
+        "confidence": 1,
         "method": "telegram_exact_video_id"
       },
       "platforms": {
@@ -254,13 +254,13 @@
       },
       "etag": "f145bffe24650c28e678a04ca2157b77-3",
       "match_analysis": {
-        "confidence": 1.0,
+        "confidence": 1,
         "method": "telegram_exact_video_id"
       },
       "platforms": {},
-      "status": "quarantined_visual_policy",
+      "status": "pending_visual_policy_recheck",
       "video_id": "K7nJbjEMB9U",
-      "visual_compliance": {
+      "visual_compliance_previous": {
         "ceremonial_markings_present": true,
         "compliant": false,
         "confidence": 0.95,
@@ -542,7 +542,7 @@
       },
       "etag": "32721fbc0979a74b547f11c9a8b3e140-2",
       "match_analysis": {
-        "confidence": 1.0,
+        "confidence": 1,
         "method": "telegram_exact_video_id"
       },
       "platforms": {
@@ -643,7 +643,7 @@
       },
       "etag": "ad153c9b2dc74a03845ffb333ba67bb4-3",
       "match_analysis": {
-        "confidence": 1.0,
+        "confidence": 1,
         "method": "telegram_exact_video_id"
       },
       "platforms": {
@@ -746,7 +746,7 @@
       },
       "etag": "933b0d12245b0c36bdbd688988ba72d0-3",
       "match_analysis": {
-        "confidence": 1.0,
+        "confidence": 1,
         "method": "telegram_exact_video_id"
       },
       "platforms": {
@@ -814,7 +814,7 @@
           "audio_channels": 2,
           "audio_codec": "aac",
           "audio_sample_rate": 48000,
-          "duration": 20.0,
+          "duration": 20,
           "height": 1920,
           "width": 1080
         },
@@ -824,7 +824,7 @@
           "audio_channels": 2,
           "audio_codec": "aac",
           "audio_sample_rate": 48000,
-          "duration": 20.0,
+          "duration": 20,
           "height": 1280,
           "width": 720
         }
@@ -1034,7 +1034,7 @@
       },
       "etag": "7974ce4bf964ef710aebe279a63c5b73-3",
       "match_analysis": {
-        "confidence": 1.0,
+        "confidence": 1,
         "method": "telegram_exact_video_id"
       },
       "platforms": {
@@ -1213,7 +1213,7 @@
       },
       "etag": "422bee80ad9b16f9dd8d6caf8c694937-3",
       "match_analysis": {
-        "confidence": 1.0,
+        "confidence": 1,
         "method": "telegram_exact_video_id"
       },
       "platforms": {
@@ -4969,7 +4969,7 @@
       },
       "etag": "939a350912bea27848001a243153355d-2",
       "match_analysis": {
-        "confidence": 1.0,
+        "confidence": 1,
         "method": "telegram_exact_video_id"
       },
       "platforms": {
