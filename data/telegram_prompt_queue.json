@@ -1479,8 +1479,11 @@
     },
     {
       "prompt_message_id": 14,
+      "r2_key": "social-ready/K7nJbjEMB9U.mp4",
       "sent_at": "2026-10-01T22:58:27.846161+00:00",
-      "status": "pending_mobile_upload",
+      "status": "assigned_to_r2_upload",
+      "telegram_file_unique_id": "AgADayEAArlBeFY",
+      "uploaded_at": "2026-10-14T02:49:58.027461+00:00",
       "video_id": "K7nJbjEMB9U"
     },
     {
