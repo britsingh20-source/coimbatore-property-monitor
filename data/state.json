@@ -602,6 +602,12 @@
       "next_retry_at": "2026-09-13T05:46:39.257185+00:00",
       "status": "video_queued"
     },
+    "5bdsIsL7n9k": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-15T07:24:35.335635+00:00",
+      "next_retry_at": "2026-10-15T07:24:35.335635+00:00",
+      "status": "discovered"
+    },
     "5guJn9bw07E": {
       "attempts": 1,
       "completed_at": "2026-08-05T11:13:15.493880+00:00",
@@ -1145,6 +1151,12 @@
       "next_retry_at": "2026-08-09T09:05:25.216096+00:00",
       "status": "video_queued"
     },
+    "AfbuvpDCrd0": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-15T07:24:35.335635+00:00",
+      "next_retry_at": "2026-10-15T07:24:35.335635+00:00",
+      "status": "discovered"
+    },
     "Ahx_k_pwXZ8": {
       "attempts": 1,
       "first_seen_at": "2026-09-23T06:03:33.319279+00:00",
@@ -1424,6 +1436,12 @@
       "last_error": "",
       "next_retry_at": "2026-10-10T13:39:29.990521+00:00",
       "status": "video_queued"
+    },
+    "CkSlc3pMvIs": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-15T07:24:35.335635+00:00",
+      "next_retry_at": "2026-10-15T07:24:35.335635+00:00",
+      "status": "discovered"
     },
     "D0TupFuu0j0": {
       "attempts": 0,
@@ -3470,6 +3488,12 @@
       "next_retry_at": "2026-10-08T15:35:13.775616+00:00",
       "status": "discovered"
     },
+    "VXjhfVGaKyo": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-15T07:24:35.335635+00:00",
+      "next_retry_at": "2026-10-15T07:24:35.335635+00:00",
+      "status": "discovered"
+    },
     "VZJY-uvM6PM": {
       "attempts": 1,
       "completed_at": "2026-08-12T16:15:05.807765+00:00",
@@ -3656,6 +3680,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-26T15:55:27.688473+00:00",
       "status": "video_queued"
+    },
+    "X9G2_1vuXCs": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-15T07:24:35.335635+00:00",
+      "next_retry_at": "2026-10-15T07:24:35.335635+00:00",
+      "status": "discovered"
     },
     "XH_TekIIjLI": {
       "attempts": 1,
@@ -4478,6 +4508,12 @@
       "next_retry_at": "2026-09-19T01:14:29.294488+00:00",
       "status": "video_queued"
     },
+    "dNY7d4pT8do": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-15T07:24:35.335635+00:00",
+      "next_retry_at": "2026-10-15T07:24:35.335635+00:00",
+      "status": "discovered"
+    },
     "dQE0yTfSUao": {
       "attempts": 1,
       "first_seen_at": "2026-10-10T07:05:10.756227+00:00",
@@ -4691,6 +4727,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-06T08:49:02.149542+00:00",
       "status": "video_queued"
+    },
+    "fIxTkIl3Bfs": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-15T07:24:35.335635+00:00",
+      "next_retry_at": "2026-10-15T07:24:35.335635+00:00",
+      "status": "discovered"
     },
     "fNlI1mYr3N4": {
       "attempts": 0,
@@ -5318,6 +5360,12 @@
       "next_retry_at": "2026-08-21T14:01:36.721963+00:00",
       "status": "video_queued"
     },
+    "krXUluFYQoU": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-15T07:24:35.335635+00:00",
+      "next_retry_at": "2026-10-15T07:24:35.335635+00:00",
+      "status": "discovered"
+    },
     "kwgPorjDGRU": {
       "attempts": 1,
       "completed_at": "2026-10-03T16:50:29.820747+00:00",
@@ -5434,6 +5482,12 @@
       "attempts": 0,
       "first_seen_at": "2026-10-08T09:30:42.933965+00:00",
       "next_retry_at": "2026-10-08T09:30:42.933965+00:00",
+      "status": "discovered"
+    },
+    "lrdblb2Bb1s": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-15T07:24:35.335635+00:00",
+      "next_retry_at": "2026-10-15T07:24:35.335635+00:00",
       "status": "discovered"
     },
     "m6Im92kn2xA": {
@@ -5956,6 +6010,12 @@
       "next_retry_at": "2026-09-25T06:41:46.680094+00:00",
       "status": "discovered"
     },
+    "r1t9lDfPpD4": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-15T07:24:35.335635+00:00",
+      "next_retry_at": "2026-10-15T07:24:35.335635+00:00",
+      "status": "discovered"
+    },
     "r2oVfH94bnw": {
       "attempts": 0,
       "completed_at": "2026-09-19T13:06:39.092595+00:00",
@@ -5963,6 +6023,12 @@
       "last_error": "",
       "next_retry_at": "2026-09-19T13:05:26.070414+00:00",
       "status": "video_queued"
+    },
+    "r6VnnavIZ8g": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-15T07:24:35.335635+00:00",
+      "next_retry_at": "2026-10-15T07:24:35.335635+00:00",
+      "status": "discovered"
     },
     "r8L3Xv1T3Q0": {
       "attempts": 0,
@@ -6086,6 +6152,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-13T08:45:56.037883+00:00",
       "status": "video_queued"
+    },
+    "ryirzL0jOd0": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-15T07:24:35.335635+00:00",
+      "next_retry_at": "2026-10-15T07:24:35.335635+00:00",
+      "status": "discovered"
     },
     "s-h1PybIiJM": {
       "attempts": 0,
@@ -6547,6 +6619,14 @@
       "first_seen_at": "2026-09-20T09:59:03.454590+00:00",
       "next_retry_at": "2026-09-20T09:59:03.454590+00:00",
       "status": "discovered"
+    },
+    "wtUHuGP2RhQ": {
+      "attempts": 1,
+      "first_seen_at": "2026-10-15T07:24:35.335635+00:00",
+      "last_attempt_at": "2026-10-15T07:26:07.883382+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'Your project has exceeded a quota. See https://ai.dev/rate-limit to manage your rate limits.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-10-15T09:26:07.883394+00:00",
+      "status": "retry_pending"
     },
     "x2zApn1cWIY": {
       "attempts": 0,
