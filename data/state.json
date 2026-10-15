@@ -1543,6 +1543,12 @@
       "next_retry_at": "2026-08-09T09:05:25.216096+00:00",
       "status": "video_queued"
     },
+    "DsUQnFyiOBA": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-15T12:11:39.118167+00:00",
+      "next_retry_at": "2026-10-15T12:11:39.118167+00:00",
+      "status": "discovered"
+    },
     "DujrxSE3dUo": {
       "attempts": 0,
       "first_seen_at": "2026-10-13T23:17:42.642351+00:00",
@@ -1682,6 +1688,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-30T05:56:35.751402+00:00",
       "status": "video_queued"
+    },
+    "F1igZMIlRpw": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-15T12:11:39.118167+00:00",
+      "next_retry_at": "2026-10-15T12:11:39.118167+00:00",
+      "status": "discovered"
     },
     "FEin2rHW1WU": {
       "attempts": 0,
@@ -3220,6 +3232,12 @@
       "next_retry_at": "2026-09-17T12:13:13.546569+00:00",
       "status": "video_queued"
     },
+    "SgDd_VlMLUk": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-15T12:11:39.118167+00:00",
+      "next_retry_at": "2026-10-15T12:11:39.118167+00:00",
+      "status": "discovered"
+    },
     "SuKL_B7c-EQ": {
       "attempts": 0,
       "completed_at": "2026-08-17T03:15:11.065940+00:00",
@@ -3694,6 +3712,12 @@
       "last_error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry in 30s or upgrade your tier at https://ai.dev/rate-limit.', 'code': 'too_many_requests'}}",
       "next_retry_at": "2026-09-24T08:50:29.997728+00:00",
       "status": "retry_pending"
+    },
+    "XTwvmFMQars": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-15T12:11:39.118167+00:00",
+      "next_retry_at": "2026-10-15T12:11:39.118167+00:00",
+      "status": "discovered"
     },
     "X_w2f-HuU_U": {
       "attempts": 0,
@@ -4928,6 +4952,12 @@
       "next_retry_at": "2026-08-12T02:47:35.556221+00:00",
       "status": "video_queued"
     },
+    "grZ38QlnuAo": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-15T12:11:39.118167+00:00",
+      "next_retry_at": "2026-10-15T12:11:39.118167+00:00",
+      "status": "discovered"
+    },
     "grnNYrmWoa0": {
       "attempts": 1,
       "completed_at": "2026-09-08T21:28:47.903891+00:00",
@@ -5200,6 +5230,14 @@
       "last_error": "",
       "next_retry_at": "2026-08-21T07:10:39.897839+00:00",
       "status": "video_queued"
+    },
+    "iuaCEdDlKsM": {
+      "attempts": 1,
+      "first_seen_at": "2026-10-15T12:11:39.118167+00:00",
+      "last_attempt_at": "2026-10-15T12:13:12.334627+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'Your project has exceeded a quota. See https://ai.dev/rate-limit to manage your rate limits.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-10-15T14:13:12.334637+00:00",
+      "status": "retry_pending"
     },
     "ivOR3HRxa9g": {
       "attempts": 0,
