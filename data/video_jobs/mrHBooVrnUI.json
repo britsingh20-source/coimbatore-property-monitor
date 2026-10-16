@@ -1,0 +1,158 @@
+{
+  "video_id": "mrHBooVrnUI",
+  "source_url": "https://www.youtube.com/watch?v=mrHBooVrnUI",
+  "property_location": "Kannampalayam, Coimbatore, Tamil Nadu, India",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2 BHK",
+    "land_area": "2.25 Cents",
+    "built_up_area": "900 sq.ft.",
+    "price": "₹53 Lakhs",
+    "facing": "East",
+    "road_width": "30 Feet",
+    "parking": "1 Covered Car Parking Portico (10x16 ft)",
+    "approval": "DTCP Approved & Plan Approved",
+    "floors": "Single-storey with open terrace",
+    "layout_distribution": "Ground Floor: Covered parking porch (10x16 ft), main entrance, spacious living hall (16x14 ft) with false ceiling, kitchen (8x8 ft), master bedroom (10x16 ft), kids bedroom (8x8 ft), attached/common bathrooms, side setback passage, and exterior staircase leading up to the open terrace level."
+  },
+  "verified_facts": "Asking price is ₹53 Lakhs including land and building., Up to 85% bank loan facility is available., Property is DTCP approved and plan approved., Situated along 30 ft and 33 ft tar roads.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, conversational local Coimbatore property presenter speaking directly to camera with high retention pacing.",
+    "hook_strategy": "Highlight key location near major landmarks with budget-friendly independent house pricing.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை கண்ணம்பாளையம், திருச்சி ரோடு அண்ட் KITS பக்கத்துல ஒரு சூப்பரான 2 BHK Independent House விற்பனைக்கு வந்துருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin-highlight",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட Asking price லேண்ட் அண்ட் பில்டிங் சேர்த்து 53 Lakhs தான்! 85% வரைக்கும் பேங்க் லோன் வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "price-badge",
+        "purpose": "value_proposition"
+      },
+      {
+        "name": "land",
+        "voice": "இது 2.25 Cents land area-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "land-area-tag",
+        "purpose": "property_specs"
+      },
+      {
+        "name": "builtUp",
+        "voice": "900 sq.ft built-up area-ல சிங்கிள் ஸ்டோரி வீடா கட்டிருக்காங்க. உள்ள பாத்தீங்கனா ஃபால்ஸ் சீலிங் அமைஞ்ச லிவிங் ஹால், கிச்சன், மாஸ்டர் பெட்ரூம் அண்ட் கிட்ஸ் பெட்ரூம் இருக்கு.",
+        "broll": [
+          "living_room",
+          "interior",
+          "bedroom",
+          "kitchen"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "built-up-badge",
+        "purpose": "interior_tour"
+      },
+      {
+        "name": "facing",
+        "voice": "அதே மாதிரி இந்த வீடு East facing-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "compass-east",
+        "purpose": "orientation_feature"
+      },
+      {
+        "name": "road",
+        "voice": "வீட்டுக்கு முன்னாடி 30 Feet அண்ட் 33 Feet தார் ரோடு அகலம் இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "road-width-text",
+        "purpose": "accessibility"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approved அண்ட் plan approved property.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "approval-seal-overlay",
+        "purpose": "trust_building"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details தெரிஞ்சுக்கவோ, direct site visit வரவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/mrHBooVrnUI/",
+  "optional_owned_audio": "assets/audio/mrHBooVrnUI.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Kannarpalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey newly built independent house featuring a clean white and light grey exterior facade with blue accent borders, brown metallic main entry gate with patterned center, tiled parking driveway, and stainless steel handrail exterior stairs leading to the open roof terrace.. Hard floor/layout lock: Single-storey with open terrace; Ground Floor: Covered parking porch (10x16 ft), main entrance, spacious living hall (16x14 ft) with false ceiling, kitchen (8x8 ft), master bedroom (10x16 ft), kids bedroom (8x8 ft), attached/common bathrooms, side setback passage, and exterior staircase leading up to the open terrace level.. Neighbourhood: Developing residential layout in Kannampalayam near Tiruchy Road with wide 30-foot wide access roads, newly constructed individual homes, and nearby schools and colleges.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Kannarpalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey newly built independent house featuring a clean white and light grey exterior facade with blue accent borders, brown metallic main entry gate with patterned center, tiled parking driveway, and stainless steel handrail exterior stairs leading to the open roof terrace.. Hard floor/layout lock: Single-storey with open terrace; Ground Floor: Covered parking porch (10x16 ft), main entrance, spacious living hall (16x14 ft) with false ceiling, kitchen (8x8 ft), master bedroom (10x16 ft), kids bedroom (8x8 ft), attached/common bathrooms, side setback passage, and exterior staircase leading up to the open terrace level.. Neighbourhood: Developing residential layout in Kannampalayam near Tiruchy Road with wide 30-foot wide access roads, newly constructed individual homes, and nearby schools and colleges.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Kannarpalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey newly built independent house featuring a clean white and light grey exterior facade with blue accent borders, brown metallic main entry gate with patterned center, tiled parking driveway, and stainless steel handrail exterior stairs leading to the open roof terrace.. Hard floor/layout lock: Single-storey with open terrace; Ground Floor: Covered parking porch (10x16 ft), main entrance, spacious living hall (16x14 ft) with false ceiling, kitchen (8x8 ft), master bedroom (10x16 ft), kids bedroom (8x8 ft), attached/common bathrooms, side setback passage, and exterior staircase leading up to the open terrace level.. Neighbourhood: Developing residential layout in Kannampalayam near Tiruchy Road with wide 30-foot wide access roads, newly constructed individual homes, and nearby schools and colleges.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Kannarpalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey newly built independent house featuring a clean white and light grey exterior facade with blue accent borders, brown metallic main entry gate with patterned center, tiled parking driveway, and stainless steel handrail exterior stairs leading to the open roof terrace.. Hard floor/layout lock: Single-storey with open terrace; Ground Floor: Covered parking porch (10x16 ft), main entrance, spacious living hall (16x14 ft) with false ceiling, kitchen (8x8 ft), master bedroom (10x16 ft), kids bedroom (8x8 ft), attached/common bathrooms, side setback passage, and exterior staircase leading up to the open terrace level.. Neighbourhood: Developing residential layout in Kannampalayam near Tiruchy Road with wide 30-foot wide access roads, newly constructed individual homes, and nearby schools and colleges.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
