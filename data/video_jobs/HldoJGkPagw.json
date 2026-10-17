@@ -1,0 +1,144 @@
+{
+  "video_id": "HldoJGkPagw",
+  "source_url": "https://www.youtube.com/watch?v=HldoJGkPagw",
+  "property_location": "Pogalur, Annur to Mettupalayam road, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2 BHK",
+    "land_area": "3.5 Cents",
+    "built_up_area": "980 sq ft",
+    "price": "Rs. 49.5 Lakhs",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking",
+    "approval": "DTCP Approved",
+    "floors": "Single-storey",
+    "layout_distribution": "Ground Floor: Covered car parking area, spacious living room, integrated pooja unit, modular kitchen, two bedrooms with attached bathrooms, utility area, outer bathroom, set-back walkways with garden strips, and external staircase leading to the open roof terrace."
+  },
+  "verified_facts": "Property is a 2BHK North-East corner independent house located in Pogalur, along the Annur to Mettupalayam road in Coimbatore., Land area is 3.5 Cents and built-up area is listed as 980 sq ft in details, with audio narration mentioning 1050 sq ft., Price is Rs. 49.5 Lakhs (negotiable) with bank loan facility available up to 75% and Rs. 5 Lakhs down payment., House layout includes living hall (16'x16'), pooja room (4'x4'6\"), kitchen & dining (10'x8'), master bedroom (10'x16') with attached bathroom (5'6\"x5'6\"), second bedroom (11'x10') with attached bathroom (10'x4'), and an outer bathroom (4'x6').",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Conversational, relaxed local Coimbatore real estate presenter speaking directly to camera with smooth property visual cutaways.",
+    "hook_strategy": "Highlight key value proposition: 2BHK DTCP approved house on Annur to Mettupalayam road in Pogalur.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோயம்புத்தூர் அன்னூர் - மேட்டுப்பாளையம் ரோடு, போகளூர்ல 2 BHK DTCP approved தனி வீடு விற்பனைக்கு வந்திருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 3.5 Cents லேண்ட் ஏரியால அமைஞ்சிருக்க வடகிழக்கு கார்னர் property பாத்தீங்கனா.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "land-boundary-highlight",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "980 sq ft built-up area-ல spacious living room, false ceiling, modular kitchen, pooja unit, அப்புறம் attached bathroom கூட ரெண்டு bedrooms இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay-amenities",
+        "purpose": "interior_tour"
+      },
+      {
+        "name": "facing",
+        "voice": "North facing வீடு, தனி borewell, covered car parking, garden space அப்புறம் utility area-வும் கொடுத்திருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass-north-icon",
+        "purpose": "facing_and_features"
+      },
+      {
+        "name": "approval",
+        "voice": "DTCP approval இருக்குற இந்த வீட்டுக்கு 75% வரைக்கும் bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "approval-badge-graphic",
+        "purpose": "approval_and_loan"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட விலை பார்த்தீங்கனா 49.5 Lakhs, negotiable தான்.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag-pop",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "Direct site visit போகணும்னாலோ, further details வேணும்னாலோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "contact-details-slide",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/HldoJGkPagw/",
+  "optional_owned_audio": "assets/audio/HldoJGkPagw.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house with white exterior walls accented with dark brown and grey panels, front perimeter wall with dual iron entry gates, bright yellow entrance ramp, checkerboard tiled parking portico, side garden strips, and an external red staircase.. Hard floor/layout lock: Single-storey; Ground Floor: Covered car parking area, spacious living room, integrated pooja unit, modular kitchen, two bedrooms with attached bathrooms, utility area, outer bathroom, set-back walkways with garden strips, and external staircase leading to the open roof terrace.. Neighbourhood: Residential layout in Pogalur off the Annur-Mettupalayam road, situated amidst quiet green surroundings and single-family houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house with white exterior walls accented with dark brown and grey panels, front perimeter wall with dual iron entry gates, bright yellow entrance ramp, checkerboard tiled parking portico, side garden strips, and an external red staircase.. Hard floor/layout lock: Single-storey; Ground Floor: Covered car parking area, spacious living room, integrated pooja unit, modular kitchen, two bedrooms with attached bathrooms, utility area, outer bathroom, set-back walkways with garden strips, and external staircase leading to the open roof terrace.. Neighbourhood: Residential layout in Pogalur off the Annur-Mettupalayam road, situated amidst quiet green surroundings and single-family houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house with white exterior walls accented with dark brown and grey panels, front perimeter wall with dual iron entry gates, bright yellow entrance ramp, checkerboard tiled parking portico, side garden strips, and an external red staircase.. Hard floor/layout lock: Single-storey; Ground Floor: Covered car parking area, spacious living room, integrated pooja unit, modular kitchen, two bedrooms with attached bathrooms, utility area, outer bathroom, set-back walkways with garden strips, and external staircase leading to the open roof terrace.. Neighbourhood: Residential layout in Pogalur off the Annur-Mettupalayam road, situated amidst quiet green surroundings and single-family houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern house with white exterior walls accented with dark brown and grey panels, front perimeter wall with dual iron entry gates, bright yellow entrance ramp, checkerboard tiled parking portico, side garden strips, and an external red staircase.. Hard floor/layout lock: Single-storey; Ground Floor: Covered car parking area, spacious living room, integrated pooja unit, modular kitchen, two bedrooms with attached bathrooms, utility area, outer bathroom, set-back walkways with garden strips, and external staircase leading to the open roof terrace.. Neighbourhood: Residential layout in Pogalur off the Annur-Mettupalayam road, situated amidst quiet green surroundings and single-family houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
