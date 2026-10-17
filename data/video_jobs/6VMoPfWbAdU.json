@@ -1,0 +1,129 @@
+{
+  "video_id": "6VMoPfWbAdU",
+  "source_url": "https://www.youtube.com/watch?v=6VMoPfWbAdU",
+  "property_location": "Pogalur, Annur to Mettupalayam Road, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2 BHK",
+    "land_area": "3.5 Cents",
+    "built_up_area": "980 sq ft",
+    "price": "₹49.5 Lakhs",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Car Parking (14 ft x 16 ft)",
+    "approval": "DTCP Approved",
+    "floors": "single-storey with open terrace utility",
+    "layout_distribution": "Ground Floor: Covered parking (14'x16'), living hall (16'x16'), pooja room (4'x4'6\"), modular kitchen with dining area (10'x8'), first bedroom (10'x16') with attached bathroom (5'6\"x5'6\"), second bedroom (11'x10') with attached bathroom (10'x4'). Roof Level: External red-painted staircase leads to open terrace with an outer bathroom (4'x6')."
+  },
+  "verified_facts": "Land area of 3.5 cents mentioned in narration, title, and description., Built-up area of 980 sq ft mentioned in description., North facing main door and North East corner property mentioned in description and narration., Property layout consists of 2 bedrooms, 3 bathrooms (2 attached, 1 outer on terrace level), living hall, pooja room, modular kitchen, and car parking., Price listed as 49.5 Lakhs (negotiable) in description., Located in Pogalur, Annur to Mettupalayam road, Coimbatore.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, conversational local Coimbatore property tour speaking directly to camera.",
+    "hook_strategy": "Lead with prime Pogalur location along Annur-Mettupalayam Road combined with an attractive 3.5 Cents independent house offer.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore, Annur to Mettupalayam Road-ல இருக்குற Pogalur location-ல, ஒரு 2 BHK Independent House விற்பனைக்கு வந்துருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-tag",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "3.5 Cents land-ல அமைஞ்சிருக்கற இந்த வீட்டோட விலை ₹49.5 Lakhs, இது negotiable-தான்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "price-overlay",
+        "purpose": "pricing_info"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approval பெற்ற property. இதுல 14 ft x 16 ft car parking, individual borewell, மற்றும் compound wall-லாம் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "approval_and_parking"
+      },
+      {
+        "name": "builtUp",
+        "voice": "980 sq ft built-up area-ல, spacious living hall, false ceiling, pooja room, அப்புறம் modular kitchen with dining space கொடுத்திருக்காங்க.",
+        "broll": [
+          "living_room",
+          "kitchen"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "area-counter",
+        "purpose": "interior_layout"
+      },
+      {
+        "name": "facing",
+        "voice": "North facing main door இருக்கு. 2 bedrooms-லையும் attached bathrooms வருது. External staircase வழியா போனா, outer bathroom-ஓட open terrace-உம் இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "compass-pointer",
+        "purpose": "facing_and_terrace_details"
+      },
+      {
+        "name": "cta",
+        "voice": "நேரடியா வந்து பார்க்க site visit பண்ண அல்லது மேலும் details பெற உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "call-button",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/6VMoPfWbAdU/",
+  "optional_owned_audio": "assets/audio/6VMoPfWbAdU.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey structure with white and brown painted elevation, wooden-finish design accents, compound wall with integrated lawn strips, compound gate, yellow-painted driveway ramp, and external red stairs leading to open roof terrace.. Hard floor/layout lock: single-storey with open terrace utility; Ground Floor: Covered parking (14'x16'), living hall (16'x16'), pooja room (4'x4'6\"), modular kitchen with dining area (10'x8'), first bedroom (10'x16') with attached bathroom (5'6\"x5'6\"), second bedroom (11'x10') with attached bathroom (10'x4'). Roof Level: External red-painted staircase leads to open terrace with an outer bathroom (4'x6').. Neighbourhood: Semi-suburban residential setting with vacant plots, ongoing residential development, open fields, and nearby road connectivity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey structure with white and brown painted elevation, wooden-finish design accents, compound wall with integrated lawn strips, compound gate, yellow-painted driveway ramp, and external red stairs leading to open roof terrace.. Hard floor/layout lock: single-storey with open terrace utility; Ground Floor: Covered parking (14'x16'), living hall (16'x16'), pooja room (4'x4'6\"), modular kitchen with dining area (10'x8'), first bedroom (10'x16') with attached bathroom (5'6\"x5'6\"), second bedroom (11'x10') with attached bathroom (10'x4'). Roof Level: External red-painted staircase leads to open terrace with an outer bathroom (4'x6').. Neighbourhood: Semi-suburban residential setting with vacant plots, ongoing residential development, open fields, and nearby road connectivity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey structure with white and brown painted elevation, wooden-finish design accents, compound wall with integrated lawn strips, compound gate, yellow-painted driveway ramp, and external red stairs leading to open roof terrace.. Hard floor/layout lock: single-storey with open terrace utility; Ground Floor: Covered parking (14'x16'), living hall (16'x16'), pooja room (4'x4'6\"), modular kitchen with dining area (10'x8'), first bedroom (10'x16') with attached bathroom (5'6\"x5'6\"), second bedroom (11'x10') with attached bathroom (10'x4'). Roof Level: External red-painted staircase leads to open terrace with an outer bathroom (4'x6').. Neighbourhood: Semi-suburban residential setting with vacant plots, ongoing residential development, open fields, and nearby road connectivity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey structure with white and brown painted elevation, wooden-finish design accents, compound wall with integrated lawn strips, compound gate, yellow-painted driveway ramp, and external red stairs leading to open roof terrace.. Hard floor/layout lock: single-storey with open terrace utility; Ground Floor: Covered parking (14'x16'), living hall (16'x16'), pooja room (4'x4'6\"), modular kitchen with dining area (10'x8'), first bedroom (10'x16') with attached bathroom (5'6\"x5'6\"), second bedroom (11'x10') with attached bathroom (10'x4'). Roof Level: External red-painted staircase leads to open terrace with an outer bathroom (4'x6').. Neighbourhood: Semi-suburban residential setting with vacant plots, ongoing residential development, open fields, and nearby road connectivity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
