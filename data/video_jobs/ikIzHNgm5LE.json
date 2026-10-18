@@ -1,0 +1,145 @@
+{
+  "video_id": "ikIzHNgm5LE",
+  "source_url": "https://www.youtube.com/watch?v=ikIzHNgm5LE",
+  "property_location": "L&T Bypass, near Karpagam College, Malumichampatti, Coimbatore, Tamil Nadu, India",
+  "entrance_contaminated": true,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "3 BHK",
+    "land_area": "3.5 cents",
+    "built_up_area": "1890 sqft",
+    "price": "₹98 Lakhs to ₹1.40 Crores",
+    "facing": "West-facing plot, North-facing main door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking and two-wheeler parking",
+    "approval": "DTCP approved",
+    "floors": "G+1 duplex with open terrace",
+    "layout_distribution": "Ground Floor: Covered parking portico, foyer space (5x6 ft), living room (16x16 ft) with custom TV wall unit, pooja room (4x6 ft), dining hall (10x10 ft), modular kitchen (10x11 ft) with utility space (4x4 ft), outdoor service passage with cylinder enclosure and external bathroom (6x4 ft), South-West bedroom with wardrobes, dressing unit, and attached bathroom (6x6 ft).\nFirst Floor: Internal granite staircase with SS railing, landing corridor, Bedroom 2 (10x16 ft) with wardrobes, dressing unit, and attached bathroom (6x4 ft), Bedroom 3 (10x11 ft) with sliding wardrobe and attached bathroom (4x10 ft), semi-covered balcony terrace with washing machine utility setup and metal stairs to roof terrace.\nRoof Level: Open terrace area housing solar panel roof structure, inverter control panel, and elevated concrete slab with dual water tanks."
+  },
+  "verified_facts": "3BHK semi-furnished luxury villa located in a 20-unit gated community near L&T IT Park and Karpagam College, Coimbatore., Land area is 3.5 cents with a total built-up area of 1890 sqft., Ground floor contains a parking portico, foyer, living hall with TV unit, pooja room, dining hall, modular kitchen with internal utility, side passage with outer bathroom, and 1 bedroom with attached bathroom., First floor contains 2 bedrooms with attached bathrooms, and a spacious semi-covered balcony terrace area., Roof level features solar panels, inverter junction setup, and overhead water tanks., DTCP approved project with individual borewell and underground sump., Price ranges from ₹98 Lakhs to ₹1.40 Crores depending on villa size/configuration., Narration states West-facing site with North-facing main door, whereas description metadata mentions East-facing.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and authentic local real-estate presenter addressing the camera directly with short, engaging conversational sentences.",
+    "hook_strategy": "Lead directly with the premium location near L&T Bypass and Karpagam College to capture local buyers instantly.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை மளுமிச்சம்பட்டி L&T Bypass, கற்பகம் காலேஜ் பக்கத்துல ஒரு 3 BHK luxury villa பாக்கலாம் வாங்க!",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "3.5 cents site-ல 20 units கொண்ட ஒரு gated community-ல இது அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "land_details"
+      },
+      {
+        "name": "approval",
+        "voice": "இது முழுசா DTCP approved project.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust"
+      },
+      {
+        "name": "facing",
+        "voice": "பாத்தீங்கனா West-facing plot, main door North-facing-ல கொடுத்துருக்காங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "living_room"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "orientation"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1890 sqft built-up area கொண்ட G+1 duplex வீடு. Ground floor-ல living hall, pooja room, modular kitchen, ஒரு bedroom இருக்கு. First floor-ல 2 bedrooms with attached bathrooms, balcony terrace, அப்புறம் roof-ல solar panels-உம் இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "layout-highlight",
+        "purpose": "interior_tour"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price range 98 Lakhs-லிருந்து 1.40 Crores வரை வருது.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "Direct-ஆ site visit வரவோ details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/ikIzHNgm5LE/",
+  "optional_owned_audio": "assets/audio/ikIzHNgm5LE.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern villa featuring a dual-tone ivory and brown facade with geometric accent patterns, folding metal entry gate, tiled portico with marble-finish wall tiles, outer service passage, compound wall, and rooftop solar panel canopy.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Covered parking portico, foyer space (5x6 ft), living room (16x16 ft) with custom TV wall unit, pooja room (4x6 ft), dining hall (10x10 ft), modular kitchen (10x11 ft) with utility space (4x4 ft), outdoor service passage with cylinder enclosure and external bathroom (6x4 ft), South-West bedroom with wardrobes, dressing unit, and attached bathroom (6x6 ft).\nFirst Floor: Internal granite staircase with SS railing, landing corridor, Bedroom 2 (10x16 ft) with wardrobes, dressing unit, and attached bathroom (6x4 ft), Bedroom 3 (10x11 ft) with sliding wardrobe and attached bathroom (4x10 ft), semi-covered balcony terrace with washing machine utility setup and metal stairs to roof terrace.\nRoof Level: Open terrace area housing solar panel roof structure, inverter control panel, and elevated concrete slab with dual water tanks.. Neighbourhood: Rapidly growing residential corridor along L&T Bypass Road in South Coimbatore, close to major IT hubs, educational institutes, and transport connectivity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern villa featuring a dual-tone ivory and brown facade with geometric accent patterns, folding metal entry gate, tiled portico with marble-finish wall tiles, outer service passage, compound wall, and rooftop solar panel canopy.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Covered parking portico, foyer space (5x6 ft), living room (16x16 ft) with custom TV wall unit, pooja room (4x6 ft), dining hall (10x10 ft), modular kitchen (10x11 ft) with utility space (4x4 ft), outdoor service passage with cylinder enclosure and external bathroom (6x4 ft), South-West bedroom with wardrobes, dressing unit, and attached bathroom (6x6 ft).\nFirst Floor: Internal granite staircase with SS railing, landing corridor, Bedroom 2 (10x16 ft) with wardrobes, dressing unit, and attached bathroom (6x4 ft), Bedroom 3 (10x11 ft) with sliding wardrobe and attached bathroom (4x10 ft), semi-covered balcony terrace with washing machine utility setup and metal stairs to roof terrace.\nRoof Level: Open terrace area housing solar panel roof structure, inverter control panel, and elevated concrete slab with dual water tanks.. Neighbourhood: Rapidly growing residential corridor along L&T Bypass Road in South Coimbatore, close to major IT hubs, educational institutes, and transport connectivity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern villa featuring a dual-tone ivory and brown facade with geometric accent patterns, folding metal entry gate, tiled portico with marble-finish wall tiles, outer service passage, compound wall, and rooftop solar panel canopy.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Covered parking portico, foyer space (5x6 ft), living room (16x16 ft) with custom TV wall unit, pooja room (4x6 ft), dining hall (10x10 ft), modular kitchen (10x11 ft) with utility space (4x4 ft), outdoor service passage with cylinder enclosure and external bathroom (6x4 ft), South-West bedroom with wardrobes, dressing unit, and attached bathroom (6x6 ft).\nFirst Floor: Internal granite staircase with SS railing, landing corridor, Bedroom 2 (10x16 ft) with wardrobes, dressing unit, and attached bathroom (6x4 ft), Bedroom 3 (10x11 ft) with sliding wardrobe and attached bathroom (4x10 ft), semi-covered balcony terrace with washing machine utility setup and metal stairs to roof terrace.\nRoof Level: Open terrace area housing solar panel roof structure, inverter control panel, and elevated concrete slab with dual water tanks.. Neighbourhood: Rapidly growing residential corridor along L&T Bypass Road in South Coimbatore, close to major IT hubs, educational institutes, and transport connectivity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern villa featuring a dual-tone ivory and brown facade with geometric accent patterns, folding metal entry gate, tiled portico with marble-finish wall tiles, outer service passage, compound wall, and rooftop solar panel canopy.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Covered parking portico, foyer space (5x6 ft), living room (16x16 ft) with custom TV wall unit, pooja room (4x6 ft), dining hall (10x10 ft), modular kitchen (10x11 ft) with utility space (4x4 ft), outdoor service passage with cylinder enclosure and external bathroom (6x4 ft), South-West bedroom with wardrobes, dressing unit, and attached bathroom (6x6 ft).\nFirst Floor: Internal granite staircase with SS railing, landing corridor, Bedroom 2 (10x16 ft) with wardrobes, dressing unit, and attached bathroom (6x4 ft), Bedroom 3 (10x11 ft) with sliding wardrobe and attached bathroom (4x10 ft), semi-covered balcony terrace with washing machine utility setup and metal stairs to roof terrace.\nRoof Level: Open terrace area housing solar panel roof structure, inverter control panel, and elevated concrete slab with dual water tanks.. Neighbourhood: Rapidly growing residential corridor along L&T Bypass Road in South Coimbatore, close to major IT hubs, educational institutes, and transport connectivity.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
