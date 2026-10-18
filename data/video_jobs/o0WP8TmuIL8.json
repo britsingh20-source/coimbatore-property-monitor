@@ -1,0 +1,132 @@
+{
+  "video_id": "o0WP8TmuIL8",
+  "source_url": "https://www.youtube.com/watch?v=o0WP8TmuIL8",
+  "property_location": "Vinayakapuram, Sathy Road, near Prozone Mall, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "4BHK",
+    "land_area": "3.70 Cents",
+    "built_up_area": "2800 Sq.Ft",
+    "price": "₹1.90 Crore",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Portico / Car Parking",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 residence",
+    "layout_distribution": "Ground floor: Covered parking/portico, spacious living hall, modular kitchen with dining, store room, pooja room, two master bedrooms with attached bathrooms, and exterior toilet under outer staircase. First floor: External staircase leading to two independent 1BHK rental units (each with living room, kitchen, bedroom, and attached bathroom)."
+  },
+  "verified_facts": "Ground floor features a 2BHK residence with living hall (16x16 ft), modular kitchen with store and pooja room (10x16 ft), and two master bedrooms (10x16 ft each) with attached bathrooms., First floor consists of two separate 1BHK rental portions facing East., Video overlay lists built-up area as 2800 Sq.Ft while post description states 2500 Sq.Ft., Expected monthly rental income stated between ₹40,000 to ₹45,000.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking naturally to camera",
+    "hook_strategy": "Prime location near Prozone Mall combined with dual-income G+1 house layout",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Sathy Road, Prozone Mall பக்கத்துல இருக்குற Vinayakapuram location-ல ஒரு 4BHK Villa பாக்கப்போறோம்!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இதுல மொத்தமா 3.70 Cents land area இருக்கு, கூடவே Covered Car Parking portico-வும் கொடுத்திருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "land-details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "2800 Sq.Ft built-up area! Ground floor-ல spacious 2BHK, Modular Kitchen, Pooja room, Store room இருக்கு. External staircase மூலமா First floor போனா 2 தனி 1BHK portions இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "house-tour"
+      },
+      {
+        "name": "facing",
+        "voice": "இந்த property North facing பார்த்தது.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing-info"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price 1.90 Crore. பாத்தீங்கனா, இதுல இருந்து monthly 40,000 முதல் 45,000 ரூபாய் வரை rental income கிடைக்க வாய்ப்பு இருக்கு.",
+        "broll": [
+          "interior",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "value-proposition"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணவும், details தெரிஞ்சுக்கவும் உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "call-icon",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/o0WP8TmuIL8/",
+  "optional_owned_audio": "assets/audio/o0WP8TmuIL8.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey contemporary villa with beige and brown textured elevation tiles, modern metal gate, tiled car parking portico, and external tiled staircase.. Hard floor/layout lock: G+1 residence; Ground floor: Covered parking/portico, spacious living hall, modular kitchen with dining, store room, pooja room, two master bedrooms with attached bathrooms, and exterior toilet under outer staircase. First floor: External staircase leading to two independent 1BHK rental units (each with living room, kitchen, bedroom, and attached bathroom).. Neighbourhood: Developing residential locality in Vinayakapuram near Sathy Road and Prozone Mall, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey contemporary villa with beige and brown textured elevation tiles, modern metal gate, tiled car parking portico, and external tiled staircase.. Hard floor/layout lock: G+1 residence; Ground floor: Covered parking/portico, spacious living hall, modular kitchen with dining, store room, pooja room, two master bedrooms with attached bathrooms, and exterior toilet under outer staircase. First floor: External staircase leading to two independent 1BHK rental units (each with living room, kitchen, bedroom, and attached bathroom).. Neighbourhood: Developing residential locality in Vinayakapuram near Sathy Road and Prozone Mall, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey contemporary villa with beige and brown textured elevation tiles, modern metal gate, tiled car parking portico, and external tiled staircase.. Hard floor/layout lock: G+1 residence; Ground floor: Covered parking/portico, spacious living hall, modular kitchen with dining, store room, pooja room, two master bedrooms with attached bathrooms, and exterior toilet under outer staircase. First floor: External staircase leading to two independent 1BHK rental units (each with living room, kitchen, bedroom, and attached bathroom).. Neighbourhood: Developing residential locality in Vinayakapuram near Sathy Road and Prozone Mall, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey contemporary villa with beige and brown textured elevation tiles, modern metal gate, tiled car parking portico, and external tiled staircase.. Hard floor/layout lock: G+1 residence; Ground floor: Covered parking/portico, spacious living hall, modular kitchen with dining, store room, pooja room, two master bedrooms with attached bathrooms, and exterior toilet under outer staircase. First floor: External staircase leading to two independent 1BHK rental units (each with living room, kitchen, bedroom, and attached bathroom).. Neighbourhood: Developing residential locality in Vinayakapuram near Sathy Road and Prozone Mall, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

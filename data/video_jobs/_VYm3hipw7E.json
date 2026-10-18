@@ -1,0 +1,131 @@
+{
+  "video_id": "_VYm3hipw7E",
+  "source_url": "https://www.youtube.com/watch?v=_VYm3hipw7E",
+  "property_location": "Vadamadurai, Coimbatore, Tamil Nadu, India",
+  "entrance_contaminated": true,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "3 BHK",
+    "land_area": "4.50 Cents (43 ft x 45 ft)",
+    "built_up_area": "3500 sq ft",
+    "price": "₹2.15 Crore (Negotiable)",
+    "facing": "North East Corner",
+    "road_width": "NOT SPECIFIED",
+    "parking": "2 Covered Car Parking",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex with open terrace utility",
+    "layout_distribution": "Ground Floor: Covered car parking (20' x 16'), double-height living hall (17' x 16'), pooja room (6' x 4'), island kitchen & dining area (16' x 22'), master bedroom 1 (11' x 16') with attached bathroom (6' x 8'), outer toilet (6' x 4'), and side setback utility area. First Floor: Upper lounge/lobby (16' x 6'), master bedroom 2 (16' x 17') with dressing room (6' x 5.5') and attached bathroom (10' x 6'), master bedroom 3 (16' x 16') with dressing room (6' x 5.5') and attached bathroom (10' x 6'), and front balcony (20' x 11'). Roof Level: Staircase headroom and open terrace with overhead water tank structures."
+  },
+  "verified_facts": "Land area is 4.50 cents with plot dimensions 43 ft x 45 ft., Built-up area is 3,500 sq ft across ground and first floor duplex layout., Quoted price is ₹2.15 Crore negotiable., Located at Vadamadurai near Thudiyalur on Coimbatore-Mettupalayam Road., Ground floor includes 20'x16' car parking, 17'x16' high-ceiling living hall, 6'x4' pooja room, 16'x22' kitchen cum dining, 11'x16' master bedroom with 6'x8' attached bathroom, and 6'x4' outer toilet., First floor includes 16'x6' lounge, 16'x17' master bedroom 2 with 6'x5.5' dressing room and 10'x6' bathroom, 16'x16' master bedroom 3 with 6'x5.5' dressing room and 10'x6' bathroom, and a 20'x11' front balcony.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and engaging local property presenter speaking directly to camera, using casual spoken Tamil with standard English real estate terms mixed naturally.",
+    "hook_strategy": "Highlighting a 3,500 sq ft 3 BHK villa with a 22 ft double-height ceiling in Vadamadurai near Thudiyalur right at the start.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Vadamadurai-ல Thudiyalur Mettupalayam Road பக்கத்துல அமைஞ்சிருக்கிற ஒரு பிரம்மாண்டமான 3 BHK Villa தான் இது.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இது 3500 sq ft built-up area கொண்ட G+1 duplex home. உள்ள பாத்தீங்கனா 22 ft double-height ceiling living room மற்றும் modular island kitchen இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay-3500sqft",
+        "purpose": "key_features"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 4.50 Cents land area, plot dimension 43 ft x 45 ft. Spacious-ஆ 2 covered car parking கொடுத்திருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "dimension-callout",
+        "purpose": "property_specs"
+      },
+      {
+        "name": "facing",
+        "voice": "இந்த வீடோட facing North East Corner. Ground floor-ல ஒரு master bedroom, first floor-ல dressing room கூட 2 master bedrooms இருக்கு.",
+        "broll": [
+          "exterior",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "compass-north-east",
+        "purpose": "layout_details"
+      },
+      {
+        "name": "price",
+        "voice": "இதுல glass railing balcony, open roof terrace-னு எல்லாமே சிறப்பாக பண்ணிருக்காங்க. இதோட price 2.15 Crore negotiable.",
+        "broll": [
+          "interior",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணவோ, மேலும் details அறியவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "phone-number",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/_VYm3hipw7E/",
+  "optional_owned_audio": "assets/audio/_VYm3hipw7E.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary duplex corner villa featuring dual-side elevations in off-white and charcoal grey tones, teak wood finish main gate, glass balcony railings, covered parking portico, and paved peripheral walkways.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking (20' x 16'), double-height living hall (17' x 16'), pooja room (6' x 4'), island kitchen & dining area (16' x 22'), master bedroom 1 (11' x 16') with attached bathroom (6' x 8'), outer toilet (6' x 4'), and side setback utility area. First Floor: Upper lounge/lobby (16' x 6'), master bedroom 2 (16' x 17') with dressing room (6' x 5.5') and attached bathroom (10' x 6'), master bedroom 3 (16' x 16') with dressing room (6' x 5.5') and attached bathroom (10' x 6'), and front balcony (20' x 11'). Roof Level: Staircase headroom and open terrace with overhead water tank structures.. Neighbourhood: Quiet, green residential area in Vadamadurai, Coimbatore North, surrounded by coconut plantations, independent houses, and good connectivity to Mettupalayam Road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary duplex corner villa featuring dual-side elevations in off-white and charcoal grey tones, teak wood finish main gate, glass balcony railings, covered parking portico, and paved peripheral walkways.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking (20' x 16'), double-height living hall (17' x 16'), pooja room (6' x 4'), island kitchen & dining area (16' x 22'), master bedroom 1 (11' x 16') with attached bathroom (6' x 8'), outer toilet (6' x 4'), and side setback utility area. First Floor: Upper lounge/lobby (16' x 6'), master bedroom 2 (16' x 17') with dressing room (6' x 5.5') and attached bathroom (10' x 6'), master bedroom 3 (16' x 16') with dressing room (6' x 5.5') and attached bathroom (10' x 6'), and front balcony (20' x 11'). Roof Level: Staircase headroom and open terrace with overhead water tank structures.. Neighbourhood: Quiet, green residential area in Vadamadurai, Coimbatore North, surrounded by coconut plantations, independent houses, and good connectivity to Mettupalayam Road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary duplex corner villa featuring dual-side elevations in off-white and charcoal grey tones, teak wood finish main gate, glass balcony railings, covered parking portico, and paved peripheral walkways.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking (20' x 16'), double-height living hall (17' x 16'), pooja room (6' x 4'), island kitchen & dining area (16' x 22'), master bedroom 1 (11' x 16') with attached bathroom (6' x 8'), outer toilet (6' x 4'), and side setback utility area. First Floor: Upper lounge/lobby (16' x 6'), master bedroom 2 (16' x 17') with dressing room (6' x 5.5') and attached bathroom (10' x 6'), master bedroom 3 (16' x 16') with dressing room (6' x 5.5') and attached bathroom (10' x 6'), and front balcony (20' x 11'). Roof Level: Staircase headroom and open terrace with overhead water tank structures.. Neighbourhood: Quiet, green residential area in Vadamadurai, Coimbatore North, surrounded by coconut plantations, independent houses, and good connectivity to Mettupalayam Road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary duplex corner villa featuring dual-side elevations in off-white and charcoal grey tones, teak wood finish main gate, glass balcony railings, covered parking portico, and paved peripheral walkways.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking (20' x 16'), double-height living hall (17' x 16'), pooja room (6' x 4'), island kitchen & dining area (16' x 22'), master bedroom 1 (11' x 16') with attached bathroom (6' x 8'), outer toilet (6' x 4'), and side setback utility area. First Floor: Upper lounge/lobby (16' x 6'), master bedroom 2 (16' x 17') with dressing room (6' x 5.5') and attached bathroom (10' x 6'), master bedroom 3 (16' x 16') with dressing room (6' x 5.5') and attached bathroom (10' x 6'), and front balcony (20' x 11'). Roof Level: Staircase headroom and open terrace with overhead water tank structures.. Neighbourhood: Quiet, green residential area in Vadamadurai, Coimbatore North, surrounded by coconut plantations, independent houses, and good connectivity to Mettupalayam Road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
