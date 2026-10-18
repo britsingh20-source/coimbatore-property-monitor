@@ -1,0 +1,134 @@
+{
+  "video_id": "CCjcoJB_VGc",
+  "source_url": "https://www.youtube.com/watch?v=CCjcoJB_VGc",
+  "property_location": "Malumichampatti, Coimbatore, Tamil Nadu, India",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "3 BHK",
+    "land_area": "3.5 cents",
+    "built_up_area": "1890 sq ft",
+    "price": "Rs. 98 Lakhs - 1.40 Crore",
+    "facing": "East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car and two-wheeler parking",
+    "approval": "DTCP approved",
+    "floors": "G+1 duplex with open terrace",
+    "layout_distribution": "Ground Floor: Covered parking (16x17 ft), foyer, living hall (16x16 ft) with TV unit, under-stair storage, pooja room (4x6 ft), dining area (10x10 ft), kitchen (10x11 ft) with utility, rear setback utility area with outer Indian toilet, and Bedroom 1 (10x16 ft) with attached bathroom (4x6 ft). First Floor: Staircase passage, Bedroom 2 with attached bathroom (4x6 ft), Bedroom 3 with attached bathroom (10x5 ft), and covered balcony area. Roof Level: Open terrace with water tanks and solar panels."
+  },
+  "verified_facts": "Narration mentions 1900 sq ft built-up area while text description specifies 1890 sq ft., Narration states main door faces North ('vadakku paatha maadhiri'), whereas description lists East facing main door., Community consists of a 20-villa gated project near L&T Bypass Road and Karpagam College., Ground floor includes parking, living hall, dining, kitchen, utility, pooja room, rear outer Indian toilet, and 1 bedroom with attached bathroom., First floor includes 2 bedrooms with attached bathrooms, passage, and a spacious covered balcony., Terrace level features open terrace space, water storage tanks, and solar panels.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking naturally to camera, highlighting key features with smooth dynamic text overlays.",
+    "hook_strategy": "Lead directly with the location in Malumichampatti near L&T Bypass and Karpagam College, showcasing a ready-to-move gated community duplex villa.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை மளுமிச்சம்பட்டில, L&T Bypass Road மற்றும் Karpagam College பக்கத்துல இருக்குற ஒரு அழகான Gated Community-ல தான் இந்த Villa இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-text-pop",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இது 3.5 cent நிலத்துல 1890 sq ft built-up area கொண்ட G+1 duplex 3 BHK villa. Ground floor-ல living hall, modular kitchen, pooja room, அப்புறம் ஒரு bedroom இருக்கு. First floor-ல 2 bedrooms மற்றும் balcony கொடுத்திருக்காங்க.",
+        "broll": [
+          "living_room",
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "exterior"
+        ],
+        "vfx": "floorplan-highlight",
+        "purpose": "feature_walkthrough"
+      },
+      {
+        "name": "facing",
+        "voice": "பாத்தீங்கனா இது East facing property. இதுல covered car parking, individual borewell, water sump, solar panels-னு எல்லாமே ready-யா இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "compass-badge",
+        "purpose": "specifications"
+      },
+      {
+        "name": "approval",
+        "voice": "20 villas கொண்ட இந்த gated community முழுசா DTCP approval பெற்றது.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "approval-seal",
+        "purpose": "trust_factor"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price 98 Lakhs-லிருந்து 1.40 Crore வரை வருது.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag-animation",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ண அல்லது மேலும் details தெரிஞ்சுக்க உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "kitchen"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/CCjcoJB_VGc/",
+  "optional_owned_audio": "assets/audio/CCjcoJB_VGc.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone G+1 villa with grey, beige, and wood-patterned exterior walls, metal folding gate, tiled portico parking, upper-level covered balcony with protective roofing, and open rooftop terrace.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Covered parking (16x17 ft), foyer, living hall (16x16 ft) with TV unit, under-stair storage, pooja room (4x6 ft), dining area (10x10 ft), kitchen (10x11 ft) with utility, rear setback utility area with outer Indian toilet, and Bedroom 1 (10x16 ft) with attached bathroom (4x6 ft). First Floor: Staircase passage, Bedroom 2 with attached bathroom (4x6 ft), Bedroom 3 with attached bathroom (10x5 ft), and covered balcony area. Roof Level: Open terrace with water tanks and solar panels.. Neighbourhood: Newly developed gated enclave situated in a quiet residential area close to L&T IT Park, educational institutions, and L&T Bypass Road in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone G+1 villa with grey, beige, and wood-patterned exterior walls, metal folding gate, tiled portico parking, upper-level covered balcony with protective roofing, and open rooftop terrace.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Covered parking (16x17 ft), foyer, living hall (16x16 ft) with TV unit, under-stair storage, pooja room (4x6 ft), dining area (10x10 ft), kitchen (10x11 ft) with utility, rear setback utility area with outer Indian toilet, and Bedroom 1 (10x16 ft) with attached bathroom (4x6 ft). First Floor: Staircase passage, Bedroom 2 with attached bathroom (4x6 ft), Bedroom 3 with attached bathroom (10x5 ft), and covered balcony area. Roof Level: Open terrace with water tanks and solar panels.. Neighbourhood: Newly developed gated enclave situated in a quiet residential area close to L&T IT Park, educational institutions, and L&T Bypass Road in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone G+1 villa with grey, beige, and wood-patterned exterior walls, metal folding gate, tiled portico parking, upper-level covered balcony with protective roofing, and open rooftop terrace.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Covered parking (16x17 ft), foyer, living hall (16x16 ft) with TV unit, under-stair storage, pooja room (4x6 ft), dining area (10x10 ft), kitchen (10x11 ft) with utility, rear setback utility area with outer Indian toilet, and Bedroom 1 (10x16 ft) with attached bathroom (4x6 ft). First Floor: Staircase passage, Bedroom 2 with attached bathroom (4x6 ft), Bedroom 3 with attached bathroom (10x5 ft), and covered balcony area. Roof Level: Open terrace with water tanks and solar panels.. Neighbourhood: Newly developed gated enclave situated in a quiet residential area close to L&T IT Park, educational institutions, and L&T Bypass Road in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone G+1 villa with grey, beige, and wood-patterned exterior walls, metal folding gate, tiled portico parking, upper-level covered balcony with protective roofing, and open rooftop terrace.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Covered parking (16x17 ft), foyer, living hall (16x16 ft) with TV unit, under-stair storage, pooja room (4x6 ft), dining area (10x10 ft), kitchen (10x11 ft) with utility, rear setback utility area with outer Indian toilet, and Bedroom 1 (10x16 ft) with attached bathroom (4x6 ft). First Floor: Staircase passage, Bedroom 2 with attached bathroom (4x6 ft), Bedroom 3 with attached bathroom (10x5 ft), and covered balcony area. Roof Level: Open terrace with water tanks and solar panels.. Neighbourhood: Newly developed gated enclave situated in a quiet residential area close to L&T IT Park, educational institutions, and L&T Bypass Road in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

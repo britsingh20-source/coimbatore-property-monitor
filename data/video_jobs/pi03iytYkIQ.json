@@ -1,0 +1,149 @@
+{
+  "video_id": "pi03iytYkIQ",
+  "source_url": "https://www.youtube.com/watch?v=pi03iytYkIQ",
+  "property_location": "Madhampatti, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "13 Acres (Plots available from 1.5 Cents to 5.5 Cents)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹12.5 Lakhs onwards",
+    "facing": "North, East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved",
+    "floors": "NOT SPECIFIED",
+    "layout_distribution": "NOT SPECIFIED"
+  },
+  "verified_facts": "Project name is 'Riverside', spanning 13 acres., Contains 264 to 275 DTCP-approved plot divisions., Plots available in sizes including 1.5, 2.5, 3.5, 4.5, and 5.5 cents., Located 1.5 km from Western Ring Road and 5 minutes from Vadavalli., Optional 2 BHK house construction package available starting from ₹55 Lakhs., Over 25 houses are currently under construction within the layout.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking naturally to camera with mixed English real-estate terms.",
+    "hook_strategy": "Highlighting key location connectivity near Vadavalli as the primary selling point.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோயம்புத்தூர் Madhampatti-ல, Vadavalli-ல இருந்து அஞ்சே நிமிஷத்துல இருக்குற ஒரு prime location பாக்கப்போறோம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 13 acres-ல அமைஞ்ச 'Riverside' layout. 1.5 Cents-ல இருந்து 5.5 Cents வரைக்கும் plots இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "overview"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approved layout. இங்க turf, children's park, water tank, compound wall, solar street lights வசதி இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "badge",
+        "purpose": "credibility"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல North மற்றும் East facing plots பாக்கலாம். பாத்தீங்கனா, 25-க்கும் மேற்பட்ட வீடுகள் இப்பவே கட்டப்பட்டு வருது.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "compass",
+        "purpose": "feature"
+      },
+      {
+        "name": "road",
+        "voice": "அதே மாதிரி, Western Ring Road-ல இருந்து வெறும் 1.5 KM தொலைவுல தார் ரோடு வசதியோட அமைஞ்சிருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "accessibility"
+      },
+      {
+        "name": "price",
+        "voice": "plots விலை 12.5 Lakhs onwards. விருப்பப்பட்டா 2 BHK house construction package 55 Lakhs-ல இருந்தும் பண்ணி தராங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "value"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details அறியவும், site visit வரவும் உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "call-button",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/pi03iytYkIQ/",
+  "optional_owned_audio": "assets/audio/pi03iytYkIQ.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed gated plot layout featuring wide internal asphalt roads with black-and-white curb painting, street trees, streetlights, boundary compound walls, and scenic views of surrounding hills and greenery.. Neighbourhood: A rapidly developing suburban residential locality in Madhampatti near the Western Ring Road, offering quick connectivity to Vadavalli, Thondamuthur, and central Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed gated plot layout featuring wide internal asphalt roads with black-and-white curb painting, street trees, streetlights, boundary compound walls, and scenic views of surrounding hills and greenery.. Neighbourhood: A rapidly developing suburban residential locality in Madhampatti near the Western Ring Road, offering quick connectivity to Vadavalli, Thondamuthur, and central Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed gated plot layout featuring wide internal asphalt roads with black-and-white curb painting, street trees, streetlights, boundary compound walls, and scenic views of surrounding hills and greenery.. Neighbourhood: A rapidly developing suburban residential locality in Madhampatti near the Western Ring Road, offering quick connectivity to Vadavalli, Thondamuthur, and central Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed gated plot layout featuring wide internal asphalt roads with black-and-white curb painting, street trees, streetlights, boundary compound walls, and scenic views of surrounding hills and greenery.. Neighbourhood: A rapidly developing suburban residential locality in Madhampatti near the Western Ring Road, offering quick connectivity to Vadavalli, Thondamuthur, and central Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
