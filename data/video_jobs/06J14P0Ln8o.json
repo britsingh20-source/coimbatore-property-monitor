@@ -1,0 +1,150 @@
+{
+  "video_id": "06J14P0Ln8o",
+  "source_url": "https://www.youtube.com/watch?v=06J14P0Ln8o",
+  "property_location": "Saravanampatti, Coimbatore, Tamil Nadu, India",
+  "entrance_contaminated": true,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "3 BHK",
+    "land_area": "3.75 Cents",
+    "built_up_area": "2900 sq ft",
+    "price": "₹1.98 Crore",
+    "facing": "East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking (16' x 20')",
+    "approval": "DTCP approved",
+    "floors": "G+1 duplex with open terrace utility",
+    "layout_distribution": "Ground Floor: Covered car parking portico, foyer, living hall, pooja room, kitchen & dining room, 1 bedroom with dressing area and attached bathroom, plus 1 outer bathroom. First Floor: Upper living lounge, 2 bedrooms with dressing areas and attached bathrooms, and a large front balcony. Roof Level: Open roof terrace with gazebo, utility area, and water tank."
+  },
+  "verified_facts": "Land area is 3.75 Cents, Build-up area is 2900 sqft, Price listed as 1.98 Cr (negotiable) with 75% bank loan available, DTCP approved site, East facing site and East facing main door, Individual borewell present, Ground Floor includes car parking, foyer, living hall, pooja room, kitchen & dining, 1 bedroom with attached bathroom, and 1 outer bathroom, First Floor includes living hall, 2 bedrooms with attached bathrooms, and a balcony",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, conversational Tamil property walkthrough with local reel presenter vibe",
+    "hook_strategy": "Lead with prime Saravanampatti location combined with generous 2900 sq ft built-up area teaser",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோயம்புத்தூர் சரவணம்பட்டியில 2900 sq ft built-up area-ல அமைஞ்ச ஒரு அழகான 3 BHK duplex villa தான் பாக்கப்போறோம்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "3.75 Cents land area-ல, 16 by 20 covered car parking மற்றும் individual borewell வசதியோட இந்த வீடு அமைச்சிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "text-overlay-land-details",
+        "purpose": "property_land_facts"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், இது East facing site, அத்தோட main door-ம் East facing-ல தான் வருது.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "G+1 layout-ல Ground floor-ல living, pooja room, kitchen மற்றும் 1 bedroom இருக்கு. First floor-ல lounge area, 2 bedrooms, balcony இருக்கு. Roof level-ல gazebo & utility area-வும் வருது.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "exterior"
+        ],
+        "vfx": "layout-text-highlights",
+        "purpose": "floor_plan_overview"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approved site, 75% bank loan facility-யும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "legal_approval_info"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price பாத்தீங்கனா 1.98 Crore, negotiable.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag-overlay",
+        "purpose": "pricing_info"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details மற்றும் நேர்ல site visit பண்ண உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "call-to-action-overlay",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/06J14P0Ln8o/",
+  "optional_owned_audio": "assets/audio/06J14P0Ln8o.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary two-storey villa facade with neutral grey and cream tones, decorative vertical slats, glass balcony railings, paved car porch, and gated entrance.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking portico, foyer, living hall, pooja room, kitchen & dining room, 1 bedroom with dressing area and attached bathroom, plus 1 outer bathroom. First Floor: Upper living lounge, 2 bedrooms with dressing areas and attached bathrooms, and a large front balcony. Roof Level: Open roof terrace with gazebo, utility area, and water tank.. Neighbourhood: Suburban residential layout in Saravanampatti, Coimbatore, with nearby residential houses and paved access streets.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary two-storey villa facade with neutral grey and cream tones, decorative vertical slats, glass balcony railings, paved car porch, and gated entrance.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking portico, foyer, living hall, pooja room, kitchen & dining room, 1 bedroom with dressing area and attached bathroom, plus 1 outer bathroom. First Floor: Upper living lounge, 2 bedrooms with dressing areas and attached bathrooms, and a large front balcony. Roof Level: Open roof terrace with gazebo, utility area, and water tank.. Neighbourhood: Suburban residential layout in Saravanampatti, Coimbatore, with nearby residential houses and paved access streets.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary two-storey villa facade with neutral grey and cream tones, decorative vertical slats, glass balcony railings, paved car porch, and gated entrance.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking portico, foyer, living hall, pooja room, kitchen & dining room, 1 bedroom with dressing area and attached bathroom, plus 1 outer bathroom. First Floor: Upper living lounge, 2 bedrooms with dressing areas and attached bathrooms, and a large front balcony. Roof Level: Open roof terrace with gazebo, utility area, and water tank.. Neighbourhood: Suburban residential layout in Saravanampatti, Coimbatore, with nearby residential houses and paved access streets.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern contemporary two-storey villa facade with neutral grey and cream tones, decorative vertical slats, glass balcony railings, paved car porch, and gated entrance.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking portico, foyer, living hall, pooja room, kitchen & dining room, 1 bedroom with dressing area and attached bathroom, plus 1 outer bathroom. First Floor: Upper living lounge, 2 bedrooms with dressing areas and attached bathrooms, and a large front balcony. Roof Level: Open roof terrace with gazebo, utility area, and water tank.. Neighbourhood: Suburban residential layout in Saravanampatti, Coimbatore, with nearby residential houses and paved access streets.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
