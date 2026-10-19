@@ -1,0 +1,156 @@
+{
+  "video_id": "QZDuHGF-_T0",
+  "source_url": "https://www.youtube.com/watch?v=QZDuHGF-_T0",
+  "property_location": "Vaiyampalayam, near Kovilpalayam, Coimbatore (Near Saravanampatti IT Park)",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2 BHK",
+    "land_area": "2.5 Cents",
+    "built_up_area": "1282 sqft",
+    "price": "₹68 Lakhs",
+    "facing": "North",
+    "road_width": "40 feet",
+    "parking": "Covered car and two-wheeler parking (20'0\" x 15'0\")",
+    "approval": "DTCP Approved",
+    "floors": "G+1 duplex with open terrace utility",
+    "layout_distribution": "Ground Floor: Covered parking space, external toilet/bathroom, 16'x16'6\" living hall with false ceiling and TV unit, pooja cabinet, modular kitchen (8'x11'), and master bedroom (16'x8') with attached bathroom (5'x8'). First Floor: Internal staircase leading to family living space (8'x11'), second bedroom (10'x16') with wardrobes/dressing unit and attached bathroom (8'x6'), leading out to open terrace and balcony."
+  },
+  "verified_facts": "Land area is 2.5 Cents., Built-up area is 1282 sq. ft., Quoted price is ₹68 Lakhs (negotiable)., Location is within ~10 minutes drive from Saravanampatti IT Park., Property faces North with a North-facing main door., Road width in front of the house is 40 feet., DTCP approved site with 75% bank loan facility available., Ground floor layout includes 20'x15' car parking, external toilet (5'x3'), 16'x16'6\" living hall, 8'x11' modular kitchen, and 16'x8' bedroom with attached 5'x8' bathroom.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and authentic local Tamil presenter speaking directly to camera with natural conversational flow",
+    "hook_strategy": "Highlight key location proximity to Saravanampatti IT Park paired with a modern G+1 duplex home",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "சரவணம்பட்டி IT பார்க் பக்கத்துல, வையாம்பாளையத்துல ஒரு அழகான 2 BHK G+1 டியூப்ளக்ஸ் வீடு பாக்கப்போறோம்!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-tag",
+        "purpose": "hook"
+      },
+      {
+        "name": "road",
+        "voice": "வீட்டுக்கு முன்னாடி நல்ல விசாலமான 40 feet road வசதி இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "text-overlay-road-width",
+        "purpose": "context"
+      },
+      {
+        "name": "land",
+        "voice": "இது 2.5 Cents land area-ல அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "area-highlight",
+        "purpose": "details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "மொத்தம் 1282 sqft built-up area. Ground floor-ல false ceiling பண்ணின living hall, modular kitchen, அப்புறம் master bedroom இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "floor-plan-popup",
+        "purpose": "feature_walkthrough"
+      },
+      {
+        "name": "facing",
+        "voice": "இந்த வீடு North facing, main door-உம் North facing தான்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass-north",
+        "purpose": "specification"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approved property, 75% bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட price 68 Lakhs, negotiable.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல site visit பண்ணவோ, details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "call-button-animation",
+        "purpose": "action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/QZDuHGF-_T0/",
+  "optional_owned_audio": "assets/audio/QZDuHGF-_T0.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary G+1 duplex facade finished in beige and grey plaster, featuring an ornamental tree motif relief panel, dark brown metal sliding entrance gate, tiled sloped vehicular ramp, and a grey waterproofed open terrace on the upper level.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered parking space, external toilet/bathroom, 16'x16'6\" living hall with false ceiling and TV unit, pooja cabinet, modular kitchen (8'x11'), and master bedroom (16'x8') with attached bathroom (5'x8'). First Floor: Internal staircase leading to family living space (8'x11'), second bedroom (10'x16') with wardrobes/dressing unit and attached bathroom (8'x6'), leading out to open terrace and balcony.. Neighbourhood: Well-developed residential neighborhood on a 40-foot wide asphalt road surrounded by newly constructed independent houses and villas near Saravanampatti IT Park.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary G+1 duplex facade finished in beige and grey plaster, featuring an ornamental tree motif relief panel, dark brown metal sliding entrance gate, tiled sloped vehicular ramp, and a grey waterproofed open terrace on the upper level.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered parking space, external toilet/bathroom, 16'x16'6\" living hall with false ceiling and TV unit, pooja cabinet, modular kitchen (8'x11'), and master bedroom (16'x8') with attached bathroom (5'x8'). First Floor: Internal staircase leading to family living space (8'x11'), second bedroom (10'x16') with wardrobes/dressing unit and attached bathroom (8'x6'), leading out to open terrace and balcony.. Neighbourhood: Well-developed residential neighborhood on a 40-foot wide asphalt road surrounded by newly constructed independent houses and villas near Saravanampatti IT Park.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary G+1 duplex facade finished in beige and grey plaster, featuring an ornamental tree motif relief panel, dark brown metal sliding entrance gate, tiled sloped vehicular ramp, and a grey waterproofed open terrace on the upper level.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered parking space, external toilet/bathroom, 16'x16'6\" living hall with false ceiling and TV unit, pooja cabinet, modular kitchen (8'x11'), and master bedroom (16'x8') with attached bathroom (5'x8'). First Floor: Internal staircase leading to family living space (8'x11'), second bedroom (10'x16') with wardrobes/dressing unit and attached bathroom (8'x6'), leading out to open terrace and balcony.. Neighbourhood: Well-developed residential neighborhood on a 40-foot wide asphalt road surrounded by newly constructed independent houses and villas near Saravanampatti IT Park.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary G+1 duplex facade finished in beige and grey plaster, featuring an ornamental tree motif relief panel, dark brown metal sliding entrance gate, tiled sloped vehicular ramp, and a grey waterproofed open terrace on the upper level.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered parking space, external toilet/bathroom, 16'x16'6\" living hall with false ceiling and TV unit, pooja cabinet, modular kitchen (8'x11'), and master bedroom (16'x8') with attached bathroom (5'x8'). First Floor: Internal staircase leading to family living space (8'x11'), second bedroom (10'x16') with wardrobes/dressing unit and attached bathroom (8'x6'), leading out to open terrace and balcony.. Neighbourhood: Well-developed residential neighborhood on a 40-foot wide asphalt road surrounded by newly constructed independent houses and villas near Saravanampatti IT Park.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
