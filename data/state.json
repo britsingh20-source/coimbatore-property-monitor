@@ -676,6 +676,12 @@
       "next_retry_at": "2026-10-19T01:15:02.352053+00:00",
       "status": "discovered"
     },
+    "5PyEDiaynQg": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-19T23:39:10.451623+00:00",
+      "next_retry_at": "2026-10-19T23:39:10.451623+00:00",
+      "status": "discovered"
+    },
     "5RQ3nmd63GU": {
       "attempts": 3,
       "completed_at": "2026-09-13T02:52:54.764594+00:00",
@@ -3456,6 +3462,12 @@
       "next_retry_at": "2026-09-26T19:56:13.956592+00:00",
       "status": "video_queued"
     },
+    "SZH8p6tv_jw": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-19T23:39:10.451623+00:00",
+      "next_retry_at": "2026-10-19T23:39:10.451623+00:00",
+      "status": "discovered"
+    },
     "S_NnYorPyM0": {
       "attempts": 0,
       "completed_at": "2026-08-25T13:21:49.991289+00:00",
@@ -5079,6 +5091,14 @@
       "next_retry_at": "2026-10-18T09:36:07.522128+00:00",
       "status": "discovered"
     },
+    "ezi--73CNAQ": {
+      "attempts": 1,
+      "first_seen_at": "2026-10-19T23:39:10.451623+00:00",
+      "last_attempt_at": "2026-10-19T23:40:44.029812+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry in 7h19m16s or upgrade your tier at https://ai.dev/rate-limit.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-10-20T01:40:44.029826+00:00",
+      "status": "retry_pending"
+    },
     "f0kRIkem9vU": {
       "attempts": 0,
       "completed_at": "2026-08-12T08:45:08.811796+00:00",
@@ -6305,6 +6325,12 @@
       "last_error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry later or upgrade your tier at https://ai.dev/rate-limit.', 'code': 'too_many_requests'}}",
       "next_retry_at": "2026-09-21T03:43:59.353188+00:00",
       "status": "retry_pending"
+    },
+    "p8hC1s7t4Vw": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-19T23:39:10.451623+00:00",
+      "next_retry_at": "2026-10-19T23:39:10.451623+00:00",
+      "status": "discovered"
     },
     "pBRcvirgaog": {
       "attempts": 0,
