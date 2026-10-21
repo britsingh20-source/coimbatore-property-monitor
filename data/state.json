@@ -3743,6 +3743,14 @@
       "next_retry_at": "2026-09-08T14:36:35.923114+00:00",
       "status": "video_queued"
     },
+    "UiyznASties": {
+      "attempts": 1,
+      "first_seen_at": "2026-10-21T06:36:39.083072+00:00",
+      "last_attempt_at": "2026-10-21T07:01:00.352645+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'Your project has exceeded a quota. See https://ai.dev/rate-limit to manage your rate limits.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-10-21T09:01:00.352655+00:00",
+      "status": "retry_pending"
+    },
     "UklOHmDiu8A": {
       "attempts": 1,
       "completed_at": "2026-09-16T23:17:16.357351+00:00",
@@ -4055,6 +4063,14 @@
       "next_retry_at": "2026-09-24T08:50:29.997728+00:00",
       "status": "retry_pending"
     },
+    "XNGqpjea_Rs": {
+      "attempts": 0,
+      "completed_at": "2026-10-21T06:37:04.314093+00:00",
+      "first_seen_at": "2026-10-21T06:36:39.083072+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-10-21T06:36:39.083072+00:00",
+      "status": "video_queued"
+    },
     "XRqqzvKsrn4": {
       "attempts": 0,
       "first_seen_at": "2026-10-16T19:56:56.604238+00:00",
@@ -4346,6 +4362,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-25T08:01:18.323923+00:00",
       "status": "video_queued"
+    },
+    "ZdCI0Zbbwpo": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-21T06:36:39.083072+00:00",
+      "next_retry_at": "2026-10-21T06:36:39.083072+00:00",
+      "status": "discovered"
     },
     "ZemeaBcOlUk": {
       "attempts": 0,
@@ -6843,6 +6865,12 @@
       "last_error": "",
       "next_retry_at": "2026-09-04T15:10:02.436664+00:00",
       "status": "archived_non_target"
+    },
+    "sYERNA7OTlA": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-21T06:36:39.083072+00:00",
+      "next_retry_at": "2026-10-21T06:36:39.083072+00:00",
+      "status": "discovered"
     },
     "soHixizrisY": {
       "attempts": 0,
