@@ -1,0 +1,127 @@
+{
+  "video_id": "gUELE_ESgyo",
+  "source_url": "https://www.youtube.com/watch?v=gUELE_ESgyo",
+  "property_location": "Samichettipalayam, Periyanaickenpalayam, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2 BHK",
+    "land_area": "2.3 Cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹47 Lakhs",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking / porch",
+    "approval": "NOT SPECIFIED",
+    "floors": "Single-storey house with open terrace access",
+    "layout_distribution": "Ground Floor: Gated parking/porch area, under-stairs restroom, main wooden entrance, spacious living hall with red accent TV wall, semi-modular kitchen, 2 bedrooms (one with orange feature wall, one with yellow feature wall), and tiled bathrooms. External carpeted stairs lead to the open roof terrace."
+  },
+  "verified_facts": "Title specifies price as 47 Lakh., Title specifies property facing as North., Title states property configuration as 2BHK., Title states land area as 2.3 Cents., Title specifies location as SAMICHETTIPLM (#periyanaickalalayam)., Title gives contact number 9994-558852.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Samichettipalayam, Periyanaickenpalayam, Coimbatore, Tamil Nadu சைட்ல 2 BHK Independent House தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹47 Lakhs.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 2.3 Cents லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு North ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/gUELE_ESgyo/",
+  "optional_owned_audio": "assets/audio/gUELE_ESgyo.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Periyanaickenpalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey residence featuring a modern facade with yellow and grey paneling, decorative palm tree logo, black iron gates, green vehicle ramp, covered porch, and external red-carpeted stairs leading to the roof terrace.. Hard floor/layout lock: Single-storey house with open terrace access; Ground Floor: Gated parking/porch area, under-stairs restroom, main wooden entrance, spacious living hall with red accent TV wall, semi-modular kitchen, 2 bedrooms (one with orange feature wall, one with yellow feature wall), and tiled bathrooms. External carpeted stairs lead to the open roof terrace.. Neighbourhood: Semi-suburban residential surroundings with adjacent houses, open ground, and palm trees under clear sky conditions.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Periyanaickenpalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey residence featuring a modern facade with yellow and grey paneling, decorative palm tree logo, black iron gates, green vehicle ramp, covered porch, and external red-carpeted stairs leading to the roof terrace.. Hard floor/layout lock: Single-storey house with open terrace access; Ground Floor: Gated parking/porch area, under-stairs restroom, main wooden entrance, spacious living hall with red accent TV wall, semi-modular kitchen, 2 bedrooms (one with orange feature wall, one with yellow feature wall), and tiled bathrooms. External carpeted stairs lead to the open roof terrace.. Neighbourhood: Semi-suburban residential surroundings with adjacent houses, open ground, and palm trees under clear sky conditions.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Periyanaickenpalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey residence featuring a modern facade with yellow and grey paneling, decorative palm tree logo, black iron gates, green vehicle ramp, covered porch, and external red-carpeted stairs leading to the roof terrace.. Hard floor/layout lock: Single-storey house with open terrace access; Ground Floor: Gated parking/porch area, under-stairs restroom, main wooden entrance, spacious living hall with red accent TV wall, semi-modular kitchen, 2 bedrooms (one with orange feature wall, one with yellow feature wall), and tiled bathrooms. External carpeted stairs lead to the open roof terrace.. Neighbourhood: Semi-suburban residential surroundings with adjacent houses, open ground, and palm trees under clear sky conditions.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Periyanaickenpalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey residence featuring a modern facade with yellow and grey paneling, decorative palm tree logo, black iron gates, green vehicle ramp, covered porch, and external red-carpeted stairs leading to the roof terrace.. Hard floor/layout lock: Single-storey house with open terrace access; Ground Floor: Gated parking/porch area, under-stairs restroom, main wooden entrance, spacious living hall with red accent TV wall, semi-modular kitchen, 2 bedrooms (one with orange feature wall, one with yellow feature wall), and tiled bathrooms. External carpeted stairs lead to the open roof terrace.. Neighbourhood: Semi-suburban residential surroundings with adjacent houses, open ground, and palm trees under clear sky conditions.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
