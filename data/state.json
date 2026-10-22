@@ -4570,9 +4570,11 @@
     },
     "_XlBaYbZqaY": {
       "attempts": 0,
+      "completed_at": "2026-10-22T22:19:37.947226+00:00",
       "first_seen_at": "2026-10-22T15:41:07.359894+00:00",
+      "last_error": "",
       "next_retry_at": "2026-10-22T15:41:07.359894+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "_dF0DorwdO8": {
       "attempts": 0,
