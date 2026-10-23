@@ -38,6 +38,17 @@ def _run_backlog_rest(candidate: dict, prompt: str):
         part.get("text", "") for part in body.get("outputs", []) if part.get("type") == "text"
     )
     if not output_text:
+        # The current Interactions API returns model text inside steps[].content[].
+        # Select the last model output so tool/thought/input text never becomes evidence.
+        for step in reversed(body.get("steps") or []):
+            if step.get("type") == "user_input":
+                break
+            if step.get("type") == "model_output":
+                output_text = "".join(part.get("text", "") for part in step.get("content", [])
+                                      if part.get("type") == "text")
+                if output_text:
+                    break
+    if not output_text:
         raise RuntimeError(f"Gemini Shorts analysis returned no text (status={body.get('status', 'unknown')})")
     return SimpleNamespace(output_text=output_text)
 

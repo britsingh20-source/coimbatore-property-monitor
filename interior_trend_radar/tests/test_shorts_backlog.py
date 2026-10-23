@@ -91,6 +91,11 @@ class ShortsBacklogTests(unittest.TestCase):
             result = _run_backlog_rest({"video_id": "short1"}, "inspect")
             self.assertEqual('{"verified":true}', result.output_text)
             self.assertEqual((10, 60), post.call_args.kwargs["timeout"])
+            post.return_value.json.return_value = {"status": "completed", "steps": [
+                {"type": "thought", "content": [{"type": "text", "text": "ignore reasoning"}]},
+                {"type": "model_output", "content": [{"type": "text", "text": '{"verified":true}'}]},
+            ]}
+            self.assertEqual('{"verified":true}', _run_backlog_rest({"video_id": "short1"}, "inspect").output_text)
             post.return_value.ok = False
             post.return_value.status_code = 429
             with self.assertRaisesRegex(RuntimeError, "HTTP 429"):
