@@ -21,9 +21,10 @@ concurrency:
 jobs:
   process-shorts:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 18
     env:
       PYTHONPATH: .
+      PYTHONUNBUFFERED: "1"
       YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -39,6 +40,7 @@ jobs:
       - name: Test interior monitoring and backlog
         run: python -m unittest discover -s interior_trend_radar/tests -v
       - name: Process oldest unprocessed Shorts
+        timeout-minutes: 12
         run: python -m interior_trend_radar.shorts_backlog --deliver
       - name: Persist every confirmed or uncertain delivery, including on failure
         if: always()

@@ -1,12 +1,13 @@
 import json
 import os
+import signal
 import tempfile
 import unittest
 from datetime import datetime, timezone
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
-from interior_trend_radar.shorts_backlog import discover_shorts, process
+from interior_trend_radar.shorts_backlog import discover_shorts, process, stage_deadline
 
 
 class ShortsBacklogTests(unittest.TestCase):
@@ -62,6 +63,16 @@ class ShortsBacklogTests(unittest.TestCase):
         self.run_backlog(deliver=False)
         self.send.assert_not_called()
         self.assertFalse(Path(self.state).exists())
+
+    def test_deadline_bypasses_dependency_retries_and_restores_signal(self):
+        previous = signal.getsignal(signal.SIGALRM)
+        with self.assertRaisesRegex(TimeoutError, "exceeded"):
+            with stage_deadline("test", 10):
+                try:
+                    signal.raise_signal(signal.SIGALRM)
+                except Exception:
+                    self.fail("A dependency must not swallow the stage deadline")
+        self.assertEqual(previous, signal.getsignal(signal.SIGALRM))
 
     @patch("interior_trend_radar.shorts_backlog._resolve_handle", return_value="channel")
     @patch("interior_trend_radar.shorts_backlog._json")

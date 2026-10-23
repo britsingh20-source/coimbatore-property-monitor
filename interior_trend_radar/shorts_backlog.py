@@ -4,6 +4,8 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import signal
+from contextlib import contextmanager
 from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlencode
@@ -11,6 +13,27 @@ from zoneinfo import ZoneInfo
 
 from .discovery import _json, _resolve_handle
 from .reference_first import _send_prompt, build_reference_prompt
+
+
+class _StageExpired(BaseException):
+    """Bypass dependency retry loops when the overall stage deadline expires."""
+
+
+@contextmanager
+def stage_deadline(name: str, seconds: int):
+    def expired(signum, frame):
+        raise _StageExpired()
+
+    previous = signal.signal(signal.SIGALRM, expired)
+    signal.alarm(seconds)
+    print(f"SHORTS_STAGE_START stage={name} deadline_seconds={seconds}", flush=True)
+    try:
+        yield
+    except _StageExpired:
+        raise TimeoutError(f"Shorts stage '{name}' exceeded {seconds} seconds; retry required") from None
+    finally:
+        signal.alarm(0)
+        signal.signal(signal.SIGALRM, previous)
 
 
 def save_state(path: Path, state: dict) -> None:
@@ -26,15 +49,18 @@ def discover_shorts(handle: str, api_key: str) -> list[dict]:
     channel_id = _resolve_handle(handle, api_key)
     if not channel_id:
         raise ValueError(f"Cannot resolve channel @{handle}")
+    print(f"SHORTS_CHANNEL_RESOLVED channel_id={channel_id}", flush=True)
     # Membership of /shorts is the filter: short duration alone also matches
     # ordinary horizontal videos. Never fall back to /videos or keyword search.
     with YoutubeDL({"extract_flat": True, "skip_download": True, "quiet": True,
-                    "socket_timeout": 30, "ignoreerrors": False}) as youtube:
+                    "socket_timeout": 15, "retries": 2, "extractor_retries": 2,
+                    "ignoreerrors": False}) as youtube:
         listing = youtube.extract_info(f"https://www.youtube.com/@{handle}/shorts", download=False)
         entries = list((listing or {}).get("entries") or [])
     if not entries or any(not entry or not entry.get("id") for entry in entries):
         raise ValueError("Shorts listing unavailable or incomplete; refusing a partial backlog")
     ids = list(dict.fromkeys(entry["id"] for entry in entries))
+    print(f"SHORTS_LISTING_COMPLETE count={len(ids)}", flush=True)
     candidates = []
     for offset in range(0, len(ids), 50):
         batch = ids[offset:offset + 50]
@@ -75,7 +101,8 @@ def process(config_path: str, state_path: str, output_path: str, deliver: bool,
     output = Path(output_path)
     output.parent.mkdir(parents=True, exist_ok=True)
     if remaining:
-        candidates = (discover or discover_shorts)(source["handle"], os.environ["YOUTUBE_API_KEY"])
+        with stage_deadline("discover-shorts", 180):
+            candidates = (discover or discover_shorts)(source["handle"], os.environ["YOUTUBE_API_KEY"])
         # Save the full queue for inspection, including all dates rather than a lookback window.
         state["queue"] = [item for item in candidates if item["video_id"] not in completed]
         if deliver:
@@ -85,7 +112,9 @@ def process(config_path: str, state_path: str, output_path: str, deliver: bool,
                 from .video_analyzer import analyze_interior_video
                 analyze = analyze_interior_video
             # A failed analysis leaves this item at the head of tomorrow's queue.
-            analysis = analyze(candidate)
+            print(f"SHORTS_ANALYSIS video_id={candidate['video_id']}", flush=True)
+            with stage_deadline("analyze-" + candidate["video_id"], 180):
+                analysis = analyze(candidate)
             prompt = build_reference_prompt(candidate, analysis, config)
             job = {"candidate": candidate, "video_analysis": analysis, "gemini_prompt": prompt}
             if deliver:
