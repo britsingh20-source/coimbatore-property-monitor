@@ -204,6 +204,14 @@
       "next_retry_at": "2026-08-07T04:04:41.408215+00:00",
       "status": "archived_non_target"
     },
+    "0tf3cjav-K8": {
+      "attempts": 1,
+      "first_seen_at": "2026-10-23T07:29:46.626359+00:00",
+      "last_attempt_at": "2026-10-23T07:31:19.879032+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'Your project has exceeded a quota. See https://ai.dev/rate-limit to manage your rate limits.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-10-23T09:31:19.879043+00:00",
+      "status": "retry_pending"
+    },
     "10fKFhKR2_c": {
       "attempts": 0,
       "completed_at": "2026-08-08T04:31:18.282153+00:00",
@@ -2303,6 +2311,12 @@
       "next_retry_at": "2026-10-02T02:54:29.431848+00:00",
       "status": "video_queued"
     },
+    "IbRTCyzW2dM": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-23T07:29:46.626359+00:00",
+      "next_retry_at": "2026-10-23T07:29:46.626359+00:00",
+      "status": "discovered"
+    },
     "IwawHfduYf0": {
       "attempts": 0,
       "completed_at": "2026-08-13T10:32:28.919411+00:00",
@@ -3101,6 +3115,12 @@
       "next_retry_at": "2026-09-09T16:42:51.349090+00:00",
       "status": "video_queued"
     },
+    "P524ux1J7lo": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-23T07:29:46.626359+00:00",
+      "next_retry_at": "2026-10-23T07:29:46.626359+00:00",
+      "status": "discovered"
+    },
     "P56azBXRQ48": {
       "attempts": 0,
       "first_seen_at": "2026-10-06T21:54:39.381692+00:00",
@@ -3370,6 +3390,12 @@
       "last_error": "",
       "next_retry_at": "2026-10-16T21:58:33.868521+00:00",
       "status": "video_queued"
+    },
+    "QrS9MYhj5jM": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-23T07:29:46.626359+00:00",
+      "next_retry_at": "2026-10-23T07:29:46.626359+00:00",
+      "status": "discovered"
     },
     "QtRsHLWgvwc": {
       "attempts": 0,
@@ -6196,6 +6222,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
       "status": "video_queued"
+    },
+    "mCb7YlLr4_g": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-23T07:29:46.626359+00:00",
+      "next_retry_at": "2026-10-23T07:29:46.626359+00:00",
+      "status": "discovered"
     },
     "mF6aejsSTDk": {
       "attempts": 1,
