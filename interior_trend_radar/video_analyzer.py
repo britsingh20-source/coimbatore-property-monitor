@@ -45,12 +45,15 @@ def _is_transient_gemini_error(exc: Exception) -> bool:
 def _run_analysis(client: genai.Client, candidate: dict, prompt: str):
     last_error = None
     attempts = len(TRANSIENT_RETRY_DELAYS) + 1
+    video_uri = candidate["url"]
+    if candidate.get("query") == "shorts-backlog":
+        video_uri = "https://www.youtube.com/watch?v=" + candidate["video_id"]
     for attempt in range(1, attempts + 1):
         try:
             return client.interactions.create(
                 model=MODEL,
                 input=[
-                    {"type": "video", "uri": candidate["url"]},
+                    {"type": "video", "uri": video_uri},
                     {"type": "text", "text": prompt},
                 ],
             )
@@ -99,7 +102,11 @@ Description: {candidate.get('description', '')}
 Channel: {candidate.get('creator', '')}
 URL: {candidate.get('url', '')}
 """
-    client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+    client_options = {}
+    timeout_ms = int(os.environ.get("INTERIOR_ANALYSIS_REQUEST_TIMEOUT_MS", "0"))
+    if timeout_ms:
+        client_options["http_options"] = {"timeout": timeout_ms, "retry_options": {"attempts": 1}}
+    client = genai.Client(api_key=os.environ["GEMINI_API_KEY"], **client_options)
     interaction = _run_analysis(client, candidate, prompt)
     result = _parse_json(interaction.output_text)
     if not result.get("is_interior_topic"):

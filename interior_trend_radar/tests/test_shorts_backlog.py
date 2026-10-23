@@ -74,6 +74,14 @@ class ShortsBacklogTests(unittest.TestCase):
                     self.fail("A dependency must not swallow the stage deadline")
         self.assertEqual(previous, signal.getsignal(signal.SIGALRM))
 
+    def test_analysis_uses_canonical_video_url_for_short(self):
+        from interior_trend_radar.video_analyzer import _run_analysis
+        client = MagicMock()
+        _run_analysis(client, {"url": "https://www.youtube.com/shorts/short1", "video_id": "short1",
+                               "query": "shorts-backlog"}, "inspect")
+        self.assertEqual("https://www.youtube.com/watch?v=short1",
+                         client.interactions.create.call_args.kwargs["input"][0]["uri"])
+
     @patch("interior_trend_radar.shorts_backlog._resolve_handle", return_value="channel")
     @patch("interior_trend_radar.shorts_backlog._json")
     @patch("yt_dlp.YoutubeDL")
