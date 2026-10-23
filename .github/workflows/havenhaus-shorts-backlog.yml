@@ -1,0 +1,65 @@
+name: Havenhaus Shorts Backlog
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "interior_trend_radar/shorts_backlog.py"
+      - ".github/workflows/havenhaus-shorts-backlog.yml"
+  workflow_dispatch:
+  schedule:
+    - cron: "30 3 * * *" # 9:00 AM IST; deliver at most two per calendar day
+    - cron: "30 11 * * *" # 5:00 PM IST retry; daily cap also applies here
+
+permissions:
+  contents: write
+
+concurrency:
+  group: havenhaus-shorts-backlog
+  cancel-in-progress: false
+
+jobs:
+  process-shorts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PYTHONPATH: .
+      YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      INTERIOR_CONTACT: ${{ secrets.INTERIOR_CONTACT }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check requests google-genai yt-dlp
+      - name: Test interior monitoring and backlog
+        run: python -m unittest discover -s interior_trend_radar/tests -v
+      - name: Process oldest unprocessed Shorts
+        run: python -m interior_trend_radar.shorts_backlog --deliver
+      - name: Persist every confirmed or uncertain delivery, including on failure
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ ! -f data/havenhaus_shorts_state.json ]]; then exit 0; fi
+          git config user.name "interior-trend-bot"
+          git config user.email "actions@github.com"
+          git add data/havenhaus_shorts_state.json
+          if git diff --staged --quiet; then exit 0; fi
+          git commit -m "Record Havenhaus Shorts queue and deliveries [automated]"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then exit 0; fi
+          done
+          exit 1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: havenhaus-shorts-pack
+          path: interior_trend_radar/output/havenhaus_shorts_pack.json
+          if-no-files-found: ignore
+          retention-days: 14

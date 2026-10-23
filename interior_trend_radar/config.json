@@ -43,5 +43,13 @@
     }
   ],
   "youtube_channel_ids": [],
-  "manual_competitor_urls": []
+  "manual_competitor_urls": [],
+  "shorts_backlog": {
+    "enabled": true,
+    "handle": "havenhaus1",
+    "content_type": "shorts",
+    "order": "oldest_first",
+    "daily_limit": 2,
+    "timezone": "Asia/Kolkata"
+  }
 }
