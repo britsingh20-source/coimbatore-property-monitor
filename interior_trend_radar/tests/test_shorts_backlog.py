@@ -82,6 +82,20 @@ class ShortsBacklogTests(unittest.TestCase):
         self.assertEqual("https://www.youtube.com/watch?v=short1",
                          client.interactions.create.call_args.kwargs["input"][0]["uri"])
 
+    @patch("requests.post")
+    def test_rest_analysis_is_bounded_and_reads_output(self, post):
+        from interior_trend_radar.video_analyzer import _run_backlog_rest
+        with patch.dict(os.environ, {"GEMINI_API_KEY": "test", "INTERIOR_ANALYSIS_REQUEST_TIMEOUT_MS": "60000"}):
+            post.return_value.ok = True
+            post.return_value.json.return_value = {"outputs": [{"type": "text", "text": '{"verified":true}'}]}
+            result = _run_backlog_rest({"video_id": "short1"}, "inspect")
+            self.assertEqual('{"verified":true}', result.output_text)
+            self.assertEqual((10, 60), post.call_args.kwargs["timeout"])
+            post.return_value.ok = False
+            post.return_value.status_code = 429
+            with self.assertRaisesRegex(RuntimeError, "HTTP 429"):
+                _run_backlog_rest({"video_id": "short1"}, "inspect")
+
     @patch("interior_trend_radar.shorts_backlog._resolve_handle", return_value="channel")
     @patch("interior_trend_radar.shorts_backlog._json")
     @patch("yt_dlp.YoutubeDL")

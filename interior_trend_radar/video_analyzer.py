@@ -4,12 +4,42 @@ import json
 import os
 import re
 import time
+from types import SimpleNamespace
 
 from google import genai
 
 
 MODEL = os.environ.get("GEMINI_ANALYSIS_MODEL", "gemini-3.6-flash")
 TRANSIENT_RETRY_DELAYS = (35, 45, 60)
+
+
+def _run_backlog_rest(candidate: dict, prompt: str):
+    """Use the documented REST endpoint with a real HTTP deadline for this queue."""
+    import requests
+
+    timeout = int(os.environ.get("INTERIOR_ANALYSIS_REQUEST_TIMEOUT_MS", "60000")) / 1000
+    try:
+        response = requests.post(
+            "https://generativelanguage.googleapis.com/v1beta/interactions",
+            headers={"x-goog-api-key": os.environ["GEMINI_API_KEY"]},
+            json={"model": MODEL, "input": [
+                {"type": "text", "text": prompt},
+                {"type": "video", "uri": "https://www.youtube.com/watch?v=" + candidate["video_id"]},
+            ]},
+            timeout=(10, timeout),
+        )
+    except requests.RequestException as exc:
+        raise RuntimeError(f"Gemini Shorts HTTP request failed ({type(exc).__name__})") from None
+    if not response.ok:
+        # Response bodies can contain request data. Report only the status in logs.
+        raise RuntimeError(f"Gemini Shorts analysis HTTP {response.status_code}")
+    body = response.json()
+    output_text = body.get("output_text") or "\n".join(
+        part.get("text", "") for part in body.get("outputs", []) if part.get("type") == "text"
+    )
+    if not output_text:
+        raise RuntimeError(f"Gemini Shorts analysis returned no text (status={body.get('status', 'unknown')})")
+    return SimpleNamespace(output_text=output_text)
 
 
 def _parse_json(text: str) -> dict:
@@ -102,12 +132,11 @@ Description: {candidate.get('description', '')}
 Channel: {candidate.get('creator', '')}
 URL: {candidate.get('url', '')}
 """
-    client_options = {}
-    timeout_ms = int(os.environ.get("INTERIOR_ANALYSIS_REQUEST_TIMEOUT_MS", "0"))
-    if timeout_ms:
-        client_options["http_options"] = {"timeout": timeout_ms, "retry_options": {"attempts": 1}}
-    client = genai.Client(api_key=os.environ["GEMINI_API_KEY"], **client_options)
-    interaction = _run_analysis(client, candidate, prompt)
+    if candidate.get("query") == "shorts-backlog":
+        interaction = _run_backlog_rest(candidate, prompt)
+    else:
+        client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+        interaction = _run_analysis(client, candidate, prompt)
     result = _parse_json(interaction.output_text)
     if not result.get("is_interior_topic"):
         raise ValueError("Selected video was not confirmed as interior-related")

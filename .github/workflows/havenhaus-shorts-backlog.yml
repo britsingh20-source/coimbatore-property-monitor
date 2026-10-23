@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "interior_trend_radar/shorts_backlog.py"
+      - "interior_trend_radar/video_analyzer.py"
       - ".github/workflows/havenhaus-shorts-backlog.yml"
   workflow_dispatch:
   schedule:
