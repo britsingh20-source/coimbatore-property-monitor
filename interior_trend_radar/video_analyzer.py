@@ -18,18 +18,27 @@ def _run_backlog_rest(candidate: dict, prompt: str):
     import requests
 
     timeout = int(os.environ.get("INTERIOR_ANALYSIS_REQUEST_TIMEOUT_MS", "60000")) / 1000
-    try:
-        response = requests.post(
-            "https://generativelanguage.googleapis.com/v1beta/interactions",
-            headers={"x-goog-api-key": os.environ["GEMINI_API_KEY"]},
-            json={"model": MODEL, "input": [
-                {"type": "text", "text": prompt},
-                {"type": "video", "uri": "https://www.youtube.com/watch?v=" + candidate["video_id"]},
-            ]},
-            timeout=(10, timeout),
-        )
-    except requests.RequestException as exc:
-        raise RuntimeError(f"Gemini Shorts HTTP request failed ({type(exc).__name__})") from None
+    for attempt in range(2):
+        try:
+            response = requests.post(
+                "https://generativelanguage.googleapis.com/v1beta/interactions",
+                headers={"x-goog-api-key": os.environ["GEMINI_API_KEY"]},
+                json={"model": MODEL, "input": [
+                    {"type": "text", "text": prompt},
+                    {"type": "video", "uri": "https://www.youtube.com/watch?v=" + candidate["video_id"]},
+                ]},
+                timeout=(10, timeout),
+            )
+        except requests.RequestException as exc:
+            if attempt == 0:
+                time.sleep(5)
+                continue
+            raise RuntimeError(f"Gemini Shorts HTTP request failed ({type(exc).__name__})") from None
+        if response.status_code in (500, 502, 503, 504) and attempt == 0:
+            print(f"Gemini Shorts transient HTTP {response.status_code}; retrying once", flush=True)
+            time.sleep(5)
+            continue
+        break
     if not response.ok:
         # Response bodies can contain request data. Report only the status in logs.
         raise RuntimeError(f"Gemini Shorts analysis HTTP {response.status_code}")
