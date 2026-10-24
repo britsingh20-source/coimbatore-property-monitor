@@ -40,8 +40,27 @@ def _run_backlog_rest(candidate: dict, prompt: str):
             continue
         break
     if not response.ok:
-        # Response bodies can contain request data. Report only the status in logs.
-        raise RuntimeError(f"Gemini Shorts analysis HTTP {response.status_code}")
+        # Preserve quota diagnostics while removing credentials and project identifiers.
+        try:
+            error = response.json().get("error", {})
+        except ValueError:
+            error = {}
+        summary = str(error.get("message", ""))[:1500]
+        for secret_name in ("GEMINI_API_KEY", "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"):
+            secret = os.environ.get(secret_name, "")
+            if secret:
+                summary = summary.replace(secret, "[redacted]")
+        summary = re.sub(r"AIza[A-Za-z0-9_-]+", "[redacted]", summary)
+        summary = re.sub(r"projects/[A-Za-z0-9_-]+", "projects/[redacted]", summary)
+        summary = " ".join(summary.split())
+        quota = []
+        for detail in error.get("details", []):
+            for violation in detail.get("violations", []):
+                quota.append({key: violation[key] for key in ("quotaMetric", "quotaId", "quotaValue")
+                              if key in violation})
+            if detail.get("retryDelay"):
+                quota.append({"retryDelay": detail["retryDelay"]})
+        raise RuntimeError(f"Gemini Shorts analysis HTTP {response.status_code}: {summary}; quota={json.dumps(quota)}")
     body = response.json()
     output_text = body.get("output_text") or "\n".join(
         part.get("text", "") for part in body.get("outputs", []) if part.get("type") == "text"
