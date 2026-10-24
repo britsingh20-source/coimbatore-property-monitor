@@ -4606,9 +4606,11 @@
     },
     "ZdmOLto0DaI": {
       "attempts": 0,
+      "completed_at": "2026-10-24T16:17:33.368608+00:00",
       "first_seen_at": "2026-10-24T10:56:21.291288+00:00",
+      "last_error": "",
       "next_retry_at": "2026-10-24T10:56:21.291288+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "ZemeaBcOlUk": {
       "attempts": 0,
@@ -6687,9 +6689,11 @@
     },
     "ofcmpmVI1z8": {
       "attempts": 0,
+      "completed_at": "2026-10-24T16:19:24.798152+00:00",
       "first_seen_at": "2026-10-24T10:56:21.291288+00:00",
+      "last_error": "",
       "next_retry_at": "2026-10-24T10:56:21.291288+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "oibcUojdwDw": {
       "attempts": 0,
