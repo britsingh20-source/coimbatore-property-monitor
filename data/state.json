@@ -1801,9 +1801,11 @@
     },
     "DxxuecI1Xhs": {
       "attempts": 0,
+      "completed_at": "2026-10-24T20:47:53.017689+00:00",
       "first_seen_at": "2026-10-23T20:40:35.106427+00:00",
+      "last_error": "",
       "next_retry_at": "2026-10-23T20:40:35.106427+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "E-UOiZBurvg": {
       "attempts": 0,
@@ -7463,9 +7465,11 @@
     },
     "uo_R_AbljOQ": {
       "attempts": 0,
+      "completed_at": "2026-10-24T20:47:39.850516+00:00",
       "first_seen_at": "2026-10-24T10:56:21.291288+00:00",
+      "last_error": "",
       "next_retry_at": "2026-10-24T10:56:21.291288+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "uvCDUOzt5do": {
       "attempts": 0,
