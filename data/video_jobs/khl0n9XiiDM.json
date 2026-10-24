@@ -1,0 +1,132 @@
+{
+  "video_id": "khl0n9XiiDM",
+  "source_url": "https://www.youtube.com/watch?v=khl0n9XiiDM",
+  "property_location": "Thudiyalur, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "3 BHK",
+    "land_area": "2 Cents (840 sq ft)",
+    "built_up_area": "1600 sq ft",
+    "price": "75 Lakhs",
+    "facing": "West-facing plot, North-facing main door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "1 Covered Car Parking",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex with open terrace",
+    "layout_distribution": "Ground Floor: Covered parking (10x16 ft), Living hall (16x16 ft) with TV unit & puja cabinet, Modular kitchen cum dining area (8x16 ft), Bedroom 1 (8x10 ft) with attached bathroom (4x5 ft). First Floor: Lobby/lounge, Master Bedroom 2 (10x16 ft) with attached bathroom (4x8 ft) and front balcony access, Master Bedroom 3 (10x16 ft) with attached bathroom (4x8 ft), rear open terrace. Roof Level: Open terrace accessible via steel stairs, holding water tanks with mountain view."
+  },
+  "verified_facts": "Property is built on a 2-cent land plot measuring 21 feet in width by 40 feet in length., Total built-up area is 1600 sq.ft across ground and first floor duplex layout., Site is West-facing with a North-facing teakwood main entrance door., Asking price is 75 Lakhs (negotiable)., Ground floor has a 10x16 ft car parking, 16x16 ft living hall with TV and puja cabinet, 8x16 ft modular kitchen with dining area, and an 8x10 ft bedroom with 4x5 ft attached bathroom., First floor includes a lobby lounge, two 10x16 ft master bedrooms with built-in wardrobes and 4x8 ft attached bathrooms, a front balcony, and a rear open terrace with steel stairs leading to the roof terrace.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed conversational Tamil property tour",
+    "hook_strategy": "Direct value hook highlighting 3 BHK duplex villa in Thudiyalur, Coimbatore for 75 Lakhs",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை துடியலூர் location-ல, 75 Lakhs-க்கு ஒரு அருமையான 3 BHK duplex villa விற்பனைக்கு வந்துருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "facing",
+        "voice": "இது West-facing plot, வீடச்சு பாத்தீங்கனா North-facing teakwood main door-ஓட அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "land",
+        "voice": "2 Cents land area, 21-க்கு 40 dimension-ல plot size வருது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "dimension-overlay",
+        "purpose": "land_details"
+      },
+      {
+        "name": "builtUp",
+        "voice": "மொத்தம் 1600 sq ft built-up area! Ground floor-ல covered car parking, TV unit & puja cabinet-ஓட living hall, modular kitchen, ஒரு bedroom இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "floorplan-callout",
+        "purpose": "ground_floor_tour"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த 1600 sq ft 3 BHK duplex villa-வோட asking price 75 Lakhs, இது negotiable-தான்!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணவும், details தெரிஞ்சுக்கவும் உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "contact-card",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/khl0n9XiiDM/",
+  "optional_owned_audio": "assets/audio/khl0n9XiiDM.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone white and grey façade with geometric profile lines, grey MS steel gate with laser-cut CNC designs, front balcony with glass and stainless-steel railings, and rear open terrace.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Covered parking (10x16 ft), Living hall (16x16 ft) with TV unit & puja cabinet, Modular kitchen cum dining area (8x16 ft), Bedroom 1 (8x10 ft) with attached bathroom (4x5 ft). First Floor: Lobby/lounge, Master Bedroom 2 (10x16 ft) with attached bathroom (4x8 ft) and front balcony access, Master Bedroom 3 (10x16 ft) with attached bathroom (4x8 ft), rear open terrace. Roof Level: Open terrace accessible via steel stairs, holding water tanks with mountain view.. Neighbourhood: Developing residential layout in Thudiyalur, Coimbatore, surrounded by newly built houses, vacant plots, and clear views of nearby mountains.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone white and grey façade with geometric profile lines, grey MS steel gate with laser-cut CNC designs, front balcony with glass and stainless-steel railings, and rear open terrace.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Covered parking (10x16 ft), Living hall (16x16 ft) with TV unit & puja cabinet, Modular kitchen cum dining area (8x16 ft), Bedroom 1 (8x10 ft) with attached bathroom (4x5 ft). First Floor: Lobby/lounge, Master Bedroom 2 (10x16 ft) with attached bathroom (4x8 ft) and front balcony access, Master Bedroom 3 (10x16 ft) with attached bathroom (4x8 ft), rear open terrace. Roof Level: Open terrace accessible via steel stairs, holding water tanks with mountain view.. Neighbourhood: Developing residential layout in Thudiyalur, Coimbatore, surrounded by newly built houses, vacant plots, and clear views of nearby mountains.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone white and grey façade with geometric profile lines, grey MS steel gate with laser-cut CNC designs, front balcony with glass and stainless-steel railings, and rear open terrace.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Covered parking (10x16 ft), Living hall (16x16 ft) with TV unit & puja cabinet, Modular kitchen cum dining area (8x16 ft), Bedroom 1 (8x10 ft) with attached bathroom (4x5 ft). First Floor: Lobby/lounge, Master Bedroom 2 (10x16 ft) with attached bathroom (4x8 ft) and front balcony access, Master Bedroom 3 (10x16 ft) with attached bathroom (4x8 ft), rear open terrace. Roof Level: Open terrace accessible via steel stairs, holding water tanks with mountain view.. Neighbourhood: Developing residential layout in Thudiyalur, Coimbatore, surrounded by newly built houses, vacant plots, and clear views of nearby mountains.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone white and grey façade with geometric profile lines, grey MS steel gate with laser-cut CNC designs, front balcony with glass and stainless-steel railings, and rear open terrace.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor: Covered parking (10x16 ft), Living hall (16x16 ft) with TV unit & puja cabinet, Modular kitchen cum dining area (8x16 ft), Bedroom 1 (8x10 ft) with attached bathroom (4x5 ft). First Floor: Lobby/lounge, Master Bedroom 2 (10x16 ft) with attached bathroom (4x8 ft) and front balcony access, Master Bedroom 3 (10x16 ft) with attached bathroom (4x8 ft), rear open terrace. Roof Level: Open terrace accessible via steel stairs, holding water tanks with mountain view.. Neighbourhood: Developing residential layout in Thudiyalur, Coimbatore, surrounded by newly built houses, vacant plots, and clear views of nearby mountains.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
