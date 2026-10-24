@@ -90,6 +90,12 @@
       "next_retry_at": "2026-08-07T23:58:19.506797+00:00",
       "status": "archived_non_target"
     },
+    "-ogkMmSGi_I": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-24T14:31:12.582696+00:00",
+      "next_retry_at": "2026-10-24T14:31:12.582696+00:00",
+      "status": "discovered"
+    },
     "-sA50MDZ4As": {
       "attempts": 0,
       "completed_at": "2026-08-06T03:43:25.225423+00:00",
@@ -97,6 +103,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-06T03:43:13.834617+00:00",
       "status": "video_queued"
+    },
+    "-vpIhs3eOgM": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-24T14:31:12.582696+00:00",
+      "next_retry_at": "2026-10-24T14:31:12.582696+00:00",
+      "status": "discovered"
     },
     "0-1lYKdK5dI": {
       "attempts": 0,
@@ -1644,6 +1656,12 @@
       "last_error": "",
       "next_retry_at": "2026-10-10T13:39:29.990521+00:00",
       "status": "video_queued"
+    },
+    "Ciox7b829EU": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-24T14:31:12.582696+00:00",
+      "next_retry_at": "2026-10-24T14:31:12.582696+00:00",
+      "status": "discovered"
     },
     "CkSlc3pMvIs": {
       "attempts": 0,
@@ -4007,9 +4025,11 @@
     },
     "VSOyu9G-_vI": {
       "attempts": 0,
+      "completed_at": "2026-10-24T14:32:27.850517+00:00",
       "first_seen_at": "2026-10-24T10:56:21.291288+00:00",
+      "last_error": "",
       "next_retry_at": "2026-10-24T10:56:21.291288+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "VTxwo5uwKfU": {
       "attempts": 0,
@@ -7477,6 +7497,14 @@
       "last_error": "",
       "next_retry_at": "2026-08-08T23:47:21.120983+00:00",
       "status": "archived_non_target"
+    },
+    "v3ZZ5-OzyL0": {
+      "attempts": 0,
+      "completed_at": "2026-10-24T14:32:06.301942+00:00",
+      "first_seen_at": "2026-10-24T14:31:12.582696+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-10-24T14:31:12.582696+00:00",
+      "status": "video_queued"
     },
     "v55WAeeuLt8": {
       "attempts": 0,
