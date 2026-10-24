@@ -1,0 +1,40 @@
+name: Deliver Corrected Wardrobe Prompt
+on:
+  push:
+    branches: [main]
+    paths: ["interior_trend_radar/revisions/wardrobe_motion_v2.json"]
+permissions:
+  contents: write
+concurrency:
+  group: wardrobe-motion-v2-delivery
+  cancel-in-progress: false
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install requests google-genai yt-dlp
+      - run: python -m unittest discover -s interior_trend_radar/tests -q
+      - name: Deliver reviewed revision to existing Telegram chat
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -m interior_trend_radar.deliver_revision
+      - name: Save revision delivery receipt
+        if: always()
+        run: |
+          set -euo pipefail
+          if [ ! -f data/wardrobe_motion_v2_delivery.json ]; then exit 0; fi
+          git config user.name "interior-trend-bot"
+          git config user.email "actions@github.com"
+          git add data/wardrobe_motion_v2_delivery.json
+          if git diff --staged --quiet; then exit 0; fi
+          git commit -m "Record corrected wardrobe prompt delivery"
+          git pull --rebase origin main
+          git push origin HEAD:main

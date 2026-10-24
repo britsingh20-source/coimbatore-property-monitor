@@ -6,6 +6,8 @@ import os
 from pathlib import Path
 
 def build_reference_prompt(candidate: dict, analysis: dict, config: dict) -> str:
+    if analysis.get("motion_manifest"):
+        return build_fidelity_prompt(candidate, analysis, config)
     source = candidate["url"]
     source_title = candidate.get("title", "Interior reference video")
     source_description = candidate.get("description", "") or "No written description supplied — rely on the linked video"
@@ -110,6 +112,8 @@ def _send_prompt(prompt: str, candidate: dict, token: str, chat_id: str, positio
     import requests
     payload = io.BytesIO(prompt.encode()); payload.name = f"interior-{candidate['video_id']}-gemini-prompt.txt"
     caption = f"<b>Olive Tree Interiors — daily prompt {position}/{total}</b>\n<b>Source:</b> {candidate.get('creator', 'Interior channel')}\nNo image attachment is required. Paste this prompt in Gemini, allow it to open the included YouTube link, select Portrait/9:16, and generate the 10-second silent source clip."
+    if "Attach the original video or matching reference frames" in prompt:
+        caption = f"<b>Olive Tree Interiors — corrected reference prompt</b>\n<b>Source:</b> {candidate.get('creator', 'Interior channel')}\nAttach the original source video or matching reference frames, select Portrait/9:16, and paste this revised prompt. Preserve the source structure and motion; change lighting only."
     try:
         response = requests.post(f"https://api.telegram.org/bot{token}/sendDocument", data={"chat_id": chat_id, "caption": caption, "parse_mode": "HTML"}, files={"document": (payload.name, payload, "text/plain")}, timeout=90)
     except requests.RequestException:
@@ -186,3 +190,25 @@ if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(); parser.add_argument("candidates"); parser.add_argument("config"); parser.add_argument("output"); parser.add_argument("--deliver", action="store_true"); parser.add_argument("--state", default="data/interior_trend_state.json"); parser.add_argument("--slot", choices=("morning", "afternoon", "evening", "night", "manual"), default="manual")
     args = parser.parse_args(); run(args.candidates, args.config, args.output, args.deliver, args.state, args.slot)
+
+def build_fidelity_prompt(candidate: dict, analysis: dict, config: dict) -> str:
+    records = analysis["motion_manifest"]
+    times = ["0–1.4s", "1.4–2.8s", "2.8–4.2s", "4.2–5.6s", "5.6–7s", "7–8.5s", "8.5–10s"]
+    shots = []
+    for index, item in enumerate(records):
+        shots.append(f"{times[index]}: {item['component']} at {item['position']}. {item['closed_state']} → {item['movement']} → {item['open_state']}.")
+    return f"""Create a 10-second, full-screen portrait 9:16 video matching the supplied interior reference. Use the highest supported quality and the tool's native frame rate.
+
+Reference source: {candidate['url']}
+Attach the original video or matching reference frames in the video tool. The URL identifies the source; it is not a substitute for attached visual references.
+Source presentation: {analysis.get('source_style', 'preserve the attached reference presentation')}.
+
+Preserve the original cabinet geometry, panel divisions, accessory identity, mounting locations, proportions, door directions and opening sequence. Change only the lighting to a slightly warmer tone; retain the original surface colours and materials. Keep the same installation across all seven shots. Rails and brackets support the accessory; they must not replace it.
+
+Follow this chronological sequence, using clean cuts between demonstrations:
+{chr(10).join(shots)}
+
+Match the reference framing and assembly/reveal animation. A feature appearing during an assembly sequence is not evidence of a motorized mechanism. Maintain physical continuity within each opening action. Never change a recorded movement axis, replace a moving panel with static shelving, or alter the demonstrated accessory. Preserve every concealed compartment listed in the sequence. Do not invent hidden hinges, powered hardware or structural anchors.
+
+Use no presenter, filming equipment, competitor branding or extra furniture. No dialogue or music. Keep camera movement restrained so the mechanisms remain legible. Display a slim stationary footer: "{config.get('brand', 'Olive Tree Interiors').upper()} | REAL INTERIOR IDEAS". Keep it clear of the moving parts. Preserve the reference structure and functions throughout; lighting is the only intended design variation.
+"""

@@ -154,6 +154,7 @@ Each highlighted_innovations object must contain: name, why_notable, installatio
 mechanism, practical_benefit, visual_evidence, forbidden_substitutes (array).
 
 Rules:
+- For shorts-backlog sources, also return source_style (real footage or design animation) and motion_manifest: exactly 7 chronological objects with component, position, closed_state, movement, open_state, evidence_timestamp. Preserve assembly/reveal order. Treat rails, brackets and the accessory as separate objects. Describe visible motion literally (sideways swing, upward lift, translation or rotation); never infer spring, pneumatic, hydraulic or telescopic hardware from appearance. Preserve original mounting positions, cabinet divisions and hidden compartments. Unknown geometry or motion must be NOT CONFIRMED, never a guessed substitute. For design animations preserve the animated assembly/reveal presentation rather than converting it into a room walkthrough.
 - Explain how the system is installed and how it functions, not merely its broad product category.
 - A complete-home tour is only a source container. Scan the entire video and select only the one or two strongest new interior updates, clever mechanisms, space-transforming features, smart hardware, movable systems, concealed installations or technically useful design solutions.
 - Do not select an ordinary bedroom, bed, sofa, pool table, swing, wardrobe, lighting, false ceiling, decorative wall, colour palette or general room beauty unless it has a clearly demonstrated unusual mechanism, installation method or practical innovation.
@@ -187,4 +188,8 @@ URL: {candidate.get('url', '')}
     for highlight in highlights:
         if not highlight.get("name") or not highlight.get("mechanism") or not highlight.get("practical_benefit"):
             raise ValueError("Highlighted innovation lacked mechanism or benefit")
+    if candidate.get("query") == "shorts-backlog":
+        manifest = result.get("motion_manifest") or []
+        if len(manifest) != 7 or any(not all(item.get(k) for k in ("component", "position", "closed_state", "movement", "open_state", "evidence_timestamp")) for item in manifest):
+            raise ValueError("Seven source-ordered motion records with visual evidence are required")
     return result

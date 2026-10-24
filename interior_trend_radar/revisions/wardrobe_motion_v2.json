@@ -1,0 +1,70 @@
+{
+  "revision_id": "FRDweeW_ulY-motion-v2",
+  "candidate": {
+    "video_id": "FRDweeW_ulY",
+    "url": "https://www.youtube.com/shorts/FRDweeW_ulY",
+    "creator": "Haven Haus",
+    "query": "shorts-backlog"
+  },
+  "analysis": {
+    "source_style": "photorealistic design animation with staged cabinet assembly and function demonstrations",
+    "motion_manifest": [
+      {
+        "component": "Base storage demonstration",
+        "position": "the low white base unit",
+        "closed_state": "The front is closed",
+        "movement": "show the original outward drawer motion",
+        "open_state": "the original storage contents are visible",
+        "evidence_timestamp": "approximately 1–4s"
+      },
+      {
+        "component": "Overhead storage",
+        "position": "above the same base unit",
+        "closed_state": "Upper doors are closed",
+        "movement": "swing the upper doors sideways as shown, preserving their hinge sides",
+        "open_state": "the timber-lined compartments and bedding are visible",
+        "evidence_timestamp": "approximately 5–7s"
+      },
+      {
+        "component": "Main wardrobe reveal",
+        "position": "between the base and overhead storage",
+        "closed_state": "Preserve the original staged assembly view",
+        "movement": "reproduce the source's assembly/reveal order and then the sideways door opening",
+        "open_state": "matching hanging compartments and lower storage appear",
+        "evidence_timestamp": "approximately 8–11s"
+      },
+      {
+        "component": "Side storage panel",
+        "position": "at the wardrobe end beside the room door",
+        "closed_state": "The tall exterior panel is closed",
+        "movement": "move the same tall panel through the source opening path, keeping its attachment point fixed",
+        "open_state": "the coat-and-bag storage and side shelves are revealed",
+        "evidence_timestamp": "approximately 12–15s"
+      },
+      {
+        "component": "Concealed lower compartment",
+        "position": "beneath the side storage",
+        "closed_state": "The small lower door is closed",
+        "movement": "swing the small door open sideways",
+        "open_state": "the safe is visible inside the same compartment",
+        "evidence_timestamp": "approximately 16–18s"
+      },
+      {
+        "component": "Compact bedside shelf",
+        "position": "at the original bed-side position on the wardrobe wall",
+        "closed_state": "Preserve the source's flush closed appearance",
+        "movement": "reproduce the visible shelf reveal without adding exposed hardware",
+        "open_state": "a compact timber-coloured shelf holds the source accessories",
+        "evidence_timestamp": "approximately 18–20s"
+      },
+      {
+        "component": "Final bedroom view",
+        "position": "beside the bed and wardrobe end",
+        "closed_state": "Retain the same completed structure",
+        "movement": "match the original final camera reveal",
+        "open_state": "the shelf, bed, side storage and mirror relationship remain as referenced",
+        "evidence_timestamp": "approximately 20–22s"
+      }
+    ]
+  }
+}
