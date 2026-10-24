@@ -1,0 +1,118 @@
+{
+  "video_id": "LCPevi4x7z8",
+  "source_url": "https://www.youtube.com/watch?v=LCPevi4x7z8",
+  "property_location": "Thudiyalur, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "1850 sq.ft.",
+    "price": "₹1.05 Crore (negotiable)",
+    "facing": "East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "1 covered car parking space (11x17 ft)",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex with open terrace utility",
+    "layout_distribution": "Ground Floor: Gated parking portico, side setback with exterior common bathroom/utility, East-facing main door, living room (11x17 ft) with under-stairs TV unit and built-in pooja cabinet, 1 bedroom with attached bathroom, modular kitchen (10x10 ft) with integrated foldable dining table; First Floor: Granite staircase leading to a dedicated study/workstation area, 2 bedrooms with attached bathrooms, front common balcony with clay jaali screen, and utility washing area; Terrace Level: Headroom exit to open roof terrace with water tank setup and skylight roof panel."
+  },
+  "verified_facts": "The house is a 3BHK duplex model located in Thudiyalur, Coimbatore., Built-up area is 1,850 sq.ft., The plot and main entry door are both East-facing., Asking price is ₹1.05 Crore, which is negotiable., Car parking portico measures 11x17 ft, designed for large 7-seater vehicles., Includes borewell water connection., Features 3 bedrooms with attached bathrooms, plus 1 exterior common toilet in the setback area.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking naturally to camera",
+    "hook_strategy": "Lead with high-demand Coimbatore location (Thudiyalur) and independent 3 BHK duplex layout",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை துடியாலூர்ல, அவனி பப்ளிக் ஸ்கூல் பக்கத்துல ஒரு அருமையான 3 BHK இண்டிபெண்டன்ட் ஹவுஸ் விற்பனைக்கு வந்திருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin-thudiyalur",
+        "purpose": "hook"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல மெயின் டோர் அண்ட் பிளாட் ரெண்டுமே ஈஸ்ட் ஃபேசிங். ஃபிரண்ட்ல பெரிய கார் பார்க் பண்ற அளவுக்கு கவர் பண்ணின போர்டிகோ ஸ்பேஸ் இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "east-facing-arrow",
+        "purpose": "property-orientation"
+      },
+      {
+        "name": "builtUp",
+        "voice": "மொத்தம் 1850 sq.ft built-up area கொண்ட G+1 டியூப்ளக்ஸ் வீடு. கிரவுண்ட் ஃபுளோர்ல லிவிங், மாடுலார் கிச்சன், ஒரு பெட்ரூம் இருக்கு. ஃபர்ஸ்ட் ஃபுளோர்ல 2 பெட்ரூம்ஸ், ஸ்டடி ஏரியா, அப்புறம் பால்கனி குடுத்திருக்காங்க.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "area-highlight-1850sqft",
+        "purpose": "layout-tour"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த வீட்டோட பிரைஸ் பாத்தீங்கனா 1.05 கோடி, இது negotiable தான். போர்வெல் வாட்டர் வசதியும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "land"
+        ],
+        "vfx": "price-tag-1.05cr",
+        "purpose": "pricing-details"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணவோ, மேற்கொண்டு details தெரிஞ்சுக்கவோ உடனே கால் பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "call-now-button",
+        "purpose": "call-to-action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/LCPevi4x7z8/",
+  "optional_owned_audio": "assets/audio/LCPevi4x7z8.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern house elevation featuring beige, dark brown, and white exterior paint, a decorative white clay jaali screen on the first-floor balcony, a covered portico with geometric wooden-pattern ceiling, iron entrance gate with ramp, and an open terrace offering mountain views.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Gated parking portico, side setback with exterior common bathroom/utility, East-facing main door, living room (11x17 ft) with under-stairs TV unit and built-in pooja cabinet, 1 bedroom with attached bathroom, modular kitchen (10x10 ft) with integrated foldable dining table; First Floor: Granite staircase leading to a dedicated study/workstation area, 2 bedrooms with attached bathrooms, front common balcony with clay jaali screen, and utility washing area; Terrace Level: Headroom exit to open roof terrace with water tank setup and skylight roof panel.. Neighbourhood: Quiet residential neighborhood in Thudiyalur, Coimbatore, with paved approach roads, surrounding independent homes, nearby school bus route, and views of the Western Ghats.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern house elevation featuring beige, dark brown, and white exterior paint, a decorative white clay jaali screen on the first-floor balcony, a covered portico with geometric wooden-pattern ceiling, iron entrance gate with ramp, and an open terrace offering mountain views.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Gated parking portico, side setback with exterior common bathroom/utility, East-facing main door, living room (11x17 ft) with under-stairs TV unit and built-in pooja cabinet, 1 bedroom with attached bathroom, modular kitchen (10x10 ft) with integrated foldable dining table; First Floor: Granite staircase leading to a dedicated study/workstation area, 2 bedrooms with attached bathrooms, front common balcony with clay jaali screen, and utility washing area; Terrace Level: Headroom exit to open roof terrace with water tank setup and skylight roof panel.. Neighbourhood: Quiet residential neighborhood in Thudiyalur, Coimbatore, with paved approach roads, surrounding independent homes, nearby school bus route, and views of the Western Ghats.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern house elevation featuring beige, dark brown, and white exterior paint, a decorative white clay jaali screen on the first-floor balcony, a covered portico with geometric wooden-pattern ceiling, iron entrance gate with ramp, and an open terrace offering mountain views.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Gated parking portico, side setback with exterior common bathroom/utility, East-facing main door, living room (11x17 ft) with under-stairs TV unit and built-in pooja cabinet, 1 bedroom with attached bathroom, modular kitchen (10x10 ft) with integrated foldable dining table; First Floor: Granite staircase leading to a dedicated study/workstation area, 2 bedrooms with attached bathrooms, front common balcony with clay jaali screen, and utility washing area; Terrace Level: Headroom exit to open roof terrace with water tank setup and skylight roof panel.. Neighbourhood: Quiet residential neighborhood in Thudiyalur, Coimbatore, with paved approach roads, surrounding independent homes, nearby school bus route, and views of the Western Ghats.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey modern house elevation featuring beige, dark brown, and white exterior paint, a decorative white clay jaali screen on the first-floor balcony, a covered portico with geometric wooden-pattern ceiling, iron entrance gate with ramp, and an open terrace offering mountain views.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Gated parking portico, side setback with exterior common bathroom/utility, East-facing main door, living room (11x17 ft) with under-stairs TV unit and built-in pooja cabinet, 1 bedroom with attached bathroom, modular kitchen (10x10 ft) with integrated foldable dining table; First Floor: Granite staircase leading to a dedicated study/workstation area, 2 bedrooms with attached bathrooms, front common balcony with clay jaali screen, and utility washing area; Terrace Level: Headroom exit to open roof terrace with water tank setup and skylight roof panel.. Neighbourhood: Quiet residential neighborhood in Thudiyalur, Coimbatore, with paved approach roads, surrounding independent homes, nearby school bus route, and views of the Western Ghats.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
