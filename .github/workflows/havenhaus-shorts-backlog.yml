@@ -27,6 +27,7 @@ jobs:
       PYTHONPATH: .
       PYTHONUNBUFFERED: "1"
       INTERIOR_ANALYSIS_REQUEST_TIMEOUT_MS: "60000"
+      GEMINI_ANALYSIS_MODEL: gemini-3.5-flash-lite
       YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
