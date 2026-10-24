@@ -1,0 +1,121 @@
+{
+  "video_id": "7SJ_65PsXHk",
+  "source_url": "https://www.youtube.com/watch?v=7SJ_65PsXHk",
+  "property_location": "Thudiyalur, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "3 BHK",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "1600 sq.ft",
+    "price": "75 Lakhs",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered Car Parking",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex with open terrace utility",
+    "layout_distribution": "Ground Floor: Covered car parking, living hall with TV unit and pooja cabinet, 1 bedroom with attached bathroom, modular kitchen with attached dining space. First Floor: Staircase lobby with profile light decoration, 2 master bedrooms with attached bathrooms and built-in wardrobes, private balcony. Roof Level: Open terrace and utility space."
+  },
+  "verified_facts": "3 BHK individual villa built in 1600 sq.ft built-up area., Price is 75 Lakhs (negotiable)., Located near Thudiyalur, Coimbatore., North-facing teak wood main entrance door., Ground floor features 10x16 ft car parking, 16x16 ft living room with TV unit and pooja cabinet, 1 compact bedroom with attached bathroom, and a pistachio-green modular kitchen with 8x16 ft dining area., Staircase equipped with profile lighting leading to first floor lobby decor., First floor includes 2 master bedrooms (10x16 ft each) with in-built wardrobes and attached bathrooms (4x8 ft), plus a private balcony offering scenic mountain views., Roof level provides an open terrace and utility area.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local property presenter speaking directly to camera with high energy.",
+    "hook_strategy": "Lead with the location, property type, and attractive 75 Lakhs price point to capture immediate interest.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Thudiyalur-ல 75 Lakhs-க்கு ஒரு 3 BHK Individual Villa பாக்கலாமா?",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இது 1600 sq.ft built-up area கொண்ட G+1 duplex வீடு. Ground floor-ல TV unit, pooja cabinet இருக்குற living hall, ஒரு bedroom, அப்புறம் pistachio-green modular kitchen அமைஞ்சிருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "exterior",
+          "road"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "feature"
+      },
+      {
+        "name": "facing",
+        "voice": "North facing teak wood main door-ோட வருது. Profile lighting staircase வழியா first floor போனா, in-built wardrobes இருக்கிற 2 master bedrooms-உம் private balcony-யும் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "compass",
+        "purpose": "feature"
+      },
+      {
+        "name": "price",
+        "voice": "Roof level-ல open terrace அப்புறம் utility space இருக்கு. இந்த வீடோட price பாத்தீங்கனா 75 Lakhs, negotiable தான்.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேரடியா site visit பண்ண அல்லது details தெரிஞ்சுக்க உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "bedroom"
+        ],
+        "vfx": "call-button",
+        "purpose": "action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/7SJ_65PsXHk/",
+  "optional_owned_audio": "assets/audio/7SJ_65PsXHk.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-storey villa featuring grey and white dual-tone exterior wall paint, decorative elevation lines, glass-railed first-floor balcony, covered parking porch, and dark metal main gate.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking, living hall with TV unit and pooja cabinet, 1 bedroom with attached bathroom, modular kitchen with attached dining space. First Floor: Staircase lobby with profile light decoration, 2 master bedrooms with attached bathrooms and built-in wardrobes, private balcony. Roof Level: Open terrace and utility space.. Neighbourhood: Developing residential neighbourhood in Thudiyalur surrounded by vacant plots, newly constructed houses, and scenic mountain view backdrop.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-storey villa featuring grey and white dual-tone exterior wall paint, decorative elevation lines, glass-railed first-floor balcony, covered parking porch, and dark metal main gate.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking, living hall with TV unit and pooja cabinet, 1 bedroom with attached bathroom, modular kitchen with attached dining space. First Floor: Staircase lobby with profile light decoration, 2 master bedrooms with attached bathrooms and built-in wardrobes, private balcony. Roof Level: Open terrace and utility space.. Neighbourhood: Developing residential neighbourhood in Thudiyalur surrounded by vacant plots, newly constructed houses, and scenic mountain view backdrop.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-storey villa featuring grey and white dual-tone exterior wall paint, decorative elevation lines, glass-railed first-floor balcony, covered parking porch, and dark metal main gate.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking, living hall with TV unit and pooja cabinet, 1 bedroom with attached bathroom, modular kitchen with attached dining space. First Floor: Staircase lobby with profile light decoration, 2 master bedrooms with attached bathrooms and built-in wardrobes, private balcony. Roof Level: Open terrace and utility space.. Neighbourhood: Developing residential neighbourhood in Thudiyalur surrounded by vacant plots, newly constructed houses, and scenic mountain view backdrop.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern two-storey villa featuring grey and white dual-tone exterior wall paint, decorative elevation lines, glass-railed first-floor balcony, covered parking porch, and dark metal main gate.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking, living hall with TV unit and pooja cabinet, 1 bedroom with attached bathroom, modular kitchen with attached dining space. First Floor: Staircase lobby with profile light decoration, 2 master bedrooms with attached bathrooms and built-in wardrobes, private balcony. Roof Level: Open terrace and utility space.. Neighbourhood: Developing residential neighbourhood in Thudiyalur surrounded by vacant plots, newly constructed houses, and scenic mountain view backdrop.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
