@@ -6134,9 +6134,11 @@
     },
     "jyLlEDYNVsw": {
       "attempts": 0,
+      "completed_at": "2026-10-24T23:11:51.769595+00:00",
       "first_seen_at": "2026-10-23T12:11:22.116436+00:00",
+      "last_error": "",
       "next_retry_at": "2026-10-23T12:11:22.116436+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "jyQcPGmdLWw": {
       "attempts": 2,
