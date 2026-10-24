@@ -5,7 +5,7 @@ from pathlib import Path
 from .reference_first import build_reference_prompt, _send_prompt
 
 data = json.loads(Path("interior_trend_radar/revisions/wardrobe_motion_v2.json").read_text())
-receipt = Path("data/wardrobe_motion_v2_delivery.json")
+receipt = Path("data/wardrobe_motion_v3_delivery.json")
 if receipt.exists():
     raise SystemExit("Revision already delivered or pending; inspect receipt before resending")
 prompt = build_reference_prompt(data["candidate"], data["analysis"], {"brand": "Olive Tree Interiors"})

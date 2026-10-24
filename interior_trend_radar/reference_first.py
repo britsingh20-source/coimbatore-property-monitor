@@ -196,7 +196,11 @@ def build_fidelity_prompt(candidate: dict, analysis: dict, config: dict) -> str:
     times = ["0–1.4s", "1.4–2.8s", "2.8–4.2s", "4.2–5.6s", "5.6–7s", "7–8.5s", "8.5–10s"]
     shots = []
     for index, item in enumerate(records):
-        shots.append(f"{times[index]}: {item['component']} at {item['position']}. {item['closed_state']} → {item['movement']} → {item['open_state']}.")
+        shot = f"SHOT {index + 1} — {times[index]}: {item['component']}. Position: {item['position']}. Start: {item['closed_state']}. Action: {item['movement']}. Finish: {item['open_state']}."
+        for key, label in (("framing", "Camera"), ("visible_detail", "Visible detail"), ("stationary", "Keep fixed"), ("avoid", "Do not substitute")):
+            if item.get(key):
+                shot += f" {label}: {item[key]}."
+        shots.append(shot)
     return f"""Create a 10-second, full-screen portrait 9:16 video matching the supplied interior reference. Use the highest supported quality and the tool's native frame rate.
 
 Reference source: {candidate['url']}
@@ -205,10 +209,16 @@ Source presentation: {analysis.get('source_style', 'preserve the attached refere
 
 Preserve the original cabinet geometry, panel divisions, accessory identity, mounting locations, proportions, door directions and opening sequence. Change only the lighting to a slightly warmer tone; retain the original surface colours and materials. Keep the same installation across all seven shots. Rails and brackets support the accessory; they must not replace it.
 
-Follow this chronological sequence, using clean cuts between demonstrations:
+VISUAL QUALITY
+Retain clear material detail: subtle white-panel texture, believable timber grain, neatly folded fabric and clean straight cabinet edges. Use soft daylight, gentle highlights and contact shadows to separate the panels from their recesses. Warm the illumination slightly without flattening contrast or making the whites yellow. Keep interiors bright enough to read. Do not add LED strips, pendants, ceiling fittings, decorative niches, rugs, plants or furniture absent from the source. Lighting adjustment means changing the illumination of the existing design.
+
+CAMERA AND CONTINUITY
+Use the reference's camera height and perspective. Frame each moving component together with its fixed surround so its mounting position is unambiguous. A gentle push-in or short lateral reveal may improve clarity, but never cross to a different installation or hide the opening action. Within each shot show a readable start, one continuous mechanical action, and a brief open-state reveal. Use clean cuts only between demonstrations; no dissolves or morphing panels. Preserve the original assembly animation rather than replacing it with unrelated completed-room shots.
+
+Follow this chronological sequence:
 {chr(10).join(shots)}
 
 Match the reference framing and assembly/reveal animation. A feature appearing during an assembly sequence is not evidence of a motorized mechanism. Maintain physical continuity within each opening action. Never change a recorded movement axis, replace a moving panel with static shelving, or alter the demonstrated accessory. Preserve every concealed compartment listed in the sequence. Do not invent hidden hinges, powered hardware or structural anchors.
 
-Use no presenter, filming equipment, competitor branding or extra furniture. No dialogue or music. Keep camera movement restrained so the mechanisms remain legible. Display a slim stationary footer: "{config.get('brand', 'Olive Tree Interiors').upper()} | REAL INTERIOR IDEAS". Keep it clear of the moving parts. Preserve the reference structure and functions throughout; lighting is the only intended design variation.
+Use no presenter, filming equipment, competitor branding or extra furniture. No dialogue or music. Keep camera movement restrained so the mechanisms remain legible. Keep every accessory in its original compartment and mounting position. Do not add compartments or alter internal divisions. No fixed niche may replace a moving panel or shelf. Display a slim stationary footer: "{config.get('brand', 'Olive Tree Interiors').upper()} | REAL INTERIOR IDEAS". Keep it clear of the moving parts. Preserve the reference structure and functions throughout; lighting is the only intended design variation.
 """

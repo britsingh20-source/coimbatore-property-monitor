@@ -1,5 +1,5 @@
 {
-  "revision_id": "FRDweeW_ulY-motion-v2",
+  "revision_id": "FRDweeW_ulY-motion-v3-detailed",
   "candidate": {
     "video_id": "FRDweeW_ulY",
     "url": "https://www.youtube.com/shorts/FRDweeW_ulY",
@@ -15,7 +15,11 @@
         "closed_state": "The front is closed",
         "movement": "show the original outward drawer motion",
         "open_state": "the original storage contents are visible",
-        "evidence_timestamp": "approximately 1–4s"
+        "evidence_timestamp": "approximately 1–4s",
+        "framing": "low three-quarter close-up including the drawer front, timber top and fixed base surround",
+        "visible_detail": "show the full drawer opening and the folded garments inside, not a narrow dark slit",
+        "stationary": "the base carcass, timber top, room corner and floor",
+        "avoid": "a desk drawer, an empty white box, a different number or arrangement of drawers"
       },
       {
         "component": "Overhead storage",
@@ -23,7 +27,11 @@
         "closed_state": "Upper doors are closed",
         "movement": "swing the upper doors sideways as shown, preserving their hinge sides",
         "open_state": "the timber-lined compartments and bedding are visible",
-        "evidence_timestamp": "approximately 5–7s"
+        "evidence_timestamp": "approximately 5–7s",
+        "framing": "front-facing close-up with all original upper door divisions visible",
+        "visible_detail": "reveal the timber-lined bedding compartments behind the sideways-opening fronts",
+        "stationary": "the top cabinet carcass and dividers",
+        "avoid": "upward lift-up flaps, a changed compartment grid or invented gas struts"
       },
       {
         "component": "Main wardrobe reveal",
@@ -31,7 +39,11 @@
         "closed_state": "Preserve the original staged assembly view",
         "movement": "reproduce the source's assembly/reveal order and then the sideways door opening",
         "open_state": "matching hanging compartments and lower storage appear",
-        "evidence_timestamp": "approximately 8–11s"
+        "evidence_timestamp": "approximately 8–11s",
+        "framing": "medium frontal view connecting the upper storage, main wardrobe and base in one installation",
+        "visible_detail": "preserve the reference's hanging bays, the two vertically arranged hanging levels where visible, and the lower belongings",
+        "stationary": "the source cabinet width, divisions, timber interior and base position",
+        "avoid": "a new central tower of shelves, extra wardrobe bays or generic luxury closet layout"
       },
       {
         "component": "Side storage panel",
@@ -39,7 +51,11 @@
         "closed_state": "The tall exterior panel is closed",
         "movement": "move the same tall panel through the source opening path, keeping its attachment point fixed",
         "open_state": "the coat-and-bag storage and side shelves are revealed",
-        "evidence_timestamp": "approximately 12–15s"
+        "evidence_timestamp": "approximately 12–15s",
+        "framing": "three-quarter end view including the wardrobe end and adjacent room door",
+        "visible_detail": "show the moving tall panel opening to expose the timber backing, coat hooks, hanging bag and side shelves in their original positions",
+        "stationary": "the surrounding end cabinet and adjacent room door",
+        "avoid": "static decorative shelving or a conventional clothes cupboard in place of the moving panel"
       },
       {
         "component": "Concealed lower compartment",
@@ -47,7 +63,11 @@
         "closed_state": "The small lower door is closed",
         "movement": "swing the small door open sideways",
         "open_state": "the safe is visible inside the same compartment",
-        "evidence_timestamp": "approximately 16–18s"
+        "evidence_timestamp": "approximately 16–18s",
+        "framing": "closer low view of the small door beneath the side coat-and-bag area",
+        "visible_detail": "the door opens to reveal the dark safe inside the separate lower compartment",
+        "stationary": "the safe and the compartment carcass",
+        "avoid": "moving the safe to the bedside area, adding a safe drawer or enlarging the door"
       },
       {
         "component": "Compact bedside shelf",
@@ -55,7 +75,11 @@
         "closed_state": "Preserve the source's flush closed appearance",
         "movement": "reproduce the visible shelf reveal without adding exposed hardware",
         "open_state": "a compact timber-coloured shelf holds the source accessories",
-        "evidence_timestamp": "approximately 18–20s"
+        "evidence_timestamp": "approximately 18–20s",
+        "framing": "side close-up including the wall plane, timber-coloured shelf and bed edge when visible",
+        "visible_detail": "keep the shelf shallow and compact; reveal its top surface and the source's small objects",
+        "stationary": "the shelf's original height, attachment location and surrounding panel seams",
+        "avoid": "a large white flap, exposed oversized brackets, a deep timber-lined niche or a safe below this shelf"
       },
       {
         "component": "Final bedroom view",
@@ -63,7 +87,11 @@
         "closed_state": "Retain the same completed structure",
         "movement": "match the original final camera reveal",
         "open_state": "the shelf, bed, side storage and mirror relationship remain as referenced",
-        "evidence_timestamp": "approximately 20–22s"
+        "evidence_timestamp": "approximately 20–22s",
+        "framing": "reference-matched wider bedroom reveal",
+        "visible_detail": "retain the original bed, shelf, mirror and end-panel relationship, with readable surface detail and restrained daylight",
+        "stationary": "all completed cabinet divisions and accessory positions",
+        "avoid": "new pendant lights, a redesigned headboard, extra niches, unrelated decor or a second wardrobe"
       }
     ]
   }
