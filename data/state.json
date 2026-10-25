@@ -3203,11 +3203,12 @@
     },
     "P2-6gTIp_YE": {
       "attempts": 2,
+      "completed_at": "2026-10-25T23:36:55.830039+00:00",
       "first_seen_at": "2026-10-07T09:20:25.979249+00:00",
       "last_attempt_at": "2026-10-08T07:24:32.841683+00:00",
-      "last_error": "Error code: 429 - {'error': {'message': 'Your project has exceeded a quota. See https://ai.dev/rate-limit to manage your rate limits.', 'code': 'too_many_requests'}}",
+      "last_error": "",
       "next_retry_at": "2026-10-08T11:24:32.841694+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "P23BnKO9ZZ4": {
       "attempts": 0,
