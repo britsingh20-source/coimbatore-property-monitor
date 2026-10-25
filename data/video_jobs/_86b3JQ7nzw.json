@@ -1,0 +1,105 @@
+{
+  "video_id": "_86b3JQ7nzw",
+  "source_url": "https://www.youtube.com/watch?v=_86b3JQ7nzw",
+  "property_location": "Thudiyalur",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "2 BHK",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹65 Lakhs",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking porch",
+    "approval": "NOT SPECIFIED",
+    "floors": "single-storey with open terrace",
+    "layout_distribution": "Ground Floor: Covered parking porch, entrance hall/living area, kitchen, 2 bedrooms, and 2 bathrooms. Roof Level: Open terrace with water tanks accessed via external staircase."
+  },
+  "verified_facts": "Title mentions '2BHK Villa Just ₹65 Lakhs Thudiyalur near ☎️9952850155'., Video shows Aram Realtors contact branding with phone number 99528 50155., Walkthrough verifies a single-storey house featuring a covered front porch, living room, kitchen, two bedrooms with wardrobes, two bathrooms, external stairs, and an open roof terrace.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and authentic local real-estate presenter speaking directly to camera in natural conversational Tamil.",
+    "hook_strategy": "Highlight the core combination of Thudiyalur location, 2 BHK villa property type, and ₹65 Lakhs price tag right in the first 3 seconds.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோயம்புத்தூர் துடியலூர் location-ல ₹65 Lakhs-க்கு ஒரு 2 BHK Villa பாக்கலாம் வாங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இந்த single-storey வீட்ல ஃபிரன்ட்ல covered car parking porch இருக்கு. உள்ள வந்தா false ceiling வித் LED lighting-ோட living area அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-overlay-living-features",
+        "purpose": "ground_floor_highlights"
+      },
+      {
+        "name": "price",
+        "voice": "துடியலூர்ல இருக்கிற இந்த 2 BHK villa-வோட மொத்த விலை ₹65 Lakhs பாத்தீங்கனா.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "price-tag-pop",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணவோ மேலும் details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "contact-details-banner",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/_86b3JQ7nzw/",
+  "optional_owned_audio": "assets/audio/_86b3JQ7nzw.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-storey residential villa with a gated front porch, tan/brown facade accents, external staircase, and flat roof terrace.. Hard floor/layout lock: single-storey with open terrace; Ground Floor: Covered parking porch, entrance hall/living area, kitchen, 2 bedrooms, and 2 bathrooms. Roof Level: Open terrace with water tanks accessed via external staircase.. Neighbourhood: Developing residential neighborhood in Thudiyalur with nearby houses, vacant plots, and green fields.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-storey residential villa with a gated front porch, tan/brown facade accents, external staircase, and flat roof terrace.. Hard floor/layout lock: single-storey with open terrace; Ground Floor: Covered parking porch, entrance hall/living area, kitchen, 2 bedrooms, and 2 bathrooms. Roof Level: Open terrace with water tanks accessed via external staircase.. Neighbourhood: Developing residential neighborhood in Thudiyalur with nearby houses, vacant plots, and green fields.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-storey residential villa with a gated front porch, tan/brown facade accents, external staircase, and flat roof terrace.. Hard floor/layout lock: single-storey with open terrace; Ground Floor: Covered parking porch, entrance hall/living area, kitchen, 2 bedrooms, and 2 bathrooms. Roof Level: Open terrace with water tanks accessed via external staircase.. Neighbourhood: Developing residential neighborhood in Thudiyalur with nearby houses, vacant plots, and green fields.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: Modern single-storey residential villa with a gated front porch, tan/brown facade accents, external staircase, and flat roof terrace.. Hard floor/layout lock: single-storey with open terrace; Ground Floor: Covered parking porch, entrance hall/living area, kitchen, 2 bedrooms, and 2 bathrooms. Roof Level: Open terrace with water tanks accessed via external staircase.. Neighbourhood: Developing residential neighborhood in Thudiyalur with nearby houses, vacant plots, and green fields.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "needs_review",
+  "approval_mode": "automatic_fact_gate_v1"
+}
