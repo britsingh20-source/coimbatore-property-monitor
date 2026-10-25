@@ -1,0 +1,138 @@
+{
+  "video_id": "UiyznASties",
+  "source_url": "https://www.youtube.com/watch?v=UiyznASties",
+  "property_location": "Periyanaickenpalayam, off Mettupalayam Main Road, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "1 Cent onwards",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹10.25 Lakhs per cent onwards",
+    "facing": "East, West, North, South",
+    "road_width": "30 Feet & 33 Feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP and RERA Approved",
+    "floors": "NOT SPECIFIED",
+    "layout_distribution": "NOT SPECIFIED"
+  },
+  "verified_facts": "Layout name is Heritage Grand Vista, Location is 1.5 km inside from Mettupalayam main road opposite Periyanaickenpalayam BSNL office, Plot pricing starts at ₹10.25 Lakhs per cent, Board advertises optional 2 BHK villas from ₹55 Lakhs, Up to 80% bank loan facility available from leading banks including LIC, Plots available in East, West, North, and South facings across Phase 1 and Phase 2",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local property presenter speaking directly to camera in natural Coimbatore spoken Tamil.",
+    "hook_strategy": "Highlighting prime DTCP/RERA approved plots just 1.5 km off Mettupalayam Main Road in Periyanaickenpalayam.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Periyanaickenpalayam-ல, Mettupalayam main road-லிருந்து 1.5 km-ல BSNL office-க்கு opposite-ல 'Heritage Grand Vista' residential plots அமைஞ்சிருக்குங்க.",
+        "broll": [
+          "road",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இங்க 1 Cent-லிருந்து plots கிடைக்கும். DTCP and RERA approved gated community layout-ல dual entrance gates மற்றும் compound wall அமைச்சிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "bedroom"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "layout_details"
+      },
+      {
+        "name": "road",
+        "voice": "Layout உள்ள 30 feet மற்றும் 33 feet tar roads, solar street lights, Athikadavu drinking water connection இருக்கு. Bus stop வெறும் 150 meters-ல தான் இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "none",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "facing",
+        "voice": "Phase 1 and Phase 2-ல East, West, North, South-னு எல்லா facing-லயும் plots இருக்கு. LIC உட்பட leading banks மூலமா 80% வரை loan facility இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing_and_bank_loan"
+      },
+      {
+        "name": "price",
+        "voice": "Plot price per cent ₹10.25 Lakhs-லிருந்து start ஆகுது. Optional-ஆ 2 BHK villas கூட ₹55 Lakhs-லிருந்து பண்ணி தராங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "price-tag-overlay",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details மற்றும் நேரடியா site visit பண்ண உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "bedroom"
+        ],
+        "vfx": "call-button-overlay",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/UiyznASties/",
+  "optional_owned_audio": "assets/audio/UiyznASties.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Gated plot layout features paved blacktop roads (30 ft and 33 ft), yellow and white plot demarcation stones, peripheral compound wall, street light poles, saplings planted along roadsides, and a grand entrance arch.. Neighbourhood: Residential locality situated 1.5 km off Mettupalayam Main Road near Periyanaickenpalayam BSNL office and bus stop, framed by scenic hill views, coconut groves, and existing residential houses.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Gated plot layout features paved blacktop roads (30 ft and 33 ft), yellow and white plot demarcation stones, peripheral compound wall, street light poles, saplings planted along roadsides, and a grand entrance arch.. Neighbourhood: Residential locality situated 1.5 km off Mettupalayam Main Road near Periyanaickenpalayam BSNL office and bus stop, framed by scenic hill views, coconut groves, and existing residential houses.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Gated plot layout features paved blacktop roads (30 ft and 33 ft), yellow and white plot demarcation stones, peripheral compound wall, street light poles, saplings planted along roadsides, and a grand entrance arch.. Neighbourhood: Residential locality situated 1.5 km off Mettupalayam Main Road near Periyanaickenpalayam BSNL office and bus stop, framed by scenic hill views, coconut groves, and existing residential houses.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Gated plot layout features paved blacktop roads (30 ft and 33 ft), yellow and white plot demarcation stones, peripheral compound wall, street light poles, saplings planted along roadsides, and a grand entrance arch.. Neighbourhood: Residential locality situated 1.5 km off Mettupalayam Main Road near Periyanaickenpalayam BSNL office and bus stop, framed by scenic hill views, coconut groves, and existing residential houses.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
