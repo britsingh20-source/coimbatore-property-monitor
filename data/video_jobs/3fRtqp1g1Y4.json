@@ -1,0 +1,116 @@
+{
+  "video_id": "3fRtqp1g1Y4",
+  "source_url": "https://www.youtube.com/watch?v=3fRtqp1g1Y4",
+  "property_location": "Periyanaickenpalayam / Veerapandipirivu, Coimbatore",
+  "entrance_contaminated": true,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "4 Cent",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹95 Lakhs",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex",
+    "layout_distribution": "Ground floor features covered portico/car parking and entrance area; First floor features a front balcony with glass railing; Top level consists of an open terrace with water storage tank."
+  },
+  "verified_facts": "3BHK independent house listed for sale at ₹95 Lakhs on a 4 Cent land plot in Coimbatore., On-screen video overlay displays contact number +91 93601 80817 and location as Periyanaicken Palayam, Coimbatore., Video metadata specifies location as Veerapandipirivu, Coimbatore., Visual tour showcases exterior elevation featuring covered portico parking, G+1 floor layout, and first-floor balcony.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera with clear scene transitions and visual alignment.",
+    "hook_strategy": "Lead directly with the popular Coimbatore location (Periyanaickenpalayam/Veerapandipirivu) and the key property type (4 Cent 3 BHK Independent House).",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை பெரியநாயக்கன்பாளையம், வீராண்டிபிரிவு location-ல ஒரு அருமையான 3 BHK independent house விற்பனைக்கு வந்திருக்குங்க!",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 4 Cent இடத்துல இந்த வீடு அமைஞ்சிருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "area-measurement",
+        "purpose": "property_dimension"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இதுல முக்கியமா பாத்தீங்கனா G+1 duplex layout. Ground floor-ல covered car parking அப்புறம் entrance area வருது. First floor-ல glass railing வச்ச balcony, மேல open terrace-உம் இருக்கு.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "highlight-box",
+        "purpose": "feature_highlight"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த 3 BHK வீடோட price பாத்தீங்கனா 95 Lakhs.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "price-tag",
+        "purpose": "value_proposition"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details தெரிஞ்சுக்க இல்ல நேர்ல வந்து site visit பாக்க 93601 80817 எண்ணுக்கு உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "contact-card",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/3fRtqp1g1Y4/",
+  "optional_owned_audio": "assets/audio/3fRtqp1g1Y4.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Periyanaickenpalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+1 independent house featuring light yellow and white exterior wall paint, grey accent stripes, covered portico with sliding entrance gate, glass-paneled first-floor balcony, and top open terrace with water tank.. Hard floor/layout lock: G+1 duplex; Ground floor features covered portico/car parking and entrance area; First floor features a front balcony with glass railing; Top level consists of an open terrace with water storage tank.. Neighbourhood: Quiet residential street with paved access road, adjacent independent houses, and coconut trees under clear blue skies.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Periyanaickenpalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+1 independent house featuring light yellow and white exterior wall paint, grey accent stripes, covered portico with sliding entrance gate, glass-paneled first-floor balcony, and top open terrace with water tank.. Hard floor/layout lock: G+1 duplex; Ground floor features covered portico/car parking and entrance area; First floor features a front balcony with glass railing; Top level consists of an open terrace with water storage tank.. Neighbourhood: Quiet residential street with paved access road, adjacent independent houses, and coconut trees under clear blue skies.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Periyanaickenpalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+1 independent house featuring light yellow and white exterior wall paint, grey accent stripes, covered portico with sliding entrance gate, glass-paneled first-floor balcony, and top open terrace with water tank.. Hard floor/layout lock: G+1 duplex; Ground floor features covered portico/car parking and entrance area; First floor features a front balcony with glass railing; Top level consists of an open terrace with water storage tank.. Neighbourhood: Quiet residential street with paved access road, adjacent independent houses, and coconut trees under clear blue skies.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Periyanaickenpalayam, Coimbatore, Tamil Nadu. Architecture consistent with: Modern G+1 independent house featuring light yellow and white exterior wall paint, grey accent stripes, covered portico with sliding entrance gate, glass-paneled first-floor balcony, and top open terrace with water tank.. Hard floor/layout lock: G+1 duplex; Ground floor features covered portico/car parking and entrance area; First floor features a front balcony with glass railing; Top level consists of an open terrace with water storage tank.. Neighbourhood: Quiet residential street with paved access road, adjacent independent houses, and coconut trees under clear blue skies.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

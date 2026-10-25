@@ -1,0 +1,136 @@
+{
+  "video_id": "Q32eW-Akvsw",
+  "source_url": "https://www.youtube.com/watch?v=Q32eW-Akvsw",
+  "property_location": "Saravanampatti, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "1.5 Cents to 5 Cents (Total Project: 13 Acres)",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹21 Lakhs - ₹26 Lakhs",
+    "facing": "South-West, North-East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved",
+    "floors": "NOT SPECIFIED",
+    "layout_distribution": "NOT SPECIFIED"
+  },
+  "verified_facts": "Project named Balaji Parcella / Balaji Parcel Urbenaa spread over 13 acres with 146 total sites., Plot sizes range from 1.5 cents up to 5 cents, with both commercial on-road sites and residential inner plots., Located along Saravanampatti - Thudiyalur Road near major IT parks, Kumaraguru College (5 mins), and Prozone Mall (10 mins)., DTCP approved layout with complete infrastructure including wide tar roads, streetlights, water pipeline, compound wall, and sports turf amenities.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking conversationally to camera",
+    "hook_strategy": "Lead with prime location in Saravanampatti near major IT and college hubs at an attractive price point",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore, Saravanampatti-ல, Kumaraguru College-க்கு அஞ்சே நிமிஷத்துல ஒரு அருமையான plot project அமைஞ்சிருக்குங்க.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "location-text-pop",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "பாத்தீங்கனா, இங்க 21 லட்சத்துல இருந்து 26 லட்சத்துக்குள்ள residential plots கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "kitchen"
+        ],
+        "vfx": "price-tag-highlight",
+        "purpose": "value_proposition"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 13 acres project-ல 1.5 cents-ல இருந்து 5 cents வரைக்கும் plots ready-ஆ இருக்கு.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "area-boundary-outline",
+        "purpose": "property_details"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல உங்களுக்கு தேவையான South-West மற்றும் North-East facing plots தேர்வு பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "interior",
+          "kitchen"
+        ],
+        "vfx": "compass-direction",
+        "purpose": "facing_details"
+      },
+      {
+        "name": "approval",
+        "voice": "முக்கியமான விஷயம், இது DTCP Approved layout. Water line, EB line, Club House, மற்றும் Turf வசதிகளும் இதுல இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_building"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணவோ details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "contact-card-overlay",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/Q32eW-Akvsw/",
+  "optional_owned_audio": "assets/audio/Q32eW-Akvsw.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed gated residential layout featuring paved blacktop tar roads, curb markings, streetlights, park seating benches, compound wall perimeter, and dedicated sports turf facilities.. Neighbourhood: Prime rapidly developing educational and IT hub in Saravanampatti, Coimbatore, surrounded by IT parks, engineering colleges, multi-specialty hospitals, and shopping malls.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed gated residential layout featuring paved blacktop tar roads, curb markings, streetlights, park seating benches, compound wall perimeter, and dedicated sports turf facilities.. Neighbourhood: Prime rapidly developing educational and IT hub in Saravanampatti, Coimbatore, surrounded by IT parks, engineering colleges, multi-specialty hospitals, and shopping malls.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed gated residential layout featuring paved blacktop tar roads, curb markings, streetlights, park seating benches, compound wall perimeter, and dedicated sports turf facilities.. Neighbourhood: Prime rapidly developing educational and IT hub in Saravanampatti, Coimbatore, surrounded by IT parks, engineering colleges, multi-specialty hospitals, and shopping malls.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A fully developed gated residential layout featuring paved blacktop tar roads, curb markings, streetlights, park seating benches, compound wall perimeter, and dedicated sports turf facilities.. Neighbourhood: Prime rapidly developing educational and IT hub in Saravanampatti, Coimbatore, surrounded by IT parks, engineering colleges, multi-specialty hospitals, and shopping malls.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
