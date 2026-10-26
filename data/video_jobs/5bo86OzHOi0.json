@@ -1,0 +1,148 @@
+{
+  "video_id": "5bo86OzHOi0",
+  "source_url": "https://www.youtube.com/watch?v=5bo86OzHOi0",
+  "property_location": "Athipalayam, Saravanampatti, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "4.55 Cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "11.25 lakhs per cent",
+    "facing": "North West Corner",
+    "road_width": "40 Feet & 30 Feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved",
+    "floors": "NOT SPECIFIED",
+    "layout_distribution": "NOT SPECIFIED"
+  },
+  "verified_facts": "Plot No: 2, North West Corner plot in Mayon's Vriksham Grande layout at Athipalayam., Total saleable plot area is 4.55 Cents., Property is situated around 10 minutes drive from Saravanampatti IT Park., Corner road widths are 40 feet and 30 feet wide tar roads., Price listed as 11.25 lakhs per cent in description., DTCP approved gated layout with bank loan eligibility.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local real-estate presenter talking naturally to camera with conversational Tamil speech",
+    "hook_strategy": "Highlight the key location advantage - 10 minutes drive from Saravanampatti IT Park at Athipalayam",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "சரவணம்பட்டி IT பார்க்ல இருந்து வெறும் 10 நிமிஷ டிரைவ்ல, அதிபாளையம் location-ல அமைஞ்சிருக்கிற ஒரு plot தான் பாக்கப்போறோம்.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior",
+          "living_room"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "மேயோன்ஸ் விருக்ஷம் கிராண்டே layout-ல, Plot number 2... இதோட மொத்தம் land area பாத்தீங்கனா 4.55 Cents வருதுங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior",
+          "kitchen"
+        ],
+        "vfx": "boundary-highlight",
+        "purpose": "property_size"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், இது ஒரு நல்ல North West Corner plot.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass-direction",
+        "purpose": "orientation"
+      },
+      {
+        "name": "road",
+        "voice": "ரோடு பாத்தீங்கனா, corner-ல 40 feet மற்றும் 30 feet wide தார் ரோடு வசதி இருக்கு.",
+        "broll": [
+          "road",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "road-dimension-text",
+        "purpose": "road_details"
+      },
+      {
+        "name": "approval",
+        "voice": "DTCP approved gated community layout! Underground drainage, overhead water tank, park-னு நல்ல வசதிகளோட, bank loan-க்கும் eligibility இருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "living_room"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "legal_and_amenities"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட விலை ஒரு சென்ட் 11.25 lakhs அப்படின்னு நிர்ணயம் பண்ணிருக்காங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "price-tag-card",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ணனும்னாலோ இல்ல மத்த details வேணும்னாலோ உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "contact-details-popup",
+        "purpose": "action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/5bo86OzHOi0/",
+  "optional_owned_audio": "assets/audio/5bo86OzHOi0.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Gated residential layout named Mayon's Vriksham Grande with wide asphalt roads, concrete drain lines, LED street lighting poles, elevated water storage tank, and a landscaped children's park.. Neighbourhood: Established residential and educational area in Athipalayam near Saravanampatti IT corridor, surrounded by schools, colleges, and industrial units.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Gated residential layout named Mayon's Vriksham Grande with wide asphalt roads, concrete drain lines, LED street lighting poles, elevated water storage tank, and a landscaped children's park.. Neighbourhood: Established residential and educational area in Athipalayam near Saravanampatti IT corridor, surrounded by schools, colleges, and industrial units.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Gated residential layout named Mayon's Vriksham Grande with wide asphalt roads, concrete drain lines, LED street lighting poles, elevated water storage tank, and a landscaped children's park.. Neighbourhood: Established residential and educational area in Athipalayam near Saravanampatti IT corridor, surrounded by schools, colleges, and industrial units.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Gated residential layout named Mayon's Vriksham Grande with wide asphalt roads, concrete drain lines, LED street lighting poles, elevated water storage tank, and a landscaped children's park.. Neighbourhood: Established residential and educational area in Athipalayam near Saravanampatti IT corridor, surrounded by schools, colleges, and industrial units.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
