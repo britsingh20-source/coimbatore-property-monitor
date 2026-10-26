@@ -1008,6 +1008,94 @@
       "status": "matched",
       "video_id": "YeuCzhxC-j0"
     },
+    "social-ready/_XlBaYbZqaY.mp4": {
+      "content": {
+        "caption": "🏠 ₹1.35 Crore 3 BHK Villa in Thudiyalur, Coimbatore, Tamil Nadu\n\n📍 Location: Thudiyalur, Coimbatore, Tamil Nadu\n🏡 Property: 3 BHK Villa\n💰 Price: ₹1.35 Crore\n📐 Land: 3.10 Cents\n🏗️ Built-up: 2500 sq.ft.\n🧭 Facing: East\n🚗 Parking: Covered car parking portico\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#ThudiyalurProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#ThudiyalurProperty",
+          "#CoimbatoreProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "₹1.35 Crore 3 BHK Villa in Thudiyalur, Coimbatore, Tamil Nadu | Site Visit 9003787621",
+        "youtube_description": "₹1.35 Crore 3 BHK Villa in Thudiyalur, Coimbatore, Tamil Nadu. Watch the complete property walkthrough.\n\n📍 Location: Thudiyalur, Coimbatore, Tamil Nadu\n🏡 Property: 3 BHK Villa\n💰 Price: ₹1.35 Crore\n📐 Land: 3.10 Cents\n🏗️ Built-up: 2500 sq.ft.\n🧭 Facing: East\n🚗 Parking: Covered car parking portico\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #ThudiyalurProperty #CoimbatoreProperty #CoimbatoreRealEstate"
+      },
+      "etag": "0867e305b3e2c666913791a600f63cee-2",
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "channel": "real_estate",
+            "creation_id": "17904528051599708",
+            "media_id": "17888872728621701",
+            "processing": {
+              "id": "17904528051599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "verification": {
+              "id": "17888872728621701",
+              "media_product_type": "REELS",
+              "media_type": "VIDEO",
+              "permalink": "https://www.instagram.com/reel/De8LGUOghZk/",
+              "timestamp": "2026-10-26T02:08:35+0000"
+            }
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17904528471599708",
+            "media_id": "18350003935249200",
+            "processing": {
+              "id": "17904528471599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "verification": {
+              "id": "18350003935249200",
+              "media_product_type": "STORY",
+              "media_type": "VIDEO",
+              "permalink": "https://www.instagram.com/stories/smartbuycart7/4016134242702210987",
+              "timestamp": "2026-10-26T02:09:22+0000"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
+          "status": "credential_blocked"
+        }
+      },
+      "status": "ready_to_publish",
+      "video_id": "_XlBaYbZqaY",
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 248541,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 25.112,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 248362,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 25.133333,
+          "height": 1280,
+          "width": 720
+        }
+      }
+    },
     "social-ready/eChfOB4E7uw.mp4": {
       "content": {
         "caption": "🏠 ₹98 Lakhs to ₹1.15 Crore 3 BHK Villa in Idikarai, near Athipalayam Four Corner, Thudiyalur to Kovilpalayam Main Road, Coimbatore\n\n📍 Location: Idikarai, near Athipalayam Four Corner, Thudiyalur to Kovilpalayam Main Road, Coimbatore\n🏡 Property: 3 BHK Villa\n💰 Price: ₹98 Lakhs to ₹1.15 Crore\n📐 Land: 5 Cent\n🏗️ Built-up: 2200 sqft\n🧭 Facing: East\n🚗 Parking: Covered Car Parking (17' x 12')\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#IdikaraiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
