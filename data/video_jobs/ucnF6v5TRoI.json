@@ -1,0 +1,122 @@
+{
+  "video_id": "ucnF6v5TRoI",
+  "source_url": "https://www.youtube.com/watch?v=ucnF6v5TRoI",
+  "property_location": "Kurumbapalayam, Saravanampatti, Sathy Road, Coimbatore, Tamil Nadu, India",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "NOT SPECIFIED",
+    "facing": "North & East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP & RERA Approved",
+    "floors": "NOT SPECIFIED",
+    "layout_distribution": "NOT SPECIFIED"
+  },
+  "verified_facts": "DTCP and RERA approved residential plots available in Kurumbapalayam, Saravanampatti, Coimbatore., Located 1 km from Sathy Road and near SVB Tech Park., North and East facing plots are available., Contact person listed as Padmini at 9600527765.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, conversational local Coimbatore property presenter speaking directly to camera with smooth natural Tamil speech.",
+    "hook_strategy": "Highlight key Saravanampatti location advantage (1 km from Sathy Road near SVB Tech Park) as the primary retention hook.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோயம்புத்தூர் சரவணம்பட்டி குரும்பபாளையத்துல, சதி ரோட்டுல இருந்து வெறும் ஒரு கிலோமீட்டர்ல ஒரு சூப்பரான residential plots விற்பனைக்கு வந்திருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "approval",
+        "voice": "இதுல முக்கியமான விஷயம் என்னன்னா, இது முழுசா DTCP மற்றும் RERA approval வாங்குன லேஅவுட் பாத்தீங்கனா.",
+        "broll": [
+          "land"
+        ],
+        "avoid_broll": [
+          "living_room",
+          "interior"
+        ],
+        "vfx": "approval-badge",
+        "purpose": "trust_building"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல North மற்றும் East facing plots கிடைக்குது. அதுவும் SVB Tech Park-க்கு ரொம்பவே பக்கத்துல அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "feature_highlight"
+      },
+      {
+        "name": "road",
+        "voice": "அதே மாதிரி லேஅவுட்ல paved internal blacktop roads, compound fencing, அப்புறம் street lighting electricity poles எல்லாமே பக்காவா அமைச்சுருக்காங்க.",
+        "broll": [
+          "road",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "living_room"
+        ],
+        "vfx": "amenity-highlights",
+        "purpose": "infrastructure"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் details தெரிஞ்சுக்கவோ அல்லது site visit வரவோ, பத்மினி அவர்களை 9600527765 என்ற எண்ணுக்கு உடனே தொடர்பு கொள்ளுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "contact-card",
+        "purpose": "action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/ucnF6v5TRoI/",
+  "optional_owned_audio": "assets/audio/ucnF6v5TRoI.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Vacant layout plots with wide tar roads, gravel heaps, street lights, compound fencing, and existing residential buildings in the immediate backdrop.. Neighbourhood: Developing residential site in Kurumbapalayam, situated close to SVB Tech Park and 1 km off Sathy Road in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Vacant layout plots with wide tar roads, gravel heaps, street lights, compound fencing, and existing residential buildings in the immediate backdrop.. Neighbourhood: Developing residential site in Kurumbapalayam, situated close to SVB Tech Park and 1 km off Sathy Road in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Vacant layout plots with wide tar roads, gravel heaps, street lights, compound fencing, and existing residential buildings in the immediate backdrop.. Neighbourhood: Developing residential site in Kurumbapalayam, situated close to SVB Tech Park and 1 km off Sathy Road in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Vacant layout plots with wide tar roads, gravel heaps, street lights, compound fencing, and existing residential buildings in the immediate backdrop.. Neighbourhood: Developing residential site in Kurumbapalayam, situated close to SVB Tech Park and 1 km off Sathy Road in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
