@@ -1,0 +1,122 @@
+{
+  "video_id": "ZB66TeRyGPk",
+  "source_url": "https://www.youtube.com/watch?v=ZB66TeRyGPk",
+  "property_location": "Pannimadai, Thudiyalur, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "2000 sq ft",
+    "price": "Rs 1.05 Crore",
+    "facing": "East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex",
+    "layout_distribution": "Ground floor: Covered car parking portico, main entrance door, living hall with under-stairs TV unit and pooja unit, kitchen, and Bedroom 1 with attached bathroom. First floor: Staircase landing with skylight, study desk area, Bedroom 2 with attached bathroom, and Bedroom 3 with teal wardrobes and attached bathroom."
+  },
+  "verified_facts": "3BHK house for sale in Pannimadai, Thudiyalur listed at 1.05 Crore, 2000 sq ft, East facing, Contact number: 97903-97923",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local Tamil property presenter",
+    "hook_strategy": "Showcase a 2000 sq ft 3 BHK G+1 duplex house in the prime Pannimadai, Thudiyalur location.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Thudiyalur பக்கத்துல இருக்குற Pannimadai location-ல ஒரு 3 BHK G+1 duplex independent house விற்பனைக்கு வந்திருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin-highlight",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "2000 sq ft built-up area-ல, ground floor-ல covered car parking portico, false ceiling lights கொண்ட living hall, under-stairs TV unit, pooja cabinet, modular kitchen, அப்புறம் attached bathroom-ஓட Bedroom 1 அமைஞ்சிருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road",
+          "land"
+        ],
+        "vfx": "ground-floor-highlight",
+        "purpose": "ground-floor-details"
+      },
+      {
+        "name": "facing",
+        "voice": "East facing வீடான இதுல, skylight வசதியோட இருக்குற internal staircase வழியா மேல போனா workstation nook, attached bathroom-ஓட Bedroom 2, அப்புறம் teal wardrobes வசதியோட Bedroom 3 இருக்கு.",
+        "broll": [
+          "interior",
+          "bedroom",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "compass-east-cardinal",
+        "purpose": "facing-and-first-floor-details"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த 3 BHK duplex வீடொட விலை 1.05 Crore.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [
+          "land"
+        ],
+        "vfx": "price-card-overlay",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ண அல்லது மேலும் details தெரிஞ்சுக்க 97903-97923-க்கு call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "phone-number-overlay",
+        "purpose": "call-to-action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/ZB66TeRyGPk/",
+  "optional_owned_audio": "assets/audio/ZB66TeRyGPk.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Pannimadai, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey contemporary residential facade painted in light peach and off-white tones, accented with decorative breeze block jali work, glass balcony railing, red ramp entrance, and a dark compound gate.. Hard floor/layout lock: G+1 duplex; Ground floor: Covered car parking portico, main entrance door, living hall with under-stairs TV unit and pooja unit, kitchen, and Bedroom 1 with attached bathroom. First floor: Staircase landing with skylight, study desk area, Bedroom 2 with attached bathroom, and Bedroom 3 with teal wardrobes and attached bathroom.. Neighbourhood: Residential locality in Pannimadai, Thudiyalur.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Pannimadai, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey contemporary residential facade painted in light peach and off-white tones, accented with decorative breeze block jali work, glass balcony railing, red ramp entrance, and a dark compound gate.. Hard floor/layout lock: G+1 duplex; Ground floor: Covered car parking portico, main entrance door, living hall with under-stairs TV unit and pooja unit, kitchen, and Bedroom 1 with attached bathroom. First floor: Staircase landing with skylight, study desk area, Bedroom 2 with attached bathroom, and Bedroom 3 with teal wardrobes and attached bathroom.. Neighbourhood: Residential locality in Pannimadai, Thudiyalur.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Pannimadai, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey contemporary residential facade painted in light peach and off-white tones, accented with decorative breeze block jali work, glass balcony railing, red ramp entrance, and a dark compound gate.. Hard floor/layout lock: G+1 duplex; Ground floor: Covered car parking portico, main entrance door, living hall with under-stairs TV unit and pooja unit, kitchen, and Bedroom 1 with attached bathroom. First floor: Staircase landing with skylight, study desk area, Bedroom 2 with attached bathroom, and Bedroom 3 with teal wardrobes and attached bathroom.. Neighbourhood: Residential locality in Pannimadai, Thudiyalur.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Pannimadai, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey contemporary residential facade painted in light peach and off-white tones, accented with decorative breeze block jali work, glass balcony railing, red ramp entrance, and a dark compound gate.. Hard floor/layout lock: G+1 duplex; Ground floor: Covered car parking portico, main entrance door, living hall with under-stairs TV unit and pooja unit, kitchen, and Bedroom 1 with attached bathroom. First floor: Staircase landing with skylight, study desk area, Bedroom 2 with attached bathroom, and Bedroom 3 with teal wardrobes and attached bathroom.. Neighbourhood: Residential locality in Pannimadai, Thudiyalur.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
