@@ -1,0 +1,144 @@
+{
+  "video_id": "FWt3ufaUYK0",
+  "source_url": "https://www.youtube.com/watch?v=FWt3ufaUYK0",
+  "property_location": "Saravanampatti, Kondayampalayam / Keeranatham, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": true,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "2.86 Cents",
+    "built_up_area": "2000 sq ft",
+    "price": "₹1.05 Crore",
+    "facing": "East",
+    "road_width": "40 ft and 30 ft",
+    "parking": "Covered car parking (10.25 ft x 17 ft)",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex with open terrace",
+    "layout_distribution": "Ground floor: Car parking space, living hall, modular kitchen with dining area, pooja room, inner staircase, and master bedroom 1 with attached western bathroom. First floor: Lounge area with skylight, master bedroom 2 with attached bathroom, kids bedroom 3 with attached bathroom, and safety door leading to balcony. Roof level: Open terrace with water tanks accessed via external spiral staircase."
+  },
+  "verified_facts": "Land area is 2.86 cents in an East-facing site., House built-up area is 2000 sq ft with East-facing entrance., Road widths inside the layout are 40 ft and 30 ft., Ground floor contains car parking (10.25 ft x 17 ft), living room (20 ft x 14 ft), kitchen & dining (10 ft x 16 ft), pooja room (4 ft x 4 ft), and master bedroom (15.5 ft x 11 ft) with attached bathroom (11 ft x 4 ft)., First floor contains lounge area with OTS skylight, second master bedroom (15.5 ft x 11 ft) with attached bathroom (11 ft x 4 ft), kids bedroom (10 ft x 11 ft) with attached bathroom (10 ft x 5 ft), and a balcony with ceiling skylight cutouts., Terrace floor is accessed via a spiral staircase and houses dual overhead water tanks., Listing price stated in title is 1.05 Crore.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local real-estate presenter speaking directly to camera, conversational and engaging.",
+    "hook_strategy": "Highlighting a 3 BHK independent house right near Saravanampatti IT Corridor.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை சரவணம்பட்டி IT Corridor பக்கத்துல ஒரு 3 BHK independent house பாக்கலாம் வாங்க!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "2000 sq ft built-up area-ல G+1 duplex-ஆ கட்டப்பட்ட இந்த வீட்டின் ground floor-ல car parking, living hall, modular kitchen, pooja room, அப்புறம் ஒரு master bedroom இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "floor-plan-overlay",
+        "purpose": "feature_highlight"
+      },
+      {
+        "name": "land",
+        "voice": "2.86 cents land area-ல, first floor-ல skylight lounge, 2 bedrooms, அப்புறம் balcony இருக்கு. roof-ல open terrace கொடுத்துருக்காங்க.",
+        "broll": [
+          "interior",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "text-highlight",
+        "purpose": "feature_highlight"
+      },
+      {
+        "name": "facing",
+        "voice": "இது East facing site மற்றும் East facing entrance கொண்ட ஒரு வீடு.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "feature_highlight"
+      },
+      {
+        "name": "road",
+        "voice": "பாத்தீங்கனா layout-க்குள்ள 40 feet மற்றும் 30 feet wide tar roads அமைச்சுருக்காங்க.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "infrastructure_highlight"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த வீட்டோட price 1.05 Crore.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல வந்து site visit பண்ண அல்லது details தெரிஞ்சுக்க உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "phone-number",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/FWt3ufaUYK0/",
+  "optional_owned_audio": "assets/audio/FWt3ufaUYK0.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone beige and brown elevation featuring a covered portico, black and gold decorative gate, glass-railed balcony with skylight pergolas, and roof-top spiral staircase.. Hard floor/layout lock: G+1 duplex with open terrace; Ground floor: Car parking space, living hall, modular kitchen with dining area, pooja room, inner staircase, and master bedroom 1 with attached western bathroom. First floor: Lounge area with skylight, master bedroom 2 with attached bathroom, kids bedroom 3 with attached bathroom, and safety door leading to balcony. Roof level: Open terrace with water tanks accessed via external spiral staircase.. Neighbourhood: Semi-gated residential layout with wide tar roads, compound walls, and ongoing housing construction near Saravanampatti IT corridor.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone beige and brown elevation featuring a covered portico, black and gold decorative gate, glass-railed balcony with skylight pergolas, and roof-top spiral staircase.. Hard floor/layout lock: G+1 duplex with open terrace; Ground floor: Car parking space, living hall, modular kitchen with dining area, pooja room, inner staircase, and master bedroom 1 with attached western bathroom. First floor: Lounge area with skylight, master bedroom 2 with attached bathroom, kids bedroom 3 with attached bathroom, and safety door leading to balcony. Roof level: Open terrace with water tanks accessed via external spiral staircase.. Neighbourhood: Semi-gated residential layout with wide tar roads, compound walls, and ongoing housing construction near Saravanampatti IT corridor.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone beige and brown elevation featuring a covered portico, black and gold decorative gate, glass-railed balcony with skylight pergolas, and roof-top spiral staircase.. Hard floor/layout lock: G+1 duplex with open terrace; Ground floor: Car parking space, living hall, modular kitchen with dining area, pooja room, inner staircase, and master bedroom 1 with attached western bathroom. First floor: Lounge area with skylight, master bedroom 2 with attached bathroom, kids bedroom 3 with attached bathroom, and safety door leading to balcony. Roof level: Open terrace with water tanks accessed via external spiral staircase.. Neighbourhood: Semi-gated residential layout with wide tar roads, compound walls, and ongoing housing construction near Saravanampatti IT corridor.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Modern dual-tone beige and brown elevation featuring a covered portico, black and gold decorative gate, glass-railed balcony with skylight pergolas, and roof-top spiral staircase.. Hard floor/layout lock: G+1 duplex with open terrace; Ground floor: Car parking space, living hall, modular kitchen with dining area, pooja room, inner staircase, and master bedroom 1 with attached western bathroom. First floor: Lounge area with skylight, master bedroom 2 with attached bathroom, kids bedroom 3 with attached bathroom, and safety door leading to balcony. Roof level: Open terrace with water tanks accessed via external spiral staircase.. Neighbourhood: Semi-gated residential layout with wide tar roads, compound walls, and ongoing housing construction near Saravanampatti IT corridor.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
