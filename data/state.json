@@ -1054,6 +1054,14 @@
       "next_retry_at": "2026-08-19T13:12:40.866578+00:00",
       "status": "archived_non_target"
     },
+    "7r9bzRriyng": {
+      "attempts": 0,
+      "completed_at": "2026-10-28T23:13:56.369659+00:00",
+      "first_seen_at": "2026-10-28T23:13:41.091752+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-10-28T23:13:41.091752+00:00",
+      "status": "video_queued"
+    },
     "7rwCjQ9QTQI": {
       "attempts": 0,
       "first_seen_at": "2026-10-07T09:20:25.979249+00:00",
