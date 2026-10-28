@@ -97,7 +97,8 @@
     "TU6szPgEeVg",
     "lldFeEm-jQE",
     "I4hHo62FR8s",
-    "ZoLksFkbqKk"
+    "ZoLksFkbqKk",
+    "VHR6Iqz3f2g"
   ],
   "history": [
     {
@@ -589,6 +590,11 @@
       "video_id": "ZoLksFkbqKk",
       "creator": "Ridhi Khosla Jalan",
       "url": "https://www.youtube.com/watch?v=ZoLksFkbqKk"
+    },
+    {
+      "video_id": "VHR6Iqz3f2g",
+      "creator": "Ridhi Khosla Jalan",
+      "url": "https://www.youtube.com/watch?v=VHR6Iqz3f2g"
     }
   ],
   "night_channel_cursor": 1
