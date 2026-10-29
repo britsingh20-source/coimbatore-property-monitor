@@ -4152,11 +4152,11 @@
       "status": "discovered"
     },
     "UO-UwR_r3lk": {
-      "attempts": 1,
+      "attempts": 2,
       "first_seen_at": "2026-10-29T02:27:05.093572+00:00",
-      "last_attempt_at": "2026-10-29T02:28:37.148308+00:00",
+      "last_attempt_at": "2026-10-29T10:28:57.450777+00:00",
       "last_error": "Error code: 429 - {'error': {'message': 'Your project has exceeded a quota. See https://ai.dev/rate-limit to manage your rate limits.', 'code': 'too_many_requests'}}",
-      "next_retry_at": "2026-10-29T04:28:37.148318+00:00",
+      "next_retry_at": "2026-10-29T14:28:57.450788+00:00",
       "status": "retry_pending"
     },
     "UTpVnJt363M": {
@@ -8494,9 +8494,11 @@
     },
     "y_ua6woZWjU": {
       "attempts": 0,
+      "completed_at": "2026-10-29T10:27:26.291811+00:00",
       "first_seen_at": "2026-10-29T09:55:39.071369+00:00",
+      "last_error": "",
       "next_retry_at": "2026-10-29T09:55:39.071369+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "ybJJ9QTb11A": {
       "attempts": 0,

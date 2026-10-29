@@ -1,0 +1,143 @@
+{
+  "video_id": "y_ua6woZWjU",
+  "source_url": "https://www.youtube.com/watch?v=y_ua6woZWjU",
+  "property_location": "Thudiyalur, Mettupalayam Road, Near NGGO Colony, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "From 2 Cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹14.5 Lakhs Per Cent",
+    "facing": "North, East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP",
+    "floors": "NOT SPECIFIED",
+    "layout_distribution": "NOT SPECIFIED"
+  },
+  "verified_facts": "Project name is Shree Aishwarya Garden located at Senkali Palayam near Thudiyalur and Saravanampatti, Coimbatore., The 2-acre development comprises 40 DTCP-approved residential plots across Phase 1 and Phase 2., Plot sizes range from 2 cents, 2.25 cents, to 2.5 cents., Plot pricing is fixed at ₹14.5 Lakhs per cent., Up to 90% bank loan approval available through tie-ups with banks including HDFC, LIC, and Punjab National Bank., Custom house construction packages are offered starting at an overall budget of ₹50 Lakhs.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed, conversational local property presenter speaking directly to camera",
+    "hook_strategy": "Highlight DTCP-approved plot availability in prime Thudiyalur near Saravanampatti IT Park",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Coimbatore Thudiyalur, NGGO Colony பக்கத்துல Saravanampatti IT Park கிட்ட Shree Aishwarya Garden அமைஞ்சிருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "location-pin-overlay",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "2 ஏக்கர் gated community-ல, 2 cent, 2.25 cent மற்றும் 2.5 cent அளவுகள்ல 40 residential plots இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "text-highlight",
+        "purpose": "land-details"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல North மற்றும் East facing plots இருக்கு. Tar road, water pipeline, compound wall, street lights எல்லாமே அமைச்சு குடுக்குறாங்க.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing-and-amenities"
+      },
+      {
+        "name": "approval",
+        "voice": "இது DTCP approval பெற்ற site. HDFC, LIC, Punjab National Bank மூலமா 90% வரை bank loan வசதியும் இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "badge-overlay",
+        "purpose": "approval-and-loan"
+      },
+      {
+        "name": "price",
+        "voice": "விலை பாத்தீங்கனா per cent ₹14.5 Lakhs. Custom house construction பண்ணணும்னா overall budget ₹50 Lakhs-ல இருந்தும் start ஆகுது.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "price-tag-overlay",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேரடியா site visit வரவும் மத்த details தெரிஞ்சுக்கவும் உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen",
+          "interior"
+        ],
+        "vfx": "call-to-action-banner",
+        "purpose": "cta"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/y_ua6woZWjU/",
+  "optional_owned_audio": "assets/audio/y_ua6woZWjU.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A gated residential layout with asphalt roads, painted curb blocks, plot demarcation stones, brand flags, a concrete compound wall, and a grand entrance arch named 'SHREE AISHWARYA GARDEN'.. Neighbourhood: Situated in a developing residential hub near Thudiyalur and Saravanampatti IT corridor, with established homes in the immediate vicinity and easy access to schools, colleges, hospitals, and public transport.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A gated residential layout with asphalt roads, painted curb blocks, plot demarcation stones, brand flags, a concrete compound wall, and a grand entrance arch named 'SHREE AISHWARYA GARDEN'.. Neighbourhood: Situated in a developing residential hub near Thudiyalur and Saravanampatti IT corridor, with established homes in the immediate vicinity and easy access to schools, colleges, hospitals, and public transport.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A gated residential layout with asphalt roads, painted curb blocks, plot demarcation stones, brand flags, a concrete compound wall, and a grand entrance arch named 'SHREE AISHWARYA GARDEN'.. Neighbourhood: Situated in a developing residential hub near Thudiyalur and Saravanampatti IT corridor, with established homes in the immediate vicinity and easy access to schools, colleges, hospitals, and public transport.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: A gated residential layout with asphalt roads, painted curb blocks, plot demarcation stones, brand flags, a concrete compound wall, and a grand entrance arch named 'SHREE AISHWARYA GARDEN'.. Neighbourhood: Situated in a developing residential hub near Thudiyalur and Saravanampatti IT corridor, with established homes in the immediate vicinity and easy access to schools, colleges, hospitals, and public transport.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
