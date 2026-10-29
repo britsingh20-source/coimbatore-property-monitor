@@ -4131,6 +4131,14 @@
       "next_retry_at": "2026-10-07T14:30:02.946318+00:00",
       "status": "discovered"
     },
+    "UO-UwR_r3lk": {
+      "attempts": 1,
+      "first_seen_at": "2026-10-29T02:27:05.093572+00:00",
+      "last_attempt_at": "2026-10-29T02:28:37.148308+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'Your project has exceeded a quota. See https://ai.dev/rate-limit to manage your rate limits.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-10-29T04:28:37.148318+00:00",
+      "status": "retry_pending"
+    },
     "UTpVnJt363M": {
       "attempts": 0,
       "first_seen_at": "2026-10-10T00:48:41.023879+00:00",
@@ -7208,6 +7216,12 @@
       "last_error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry later or upgrade your tier at https://ai.dev/rate-limit.', 'code': 'too_many_requests'}}",
       "next_retry_at": "2026-09-21T03:43:59.353188+00:00",
       "status": "retry_pending"
+    },
+    "p7hW3NhGO7c": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-29T02:27:05.093572+00:00",
+      "next_retry_at": "2026-10-29T02:27:05.093572+00:00",
+      "status": "discovered"
     },
     "p8hC1s7t4Vw": {
       "attempts": 0,
