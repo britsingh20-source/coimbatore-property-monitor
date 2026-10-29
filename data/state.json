@@ -7587,10 +7587,12 @@
       "status": "discovered"
     },
     "remfxjrokBg": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-10-28T13:34:38.213259+00:00",
-      "next_retry_at": "2026-10-28T13:34:38.213259+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-10-29T02:56:52.052598+00:00",
+      "last_error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry in 4h3m7s or upgrade your tier at https://ai.dev/rate-limit.', 'code': 'too_many_requests'}}",
+      "next_retry_at": "2026-10-29T04:56:52.052608+00:00",
+      "status": "retry_pending"
     },
     "rg4P-tT8nro": {
       "attempts": 0,
