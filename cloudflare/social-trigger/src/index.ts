@@ -333,7 +333,7 @@ async function dispatchTelegram(update: TelegramUpdate, env: Env): Promise<Respo
     || text === "🎯 Focus Control"
     || text === "🎯 Property Focus Control"
   ) {
-    await showFocusController(env, chatId);
+    await showFocusMenu(env, chatId);
     return new Response("ok");
   }
 

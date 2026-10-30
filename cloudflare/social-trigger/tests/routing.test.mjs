@@ -120,8 +120,12 @@ test("persistent Property Focus Control opens the area selector", async () => {
   const h = harness();
   assert.equal((await h.send(10, { text: "🎯 Property Focus Control" })).status, 200);
   assert.equal(h.notifications.length, 1);
-  assert.equal(h.notifications[0].text, "📍 PROPERTY MONITOR\n🎯 Current Focus: Not selected\nChoose an area to start focused property monitoring.");
-  assert.equal(h.notifications[0].reply_markup.inline_keyboard[0][0].callback_data, "focus:open");
+  assert.match(h.notifications[0].text, /SELECT PROPERTY FOCUS/);
+  assert.equal(h.notifications[0].reply_markup.inline_keyboard[0][0].callback_data, "focus:toggle:karamadai");
+  assert.equal(
+    h.notifications[0].reply_markup.inline_keyboard.flat().some(button => button.callback_data === "focus:toggle:vadavalli"),
+    true,
+  );
 });
 
 test("Vadavalli selection replaces stale focus and dispatches prompt-only update", async () => {
