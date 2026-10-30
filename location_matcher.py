@@ -1,4 +1,5 @@
 import json
+import os
 import re
 import unicodedata
 from functools import lru_cache
@@ -6,6 +7,7 @@ from pathlib import Path
 
 
 CONFIG_PATH = Path("config/locations.json")
+WEEKLY_FOCUS_PATH = Path(os.environ.get("WEEKLY_FOCUS_PATH", "config/weekly_focus.json"))
 
 
 def normalize(value: str) -> str:
@@ -20,8 +22,27 @@ def load_locations() -> dict:
 
 
 def active_weekly_focus(*_args, **_kwargs) -> dict:
-    """Dynamic weekly focus is disabled; the static locality whitelist is authoritative."""
-    return {}
+    """Return the Telegram-selected prompt focus; fail closed if it is unavailable."""
+    if not WEEKLY_FOCUS_PATH.exists():
+        return {}
+    try:
+        focus = json.loads(WEEKLY_FOCUS_PATH.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    return focus if focus.get("focus_areas") else {}
+
+
+def _active_candidates() -> list[tuple[str, list[str], list[str]]]:
+    focus = active_weekly_focus()
+    rows = []
+    for area in focus.get("focus_areas", []):
+        name = str(area.get("name") or "").strip()
+        if not name:
+            continue
+        aliases = [name, *(str(item) for item in area.get("aliases", []) if str(item).strip())]
+        micro = [str(item) for item in area.get("micro_localities", []) if str(item).strip()]
+        rows.append((name, aliases, micro))
+    return rows
 
 
 def _edit_distance_within(left: str, right: str, limit: int) -> bool:
@@ -87,18 +108,31 @@ def match_location(*values: str) -> dict:
     text = normalize(" ".join(value or "" for value in values))
     config = load_locations()
     matched = []
+    matched_focus = []
+    matched_terms = []
 
-    for locality, aliases in config["target_localities"].items():
-        candidates = [locality, *(aliases or [])]
-        if any(contains_phrase(text, candidate) for candidate in candidates):
-            matched.append(locality)
+    for focus_name, aliases, micro_localities in _active_candidates():
+        alias_hit = next((candidate for candidate in aliases if contains_phrase(text, candidate)), None)
+        micro_hit = next(
+            (candidate for candidate in micro_localities if contains_phrase(text, candidate)),
+            None,
+        )
+        if alias_hit:
+            matched.append(focus_name)
+            matched_focus.append(focus_name)
+            matched_terms.append(alias_hit)
+        elif micro_hit:
+            matched.append(micro_hit)
+            matched_focus.append(focus_name)
+            matched_terms.append(micro_hit)
 
     city_match = any(
         contains_phrase(text, alias) for alias in config.get("city_aliases", [])
     )
 
     # Coimbatore alone is deliberately not enough. A prompt is approved only
-    # when one of the permanent focus localities/corridors is explicitly found.
+    # when the Telegram-selected focus area (or its configured micro-locality)
+    # is explicitly found.
     is_target = bool(matched)
     score = 1.0 if matched else 0.0
 
@@ -107,10 +141,10 @@ def match_location(*values: str) -> dict:
         "matched_localities": matched,
         "city_match": city_match,
         "location_score": score,
-        "weekly_focus_active": False,
-        "weekly_focus_areas": [],
-        "matched_focus_areas": [],
-        "matched_focus_terms": [],
-        "focus_week_start": None,
-        "focus_week_end": None,
+        "weekly_focus_active": bool(_active_candidates()),
+        "weekly_focus_areas": [name for name, _, _ in _active_candidates()],
+        "matched_focus_areas": matched_focus,
+        "matched_focus_terms": matched_terms,
+        "focus_week_start": active_weekly_focus().get("week_start"),
+        "focus_week_end": active_weekly_focus().get("week_end"),
     }

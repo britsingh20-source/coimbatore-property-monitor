@@ -32,10 +32,12 @@ jobs:
           from pathlib import Path
 
           locations = json.loads(Path('config/locations.json').read_text(encoding='utf-8'))
-          assert list(locations.get('target_localities', {})) == ['Vadavalli'], locations
+          assert 'Vadavalli' in locations.get('target_localities', {}), locations
 
           catalog = json.loads(Path('config/focus_areas.json').read_text(encoding='utf-8'))
-          assert [area.get('slug') for area in catalog.get('areas', [])] == ['vadavalli'], catalog
+          slugs = [area.get('slug') for area in catalog.get('areas', [])]
+          for required in ('vadavalli', 'karamadai', 'saravanampatti', 'kalapatti', 'sulur', 'kovilpalayam'):
+              assert required in slugs, (required, slugs)
           assert catalog.get('rules', {}).get('max_selected') == 1, catalog
 
           focus = json.loads(Path('config/weekly_focus.json').read_text(encoding='utf-8'))

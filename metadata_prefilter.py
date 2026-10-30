@@ -6,6 +6,7 @@ from location_matcher import contains_phrase, normalize
 
 
 LOCATION_CONFIG = Path("config/locations.json")
+WEEKLY_FOCUS_PATH = Path(os.environ.get("WEEKLY_FOCUS_PATH", "config/weekly_focus.json"))
 MAX_EXPLORATORY_PER_RUN = int(os.environ.get("MAX_EXPLORATORY_PER_RUN", "1"))
 SPARSE_RECENT_FALLBACK = int(os.environ.get("SPARSE_RECENT_FALLBACK", "1"))
 STRICT_TARGET_ONLY = os.environ.get("STRICT_TARGET_ONLY", "1").strip().casefold() not in {
@@ -33,10 +34,17 @@ def _normalize(value: str) -> str:
 
 
 def _location_candidates() -> tuple[tuple[str, tuple[str, ...]], ...]:
-    config = json.loads(LOCATION_CONFIG.read_text(encoding="utf-8"))
+    if not WEEKLY_FOCUS_PATH.exists():
+        return ()
+    config = json.loads(WEEKLY_FOCUS_PATH.read_text(encoding="utf-8"))
     rows = []
-    for canonical, aliases in (config.get("target_localities") or {}).items():
-        candidates = (canonical, *(aliases or []))
+    for area in config.get("focus_areas", []):
+        canonical = str(area.get("name") or "").strip()
+        if not canonical:
+            continue
+        aliases = area.get("aliases") or []
+        micro_localities = area.get("micro_localities") or []
+        candidates = (canonical, *aliases, *micro_localities)
         rows.append((canonical, tuple(str(term) for term in candidates if str(term).strip())))
     return tuple(rows)
 

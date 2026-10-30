@@ -126,6 +126,11 @@ function namesFor(catalog: FocusCatalog, selected: string[]): string[] {
   return catalog.areas.filter(area => selected.includes(area.slug)).map(area => area.name);
 }
 
+function validSelection(catalog: FocusCatalog, selected: string[]): string[] {
+  const valid = new Set(catalog.areas.map(area => area.slug));
+  return selected.filter(slug => valid.has(slug));
+}
+
 function focusKeyboard(catalog: FocusCatalog, selected: string[]): object {
   const buttons = catalog.areas.map(area => ({
     text: `${selected.includes(area.slug) ? "✅ " : ""}${area.name}`,
@@ -145,7 +150,7 @@ function focusText(catalog: FocusCatalog, selected: string[]): string {
   const names = namesFor(catalog, selected);
   return [
     "🎯 SELECT PROPERTY FOCUS",
-    `Choose 1 or up to ${max} areas.`,
+    max === 1 ? "Choose one area." : `Choose 1 or up to ${max} areas.`,
     names.length ? `Selected: ${names.join(" + ")}` : "Selected: none",
     "Only the selected area(s) will be allowed to generate property prompts.",
   ].join("\n");
@@ -247,7 +252,7 @@ async function dispatchFocusCallback(update: TelegramUpdate, env: Env): Promise<
   const catalog = await loadFocusCatalog(env);
   const maxSelected = Number(catalog.rules?.max_selected || 2);
   const ttlMinutes = Number(catalog.rules?.selection_ttl_minutes || 15);
-  let selected = await readFocusSelection(env, chatId);
+  let selected = validSelection(catalog, await readFocusSelection(env, chatId));
 
   if (data === "focus:open") {
     if (callbackId) await telegram(env, "answerCallbackQuery", { callback_query_id: callbackId });
@@ -270,6 +275,7 @@ async function dispatchFocusCallback(update: TelegramUpdate, env: Env): Promise<
       return new Response("ok");
     }
     if (selected.includes(slug)) selected = selected.filter(item => item !== slug);
+    else if (maxSelected === 1) selected = [slug];
     else if (selected.length >= maxSelected) {
       if (callbackId) await telegram(env, "answerCallbackQuery", { callback_query_id: callbackId, text: `Select maximum ${maxSelected} areas.` });
       return new Response("ok");
@@ -284,6 +290,19 @@ async function dispatchFocusCallback(update: TelegramUpdate, env: Env): Promise<
   if (data === "focus:apply") {
     if (!selected.length) {
       if (callbackId) await telegram(env, "answerCallbackQuery", { callback_query_id: callbackId, text: "Select at least one area first." });
+      return new Response("ok");
+    }
+    const focusDispatch = await githubDispatch(env, "weekly-focus-update", { areas: selected });
+    if (!focusDispatch.ok) {
+      const detail = (await focusDispatch.text()).slice(0, 300);
+      if (callbackId) {
+        await telegram(env, "answerCallbackQuery", {
+          callback_query_id: callbackId,
+          text: "Focus could not be applied. Please try again.",
+          show_alert: true,
+        });
+      }
+      console.error("Weekly focus GitHub dispatch failed", focusDispatch.status, detail);
       return new Response("ok");
     }
     await env.PAIRING_STATE.put(ACTIVE_FOCUS_KEY, JSON.stringify(selected));
@@ -308,7 +327,12 @@ async function dispatchTelegram(update: TelegramUpdate, env: Env): Promise<Respo
   await env.PAIRING_STATE.put(updateKey, "1", { expirationTtl: 86400 });
 
   const text = String(message.caption || message.text || "").trim();
-  if (/^\/focus(?:@\w+)?$/i.test(text) || text === "🎯 Weekly Focus" || text === "🎯 Focus Control") {
+  if (
+    /^\/focus(?:@\w+)?$/i.test(text)
+    || text === "🎯 Weekly Focus"
+    || text === "🎯 Focus Control"
+    || text === "🎯 Property Focus Control"
+  ) {
     await showFocusController(env, chatId);
     return new Response("ok");
   }
@@ -321,7 +345,6 @@ async function dispatchTelegram(update: TelegramUpdate, env: Env): Promise<Respo
     await telegram(env, "sendMessage", {
       chat_id: chatId,
       text: `✅ ${explicit.label} saved: ${explicit.id}\nSend the MP4 within 15 minutes. It will publish immediately after pairing.`,
-      reply_markup: { inline_keyboard: [[{ text: "🎯 Focus Control", callback_data: "focus:open" }]] },
     });
     return new Response("ok");
   }
@@ -356,7 +379,6 @@ async function dispatchTelegram(update: TelegramUpdate, env: Env): Promise<Respo
   await telegram(env, "sendMessage", {
     chat_id: chatId,
     text: `✅ ${videoId} paired and GitHub accepted ${eventType}. Live publishing dispatch started. Duplicate protection is active.`,
-    reply_markup: { inline_keyboard: [[{ text: "🎯 Focus Control", callback_data: "focus:open" }]] },
   });
   return new Response("ok");
 }

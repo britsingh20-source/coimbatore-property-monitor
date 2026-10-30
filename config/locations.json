@@ -1,20 +1,24 @@
 {
   "city": "Coimbatore",
-  "city_aliases": [
-    "coimbatore",
-    "covai",
-    "kovai",
-    "கோவை",
-    "கோயம்புத்தூர்"
-  ],
+  "city_aliases": ["coimbatore", "covai", "kovai", "கோவை", "கோயம்புத்தூர்"],
   "target_localities": {
-    "Vadavalli": [
-      "vadavalli",
-      "vadavali",
-      "vadavally",
-      "wadavalli",
-      "vada valli",
-      "வடவள்ளி"
-    ]
+    "Karamadai": ["karamadai", "karmadai", "karamadi", "kaaramadai", "காரமடை"],
+    "Saravanampatti": ["saravanampatti", "saravanampatty", "saranampatti", "saravanam patti", "சரவணம்பட்டி"],
+    "Thudiyalur": ["thudiyalur", "thudiyaloor", "துடியலூர்"],
+    "Pannimadai": ["pannimadai", "pannirmadai", "pannimadai road", "பன்னிமடை"],
+    "Idigarai": ["idigarai", "idigirai", "edigarai", "idikarai", "idigrai", "idigray", "இடிகரை"],
+    "Narasimhanaickenpalayam": ["narasimhanaickenpalayam", "narasimmanaickenpalayam", "narasimhanaicken palayam", "narasimmanayakkanpalayam", "என் எஸ் என் பாளையம்", "நரசிம்மநாயக்கன்பாளையம்"],
+    "Periyanaickenpalayam": ["periyanaickenpalayam", "periyanaicken palayam", "periyanaickanpalayam", "periyanayakkanpalayam", "periya naicken palayam", "பெரியநாயக்கன்பாளையம்"],
+    "Vadavalli": ["vadavalli", "vadavali", "vadavally", "wadavalli", "vada valli", "வடவள்ளி"],
+    "Kalapatti": ["kalapatti", "kalapathy", "kalapatti road", "காளப்பட்டி"],
+    "Kovilpalayam": ["kovilpalayam", "kovil palayam", "kovilpalayam sathy road", "கோவில்பாளையம்"],
+    "Annur": ["annur", "annoor", "அன்னூர்"],
+    "Mettupalayam Road": ["mettupalayam road", "mtp road", "mettupalayam main road", "மேட்டுப்பாளையம் சாலை"],
+    "Sulur": ["sulur", "soolur", "சூலூர்"],
+    "Pattanam": ["pattanam", "pattanam pudur", "பட்டணம்"],
+    "Malumichampatti": ["malumichampatti", "malumichampatty", "malumichampathy", "மலுமிச்சம்பட்டி"],
+    "Othakalmandapam": ["othakalmandapam", "othakkalmandapam", "othakal mandapam", "ஒத்தக்கால்மண்டபம்"],
+    "RS Puram": ["rs puram", "r s puram", "r.s. puram", "ரேஸ் கோர்ஸ் புரம்", "ஆர் எஸ் புரம்"],
+    "Mannurchampatti": ["mannurchampatti", "mannur champatti", "mannur champatty", "மன்னூர் சம்பட்டி"]
   }
 }

@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       areas:
-        description: Comma-separated focus area slugs (max 2)
+        description: Property prompt focus area slug
         required: true
         type: string
 
@@ -76,7 +76,7 @@ jobs:
                   'max_focus_areas': max_selected,
                   'require_focus_match_for_prompt': True,
                   'allow_citywide_fallback': False,
-                  'prompt_instruction': 'For this Sunday-to-Saturday focus week, prioritize only properties and prompt context that belong to the configured focus area(s) or their configured micro-localities. Do not broaden the prompt to unrelated Coimbatore areas.'
+                  'prompt_instruction': 'Generate new property prompts only for the Telegram-selected focus area or its configured micro-localities. This does not restrict VIDEO_ID + MP4 publishing.'
               }
           }
           Path('config/weekly_focus.json').write_text(json.dumps(focus, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

@@ -14,6 +14,15 @@ function harness(status = 204) {
   const dispatched = [];
   const notifications = [];
   globalThis.fetch = async (url, options) => {
+    if (String(url).startsWith("https://raw.githubusercontent.com/")) {
+      return new Response(JSON.stringify({
+        areas: [
+          { slug: "karamadai", name: "Karamadai", aliases: ["karamadai"], micro_localities: [] },
+          { slug: "vadavalli", name: "Vadavalli", aliases: ["vadavalli"], micro_localities: [] },
+        ],
+        rules: { max_selected: 1, selection_ttl_minutes: 15 },
+      }));
+    }
     const payload = JSON.parse(options.body);
     if (String(url).startsWith("https://api.github.com/")) {
       dispatched.push(payload);
@@ -35,7 +44,18 @@ function harness(status = 204) {
   const send = (id, message) => worker.fetch(new Request("https://worker.test/", {
     method: "POST", body: JSON.stringify({ update_id: id, message: { chat: { id: 123 }, ...message } }),
   }), env);
-  return { state, dispatched, notifications, send };
+  const callback = (id, data) => worker.fetch(new Request("https://worker.test/", {
+    method: "POST",
+    body: JSON.stringify({
+      update_id: id,
+      callback_query: {
+        id: `callback-${id}`,
+        data,
+        message: { message_id: 77, chat: { id: 123 } },
+      },
+    }),
+  }), env);
+  return { state, dispatched, notifications, send, callback };
 }
 
 test("captioned Interior upload preserves its ID and uses only the Interior event", async () => {
@@ -94,4 +114,24 @@ test("403 returns 200 and retains duplicate protection and a single warning", as
   assert.equal(h.dispatched.length, 1);
   assert.equal(h.notifications.length, 1);
   assert.equal(h.state.get("telegram-update:1"), "1");
+});
+
+test("persistent Property Focus Control opens the area selector", async () => {
+  const h = harness();
+  assert.equal((await h.send(10, { text: "🎯 Property Focus Control" })).status, 200);
+  assert.equal(h.notifications.length, 1);
+  assert.equal(h.notifications[0].text, "📍 PROPERTY MONITOR\n🎯 Current Focus: Not selected\nChoose an area to start focused property monitoring.");
+  assert.equal(h.notifications[0].reply_markup.inline_keyboard[0][0].callback_data, "focus:open");
+});
+
+test("Vadavalli selection replaces stale focus and dispatches prompt-only update", async () => {
+  const h = harness();
+  h.state.set("weekly-focus-active", JSON.stringify(["karamadai"]));
+  await h.callback(20, "focus:toggle:vadavalli");
+  assert.deepEqual(JSON.parse(h.state.get("weekly-focus-selection:123")), ["vadavalli"]);
+  await h.callback(21, "focus:apply");
+  assert.equal(h.dispatched.length, 1);
+  assert.equal(h.dispatched[0].event_type, "weekly-focus-update");
+  assert.deepEqual(h.dispatched[0].client_payload.areas, ["vadavalli"]);
+  assert.deepEqual(JSON.parse(h.state.get("weekly-focus-active")), ["vadavalli"]);
 });
