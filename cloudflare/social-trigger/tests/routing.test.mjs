@@ -20,7 +20,7 @@ function harness(status = 204) {
           { slug: "karamadai", name: "Karamadai", aliases: ["karamadai"], micro_localities: [] },
           { slug: "vadavalli", name: "Vadavalli", aliases: ["vadavalli"], micro_localities: [] },
         ],
-        rules: { max_selected: 1, selection_ttl_minutes: 15 },
+        rules: { max_selected: 18, selection_ttl_minutes: 15 },
       }));
     }
     const payload = JSON.parse(options.body);
@@ -128,14 +128,21 @@ test("persistent Property Focus Control opens the area selector", async () => {
   );
 });
 
-test("Vadavalli selection replaces stale focus and dispatches prompt-only update", async () => {
+test("multiple focus areas are retained and applied together", async () => {
   const h = harness();
   h.state.set("weekly-focus-active", JSON.stringify(["karamadai"]));
   await h.callback(20, "focus:toggle:vadavalli");
-  assert.deepEqual(JSON.parse(h.state.get("weekly-focus-selection:123")), ["vadavalli"]);
+  assert.deepEqual(JSON.parse(h.state.get("weekly-focus-selection:123")), ["karamadai", "vadavalli"]);
   await h.callback(21, "focus:apply");
   assert.equal(h.dispatched.length, 1);
   assert.equal(h.dispatched[0].event_type, "weekly-focus-update");
-  assert.deepEqual(h.dispatched[0].client_payload.areas, ["vadavalli"]);
-  assert.deepEqual(JSON.parse(h.state.get("weekly-focus-active")), ["vadavalli"]);
+  assert.deepEqual(h.dispatched[0].client_payload.areas, ["karamadai", "vadavalli"]);
+  assert.deepEqual(JSON.parse(h.state.get("weekly-focus-active")), ["karamadai", "vadavalli"]);
+});
+
+test("tapping a selected area deselects only that area", async () => {
+  const h = harness();
+  h.state.set("weekly-focus-active", JSON.stringify(["karamadai", "vadavalli"]));
+  await h.callback(30, "focus:toggle:karamadai");
+  assert.deepEqual(JSON.parse(h.state.get("weekly-focus-selection:123")), ["vadavalli"]);
 });

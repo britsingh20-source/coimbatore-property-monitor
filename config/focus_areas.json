@@ -20,7 +20,7 @@
     {"slug": "mannurchampatti", "name": "Mannurchampatti", "aliases": ["mannurchampatti", "mannur champatti", "mannur champatty", "மன்னூர் சம்பட்டி"], "micro_localities": []}
   ],
   "rules": {
-    "max_selected": 1,
+    "max_selected": 18,
     "selection_ttl_minutes": 15
   }
 }

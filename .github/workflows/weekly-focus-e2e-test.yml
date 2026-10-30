@@ -38,7 +38,7 @@ jobs:
           slugs = [area.get('slug') for area in catalog.get('areas', [])]
           for required in ('vadavalli', 'karamadai', 'saravanampatti', 'kalapatti', 'sulur', 'kovilpalayam'):
               assert required in slugs, (required, slugs)
-          assert catalog.get('rules', {}).get('max_selected') == 1, catalog
+          assert catalog.get('rules', {}).get('max_selected') == len(catalog['areas']), catalog
 
           focus = json.loads(Path('config/weekly_focus.json').read_text(encoding='utf-8'))
           assert [area.get('name') for area in focus.get('focus_areas', [])] == ['Vadavalli'], focus
