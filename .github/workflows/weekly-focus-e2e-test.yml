@@ -1,4 +1,4 @@
-name: Weekly Focus E2E Test
+name: Vadavalli Prompt Scope Test
 
 on:
   workflow_dispatch: {}
@@ -6,9 +6,15 @@ on:
     branches: [main]
     paths:
       - ".github/workflows/weekly-focus-e2e-test.yml"
-      - "cloudflare/social-trigger/src/index.ts"
       - "location_matcher.py"
+      - "metadata_prefilter.py"
+      - "send_telegram_prompts.py"
+      - "telegram_router.py"
+      - "telegram_r2_ingest.py"
+      - "r2_social_autopilot.py"
       - "config/focus_areas.json"
+      - "config/locations.json"
+      - "config/weekly_focus.json"
 
 permissions:
   contents: read
@@ -19,128 +25,48 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - name: Verify focus catalog
+      - name: Verify Vadavalli-only prompt catalog
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-          catalog=json.loads(Path('config/focus_areas.json').read_text(encoding='utf-8'))
-          karam=next(a for a in catalog.get('areas', []) if a.get('slug')=='karamadai')
-          assert karam.get('micro_localities'), 'Karamadai micro-localities missing'
-          print('Catalog validation passed')
+
+          locations = json.loads(Path('config/locations.json').read_text(encoding='utf-8'))
+          assert list(locations.get('target_localities', {})) == ['Vadavalli'], locations
+
+          catalog = json.loads(Path('config/focus_areas.json').read_text(encoding='utf-8'))
+          assert [area.get('slug') for area in catalog.get('areas', [])] == ['vadavalli'], catalog
+          assert catalog.get('rules', {}).get('max_selected') == 1, catalog
+
+          focus = json.loads(Path('config/weekly_focus.json').read_text(encoding='utf-8'))
+          assert [area.get('name') for area in focus.get('focus_areas', [])] == ['Vadavalli'], focus
+          assert focus.get('rules', {}).get('require_focus_match_for_prompt') is True, focus
+          assert focus.get('rules', {}).get('allow_citywide_fallback') is False, focus
+          print('Vadavalli-only prompt configuration passed')
           PY
 
-      - name: Verify live Worker health
-        run: |
-          set -euo pipefail
-          actual="$(curl --fail --silent --show-error --retry 6 --retry-delay 3 https://coimbatore-social-trigger.britsingh20.workers.dev/)"
-          test "$actual" = "coimbatore-property-social-trigger: healthy"
-          echo "Worker health passed"
-
-      - name: Open Weekly Focus menu in Telegram through live Worker
-        env:
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: |
-          set -euo pipefail
-          test -n "$TELEGRAM_CHAT_ID"
-          payload="$(python - <<'PY'
-          import json, os, time
-          print(json.dumps({
-            'update_id': int(time.time()) % 1000000000,
-            'message': {
-              'message_id': 900001,
-              'chat': {'id': int(os.environ['TELEGRAM_CHAT_ID'])},
-              'text': '/focus'
-            }
-          }))
-          PY
-          )"
-          code="$(curl --silent --show-error --output /tmp/focus-open.txt --write-out '%{http_code}' -X POST -H 'Content-Type: application/json' --data "$payload" https://coimbatore-social-trigger.britsingh20.workers.dev/)"
-          cat /tmp/focus-open.txt
-          test "$code" = "200"
-          echo "Live /focus menu request passed"
-
-      - name: Ensure Karamadai is selected in live Worker state
-        env:
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: |
-          set -euo pipefail
-          current_code="$(curl --silent --output /tmp/current-focus.json --write-out '%{http_code}' https://coimbatore-social-trigger.britsingh20.workers.dev/weekly-focus-config)"
-          if [ "$current_code" = "200" ] && python - <<'PY'
-          import json
-          from pathlib import Path
-          d=json.loads(Path('/tmp/current-focus.json').read_text())
-          raise SystemExit(0 if [x.get('name') for x in d.get('focus_areas',[])] == ['Karamadai'] else 1)
-          PY
-          then
-            echo "Karamadai already active; no toggle needed."
-          else
-            payload="$(python - <<'PY'
-          import json, os, time
-          print(json.dumps({
-            'update_id': (int(time.time()) + 1) % 1000000000,
-            'callback_query': {
-              'data': 'focus:toggle:karamadai',
-              'message': {'chat': {'id': int(os.environ['TELEGRAM_CHAT_ID'])}}
-            }
-          }))
-          PY
-          )"
-            code="$(curl --silent --show-error --output /tmp/focus-toggle.txt --write-out '%{http_code}' -X POST -H 'Content-Type: application/json' --data "$payload" https://coimbatore-social-trigger.britsingh20.workers.dev/)"
-            cat /tmp/focus-toggle.txt
-            test "$code" = "200"
-            echo "Live Karamadai selection passed"
-          fi
-
-      - name: Apply Karamadai in live Worker
-        env:
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: |
-          set -euo pipefail
-          payload="$(python - <<'PY'
-          import json, os, time
-          print(json.dumps({
-            'update_id': (int(time.time()) + 2) % 1000000000,
-            'callback_query': {
-              'data': 'focus:apply',
-              'message': {'chat': {'id': int(os.environ['TELEGRAM_CHAT_ID'])}}
-            }
-          }))
-          PY
-          )"
-          code="$(curl --silent --show-error --output /tmp/focus-apply.txt --write-out '%{http_code}' -X POST -H 'Content-Type: application/json' --data "$payload" https://coimbatore-social-trigger.britsingh20.workers.dev/)"
-          cat /tmp/focus-apply.txt
-          test "$code" = "200"
-          echo "Live focus apply passed"
-
-      - name: Verify live focus config contains Karamadai micro-localities
-        run: |
-          set -euo pipefail
-          curl --fail --silent --show-error --retry 4 --retry-delay 2 \
-            https://coimbatore-social-trigger.britsingh20.workers.dev/weekly-focus-config \
-            -o /tmp/weekly_focus.json
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          d=json.loads(Path('/tmp/weekly_focus.json').read_text(encoding='utf-8'))
-          assert [x.get('name') for x in d.get('focus_areas',[])] == ['Karamadai'], d
-          micro=d['focus_areas'][0].get('micro_localities',[])
-          for required in ['Santhimedu','Periyankampalayam','Peeches Colony','Teachers Colony']:
-              assert required in micro, (required, micro)
-          assert d.get('rules',{}).get('require_focus_match_for_prompt') is True
-          print('Live focus config validation passed:', d['week_start'], 'to', d['week_end'])
-          PY
-
-      - name: Verify Property Monitor matcher uses live focus
-        env:
-          WEEKLY_FOCUS_PATH: /tmp/weekly_focus.json
+      - name: Verify prompt matcher rejects every other area
         run: |
           python - <<'PY'
           from location_matcher import match_location
-          inside=match_location('Teachers Colony, Karamadai, Coimbatore')
-          outside=match_location('Vadavalli, Coimbatore')
-          assert inside['is_target_location'] is True, inside
-          assert 'Karamadai' in inside['matched_focus_areas'], inside
-          assert outside['is_target_location'] is False, outside
-          print('Matcher end-to-end validation passed')
+
+          assert match_location('Vadavalli, Coimbatore')['is_target_location'] is True
+          for area in (
+              'Saravanampatti', 'Idigarai', 'Karamadai', 'Periyanaickenpalayam',
+              'Mettupalayam', 'Thudiyalur', 'Somayampalayam', 'Bommanampalayam',
+          ):
+              result = match_location(f'{area}, Coimbatore')
+              assert result['is_target_location'] is False, (area, result)
+          print('Prompt matcher isolation passed')
           PY
+
+      - name: Verify video publishing remains area-independent
+        shell: bash
+        run: |
+          set -euo pipefail
+          if rg -n "Vadavalli|match_location|target_localit" \
+            telegram_router.py telegram_r2_ingest.py r2_social_autopilot.py; then
+            echo "Video publishing must not contain a locality gate."
+            exit 1
+          fi
+          echo "Video pairing, R2 ingest and social publishing remain area-independent."
