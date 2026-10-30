@@ -10,11 +10,19 @@ from pathlib import Path
 
 import requests
 
+from location_matcher import match_location
 from veo_prompt import build_veo_prompt, telegram_filename
 
 
 JOBS = Path("data/video_jobs")
 DEFAULT_QUEUE = Path("data/telegram_prompt_queue.json")
+
+
+def _is_vadavalli_job(job: dict) -> bool:
+    """Final delivery gate: no non-Vadavalli property may reach Telegram."""
+    location = str(job.get("property_location") or "").strip()
+    result = match_location(location)
+    return result.get("matched_localities") == ["Vadavalli"]
 
 
 def _ids(path: Path) -> list[str]:
@@ -65,6 +73,12 @@ def _queue_prompt(queue_path: Path, job: dict, prompt_message_id: int) -> None:
 
 
 def send_prompt(job: dict, bot_token: str, chat_id: str) -> int:
+    if not _is_vadavalli_job(job):
+        video_id = str(job.get("video_id") or "").strip()
+        location = str(job.get("property_location") or "not specified").strip()
+        raise ValueError(
+            f"Telegram property prompt blocked: {video_id} is outside Vadavalli ({location})"
+        )
     prompt = build_veo_prompt(job)
     prop = job.get("property") or {}
     location = str(job.get("property_location") or "Coimbatore")

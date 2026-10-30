@@ -4,82 +4,44 @@ from location_matcher import match_location
 
 
 class LocationMatcherTests(unittest.TestCase):
-    def test_english_alias(self):
-        result = match_location("2BHK in Saravanampatti, Coimbatore")
-        self.assertTrue(result["is_target_location"])
-        self.assertIn("Saravanampatti", result["matched_localities"])
+    def test_vadavalli_english_aliases(self):
+        for title in (
+            "2BHK in Vadavalli, Coimbatore",
+            "Villa for sale in Vadavali",
+            "House at Vada Valli",
+            "Property in Wadawalli",
+        ):
+            with self.subTest(title=title):
+                result = match_location(title)
+                self.assertTrue(result["is_target_location"])
+                self.assertEqual(result["matched_localities"], ["Vadavalli"])
 
-    def test_tamil_alias(self):
-        result = match_location("இடிகரையில் கோவையில் வீடு விற்பனைக்கு")
+    def test_vadavalli_tamil_alias(self):
+        result = match_location("வடவள்ளியில் வீடு விற்பனைக்கு")
         self.assertTrue(result["is_target_location"])
-        self.assertIn("Idigarai", result["matched_localities"])
+        self.assertEqual(result["matched_localities"], ["Vadavalli"])
 
-    def test_city_only_requires_review(self):
+    def test_city_only_is_rejected(self):
         result = match_location("House somewhere in Coimbatore")
         self.assertFalse(result["is_target_location"])
         self.assertTrue(result["city_match"])
 
-    def test_all_permanent_focus_areas(self):
-        cases = {
-            "New villa at Saranampatti": "Saravanampatti",
-            "House for sale at Edigarai": "Idigarai",
-            "3BHK Karamadai": "Karamadai",
-            "Plot in Periyanaicken Palayam": "Periyanaickenpalayam",
-            "Home at Mettupalayam": "Mettupalayam",
-            "Land on Annur to Mettupalayam Road": "Mettupalayam–Annur Road",
-        }
-        for title, expected in cases.items():
+    def test_every_other_previous_focus_area_is_rejected(self):
+        for title in (
+            "Villa in Saravanampatti",
+            "House for sale at Idigarai",
+            "3BHK Karamadai",
+            "Plot in Periyanaicken Palayam",
+            "Home at Mettupalayam",
+            "Land on Annur to Mettupalayam Road",
+            "Villa at Thudiyalur",
+            "House in Somayampalayam",
+            "Property at Bommanampalayam",
+        ):
             with self.subTest(title=title):
                 result = match_location(title)
-                self.assertTrue(result["is_target_location"])
-                self.assertIn(expected, result["matched_localities"])
-
-    def test_old_coimbatore_areas_are_rejected(self):
-        result = match_location("Villa for sale in Vadavalli, Coimbatore")
-        self.assertFalse(result["is_target_location"])
-        self.assertEqual(result["matched_localities"], [])
-
-    def test_focus_belt_micro_localities_keep_their_actual_name(self):
-        cases = {
-            "Villa in மணிகரம்பாளையம்": "Maniyakarampalayam",
-            "Plot at Athipalayam Pirivu": "Athipalayam",
-            "House in Urumandampalayam": "Urumandampalayam",
-            "3BHK Teachers Colony": "Teachers Colony",
-            "Land near Saandhimedu": "Shanthimedu",
-            "Site in Narasimhanagar Palayam": "Narasimhanaickenpalayam",
-            "Villa at Veeramandi Pirivu": "Veerapandi Pirivu",
-            "Plot at NGGO Colony": "NGGO Colony",
-            "Land at Pannirmadai": "Pannimadai",
-            "House at Bellathi": "Bellathi",
-            "Site in Chikkarampalayam": "Chikkarampalayam",
-            "Villa at Kannarpalayam": "Kannarpalayam",
-        }
-        for title, expected in cases.items():
-            with self.subTest(title=title):
-                result = match_location(title)
-                self.assertTrue(result["is_target_location"])
-                self.assertIn(expected, result["matched_localities"])
-
-
-    def test_common_transliteration_and_typing_mistakes(self):
-        cases = {
-            "2BHK sale in Idikarai": "Idigarai",
-            "Villa at Idigray": "Idigarai",
-            "Plot in Periyanayakkanpalayam": "Periyanaickenpalayam",
-            "House at Saravanampati": "Saravanampatti",
-            "Land in Karmadai": "Karamadai",
-            "Home near Mettupalaiyam": "Mettupalayam",
-            "Villa at Narasimhanaickenpalaym": "Narasimhanaickenpalayam",
-        }
-        for title, expected in cases.items():
-            with self.subTest(title=title):
-                result = match_location(title)
-                self.assertTrue(result["is_target_location"])
-                self.assertIn(expected, result["matched_localities"])
-
-    def test_unrelated_area_typo_is_still_rejected(self):
-        result = match_location("Villa for sale in Vadavali, Coimbatore")
-        self.assertFalse(result["is_target_location"])
+                self.assertFalse(result["is_target_location"])
+                self.assertEqual(result["matched_localities"], [])
 
 
 if __name__ == "__main__":

@@ -2,125 +2,22 @@
   "timezone": "Asia/Kolkata",
   "focus_areas": [
     {
-      "name": "Saravanampatti",
+      "name": "Vadavalli",
       "aliases": [
-        "saravanampatti",
-        "saravanampatty",
-        "saranampatti",
-        "saravanam patti",
-        "சரவணம்பட்டி",
-        "saravanampati",
-        "saranampatty",
-        "saravanampathy"
-      ],
-      "micro_localities": [
-        "Maniyakarampalayam",
-        "Athipalayam"
-      ]
-    },
-    {
-      "name": "Idigarai",
-      "aliases": [
-        "idigarai",
-        "idigirai",
-        "edigarai",
-        "இடிகரை",
-        "idikarai",
-        "idigrai",
-        "idigray",
-        "edigirai",
-        "edigrai"
-      ],
-      "micro_localities": [
-        "Urumandampalayam",
-        "NGGO Colony",
-        "Pannimadai",
-        "Thudiyalur",
-        "Kurudampalayam"
-      ]
-    },
-    {
-      "name": "Karamadai",
-      "aliases": [
-        "karamadai",
-        "காரமடை",
-        "karmadai",
-        "karamadi",
-        "kaaramadai"
-      ],
-      "micro_localities": [
-        "Teachers Colony",
-        "Shanthimedu",
-        "Santhimedu",
-        "Saandhimedu",
-        "Periyankampalayam",
-        "Peeches Colony",
-        "Bellathi",
-        "Chikkarampalayam",
-        "Kannarpalayam",
-        "Marudur",
-        "Narasimhanaickenpalayam",
-        "Narasimhanagar Palayam",
-        "Sri Narasima Nagar",
-        "Veerapandi Pirivu",
-        "Veeramandi Pirivu"
-      ]
-    },
-    {
-      "name": "Periyanaickenpalayam",
-      "aliases": [
-        "periyanaickenpalayam",
-        "periyanaicken palayam",
-        "periyanaickanpalayam",
-        "periyanaickenpalyam",
-        "பெரியநாயக்கன்பாளையம்",
-        "periyanayakkanpalayam",
-        "periya naicken palayam",
-        "periya nayakkan palayam",
-        "periyanaickan palayam"
-      ],
-      "micro_localities": [
-        "Narasimhanaickenpalayam",
-        "Narasimhanagar Palayam",
-        "Sri Narasima Nagar",
-        "Andaalpuram",
-        "Press Colony",
-        "Pilichi Panchayat",
-        "T N Palayam",
-        "Veerapandi Pirivu",
-        "Veeramandi Pirivu"
-      ]
-    },
-    {
-      "name": "Mettupalayam",
-      "aliases": [
-        "mettupalayam",
-        "mettuppalayam",
-        "metupalayam",
-        "மேட்டுப்பாளையம்",
-        "mettupalaiyam",
-        "mettupallayam"
-      ],
-      "micro_localities": []
-    },
-    {
-      "name": "Mettupalayam–Annur Road",
-      "aliases": [
-        "mettupalayam annur road",
-        "mettupalayam to annur road",
-        "annur mettupalayam road",
-        "annur to mettupalayam road",
-        "mettupalayam annur main road",
-        "மேட்டுப்பாளையம் அன்னூர் சாலை",
-        "அன்னூர் மேட்டுப்பாளையம் சாலை"
+        "vadavalli",
+        "vadavali",
+        "vadavally",
+        "wadavalli",
+        "vada valli",
+        "வடவள்ளி"
       ],
       "micro_localities": []
     }
   ],
   "rules": {
-    "max_focus_areas": 6,
+    "max_focus_areas": 1,
     "require_focus_match_for_prompt": true,
     "allow_citywide_fallback": false,
-    "prompt_instruction": "Generate property prompts only for the configured north-Coimbatore focus belts: Saravanampatti, Idigarai, Karamadai, Periyanaickenpalayam, Mettupalayam and the Mettupalayam–Annur Road corridor, including their listed nearby micro-localities. Never broaden to unrelated Coimbatore areas."
+    "prompt_instruction": "Generate property prompts only for properties explicitly located in Vadavalli, Coimbatore. Reject every other locality and do not broaden to nearby areas."
   }
 }

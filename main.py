@@ -19,6 +19,24 @@ from youtube_monitor import main as monitor_channels
 MAX_PER_RUN = int(os.environ.get("MAX_VIDEOS_PER_RUN", "3"))
 
 
+def _authoritative_location_values(video: dict, result: dict) -> tuple[str, ...]:
+    """Prefer Gemini's extracted property locality over channel/marketing keywords."""
+    extracted = str(result.get("location") or "").strip()
+    if extracted.casefold() not in {
+        "",
+        "unknown",
+        "not specified",
+        "not available",
+        "coimbatore",
+        "coimbatore, tamil nadu",
+    }:
+        return (extracted,)
+    return (
+        str(video.get("title") or ""),
+        str(video.get("description") or ""),
+    )
+
+
 def run() -> None:
     state = load_state()
     recent = monitor_channels()
@@ -42,12 +60,7 @@ def run() -> None:
         video_id = video["video_id"]
         try:
             result = analyze_property(video)
-            location = match_location(
-                video.get("title", ""),
-                video.get("description", ""),
-                result.get("location", ""),
-                result.get("nearby_landmarks", []).__str__(),
-            )
+            location = match_location(*_authoritative_location_values(video, result))
             upsert_record(video, result, location)
             if result.get("is_property_listing") and location["is_target_location"]:
                 build_video_job(video, result, location)

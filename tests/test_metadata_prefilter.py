@@ -10,9 +10,9 @@ def video(video_id, title, description="", published_at="2026-08-09T00:00:00Z"):
     }
 
 
-def test_coimbatore_property_is_strong_target():
+def test_vadavalli_property_is_strong_target():
     signals = metadata_prefilter.metadata_score(
-        video("a", "2BHK villa for sale in Saravanampatti Coimbatore 55 lakhs")
+        video("a", "2BHK villa for sale in Vadavalli Coimbatore 55 lakhs")
     )
     assert signals["strong_target"] is True
     assert signals["score"] >= 10
@@ -32,16 +32,16 @@ def test_coimbatore_without_focus_area_is_not_strong_target():
     assert signals["location_hits"] == []
 
 
-def test_focus_belt_micro_locality_is_a_strong_target():
+def test_nearby_locality_is_not_a_strong_target():
     signals = metadata_prefilter.metadata_score(
-        video("a", "3BHK independent villa in Teachers Colony for sale")
+        video("a", "3BHK independent villa in Somayampalayam for sale")
     )
-    assert signals["strong_target"] is True
-    assert "teachers colony" in signals["location_hits"]
+    assert signals["strong_target"] is False
+    assert signals["location_hits"] == []
 
 
-def test_misspelled_focus_area_is_still_a_strong_target():
-    for place in ("Idikarai", "Idigray", "Karmadai", "Periyanayakkanpalayam"):
+def test_misspelled_vadavalli_is_still_a_strong_target():
+    for place in ("Vadavali", "Vadavally", "Wadavalli", "Vadawalli"):
         signals = metadata_prefilter.metadata_score(
             video("a", f"2BHK house for sale in {place}")
         )
@@ -59,9 +59,9 @@ def test_queue_prioritizes_recent_target_over_retry_and_exploratory(monkeypatch)
     monkeypatch.setattr(metadata_prefilter, "STRICT_TARGET_ONLY", False)
     monkeypatch.setattr(metadata_prefilter, "MAX_EXPLORATORY_PER_RUN", 1)
     rows = [
-        video("retry-target", "Villa for sale in Karamadai Coimbatore"),
+        video("retry-target", "Villa for sale in Vadavalli Coimbatore"),
         video("recent-generic", "2BHK independent house for sale"),
-        video("recent-target", "2BHK villa Idigarai Coimbatore for sale"),
+        video("recent-target", "2BHK villa Vadavali Coimbatore for sale"),
     ]
     queue = metadata_prefilter.build_analysis_queue(rows, {"recent-generic", "recent-target"}, 3)
     assert [item["video_id"] for item in queue] == [
@@ -86,9 +86,9 @@ def test_only_one_exploratory_candidate_is_used(monkeypatch):
 def test_strict_queue_keeps_only_explicit_focus_area(monkeypatch):
     monkeypatch.setattr(metadata_prefilter, "STRICT_TARGET_ONLY", True)
     rows = [
-        video("focus", "2BHK villa in Periyanaickenpalayam for sale"),
+        video("focus", "2BHK villa in Vadavalli for sale"),
         video("city", "3BHK villa in Coimbatore for sale"),
-        video("other", "Villa in Vadavalli for sale"),
+        video("other", "Villa in Saravanampatti for sale"),
         video("sparse", "New property tour"),
     ]
     queue = metadata_prefilter.build_analysis_queue(rows, {row["video_id"] for row in rows}, 4)
