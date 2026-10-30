@@ -1311,6 +1311,12 @@
       "next_retry_at": "2026-10-01T11:50:29.430555+00:00",
       "status": "discovered"
     },
+    "9yyYs7y2Mqw": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-30T08:37:44.886515+00:00",
+      "next_retry_at": "2026-10-30T08:37:44.886515+00:00",
+      "status": "discovered"
+    },
     "9zQC5BwHVpE": {
       "attempts": 0,
       "first_seen_at": "2026-10-30T04:00:44.296334+00:00",
@@ -1526,6 +1532,12 @@
       "attempts": 0,
       "first_seen_at": "2026-09-20T14:22:03.107114+00:00",
       "next_retry_at": "2026-09-20T14:22:03.107114+00:00",
+      "status": "discovered"
+    },
+    "BUV9obCQI9I": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-30T08:37:44.886515+00:00",
+      "next_retry_at": "2026-10-30T08:37:44.886515+00:00",
       "status": "discovered"
     },
     "BZQkKnqV75o": {
@@ -3192,6 +3204,12 @@
       "next_retry_at": "2026-10-10T22:30:25.047736+00:00",
       "status": "discovered"
     },
+    "NMkNW0TtT94": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-30T08:37:44.886515+00:00",
+      "next_retry_at": "2026-10-30T08:37:44.886515+00:00",
+      "status": "discovered"
+    },
     "NVuU1KWC4KM": {
       "attempts": 0,
       "completed_at": "2026-08-26T13:20:10.650286+00:00",
@@ -3924,6 +3942,12 @@
       "next_retry_at": "2026-10-16T19:56:56.604238+00:00",
       "status": "discovered"
     },
+    "SBG9UJZwQls": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-30T08:37:44.886515+00:00",
+      "next_retry_at": "2026-10-30T08:37:44.886515+00:00",
+      "status": "discovered"
+    },
     "SBGpYk2NufU": {
       "attempts": 0,
       "completed_at": "2026-10-25T21:17:00.092034+00:00",
@@ -4135,6 +4159,12 @@
       "attempts": 0,
       "first_seen_at": "2026-10-08T09:30:42.933965+00:00",
       "next_retry_at": "2026-10-08T09:30:42.933965+00:00",
+      "status": "discovered"
+    },
+    "TrcucUiDbM0": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-30T08:37:44.886515+00:00",
+      "next_retry_at": "2026-10-30T08:37:44.886515+00:00",
       "status": "discovered"
     },
     "TxfvE75rWNg": {
@@ -4581,6 +4611,12 @@
       "last_error": "",
       "next_retry_at": "2026-09-02T00:11:30.779539+00:00",
       "status": "archived_non_target"
+    },
+    "X02CLRezR3g": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-30T08:37:44.886515+00:00",
+      "next_retry_at": "2026-10-30T08:37:44.886515+00:00",
+      "status": "discovered"
     },
     "X4osUhuRxY8": {
       "attempts": 0,
@@ -6480,6 +6516,12 @@
       "next_retry_at": "2026-08-12T08:41:29.433335+00:00",
       "status": "video_queued"
     },
+    "ii90kD1QJgQ": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-30T08:37:44.886515+00:00",
+      "next_retry_at": "2026-10-30T08:37:44.886515+00:00",
+      "status": "discovered"
+    },
     "iiGN9Zwi0EY": {
       "attempts": 0,
       "first_seen_at": "2026-09-21T11:08:50.579132+00:00",
@@ -7082,6 +7124,12 @@
       "next_retry_at": "2026-08-16T05:46:32.964810+00:00",
       "status": "discovered"
     },
+    "nTtoeh7YaJE": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-30T08:37:44.886515+00:00",
+      "next_retry_at": "2026-10-30T08:37:44.886515+00:00",
+      "status": "discovered"
+    },
     "nU-b8RPyBLE": {
       "attempts": 0,
       "first_seen_at": "2026-09-20T09:59:03.454590+00:00",
@@ -7103,6 +7151,14 @@
       "last_attempt_at": "2026-08-08T23:49:13.750797+00:00",
       "last_error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash\\nPlease retry in 46.276565118s.', 'code': 'too_many_requests'}}",
       "next_retry_at": "2026-08-09T01:49:13.750807+00:00",
+      "status": "retry_pending"
+    },
+    "ndmrITRJzoU": {
+      "attempts": 1,
+      "first_seen_at": "2026-10-30T08:37:44.886515+00:00",
+      "last_attempt_at": "2026-10-30T08:39:16.326981+00:00",
+      "last_error": "Error code: 503 - {'error': {'message': 'gemini-3.6-flash is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.', 'code': 'service_unavailable'}}",
+      "next_retry_at": "2026-10-30T10:39:16.326990+00:00",
       "status": "retry_pending"
     },
     "niCDCM0rWBM": {
@@ -7223,6 +7279,12 @@
       "attempts": 0,
       "first_seen_at": "2026-10-18T04:29:57.253986+00:00",
       "next_retry_at": "2026-10-18T04:29:57.253986+00:00",
+      "status": "discovered"
+    },
+    "oXxHKrXzVj4": {
+      "attempts": 0,
+      "first_seen_at": "2026-10-30T08:37:44.886515+00:00",
+      "next_retry_at": "2026-10-30T08:37:44.886515+00:00",
       "status": "discovered"
     },
     "oZcnv6dnSec": {
