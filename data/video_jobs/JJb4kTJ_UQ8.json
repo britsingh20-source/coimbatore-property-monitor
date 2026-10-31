@@ -1,0 +1,159 @@
+{
+  "video_id": "JJb4kTJ_UQ8",
+  "source_url": "https://www.youtube.com/watch?v=JJb4kTJ_UQ8",
+  "property_location": "Peedampalli, Coimbatore, Tamil Nadu, India",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2BHK",
+    "land_area": "2.10 Cents (description) / 2.25 Cents (speech)",
+    "built_up_area": "1300 sq ft",
+    "price": "₹62,000,000",
+    "facing": "North",
+    "road_width": "30 Feet (title) / 33 Feet (speech)",
+    "parking": "Covered car parking",
+    "approval": "DTCP Approved, Plan Approved",
+    "floors": "G+1 duplex with open terrace utility",
+    "layout_distribution": "Ground Floor: Covered car parking (12x13 ft), outdoor common bathroom (3.5x7 ft), spacious living hall (10x16 ft), L-shaped kitchen (10x11 ft), ground floor bedroom (10x11 ft) with attached bathroom (4x10 ft), and staircase nook suitable for dining with wash basin provision. First Floor: Master bedroom (11x16 ft) with attached bathroom (4x7 ft) and direct exit to an open terrace balcony containing an iron staircase to the upper roof terrace and washing machine utility setup."
+  },
+  "verified_facts": "The video title states 2.10 Cents land area and 30 ft road, while the audio presenter states 2.25 Cents land area and 33 ft road., Total built-up area is 1300 sq ft (900 sq ft ground floor + 400 sq ft first floor)., Ground floor contains car parking, outdoor common bathroom, living room, kitchen, 1 bedroom with attached bathroom, and under-stairs dining/wash area., First floor contains master bedroom with attached bathroom and access to open terrace balcony., Located directly behind Valarmathi School between Papampatti and Peedampalli in Coimbatore.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Peedampalli, Coimbatore, Tamil Nadu, India சைட்ல 2BHK Independent House தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹62,000,000.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 2.10 Cents (description) / 2.25 Cents (speech) லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 1300 sq ft இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "road",
+        "voice": "இதுல முக்கியமான விஷயம், முன்னாடி 30 Feet (title) / 33 Feet (speech) ரோடு வசதி இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [],
+        "vfx": "road-measure",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு North ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP Approved, Plan Approved இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "Script invented numeric facts in approval: ['5000']"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/JJb4kTJ_UQ8/",
+  "optional_owned_audio": "assets/audio/JJb4kTJ_UQ8.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Peedampalli, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-storey duplex home featuring a modern facade painted in neutral off-white, dark grey, and beige plaster finish, complemented by dark wood-grain accent tiles and a decorative brick panel. It includes a sliding gray metal entrance gate, tiled portico/parking bay, and an iron external stair leading to the upper roof terrace.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking (12x13 ft), outdoor common bathroom (3.5x7 ft), spacious living hall (10x16 ft), L-shaped kitchen (10x11 ft), ground floor bedroom (10x11 ft) with attached bathroom (4x10 ft), and staircase nook suitable for dining with wash basin provision. First Floor: Master bedroom (11x16 ft) with attached bathroom (4x7 ft) and direct exit to an open terrace balcony containing an iron staircase to the upper roof terrace and washing machine utility setup.. Neighbourhood: Situated within a newly developing gated residential layout surrounded by wide tar roads and individual house constructions, immediately adjacent to Valarmathi School with clear views of open fields and nearby educational institutions.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Peedampalli, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-storey duplex home featuring a modern facade painted in neutral off-white, dark grey, and beige plaster finish, complemented by dark wood-grain accent tiles and a decorative brick panel. It includes a sliding gray metal entrance gate, tiled portico/parking bay, and an iron external stair leading to the upper roof terrace.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking (12x13 ft), outdoor common bathroom (3.5x7 ft), spacious living hall (10x16 ft), L-shaped kitchen (10x11 ft), ground floor bedroom (10x11 ft) with attached bathroom (4x10 ft), and staircase nook suitable for dining with wash basin provision. First Floor: Master bedroom (11x16 ft) with attached bathroom (4x7 ft) and direct exit to an open terrace balcony containing an iron staircase to the upper roof terrace and washing machine utility setup.. Neighbourhood: Situated within a newly developing gated residential layout surrounded by wide tar roads and individual house constructions, immediately adjacent to Valarmathi School with clear views of open fields and nearby educational institutions.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Peedampalli, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-storey duplex home featuring a modern facade painted in neutral off-white, dark grey, and beige plaster finish, complemented by dark wood-grain accent tiles and a decorative brick panel. It includes a sliding gray metal entrance gate, tiled portico/parking bay, and an iron external stair leading to the upper roof terrace.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking (12x13 ft), outdoor common bathroom (3.5x7 ft), spacious living hall (10x16 ft), L-shaped kitchen (10x11 ft), ground floor bedroom (10x11 ft) with attached bathroom (4x10 ft), and staircase nook suitable for dining with wash basin provision. First Floor: Master bedroom (11x16 ft) with attached bathroom (4x7 ft) and direct exit to an open terrace balcony containing an iron staircase to the upper roof terrace and washing machine utility setup.. Neighbourhood: Situated within a newly developing gated residential layout surrounded by wide tar roads and individual house constructions, immediately adjacent to Valarmathi School with clear views of open fields and nearby educational institutions.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Peedampalli, Coimbatore, Tamil Nadu, India, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary two-storey duplex home featuring a modern facade painted in neutral off-white, dark grey, and beige plaster finish, complemented by dark wood-grain accent tiles and a decorative brick panel. It includes a sliding gray metal entrance gate, tiled portico/parking bay, and an iron external stair leading to the upper roof terrace.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Covered car parking (12x13 ft), outdoor common bathroom (3.5x7 ft), spacious living hall (10x16 ft), L-shaped kitchen (10x11 ft), ground floor bedroom (10x11 ft) with attached bathroom (4x10 ft), and staircase nook suitable for dining with wash basin provision. First Floor: Master bedroom (11x16 ft) with attached bathroom (4x7 ft) and direct exit to an open terrace balcony containing an iron staircase to the upper roof terrace and washing machine utility setup.. Neighbourhood: Situated within a newly developing gated residential layout surrounded by wide tar roads and individual house constructions, immediately adjacent to Valarmathi School with clear views of open fields and nearby educational institutions.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
