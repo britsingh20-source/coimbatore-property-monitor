@@ -1,0 +1,93 @@
+{
+  "video_id": "U4gu4rnGHfE",
+  "source_url": "https://www.youtube.com/watch?v=U4gu4rnGHfE",
+  "property_location": "Vadavalli, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "4 BHK",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "NOT SPECIFIED",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking portico",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex",
+    "layout_distribution": "Ground floor: Covered car parking portico, main entry, living room with TV wall panel, dining area, modular kitchen, bedroom with attached bathroom. First floor: Staircase landing, upper bedrooms with attached bathrooms, study area, skylight zone, and upper floor balcony lounge with terracotta jali screen."
+  },
+  "verified_facts": "Video title and description state a 4BHK Independent House for sale in Vadavalli, Coimbatore., On-screen video overlay provides contact phone number +91 9962 986 986 and location Vadavalli, Coimbatore., Video shows a G+1 modern elevation featuring grey paneling, terracotta jali brick accent wall, covered car portico, internal staircase, modular kitchen, skylight feature, and bedrooms with attached baths.",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed and conversational local property presenter speaking directly to camera",
+    "hook_strategy": "Lead with the key selling point: a premium 4 BHK independent house in prime Vadavalli location",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை வடவள்ளியில அமைஞ்சிருக்கக்கூடிய ஒரு அழகான 4 BHK independent house தான் இப்ப பார்க்கப்போறோம்.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "builtUp",
+        "voice": "இது ஒரு G+1 duplex வீடுங்க. Ground floor-ல covered car parking portico, living room, dining, modular kitchen, அப்புறம் attached bathroom-ஓட ஒரு bedroom இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "floor-plan-overlay",
+        "purpose": "ground_floor_walkthrough"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த வீட்டை நேர்ல site visit பண்ணவோ, மேலும் details தெரிஞ்சுக்கவோ உடனே call பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "contact-details-overlay",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/U4gu4rnGHfE/",
+  "optional_owned_audio": "assets/audio/U4gu4rnGHfE.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary G+1 elevation featuring grey vertical panel cladding, terracotta jali wall cutout, wooden soffit porch ceiling, and a modern metal gate.. Hard floor/layout lock: G+1 duplex; Ground floor: Covered car parking portico, main entry, living room with TV wall panel, dining area, modular kitchen, bedroom with attached bathroom. First floor: Staircase landing, upper bedrooms with attached bathrooms, study area, skylight zone, and upper floor balcony lounge with terracotta jali screen.. Neighbourhood: Developing residential neighborhood in Vadavalli, Coimbatore with paved road frontage and adjacent individual houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary G+1 elevation featuring grey vertical panel cladding, terracotta jali wall cutout, wooden soffit porch ceiling, and a modern metal gate.. Hard floor/layout lock: G+1 duplex; Ground floor: Covered car parking portico, main entry, living room with TV wall panel, dining area, modular kitchen, bedroom with attached bathroom. First floor: Staircase landing, upper bedrooms with attached bathrooms, study area, skylight zone, and upper floor balcony lounge with terracotta jali screen.. Neighbourhood: Developing residential neighborhood in Vadavalli, Coimbatore with paved road frontage and adjacent individual houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary G+1 elevation featuring grey vertical panel cladding, terracotta jali wall cutout, wooden soffit porch ceiling, and a modern metal gate.. Hard floor/layout lock: G+1 duplex; Ground floor: Covered car parking portico, main entry, living room with TV wall panel, dining area, modular kitchen, bedroom with attached bathroom. First floor: Staircase landing, upper bedrooms with attached bathrooms, study area, skylight zone, and upper floor balcony lounge with terracotta jali screen.. Neighbourhood: Developing residential neighborhood in Vadavalli, Coimbatore with paved road frontage and adjacent individual houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary G+1 elevation featuring grey vertical panel cladding, terracotta jali wall cutout, wooden soffit porch ceiling, and a modern metal gate.. Hard floor/layout lock: G+1 duplex; Ground floor: Covered car parking portico, main entry, living room with TV wall panel, dining area, modular kitchen, bedroom with attached bathroom. First floor: Staircase landing, upper bedrooms with attached bathrooms, study area, skylight zone, and upper floor balcony lounge with terracotta jali screen.. Neighbourhood: Developing residential neighborhood in Vadavalli, Coimbatore with paved road frontage and adjacent individual houses.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "needs_review",
+  "approval_mode": "automatic_fact_gate_v1"
+}
