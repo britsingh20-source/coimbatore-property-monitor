@@ -18,25 +18,25 @@ def test_vadavalli_property_is_strong_target():
     assert signals["score"] >= 10
 
 
-def test_generic_property_is_exploratory_not_strong():
+def test_generic_property_is_strong_without_area_filter():
     signals = metadata_prefilter.metadata_score(video("a", "3BHK independent house for sale"))
-    assert signals["strong_target"] is False
+    assert signals["strong_target"] is True
     assert signals["exploratory"] is True
 
 
-def test_coimbatore_without_focus_area_is_not_strong_target():
+def test_coimbatore_without_named_area_is_strong_target():
     signals = metadata_prefilter.metadata_score(
         video("a", "2BHK villa for sale in Coimbatore 55 lakhs")
     )
-    assert signals["strong_target"] is False
+    assert signals["strong_target"] is True
     assert signals["location_hits"] == []
 
 
-def test_nearby_locality_is_not_a_strong_target():
+def test_any_area_property_is_a_strong_target():
     signals = metadata_prefilter.metadata_score(
         video("a", "3BHK independent villa in Somayampalayam for sale")
     )
-    assert signals["strong_target"] is False
+    assert signals["strong_target"] is True
     assert signals["location_hits"] == []
 
 
@@ -55,7 +55,7 @@ def test_non_listing_is_filtered():
     assert signals["exploratory"] is False
 
 
-def test_queue_prioritizes_recent_target_over_retry_and_exploratory(monkeypatch):
+def test_queue_prioritizes_recent_property_over_retry(monkeypatch):
     monkeypatch.setattr(metadata_prefilter, "STRICT_TARGET_ONLY", False)
     monkeypatch.setattr(metadata_prefilter, "MAX_EXPLORATORY_PER_RUN", 1)
     rows = [
@@ -66,12 +66,12 @@ def test_queue_prioritizes_recent_target_over_retry_and_exploratory(monkeypatch)
     queue = metadata_prefilter.build_analysis_queue(rows, {"recent-generic", "recent-target"}, 3)
     assert [item["video_id"] for item in queue] == [
         "recent-target",
-        "retry-target",
         "recent-generic",
+        "retry-target",
     ]
 
 
-def test_only_one_exploratory_candidate_is_used(monkeypatch):
+def test_all_property_candidates_are_used_without_area_filter(monkeypatch):
     monkeypatch.setattr(metadata_prefilter, "STRICT_TARGET_ONLY", False)
     monkeypatch.setattr(metadata_prefilter, "MAX_EXPLORATORY_PER_RUN", 1)
     rows = [
@@ -80,10 +80,10 @@ def test_only_one_exploratory_candidate_is_used(monkeypatch):
         video("c", "Residential plot for sale"),
     ]
     queue = metadata_prefilter.build_analysis_queue(rows, {"a", "b", "c"}, 3)
-    assert len(queue) == 1
+    assert len(queue) == 3
 
 
-def test_strict_queue_keeps_only_explicit_focus_area(monkeypatch):
+def test_strict_queue_keeps_property_listings_from_all_areas(monkeypatch):
     monkeypatch.setattr(metadata_prefilter, "STRICT_TARGET_ONLY", True)
     rows = [
         video("focus", "2BHK villa in Vadavalli for sale"),
@@ -92,4 +92,4 @@ def test_strict_queue_keeps_only_explicit_focus_area(monkeypatch):
         video("sparse", "New property tour"),
     ]
     queue = metadata_prefilter.build_analysis_queue(rows, {row["video_id"] for row in rows}, 4)
-    assert [item["video_id"] for item in queue] == ["focus"]
+    assert [item["video_id"] for item in queue] == ["focus", "other", "city", "sparse"]

@@ -1,4 +1,4 @@
-name: Vadavalli Prompt Scope Test
+name: All-Area Property Prompt Test
 
 on:
   workflow_dispatch: {}
@@ -8,13 +8,10 @@ on:
       - ".github/workflows/weekly-focus-e2e-test.yml"
       - "location_matcher.py"
       - "metadata_prefilter.py"
-      - "send_telegram_prompts.py"
       - "telegram_router.py"
       - "telegram_r2_ingest.py"
       - "r2_social_autopilot.py"
-      - "config/focus_areas.json"
       - "config/locations.json"
-      - "config/weekly_focus.json"
 
 permissions:
   contents: read
@@ -25,42 +22,38 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - name: Verify Vadavalli-only prompt catalog
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-
-          locations = json.loads(Path('config/locations.json').read_text(encoding='utf-8'))
-          assert 'Vadavalli' in locations.get('target_localities', {}), locations
-
-          catalog = json.loads(Path('config/focus_areas.json').read_text(encoding='utf-8'))
-          slugs = [area.get('slug') for area in catalog.get('areas', [])]
-          for required in ('vadavalli', 'karamadai', 'saravanampatti', 'kalapatti', 'sulur', 'kovilpalayam'):
-              assert required in slugs, (required, slugs)
-          assert catalog.get('rules', {}).get('max_selected') == len(catalog['areas']), catalog
-
-          focus = json.loads(Path('config/weekly_focus.json').read_text(encoding='utf-8'))
-          assert [area.get('name') for area in focus.get('focus_areas', [])] == ['Vadavalli'], focus
-          assert focus.get('rules', {}).get('require_focus_match_for_prompt') is True, focus
-          assert focus.get('rules', {}).get('allow_citywide_fallback') is False, focus
-          print('Vadavalli-only prompt configuration passed')
-          PY
-
-      - name: Verify prompt matcher rejects every other area
+      - name: Verify prompts accept every area
         run: |
           python - <<'PY'
           from location_matcher import match_location
+          from metadata_prefilter import metadata_score
 
-          assert match_location('Vadavalli, Coimbatore')['is_target_location'] is True
           for area in (
-              'Saravanampatti', 'Idigarai', 'Karamadai', 'Periyanaickenpalayam',
-              'Mettupalayam', 'Thudiyalur', 'Somayampalayam', 'Bommanampalayam',
+              'Vadavalli', 'Saravanampatti', 'Idigarai', 'Karamadai',
+              'Periyanaickenpalayam', 'Kalapatti', 'Sulur', 'Somayampalayam',
           ):
-              result = match_location(f'{area}, Coimbatore')
-              assert result['is_target_location'] is False, (area, result)
-          print('Prompt matcher isolation passed')
+              location = match_location(f'Villa for sale in {area}, Coimbatore')
+              assert location['is_target_location'] is True, (area, location)
+              signals = metadata_score({'title': f'Villa for sale in {area}', 'description': ''})
+              assert signals['strong_target'] is True, (area, signals)
+
+          assert match_location('House somewhere in Coimbatore')['is_target_location'] is True
+          print('All-area property prompt configuration passed')
           PY
+
+      - name: Verify no focus control or prompt filter remains
+        shell: bash
+        run: |
+          set -euo pipefail
+          test ! -e config/focus_areas.json
+          test ! -e config/weekly_focus.json
+          test ! -e .github/workflows/update-weekly-focus.yml
+          if rg -n "weekly-focus|focus:toggle|Property Focus Control" \
+            location_matcher.py metadata_prefilter.py cloudflare/social-trigger/src/index.ts; then
+            echo "A property focus filter is still active."
+            exit 1
+          fi
+          echo "Property focus filtering is fully removed."
 
       - name: Verify video publishing remains area-independent
         shell: bash

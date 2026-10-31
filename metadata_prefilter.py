@@ -6,7 +6,6 @@ from location_matcher import contains_phrase, normalize
 
 
 LOCATION_CONFIG = Path("config/locations.json")
-WEEKLY_FOCUS_PATH = Path(os.environ.get("WEEKLY_FOCUS_PATH", "config/weekly_focus.json"))
 MAX_EXPLORATORY_PER_RUN = int(os.environ.get("MAX_EXPLORATORY_PER_RUN", "1"))
 SPARSE_RECENT_FALLBACK = int(os.environ.get("SPARSE_RECENT_FALLBACK", "1"))
 STRICT_TARGET_ONLY = os.environ.get("STRICT_TARGET_ONLY", "1").strip().casefold() not in {
@@ -34,19 +33,11 @@ def _normalize(value: str) -> str:
 
 
 def _location_candidates() -> tuple[tuple[str, tuple[str, ...]], ...]:
-    if not WEEKLY_FOCUS_PATH.exists():
-        return ()
-    config = json.loads(WEEKLY_FOCUS_PATH.read_text(encoding="utf-8"))
-    rows = []
-    for area in config.get("focus_areas", []):
-        canonical = str(area.get("name") or "").strip()
-        if not canonical:
-            continue
-        aliases = area.get("aliases") or []
-        micro_localities = area.get("micro_localities") or []
-        candidates = (canonical, *aliases, *micro_localities)
-        rows.append((canonical, tuple(str(term) for term in candidates if str(term).strip())))
-    return tuple(rows)
+    config = json.loads(LOCATION_CONFIG.read_text(encoding="utf-8"))
+    return tuple(
+        (canonical, tuple(str(term) for term in (canonical, *aliases) if str(term).strip()))
+        for canonical, aliases in config.get("target_localities", {}).items()
+    )
 
 
 def _location_hits(text: str) -> list[str]:
@@ -77,7 +68,8 @@ def metadata_score(video: dict) -> dict:
     if negative_hits:
         score -= 8
 
-    strong_target = bool(location_hits and property_hits and not negative_hits)
+    # There is no area focus gate: all property areas are eligible for Gemini analysis.
+    strong_target = bool(property_hits and not negative_hits)
     exploratory = bool(property_hits and not negative_hits)
 
     return {

@@ -129,27 +129,25 @@ jobs:
             "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/setWebhook")"
           python3 -c "import json,sys; d=json.load(sys.stdin); assert d.get('ok'), d; print('Telegram webhook registered.')" <<<"$response"
 
-      - name: Install persistent Property Focus Control button
+      - name: Remove Property Focus Control button
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           set -euo pipefail
-          commands='[{"command":"focus","description":"Open Property Focus Control"}]'
           command_response="$(curl --fail --silent --show-error \
             --request POST \
-            --data-urlencode "commands=${commands}" \
-            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/setMyCommands")"
+            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/deleteMyCommands")"
           python3 -c "import json,sys; d=json.load(sys.stdin); assert d.get('ok'), d" <<<"$command_response"
 
-          keyboard='{"keyboard":[[{"text":"🎯 Property Focus Control"}]],"resize_keyboard":true,"is_persistent":true,"one_time_keyboard":false,"input_field_placeholder":"Select Property Focus Control to change the prompt area"}'
+          keyboard='{"remove_keyboard":true}'
           button_response="$(curl --fail --silent --show-error \
             --request POST \
             --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
-            --data-urlencode "text=🎯 Property Focus Control is ready. Use the fixed button below to change only future property-prompt areas. Video publishing accepts every area." \
+            --data-urlencode "text=✅ Property area filters removed. Property prompts are now enabled for all areas." \
             --data-urlencode "reply_markup=${keyboard}" \
             "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage")"
-          python3 -c "import json,sys; d=json.load(sys.stdin); assert d.get('ok'), d; print('Persistent Property Focus Control installed.')" <<<"$button_response"
+          python3 -c "import json,sys; d=json.load(sys.stdin); assert d.get('ok'), d; print('Property Focus Control removed.')" <<<"$button_response"
 
       - name: Verify live Worker health
         run: |

@@ -14,15 +14,6 @@ function harness(status = 204) {
   const dispatched = [];
   const notifications = [];
   globalThis.fetch = async (url, options) => {
-    if (String(url).startsWith("https://raw.githubusercontent.com/")) {
-      return new Response(JSON.stringify({
-        areas: [
-          { slug: "karamadai", name: "Karamadai", aliases: ["karamadai"], micro_localities: [] },
-          { slug: "vadavalli", name: "Vadavalli", aliases: ["vadavalli"], micro_localities: [] },
-        ],
-        rules: { max_selected: 18, selection_ttl_minutes: 15 },
-      }));
-    }
     const payload = JSON.parse(options.body);
     if (String(url).startsWith("https://api.github.com/")) {
       dispatched.push(payload);
@@ -44,18 +35,7 @@ function harness(status = 204) {
   const send = (id, message) => worker.fetch(new Request("https://worker.test/", {
     method: "POST", body: JSON.stringify({ update_id: id, message: { chat: { id: 123 }, ...message } }),
   }), env);
-  const callback = (id, data) => worker.fetch(new Request("https://worker.test/", {
-    method: "POST",
-    body: JSON.stringify({
-      update_id: id,
-      callback_query: {
-        id: `callback-${id}`,
-        data,
-        message: { message_id: 77, chat: { id: 123 } },
-      },
-    }),
-  }), env);
-  return { state, dispatched, notifications, send, callback };
+  return { state, dispatched, notifications, send };
 }
 
 test("captioned Interior upload preserves its ID and uses only the Interior event", async () => {
@@ -116,33 +96,9 @@ test("403 returns 200 and retains duplicate protection and a single warning", as
   assert.equal(h.state.get("telegram-update:1"), "1");
 });
 
-test("persistent Property Focus Control opens the area selector", async () => {
+test("retired Property Focus Control text does not open a selector", async () => {
   const h = harness();
   assert.equal((await h.send(10, { text: "🎯 Property Focus Control" })).status, 200);
-  assert.equal(h.notifications.length, 1);
-  assert.match(h.notifications[0].text, /SELECT PROPERTY FOCUS/);
-  assert.equal(h.notifications[0].reply_markup.inline_keyboard[0][0].callback_data, "focus:toggle:karamadai");
-  assert.equal(
-    h.notifications[0].reply_markup.inline_keyboard.flat().some(button => button.callback_data === "focus:toggle:vadavalli"),
-    true,
-  );
-});
-
-test("multiple focus areas are retained and applied together", async () => {
-  const h = harness();
-  h.state.set("weekly-focus-active", JSON.stringify(["karamadai"]));
-  await h.callback(20, "focus:toggle:vadavalli");
-  assert.deepEqual(JSON.parse(h.state.get("weekly-focus-selection:123")), ["karamadai", "vadavalli"]);
-  await h.callback(21, "focus:apply");
-  assert.equal(h.dispatched.length, 1);
-  assert.equal(h.dispatched[0].event_type, "weekly-focus-update");
-  assert.deepEqual(h.dispatched[0].client_payload.areas, ["karamadai", "vadavalli"]);
-  assert.deepEqual(JSON.parse(h.state.get("weekly-focus-active")), ["karamadai", "vadavalli"]);
-});
-
-test("tapping a selected area deselects only that area", async () => {
-  const h = harness();
-  h.state.set("weekly-focus-active", JSON.stringify(["karamadai", "vadavalli"]));
-  await h.callback(30, "focus:toggle:karamadai");
-  assert.deepEqual(JSON.parse(h.state.get("weekly-focus-selection:123")), ["vadavalli"]);
+  assert.equal(h.notifications.length, 0);
+  assert.equal(h.dispatched.length, 0);
 });

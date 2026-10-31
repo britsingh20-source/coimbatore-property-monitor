@@ -26,9 +26,7 @@ on:
       - "requirements.txt"
       - "location_matcher.py"
       - "config/channels.json"
-      - "config/focus_areas.json"
       - "config/locations.json"
-      - "config/weekly_focus.json"
 
 concurrency:
   group: property-automation-state
