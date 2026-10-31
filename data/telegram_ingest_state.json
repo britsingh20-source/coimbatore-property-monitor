@@ -296,6 +296,14 @@
       "status": "ignored_no_pending_prompt",
       "update_id": 789574031
     },
+    "AgADIiMAAg8qMFc": {
+      "r2_key": "social-ready/7erMTCS8VK0.mp4",
+      "size": 17952767,
+      "status": "uploaded_exact_video_id",
+      "update_id": 399222257,
+      "uploaded_at": "2026-10-31T02:59:19.049347+00:00",
+      "video_id": "7erMTCS8VK0"
+    },
     "AgADJyEAAmRQmVQ": {
       "corrected_from_video_id": "57 gPYONDFUU",
       "paired_at": "2026-08-30T03:30:53.644Z",
