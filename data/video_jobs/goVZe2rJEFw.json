@@ -1,0 +1,121 @@
+{
+  "video_id": "goVZe2rJEFw",
+  "source_url": "https://www.youtube.com/watch?v=goVZe2rJEFw",
+  "property_location": "Shanthi Medu, Mettupalayam Road, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2 BHK",
+    "land_area": "2.75 Cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "Rs. 55 Lakhs",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Car parking (11 x 17 ft)",
+    "approval": "NOT SPECIFIED",
+    "floors": "single-storey with open terrace",
+    "layout_distribution": "Ground Floor: Car parking porch (11x17 ft), entrance foyer, living room (16x17 ft) with wall paneling and pooja cabinet, modular kitchen (10x11 ft), master bedroom (10x16 ft) with attached bathroom (5x10 ft), second bedroom (10x11 ft) with attached bathroom (4x10 ft), external staircase with under-stair outdoor Indian-style toilet/bathroom; Roof Level: Open terrace."
+  },
+  "verified_facts": "Land Area: 2.75 Cents, South-West corner plot, North-facing main door and entrance, Car parking size: 11 ft x 17 ft with borewell and water sump, Foyer area leading into living room, Living room size: 16 ft x 17 ft with chandelier, TV unit, and pooja cabinet, Modular kitchen size: 10 ft x 11 ft with chimney, wall tiles, and storage cabinets, Master bedroom size: 10 ft x 16 ft with attached bathroom (5 ft x 10 ft), wardrobe space, lofts, and wall shelves, Second bedroom size: 10 ft x 11 ft with attached bathroom (4 ft x 10 ft), wardrobe space, and loft",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking naturally to camera with fast-paced visual cuts",
+    "hook_strategy": "Highlighting a 2 BHK Independent House for 55 Lakhs at Shanthi Medu, Mettupalayam Road",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை மேட்டுப்பாளையம் ரோடு சாந்தி மேடுல, வெறும் 55 லட்சத்துல ஒரு 2 BHK Independent House விற்பனைக்கு வந்துருக்கு!",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "2.75 சென்ட் லேண்ட் ஏரியா... 11x17 அடியில covered car parking, போர்வெல் மற்றும் water sump வசதியோட இருக்கு.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "property_overview"
+      },
+      {
+        "name": "facing",
+        "voice": "வடக்கு பார்த்த மெயின் டோர்... உள்ள வந்தா 16x17 living room, TV unit, pooja cabinet, modular kitchen அப்புறம் attached bathrooms-ஓட 2 bedrooms இருக்கு.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "compass",
+        "purpose": "interior_highlights"
+      },
+      {
+        "name": "price",
+        "voice": "வெளி படிக்கட்டுக்கு கீழ outdoor toilet, மேலே open roof terrace இருக்கு. இந்த வீட்டோட price 55 Lakhs.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "price-tag",
+        "purpose": "pricing_and_terrace"
+      },
+      {
+        "name": "cta",
+        "voice": "மேலும் விவரங்களுக்கும் site visit போறதுக்கும் உடனே call பண்ணுங்க!",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "interior"
+        ],
+        "vfx": "contact-details",
+        "purpose": "call_to_action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/goVZe2rJEFw/",
+  "optional_owned_audio": "assets/audio/goVZe2rJEFw.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam Road, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern independent house featuring multi-color painted exterior walls (sage green, purple/mauve, grey, cream), a wide wooden-finish metal gate, tiled car parking porch wall, exterior staircase, and a spacious open roof terrace with parapet walls.. Hard floor/layout lock: single-storey with open terrace; Ground Floor: Car parking porch (11x17 ft), entrance foyer, living room (16x17 ft) with wall paneling and pooja cabinet, modular kitchen (10x11 ft), master bedroom (10x16 ft) with attached bathroom (5x10 ft), second bedroom (10x11 ft) with attached bathroom (4x10 ft), external staircase with under-stair outdoor Indian-style toilet/bathroom; Roof Level: Open terrace.. Neighbourhood: Developing residential locality in Shanthi Medu along Mettupalayam Road, Coimbatore, featuring neighboring individual houses and vacant plots.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam Road, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern independent house featuring multi-color painted exterior walls (sage green, purple/mauve, grey, cream), a wide wooden-finish metal gate, tiled car parking porch wall, exterior staircase, and a spacious open roof terrace with parapet walls.. Hard floor/layout lock: single-storey with open terrace; Ground Floor: Car parking porch (11x17 ft), entrance foyer, living room (16x17 ft) with wall paneling and pooja cabinet, modular kitchen (10x11 ft), master bedroom (10x16 ft) with attached bathroom (5x10 ft), second bedroom (10x11 ft) with attached bathroom (4x10 ft), external staircase with under-stair outdoor Indian-style toilet/bathroom; Roof Level: Open terrace.. Neighbourhood: Developing residential locality in Shanthi Medu along Mettupalayam Road, Coimbatore, featuring neighboring individual houses and vacant plots.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam Road, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern independent house featuring multi-color painted exterior walls (sage green, purple/mauve, grey, cream), a wide wooden-finish metal gate, tiled car parking porch wall, exterior staircase, and a spacious open roof terrace with parapet walls.. Hard floor/layout lock: single-storey with open terrace; Ground Floor: Car parking porch (11x17 ft), entrance foyer, living room (16x17 ft) with wall paneling and pooja cabinet, modular kitchen (10x11 ft), master bedroom (10x16 ft) with attached bathroom (5x10 ft), second bedroom (10x11 ft) with attached bathroom (4x10 ft), external staircase with under-stair outdoor Indian-style toilet/bathroom; Roof Level: Open terrace.. Neighbourhood: Developing residential locality in Shanthi Medu along Mettupalayam Road, Coimbatore, featuring neighboring individual houses and vacant plots.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam Road, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey modern independent house featuring multi-color painted exterior walls (sage green, purple/mauve, grey, cream), a wide wooden-finish metal gate, tiled car parking porch wall, exterior staircase, and a spacious open roof terrace with parapet walls.. Hard floor/layout lock: single-storey with open terrace; Ground Floor: Car parking porch (11x17 ft), entrance foyer, living room (16x17 ft) with wall paneling and pooja cabinet, modular kitchen (10x11 ft), master bedroom (10x16 ft) with attached bathroom (5x10 ft), second bedroom (10x11 ft) with attached bathroom (4x10 ft), external staircase with under-stair outdoor Indian-style toilet/bathroom; Roof Level: Open terrace.. Neighbourhood: Developing residential locality in Shanthi Medu along Mettupalayam Road, Coimbatore, featuring neighboring individual houses and vacant plots.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
