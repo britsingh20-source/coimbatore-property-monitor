@@ -3058,11 +3058,11 @@
       "status": "discovered"
     },
     "LzHwTZFDKfo": {
-      "attempts": 1,
+      "attempts": 2,
       "first_seen_at": "2026-11-01T09:15:02.335886+00:00",
-      "last_attempt_at": "2026-11-01T09:16:34.060308+00:00",
+      "last_attempt_at": "2026-11-01T09:48:43.768518+00:00",
       "last_error": "Error code: 503 - {'error': {'message': 'gemini-3.6-flash is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.', 'code': 'service_unavailable'}}",
-      "next_retry_at": "2026-11-01T11:16:34.060323+00:00",
+      "next_retry_at": "2026-11-01T13:48:43.768529+00:00",
       "status": "retry_pending"
     },
     "M0UauIWBWNY": {
