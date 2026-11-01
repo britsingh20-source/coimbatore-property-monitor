@@ -6155,9 +6155,11 @@
     },
     "ezmLsAuE0i0": {
       "attempts": 0,
+      "completed_at": "2026-11-01T16:28:44.675278+00:00",
       "first_seen_at": "2026-11-01T16:03:31.433920+00:00",
+      "last_error": "",
       "next_retry_at": "2026-11-01T16:03:31.433920+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "f0CqWaYzZ3I": {
       "attempts": 0,
