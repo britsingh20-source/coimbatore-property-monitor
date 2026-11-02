@@ -1,0 +1,142 @@
+{
+  "video_id": "LzHwTZFDKfo",
+  "source_url": "https://www.youtube.com/watch?v=LzHwTZFDKfo",
+  "property_location": "Veerapandi Pirivu, Near Mettupalayam Road, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2 BHK",
+    "land_area": "2.75 Cents",
+    "built_up_area": "1110 sqft",
+    "price": "54 Lakhs",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking porch",
+    "approval": "DTCP approved",
+    "floors": "single-storey with open terrace",
+    "layout_distribution": "Ground Floor: Covered parking porch with checker-board tiles, spacious hall/living room with false ceiling and TV unit, pooja storage cabinet, kitchen with chimney and overhead cabinets, two bedrooms with attached bathrooms, and an external bathroom located under the exterior staircase leading to the open roof terrace."
+  },
+  "verified_facts": "2BHK Independent Villa / House in Veerapandi Pirivu, Mettupalayam Road, Coimbatore, Land Area: 2.75 Cents, Built-up Area: 1110 sq.ft., Price: 54 Lakhs (negotiable), North facing site and North facing main door, 75% bank loan facility available, DTCP approved site with borewell facility",
+  "content_plan": {
+    "target_duration_seconds": 40,
+    "style": "Relaxed local property presenter speaking directly to camera with clear narrative pacing.",
+    "hook_strategy": "Highlight key location near Mettupalayam Road along with an independent 2 BHK home offer.",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "கோவை மேட்டுப்பாளையம் ரோடு, வீரபாண்டி பிரிவு பக்கத்துல அமைஞ்சிருக்கற ஒரு அருமையான 2 BHK independent house பாக்கப்போறோம்.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "land",
+        "voice": "இது 2.75 Cents land area-ல அமைஞ்ச அழகான single-storey வீடுங்க.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "property-land-size"
+      },
+      {
+        "name": "builtUp",
+        "voice": "1110 sqft built-up area-ல spacious living room, false ceiling lighting, modular kitchen chimney-ோட, அப்புறம் 2 bedrooms with attached bathrooms-ம் இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom",
+          "interior"
+        ],
+        "avoid_broll": [
+          "exterior"
+        ],
+        "vfx": "text-overlay",
+        "purpose": "layout-details"
+      },
+      {
+        "name": "facing",
+        "voice": "இதுல முக்கியமான விஷயம், North facing site மற்றும் North facing main door-ோட இந்த வீடு வடிவமைக்கப்பட்டிருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "kitchen"
+        ],
+        "vfx": "compass-overlay",
+        "purpose": "facing-info"
+      },
+      {
+        "name": "approval",
+        "voice": "அதே மாதிரி, இது DTCP approved property. சொந்தமா borewell facility-யும் இருக்கு, 75% bank loan வசதியும் பண்ணி தர்றாங்க.",
+        "broll": [
+          "exterior",
+          "interior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "badge-overlay",
+        "purpose": "approval-and-loan"
+      },
+      {
+        "name": "price",
+        "voice": "இந்த வீட்டின் price பாத்தீங்கனா 54 Lakhs, negotiable-தான்.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "bedroom"
+        ],
+        "vfx": "price-badge",
+        "purpose": "pricing"
+      },
+      {
+        "name": "cta",
+        "voice": "நேர்ல site visit வரணும்னா இல்ல மேலும் details வேணும்னா உடனே contact பண்ணுங்க.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [
+          "interior"
+        ],
+        "vfx": "call-button",
+        "purpose": "call-to-action"
+      }
+    ],
+    "version": "content-director-v1"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/LzHwTZFDKfo/",
+  "optional_owned_audio": "assets/audio/LzHwTZFDKfo.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam Road, Coimbatore, Tamil Nadu. Architecture consistent with: Modern elevation styled with brown, green, and orange accent walls, metal compound gate, patterned floor tiles in the portico, exterior side staircase, and top terrace space.. Hard floor/layout lock: single-storey with open terrace; Ground Floor: Covered parking porch with checker-board tiles, spacious hall/living room with false ceiling and TV unit, pooja storage cabinet, kitchen with chimney and overhead cabinets, two bedrooms with attached bathrooms, and an external bathroom located under the exterior staircase leading to the open roof terrace.. Neighbourhood: Residential area located near Mettupalayam Road in Veerapandi Pirivu, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam Road, Coimbatore, Tamil Nadu. Architecture consistent with: Modern elevation styled with brown, green, and orange accent walls, metal compound gate, patterned floor tiles in the portico, exterior side staircase, and top terrace space.. Hard floor/layout lock: single-storey with open terrace; Ground Floor: Covered parking porch with checker-board tiles, spacious hall/living room with false ceiling and TV unit, pooja storage cabinet, kitchen with chimney and overhead cabinets, two bedrooms with attached bathrooms, and an external bathroom located under the exterior staircase leading to the open roof terrace.. Neighbourhood: Residential area located near Mettupalayam Road in Veerapandi Pirivu, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam Road, Coimbatore, Tamil Nadu. Architecture consistent with: Modern elevation styled with brown, green, and orange accent walls, metal compound gate, patterned floor tiles in the portico, exterior side staircase, and top terrace space.. Hard floor/layout lock: single-storey with open terrace; Ground Floor: Covered parking porch with checker-board tiles, spacious hall/living room with false ceiling and TV unit, pooja storage cabinet, kitchen with chimney and overhead cabinets, two bedrooms with attached bathrooms, and an external bathroom located under the exterior staircase leading to the open roof terrace.. Neighbourhood: Residential area located near Mettupalayam Road in Veerapandi Pirivu, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Mettupalayam Road, Coimbatore, Tamil Nadu. Architecture consistent with: Modern elevation styled with brown, green, and orange accent walls, metal compound gate, patterned floor tiles in the portico, exterior side staircase, and top terrace space.. Hard floor/layout lock: single-storey with open terrace; Ground Floor: Covered parking porch with checker-board tiles, spacious hall/living room with false ceiling and TV unit, pooja storage cabinet, kitchen with chimney and overhead cabinets, two bedrooms with attached bathrooms, and an external bathroom located under the exterior staircase leading to the open roof terrace.. Neighbourhood: Residential area located near Mettupalayam Road in Veerapandi Pirivu, Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

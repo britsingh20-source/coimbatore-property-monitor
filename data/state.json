@@ -3087,11 +3087,12 @@
     },
     "LzHwTZFDKfo": {
       "attempts": 2,
+      "completed_at": "2026-11-02T00:43:57.758989+00:00",
       "first_seen_at": "2026-11-01T09:15:02.335886+00:00",
       "last_attempt_at": "2026-11-01T09:48:43.768518+00:00",
-      "last_error": "Error code: 503 - {'error': {'message': 'gemini-3.6-flash is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.', 'code': 'service_unavailable'}}",
+      "last_error": "",
       "next_retry_at": "2026-11-01T13:48:43.768529+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "M0UauIWBWNY": {
       "attempts": 0,
@@ -3365,9 +3366,11 @@
     },
     "NW7_GcRJMTg": {
       "attempts": 0,
+      "completed_at": "2026-11-02T00:43:32.017820+00:00",
       "first_seen_at": "2026-11-01T16:03:31.433920+00:00",
+      "last_error": "",
       "next_retry_at": "2026-11-01T16:03:31.433920+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "NfmIXfToToY": {
       "attempts": 0,
