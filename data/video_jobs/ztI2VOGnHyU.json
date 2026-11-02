@@ -1,0 +1,139 @@
+{
+  "video_id": "ztI2VOGnHyU",
+  "source_url": "https://www.youtube.com/watch?v=ztI2VOGnHyU",
+  "property_location": "Kondayampalayam, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "2 BHK",
+    "land_area": "2.90 Cents",
+    "built_up_area": "1125 Sq.Ft",
+    "price": "₹75 Lakhs",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Car Parking (12'6\" × 16')",
+    "approval": "NOT SPECIFIED",
+    "floors": "single-storey with open terrace",
+    "layout_distribution": "Ground Floor: Covered car parking portico, main hall/living room, modular kitchen with dining area, master bedroom with attached bathroom, second bedroom with attached bathroom, outer toilet. Roof Level: Staircase leading to an open roof terrace."
+  },
+  "verified_facts": "2BHK Villa for sale located in Kondayampalayam, Coimbatore near IT Park, Land Area is 2.90 Cents and Built-up Area is 1125 Sq.Ft, Facing direction is North, Asking price is ₹75 Lakhs, Includes 2 bedrooms with attached bathrooms, living hall, kitchen & dining, borewell, and an outer toilet",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Kondayampalayam, Coimbatore சைட்ல 2 BHK Villa தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹75 Lakhs.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 2.90 Cents லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 1125 Sq.Ft இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு North ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ],
+    "director_error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}"
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/ztI2VOGnHyU/",
+  "optional_owned_audio": "assets/audio/ztI2VOGnHyU.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Kondayampalayam, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey villa featuring a modern brown and beige exterior, gated portico, red-painted entrance ramp, external stairs with stainless steel handrails, and a red-painted open terrace roof.. Hard floor/layout lock: single-storey with open terrace; Ground Floor: Covered car parking portico, main hall/living room, modular kitchen with dining area, master bedroom with attached bathroom, second bedroom with attached bathroom, outer toilet. Roof Level: Staircase leading to an open roof terrace.. Neighbourhood: Suburban residential neighborhood with adjacent residential plots, houses, and open green fields visible from the rooftop.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Kondayampalayam, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey villa featuring a modern brown and beige exterior, gated portico, red-painted entrance ramp, external stairs with stainless steel handrails, and a red-painted open terrace roof.. Hard floor/layout lock: single-storey with open terrace; Ground Floor: Covered car parking portico, main hall/living room, modular kitchen with dining area, master bedroom with attached bathroom, second bedroom with attached bathroom, outer toilet. Roof Level: Staircase leading to an open roof terrace.. Neighbourhood: Suburban residential neighborhood with adjacent residential plots, houses, and open green fields visible from the rooftop.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Kondayampalayam, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey villa featuring a modern brown and beige exterior, gated portico, red-painted entrance ramp, external stairs with stainless steel handrails, and a red-painted open terrace roof.. Hard floor/layout lock: single-storey with open terrace; Ground Floor: Covered car parking portico, main hall/living room, modular kitchen with dining area, master bedroom with attached bathroom, second bedroom with attached bathroom, outer toilet. Roof Level: Staircase leading to an open roof terrace.. Neighbourhood: Suburban residential neighborhood with adjacent residential plots, houses, and open green fields visible from the rooftop.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Kondayampalayam, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey villa featuring a modern brown and beige exterior, gated portico, red-painted entrance ramp, external stairs with stainless steel handrails, and a red-painted open terrace roof.. Hard floor/layout lock: single-storey with open terrace; Ground Floor: Covered car parking portico, main hall/living room, modular kitchen with dining area, master bedroom with attached bathroom, second bedroom with attached bathroom, outer toilet. Roof Level: Staircase leading to an open roof terrace.. Neighbourhood: Suburban residential neighborhood with adjacent residential plots, houses, and open green fields visible from the rooftop.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
