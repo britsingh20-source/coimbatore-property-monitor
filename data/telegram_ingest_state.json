@@ -616,6 +616,14 @@
       "uploaded_at": "2026-09-19T15:36:34.794448+00:00",
       "video_id": "hXgwaBvJRjU"
     },
+    "AgADiyQAApARSVc": {
+      "r2_key": "social-ready/LzHwTZFDKfo.mp4",
+      "size": 15570654,
+      "status": "uploaded_exact_video_id",
+      "update_id": 399222259,
+      "uploaded_at": "2026-11-03T03:03:52.383167+00:00",
+      "video_id": "LzHwTZFDKfo"
+    },
     "AgADjCEAAmSZyFQ": {
       "duplicate_of": "AgADriEAAmSZyFQ",
       "quarantine_reason": "older duplicate of user-confirmed latest Telegram upload",
