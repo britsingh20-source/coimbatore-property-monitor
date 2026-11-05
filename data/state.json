@@ -1,4 +1,12 @@
 {
+  "analysis_provider": {
+    "models": {
+      "gemini-3.5-flash-lite": {
+        "budget_day": "2026-11-05",
+        "requests": 3
+      }
+    }
+  },
   "videos": {
     "-78bCmRA_SQ": {
       "attempts": 0,
@@ -278,11 +286,12 @@
     },
     "0uL9wy5pQg4": {
       "attempts": 1,
+      "completed_at": "2026-11-05T17:31:47.451244+00:00",
       "first_seen_at": "2026-11-05T10:50:52.561422+00:00",
       "last_attempt_at": "2026-11-05T10:52:24.277981+00:00",
-      "last_error": "Error code: 503 - {'error': {'message': 'gemini-3.6-flash is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.', 'code': 'service_unavailable'}}",
+      "last_error": "",
       "next_retry_at": "2026-11-05T12:52:24.277993+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "10fKFhKR2_c": {
       "attempts": 0,
@@ -1314,6 +1323,12 @@
       "next_retry_at": "2026-09-19T09:45:06.056357+00:00",
       "status": "archived_non_target"
     },
+    "8kFUJ3DBM1o": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-05T17:31:18.811453+00:00",
+      "next_retry_at": "2026-11-05T17:31:18.811453+00:00",
+      "status": "discovered"
+    },
     "8p5tH2rB1t0": {
       "attempts": 0,
       "first_seen_at": "2026-10-16T05:50:37.111873+00:00",
@@ -1422,6 +1437,14 @@
       "first_seen_at": "2026-10-01T11:50:29.430555+00:00",
       "next_retry_at": "2026-10-01T11:50:29.430555+00:00",
       "status": "discovered"
+    },
+    "9ZPeIbPi2D0": {
+      "attempts": 0,
+      "completed_at": "2026-11-05T17:31:30.127129+00:00",
+      "first_seen_at": "2026-11-05T17:31:18.811453+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-11-05T17:31:18.811453+00:00",
+      "status": "video_queued"
     },
     "9_nv0UQhMjA": {
       "attempts": 0,
@@ -3910,6 +3933,12 @@
       "attempts": 0,
       "first_seen_at": "2026-10-13T23:17:42.642351+00:00",
       "next_retry_at": "2026-10-13T23:17:42.642351+00:00",
+      "status": "discovered"
+    },
+    "PzVC_7g2pfY": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-05T17:31:18.811453+00:00",
+      "next_retry_at": "2026-11-05T17:31:18.811453+00:00",
       "status": "discovered"
     },
     "Q-uglxxNaKo": {
