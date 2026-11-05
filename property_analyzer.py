@@ -81,7 +81,10 @@ Channel: {video.get('channel_title', '')}
 Published: {video.get('published_at', '')}
 """
     try:
-        client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+        client = genai.Client(
+            api_key=os.environ["GEMINI_API_KEY"],
+            http_options={"timeout": 120000, "retry_options": {"attempts": 1}},
+        )
         interaction = client.interactions.create(
             model=model or MODEL,
             input=[
