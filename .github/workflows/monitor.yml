@@ -12,6 +12,8 @@ on:
       - ".github/workflows/monitor.yml"
       - "youtube_monitor.py"
       - "property_analyzer.py"
+      - "analysis_recovery.py"
+      - "main.py"
       - "metadata_prefilter.py"
       - "state_store.py"
       - "veo_prompt.py"
@@ -56,6 +58,10 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GEMINI_ANALYSIS_FALLBACK_MODEL: "gemini-3.5-flash-lite"
+          PROPERTY_ANALYSIS_DAILY_BUDGET: "8"
           MAX_VIDEOS_PER_RUN: "2"
           STRICT_TARGET_ONLY: "1"
           MAX_EXPLORATORY_PER_RUN: "0"
@@ -178,10 +184,10 @@ jobs:
       - name: Preserve monitor failure after committing successful jobs
         if: steps.monitor.outcome == 'failure'
         run: |
-          echo "::error::The monitor had one or more non-retryable analysis failures. Successful approved jobs were still committed and sent to Telegram."
+          echo "::error::The monitor had blocked or failed analysis; see the retry/cooldown details above. Successful approved jobs were still committed and sent to Telegram."
           exit 1
       - name: Alert Telegram when monitor recovery is required
-        if: failure()
+        if: failure() && steps.monitor.outcome != 'failure'
         continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

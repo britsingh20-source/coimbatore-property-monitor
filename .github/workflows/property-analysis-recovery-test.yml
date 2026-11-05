@@ -1,0 +1,30 @@
+name: Property Analysis Recovery Tests
+
+on:
+  push:
+    branches: [main, fix/property-prompt-recovery-nov5]
+    paths:
+      - "analysis_recovery.py"
+      - "property_analyzer.py"
+      - "main.py"
+      - "state_store.py"
+      - "tests/test_analysis_recovery.py"
+      - ".github/workflows/property-analysis-recovery-test.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Compile and test provider recovery without live credentials
+        run: |
+          python -m py_compile analysis_recovery.py property_analyzer.py main.py state_store.py
+          python -m unittest -v tests.test_analysis_recovery tests.test_property_analyzer tests.test_state_store tests.test_location_matcher
