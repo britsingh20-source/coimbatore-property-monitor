@@ -5,6 +5,8 @@ from unittest.mock import patch
 
 import analysis_recovery as recovery
 import main
+import property_analyzer
+from google.genai import types
 import state_store
 from property_analyzer import RetryableAnalysisError
 
@@ -18,6 +20,16 @@ class RecoveryTests(unittest.TestCase):
         self.clock = patch.object(recovery, "now_utc", return_value=NOW)
         self.clock.start()
         self.addCleanup(self.clock.stop)
+
+    def test_sdk_request_timeout_and_no_hidden_retries(self):
+        response = SimpleNamespace(output_text='{"is_property_listing": true}')
+        with patch.dict(recovery.os.environ, {"GEMINI_API_KEY": "fake"}), patch.object(property_analyzer.genai, "Client") as client:
+            client.return_value.interactions.create.return_value = response
+            property_analyzer.analyze_property(VIDEO)
+        options = client.call_args.kwargs["http_options"]
+        parsed = types.HttpOptions(**options)
+        self.assertEqual(parsed.timeout, 120000)
+        self.assertEqual(parsed.retry_options.attempts, 1)
 
     def test_primary_success_does_not_use_fallback(self):
         with patch.object(recovery, "analyze_property", return_value={"ok": True}) as call:
