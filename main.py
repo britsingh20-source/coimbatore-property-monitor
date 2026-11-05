@@ -2,7 +2,8 @@ import os
 
 from location_matcher import match_location
 from metadata_prefilter import build_analysis_queue
-from property_analyzer import RetryableAnalysisError, analyze_property
+from property_analyzer import RetryableAnalysisError
+from analysis_recovery import analyze_with_recovery, notify_blocked
 from records import legacy_retry_videos, upsert_record
 from state_store import (
     eligible,
@@ -59,7 +60,7 @@ def run() -> None:
     for video in queue:
         video_id = video["video_id"]
         try:
-            result = analyze_property(video)
+            result = analyze_with_recovery(video, state)
             location = match_location(*_authoritative_location_values(video, result))
             upsert_record(video, result, location)
             if result.get("is_property_listing") and location["is_target_location"]:
@@ -69,6 +70,8 @@ def run() -> None:
         except RetryableAnalysisError as error:
             retryable_failures += 1
             mark_failure(state, video_id, error, always_retry=True)
+            if getattr(error, "retry_at", None):
+                state["videos"][video_id]["next_retry_at"] = error.retry_at
             print(f"RETRY {video_id}: {error}")
             save_state(state)
             print("Stopping further Gemini calls for this run after a transient API/quota error.")
@@ -82,8 +85,15 @@ def run() -> None:
 
     if retryable_failures:
         print(f"Deferred {retryable_failures} video(s); state backoff will retry them automatically.")
-    if hard_failures:
-        raise RuntimeError(f"{hard_failures} video(s) failed with non-retryable errors")
+    if retryable_failures or hard_failures:
+        message = "Property analysis did not complete."
+        if retryable_failures:
+            message = "Gemini is unavailable, rate-limited, or has exhausted the daily analysis budget. Recovery will resume automatically after cooldown/reset."
+        else:
+            message = f"{hard_failures} video(s) had non-retryable analysis failures."
+        notify_blocked(state, message)
+        save_state(state)
+        raise RuntimeError(message)
 
 
 if __name__ == "__main__":

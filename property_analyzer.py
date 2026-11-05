@@ -50,7 +50,7 @@ def _parse_json(text: str) -> dict:
     return json.loads(cleaned[start:end + 1])
 
 
-def analyze_property(video: dict) -> dict:
+def analyze_property(video: dict, *, model: str | None = None) -> dict:
     prompt = f"""
 Analyze this public property video using its audio, visible details and metadata.
 Return one JSON object only. Never guess. Use "NOT SPECIFIED" for missing text fields.
@@ -83,13 +83,14 @@ Published: {video.get('published_at', '')}
     try:
         client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
         interaction = client.interactions.create(
-            model=MODEL,
+            model=model or MODEL,
             input=[
                 {"type": "video", "uri": video["url"]},
                 {"type": "text", "text": prompt},
             ],
         )
         result = _parse_json(interaction.output_text)
+        result["analysis_model"] = model or MODEL
         result["gemini_status"] = "success"
         result["gemini_error"] = ""
         result["transcript_status"] = "analyzed_from_video"

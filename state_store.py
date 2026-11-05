@@ -64,12 +64,7 @@ def eligible(state: dict, video: dict) -> bool:
     if record.get("status") not in RETRYABLE:
         return False
 
-    # Historical network disconnects were previously given a long exponential
-    # backoff. The analyzer now classifies them correctly as transient, so allow
-    # those already-waiting records to be retried on the next monitor run.
-    if record.get("status") == "retry_pending" and _is_transient_provider_error(record):
-        return True
-
+    # Honor retry times, including provider cooldowns and daily quota resets.
     next_retry = record.get("next_retry_at")
     return not next_retry or datetime.fromisoformat(next_retry) <= utc_now()
 
