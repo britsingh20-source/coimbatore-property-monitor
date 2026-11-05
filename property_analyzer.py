@@ -2,10 +2,10 @@ import json
 import os
 import re
 
-from google import genai
+import requests
 
 
-MODEL = os.environ.get("GEMINI_ANALYSIS_MODEL", "gemini-3.6-flash")
+MODEL = os.environ.get("GEMINI_ANALYSIS_MODEL", "gemini-3.5-flash-lite")
 
 
 class RetryableAnalysisError(RuntimeError):
@@ -50,6 +50,56 @@ def _parse_json(text: str) -> dict:
     return json.loads(cleaned[start:end + 1])
 
 
+def _video_analysis(video: dict, prompt: str, model: str) -> str:
+    """Use the same deadline-bound REST transport as the working interior queue."""
+    try:
+        response = requests.post(
+            "https://generativelanguage.googleapis.com/v1beta/interactions",
+            headers={"x-goog-api-key": os.environ["GEMINI_API_KEY"]},
+            json={"model": model, "input": [
+                {"type": "text", "text": prompt},
+                {"type": "video", "uri": video["url"]},
+            ]},
+            timeout=(10, 90),
+        )
+    except requests.RequestException as error:
+        raise RetryableAnalysisError(
+            f"Property video HTTP timeout/network error ({type(error).__name__})"
+        ) from None
+    if not response.ok:
+        try:
+            detail = str(response.json().get("error", {}).get("message", ""))
+        except (ValueError, AttributeError):
+            detail = "Provider returned a non-JSON error"
+        for name in ("GEMINI_API_KEY", "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"):
+            secret = os.environ.get(name, "")
+            if secret:
+                detail = detail.replace(secret, "[redacted]")
+        detail = re.sub(r"AIza[A-Za-z0-9_-]+", "[redacted]", detail)
+        detail = re.sub(r"projects/[A-Za-z0-9_-]+", "projects/[redacted]", detail)
+        message = f"Property video analysis HTTP {response.status_code}: {detail[:1000]}"
+        if response.status_code == 429 or response.status_code >= 500:
+            raise RetryableAnalysisError(message)
+        raise RuntimeError(message)
+    body = response.json()
+    text = body.get("output_text") or "\n".join(
+        part.get("text", "") for part in body.get("outputs", [])
+        if part.get("type") == "text"
+    )
+    if not text:
+        for step in reversed(body.get("steps") or []):
+            if step.get("type") == "user_input":
+                break
+            if step.get("type") == "model_output":
+                text = "".join(part.get("text", "") for part in step.get("content", [])
+                               if part.get("type") == "text")
+                if text:
+                    break
+    if not text:
+        raise RetryableAnalysisError("Property video analysis temporarily returned no final model text")
+    return text
+
+
 def analyze_property(video: dict, *, model: str | None = None) -> dict:
     prompt = f"""
 Analyze this public property video using its audio, visible details and metadata.
@@ -81,18 +131,10 @@ Channel: {video.get('channel_title', '')}
 Published: {video.get('published_at', '')}
 """
     try:
-        client = genai.Client(
-            api_key=os.environ["GEMINI_API_KEY"],
-            http_options={"timeout": 120000, "retry_options": {"attempts": 1}},
-        )
-        interaction = client.interactions.create(
-            model=model or MODEL,
-            input=[
-                {"type": "video", "uri": video["url"]},
-                {"type": "text", "text": prompt},
-            ],
-        )
-        result = _parse_json(interaction.output_text)
+        print(f"Analyzing property video {video.get('video_id', '')} with {model or MODEL}", flush=True)
+        result = _parse_json(_video_analysis(video, prompt, model or MODEL))
+        if not isinstance(result.get("is_property_listing"), bool):
+            raise ValueError("Property analysis did not return a verified listing classification")
         result["analysis_model"] = model or MODEL
         result["gemini_status"] = "success"
         result["gemini_error"] = ""

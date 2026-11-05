@@ -6,7 +6,7 @@ from unittest.mock import patch
 import analysis_recovery as recovery
 import main
 import property_analyzer
-from google.genai import types
+import develop_property_script as script_director
 import state_store
 from property_analyzer import RetryableAnalysisError
 
@@ -21,20 +21,47 @@ class RecoveryTests(unittest.TestCase):
         self.clock.start()
         self.addCleanup(self.clock.stop)
 
-    def test_sdk_request_timeout_and_no_hidden_retries(self):
-        response = SimpleNamespace(output_text='{"is_property_listing": true}')
-        with patch.dict(recovery.os.environ, {"GEMINI_API_KEY": "fake"}), patch.object(property_analyzer.genai, "Client") as client:
-            client.return_value.interactions.create.return_value = response
+    def test_rest_request_deadline_and_final_model_output(self):
+        response = SimpleNamespace(ok=True, json=lambda: {"steps": [
+            {"type": "user_input", "content": [{"type": "text", "text": "untrusted input"}]},
+            {"type": "model_output", "content": [{"type": "text", "text": '{"is_property_listing": true}'}]},
+        ]})
+        with patch.dict(recovery.os.environ, {"GEMINI_API_KEY": "fake"}), patch.object(property_analyzer.requests, "post", return_value=response) as post:
             property_analyzer.analyze_property(VIDEO)
-        options = client.call_args.kwargs["http_options"]
-        parsed = types.HttpOptions(**options)
-        self.assertEqual(parsed.timeout, 120000)
-        self.assertEqual(parsed.retry_options.attempts, 1)
+        self.assertEqual(post.call_args.kwargs["timeout"], (10, 90))
+        self.assertEqual(post.call_args.kwargs["json"]["model"], property_analyzer.MODEL)
+        self.assertEqual(post.call_count, 1)
+
+    def test_rest_quota_error_is_retryable_and_redacted(self):
+        response = SimpleNamespace(ok=False, status_code=429, json=lambda: {
+            "error": {"message": "daily quota for secret-key projects/private-project"}
+        })
+        with patch.dict(recovery.os.environ, {"GEMINI_API_KEY": "secret-key"}), patch.object(property_analyzer.requests, "post", return_value=response):
+            with self.assertRaises(RetryableAnalysisError) as caught:
+                property_analyzer.analyze_property(VIDEO)
+        self.assertNotIn("secret-key", str(caught.exception))
+        self.assertNotIn("private-project", str(caught.exception))
+
+    def test_rest_never_uses_user_input_as_analysis(self):
+        response = SimpleNamespace(ok=True, json=lambda: {"steps": [
+            {"type": "user_input", "content": [{"type": "text", "text": '{"is_property_listing": true}'}]}
+        ]})
+        with patch.dict(recovery.os.environ, {"GEMINI_API_KEY": "fake"}), patch.object(property_analyzer.requests, "post", return_value=response):
+            with self.assertRaises(RetryableAnalysisError):
+                property_analyzer.analyze_property(VIDEO)
 
     def test_primary_success_does_not_use_fallback(self):
         with patch.object(recovery, "analyze_property", return_value={"ok": True}) as call:
             self.assertEqual(recovery.analyze_with_recovery(VIDEO, self.state), {"ok": True})
         self.assertEqual(call.call_count, 1)
+
+    def test_prompt_workflow_does_not_wait_for_optional_copywriting(self):
+        with patch.dict(recovery.os.environ, {"PROPERTY_SCRIPT_MODE": "verified_template", "GEMINI_API_KEY": "fake"}), patch.object(script_director.genai, "Client") as client:
+            plan = script_director.develop_property_script(
+                {"location": "Karamadai", "property_type": "Villa"}, {"matched_localities": ["Karamadai"]}
+            )
+        client.assert_not_called()
+        self.assertTrue(plan["scenes"])
 
     def test_transient_retry_then_success(self):
         with patch.object(recovery, "analyze_property", side_effect=[

@@ -10,7 +10,7 @@ import requests
 from property_analyzer import MODEL, RetryableAnalysisError, analyze_property
 
 PACIFIC = ZoneInfo("America/Los_Angeles")
-FALLBACK_MODEL = os.environ.get("GEMINI_ANALYSIS_FALLBACK_MODEL", "gemini-3.5-flash-lite")
+FALLBACK_MODEL = os.environ.get("GEMINI_ANALYSIS_FALLBACK_MODEL", "gemini-3.6-flash")
 DAILY_BUDGET = max(1, int(os.environ.get("PROPERTY_ANALYSIS_DAILY_BUDGET", "8")))
 TRANSIENT_RETRY_SECONDS = 5
 

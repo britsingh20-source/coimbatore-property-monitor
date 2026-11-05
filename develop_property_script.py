@@ -130,6 +130,10 @@ def _validate_plan(plan: dict, property_data: dict) -> dict:
 def develop_property_script(property_data: dict, location: dict) -> dict:
     """Turn extracted facts into a natural spoken-Tamil reel plan without inventing facts."""
     fallback = _fallback_plan(property_data, location)
+    # Telegram's Veo prompt already uses the verified property facts directly.
+    # Do not block its delivery on an optional second AI copywriting request.
+    if os.environ.get("PROPERTY_SCRIPT_MODE") == "verified_template":
+        return fallback
     api_key = os.environ.get("GEMINI_API_KEY", "").strip()
     if not api_key:
         return fallback

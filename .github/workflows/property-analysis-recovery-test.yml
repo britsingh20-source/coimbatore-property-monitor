@@ -6,6 +6,7 @@ on:
     paths:
       - "analysis_recovery.py"
       - "property_analyzer.py"
+      - "develop_property_script.py"
       - "main.py"
       - "state_store.py"
       - "tests/test_analysis_recovery.py"
