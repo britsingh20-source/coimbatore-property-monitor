@@ -3,10 +3,8 @@
     "last_alert_at": "2026-11-06T02:51:44.151269+00:00",
     "models": {
       "gemini-3.5-flash-lite": {
-        "blocked_reason": "daily_budget",
-        "blocked_until": "2026-11-06T08:02:00+00:00",
         "budget_day": "2026-11-05",
-        "requests": 8
+        "requests": 10
       },
       "gemini-3.6-flash": {
         "blocked_reason": "provider_unavailable",
@@ -1604,9 +1602,11 @@
     },
     "AT09h6BYnsM": {
       "attempts": 0,
+      "completed_at": "2026-11-06T03:01:48.822872+00:00",
       "first_seen_at": "2026-11-05T10:50:52.561422+00:00",
+      "last_error": "",
       "next_retry_at": "2026-11-05T10:50:52.561422+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "AVbnuL2ynQc": {
       "attempts": 0,
@@ -7968,11 +7968,12 @@
     },
     "oNyfrlOT6mw": {
       "attempts": 1,
+      "completed_at": "2026-11-06T03:01:43.288271+00:00",
       "first_seen_at": "2026-11-05T10:50:52.561422+00:00",
       "last_attempt_at": "2026-11-06T00:14:00.147548+00:00",
-      "last_error": "Property video analysis paused: daily_budget, provider_unavailable. Retry after 2026-11-06T00:24:00.146907+00:00",
+      "last_error": "",
       "next_retry_at": "2026-11-06T00:24:00.146907+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "oO5n3Pofcww": {
       "attempts": 0,
