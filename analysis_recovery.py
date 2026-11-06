@@ -11,7 +11,8 @@ from property_analyzer import MODEL, RetryableAnalysisError, analyze_property
 
 PACIFIC = ZoneInfo("America/Los_Angeles")
 FALLBACK_MODEL = os.environ.get("GEMINI_ANALYSIS_FALLBACK_MODEL", "gemini-3.6-flash")
-DAILY_BUDGET = max(1, int(os.environ.get("PROPERTY_ANALYSIS_DAILY_BUDGET", "8")))
+# Zero means no additional local daily cap. Real provider quotas/cooldowns still apply.
+DAILY_BUDGET = max(0, int(os.environ.get("PROPERTY_ANALYSIS_DAILY_BUDGET", "0")))
 TRANSIENT_RETRY_SECONDS = 5
 
 
@@ -41,6 +42,13 @@ def _record(state, model, now):
     day = now.astimezone(PACIFIC).date().isoformat()
     if record.get("budget_day") != day:
         record.update(budget_day=day, requests=0)
+    # A retired/reconfigured local cap must not leave a stale all-day lock.
+    # Never clear actual provider quota or outage cooldowns here.
+    if record.get("blocked_reason") == "daily_budget" and (
+        not DAILY_BUDGET or record["requests"] < DAILY_BUDGET
+    ):
+        record.pop("blocked_reason", None)
+        record.pop("blocked_until", None)
     return record
 
 
@@ -59,7 +67,7 @@ def _block(record, message, now):
     else:
         until = now + timedelta(minutes=10)
         reason = "provider_unavailable"
-    record.update(blocked_until=until.isoformat(), blocked_reason=reason)
+    record.update(blocked_until=until.isoformat(), blocked_reason=reason, last_error=message[:1000])
     return until
 
 
@@ -74,23 +82,23 @@ def analyze_with_recovery(video, state):
         blocked = _retry_time(record)
         if blocked and blocked > now:
             retry_times.append(blocked)
-            reasons.append(record.get("blocked_reason", "cooldown"))
+            reasons.append(f"{model}: {record.get('blocked_reason', 'cooldown')}")
             continue
-        if record["requests"] >= DAILY_BUDGET:
+        if DAILY_BUDGET and record["requests"] >= DAILY_BUDGET:
             until = next_daily_reset(now)
             record.update(blocked_until=until.isoformat(), blocked_reason="daily_budget")
             retry_times.append(until)
-            reasons.append("daily_budget")
+            reasons.append(f"{model}: local_daily_budget")
             continue
 
         attempts = 2 if model_index == 0 else 1
         for attempt in range(attempts):
             # Count requests, including failed attempts, against the local daily cap.
-            if record["requests"] >= DAILY_BUDGET:
+            if DAILY_BUDGET and record["requests"] >= DAILY_BUDGET:
                 until = next_daily_reset(now_utc())
                 record.update(blocked_until=until.isoformat(), blocked_reason="daily_budget")
                 retry_times.append(until)
-                reasons.append("daily_budget")
+                reasons.append(f"{model}: local_daily_budget")
                 break
             record["requests"] += 1
             try:
@@ -105,13 +113,13 @@ def analyze_with_recovery(video, state):
                     time.sleep(TRANSIENT_RETRY_SECONDS)
                     continue
                 retry_times.append(_block(record, message, now_utc()))
-                reasons.append(record["blocked_reason"])
-                print(f"Analysis model {model} paused: {record['blocked_reason']}")
+                reasons.append(f"{model}: {record['blocked_reason']}")
+                print(f"Analysis model {model} paused: {record['blocked_reason']}; {message}")
                 break
     until = min(retry_times) if retry_times else now_utc() + timedelta(minutes=10)
     error = RetryableAnalysisError(
         "Property video analysis paused: " + ", ".join(sorted(set(reasons))) +
-        ". Retry after " + until.isoformat()
+        ". Next eligible retry: " + until.astimezone(ZoneInfo("Asia/Kolkata")).strftime("%d %b %Y %I:%M %p IST")
     )
     error.retry_at = until.isoformat()
     raise error

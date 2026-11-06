@@ -57,6 +57,7 @@ def run() -> None:
 
     hard_failures = 0
     retryable_failures = 0
+    recovery_detail = ""
     for video in queue:
         video_id = video["video_id"]
         try:
@@ -68,6 +69,7 @@ def run() -> None:
             mark_success(state, video_id, bool(location["is_target_location"]))
             print(f"Processed {video_id}: target={location['is_target_location']}")
         except RetryableAnalysisError as error:
+            recovery_detail = str(error)
             retryable_failures += 1
             mark_failure(state, video_id, error, always_retry=True)
             if getattr(error, "retry_at", None):
@@ -88,7 +90,7 @@ def run() -> None:
     if retryable_failures or hard_failures:
         message = "Property analysis did not complete."
         if retryable_failures:
-            message = "Gemini is unavailable, rate-limited, or has exhausted the daily analysis budget. Recovery will resume automatically after cooldown/reset."
+            message = recovery_detail
         else:
             message = f"{hard_failures} video(s) had non-retryable analysis failures."
         notify_blocked(state, message)

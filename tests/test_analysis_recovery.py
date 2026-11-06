@@ -109,6 +109,34 @@ class RecoveryTests(unittest.TestCase):
                 recovery.analyze_with_recovery(VIDEO, self.state)
         self.assertEqual(call.call_count, 2)
 
+    def test_retired_eight_request_cap_no_longer_blocks_working_model(self):
+        row = recovery._record(self.state, recovery.MODEL, NOW)
+        row.update(requests=8, blocked_reason="daily_budget",
+                   blocked_until=(NOW + timedelta(hours=5)).isoformat())
+        with patch.object(recovery, "DAILY_BUDGET", 0), patch.object(recovery, "analyze_property", return_value={}) as call:
+            recovery.analyze_with_recovery(VIDEO, self.state)
+        self.assertEqual(call.call_args.kwargs["model"], recovery.MODEL)
+        self.assertEqual(row["requests"], 9)
+        self.assertNotIn("blocked_reason", row)
+
+    def test_disabled_local_cap_still_honors_real_provider_daily_quota(self):
+        row = recovery._record(self.state, recovery.MODEL, NOW)
+        row.update(requests=8, blocked_reason="daily_quota",
+                   blocked_until=(NOW + timedelta(hours=5)).isoformat())
+        with patch.object(recovery, "DAILY_BUDGET", 0), patch.object(recovery, "analyze_property", return_value={}) as call:
+            recovery.analyze_with_recovery(VIDEO, self.state)
+        self.assertEqual(call.call_count, 1)
+        self.assertEqual(call.call_args.kwargs["model"], recovery.FALLBACK_MODEL)
+        self.assertEqual(row["blocked_reason"], "daily_quota")
+
+    def test_alert_uses_specific_model_cause_and_ist_retry_time(self):
+        with patch.object(recovery, "analyze_property", side_effect=RetryableAnalysisError("429 daily quota")):
+            with self.assertRaises(RetryableAnalysisError) as caught:
+                recovery.analyze_with_recovery(VIDEO, self.state)
+        self.assertIn(recovery.MODEL, str(caught.exception))
+        self.assertIn("daily_quota", str(caught.exception))
+        self.assertIn("IST", str(caught.exception))
+
     def test_no_fallback_on_credentials_or_bad_data(self):
         with patch.object(recovery, "analyze_property", side_effect=RuntimeError("403 access denied")) as call:
             with self.assertRaises(RuntimeError):
@@ -148,6 +176,7 @@ class RecoveryTests(unittest.TestCase):
             with self.assertRaises(RuntimeError):
                 main.run()
         notify.assert_called_once()
+        self.assertEqual(notify.call_args.args[1], str(blocked))
         build.assert_not_called()
         row = self.state["videos"][VIDEO["video_id"]]
         self.assertEqual(row["status"], "retry_pending")

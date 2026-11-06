@@ -65,7 +65,7 @@ jobs:
           PROPERTY_SCRIPT_MODE: "verified_template"
           GEMINI_ANALYSIS_MODEL: "gemini-3.5-flash-lite"
           GEMINI_ANALYSIS_FALLBACK_MODEL: "gemini-3.6-flash"
-          PROPERTY_ANALYSIS_DAILY_BUDGET: "8"
+          PROPERTY_ANALYSIS_DAILY_BUDGET: "0"
           MAX_VIDEOS_PER_RUN: "2"
           STRICT_TARGET_ONLY: "1"
           MAX_EXPLORATORY_PER_RUN: "0"
