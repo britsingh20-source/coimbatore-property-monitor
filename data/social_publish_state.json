@@ -1362,6 +1362,94 @@
         }
       }
     },
+    "social-ready/ezmLsAuE0i0.mp4": {
+      "content": {
+        "caption": "🏠 2.65 Crore 4 BHK Independent House in Vellanaipatti, Kalapatti\n\n📍 Location: Vellanaipatti, Kalapatti\n🏡 Property: 4 BHK Independent House\n💰 Price: 2.65 Crore\n🏗️ Built-up: 3700 sq.ft\n🧭 Facing: North\n🚗 Parking: Covered car parking\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#VellanaipattiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#VellanaipattiProperty",
+          "#CoimbatoreProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "2.65 Crore 4 BHK Independent House in Vellanaipatti, Kalapatti | Site Visit 9003787621",
+        "youtube_description": "2.65 Crore 4 BHK Independent House in Vellanaipatti, Kalapatti. Watch the complete property walkthrough.\n\n📍 Location: Vellanaipatti, Kalapatti\n🏡 Property: 4 BHK Independent House\n💰 Price: 2.65 Crore\n🏗️ Built-up: 3700 sq.ft\n🧭 Facing: North\n🚗 Parking: Covered car parking\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #VellanaipattiProperty #CoimbatoreProperty #CoimbatoreRealEstate"
+      },
+      "etag": "c6fb78ae0688debe5fa709ef27659db5-3",
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "channel": "real_estate",
+            "creation_id": "17906562720599708",
+            "media_id": "18025584458708621",
+            "processing": {
+              "id": "17906562720599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "verification": {
+              "id": "18025584458708621",
+              "media_product_type": "REELS",
+              "media_type": "VIDEO",
+              "permalink": "https://www.instagram.com/reel/DfYZB6sgXwI/",
+              "timestamp": "2026-11-06T01:08:48+0000"
+            }
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17906562870599708",
+            "media_id": "18136334254732126",
+            "processing": {
+              "id": "17906562870599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "verification": {
+              "id": "18136334254732126",
+              "media_product_type": "STORY",
+              "media_type": "VIDEO",
+              "permalink": "https://www.instagram.com/stories/smartbuycart7/4024076661859922435",
+              "timestamp": "2026-11-06T01:09:34+0000"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
+          "status": "credential_blocked"
+        }
+      },
+      "status": "ready_to_publish",
+      "video_id": "ezmLsAuE0i0",
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 250229,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 21.555,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 250094,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 21.566667,
+          "height": 1280,
+          "width": 720
+        }
+      }
+    },
     "social-ready/gIXueoGyB5s.mp4": {
       "content": {
         "caption": "🏠 95 Lakhs 3 BHK Independent House in Periyanaickenpalayam, Coimbatore, Tamil Nadu\n\n📍 Location: Periyanaickenpalayam, Coimbatore, Tamil Nadu\n🏡 Property: 3 BHK Independent House\n💰 Price: 95 Lakhs\n📐 Land: 4.75 Cents\n🏗️ Built-up: 1850 sq.ft\n🧭 Facing: North\n🚗 Parking: Covered Car Parking\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#PeriyanaickenpalayamProperty #CoimbatoreProperty #CoimbatoreRealEstate",
