@@ -105,7 +105,8 @@
     "1hpJvDboiJM",
     "D0cJVhHZYNc",
     "u3e2c5EHU54",
-    "FAeNW4q3_KA"
+    "FAeNW4q3_KA",
+    "jfEyjKnNN40"
   ],
   "history": [
     {
@@ -637,6 +638,11 @@
       "video_id": "FAeNW4q3_KA",
       "creator": "Ridhi Khosla Jalan",
       "url": "https://www.youtube.com/watch?v=FAeNW4q3_KA"
+    },
+    {
+      "video_id": "jfEyjKnNN40",
+      "creator": "Ridhi Khosla Jalan",
+      "url": "https://www.youtube.com/watch?v=jfEyjKnNN40"
     }
   ],
   "night_channel_cursor": 1
