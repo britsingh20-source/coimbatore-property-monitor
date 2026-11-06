@@ -4,7 +4,7 @@
     "models": {
       "gemini-3.5-flash-lite": {
         "budget_day": "2026-11-06",
-        "requests": 6
+        "requests": 8
       },
       "gemini-3.6-flash": {
         "blocked_reason": "provider_unavailable",
@@ -1660,11 +1660,12 @@
     },
     "Ajo1VXyi72k": {
       "attempts": 1,
+      "completed_at": "2026-11-06T20:53:44.619111+00:00",
       "first_seen_at": "2026-11-06T02:51:42.823598+00:00",
       "last_attempt_at": "2026-11-06T02:51:44.133625+00:00",
-      "last_error": "Property video analysis paused: daily_budget, provider_unavailable. Retry after 2026-11-06T03:01:44.132782+00:00",
+      "last_error": "",
       "next_retry_at": "2026-11-06T03:01:44.132782+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "AlYlKuZ4sSY": {
       "attempts": 0,
@@ -8977,9 +8978,11 @@
     },
     "uDrPn3NKxpE": {
       "attempts": 0,
+      "completed_at": "2026-11-06T20:53:19.284025+00:00",
       "first_seen_at": "2026-11-06T06:45:11.309831+00:00",
+      "last_error": "",
       "next_retry_at": "2026-11-06T06:45:11.309831+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "uE02fjTMsik": {
       "attempts": 0,
