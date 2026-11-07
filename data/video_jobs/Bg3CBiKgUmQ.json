@@ -1,0 +1,114 @@
+{
+  "video_id": "Bg3CBiKgUmQ",
+  "source_url": "https://www.youtube.com/watch?v=Bg3CBiKgUmQ",
+  "property_location": "Ganesapuram, near Saravanampatti, Sathy Road, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "6.50 Lakhs per cent",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP & RERA Approved",
+    "floors": "NOT SPECIFIED",
+    "layout_distribution": "NOT SPECIFIED"
+  },
+  "verified_facts": "4-acre property with 200 plots available, Price is 6.50 Lakhs per cent, Located near Saravanampatti, Ganesapuram (10 min travel), Sathy Road area, Coimbatore, DTCP and RERA approved layout",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Ganesapuram, near Saravanampatti, Sathy Road, Coimbatore சைட்ல Residential Plot தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை 6.50 Lakhs per cent.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP & RERA Approved இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ]
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/Bg3CBiKgUmQ/",
+  "optional_owned_audio": "assets/audio/Bg3CBiKgUmQ.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Paved internal roads with curbstones, arched entrance gate, underground utility infrastructure, overhead water tank, and street lighting. Neighbourhood: Open land and developing residential layout area close to Saravanampatti and Ganesapuram. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Paved internal roads with curbstones, arched entrance gate, underground utility infrastructure, overhead water tank, and street lighting. Neighbourhood: Open land and developing residential layout area close to Saravanampatti and Ganesapuram. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Paved internal roads with curbstones, arched entrance gate, underground utility infrastructure, overhead water tank, and street lighting. Neighbourhood: Open land and developing residential layout area close to Saravanampatti and Ganesapuram. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Saravanampatti, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Paved internal roads with curbstones, arched entrance gate, underground utility infrastructure, overhead water tank, and street lighting. Neighbourhood: Open land and developing residential layout area close to Saravanampatti and Ganesapuram. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
