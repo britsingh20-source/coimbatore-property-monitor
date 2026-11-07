@@ -1,0 +1,158 @@
+{
+  "video_id": "AKE_MNPvFLE",
+  "source_url": "https://www.youtube.com/watch?v=AKE_MNPvFLE",
+  "property_location": "Vadavalli, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "3.30 cents",
+    "built_up_area": "2500 sqft",
+    "price": "₹1,70,00,000",
+    "facing": "North",
+    "road_width": "40 feet",
+    "parking": "Double car parking",
+    "approval": "DTCP Approved",
+    "floors": "G+1 duplex with open terrace utility",
+    "layout_distribution": "Ground floor: Double car parking, living hall, kitchen & dining, 1 bedroom with attached bathroom. First floor: Lounge, 2 bedrooms with attached bathrooms, dressing area, front balcony. Roof level: Open terrace with water tanks."
+  },
+  "verified_facts": "House and site face North, Land size listed as 3.25 cent / 3.30 cent, Total house price including land is 1.70 crore negotiable, Ground floor features 1 bedroom with attached bathroom, living hall, kitchen & dining, and 24x21 car parking, First floor features 2 master bedrooms with attached bathrooms, dressing area, lounge, and front balcony, Corporation limit and bank loan facility available",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Vadavalli, Coimbatore சைட்ல 3 BHK Independent House தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹1,70,00,000.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 3.30 cents லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 2500 sqft இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "road",
+        "voice": "இதுல முக்கியமான விஷயம், முன்னாடி 40 feet ரோடு வசதி இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [],
+        "vfx": "road-measure",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு North ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP Approved இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ]
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/AKE_MNPvFLE/",
+  "optional_owned_audio": "assets/audio/AKE_MNPvFLE.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-storey elevation featuring a white base finish with dark blue and patterned accent panels, stainless steel balcony railings, foldable metal main gate, and a spiral exterior staircase leading to the open terrace.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground floor: Double car parking, living hall, kitchen & dining, 1 bedroom with attached bathroom. First floor: Lounge, 2 bedrooms with attached bathrooms, dressing area, front balcony. Roof level: Open terrace with water tanks.. Neighbourhood: Well-developed residential area in Vadavalli, Coimbatore, featuring independent houses on 40-foot wide roads within corporation limits.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-storey elevation featuring a white base finish with dark blue and patterned accent panels, stainless steel balcony railings, foldable metal main gate, and a spiral exterior staircase leading to the open terrace.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground floor: Double car parking, living hall, kitchen & dining, 1 bedroom with attached bathroom. First floor: Lounge, 2 bedrooms with attached bathrooms, dressing area, front balcony. Roof level: Open terrace with water tanks.. Neighbourhood: Well-developed residential area in Vadavalli, Coimbatore, featuring independent houses on 40-foot wide roads within corporation limits.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-storey elevation featuring a white base finish with dark blue and patterned accent panels, stainless steel balcony railings, foldable metal main gate, and a spiral exterior staircase leading to the open terrace.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground floor: Double car parking, living hall, kitchen & dining, 1 bedroom with attached bathroom. First floor: Lounge, 2 bedrooms with attached bathrooms, dressing area, front balcony. Roof level: Open terrace with water tanks.. Neighbourhood: Well-developed residential area in Vadavalli, Coimbatore, featuring independent houses on 40-foot wide roads within corporation limits.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-storey elevation featuring a white base finish with dark blue and patterned accent panels, stainless steel balcony railings, foldable metal main gate, and a spiral exterior staircase leading to the open terrace.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground floor: Double car parking, living hall, kitchen & dining, 1 bedroom with attached bathroom. First floor: Lounge, 2 bedrooms with attached bathrooms, dressing area, front balcony. Roof level: Open terrace with water tanks.. Neighbourhood: Well-developed residential area in Vadavalli, Coimbatore, featuring independent houses on 40-foot wide roads within corporation limits.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
