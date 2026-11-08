@@ -1818,6 +1818,94 @@
         }
       }
     },
+    "social-ready/q7a4VD-Cp5Q.mp4": {
+      "content": {
+        "caption": "🏠 3 BHK Independent House in Shanthimedu, Coimbatore\n\n📍 Location: Shanthimedu, Coimbatore\n🏡 Property: 3 BHK Independent House\n📐 Land: 2.25 cents\n🏗️ Built-up: 1500 sqft\n🧭 Facing: West\n🚗 Parking: 1 car parking space\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#ShanthimeduProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#ShanthimeduProperty",
+          "#CoimbatoreProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "3 BHK Independent House in Shanthimedu, Coimbatore | Site Visit 9003787621",
+        "youtube_description": "3 BHK Independent House in Shanthimedu, Coimbatore. Watch the complete property walkthrough.\n\n📍 Location: Shanthimedu, Coimbatore\n🏡 Property: 3 BHK Independent House\n📐 Land: 2.25 cents\n🏗️ Built-up: 1500 sqft\n🧭 Facing: West\n🚗 Parking: 1 car parking space\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #ShanthimeduProperty #CoimbatoreProperty #CoimbatoreRealEstate"
+      },
+      "etag": "46a70fb3379dce33bd260b1e9b972688-3",
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "channel": "real_estate",
+            "creation_id": "17906887206599708",
+            "media_id": "17957145852270781",
+            "processing": {
+              "id": "17906887206599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "verification": {
+              "id": "17957145852270781",
+              "media_product_type": "REELS",
+              "media_type": "VIDEO",
+              "permalink": "https://www.instagram.com/reel/DfdvfNuE3m2/",
+              "timestamp": "2026-11-08T03:01:09+0000"
+            }
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17906887341599708",
+            "media_id": "18349406317250988",
+            "processing": {
+              "id": "17906887341599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "verification": {
+              "id": "18349406317250988",
+              "media_product_type": "STORY",
+              "media_type": "VIDEO",
+              "permalink": "https://www.instagram.com/stories/smartbuycart7/4025583094827354819",
+              "timestamp": "2026-11-08T03:02:33+0000"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
+          "status": "credential_blocked"
+        }
+      },
+      "status": "ready_to_publish",
+      "video_id": "q7a4VD-Cp5Q",
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 250354,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 20.0,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 250238,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 20.0,
+          "height": 1280,
+          "width": 720
+        }
+      }
+    },
     "social-ready/telegram-AgAD3CEAAqd1YFU.mp4": {
       "etag": "043b39bc1a8b9cd5654457fabe105b30-3",
       "platforms": {},
