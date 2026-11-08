@@ -4,7 +4,7 @@
     "models": {
       "gemini-3.5-flash-lite": {
         "budget_day": "2026-11-07",
-        "requests": 16
+        "requests": 18
       },
       "gemini-3.6-flash": {
         "blocked_reason": "provider_unavailable",
@@ -5964,6 +5964,14 @@
       "next_retry_at": "2026-10-10T00:48:41.023879+00:00",
       "status": "discovered"
     },
+    "az4UNCgYpAc": {
+      "attempts": 0,
+      "completed_at": "2026-11-08T06:44:44.786288+00:00",
+      "first_seen_at": "2026-11-08T06:44:40.279405+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-11-08T06:44:40.279405+00:00",
+      "status": "video_queued"
+    },
     "b298BhKTEXs": {
       "attempts": 0,
       "first_seen_at": "2026-11-03T09:30:26.479258+00:00",
@@ -8932,6 +8940,12 @@
       "next_retry_at": "2026-11-03T09:30:26.479258+00:00",
       "status": "discovered"
     },
+    "tCNo34Nw1aM": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-08T06:44:40.279405+00:00",
+      "next_retry_at": "2026-11-08T06:44:40.279405+00:00",
+      "status": "discovered"
+    },
     "tTgkkQPNeCo": {
       "attempts": 0,
       "completed_at": "2026-08-22T09:46:07.644409+00:00",
@@ -9036,9 +9050,11 @@
     },
     "u4WWtBUlxws": {
       "attempts": 0,
+      "completed_at": "2026-11-08T06:45:07.855164+00:00",
       "first_seen_at": "2026-11-05T10:50:52.561422+00:00",
+      "last_error": "",
       "next_retry_at": "2026-11-05T10:50:52.561422+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "u4dp7AmMQiM": {
       "attempts": 0,
