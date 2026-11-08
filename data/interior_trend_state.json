@@ -111,7 +111,8 @@
     "7O1YjaAg3bA",
     "cwbPSVmhw68",
     "sSQnul7xbMk",
-    "BTbFIvgl_bI"
+    "BTbFIvgl_bI",
+    "XG46bHcuHLA"
   ],
   "history": [
     {
@@ -673,6 +674,11 @@
       "video_id": "BTbFIvgl_bI",
       "creator": "Design.Decor.Travel.",
       "url": "https://www.youtube.com/watch?v=BTbFIvgl_bI"
+    },
+    {
+      "video_id": "XG46bHcuHLA",
+      "creator": "Design.Decor.Travel.",
+      "url": "https://www.youtube.com/watch?v=XG46bHcuHLA"
     }
   ],
   "night_channel_cursor": 1
