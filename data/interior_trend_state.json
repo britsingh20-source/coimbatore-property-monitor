@@ -110,7 +110,8 @@
     "Z3QT15V8zrc",
     "7O1YjaAg3bA",
     "cwbPSVmhw68",
-    "sSQnul7xbMk"
+    "sSQnul7xbMk",
+    "BTbFIvgl_bI"
   ],
   "history": [
     {
@@ -667,6 +668,11 @@
       "video_id": "sSQnul7xbMk",
       "creator": "Design.Decor.Travel.",
       "url": "https://www.youtube.com/watch?v=sSQnul7xbMk"
+    },
+    {
+      "video_id": "BTbFIvgl_bI",
+      "creator": "Design.Decor.Travel.",
+      "url": "https://www.youtube.com/watch?v=BTbFIvgl_bI"
     }
   ],
   "night_channel_cursor": 1
