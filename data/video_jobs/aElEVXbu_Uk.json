@@ -1,0 +1,158 @@
+{
+  "video_id": "aElEVXbu_Uk",
+  "source_url": "https://www.youtube.com/watch?v=aElEVXbu_Uk",
+  "property_location": "Shanthimedu, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "2 BHK",
+    "land_area": "2.75 Cents",
+    "built_up_area": "1500 Sq.ft",
+    "price": "₹72 Lakhs",
+    "facing": "North-East",
+    "road_width": "Wide third road",
+    "parking": "1 car parking space (10' x 17'6\")",
+    "approval": "DTCP Approved, Plan Approval Done",
+    "floors": "G+1 duplex with open terrace utility",
+    "layout_distribution": "Ground Floor: Car parking, living hall, kitchen & dining, master bedroom 1 with attached toilet, master bedroom 2 with attached toilet. First Floor: Master bedroom, utility area, and open terrace."
+  },
+  "verified_facts": "Video title mentions 3BHK, but description and video walkthrough state 2BHK Duplex Villa., Land area: 2.75 Cents., Built-up area: 1500 Sq.ft., Price: ₹72 Lakhs (Negotiable, bank loan available up to 80-90%)., Ground floor features car parking, living hall, kitchen & dining, and 2 master bedrooms with attached toilets., First floor features master bedroom and open terrace utility area., Property is North-East corner villa/plot.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Shanthimedu, Coimbatore சைட்ல 2 BHK Villa தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹72 Lakhs.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 2.75 Cents லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 1500 Sq.ft இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "road",
+        "voice": "இதுல முக்கியமான விஷயம், முன்னாடி Wide third road ரோடு வசதி இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [],
+        "vfx": "road-measure",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு North-East ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP Approved, Plan Approval Done இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ]
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/aElEVXbu_Uk/",
+  "optional_owned_audio": "assets/audio/aElEVXbu_Uk.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Shanthimedu, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Modern duplex villa with a flat roof, white and grey exterior paint with yellow highlights, foldable wooden-finish gates, ramp access, and parking area with checkered tiles and tiled walls.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Car parking, living hall, kitchen & dining, master bedroom 1 with attached toilet, master bedroom 2 with attached toilet. First Floor: Master bedroom, utility area, and open terrace.. Neighbourhood: Developing residential area with independent houses and villas, wide roads, and proximity to bus stops and main roads in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Shanthimedu, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Modern duplex villa with a flat roof, white and grey exterior paint with yellow highlights, foldable wooden-finish gates, ramp access, and parking area with checkered tiles and tiled walls.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Car parking, living hall, kitchen & dining, master bedroom 1 with attached toilet, master bedroom 2 with attached toilet. First Floor: Master bedroom, utility area, and open terrace.. Neighbourhood: Developing residential area with independent houses and villas, wide roads, and proximity to bus stops and main roads in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Shanthimedu, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Modern duplex villa with a flat roof, white and grey exterior paint with yellow highlights, foldable wooden-finish gates, ramp access, and parking area with checkered tiles and tiled walls.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Car parking, living hall, kitchen & dining, master bedroom 1 with attached toilet, master bedroom 2 with attached toilet. First Floor: Master bedroom, utility area, and open terrace.. Neighbourhood: Developing residential area with independent houses and villas, wide roads, and proximity to bus stops and main roads in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Shanthimedu, Coimbatore, Coimbatore, Tamil Nadu. Architecture consistent with: Modern duplex villa with a flat roof, white and grey exterior paint with yellow highlights, foldable wooden-finish gates, ramp access, and parking area with checkered tiles and tiled walls.. Hard floor/layout lock: G+1 duplex with open terrace utility; Ground Floor: Car parking, living hall, kitchen & dining, master bedroom 1 with attached toilet, master bedroom 2 with attached toilet. First Floor: Master bedroom, utility area, and open terrace.. Neighbourhood: Developing residential area with independent houses and villas, wide roads, and proximity to bus stops and main roads in Coimbatore.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
