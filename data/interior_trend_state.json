@@ -114,7 +114,8 @@
     "BTbFIvgl_bI",
     "XG46bHcuHLA",
     "Ilnxof24KH8",
-    "IzBRu_uXCgo"
+    "IzBRu_uXCgo",
+    "zyBrVGd2eEI"
   ],
   "history": [
     {
@@ -691,6 +692,11 @@
       "video_id": "IzBRu_uXCgo",
       "creator": "Design.Decor.Travel.",
       "url": "https://www.youtube.com/watch?v=IzBRu_uXCgo"
+    },
+    {
+      "video_id": "zyBrVGd2eEI",
+      "creator": "Design.Decor.Travel.",
+      "url": "https://www.youtube.com/watch?v=zyBrVGd2eEI"
     }
   ],
   "night_channel_cursor": 1
