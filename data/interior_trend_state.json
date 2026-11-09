@@ -116,7 +116,8 @@
     "Ilnxof24KH8",
     "IzBRu_uXCgo",
     "zyBrVGd2eEI",
-    "p55YB9oIwG8"
+    "p55YB9oIwG8",
+    "Ase0naomNx8"
   ],
   "history": [
     {
@@ -703,6 +704,11 @@
       "video_id": "p55YB9oIwG8",
       "creator": "Design.Decor.Travel.",
       "url": "https://www.youtube.com/watch?v=p55YB9oIwG8"
+    },
+    {
+      "video_id": "Ase0naomNx8",
+      "creator": "Design.Decor.Travel.",
+      "url": "https://www.youtube.com/watch?v=Ase0naomNx8"
     }
   ],
   "night_channel_cursor": 1
