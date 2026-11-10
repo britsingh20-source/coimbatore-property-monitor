@@ -66,6 +66,11 @@ jobs:
             sudo apt-get install -y ffmpeg
           fi
       - run: pip install -r requirements.txt
+      - name: Validate Telegram pairing safeguards
+        run: |
+          python -m py_compile telegram_router.py telegram_r2_ingest.py r2_social_autopilot.py
+          python -m unittest discover -s tests -p 'test_telegram_prompt_queue.py' -v
+          python -m unittest discover -s tests -p 'test_telegram_r2_ingest.py' -v
 
       - name: Recover confirmed MANUAL_PUBLISH upload
         if: github.event_name != 'repository_dispatch' || github.event.action == 'telegram-property-upload'
@@ -209,6 +214,33 @@ jobs:
             git pull --rebase
             git push
           fi
+      - name: Write publishing health summary
+        if: always()
+        shell: bash
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          from pathlib import Path
+          queue = json.loads(Path('data/telegram_prompt_queue.json').read_text()) if Path('data/telegram_prompt_queue.json').exists() else {'prompts': []}
+          state = json.loads(Path('data/social_publish_state.json').read_text()) if Path('data/social_publish_state.json').exists() else {'objects': {}}
+          prompts = queue.get('prompts') or []
+          objects = state.get('objects') or {}
+          pending = sum(p.get('status') == 'pending_mobile_upload' for p in prompts)
+          waiting = sum(v.get('status') in {'waiting_for_video_id','unmatched','match_error'} for v in objects.values())
+          print('## Property publishing health')
+          print(f'- Prompt records: {len(prompts)}')
+          print(f'- Waiting for mobile MP4: {pending}')
+          print(f'- Unmatched / blocked uploads: {waiting}')
+          print(f'- Tracked R2 videos: {len(objects)}')
+          print('')
+          print('| R2 video | Property ID | Instagram Reel | YouTube Short |')
+          print('|---|---|---|---|')
+          for key, record in list(objects.items())[-20:]:
+              platforms = record.get('platforms') or {}
+              ig = (platforms.get('instagram_reel') or {}).get('status', 'not attempted')
+              yt = (platforms.get('youtube_short') or {}).get('status', 'not attempted')
+              print(f"| {key} | {record.get('video_id','—')} | {ig} | {yt} |")
+          PY
       - name: Preserve Telegram ingestion failure
         if: steps.telegram_ingest.outcome == 'failure'
         run: |
