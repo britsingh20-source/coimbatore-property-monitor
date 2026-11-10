@@ -57,7 +57,7 @@ jobs:
           python-version: "3.11"
           cache: pip
       - name: Install video normalization tools
-        timeout-minutes: 5
+        timeout-minutes: 15
         run: |
           if command -v ffmpeg >/dev/null 2>&1; then
             ffmpeg -version | head -n 1
