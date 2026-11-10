@@ -827,6 +827,12 @@
       "uploaded_at": "2026-11-08T03:00:14.439609+00:00",
       "video_id": "q7a4VD-Cp5Q"
     },
+    "AgADuSYAAqaomVc": {
+      "provided_video_id": "mF6BdMsC0hs",
+      "received_at": "2026-11-10T04:15:28.939252+00:00",
+      "status": "rejected_invalid_video_id",
+      "update_id": 399222273
+    },
     "AgADux8AAlMgsFQ": {
       "paired_at": "2026-09-01T11:47:48.022Z",
       "paired_by": "manual_recovery_user_confirmed_preceding_id",
