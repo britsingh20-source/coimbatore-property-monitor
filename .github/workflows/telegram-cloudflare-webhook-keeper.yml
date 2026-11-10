@@ -23,7 +23,7 @@ jobs:
           curl --fail --silent --show-error \
             --request POST \
             --data-urlencode "url=${TELEGRAM_WEBHOOK_URL}" \
-            --data-urlencode 'allowed_updates=["message","edited_message"]' \
+            --data-urlencode 'allowed_updates=["message","edited_message","callback_query"]' \
             --data-urlencode "drop_pending_updates=false" \
             "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/setWebhook" >/dev/null
           echo "Telegram webhook configured for Cloudflare Worker."
