@@ -11,14 +11,40 @@ export default {
     catch { return new Response("Bad request", { status: 400 }); }
 
     const message = update.message;
-    const chatId = String(message?.chat?.id || "");
-    if (!message || chatId !== String(env.TELEGRAM_CHAT_ID)) {
-      return new Response("ok");
-    }
+    const callback = update.callback_query;
+    const chatId = String(message?.chat?.id || callback?.message?.chat?.id || "");
+    if (chatId !== String(env.TELEGRAM_CHAT_ID)) return new Response("ok");
 
     const updateKey = `update:${update.update_id}`;
     if (await env.PAIRING_STATE.get(updateKey)) return new Response("ok");
     await env.PAIRING_STATE.put(updateKey, "1", { expirationTtl: 86400 });
+
+    // One-tap property selection from the prompt message. The selected ID
+    // is held per chat and paired with the next uploaded MP4.
+    if (callback) {
+      const data = String(callback.data || "");
+      const selected = data.match(/^select:([A-Za-z0-9_-]{11})$/);
+      if (!selected) {
+        await telegram(env, "answerCallbackQuery", {
+          callback_query_id: callback.id,
+          text: "Invalid property selection",
+          show_alert: true,
+        });
+        return new Response("ok");
+      }
+      const videoId = selected[1];
+      await env.PAIRING_STATE.put(`pending-id:${chatId}`, videoId, { expirationTtl: 86400 });
+      await telegram(env, "answerCallbackQuery", {
+        callback_query_id: callback.id,
+        text: `Selected ${videoId}`,
+      });
+      await telegram(env, "sendMessage", {
+        chat_id: chatId,
+        text: `✅ Property selected: ${videoId}. Now send its MP4 once. No VIDEO_ID caption needed.`,
+      });
+      return new Response("ok");
+    }
+    if (!message) return new Response("ok");
 
     const text = String(message.caption || message.text || "").trim();
     const explicit = extractVideoId(text);
