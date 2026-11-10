@@ -198,6 +198,17 @@ def _resolve_supplied_video_id(supplied_id: str, queue: dict) -> str:
     return _unique_pending_video_id(supplied_id, queue)
 
 
+def _is_retryable_preupload_rejection(existing: dict | None) -> bool:
+    """True only for rejected records that never reached R2."""
+    if not isinstance(existing, dict) or existing.get("r2_key"):
+        return False
+    return existing.get("status") in {
+        "rejected_invalid_video_id",
+        "ignored_no_pending_prompt",
+        "rejected_invalid_reference_id",
+    }
+
+
 def _oldest_pending(queue: dict) -> dict | None:
     pending = [
         item for item in queue.get("prompts", [])
@@ -467,15 +478,7 @@ def ingest() -> int:
             # downloaded (for example, the prompt queue was committed late).
             # Such a record is NOT proof that the Telegram file was ingested.
             # Re-evaluate it against the current queue/job registry on retry.
-            retryable_preupload_rejections = {
-                "rejected_invalid_video_id",
-                "ignored_no_pending_prompt",
-                "rejected_invalid_reference_id",
-            }
-            if (
-                existing.get("status") in retryable_preupload_rejections
-                and not existing.get("r2_key")
-            ):
+            if _is_retryable_preupload_rejection(existing):
                 print(
                     f"Rechecking previously rejected Telegram upload {unique_id}; "
                     f"prior status={existing.get('status')}"
