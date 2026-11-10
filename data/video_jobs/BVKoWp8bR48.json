@@ -1,0 +1,114 @@
+{
+  "video_id": "BVKoWp8bR48",
+  "source_url": "https://www.youtube.com/watch?v=BVKoWp8bR48",
+  "property_location": "Sathy Road, near Kovilpalayam, Kariampalayam, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "Rs. 7.5 Lakhs per cent",
+    "facing": "NOT SPECIFIED",
+    "road_width": "33 feet",
+    "parking": "NOT SPECIFIED",
+    "approval": "NOT SPECIFIED",
+    "floors": "NOT SPECIFIED",
+    "layout_distribution": "NOT SPECIFIED"
+  },
+  "verified_facts": "Located near Kariampalayam junction on the way from Coimbatore to Sathyamangalam past Kovilpalayam, Gated community project with more than 200 plots, 33 feet light tar road facility available, Located about 2 kilometers inside from Sathy Road on the way to Karamadai, Price is Rs. 7.5 Lakhs per cent, slightly negotiable",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Sathy Road, near Kovilpalayam, Kariampalayam, Coimbatore சைட்ல Residential Plot தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை Rs. 7.5 Lakhs per cent.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "road",
+        "voice": "இதுல முக்கியமான விஷயம், முன்னாடி 33 feet ரோடு வசதி இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [],
+        "vfx": "road-measure",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ]
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/BVKoWp8bR48/",
+  "optional_owned_audio": "assets/audio/BVKoWp8bR48.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Kovilpalayam, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Gated community layout with wide tar roads, landscaped green parks, outdoor gym equipment, children's play area, and an entrance arch. Neighbourhood: Well-developed residential area surrounding the gated community, located 2 km inside from Sathy Road near Kovilpalayam and Kariampalayam. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Kovilpalayam, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Gated community layout with wide tar roads, landscaped green parks, outdoor gym equipment, children's play area, and an entrance arch. Neighbourhood: Well-developed residential area surrounding the gated community, located 2 km inside from Sathy Road near Kovilpalayam and Kariampalayam. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Kovilpalayam, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Gated community layout with wide tar roads, landscaped green parks, outdoor gym equipment, children's play area, and an entrance arch. Neighbourhood: Well-developed residential area surrounding the gated community, located 2 km inside from Sathy Road near Kovilpalayam and Kariampalayam. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Kovilpalayam, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Gated community layout with wide tar roads, landscaped green parks, outdoor gym equipment, children's play area, and an entrance arch. Neighbourhood: Well-developed residential area surrounding the gated community, located 2 km inside from Sathy Road near Kovilpalayam and Kariampalayam. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
