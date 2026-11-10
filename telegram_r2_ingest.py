@@ -463,7 +463,26 @@ def ingest() -> int:
                 "uploaded_awaiting_content_match",
                 "uploaded_awaiting_video_id",
             }
+            # A previous attempt can record a rejection before the MP4 is
+            # downloaded (for example, the prompt queue was committed late).
+            # Such a record is NOT proof that the Telegram file was ingested.
+            # Re-evaluate it against the current queue/job registry on retry.
+            retryable_preupload_rejections = {
+                "rejected_invalid_video_id",
+                "ignored_no_pending_prompt",
+                "rejected_invalid_reference_id",
+            }
             if (
+                existing.get("status") in retryable_preupload_rejections
+                and not existing.get("r2_key")
+            ):
+                print(
+                    f"Rechecking previously rejected Telegram upload {unique_id}; "
+                    f"prior status={existing.get('status')}"
+                )
+                state["files"].pop(unique_id, None)
+                existing = None
+            elif (
                 manual_requested
                 and existing.get("status") in recoverable_statuses
                 and existing.get("r2_key")
@@ -479,9 +498,13 @@ def ingest() -> int:
                     token,
                     chat_id,
                 )
+                continue
             else:
-                print(f"Duplicate Telegram video ignored: {unique_id}")
-            continue
+                print(
+                    f"Duplicate Telegram video safely ignored: {unique_id}; "
+                    f"status={existing.get('status')}; r2_key={existing.get('r2_key') or 'none'}"
+                )
+                continue
 
         reference_video_id = _reference_video_id(message)
         reference_job = Path("data/video_jobs") / f"{reference_video_id}.json"
