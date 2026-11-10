@@ -95,10 +95,16 @@ def send_prompt(job: dict, bot_token: str, chat_id: str) -> int:
     # attached as a UTF-8 .txt document so Telegram can open/select/copy it
     # without causing the whole sendDocument request to fail.
     keyboard = {
-        "inline_keyboard": [[{
-            "text": "Copy VIDEO_ID",
-            "copy_text": {"text": video_id},
-        }]]
+        "inline_keyboard": [
+            [{
+                "text": "✅ Select this property",
+                "callback_data": f"select:{video_id}",
+            }],
+            [{
+                "text": "Copy VIDEO_ID",
+                "copy_text": {"text": video_id},
+            }],
+        ]
     }
     payload = io.BytesIO(prompt.encode("utf-8"))
     payload.name = telegram_filename(job)
