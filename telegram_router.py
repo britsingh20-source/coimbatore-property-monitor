@@ -107,6 +107,40 @@ def _normalized_video_id(message: dict) -> str:
     return ""
 
 
+def ensure_known_prompt_registered(video_id: str, queue_path: Path = QUEUE_PATH, jobs_dir: Path = Path("data/video_jobs")) -> bool:
+    """Repair a missing queue row only when the exact property job exists.
+
+    This prevents a delayed/missed queue commit from rejecting a valid upload,
+    while refusing unknown IDs and never overwriting an existing published row.
+    """
+    video_id = str(video_id or "").strip()
+    if not re.fullmatch(r"[A-Za-z0-9_-]{11}", video_id):
+        return False
+    job_path = jobs_dir / f"{video_id}.json"
+    if not job_path.is_file():
+        return False
+    try:
+        job = json.loads(job_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return False
+    if str(job.get("video_id") or video_id) != video_id:
+        return False
+    queue = _load_json(queue_path, {"prompts": []})
+    prompts = queue.setdefault("prompts", [])
+    existing = next((item for item in prompts if item.get("video_id") == video_id), None)
+    if existing:
+        return existing.get("status") == "pending_mobile_upload"
+    prompts.append({
+        "video_id": video_id,
+        "status": "pending_mobile_upload",
+        "sent_at": datetime.now(timezone.utc).isoformat(),
+        "recovered_from_job_registry": True,
+    })
+    _save_json(queue_path, queue)
+    print(f"Self-healed missing prompt queue row from verified job: {video_id}")
+    return True
+
+
 def _pending_prompt(video_id: str) -> dict | None:
     queue = _load_json(QUEUE_PATH, {"prompts": []})
     return next(
@@ -228,6 +262,7 @@ def route_one(update: dict) -> None:
     # upload the MP4 as the next Telegram message. Only a currently pending
     # prompt may be remembered; an old published VIDEO_ID is rejected safely.
     if attachment is None and supplied_id:
+        ensure_known_prompt_registered(supplied_id)
         if _pending_prompt(supplied_id):
             _remember_preceding_video_id(update, supplied_id)
             token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
@@ -243,6 +278,9 @@ def route_one(update: dict) -> None:
                 )
             print(f"Saved preceding VIDEO_ID {supplied_id} for next property MP4")
             return
+
+    if attachment is not None and supplied_id:
+        ensure_known_prompt_registered(supplied_id)
 
     routed_update = update
     carried_id = ""
