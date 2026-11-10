@@ -648,6 +648,12 @@
       "uploaded_at": "2026-09-19T15:36:34.794448+00:00",
       "video_id": "hXgwaBvJRjU"
     },
+    "AgADhyYAAqaomVc": {
+      "provided_video_id": "6XlIKnhYUwk",
+      "received_at": "2026-11-10T03:32:43.899127+00:00",
+      "status": "rejected_invalid_video_id",
+      "update_id": 399222271
+    },
     "AgADiyQAApARSVc": {
       "r2_key": "social-ready/LzHwTZFDKfo.mp4",
       "size": 15570654,
