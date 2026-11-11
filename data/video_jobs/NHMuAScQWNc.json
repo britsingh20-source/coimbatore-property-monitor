@@ -1,0 +1,148 @@
+{
+  "video_id": "NHMuAScQWNc",
+  "source_url": "https://www.youtube.com/watch?v=NHMuAScQWNc",
+  "property_location": "Amman Kovil, Saravanampatti, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2+2 BHK (Double Portion)",
+    "land_area": "3.20 cents",
+    "built_up_area": "2800 sqft",
+    "price": "1.80 CR",
+    "facing": "North",
+    "road_width": "30 feet",
+    "parking": "11x17 Car Parking",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex",
+    "layout_distribution": "Ground floor: Living area, modular kitchen cum dining, 2 bedrooms with attached bathrooms, common toilet under stairs. First floor: Covered balcony, living area, modular kitchen cum dining, 2 bedrooms with attached bathrooms."
+  },
+  "verified_facts": "Title mentions 2800 SQFT DOUBLE PORTION 2BHK HOUSE FOR SALE, Narration states 3.20 cents North-West corner site, facing North, G+1 model double portion independent house, Front and side car parking width is 30 feet, size 11x17 car parking, North-east individual bore connection and underground sump, Ground floor features living area (16x16), modular kitchen cum dining (16x10), master bedroom (10x16) with attached western bathroom (4x8), second kids bedroom (10x10) with attached toilet (4x8), Ground floor exterior staircase with granite finish and stainless steel handrails, with an Indian type common toilet underneath, First floor features covered balcony, living area (16x16), modular kitchen cum dining (16x10), first master bedroom (10x16) with attached western bathroom (4x8), second master bedroom (16x10) with attached western bathroom, Located near Amman Kovil bus stop, Saravanampatti, Coimbatore to Sathy Road",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Amman Kovil, Saravanampatti, Coimbatore சைட்ல 2+2 BHK (Double Portion) Independent House தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை 1.80 CR.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 3.20 cents லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 2800 sqft இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "road",
+        "voice": "இதுல முக்கியமான விஷயம், முன்னாடி 30 feet ரோடு வசதி இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [],
+        "vfx": "road-measure",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு North ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ]
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/NHMuAScQWNc/",
+  "optional_owned_audio": "assets/audio/NHMuAScQWNc.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Double-portion independent house with yellow and grey exterior walls, 30 feet wide road access, front compound wall with decorative metal gate, paved car parking area, and glass railing balcony on the upper floor.. Hard floor/layout lock: G+1 duplex; Ground floor: Living area, modular kitchen cum dining, 2 bedrooms with attached bathrooms, common toilet under stairs. First floor: Covered balcony, living area, modular kitchen cum dining, 2 bedrooms with attached bathrooms.. Neighbourhood: Residential area located near Saravanampatti and Amman Kovil bus stop on Coimbatore to Sathy Road, surrounded by other independent houses, vacant plots, and coconut groves.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Double-portion independent house with yellow and grey exterior walls, 30 feet wide road access, front compound wall with decorative metal gate, paved car parking area, and glass railing balcony on the upper floor.. Hard floor/layout lock: G+1 duplex; Ground floor: Living area, modular kitchen cum dining, 2 bedrooms with attached bathrooms, common toilet under stairs. First floor: Covered balcony, living area, modular kitchen cum dining, 2 bedrooms with attached bathrooms.. Neighbourhood: Residential area located near Saravanampatti and Amman Kovil bus stop on Coimbatore to Sathy Road, surrounded by other independent houses, vacant plots, and coconut groves.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Double-portion independent house with yellow and grey exterior walls, 30 feet wide road access, front compound wall with decorative metal gate, paved car parking area, and glass railing balcony on the upper floor.. Hard floor/layout lock: G+1 duplex; Ground floor: Living area, modular kitchen cum dining, 2 bedrooms with attached bathrooms, common toilet under stairs. First floor: Covered balcony, living area, modular kitchen cum dining, 2 bedrooms with attached bathrooms.. Neighbourhood: Residential area located near Saravanampatti and Amman Kovil bus stop on Coimbatore to Sathy Road, surrounded by other independent houses, vacant plots, and coconut groves.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Saravanampatti, Coimbatore, Tamil Nadu. Architecture consistent with: Double-portion independent house with yellow and grey exterior walls, 30 feet wide road access, front compound wall with decorative metal gate, paved car parking area, and glass railing balcony on the upper floor.. Hard floor/layout lock: G+1 duplex; Ground floor: Living area, modular kitchen cum dining, 2 bedrooms with attached bathrooms, common toilet under stairs. First floor: Covered balcony, living area, modular kitchen cum dining, 2 bedrooms with attached bathrooms.. Neighbourhood: Residential area located near Saravanampatti and Amman Kovil bus stop on Coimbatore to Sathy Road, surrounded by other independent houses, vacant plots, and coconut groves.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
