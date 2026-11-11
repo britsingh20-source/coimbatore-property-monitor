@@ -1,0 +1,146 @@
+{
+  "video_id": "0z4BNsO5fS0",
+  "source_url": "https://www.youtube.com/watch?v=0z4BNsO5fS0",
+  "property_location": "Thudiyalur, Coimbatore, Tamil Nadu",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "2 Acres total project area; individual plots range from 1.5 to 4.5 cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "₹14.50 Lakhs per cent",
+    "facing": "Various including North-East corner plots available",
+    "road_width": "30 & 40 Ft Tar Roads",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP Approved & RERA",
+    "floors": "NOT SPECIFIED",
+    "layout_distribution": "NOT SPECIFIED"
+  },
+  "verified_facts": "Located in Sree Aishwaryam Garden, Thudiyalur, Coimbatore., Project covers approximately 2 acres with around 45 individual plots., Individual plot sizes vary from 1.5 cents to 4.5 cents., Price is quoted at 14.50 Lakhs per cent., Bank loan assistance available up to 75% for land-only loans and up to 95% for land plus construction packages with tie-ups with leading banks like HDFC, PNB, and Canara Bank., Property features gated community layout with 30 & 40 ft tar roads, electricity, water connection, children's park, walking track, and gym.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Thudiyalur, Coimbatore, Tamil Nadu சைட்ல Residential Plot தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹14.50 Lakhs per cent.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 2 Acres total project area; individual plots range from 1.5 to 4.5 cents லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "road",
+        "voice": "இதுல முக்கியமான விஷயம், முன்னாடி 30 & 40 Ft Tar Roads ரோடு வசதி இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [],
+        "vfx": "road-measure",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு Various including North-East corner plots available ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP Approved & RERA இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ]
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/0z4BNsO5fS0/",
+  "optional_owned_audio": "assets/audio/0z4BNsO5fS0.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Thudiyalur, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Gated community layout with wide tar roads, boundary compound wall, entrance arch gateway, marked plots with yellow numbering stones, young saplings planted along roadsides, and neighboring residential buildings.. Neighbourhood: Established residential area near Thudiyalur and Saravanampatti with schools, colleges, hospitals, super markets, and IT hubs nearby.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Thudiyalur, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Gated community layout with wide tar roads, boundary compound wall, entrance arch gateway, marked plots with yellow numbering stones, young saplings planted along roadsides, and neighboring residential buildings.. Neighbourhood: Established residential area near Thudiyalur and Saravanampatti with schools, colleges, hospitals, super markets, and IT hubs nearby.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Thudiyalur, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Gated community layout with wide tar roads, boundary compound wall, entrance arch gateway, marked plots with yellow numbering stones, young saplings planted along roadsides, and neighboring residential buildings.. Neighbourhood: Established residential area near Thudiyalur and Saravanampatti with schools, colleges, hospitals, super markets, and IT hubs nearby.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Thudiyalur, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Gated community layout with wide tar roads, boundary compound wall, entrance arch gateway, marked plots with yellow numbering stones, young saplings planted along roadsides, and neighboring residential buildings.. Neighbourhood: Established residential area near Thudiyalur and Saravanampatti with schools, colleges, hospitals, super markets, and IT hubs nearby.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
