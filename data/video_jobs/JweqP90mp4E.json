@@ -1,0 +1,158 @@
+{
+  "video_id": "JweqP90mp4E",
+  "source_url": "https://www.youtube.com/watch?v=JweqP90mp4E",
+  "property_location": "Vadavalli, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Triplex Villa",
+    "bhk": "3 BHK",
+    "land_area": "3 cent (30 x 44 feet, approx 1320 sqft)",
+    "built_up_area": "3000 sqft",
+    "price": "₹1.70 Crore (negotiable)",
+    "facing": "East",
+    "road_width": "30 feet",
+    "parking": "1 car parking (18 x 16 feet portico)",
+    "approval": "DTCP Approved",
+    "floors": "G+2 duplex / Triplex residence with open terrace utility",
+    "layout_distribution": "Ground floor contains car parking, living hall, kitchen & dining, one bedroom with attached bathroom, and outside utility. First floor contains lounge, second bedroom with attached bathroom, home theatre room, and L-shaped front balcony. Second floor contains lounge/mini bar area, third bedroom with attached bathroom, and front balcony, with stairs leading up to an open terrace with pergola and artificial rainfall sprinkler system."
+  },
+  "verified_facts": "House is East facing, South-West corner site., Land size: 3 cent (30x44 feet), total land area 1320 sqft., Builtup area: 3000 sqft across ground, first, and second floors., Total house price including land is 1.70 crore (negotiable)., Ground Floor: Car Parking 18x16, Living Hall 16x16, Kitchen & Dining 16x10, First Bedroom 11x10, Attached Bathroom 6.5x4, Outside Utility 11x5.25., First Floor: Lounge 16x17, Second Bedroom 16x16, Attached Bathroom 8x5, Home Theatre 21x10, L-Shaped Front Balcony 13x6., Second Floor: Lounge/Mini Bar 17x16, Third Bedroom 16x11, Attached Bathroom 10.5x4.5, Front Balcony, plus terrace level with artificial rain sprinkler pergola setup., Water facilities include borewell and water sump, located within Corporation limits.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Vadavalli, Coimbatore சைட்ல 3 BHK Triplex Villa தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹1.70 Crore (negotiable).",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 3 cent (30 x 44 feet, approx 1320 sqft) லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 3000 sqft இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "road",
+        "voice": "இதுல முக்கியமான விஷயம், முன்னாடி 30 feet ரோடு வசதி இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [],
+        "vfx": "road-measure",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு East ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP Approved இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ]
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/JweqP90mp4E/",
+  "optional_owned_audio": "assets/audio/JweqP90mp4E.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary multi-story exterior elevation with multi-colored geometric/tile wall cladding accents, glass balcony railings, metal gate with laser-cut design, and an open terrace structure with pergola framework and artificial plant décor.. Hard floor/layout lock: G+2 duplex / Triplex residence with open terrace utility; Ground floor contains car parking, living hall, kitchen & dining, one bedroom with attached bathroom, and outside utility. First floor contains lounge, second bedroom with attached bathroom, home theatre room, and L-shaped front balcony. Second floor contains lounge/mini bar area, third bedroom with attached bathroom, and front balcony, with stairs leading up to an open terrace with pergola and artificial rainfall sprinkler system.. Neighbourhood: Established residential street in Vadavalli, Coimbatore, within corporation limits, featuring independent houses and tree-lined surroundings on a 30-foot wide road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary multi-story exterior elevation with multi-colored geometric/tile wall cladding accents, glass balcony railings, metal gate with laser-cut design, and an open terrace structure with pergola framework and artificial plant décor.. Hard floor/layout lock: G+2 duplex / Triplex residence with open terrace utility; Ground floor contains car parking, living hall, kitchen & dining, one bedroom with attached bathroom, and outside utility. First floor contains lounge, second bedroom with attached bathroom, home theatre room, and L-shaped front balcony. Second floor contains lounge/mini bar area, third bedroom with attached bathroom, and front balcony, with stairs leading up to an open terrace with pergola and artificial rainfall sprinkler system.. Neighbourhood: Established residential street in Vadavalli, Coimbatore, within corporation limits, featuring independent houses and tree-lined surroundings on a 30-foot wide road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary multi-story exterior elevation with multi-colored geometric/tile wall cladding accents, glass balcony railings, metal gate with laser-cut design, and an open terrace structure with pergola framework and artificial plant décor.. Hard floor/layout lock: G+2 duplex / Triplex residence with open terrace utility; Ground floor contains car parking, living hall, kitchen & dining, one bedroom with attached bathroom, and outside utility. First floor contains lounge, second bedroom with attached bathroom, home theatre room, and L-shaped front balcony. Second floor contains lounge/mini bar area, third bedroom with attached bathroom, and front balcony, with stairs leading up to an open terrace with pergola and artificial rainfall sprinkler system.. Neighbourhood: Established residential street in Vadavalli, Coimbatore, within corporation limits, featuring independent houses and tree-lined surroundings on a 30-foot wide road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Contemporary multi-story exterior elevation with multi-colored geometric/tile wall cladding accents, glass balcony railings, metal gate with laser-cut design, and an open terrace structure with pergola framework and artificial plant décor.. Hard floor/layout lock: G+2 duplex / Triplex residence with open terrace utility; Ground floor contains car parking, living hall, kitchen & dining, one bedroom with attached bathroom, and outside utility. First floor contains lounge, second bedroom with attached bathroom, home theatre room, and L-shaped front balcony. Second floor contains lounge/mini bar area, third bedroom with attached bathroom, and front balcony, with stairs leading up to an open terrace with pergola and artificial rainfall sprinkler system.. Neighbourhood: Established residential street in Vadavalli, Coimbatore, within corporation limits, featuring independent houses and tree-lined surroundings on a 30-foot wide road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}

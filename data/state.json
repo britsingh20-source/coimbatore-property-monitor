@@ -3,11 +3,9 @@
     "last_alert_at": "2026-11-12T13:21:16.117635+00:00",
     "models": {
       "gemini-3.5-flash-lite": {
-        "blocked_reason": "provider_unavailable",
-        "blocked_until": "2026-11-12T13:31:15.822906+00:00",
         "budget_day": "2026-11-12",
         "last_error": "Property video HTTP timeout/network error (ReadTimeout)",
-        "requests": 4
+        "requests": 7
       },
       "gemini-3.6-flash": {
         "blocked_reason": "provider_unavailable",
@@ -760,6 +758,12 @@
       "last_error": "",
       "next_retry_at": "2026-09-22T23:19:59.373509+00:00",
       "status": "video_queued"
+    },
+    "4N0pxhilwTA": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-12T18:53:49.558942+00:00",
+      "next_retry_at": "2026-11-12T18:53:49.558942+00:00",
+      "status": "discovered"
     },
     "4QM0yDap_Gw": {
       "attempts": 1,
@@ -3277,11 +3281,12 @@
     },
     "JweqP90mp4E": {
       "attempts": 1,
+      "completed_at": "2026-11-12T18:54:52.625608+00:00",
       "first_seen_at": "2026-11-12T13:18:10.221816+00:00",
       "last_attempt_at": "2026-11-12T13:21:16.099109+00:00",
-      "last_error": "Property video analysis paused: gemini-3.5-flash-lite: provider_unavailable, gemini-3.6-flash: provider_unavailable. Next eligible retry: 12 Nov 2026 07:01 PM IST",
+      "last_error": "",
       "next_retry_at": "2026-11-12T13:31:15.822906+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "K51iGzjyf7c": {
       "attempts": 1,
@@ -6276,6 +6281,14 @@
       "next_retry_at": "2026-10-12T17:21:53.005741+00:00",
       "status": "retry_pending"
     },
+    "ayskTk51I6g": {
+      "attempts": 0,
+      "completed_at": "2026-11-12T18:54:29.991500+00:00",
+      "first_seen_at": "2026-11-12T18:53:49.558942+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-11-12T18:53:49.558942+00:00",
+      "status": "video_queued"
+    },
     "az2Bebl-iRs": {
       "attempts": 0,
       "first_seen_at": "2026-10-10T00:48:41.023879+00:00",
@@ -8305,6 +8318,12 @@
       "last_error": "",
       "next_retry_at": "2026-09-18T11:23:07.527208+00:00",
       "status": "video_queued"
+    },
+    "mUmsbRvsYEo": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-12T18:53:49.558942+00:00",
+      "next_retry_at": "2026-11-12T18:53:49.558942+00:00",
+      "status": "discovered"
     },
     "mWVy6bnAAJE": {
       "attempts": 0,
