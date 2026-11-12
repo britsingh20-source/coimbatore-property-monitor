@@ -1,14 +1,19 @@
 {
   "analysis_provider": {
-    "last_alert_at": "2026-11-06T02:51:44.151269+00:00",
+    "last_alert_at": "2026-11-12T13:21:16.117635+00:00",
     "models": {
       "gemini-3.5-flash-lite": {
+        "blocked_reason": "provider_unavailable",
+        "blocked_until": "2026-11-12T13:31:15.822906+00:00",
         "budget_day": "2026-11-12",
-        "last_error": "Property video analysis HTTP 503: gemini-3.5-flash-lite is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.",
-        "requests": 2
+        "last_error": "Property video HTTP timeout/network error (ReadTimeout)",
+        "requests": 4
       },
       "gemini-3.6-flash": {
-        "budget_day": "2026-11-10",
+        "blocked_reason": "provider_unavailable",
+        "blocked_until": "2026-11-12T13:31:16.097448+00:00",
+        "budget_day": "2026-11-12",
+        "last_error": "Property video analysis HTTP 503: gemini-3.6-flash is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.",
         "requests": 1
       }
     }
@@ -3126,6 +3131,12 @@
       "next_retry_at": "2026-08-08T02:24:11.537120+00:00",
       "status": "video_queued"
     },
+    "JJ8ovnt-HNY": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-12T13:18:10.221816+00:00",
+      "next_retry_at": "2026-11-12T13:18:10.221816+00:00",
+      "status": "discovered"
+    },
     "JJRQB4uVhpM": {
       "attempts": 0,
       "first_seen_at": "2026-10-30T20:47:22.307938+00:00",
@@ -3263,6 +3274,14 @@
       "last_error": "",
       "next_retry_at": "2026-08-06T15:30:52.634663+00:00",
       "status": "video_queued"
+    },
+    "JweqP90mp4E": {
+      "attempts": 1,
+      "first_seen_at": "2026-11-12T13:18:10.221816+00:00",
+      "last_attempt_at": "2026-11-12T13:21:16.099109+00:00",
+      "last_error": "Property video analysis paused: gemini-3.5-flash-lite: provider_unavailable, gemini-3.6-flash: provider_unavailable. Next eligible retry: 12 Nov 2026 07:01 PM IST",
+      "next_retry_at": "2026-11-12T13:31:15.822906+00:00",
+      "status": "retry_pending"
     },
     "K51iGzjyf7c": {
       "attempts": 1,
@@ -6637,6 +6656,12 @@
       "next_retry_at": "2026-11-03T01:34:45.065646+00:00",
       "status": "discovered"
     },
+    "d75Soc8ZVs0": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-12T13:18:10.221816+00:00",
+      "next_retry_at": "2026-11-12T13:18:10.221816+00:00",
+      "status": "discovered"
+    },
     "d7c3IMAR194": {
       "attempts": 0,
       "completed_at": "2026-09-02T05:53:55.092584+00:00",
@@ -6968,6 +6993,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-04T21:03:07.993508+00:00",
       "status": "video_queued"
+    },
+    "f2vZ8yXHRXw": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-12T13:18:10.221816+00:00",
+      "next_retry_at": "2026-11-12T13:18:10.221816+00:00",
+      "status": "discovered"
     },
     "f330aqcYbfE": {
       "attempts": 0,
@@ -7781,6 +7812,12 @@
       "last_error": "Error code: 429 - {'error': {'message': 'Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry later or upgrade your tier at https://ai.dev/rate-limit.', 'code': 'too_many_requests'}}",
       "next_retry_at": "2026-09-23T14:17:59.524939+00:00",
       "status": "retry_pending"
+    },
+    "jQE58UlulCw": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-12T13:18:10.221816+00:00",
+      "next_retry_at": "2026-11-12T13:18:10.221816+00:00",
+      "status": "discovered"
     },
     "jWGiTt-itQA": {
       "attempts": 0,
