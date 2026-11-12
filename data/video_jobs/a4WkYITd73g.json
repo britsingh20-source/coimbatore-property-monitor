@@ -1,0 +1,126 @@
+{
+  "video_id": "a4WkYITd73g",
+  "source_url": "https://www.youtube.com/watch?v=a4WkYITd73g",
+  "property_location": "Thoppampatti, Thudiyalur, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "3 BHK",
+    "land_area": "2050 sqft",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "1 Crore",
+    "facing": "North",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Covered car parking",
+    "approval": "NOT SPECIFIED",
+    "floors": "G+1 duplex",
+    "layout_distribution": "Ground floor: Living area, kitchen, and TV unit space; First floor: Bedrooms and balcony terrace sitting area."
+  },
+  "verified_facts": "2050 SQFT NORTH FACING 3BHK MODEL HOUSE, Located in Thoppampatti near Thudiyalur, Priced at 1 Crore, Contact number 7811-009781",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Thoppampatti, Thudiyalur, Coimbatore சைட்ல 3 BHK Independent House தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை 1 Crore.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 2050 sqft லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு North ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ]
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/a4WkYITd73g/",
+  "optional_owned_audio": "assets/audio/a4WkYITd73g.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: White and grey facade with wooden louvered paneling accents, large glass windows, a covered car parking porch with patterned paving, and a front compound gate.. Hard floor/layout lock: G+1 duplex; Ground floor: Living area, kitchen, and TV unit space; First floor: Bedrooms and balcony terrace sitting area.. Neighbourhood: Residential area in Thoppampatti, Thudiyalur region.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: White and grey facade with wooden louvered paneling accents, large glass windows, a covered car parking porch with patterned paving, and a front compound gate.. Hard floor/layout lock: G+1 duplex; Ground floor: Living area, kitchen, and TV unit space; First floor: Bedrooms and balcony terrace sitting area.. Neighbourhood: Residential area in Thoppampatti, Thudiyalur region.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: White and grey facade with wooden louvered paneling accents, large glass windows, a covered car parking porch with patterned paving, and a front compound gate.. Hard floor/layout lock: G+1 duplex; Ground floor: Living area, kitchen, and TV unit space; First floor: Bedrooms and balcony terrace sitting area.. Neighbourhood: Residential area in Thoppampatti, Thudiyalur region.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Thudiyalur, Coimbatore, Tamil Nadu. Architecture consistent with: White and grey facade with wooden louvered paneling accents, large glass windows, a covered car parking porch with patterned paving, and a front compound gate.. Hard floor/layout lock: G+1 duplex; Ground floor: Living area, kitchen, and TV unit space; First floor: Bedrooms and balcony terrace sitting area.. Neighbourhood: Residential area in Thoppampatti, Thudiyalur region.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
