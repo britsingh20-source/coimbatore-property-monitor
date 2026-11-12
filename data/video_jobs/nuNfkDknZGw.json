@@ -1,0 +1,138 @@
+{
+  "video_id": "nuNfkDknZGw",
+  "source_url": "https://www.youtube.com/watch?v=nuNfkDknZGw",
+  "property_location": "Karamadai, Mettupalayam Road, Coimbatore",
+  "entrance_contaminated": true,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2BHK",
+    "land_area": "3 Cent",
+    "built_up_area": "1200 sqft",
+    "price": "₹58 Lakhs (negotiable)",
+    "facing": "South facing site, East facing main door",
+    "road_width": "NOT SPECIFIED",
+    "parking": "1 covered car parking",
+    "approval": "NOT SPECIFIED",
+    "floors": "Single-storey",
+    "layout_distribution": "Ground floor: Living hall, Pooja room, Kitchen cum dining, 2 bedrooms with attached bathrooms, and 1 outer bathroom. Roof level: Open terrace with utility space and water tank."
+  },
+  "verified_facts": "Property is a 2BHK independent house built on 3 cent land., Built-up area is 1200 sqft on the ground floor with an open roof terrace., Price is 58 Lakhs negotiable with 75% bank loan available., Narration mentions 1150 sqft in one section and 1200 sqft in description/title.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Karamadai, Mettupalayam Road, Coimbatore சைட்ல 2BHK Independent House தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹58 Lakhs (negotiable).",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 3 Cent லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 1200 sqft இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு South facing site, East facing main door ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ]
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/nuNfkDknZGw/",
+  "optional_owned_audio": "assets/audio/nuNfkDknZGw.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey independent house featuring a stylish front elevation with blue, grey, and golden-themed paintwork, texture stone cladding, CNC patterned main gate, parking space with designer tiles, and exterior boundary walls.. Hard floor/layout lock: Single-storey; Ground floor: Living hall, Pooja room, Kitchen cum dining, 2 bedrooms with attached bathrooms, and 1 outer bathroom. Roof level: Open terrace with utility space and water tank.. Neighbourhood: Located in a developing residential layout in Karamadai near Mettupalayam Road, surrounded by green fields, open plots, and other independent houses with scenic hill views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey independent house featuring a stylish front elevation with blue, grey, and golden-themed paintwork, texture stone cladding, CNC patterned main gate, parking space with designer tiles, and exterior boundary walls.. Hard floor/layout lock: Single-storey; Ground floor: Living hall, Pooja room, Kitchen cum dining, 2 bedrooms with attached bathrooms, and 1 outer bathroom. Roof level: Open terrace with utility space and water tank.. Neighbourhood: Located in a developing residential layout in Karamadai near Mettupalayam Road, surrounded by green fields, open plots, and other independent houses with scenic hill views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey independent house featuring a stylish front elevation with blue, grey, and golden-themed paintwork, texture stone cladding, CNC patterned main gate, parking space with designer tiles, and exterior boundary walls.. Hard floor/layout lock: Single-storey; Ground floor: Living hall, Pooja room, Kitchen cum dining, 2 bedrooms with attached bathrooms, and 1 outer bathroom. Roof level: Open terrace with utility space and water tank.. Neighbourhood: Located in a developing residential layout in Karamadai near Mettupalayam Road, surrounded by green fields, open plots, and other independent houses with scenic hill views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Karamadai, Coimbatore, Tamil Nadu. Architecture consistent with: Single-storey independent house featuring a stylish front elevation with blue, grey, and golden-themed paintwork, texture stone cladding, CNC patterned main gate, parking space with designer tiles, and exterior boundary walls.. Hard floor/layout lock: Single-storey; Ground floor: Living hall, Pooja room, Kitchen cum dining, 2 bedrooms with attached bathrooms, and 1 outer bathroom. Roof level: Open terrace with utility space and water tank.. Neighbourhood: Located in a developing residential layout in Karamadai near Mettupalayam Road, surrounded by green fields, open plots, and other independent houses with scenic hill views.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Use gate and parking-structure angles only; keep the main entrance door, doorframe, lintel and threshold outside the frame. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
