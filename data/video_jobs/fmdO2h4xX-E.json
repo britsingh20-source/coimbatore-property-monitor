@@ -1,0 +1,136 @@
+{
+  "video_id": "fmdO2h4xX-E",
+  "source_url": "https://www.youtube.com/watch?v=fmdO2h4xX-E",
+  "property_location": "Thondamuthur main junction, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Residential Plot",
+    "bhk": "NOT SPECIFIED",
+    "land_area": "5.60 cents",
+    "built_up_area": "NOT SPECIFIED",
+    "price": "Rs. 12.25 lakhs per cent (slightly negotiable)",
+    "facing": "East",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "DTCP approved",
+    "floors": "NOT SPECIFIED",
+    "layout_distribution": "NOT SPECIFIED"
+  },
+  "verified_facts": "Plot size is 5.60 cents with East facing DTCP approved site, Frontage is 41 ft, length is 55 ft, Shed is installed on the site which can be used like a warehouse, can be given with the shed or removed, EB line already obtained for the site, Located near Thondamuthur main junction, walkable distance from main road",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Thondamuthur main junction, Coimbatore சைட்ல Residential Plot தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை Rs. 12.25 lakhs per cent (slightly negotiable).",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 5.60 cents லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு East ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP approved இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ]
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/fmdO2h4xX-E/",
+  "optional_owned_audio": "assets/audio/fmdO2h4xX-E.mp3",
+  "scenes": [
+    {
+      "name": "approach_road",
+      "prompt": "Photorealistic residential plotted development in Thondamuthur main junction, Coimbatore, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Open plot with boundary fencing/gates and a metal shed structure inside, located in an established layout with nearby independent houses and greenery.. Neighbourhood: Established residential layout near Thondamuthur main junction in Coimbatore, close to schools, colleges, hospitals, and bus stands.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Gimbal approach along the verified local access road."
+    },
+    {
+      "name": "layout_entrance",
+      "prompt": "Photorealistic residential plotted development in Thondamuthur main junction, Coimbatore, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Open plot with boundary fencing/gates and a metal shed structure inside, located in an established layout with nearby independent houses and greenery.. Neighbourhood: Established residential layout near Thondamuthur main junction in Coimbatore, close to schools, colleges, hospitals, and bus stands.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Reveal the actual layout entrance or frontage without redesigning it."
+    },
+    {
+      "name": "plots",
+      "prompt": "Photorealistic residential plotted development in Thondamuthur main junction, Coimbatore, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Open plot with boundary fencing/gates and a metal shed structure inside, located in an established layout with nearby independent houses and greenery.. Neighbourhood: Established residential layout near Thondamuthur main junction in Coimbatore, close to schools, colleges, hospitals, and bus stands.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show vacant plots, boundary markers and real terrain; do not place houses on the plots."
+    },
+    {
+      "name": "internal_road",
+      "prompt": "Photorealistic residential plotted development in Thondamuthur main junction, Coimbatore, Coimbatore, Tamil Nadu. Visible land and infrastructure consistent with: Open plot with boundary fencing/gates and a metal shed structure inside, located in an established layout with nearby independent houses and greenery.. Neighbourhood: Established residential layout near Thondamuthur main junction in Coimbatore, close to schools, colleges, hospitals, and bus stands.. Natural tropical daylight, accurate Indian road scale, realistic terrain and materials, no completed villa showcase, no interiors, no logos, no visible phone numbers, no misleading text, vertical composition. Show verified internal roads, drainage, utilities and plot edges only."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
