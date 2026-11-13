@@ -1,16 +1,18 @@
 {
   "analysis_provider": {
-    "last_alert_at": "2026-11-12T13:21:16.117635+00:00",
+    "last_alert_at": "2026-11-13T10:03:12.993935+00:00",
     "models": {
       "gemini-3.5-flash-lite": {
-        "budget_day": "2026-11-12",
-        "last_error": "Property video HTTP timeout/network error (ReadTimeout)",
-        "requests": 15
+        "blocked_reason": "provider_unavailable",
+        "blocked_until": "2026-11-13T10:13:12.634233+00:00",
+        "budget_day": "2026-11-13",
+        "last_error": "Property video analysis HTTP 503: gemini-3.5-flash-lite is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.",
+        "requests": 4
       },
       "gemini-3.6-flash": {
         "blocked_reason": "provider_unavailable",
-        "blocked_until": "2026-11-12T13:31:16.097448+00:00",
-        "budget_day": "2026-11-12",
+        "blocked_until": "2026-11-13T10:13:12.912718+00:00",
+        "budget_day": "2026-11-13",
         "last_error": "Property video analysis HTTP 503: gemini-3.6-flash is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.",
         "requests": 1
       }
@@ -1664,10 +1666,12 @@
       "status": "video_queued"
     },
     "ABZd7hsC-dk": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-11-13T07:54:47.718997+00:00",
-      "next_retry_at": "2026-11-13T07:54:47.718997+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-11-13T10:03:12.919285+00:00",
+      "last_error": "Property video analysis paused: gemini-3.5-flash-lite: provider_unavailable, gemini-3.6-flash: provider_unavailable. Next eligible retry: 13 Nov 2026 03:43 PM IST",
+      "next_retry_at": "2026-11-13T10:13:12.634233+00:00",
+      "status": "retry_pending"
     },
     "ACY2hKB0f5Q": {
       "attempts": 0,
@@ -5086,6 +5090,14 @@
       "last_error": "Error code: 429 - {'error': {'message': 'Your project has exceeded a quota. See https://ai.dev/rate-limit to manage your rate limits.', 'code': 'too_many_requests'}}",
       "next_retry_at": "2026-10-29T14:28:57.450788+00:00",
       "status": "retry_pending"
+    },
+    "UOkVVzeJlTA": {
+      "attempts": 0,
+      "completed_at": "2026-11-13T10:02:48.999806+00:00",
+      "first_seen_at": "2026-11-13T10:02:33.587365+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-11-13T10:02:33.587365+00:00",
+      "status": "video_queued"
     },
     "UTpVnJt363M": {
       "attempts": 0,
