@@ -3,9 +3,9 @@
     "last_alert_at": "2026-11-13T10:03:12.993935+00:00",
     "models": {
       "gemini-3.5-flash-lite": {
-        "budget_day": "2026-11-13",
+        "budget_day": "2026-11-14",
         "last_error": "Property video analysis HTTP 503: gemini-3.5-flash-lite is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.",
-        "requests": 16
+        "requests": 2
       },
       "gemini-3.6-flash": {
         "blocked_reason": "provider_unavailable",
@@ -3553,6 +3553,12 @@
       "next_retry_at": "2026-10-11T15:38:54.416553+00:00",
       "status": "discovered"
     },
+    "LSX9Qf4hKik": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-14T10:22:20.660160+00:00",
+      "next_retry_at": "2026-11-14T10:22:20.660160+00:00",
+      "status": "discovered"
+    },
     "LaCjsGr_y58": {
       "attempts": 0,
       "first_seen_at": "2026-11-10T09:46:05.725459+00:00",
@@ -4283,6 +4289,14 @@
       "next_retry_at": "2026-09-18T11:23:07.527208+00:00",
       "status": "video_queued"
     },
+    "PMnNA5OmdQ4": {
+      "attempts": 0,
+      "completed_at": "2026-11-14T10:22:31.916024+00:00",
+      "first_seen_at": "2026-11-14T10:22:20.660160+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-11-14T10:22:20.660160+00:00",
+      "status": "video_queued"
+    },
     "PNTtybJTcgk": {
       "attempts": 0,
       "completed_at": "2026-08-28T11:16:57.453034+00:00",
@@ -4539,6 +4553,12 @@
       "last_error": "",
       "next_retry_at": "2026-10-10T13:39:29.990521+00:00",
       "status": "video_queued"
+    },
+    "Qbi1NvQi2Cw": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-14T10:22:20.660160+00:00",
+      "next_retry_at": "2026-11-14T10:22:20.660160+00:00",
+      "status": "discovered"
     },
     "Qey-U5vvC_M": {
       "attempts": 0,
@@ -9653,6 +9673,14 @@
       "first_seen_at": "2026-11-08T06:44:40.279405+00:00",
       "next_retry_at": "2026-11-08T06:44:40.279405+00:00",
       "status": "discovered"
+    },
+    "tNX1TFAnL5g": {
+      "attempts": 0,
+      "completed_at": "2026-11-14T10:22:42.937273+00:00",
+      "first_seen_at": "2026-11-14T10:22:20.660160+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-11-14T10:22:20.660160+00:00",
+      "status": "video_queued"
     },
     "tTgkkQPNeCo": {
       "attempts": 0,
