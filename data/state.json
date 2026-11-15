@@ -5,7 +5,7 @@
       "gemini-3.5-flash-lite": {
         "budget_day": "2026-11-15",
         "last_error": "Property video analysis HTTP 503: gemini-3.5-flash-lite is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.",
-        "requests": 6
+        "requests": 8
       },
       "gemini-3.6-flash": {
         "blocked_reason": "provider_unavailable",
@@ -6477,9 +6477,11 @@
     },
     "aZL9pjbDYXQ": {
       "attempts": 0,
+      "completed_at": "2026-11-15T18:01:00.587486+00:00",
       "first_seen_at": "2026-11-15T17:07:09.308851+00:00",
+      "last_error": "",
       "next_retry_at": "2026-11-15T17:07:09.308851+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "aettwe-WfoA": {
       "attempts": 2,
@@ -10728,9 +10730,11 @@
     },
     "zhZ5T0vppAQ": {
       "attempts": 0,
+      "completed_at": "2026-11-15T18:01:22.063993+00:00",
       "first_seen_at": "2026-11-15T17:07:09.308851+00:00",
+      "last_error": "",
       "next_retry_at": "2026-11-15T17:07:09.308851+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "zlCG7ffral0": {
       "attempts": 0,
