@@ -3,9 +3,9 @@
     "last_alert_at": "2026-11-13T10:03:12.993935+00:00",
     "models": {
       "gemini-3.5-flash-lite": {
-        "budget_day": "2026-11-14",
+        "budget_day": "2026-11-15",
         "last_error": "Property video analysis HTTP 503: gemini-3.5-flash-lite is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.",
-        "requests": 16
+        "requests": 2
       },
       "gemini-3.6-flash": {
         "blocked_reason": "provider_unavailable",
@@ -2890,6 +2890,12 @@
       "next_retry_at": "2026-10-03T00:54:43.020188+00:00",
       "status": "discovered"
     },
+    "GTWyclK9TPA": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-15T09:21:38.296982+00:00",
+      "next_retry_at": "2026-11-15T09:21:38.296982+00:00",
+      "status": "discovered"
+    },
     "GVFQSRxHUgY": {
       "attempts": 1,
       "first_seen_at": "2026-10-14T08:03:05.177278+00:00",
@@ -4405,6 +4411,12 @@
       "next_retry_at": "2026-10-13T23:17:42.642351+00:00",
       "status": "discovered"
     },
+    "PqRvsbdOaa0": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-15T09:21:38.296982+00:00",
+      "next_retry_at": "2026-11-15T09:21:38.296982+00:00",
+      "status": "discovered"
+    },
     "PttTiHcqT-E": {
       "attempts": 0,
       "completed_at": "2026-08-05T11:13:26.903992+00:00",
@@ -5019,6 +5031,14 @@
       "next_retry_at": "2026-08-11T17:15:19.796976+00:00",
       "status": "video_queued"
     },
+    "T1g5xgfHWtc": {
+      "attempts": 0,
+      "completed_at": "2026-11-15T09:21:55.195741+00:00",
+      "first_seen_at": "2026-11-15T09:21:38.296982+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-11-15T09:21:38.296982+00:00",
+      "status": "video_queued"
+    },
     "T6n2DlPuomk": {
       "attempts": 0,
       "first_seen_at": "2026-10-25T21:16:10.179606+00:00",
@@ -5558,6 +5578,14 @@
       "last_error": "",
       "next_retry_at": "2026-08-05T13:39:42.793463+00:00",
       "status": "archived_non_target"
+    },
+    "WUn_53XdMSo": {
+      "attempts": 0,
+      "completed_at": "2026-11-15T09:21:47.762735+00:00",
+      "first_seen_at": "2026-11-15T09:21:38.296982+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-11-15T09:21:38.296982+00:00",
+      "status": "video_queued"
     },
     "WV23h0bx4c8": {
       "attempts": 0,
