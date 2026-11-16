@@ -2959,5 +2959,9 @@
       "published_at": "2026-11-15T03:57:16Z",
       "query": "shorts-backlog"
     }
-  ]
+  ],
+  "pending_delivery": {
+    "video_id": "-jkLX49uhe8",
+    "date_ist": "2026-11-17"
+  }
 }
