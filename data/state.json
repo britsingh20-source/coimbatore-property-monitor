@@ -3,9 +3,9 @@
     "last_alert_at": "2026-11-13T10:03:12.993935+00:00",
     "models": {
       "gemini-3.5-flash-lite": {
-        "budget_day": "2026-11-15",
+        "budget_day": "2026-11-16",
         "last_error": "Property video analysis HTTP 503: gemini-3.5-flash-lite is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.",
-        "requests": 10
+        "requests": 2
       },
       "gemini-3.6-flash": {
         "blocked_reason": "provider_unavailable",
@@ -1490,6 +1490,14 @@
       "first_seen_at": "2026-10-03T08:51:14.624873+00:00",
       "next_retry_at": "2026-10-03T08:51:14.624873+00:00",
       "status": "discovered"
+    },
+    "9-AG73ZZgk0": {
+      "attempts": 0,
+      "completed_at": "2026-11-16T09:39:11.828221+00:00",
+      "first_seen_at": "2026-11-16T09:38:42.225089+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-11-16T09:38:42.225089+00:00",
+      "status": "video_queued"
     },
     "91y0q3A7G8s": {
       "attempts": 0,
@@ -9213,6 +9221,12 @@
       "next_retry_at": "2026-10-14T08:03:05.177278+00:00",
       "status": "discovered"
     },
+    "pzAdI-nkMY4": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-16T09:38:42.225089+00:00",
+      "next_retry_at": "2026-11-16T09:38:42.225089+00:00",
+      "status": "discovered"
+    },
     "q-Iv-GfHODY": {
       "attempts": 0,
       "first_seen_at": "2026-11-03T17:50:40.006921+00:00",
@@ -9720,6 +9734,14 @@
       "next_retry_at": "2026-10-18T14:53:30.226055+00:00",
       "status": "discovered"
     },
+    "soLe0pdn5wk": {
+      "attempts": 0,
+      "completed_at": "2026-11-16T09:39:00.634589+00:00",
+      "first_seen_at": "2026-11-16T09:38:42.225089+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-11-16T09:38:42.225089+00:00",
+      "status": "video_queued"
+    },
     "su-FqnUTWjw": {
       "attempts": 0,
       "first_seen_at": "2026-10-25T10:11:05.537118+00:00",
@@ -9765,6 +9787,12 @@
       "last_error": "",
       "next_retry_at": "2026-10-03T12:04:21.172019+00:00",
       "status": "video_queued"
+    },
+    "syWbw4813Ds": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-16T09:38:42.225089+00:00",
+      "next_retry_at": "2026-11-16T09:38:42.225089+00:00",
+      "status": "discovered"
     },
     "sz2StDaYOck": {
       "attempts": 0,
