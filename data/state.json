@@ -1,11 +1,11 @@
 {
   "analysis_provider": {
-    "last_alert_at": "2026-11-18T04:23:53.921244+00:00",
+    "last_alert_at": "2026-11-18T13:39:22.004139+00:00",
     "models": {
       "gemini-3.5-flash-lite": {
         "budget_day": "2026-11-18",
         "last_error": "Property video HTTP timeout/network error (ReadTimeout)",
-        "requests": 2
+        "requests": 4
       },
       "gemini-3.6-flash": {
         "blocked_reason": "provider_unavailable",
@@ -83,10 +83,12 @@
       "status": "discovered"
     },
     "-T-sXqL5BA4": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-11-18T13:08:56.829858+00:00",
-      "next_retry_at": "2026-11-18T13:08:56.829858+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-11-18T13:39:16.796852+00:00",
+      "last_error": "Property analysis did not return a verified listing classification",
+      "next_retry_at": "2026-11-18T15:39:16.796865+00:00",
+      "status": "retry_pending"
     },
     "-TtBe4OlUeI": {
       "attempts": 0,
@@ -8856,9 +8858,11 @@
     },
     "mkZROXdLudE": {
       "attempts": 0,
+      "completed_at": "2026-11-18T13:39:21.994209+00:00",
       "first_seen_at": "2026-11-18T13:08:56.829858+00:00",
+      "last_error": "",
       "next_retry_at": "2026-11-18T13:08:56.829858+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "mnD_nJT81j4": {
       "attempts": 2,

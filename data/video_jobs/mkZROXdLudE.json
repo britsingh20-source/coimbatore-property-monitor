@@ -1,0 +1,116 @@
+{
+  "video_id": "mkZROXdLudE",
+  "source_url": "https://www.youtube.com/watch?v=mkZROXdLudE",
+  "property_location": "RS Puram, Cowley Brown Road, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Apartment",
+    "bhk": "4 BHK",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "2600 sq.ft to 3500 sq.ft",
+    "price": "Rs. 4 Crores to 6 Crores",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "NOT SPECIFIED",
+    "approval": "NOT SPECIFIED",
+    "floors": "NOT SPECIFIED",
+    "layout_distribution": "NOT SPECIFIED"
+  },
+  "verified_facts": "Located in RS Puram, Cowley Brown Road, Coimbatore, opposite Central Theatre., Property is an apartment concept with three units per floor (Unit A: 3500 sq.ft, Unit B: 2600 sq.ft, Unit C: 3400 sq.ft)., Starting price is 4 Crores up to 5.5 - 6 Crores., Features high-end specifications including Italian marble flooring and branded doors.",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "RS Puram, Cowley Brown Road, Coimbatore சைட்ல 4 BHK Apartment தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை Rs. 4 Crores to 6 Crores.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 2600 sq.ft to 3500 sq.ft இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ]
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/mkZROXdLudE/",
+  "optional_owned_audio": "assets/audio/mkZROXdLudE.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in RS Puram, Coimbatore, Tamil Nadu. Architecture consistent with: Urban city location in RS Puram near Central Theatre with wide asphalt roads and surrounding greenery.. Hard floor/layout lock: NOT SPECIFIED; NOT SPECIFIED. Neighbourhood: Prime commercial and residential hub in Coimbatore city center.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in RS Puram, Coimbatore, Tamil Nadu. Architecture consistent with: Urban city location in RS Puram near Central Theatre with wide asphalt roads and surrounding greenery.. Hard floor/layout lock: NOT SPECIFIED; NOT SPECIFIED. Neighbourhood: Prime commercial and residential hub in Coimbatore city center.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in RS Puram, Coimbatore, Tamil Nadu. Architecture consistent with: Urban city location in RS Puram near Central Theatre with wide asphalt roads and surrounding greenery.. Hard floor/layout lock: NOT SPECIFIED; NOT SPECIFIED. Neighbourhood: Prime commercial and residential hub in Coimbatore city center.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in RS Puram, Coimbatore, Tamil Nadu. Architecture consistent with: Urban city location in RS Puram near Central Theatre with wide asphalt roads and surrounding greenery.. Hard floor/layout lock: NOT SPECIFIED; NOT SPECIFIED. Neighbourhood: Prime commercial and residential hub in Coimbatore city center.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
