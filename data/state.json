@@ -3,11 +3,9 @@
     "last_alert_at": "2026-11-18T04:23:53.921244+00:00",
     "models": {
       "gemini-3.5-flash-lite": {
-        "blocked_reason": "provider_unavailable",
-        "blocked_until": "2026-11-18T04:32:32.659730+00:00",
         "budget_day": "2026-11-17",
         "last_error": "Property video HTTP timeout/network error (ReadTimeout)",
-        "requests": 12
+        "requests": 15
       },
       "gemini-3.6-flash": {
         "blocked_reason": "provider_unavailable",
@@ -2884,9 +2882,11 @@
     },
     "FzsXtpBexSY": {
       "attempts": 0,
+      "completed_at": "2026-11-18T04:48:16.863466+00:00",
       "first_seen_at": "2026-11-17T13:20:54.833919+00:00",
+      "last_error": "",
       "next_retry_at": "2026-11-17T13:20:54.833919+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "G33iOmnTabo": {
       "attempts": 0,
@@ -4845,11 +4845,12 @@
     },
     "RVqWhOZc9o8": {
       "attempts": 1,
+      "completed_at": "2026-11-18T04:45:42.684895+00:00",
       "first_seen_at": "2026-11-17T13:20:54.833919+00:00",
       "last_attempt_at": "2026-11-18T04:23:53.902687+00:00",
-      "last_error": "Property video analysis paused: gemini-3.5-flash-lite: provider_unavailable, gemini-3.6-flash: provider_unavailable. Next eligible retry: 18 Nov 2026 10:02 AM IST",
+      "last_error": "",
       "next_retry_at": "2026-11-18T04:32:32.659730+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "RbBq4EX2ffc": {
       "attempts": 0,
