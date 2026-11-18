@@ -1,18 +1,20 @@
 {
   "analysis_provider": {
-    "last_alert_at": "2026-11-17T14:58:51.725749+00:00",
+    "last_alert_at": "2026-11-18T04:23:53.921244+00:00",
     "models": {
       "gemini-3.5-flash-lite": {
+        "blocked_reason": "provider_unavailable",
+        "blocked_until": "2026-11-18T04:32:32.659730+00:00",
         "budget_day": "2026-11-17",
         "last_error": "Property video HTTP timeout/network error (ReadTimeout)",
-        "requests": 8
+        "requests": 12
       },
       "gemini-3.6-flash": {
         "blocked_reason": "provider_unavailable",
-        "blocked_until": "2026-11-17T15:08:51.582358+00:00",
+        "blocked_until": "2026-11-18T04:33:53.901169+00:00",
         "budget_day": "2026-11-17",
         "last_error": "Property video analysis HTTP 503: gemini-3.6-flash is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.",
-        "requests": 1
+        "requests": 2
       }
     }
   },
@@ -1370,6 +1372,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-08T18:51:41.114164+00:00",
       "status": "archived_non_target"
+    },
+    "88_vuq1H82o": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-18T04:17:34.419377+00:00",
+      "next_retry_at": "2026-11-18T04:17:34.419377+00:00",
+      "status": "discovered"
     },
     "890ekOUVer4": {
       "attempts": 0,
@@ -4836,10 +4844,12 @@
       "status": "video_queued"
     },
     "RVqWhOZc9o8": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-11-17T13:20:54.833919+00:00",
-      "next_retry_at": "2026-11-17T13:20:54.833919+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-11-18T04:23:53.902687+00:00",
+      "last_error": "Property video analysis paused: gemini-3.5-flash-lite: provider_unavailable, gemini-3.6-flash: provider_unavailable. Next eligible retry: 18 Nov 2026 10:02 AM IST",
+      "next_retry_at": "2026-11-18T04:32:32.659730+00:00",
+      "status": "retry_pending"
     },
     "RbBq4EX2ffc": {
       "attempts": 0,
@@ -6938,9 +6948,11 @@
     },
     "cgnLG-c26xY": {
       "attempts": 0,
+      "completed_at": "2026-11-18T04:19:27.495118+00:00",
       "first_seen_at": "2026-11-17T13:20:54.833919+00:00",
+      "last_error": "",
       "next_retry_at": "2026-11-17T13:20:54.833919+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "chxEiAv0D3k": {
       "attempts": 1,
