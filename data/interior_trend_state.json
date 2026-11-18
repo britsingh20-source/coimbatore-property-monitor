@@ -126,7 +126,8 @@
     "bYKT-eAn7gA",
     "jc8Zvmp_8Gw",
     "xAn59csh4gE",
-    "FXmSt6n3Q7g"
+    "FXmSt6n3Q7g",
+    "USlSgJWy6Co"
   ],
   "history": [
     {
@@ -763,6 +764,11 @@
       "video_id": "FXmSt6n3Q7g",
       "creator": "DesignCafe",
       "url": "https://www.youtube.com/watch?v=FXmSt6n3Q7g"
+    },
+    {
+      "video_id": "USlSgJWy6Co",
+      "creator": "DesignCafe",
+      "url": "https://www.youtube.com/watch?v=USlSgJWy6Co"
     }
   ],
   "night_channel_cursor": 1
