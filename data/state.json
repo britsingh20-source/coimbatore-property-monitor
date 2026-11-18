@@ -5,7 +5,7 @@
       "gemini-3.5-flash-lite": {
         "budget_day": "2026-11-18",
         "last_error": "Property video HTTP timeout/network error (ReadTimeout)",
-        "requests": 4
+        "requests": 6
       },
       "gemini-3.6-flash": {
         "blocked_reason": "provider_unavailable",
@@ -1261,6 +1261,12 @@
       "attempts": 0,
       "first_seen_at": "2026-09-25T13:53:36.893041+00:00",
       "next_retry_at": "2026-09-25T13:53:36.893041+00:00",
+      "status": "discovered"
+    },
+    "7Veq9tGihmY": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-18T21:26:00.329980+00:00",
+      "next_retry_at": "2026-11-18T21:26:00.329980+00:00",
       "status": "discovered"
     },
     "7begibeIYzQ": {
@@ -5754,6 +5760,14 @@
       "next_retry_at": "2026-10-13T23:17:42.642351+00:00",
       "status": "discovered"
     },
+    "WXGlAwWYA1M": {
+      "attempts": 0,
+      "completed_at": "2026-11-18T21:26:12.911087+00:00",
+      "first_seen_at": "2026-11-18T21:26:00.329980+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-11-18T21:26:00.329980+00:00",
+      "status": "video_queued"
+    },
     "WaNlt_XCS0I": {
       "attempts": 0,
       "completed_at": "2026-11-13T22:36:14.338235+00:00",
@@ -8592,6 +8606,14 @@
       "first_seen_at": "2026-10-01T11:50:29.430555+00:00",
       "next_retry_at": "2026-10-01T11:50:29.430555+00:00",
       "status": "discovered"
+    },
+    "lTm_inciGAM": {
+      "attempts": 0,
+      "completed_at": "2026-11-18T21:26:05.838609+00:00",
+      "first_seen_at": "2026-11-18T21:26:00.329980+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-11-18T21:26:00.329980+00:00",
+      "status": "video_queued"
     },
     "lV_oZChq4ZQ": {
       "attempts": 0,
