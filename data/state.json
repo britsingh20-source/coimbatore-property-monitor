@@ -1,18 +1,20 @@
 {
   "analysis_provider": {
-    "last_alert_at": "2026-11-19T12:13:17.051861+00:00",
+    "last_alert_at": "2026-11-19T21:00:40.579456+00:00",
     "models": {
       "gemini-3.5-flash-lite": {
+        "blocked_reason": "provider_unavailable",
+        "blocked_until": "2026-11-19T21:10:07.141979+00:00",
         "budget_day": "2026-11-19",
         "last_error": "Property video analysis HTTP 503: gemini-3.5-flash-lite is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.",
-        "requests": 5
+        "requests": 7
       },
       "gemini-3.6-flash": {
-        "blocked_reason": "provider_unavailable",
-        "blocked_until": "2026-11-19T12:23:17.032322+00:00",
+        "blocked_reason": "daily_quota",
+        "blocked_until": "2026-11-20T08:02:00+00:00",
         "budget_day": "2026-11-19",
-        "last_error": "Property video analysis HTTP 503: gemini-3.6-flash is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.",
-        "requests": 1
+        "last_error": "Property video analysis HTTP 429: Rate limit exceeded for model gemini-3.6-flash (limit: 20 requests per day on Free Tier). Please retry in 10h59m19s or upgrade your tier at https://ai.dev/rate-limit.",
+        "requests": 3
       }
     }
   },
@@ -6833,9 +6835,11 @@
     },
     "b_NDRvRQeEU": {
       "attempts": 0,
+      "completed_at": "2026-11-19T21:00:40.310821+00:00",
       "first_seen_at": "2026-11-19T12:12:26.366590+00:00",
+      "last_error": "",
       "next_retry_at": "2026-11-19T12:12:26.366590+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "b_vJJCLaCbQ": {
       "attempts": 0,
@@ -10728,10 +10732,12 @@
       "status": "discovered"
     },
     "wkqxbeW9hi8": {
-      "attempts": 0,
+      "attempts": 1,
       "first_seen_at": "2026-11-18T13:08:56.829858+00:00",
-      "next_retry_at": "2026-11-18T13:08:56.829858+00:00",
-      "status": "discovered"
+      "last_attempt_at": "2026-11-19T21:00:40.509293+00:00",
+      "last_error": "Property video analysis paused: gemini-3.5-flash-lite: provider_unavailable, gemini-3.6-flash: daily_quota. Next eligible retry: 20 Nov 2026 02:40 AM IST",
+      "next_retry_at": "2026-11-19T21:10:07.141979+00:00",
+      "status": "retry_pending"
     },
     "wqCgkf0h2S0": {
       "attempts": 0,
