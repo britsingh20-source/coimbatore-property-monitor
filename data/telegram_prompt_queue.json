@@ -2819,22 +2819,25 @@
       "video_id": "OFtNIw3YwUA"
     },
     {
-      "video_id": "_hsAbqhirOc",
+      "prompt_message_id": 1236,
       "sent_at": "2026-11-19T12:13:25.894652+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1236
+      "video_id": "_hsAbqhirOc"
     },
     {
-      "video_id": "Q0kiE-DhG3A",
+      "prompt_message_id": 1240,
       "sent_at": "2026-11-19T13:02:03.365457+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1240
+      "video_id": "Q0kiE-DhG3A"
     },
     {
-      "video_id": "qgU5Mxn3byE",
+      "prompt_message_id": 1242,
+      "r2_key": "social-ready/qgU5Mxn3byE.mp4",
       "sent_at": "2026-11-19T13:02:27.886546+00:00",
-      "status": "pending_mobile_upload",
-      "prompt_message_id": 1242
+      "status": "assigned_to_r2_upload",
+      "telegram_file_unique_id": "AgAD0yQAAjg2-Fc",
+      "uploaded_at": "2026-11-19T14:52:30.330649+00:00",
+      "video_id": "qgU5Mxn3byE"
     }
   ]
 }
