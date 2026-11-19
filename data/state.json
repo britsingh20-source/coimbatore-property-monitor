@@ -5,7 +5,7 @@
       "gemini-3.5-flash-lite": {
         "budget_day": "2026-11-18",
         "last_error": "Property video HTTP timeout/network error (ReadTimeout)",
-        "requests": 8
+        "requests": 10
       },
       "gemini-3.6-flash": {
         "blocked_reason": "provider_unavailable",
@@ -84,11 +84,12 @@
     },
     "-T-sXqL5BA4": {
       "attempts": 1,
+      "completed_at": "2026-11-19T03:28:58.360592+00:00",
       "first_seen_at": "2026-11-18T13:08:56.829858+00:00",
       "last_attempt_at": "2026-11-18T13:39:16.796852+00:00",
-      "last_error": "Property analysis did not return a verified listing classification",
+      "last_error": "",
       "next_retry_at": "2026-11-18T15:39:16.796865+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "-TtBe4OlUeI": {
       "attempts": 0,
@@ -4317,9 +4318,11 @@
     },
     "OFtNIw3YwUA": {
       "attempts": 0,
+      "completed_at": "2026-11-19T03:29:14.822645+00:00",
       "first_seen_at": "2026-11-18T13:08:56.829858+00:00",
+      "last_error": "",
       "next_retry_at": "2026-11-18T13:08:56.829858+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "OIWsymG-yIk": {
       "attempts": 2,

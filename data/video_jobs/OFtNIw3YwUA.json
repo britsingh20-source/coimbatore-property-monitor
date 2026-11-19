@@ -1,0 +1,116 @@
+{
+  "video_id": "OFtNIw3YwUA",
+  "source_url": "https://www.youtube.com/watch?v=OFtNIw3YwUA",
+  "property_location": "RS.Puram, Cowley Brown Road, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Apartment",
+    "bhk": "4 BHK",
+    "land_area": "NOT SPECIFIED",
+    "built_up_area": "2650 sq.ft. to 3484 sq.ft.",
+    "price": "Rs. 4.5 Crores to 6.5 Crores",
+    "facing": "NOT SPECIFIED",
+    "road_width": "NOT SPECIFIED",
+    "parking": "Pit parking with charging facility",
+    "approval": "NOT SPECIFIED",
+    "floors": "NOT SPECIFIED",
+    "layout_distribution": "NOT SPECIFIED"
+  },
+  "verified_facts": "Luxury spacious 4BHK apartments for sale in RS.Puram, Coimbatore by Siyal Developers, Apartment sizes range from 2650 sq.ft., 3300 sq.ft., up to 3484 sq.ft., Prices start from Rs. 4.5 Crores onwards up to 6.5 Crores, Features premium Italian marble flooring, Wiesmann doors, high-profile UPVC windows, Norisys switches, and Daikin VRV centralized air conditioning system, 24/7 drinking water supply and water softener, 25 feet boundary walls for height, security, and privacy, 15 exclusive apartments in the building",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "RS.Puram, Cowley Brown Road, Coimbatore சைட்ல 4 BHK Apartment தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை Rs. 4.5 Crores to 6.5 Crores.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 2650 sq.ft. to 3484 sq.ft. இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ]
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/OFtNIw3YwUA/",
+  "optional_owned_audio": "assets/audio/OFtNIw3YwUA.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in RS Puram, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-storey apartment building with spacious balconies, contemporary architectural facade, and paved driveway parking area. Hard floor/layout lock: NOT SPECIFIED; NOT SPECIFIED. Neighbourhood: Prime urban locality in RS.Puram, Coimbatore, situated on Cowley Brown Road opposite Central Theatre, with lush greenery and on-road access. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in RS Puram, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-storey apartment building with spacious balconies, contemporary architectural facade, and paved driveway parking area. Hard floor/layout lock: NOT SPECIFIED; NOT SPECIFIED. Neighbourhood: Prime urban locality in RS.Puram, Coimbatore, situated on Cowley Brown Road opposite Central Theatre, with lush greenery and on-road access. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in RS Puram, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-storey apartment building with spacious balconies, contemporary architectural facade, and paved driveway parking area. Hard floor/layout lock: NOT SPECIFIED; NOT SPECIFIED. Neighbourhood: Prime urban locality in RS.Puram, Coimbatore, situated on Cowley Brown Road opposite Central Theatre, with lush greenery and on-road access. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in RS Puram, Coimbatore, Tamil Nadu. Architecture consistent with: Modern multi-storey apartment building with spacious balconies, contemporary architectural facade, and paved driveway parking area. Hard floor/layout lock: NOT SPECIFIED; NOT SPECIFIED. Neighbourhood: Prime urban locality in RS.Puram, Coimbatore, situated on Cowley Brown Road opposite Central Theatre, with lush greenery and on-road access. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
