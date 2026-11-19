@@ -198,6 +198,14 @@
       "uploaded_at": "2026-08-28T11:08:00.192233+00:00",
       "video_id": "OKVLA31175c"
     },
+    "AgAD7yAAAjg28Fc": {
+      "r2_key": "social-ready/lTm_inciGAM.mp4",
+      "size": 14051320,
+      "status": "uploaded_exact_video_id",
+      "update_id": 399222277,
+      "uploaded_at": "2026-11-19T07:14:05.377939+00:00",
+      "video_id": "lTm_inciGAM"
+    },
     "AgAD9iEAArYXkVQ": {
       "paired_at": "2026-08-29T02:11:49.258681+00:00",
       "paired_by": "next_telegram_message",

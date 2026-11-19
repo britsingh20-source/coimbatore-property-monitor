@@ -1805,6 +1805,94 @@
         }
       }
     },
+    "social-ready/lTm_inciGAM.mp4": {
+      "content": {
+        "caption": "🏠 3 BHK Independent House in Thoppampatti, Thudiyalur, Coimbatore\n\n📍 Location: Thoppampatti, Thudiyalur, Coimbatore\n🏡 Property: 3 BHK Independent House\n📐 Land: 1,200 Sq.Ft (2.75 Cents)\n🏗️ Built-up: 2,047 Sq.Ft\n🧭 Facing: West Facing Plot with North Facing Main Door\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#ThoppampattiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#ThoppampattiProperty",
+          "#CoimbatoreProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "3 BHK Independent House in Thoppampatti, Thudiyalur, Coimbatore | Site Visit 9003787621",
+        "youtube_description": "3 BHK Independent House in Thoppampatti, Thudiyalur, Coimbatore. Watch the complete property walkthrough.\n\n📍 Location: Thoppampatti, Thudiyalur, Coimbatore\n🏡 Property: 3 BHK Independent House\n📐 Land: 1,200 Sq.Ft (2.75 Cents)\n🏗️ Built-up: 2,047 Sq.Ft\n🧭 Facing: West Facing Plot with North Facing Main Door\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #ThoppampattiProperty #CoimbatoreProperty #CoimbatoreRealEstate"
+      },
+      "etag": "ee7003fa744c4f6e4a191ce533469134-2",
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "channel": "real_estate",
+            "creation_id": "17908823364599708",
+            "media_id": "18130869376916147",
+            "processing": {
+              "id": "17908823364599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "verification": {
+              "id": "18130869376916147",
+              "media_product_type": "REELS",
+              "media_type": "VIDEO",
+              "permalink": "https://www.instagram.com/reel/Df6hRroEz3Z/",
+              "timestamp": "2026-11-19T07:15:10+0000"
+            }
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17908823532599708",
+            "media_id": "18116347489869291",
+            "processing": {
+              "id": "17908823532599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "verification": {
+              "id": "18116347489869291",
+              "media_product_type": "STORY",
+              "media_type": "VIDEO",
+              "permalink": "https://www.instagram.com/stories/smartbuycart7/4033683412300490961",
+              "timestamp": "2026-11-19T07:16:20+0000"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
+          "status": "credential_blocked"
+        }
+      },
+      "status": "ready_to_publish",
+      "video_id": "lTm_inciGAM",
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 249333,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 20.0,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 249217,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 20.0,
+          "height": 1280,
+          "width": 720
+        }
+      }
+    },
     "social-ready/ouPPfBoU6WU.mp4": {
       "content": {
         "caption": "🏠 ₹1.05 Crore 3BHK BHK Independent House in Pannimadai, Thudiyalur, Coimbatore\n\n📍 Location: Pannimadai, Thudiyalur, Coimbatore\n🏡 Property: 3BHK BHK Independent House\n💰 Price: ₹1.05 Crore\n🏗️ Built-up: 2000 sq ft\n🧭 Facing: North\n🚗 Parking: Covered car parking\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#PannimadaiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
