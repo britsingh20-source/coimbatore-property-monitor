@@ -3,11 +3,9 @@
     "last_alert_at": "2026-11-19T12:13:17.051861+00:00",
     "models": {
       "gemini-3.5-flash-lite": {
-        "blocked_reason": "provider_unavailable",
-        "blocked_until": "2026-11-19T12:23:08.074259+00:00",
         "budget_day": "2026-11-19",
         "last_error": "Property video analysis HTTP 503: gemini-3.5-flash-lite is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.",
-        "requests": 3
+        "requests": 5
       },
       "gemini-3.6-flash": {
         "blocked_reason": "provider_unavailable",
@@ -1499,6 +1497,12 @@
       "last_error": "",
       "next_retry_at": "2026-11-13T07:54:47.718997+00:00",
       "status": "video_queued"
+    },
+    "8RwMPy1adzQ": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-19T13:00:55.342804+00:00",
+      "next_retry_at": "2026-11-19T13:00:55.342804+00:00",
+      "status": "discovered"
     },
     "8YHdC84F8bc": {
       "attempts": 0,
@@ -4606,11 +4610,12 @@
     },
     "Q0kiE-DhG3A": {
       "attempts": 1,
+      "completed_at": "2026-11-19T13:01:58.516299+00:00",
       "first_seen_at": "2026-11-19T12:12:26.366590+00:00",
       "last_attempt_at": "2026-11-19T12:13:17.040750+00:00",
-      "last_error": "Property video analysis paused: gemini-3.5-flash-lite: provider_unavailable, gemini-3.6-flash: provider_unavailable. Next eligible retry: 19 Nov 2026 05:53 PM IST",
+      "last_error": "",
       "next_retry_at": "2026-11-19T12:23:08.074259+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "Q13u5PMhS70": {
       "attempts": 0,
@@ -9683,6 +9688,14 @@
       "first_seen_at": "2026-10-20T15:03:57.804219+00:00",
       "next_retry_at": "2026-10-20T15:03:57.804219+00:00",
       "status": "discovered"
+    },
+    "qgU5Mxn3byE": {
+      "attempts": 0,
+      "completed_at": "2026-11-19T13:01:43.712125+00:00",
+      "first_seen_at": "2026-11-19T13:00:55.342804+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-11-19T13:00:55.342804+00:00",
+      "status": "video_queued"
     },
     "qm2B136X8O8": {
       "attempts": 0,
