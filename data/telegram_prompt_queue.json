@@ -2838,6 +2838,12 @@
       "telegram_file_unique_id": "AgAD0yQAAjg2-Fc",
       "uploaded_at": "2026-11-19T14:52:30.330649+00:00",
       "video_id": "qgU5Mxn3byE"
+    },
+    {
+      "video_id": "b_NDRvRQeEU",
+      "sent_at": "2026-11-19T21:00:44.466438+00:00",
+      "status": "pending_mobile_upload",
+      "prompt_message_id": 1255
     }
   ]
 }
