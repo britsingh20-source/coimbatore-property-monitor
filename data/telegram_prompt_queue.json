@@ -2853,6 +2853,18 @@
       "telegram_file_unique_id": "AgAD3yUAAjg2-Fc",
       "uploaded_at": "2026-11-20T02:29:17.915755+00:00",
       "video_id": "8b4qeCb3aOs"
+    },
+    {
+      "video_id": "0Iw-gDnCk0Y",
+      "sent_at": "2026-11-20T10:35:04.035079+00:00",
+      "status": "pending_mobile_upload",
+      "prompt_message_id": 1267
+    },
+    {
+      "video_id": "2bfpdN-wJ-E",
+      "sent_at": "2026-11-20T10:35:19.792721+00:00",
+      "status": "pending_mobile_upload",
+      "prompt_message_id": 1269
     }
   ]
 }
