@@ -173,6 +173,94 @@
         }
       }
     },
+    "social-ready/8b4qeCb3aOs.mp4": {
+      "content": {
+        "caption": "🏠 1.50 CR 3 BHK Independent House in Vadamadurai, Thudiyalur, Coimbatore\n\n📍 Location: Vadamadurai, Thudiyalur, Coimbatore\n🏡 Property: 3 BHK Independent House\n💰 Price: 1.50 CR\n📐 Land: 3.5 cents\n🚗 Parking: 1 covered car parking\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#VadamaduraiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#VadamaduraiProperty",
+          "#CoimbatoreProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "1.50 CR 3 BHK Independent House in Vadamadurai, Thudiyalur, Coimbatore | Site Visit 9003787621",
+        "youtube_description": "1.50 CR 3 BHK Independent House in Vadamadurai, Thudiyalur, Coimbatore. Watch the complete property walkthrough.\n\n📍 Location: Vadamadurai, Thudiyalur, Coimbatore\n🏡 Property: 3 BHK Independent House\n💰 Price: 1.50 CR\n📐 Land: 3.5 cents\n🚗 Parking: 1 covered car parking\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #VadamaduraiProperty #CoimbatoreProperty #CoimbatoreRealEstate"
+      },
+      "etag": "5808cf002a98117ac5326994917331ce-2",
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "channel": "real_estate",
+            "creation_id": "17908940058599708",
+            "media_id": "18134964862705365",
+            "processing": {
+              "id": "17908940058599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "verification": {
+              "id": "18134964862705365",
+              "media_product_type": "REELS",
+              "media_type": "VIDEO",
+              "permalink": "https://www.instagram.com/reel/Df8leT0lHxN/",
+              "timestamp": "2026-11-20T02:30:12+0000"
+            }
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17908940271599708",
+            "media_id": "18050935889831502",
+            "processing": {
+              "id": "17908940271599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "verification": {
+              "id": "18050935889831502",
+              "media_product_type": "STORY",
+              "media_type": "VIDEO",
+              "permalink": "https://www.instagram.com/stories/smartbuycart7/4034264519840257928",
+              "timestamp": "2026-11-20T02:31:00+0000"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
+          "status": "credential_blocked"
+        }
+      },
+      "status": "ready_to_publish",
+      "video_id": "8b4qeCb3aOs",
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 249653,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 25.11,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 249462,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 25.133333,
+          "height": 1280,
+          "width": 720
+        }
+      }
+    },
     "social-ready/CCAZi6SNB-g.mp4": {
       "content": {
         "caption": "🏠 1.05 Crore 3 BHK Villa in Karamadai, Mettupalayam Road, Coimbatore\n\n📍 Location: Karamadai, Mettupalayam Road, Coimbatore\n🏡 Property: 3 BHK Villa\n💰 Price: 1.05 Crore\n📐 Land: 3.75 Cents\n🏗️ Built-up: 2800 sqft\n🧭 Facing: Main Door: East, Site: South East Corner\n🚗 Parking: Covered Car Parking (20'0\" x 16'0\")\n✅ Approval: DTCP approved site\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#KaramadaiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
