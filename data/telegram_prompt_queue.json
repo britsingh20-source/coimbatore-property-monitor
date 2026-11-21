@@ -2882,16 +2882,19 @@
       "video_id": "q7a2NvooQik"
     },
     {
-      "video_id": "YQCQAHoJrcE",
+      "prompt_message_id": 1292,
+      "r2_key": "social-ready/YQCQAHoJrcE.mp4",
       "sent_at": "2026-11-21T09:46:44.650736+00:00",
-      "status": "pending_mobile_upload",
-      "prompt_message_id": 1292
+      "status": "assigned_to_r2_upload",
+      "telegram_file_unique_id": "AgADkigAAmCIEVQ",
+      "uploaded_at": "2026-11-21T12:52:40.145371+00:00",
+      "video_id": "YQCQAHoJrcE"
     },
     {
-      "video_id": "wVJwt_LOdQU",
+      "prompt_message_id": 1294,
       "sent_at": "2026-11-21T09:46:55.969322+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1294
+      "video_id": "wVJwt_LOdQU"
     }
   ]
 }
