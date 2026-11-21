@@ -5,7 +5,7 @@
       "gemini-3.5-flash-lite": {
         "budget_day": "2026-11-21",
         "last_error": "Property video analysis HTTP 503: gemini-3.5-flash-lite is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.",
-        "requests": 2
+        "requests": 4
       },
       "gemini-3.6-flash": {
         "blocked_reason": "daily_quota",
@@ -1647,6 +1647,12 @@
       "last_error": "",
       "next_retry_at": "2026-08-23T09:45:50.479644+00:00",
       "status": "video_queued"
+    },
+    "95CJzMkEVlU": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-21T09:46:26.951886+00:00",
+      "next_retry_at": "2026-11-21T09:46:26.951886+00:00",
+      "status": "discovered"
     },
     "96aBzBdB7xg": {
       "attempts": 0,
@@ -6204,9 +6210,11 @@
     },
     "YQCQAHoJrcE": {
       "attempts": 0,
+      "completed_at": "2026-11-21T09:46:41.368103+00:00",
       "first_seen_at": "2026-11-21T08:48:56.986890+00:00",
+      "last_error": "",
       "next_retry_at": "2026-11-21T08:48:56.986890+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "YQU5LAvJGwM": {
       "attempts": 0,
@@ -10717,6 +10725,12 @@
       "next_retry_at": "2026-10-04T02:00:39.074314+00:00",
       "status": "discovered"
     },
+    "vb98tear07M": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-21T09:46:26.951886+00:00",
+      "next_retry_at": "2026-11-21T09:46:26.951886+00:00",
+      "status": "discovered"
+    },
     "vd3qtOXBPz8": {
       "attempts": 0,
       "first_seen_at": "2026-10-21T20:54:58.510920+00:00",
@@ -10860,6 +10874,14 @@
       "first_seen_at": "2026-10-12T15:20:19.386919+00:00",
       "next_retry_at": "2026-10-12T15:20:19.386919+00:00",
       "status": "discovered"
+    },
+    "wVJwt_LOdQU": {
+      "attempts": 0,
+      "completed_at": "2026-11-21T09:46:34.964229+00:00",
+      "first_seen_at": "2026-11-21T09:46:26.951886+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-11-21T09:46:26.951886+00:00",
+      "status": "video_queued"
     },
     "wWnAMQp8nOU": {
       "attempts": 0,
