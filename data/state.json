@@ -4,17 +4,17 @@
     "models": {
       "gemini-3.5-flash-lite": {
         "blocked_reason": "provider_unavailable",
-        "blocked_until": "2026-11-21T17:11:26.878277+00:00",
+        "blocked_until": "2026-11-21T17:39:15.361960+00:00",
         "budget_day": "2026-11-21",
         "last_error": "Property video analysis HTTP 503: gemini-3.5-flash-lite is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.",
-        "requests": 6
+        "requests": 8
       },
       "gemini-3.6-flash": {
         "blocked_reason": "provider_unavailable",
-        "blocked_until": "2026-11-21T17:11:30.266229+00:00",
+        "blocked_until": "2026-11-21T17:39:19.219268+00:00",
         "budget_day": "2026-11-21",
         "last_error": "Property video analysis HTTP 503: gemini-3.6-flash is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.",
-        "requests": 1
+        "requests": 2
       }
     }
   },
@@ -1786,6 +1786,12 @@
       "last_error": "",
       "next_retry_at": "2026-11-11T14:18:33.274510+00:00",
       "status": "video_queued"
+    },
+    "9ueadBhIZyY": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-21T17:29:09.374654+00:00",
+      "next_retry_at": "2026-11-21T17:29:09.374654+00:00",
+      "status": "discovered"
     },
     "9yUi2oshH2Y": {
       "attempts": 1,
@@ -5002,11 +5008,11 @@
       "status": "discovered"
     },
     "R0Qbi-f33gE": {
-      "attempts": 1,
+      "attempts": 2,
       "first_seen_at": "2026-11-21T17:01:20.638474+00:00",
-      "last_attempt_at": "2026-11-21T17:01:30.272440+00:00",
-      "last_error": "Property video analysis paused: gemini-3.5-flash-lite: provider_unavailable, gemini-3.6-flash: provider_unavailable. Next eligible retry: 21 Nov 2026 10:41 PM IST",
-      "next_retry_at": "2026-11-21T17:11:26.878277+00:00",
+      "last_attempt_at": "2026-11-21T17:29:19.221124+00:00",
+      "last_error": "Property video analysis paused: gemini-3.5-flash-lite: provider_unavailable, gemini-3.6-flash: provider_unavailable. Next eligible retry: 21 Nov 2026 11:09 PM IST",
+      "next_retry_at": "2026-11-21T17:39:15.361960+00:00",
       "status": "retry_pending"
     },
     "R5T3PnEnbbw": {
