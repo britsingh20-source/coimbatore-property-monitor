@@ -2958,6 +2958,12 @@
       "telegram_file_unique_id": "AgADByUAAgqrGFQ",
       "uploaded_at": "2026-11-22T13:39:30.691057+00:00",
       "video_id": "_bzICupk000"
+    },
+    {
+      "video_id": "Fb-l8nKFta4",
+      "sent_at": "2026-11-22T23:53:18.714384+00:00",
+      "status": "pending_mobile_upload",
+      "prompt_message_id": 1345
     }
   ]
 }
