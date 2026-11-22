@@ -4,17 +4,15 @@
     "models": {
       "gemini-3.5-flash-lite": {
         "blocked_reason": "provider_unavailable",
-        "blocked_until": "2026-11-21T23:23:23.608074+00:00",
+        "blocked_until": "2026-11-22T02:50:56.376113+00:00",
         "budget_day": "2026-11-21",
         "last_error": "Property video analysis HTTP 503: gemini-3.5-flash-lite is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.",
-        "requests": 12
+        "requests": 14
       },
       "gemini-3.6-flash": {
-        "blocked_reason": "provider_unavailable",
-        "blocked_until": "2026-11-21T23:23:33.729306+00:00",
         "budget_day": "2026-11-21",
         "last_error": "Property video analysis HTTP 503: gemini-3.6-flash is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.",
-        "requests": 5
+        "requests": 7
       }
     }
   },
@@ -1147,6 +1145,14 @@
       "first_seen_at": "2026-10-26T23:10:07.031610+00:00",
       "last_error": "",
       "next_retry_at": "2026-10-26T23:10:07.031610+00:00",
+      "status": "video_queued"
+    },
+    "6AoCyQH6qbA": {
+      "attempts": 0,
+      "completed_at": "2026-11-22T02:41:11.965876+00:00",
+      "first_seen_at": "2026-11-22T02:40:50.588671+00:00",
+      "last_error": "",
+      "next_retry_at": "2026-11-22T02:40:50.588671+00:00",
       "status": "video_queued"
     },
     "6DD3L7oGfCI": {
@@ -9533,11 +9539,12 @@
     },
     "odty_8ijvmc": {
       "attempts": 1,
+      "completed_at": "2026-11-22T02:41:36.153494+00:00",
       "first_seen_at": "2026-11-21T17:01:20.638474+00:00",
       "last_attempt_at": "2026-11-21T23:13:33.737309+00:00",
-      "last_error": "Property video analysis paused: gemini-3.5-flash-lite: provider_unavailable, gemini-3.6-flash: provider_unavailable. Next eligible retry: 22 Nov 2026 04:53 AM IST",
+      "last_error": "",
       "next_retry_at": "2026-11-21T23:23:23.608074+00:00",
-      "status": "retry_pending"
+      "status": "video_queued"
     },
     "ofcmpmVI1z8": {
       "attempts": 0,
