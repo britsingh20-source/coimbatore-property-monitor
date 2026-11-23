@@ -2999,6 +2999,18 @@
       "telegram_file_unique_id": "AgADrygAAmR8IFQ",
       "uploaded_at": "2026-11-23T10:50:56.189088+00:00",
       "video_id": "mf9mWEbJOf8"
+    },
+    {
+      "video_id": "170h5L0_fWA",
+      "sent_at": "2026-11-23T20:36:52.930741+00:00",
+      "status": "pending_mobile_upload",
+      "prompt_message_id": 1371
+    },
+    {
+      "video_id": "kN_-aS1ymXU",
+      "sent_at": "2026-11-23T20:37:04.798087+00:00",
+      "status": "pending_mobile_upload",
+      "prompt_message_id": 1373
     }
   ]
 }
