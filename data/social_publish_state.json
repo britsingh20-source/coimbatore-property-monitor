@@ -562,8 +562,54 @@
           "status": "published"
         },
         "youtube_short": {
-          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "credential_blocked"
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "₹2.30 Crore (Negotiable) 3 BHK Independent House in Saravanampatti, Near Kumaraguru College, Coimbatore, Tamil Nadu. Watch the complete property walkthrough.\n\n📍 Location: Saravanampatti, Near Kumaraguru College, Coimbatore, Tamil Nadu\n🏡 Property: 3 BHK Independent House\n💰 Price: ₹2.30 Crore (Negotiable)\n📐 Land: 3.75 Cents (1,645 sq.ft.)\n🏗️ Built-up: 3,100 sq.ft.\n🧭 Facing: East\n🚗 Parking: Covered Car Parking (20' x 17')\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #SaravanampattiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "₹2.30 Crore (Negotiable) 3 BHK Independent House in Saravanampatti, Near Kumaraguru College, Coimbatore, Tamil Nadu. Watch the complete property walkthrough.\n\n📍 Location: Saravanampatti, Near Kumaraguru College, Coimbatore, Tamil Nadu\n🏡 Property: 3 BHK Independent House\n💰 Price: ₹2.30 Crore (Negotiable)\n📐 Land: 3.75 Cents (1,645 sq.ft.)\n🏗️ Built-up: 3,100 sq.ft.\n🧭 Facing: East\n🚗 Parking: Covered Car Parking (20' x 17')\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #SaravanampattiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+                "title": "₹2.30 Crore (Negotiable) 3 BHK Independent House in Saravanampatti, Near Kumaraguru College, Coimbat"
+              },
+              "publishedAt": "2026-11-23T18:43:25Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/gM3c5Ysx_Xw/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/gM3c5Ysx_Xw/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/gM3c5Ysx_Xw/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "₹2.30 Crore (Negotiable) 3 BHK Independent House in Saravanampatti, Near Kumaraguru College, Coimbat"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "gM3c5Ysx_Xw"
+          },
+          "status": "published"
         }
       },
       "status": "ready_to_publish",
