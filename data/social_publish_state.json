@@ -2157,6 +2157,94 @@
         }
       }
     },
+    "social-ready/mf9mWEbJOf8.mp4": {
+      "content": {
+        "caption": "🏠 92 Lakhs 3 BHK Villa in Vadavalli, Coimbatore\n\n📍 Location: Vadavalli, Coimbatore\n🏡 Property: 3 BHK Villa\n💰 Price: 92 Lakhs\n📐 Land: 2.30 Cents (25'0\" x 40'0\")\n🏗️ Built-up: 1700 Sq.Ft.\n🧭 Facing: South facing site, East facing main door\n🚗 Parking: 1 Covered Car Parking\n✅ Approval: DTCP Approved\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#VadavalliProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+        "hashtags": [
+          "#VadavalliProperty",
+          "#CoimbatoreProperty",
+          "#CoimbatoreRealEstate"
+        ],
+        "title": "92 Lakhs 3 BHK Villa in Vadavalli, Coimbatore | Site Visit 9003787621",
+        "youtube_description": "92 Lakhs 3 BHK Villa in Vadavalli, Coimbatore. Watch the complete property walkthrough.\n\n📍 Location: Vadavalli, Coimbatore\n🏡 Property: 3 BHK Villa\n💰 Price: 92 Lakhs\n📐 Land: 2.30 Cents (25'0\" x 40'0\")\n🏗️ Built-up: 1700 Sq.Ft.\n🧭 Facing: South facing site, East facing main door\n🚗 Parking: 1 Covered Car Parking\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #VadavalliProperty #CoimbatoreProperty #CoimbatoreRealEstate"
+      },
+      "etag": "d0825d2f682833978716767d30714d47-2",
+      "match_analysis": {
+        "confidence": 1.0,
+        "method": "telegram_exact_video_id"
+      },
+      "platforms": {
+        "instagram_reel": {
+          "result": {
+            "channel": "real_estate",
+            "creation_id": "17909460435599708",
+            "media_id": "18138887527679439",
+            "processing": {
+              "id": "17909460435599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "verification": {
+              "id": "18138887527679439",
+              "media_product_type": "REELS",
+              "media_type": "VIDEO",
+              "permalink": "https://www.instagram.com/reel/DgFNSTTDo1W/",
+              "timestamp": "2026-11-23T10:52:05+0000"
+            }
+          },
+          "status": "published"
+        },
+        "instagram_story": {
+          "result": {
+            "creation_id": "17909460573599708",
+            "media_id": "18150794491495858",
+            "processing": {
+              "id": "17909460573599708",
+              "status": "Finished: Media has been uploaded and it is ready to be published.",
+              "status_code": "FINISHED"
+            },
+            "verification": {
+              "id": "18150794491495858",
+              "media_product_type": "STORY",
+              "media_type": "VIDEO",
+              "permalink": "https://www.instagram.com/stories/smartbuycart7/4036691399012898240",
+              "timestamp": "2026-11-23T10:52:40+0000"
+            }
+          },
+          "status": "published"
+        },
+        "youtube_short": {
+          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
+          "status": "credential_blocked"
+        }
+      },
+      "status": "ready_to_publish",
+      "video_id": "mf9mWEbJOf8",
+      "youtube_media": {
+        "audio_handling": "copied_original_aac",
+        "layout": "portrait_crop",
+        "output": {
+          "audio_bit_rate": 249136,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 20.444,
+          "height": 1920,
+          "width": 1080
+        },
+        "source": {
+          "audio_bit_rate": 248966,
+          "audio_channel_layout": "stereo",
+          "audio_channels": 2,
+          "audio_codec": "aac",
+          "audio_sample_rate": 48000,
+          "duration": 20.466667,
+          "height": 1280,
+          "width": 720
+        }
+      }
+    },
     "social-ready/ouPPfBoU6WU.mp4": {
       "content": {
         "caption": "🏠 ₹1.05 Crore 3BHK BHK Independent House in Pannimadai, Thudiyalur, Coimbatore\n\n📍 Location: Pannimadai, Thudiyalur, Coimbatore\n🏡 Property: 3BHK BHK Independent House\n💰 Price: ₹1.05 Crore\n🏗️ Built-up: 2000 sq ft\n🧭 Facing: North\n🚗 Parking: Covered car parking\n\n📞 Site visit and complete details: 9003787621\nAvailability, measurements, documents and final price must be verified during the site visit.\n\n#PannimadaiProperty #CoimbatoreProperty #CoimbatoreRealEstate",

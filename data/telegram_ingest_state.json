@@ -857,6 +857,14 @@
       "uploaded_at": "2026-09-03T14:11:39.154024+00:00",
       "video_id": "O2tiEbkdt5w"
     },
+    "AgADrygAAmR8IFQ": {
+      "r2_key": "social-ready/mf9mWEbJOf8.mp4",
+      "size": 15546382,
+      "status": "uploaded_exact_video_id",
+      "update_id": 399222291,
+      "uploaded_at": "2026-11-23T10:50:56.189088+00:00",
+      "video_id": "mf9mWEbJOf8"
+    },
     "AgADtSEAAmRQoVQ": {
       "paired_at": "2026-08-31T03:46:45.130495+00:00",
       "paired_by": "next_telegram_message",
