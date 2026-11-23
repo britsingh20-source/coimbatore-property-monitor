@@ -43,8 +43,54 @@
           "status": "published"
         },
         "youtube_short": {
-          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "credential_blocked"
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "Rs. 1.53 Crore (Negotiable) 3 BHK Independent House in Thoppampatti, Thudiyalur, Coimbatore, Tamil Nadu. Watch the complete property walkthrough.\n\n📍 Location: Thoppampatti, Thudiyalur, Coimbatore, Tamil Nadu\n🏡 Property: 3 BHK Independent House\n💰 Price: Rs. 1.53 Crore (Negotiable)\n📐 Land: 3.10 Cents (30 x 45 ft)\n🏗️ Built-up: 2650 Sq.Ft.\n🧭 Facing: North\n🚗 Parking: Covered Car Parking (19' x 13')\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #ThoppampattiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "Rs. 1.53 Crore (Negotiable) 3 BHK Independent House in Thoppampatti, Thudiyalur, Coimbatore, Tamil Nadu. Watch the complete property walkthrough.\n\n📍 Location: Thoppampatti, Thudiyalur, Coimbatore, Tamil Nadu\n🏡 Property: 3 BHK Independent House\n💰 Price: Rs. 1.53 Crore (Negotiable)\n📐 Land: 3.10 Cents (30 x 45 ft)\n🏗️ Built-up: 2650 Sq.Ft.\n🧭 Facing: North\n🚗 Parking: Covered Car Parking (19' x 13')\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #ThoppampattiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+                "title": "Rs. 1.53 Crore (Negotiable) 3 BHK Independent House in Thoppampatti, Thudiyalur, Coimbatore, Tamil N"
+              },
+              "publishedAt": "2026-11-23T18:53:14Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/90XttV_bIRE/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/90XttV_bIRE/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/90XttV_bIRE/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "Rs. 1.53 Crore (Negotiable) 3 BHK Independent House in Thoppampatti, Thudiyalur, Coimbatore, Tamil N"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "90XttV_bIRE"
+          },
+          "status": "published"
         }
       },
       "status": "ready_to_publish",
