@@ -1,0 +1,158 @@
+{
+  "video_id": "R_rw4XOY0fk",
+  "source_url": "https://www.youtube.com/watch?v=R_rw4XOY0fk",
+  "property_location": "Vadavalli, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Villa",
+    "bhk": "3 BHK",
+    "land_area": "2.30 Cents",
+    "built_up_area": "1700 sqft",
+    "price": "92 Lakhs",
+    "facing": "South site facing, East main door facing",
+    "road_width": "30 feet",
+    "parking": "1 Car parking",
+    "approval": "DTCP approved",
+    "floors": "G+1 duplex with open terrace",
+    "layout_distribution": "Ground Floor features a 10'0\"x14'0\" car parking portico, 16'0\"x16'0\" living hall with TV unit and Pooja cabinet, 10'0\"x8'0\" kitchen, dining/staircase hall, and 10'0\"x8'0\" bedroom with 4'0\"x6'0\" attached bathroom. First Floor features a central passage, 10'0\"x17'0\" bedroom with 4'0\"x8'0\" attached bathroom, 16'0\"x17'0\" bedroom with 6'0\"x7'0\" attached bathroom, 6'0\"x6'0\" private balcony, and staircase landing. Roof level is an open terrace accessed via an external metal spiral staircase."
+  },
+  "verified_facts": "3BHK Independent Villa located in Vadavalli, Coimbatore, Land area is 2.30 Cents (25'0\" x 40'0\"), Built-up area is 1700 sqft, South facing site with East facing main door, Price is 92 Lakhs (negotiable), DTCP approved site with 75% bank loan availability, 30 feet tar road in front of the house, Includes two 6,000-liter capacity water sumps",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Vadavalli, Coimbatore சைட்ல 3 BHK Villa தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை 92 Lakhs.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 2.30 Cents லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 1700 sqft இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "road",
+        "voice": "இதுல முக்கியமான விஷயம், முன்னாடி 30 feet ரோடு வசதி இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [],
+        "vfx": "road-measure",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு South site facing, East main door facing ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP approved இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ]
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/R_rw4XOY0fk/",
+  "optional_owned_audio": "assets/audio/R_rw4XOY0fk.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey elevation with cream and beige exterior paint, dark blue accent framing, stone cladding panel, toughened glass balcony railing, covered portico, and yellow iron gate.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor features a 10'0\"x14'0\" car parking portico, 16'0\"x16'0\" living hall with TV unit and Pooja cabinet, 10'0\"x8'0\" kitchen, dining/staircase hall, and 10'0\"x8'0\" bedroom with 4'0\"x6'0\" attached bathroom. First Floor features a central passage, 10'0\"x17'0\" bedroom with 4'0\"x8'0\" attached bathroom, 16'0\"x17'0\" bedroom with 6'0\"x7'0\" attached bathroom, 6'0\"x6'0\" private balcony, and staircase landing. Roof level is an open terrace accessed via an external metal spiral staircase.. Neighbourhood: Developing residential neighborhood in Vadavalli, Coimbatore, set along a 30-foot tar road near local shops, bus stop, and main road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey elevation with cream and beige exterior paint, dark blue accent framing, stone cladding panel, toughened glass balcony railing, covered portico, and yellow iron gate.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor features a 10'0\"x14'0\" car parking portico, 16'0\"x16'0\" living hall with TV unit and Pooja cabinet, 10'0\"x8'0\" kitchen, dining/staircase hall, and 10'0\"x8'0\" bedroom with 4'0\"x6'0\" attached bathroom. First Floor features a central passage, 10'0\"x17'0\" bedroom with 4'0\"x8'0\" attached bathroom, 16'0\"x17'0\" bedroom with 6'0\"x7'0\" attached bathroom, 6'0\"x6'0\" private balcony, and staircase landing. Roof level is an open terrace accessed via an external metal spiral staircase.. Neighbourhood: Developing residential neighborhood in Vadavalli, Coimbatore, set along a 30-foot tar road near local shops, bus stop, and main road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey elevation with cream and beige exterior paint, dark blue accent framing, stone cladding panel, toughened glass balcony railing, covered portico, and yellow iron gate.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor features a 10'0\"x14'0\" car parking portico, 16'0\"x16'0\" living hall with TV unit and Pooja cabinet, 10'0\"x8'0\" kitchen, dining/staircase hall, and 10'0\"x8'0\" bedroom with 4'0\"x6'0\" attached bathroom. First Floor features a central passage, 10'0\"x17'0\" bedroom with 4'0\"x8'0\" attached bathroom, 16'0\"x17'0\" bedroom with 6'0\"x7'0\" attached bathroom, 6'0\"x6'0\" private balcony, and staircase landing. Roof level is an open terrace accessed via an external metal spiral staircase.. Neighbourhood: Developing residential neighborhood in Vadavalli, Coimbatore, set along a 30-foot tar road near local shops, bus stop, and main road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Vadavalli, Coimbatore, Tamil Nadu. Architecture consistent with: Two-storey elevation with cream and beige exterior paint, dark blue accent framing, stone cladding panel, toughened glass balcony railing, covered portico, and yellow iron gate.. Hard floor/layout lock: G+1 duplex with open terrace; Ground Floor features a 10'0\"x14'0\" car parking portico, 16'0\"x16'0\" living hall with TV unit and Pooja cabinet, 10'0\"x8'0\" kitchen, dining/staircase hall, and 10'0\"x8'0\" bedroom with 4'0\"x6'0\" attached bathroom. First Floor features a central passage, 10'0\"x17'0\" bedroom with 4'0\"x8'0\" attached bathroom, 16'0\"x17'0\" bedroom with 6'0\"x7'0\" attached bathroom, 6'0\"x6'0\" private balcony, and staircase landing. Roof level is an open terrace accessed via an external metal spiral staircase.. Neighbourhood: Developing residential neighborhood in Vadavalli, Coimbatore, set along a 30-foot tar road near local shops, bus stop, and main road.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
