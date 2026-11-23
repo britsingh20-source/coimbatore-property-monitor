@@ -1,13 +1,13 @@
 {
   "analysis_provider": {
-    "last_alert_at": "2026-11-22T18:06:00.585950+00:00",
+    "last_alert_at": "2026-11-23T00:50:02.845448+00:00",
     "models": {
       "gemini-3.5-flash-lite": {
         "blocked_reason": "provider_unavailable",
-        "blocked_until": "2026-11-23T00:03:00.549366+00:00",
+        "blocked_until": "2026-11-23T01:00:02.799448+00:00",
         "budget_day": "2026-11-22",
         "last_error": "Property video analysis HTTP 503: gemini-3.5-flash-lite is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.",
-        "requests": 11
+        "requests": 13
       },
       "gemini-3.6-flash": {
         "blocked_reason": "daily_quota",
@@ -5173,11 +5173,11 @@
       "status": "discovered"
     },
     "RsIvYmYS1eQ": {
-      "attempts": 1,
+      "attempts": 2,
       "first_seen_at": "2026-11-22T18:04:24.768159+00:00",
-      "last_attempt_at": "2026-11-22T23:53:16.253468+00:00",
-      "last_error": "Property video analysis paused: gemini-3.5-flash-lite: provider_unavailable, gemini-3.6-flash: daily_quota. Next eligible retry: 23 Nov 2026 05:33 AM IST",
-      "next_retry_at": "2026-11-23T00:03:00.549366+00:00",
+      "last_attempt_at": "2026-11-23T00:50:02.829833+00:00",
+      "last_error": "Property video analysis paused: gemini-3.5-flash-lite: provider_unavailable, gemini-3.6-flash: daily_quota. Next eligible retry: 23 Nov 2026 06:30 AM IST",
+      "next_retry_at": "2026-11-23T01:00:02.799448+00:00",
       "status": "retry_pending"
     },
     "RwicCx91SWg": {
