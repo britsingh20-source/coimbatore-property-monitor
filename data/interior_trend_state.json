@@ -131,7 +131,8 @@
     "FrDSv5OPiY4",
     "WqyWczdjNSI",
     "_mx1lqWC_CU",
-    "eu96q_nA7NE"
+    "eu96q_nA7NE",
+    "7RjmAJt2O2w"
   ],
   "history": [
     {
@@ -793,6 +794,11 @@
       "video_id": "eu96q_nA7NE",
       "creator": "Ridhi Khosla Jalan",
       "url": "https://www.youtube.com/watch?v=eu96q_nA7NE"
+    },
+    {
+      "video_id": "7RjmAJt2O2w",
+      "creator": "DesignCafe",
+      "url": "https://www.youtube.com/watch?v=7RjmAJt2O2w"
     }
   ],
   "night_channel_cursor": 1
