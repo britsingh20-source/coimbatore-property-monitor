@@ -442,8 +442,54 @@
           "status": "published"
         },
         "youtube_short": {
-          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "credential_blocked"
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "1.05 Crore 3 BHK Villa in Karamadai, Mettupalayam Road, Coimbatore. Watch the complete property walkthrough.\n\n📍 Location: Karamadai, Mettupalayam Road, Coimbatore\n🏡 Property: 3 BHK Villa\n💰 Price: 1.05 Crore\n📐 Land: 3.75 Cents\n🏗️ Built-up: 2800 sqft\n🧭 Facing: Main Door: East, Site: South East Corner\n🚗 Parking: Covered Car Parking (20'0\" x 16'0\")\n✅ Approval: DTCP approved site\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #KaramadaiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "1.05 Crore 3 BHK Villa in Karamadai, Mettupalayam Road, Coimbatore. Watch the complete property walkthrough.\n\n📍 Location: Karamadai, Mettupalayam Road, Coimbatore\n🏡 Property: 3 BHK Villa\n💰 Price: 1.05 Crore\n📐 Land: 3.75 Cents\n🏗️ Built-up: 2800 sqft\n🧭 Facing: Main Door: East, Site: South East Corner\n🚗 Parking: Covered Car Parking (20'0\" x 16'0\")\n✅ Approval: DTCP approved site\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #KaramadaiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+                "title": "1.05 Crore 3 BHK Villa in Karamadai, Mettupalayam Road, Coimbatore | Site Visit 9003787621"
+              },
+              "publishedAt": "2026-11-23T19:10:46Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/DKLjIy7e6eM/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/DKLjIy7e6eM/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/DKLjIy7e6eM/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "1.05 Crore 3 BHK Villa in Karamadai, Mettupalayam Road, Coimbatore | Site Visit 9003787621"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "DKLjIy7e6eM"
+          },
+          "status": "published"
         }
       },
       "status": "ready_to_publish",

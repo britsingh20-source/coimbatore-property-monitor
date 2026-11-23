@@ -986,10 +986,11 @@
       "prompt_message_id": 600,
       "r2_key": "social-ready/CCAZi6SNB-g.mp4",
       "sent_at": "2026-09-17T14:53:15.603343+00:00",
-      "status": "assigned_to_r2_upload",
+      "status": "published",
       "telegram_file_unique_id": "AgAD-iEAApsdaVU",
       "uploaded_at": "2026-09-18T02:16:06.196929+00:00",
-      "video_id": "CCAZi6SNB-g"
+      "video_id": "CCAZi6SNB-g",
+      "prompt_delete_error": "Bad Request: message can't be deleted for everyone"
     },
     {
       "prompt_message_id": 612,
