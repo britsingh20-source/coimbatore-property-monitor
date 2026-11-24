@@ -3020,6 +3020,15 @@
       "telegram_file_unique_id": "AgADrCYAAmR8KFQ",
       "uploaded_at": "2026-11-24T02:16:36.954070+00:00",
       "video_id": "YUfXHGfk16o"
+    },
+    {
+      "r2_key": "social-ready/vnOM5_RdQX0.mp4",
+      "recovered_from_job_registry": true,
+      "sent_at": "2026-11-24T14:20:50.049114+00:00",
+      "status": "published",
+      "telegram_file_unique_id": "AgADSSkAAmR8KFQ",
+      "uploaded_at": "2026-11-24T14:20:57.976515+00:00",
+      "video_id": "vnOM5_RdQX0"
     }
   ]
 }

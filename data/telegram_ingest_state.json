@@ -410,6 +410,14 @@
       "status": "rejected_too_large",
       "update_id": 789574033
     },
+    "AgADSSkAAmR8KFQ": {
+      "r2_key": "social-ready/vnOM5_RdQX0.mp4",
+      "size": 16259932,
+      "status": "uploaded_exact_video_id",
+      "update_id": 399222297,
+      "uploaded_at": "2026-11-24T14:20:57.976515+00:00",
+      "video_id": "vnOM5_RdQX0"
+    },
     "AgADUSIAAjekeVQ": {
       "paired_at": "2026-08-30T03:28:18.010640+00:00",
       "paired_by": "next_telegram_message",
