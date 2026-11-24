@@ -845,6 +845,14 @@
       "uploaded_at": "2026-09-05T04:13:21.715256+00:00",
       "video_id": "osMfPx-K60Q"
     },
+    "AgADrCYAAmR8KFQ": {
+      "r2_key": "social-ready/YUfXHGfk16o.mp4",
+      "size": 15962010,
+      "status": "uploaded_exact_video_id",
+      "update_id": 399222295,
+      "uploaded_at": "2026-11-24T02:16:36.954070+00:00",
+      "video_id": "YUfXHGfk16o"
+    },
     "AgADriEAAmSZyFQ": {
       "paired_at": "2026-09-03T04:58:55.690Z",
       "paired_by": "manual_recovery_user_confirmed_exact_caption_screenshot",
