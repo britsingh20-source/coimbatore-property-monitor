@@ -704,8 +704,54 @@
           "status": "published"
         },
         "youtube_short": {
-          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "credential_blocked"
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "78 Lakhs 3 BHK Independent House in Karamadai, Coimbatore. Watch the complete property walkthrough.\n\n📍 Location: Karamadai, Coimbatore\n🏡 Property: 3 BHK Independent House\n💰 Price: 78 Lakhs\n📐 Land: 4 cents (1750 sq ft)\n🏗️ Built-up: 1500 sq ft\n🧭 Facing: East\n🚗 Parking: 1 portico\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #KaramadaiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "78 Lakhs 3 BHK Independent House in Karamadai, Coimbatore. Watch the complete property walkthrough.\n\n📍 Location: Karamadai, Coimbatore\n🏡 Property: 3 BHK Independent House\n💰 Price: 78 Lakhs\n📐 Land: 4 cents (1750 sq ft)\n🏗️ Built-up: 1500 sq ft\n🧭 Facing: East\n🚗 Parking: 1 portico\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #KaramadaiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+                "title": "78 Lakhs 3 BHK Independent House in Karamadai, Coimbatore | Site Visit 9003787621"
+              },
+              "publishedAt": "2026-11-25T18:14:59Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/gTUgFPPiXAg/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/gTUgFPPiXAg/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/gTUgFPPiXAg/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "78 Lakhs 3 BHK Independent House in Karamadai, Coimbatore | Site Visit 9003787621"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "gTUgFPPiXAg"
+          },
+          "status": "published"
         }
       },
       "status": "ready_to_publish",
