@@ -1341,8 +1341,54 @@
           "status": "published"
         },
         "youtube_short": {
-          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "credential_blocked"
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "₹65 Lakhs 2 BHK Independent House in Maniakarampalayam, Near Thudiyalur, Coimbatore. Watch the complete property walkthrough.\n\n📍 Location: Maniakarampalayam, Near Thudiyalur, Coimbatore\n🏡 Property: 2 BHK Independent House\n💰 Price: ₹65 Lakhs\n📐 Land: 3 Cents\n🏗️ Built-up: 1166 sqft\n🧭 Facing: South (Site), East (Main Door)\n🚗 Parking: Covered Car Parking\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #ManiakarampalayamProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "₹65 Lakhs 2 BHK Independent House in Maniakarampalayam, Near Thudiyalur, Coimbatore. Watch the complete property walkthrough.\n\n📍 Location: Maniakarampalayam, Near Thudiyalur, Coimbatore\n🏡 Property: 2 BHK Independent House\n💰 Price: ₹65 Lakhs\n📐 Land: 3 Cents\n🏗️ Built-up: 1166 sqft\n🧭 Facing: South (Site), East (Main Door)\n🚗 Parking: Covered Car Parking\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #ManiakarampalayamProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+                "title": "₹65 Lakhs 2 BHK Independent House in Maniakarampalayam, Near Thudiyalur, Coimbatore | Site Visit 900"
+              },
+              "publishedAt": "2026-11-25T18:38:44Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/G7T8si3Evuk/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/G7T8si3Evuk/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/G7T8si3Evuk/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "₹65 Lakhs 2 BHK Independent House in Maniakarampalayam, Near Thudiyalur, Coimbatore | Site Visit 900"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "G7T8si3Evuk"
+          },
+          "status": "published"
         }
       },
       "status": "ready_to_publish",
