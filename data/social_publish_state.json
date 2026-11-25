@@ -1097,8 +1097,54 @@
           "status": "published"
         },
         "youtube_short": {
-          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "credential_blocked"
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "54 Lakhs 2 BHK Independent House in Veerapandi Pirivu, Near Mettupalayam Road, Coimbatore, Tamil Nadu. Watch the complete property walkthrough.\n\n📍 Location: Veerapandi Pirivu, Near Mettupalayam Road, Coimbatore, Tamil Nadu\n🏡 Property: 2 BHK Independent House\n💰 Price: 54 Lakhs\n📐 Land: 2.75 Cents\n🏗️ Built-up: 1110 sqft\n🧭 Facing: North\n🚗 Parking: Covered car parking porch\n✅ Approval: DTCP approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #VeerapandiPirivuProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "54 Lakhs 2 BHK Independent House in Veerapandi Pirivu, Near Mettupalayam Road, Coimbatore, Tamil Nadu. Watch the complete property walkthrough.\n\n📍 Location: Veerapandi Pirivu, Near Mettupalayam Road, Coimbatore, Tamil Nadu\n🏡 Property: 2 BHK Independent House\n💰 Price: 54 Lakhs\n📐 Land: 2.75 Cents\n🏗️ Built-up: 1110 sqft\n🧭 Facing: North\n🚗 Parking: Covered car parking porch\n✅ Approval: DTCP approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #VeerapandiPirivuProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+                "title": "54 Lakhs 2 BHK Independent House in Veerapandi Pirivu, Near Mettupalayam Road, Coimbatore, Tamil Nad"
+              },
+              "publishedAt": "2026-11-25T18:23:57Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/iC8XO2C3ogs/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/iC8XO2C3ogs/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/iC8XO2C3ogs/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "54 Lakhs 2 BHK Independent House in Veerapandi Pirivu, Near Mettupalayam Road, Coimbatore, Tamil Nad"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "iC8XO2C3ogs"
+          },
+          "status": "published"
         }
       },
       "status": "ready_to_publish",
