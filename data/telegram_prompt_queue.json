@@ -971,10 +971,11 @@
       "prompt_message_id": 590,
       "r2_key": "social-ready/CLp9Pohl8No.mp4",
       "sent_at": "2026-09-17T13:34:13.479979+00:00",
-      "status": "assigned_to_r2_upload",
+      "status": "published",
       "telegram_file_unique_id": "AgADmCcAApsdYVU",
       "uploaded_at": "2026-09-17T15:26:55.792604+00:00",
-      "video_id": "CLp9Pohl8No"
+      "video_id": "CLp9Pohl8No",
+      "prompt_delete_error": "Bad Request: message can't be deleted for everyone"
     },
     {
       "prompt_message_id": 597,
