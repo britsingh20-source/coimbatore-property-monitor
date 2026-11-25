@@ -3031,16 +3031,25 @@
       "video_id": "vnOM5_RdQX0"
     },
     {
-      "video_id": "-oU2oau-TjM",
+      "prompt_message_id": 1396,
       "sent_at": "2026-11-24T17:40:41.547713+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1396
+      "video_id": "-oU2oau-TjM"
     },
     {
-      "video_id": "TeXCnMqz-O0",
+      "prompt_message_id": 1398,
       "sent_at": "2026-11-24T17:40:54.601915+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1398
+      "video_id": "TeXCnMqz-O0"
+    },
+    {
+      "r2_key": "social-ready/iPe-txZGEhk.mp4",
+      "recovered_from_job_registry": true,
+      "sent_at": "2026-11-25T02:54:55.692736+00:00",
+      "status": "published",
+      "telegram_file_unique_id": "AgADLjQAAuUIMVQ",
+      "uploaded_at": "2026-11-25T02:55:04.046636+00:00",
+      "video_id": "iPe-txZGEhk"
     }
   ]
 }
