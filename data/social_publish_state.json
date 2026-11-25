@@ -1217,8 +1217,54 @@
           "status": "published"
         },
         "youtube_short": {
-          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "credential_blocked"
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "₹6.50 Lakhs per cent Residential Plot in Sulur, Kannampalayam, Coimbatore, Tamil Nadu. Watch the complete property walkthrough.\n\n📍 Location: Sulur, Kannampalayam, Coimbatore, Tamil Nadu\n🏡 Property: Residential Plot\n💰 Price: ₹6.50 Lakhs per cent\n🛣️ Road: 33 feet\n✅ Approval: DTCP & RERA Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #SulurProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "₹6.50 Lakhs per cent Residential Plot in Sulur, Kannampalayam, Coimbatore, Tamil Nadu. Watch the complete property walkthrough.\n\n📍 Location: Sulur, Kannampalayam, Coimbatore, Tamil Nadu\n🏡 Property: Residential Plot\n💰 Price: ₹6.50 Lakhs per cent\n🛣️ Road: 33 feet\n✅ Approval: DTCP & RERA Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #SulurProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+                "title": "₹6.50 Lakhs per cent Residential Plot in Sulur, Kannampalayam, Coimbatore, Tamil Nadu | Site Visit 9"
+              },
+              "publishedAt": "2026-11-25T18:31:34Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/vFSF57cUdBc/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/vFSF57cUdBc/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/vFSF57cUdBc/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "₹6.50 Lakhs per cent Residential Plot in Sulur, Kannampalayam, Coimbatore, Tamil Nadu | Site Visit 9"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "vFSF57cUdBc"
+          },
+          "status": "published"
         }
       },
       "status": "ready_to_publish",
