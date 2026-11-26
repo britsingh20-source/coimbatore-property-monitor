@@ -1478,10 +1478,11 @@
       "prompt_message_id": 9,
       "r2_key": "social-ready/TxfvE75rWNg.mp4",
       "sent_at": "2026-10-01T18:40:08.461409+00:00",
-      "status": "assigned_to_r2_upload",
+      "status": "published",
       "telegram_file_unique_id": "AgADBCQAAh91YFY",
       "uploaded_at": "2026-10-12T13:56:41.794341+00:00",
-      "video_id": "TxfvE75rWNg"
+      "video_id": "TxfvE75rWNg",
+      "prompt_delete_error": "Bad Request: message can't be deleted for everyone"
     },
     {
       "prompt_delete_error": "Bad Request: message can't be deleted for everyone",

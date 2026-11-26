@@ -1771,11 +1771,57 @@
           "status": "published"
         },
         "youtube_short": {
-          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "credential_blocked"
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "2 BHK Villa in Karamadai. Watch the complete property walkthrough.\n\n📍 Location: Karamadai\n🏡 Property: 2 BHK Villa\n📐 Land: 3 Cents\n🧭 Facing: East\n🚗 Parking: Covered portico car parking\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #KaramadaiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "2 BHK Villa in Karamadai. Watch the complete property walkthrough.\n\n📍 Location: Karamadai\n🏡 Property: 2 BHK Villa\n📐 Land: 3 Cents\n🧭 Facing: East\n🚗 Parking: Covered portico car parking\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #KaramadaiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+                "title": "2 BHK Villa in Karamadai | Site Visit 9003787621"
+              },
+              "publishedAt": "2026-11-26T13:41:01Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/i2hqak1vC2g/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/i2hqak1vC2g/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/i2hqak1vC2g/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "2 BHK Villa in Karamadai | Site Visit 9003787621"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "i2hqak1vC2g"
+          },
+          "status": "published"
         }
       },
-      "status": "visual_policy_passed",
+      "status": "ready_to_publish",
       "video_id": "TxfvE75rWNg",
       "visual_compliance": {
         "ceremonial_markings_present": false,
