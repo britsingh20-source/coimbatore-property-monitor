@@ -1479,11 +1479,57 @@
           "status": "published"
         },
         "youtube_short": {
-          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "credential_blocked"
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "2BHK BHK Villa in Veerapandi. Watch the complete property walkthrough.\n\n📍 Location: Veerapandi\n🏡 Property: 2BHK BHK Villa\n📐 Land: 3.25 Cents\n🧭 Facing: East\n🚗 Parking: Car parking portico\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #VeerapandiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "2BHK BHK Villa in Veerapandi. Watch the complete property walkthrough.\n\n📍 Location: Veerapandi\n🏡 Property: 2BHK BHK Villa\n📐 Land: 3.25 Cents\n🧭 Facing: East\n🚗 Parking: Car parking portico\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #VeerapandiProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+                "title": "2BHK BHK Villa in Veerapandi | Site Visit 9003787621"
+              },
+              "publishedAt": "2026-11-26T13:34:48Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/rl9oVTNOFBQ/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/rl9oVTNOFBQ/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/rl9oVTNOFBQ/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "2BHK BHK Villa in Veerapandi | Site Visit 9003787621"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "rl9oVTNOFBQ"
+          },
+          "status": "published"
         }
       },
-      "status": "visual_policy_passed",
+      "status": "ready_to_publish",
       "video_id": "OaoigaZDwus",
       "visual_compliance": {
         "ceremonial_markings_present": false,
