@@ -5,7 +5,7 @@
       "gemini-3.5-flash-lite": {
         "budget_day": "2026-11-26",
         "last_error": "Property video analysis HTTP 503: gemini-3.5-flash-lite is currently experiencing high demand, spikes in demand are usually temporary. Please try again later.",
-        "requests": 2
+        "requests": 4
       },
       "gemini-3.6-flash": {
         "blocked_reason": "provider_unavailable",
@@ -509,6 +509,12 @@
       "next_retry_at": "2026-09-14T19:04:15.299649+00:00",
       "status": "video_queued"
     },
+    "1Nx0ZuBDa6I": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-26T15:11:03.761759+00:00",
+      "next_retry_at": "2026-11-26T15:11:03.761759+00:00",
+      "status": "discovered"
+    },
     "1NyeNLCfa3A": {
       "attempts": 0,
       "first_seen_at": "2026-11-21T17:01:20.638474+00:00",
@@ -631,9 +637,11 @@
     },
     "2Hv1Mh__OUE": {
       "attempts": 0,
+      "completed_at": "2026-11-26T15:11:12.104945+00:00",
       "first_seen_at": "2026-11-26T13:13:03.216906+00:00",
+      "last_error": "",
       "next_retry_at": "2026-11-26T13:13:03.216906+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "2Lab5CR1OKk": {
       "attempts": 0,
@@ -1688,6 +1696,12 @@
       "next_retry_at": "2026-11-19T12:12:26.366590+00:00",
       "status": "video_queued"
     },
+    "8dFk3fI513M": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-26T15:11:03.761759+00:00",
+      "next_retry_at": "2026-11-26T15:11:03.761759+00:00",
+      "status": "discovered"
+    },
     "8gKjM9SmMzQ": {
       "attempts": 0,
       "completed_at": "2026-09-02T19:50:45.549888+00:00",
@@ -2222,6 +2236,12 @@
       "next_retry_at": "2026-09-01T14:57:43.886366+00:00",
       "status": "video_queued"
     },
+    "BFv7knNjVYo": {
+      "attempts": 0,
+      "first_seen_at": "2026-11-26T15:11:03.761759+00:00",
+      "next_retry_at": "2026-11-26T15:11:03.761759+00:00",
+      "status": "discovered"
+    },
     "BHQ2F4IMH1E": {
       "attempts": 0,
       "completed_at": "2026-09-19T09:45:26.994837+00:00",
@@ -2684,9 +2704,11 @@
     },
     "DF_DaiNiRLU": {
       "attempts": 0,
+      "completed_at": "2026-11-26T15:11:20.217110+00:00",
       "first_seen_at": "2026-11-26T13:13:03.216906+00:00",
+      "last_error": "",
       "next_retry_at": "2026-11-26T13:13:03.216906+00:00",
-      "status": "discovered"
+      "status": "video_queued"
     },
     "DGnv0PLVJb0": {
       "attempts": 1,
