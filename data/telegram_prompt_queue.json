@@ -2898,10 +2898,11 @@
       "prompt_message_id": 1292,
       "r2_key": "social-ready/YQCQAHoJrcE.mp4",
       "sent_at": "2026-11-21T09:46:44.650736+00:00",
-      "status": "assigned_to_r2_upload",
+      "status": "published",
       "telegram_file_unique_id": "AgADkigAAmCIEVQ",
       "uploaded_at": "2026-11-21T12:52:40.145371+00:00",
-      "video_id": "YQCQAHoJrcE"
+      "video_id": "YQCQAHoJrcE",
+      "prompt_delete_error": "Bad Request: message can't be deleted for everyone"
     },
     {
       "prompt_message_id": 1294,

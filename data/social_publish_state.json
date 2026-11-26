@@ -1914,8 +1914,54 @@
           "status": "published"
         },
         "youtube_short": {
-          "error": "('invalid_client: The provided client secret is invalid.', {'error': 'invalid_client', 'error_description': 'The provided client secret is invalid.'})",
-          "status": "credential_blocked"
+          "result": {
+            "snippet": {
+              "categoryId": "22",
+              "channelId": "UCeqXbvH1X-ADM3D59iK1L-A",
+              "channelTitle": "Smart buy cart",
+              "description": "65 Lakhs 2 BHK Villa in Shanthimedu, Coimbatore. Watch the complete property walkthrough.\n\n📍 Location: Shanthimedu, Coimbatore\n🏡 Property: 2 BHK Villa\n💰 Price: 65 Lakhs\n📐 Land: 2.75 Cents\n🏗️ Built-up: 1450 Sq.ft\n🧭 Facing: East\n🚗 Parking: 1 Car park\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #ShanthimeduProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+              "liveBroadcastContent": "none",
+              "localized": {
+                "description": "65 Lakhs 2 BHK Villa in Shanthimedu, Coimbatore. Watch the complete property walkthrough.\n\n📍 Location: Shanthimedu, Coimbatore\n🏡 Property: 2 BHK Villa\n💰 Price: 65 Lakhs\n📐 Land: 2.75 Cents\n🏗️ Built-up: 1450 Sq.ft\n🧭 Facing: East\n🚗 Parking: 1 Car park\n✅ Approval: DTCP Approved\n\nFor complete details and a site visit, call 9003787621.\nProperty information is based on the source listing. Verify availability, documents, dimensions and price before purchase.\n\n#Shorts #ShanthimeduProperty #CoimbatoreProperty #CoimbatoreRealEstate",
+                "title": "65 Lakhs 2 BHK Villa in Shanthimedu, Coimbatore | Site Visit 9003787621"
+              },
+              "publishedAt": "2026-11-26T13:44:15Z",
+              "tags": [
+                "Coimbatore Property",
+                "Coimbatore Real Estate",
+                "Property For Sale",
+                "Shorts"
+              ],
+              "thumbnails": {
+                "default": {
+                  "height": 90,
+                  "url": "https://i.ytimg.com/vi/PIsyYrEoUpY/default.jpg",
+                  "width": 120
+                },
+                "high": {
+                  "height": 360,
+                  "url": "https://i.ytimg.com/vi/PIsyYrEoUpY/hqdefault.jpg",
+                  "width": 480
+                },
+                "medium": {
+                  "height": 180,
+                  "url": "https://i.ytimg.com/vi/PIsyYrEoUpY/mqdefault.jpg",
+                  "width": 320
+                }
+              },
+              "title": "65 Lakhs 2 BHK Villa in Shanthimedu, Coimbatore | Site Visit 9003787621"
+            },
+            "status": {
+              "embeddable": true,
+              "license": "youtube",
+              "privacyStatus": "public",
+              "publicStatsViewable": true,
+              "selfDeclaredMadeForKids": false,
+              "uploadStatus": "uploaded"
+            },
+            "video_id": "PIsyYrEoUpY"
+          },
+          "status": "published"
         }
       },
       "status": "ready_to_publish",
