@@ -137,7 +137,8 @@
     "7f-3qsnPfJE",
     "UB1nJKVjJ6Y",
     "_JQ6eBPYxHM",
-    "9NHTtMGorbE"
+    "9NHTtMGorbE",
+    "we8N5zIJ2CA"
   ],
   "history": [
     {
@@ -829,6 +830,11 @@
       "video_id": "9NHTtMGorbE",
       "creator": "IDHD - Interior Design & Home Decor",
       "url": "https://www.youtube.com/watch?v=9NHTtMGorbE"
+    },
+    {
+      "video_id": "we8N5zIJ2CA",
+      "creator": "Ridhi Khosla Jalan",
+      "url": "https://www.youtube.com/watch?v=we8N5zIJ2CA"
     }
   ],
   "night_channel_cursor": 1
