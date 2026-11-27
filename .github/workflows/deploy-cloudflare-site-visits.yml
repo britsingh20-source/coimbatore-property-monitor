@@ -1,0 +1,44 @@
+name: Deploy Site Visit Board API
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "cloudflare/site-visits/**"
+      - ".github/workflows/deploy-cloudflare-site-visits.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Test Site Visit API
+        run: node --test cloudflare/site-visits/tests/api.test.mjs
+
+      - name: Install Wrangler
+        run: npm install --global wrangler@latest
+
+      - name: Deploy Worker
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        working-directory: cloudflare/site-visits
+        run: npx wrangler deploy
+
+      - name: Verify live Worker health
+        run: |
+          set -euo pipefail
+          expected="coimbatore-site-visits-api: healthy"
+          actual="$(curl --fail --silent --show-error --retry 5 --retry-delay 3 \
+            "https://coimbatore-site-visits-api.britsingh20.workers.dev/")"
+          test "$actual" = "$expected"
+          echo "Site Visit API is live."

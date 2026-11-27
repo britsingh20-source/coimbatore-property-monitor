@@ -1,0 +1,14 @@
+name = "coimbatore-site-visits-api"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+workers_dev = true
+
+# Same D1 database as the Coimbatore lead CRM. Uses only the site_visits and
+# site_visit_settings tables; the CRM tables are never touched.
+[[d1_databases]]
+binding = "DB"
+database_name = "coimbatore-lead-crm"
+database_id = "783b233a-ff40-4794-bec9-6ee41b3021f9"
+
+[vars]
+ALLOWED_ORIGINS = "https://britsingh20-source.github.io"
