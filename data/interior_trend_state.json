@@ -140,7 +140,8 @@
     "9NHTtMGorbE",
     "we8N5zIJ2CA",
     "N7MbuoF6e1I",
-    "NjMPVXKzLF0"
+    "NjMPVXKzLF0",
+    "veH9f19bZzY"
   ],
   "history": [
     {
@@ -847,6 +848,11 @@
       "video_id": "NjMPVXKzLF0",
       "creator": "DesignCafe",
       "url": "https://www.youtube.com/watch?v=NjMPVXKzLF0"
+    },
+    {
+      "video_id": "veH9f19bZzY",
+      "creator": "DesignCafe",
+      "url": "https://www.youtube.com/watch?v=veH9f19bZzY"
     }
   ],
   "night_channel_cursor": 1
