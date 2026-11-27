@@ -10,7 +10,11 @@ function makeDB() {
   db.exec(`CREATE TABLE site_visits (id TEXT PRIMARY KEY, visit_date TEXT NOT NULL, visit_time TEXT NOT NULL DEFAULT '',
     name TEXT NOT NULL, phone TEXT NOT NULL, place TEXT NOT NULL DEFAULT '', note TEXT NOT NULL DEFAULT '',
     added_by TEXT NOT NULL DEFAULT '', done INTEGER NOT NULL DEFAULT 0, created_at INTEGER NOT NULL,
-    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);
+    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP, area TEXT NOT NULL DEFAULT '');
+    CREATE TABLE area_master (code TEXT PRIMARY KEY, canonical_name TEXT, priority_band TEXT, active INTEGER);
+    CREATE TABLE areas (code TEXT PRIMARY KEY, name TEXT, active INTEGER);
+    INSERT INTO area_master VALUES ('SRV','Saravanampatti',NULL,1),('IDG','Idigarai','P1',1);
+    INSERT INTO areas VALUES ('IDG','Idigarai',1),('ANR','Annur',1),('RSP','RS Puram',0);
     CREATE TABLE site_visit_settings (id INTEGER PRIMARY KEY CHECK (id = 1), pin_hash TEXT NOT NULL,
     failed_attempts INTEGER NOT NULL DEFAULT 0, locked_until INTEGER NOT NULL DEFAULT 0, updated_at TEXT);`);
   const hash = createHash("sha256").update("site-visits:123456").digest("hex");
@@ -43,13 +47,14 @@ test("health and wrong pin", async () => {
 
 test("add, list, update, delete", async () => {
   const today = new Date().toISOString().slice(0, 10);
-  const v = { id: "abc123xyz", date: today, time: "10:30", name: "Ramesh", phone: "9876543210", place: "Idigarai", by: "Bright", done: false, created: 1 };
+  const v = { id: "abc123xyz", date: today, time: "10:30", name: "Ramesh", phone: "9876543210", area: "Idigarai", place: "Near temple", by: "Bright", done: false, created: 1 };
   let r = await call("/visits", { method: "POST", headers: pinH, body: JSON.stringify({ visit: v }) });
   assert.equal(r.status, 200);
   assert.equal(r.headers.get("Access-Control-Allow-Origin"), "https://britsingh20-source.github.io");
   r = await (await call("/visits", { headers: pinH })).json();
   assert.equal(r.visits.length, 1);
   assert.equal(r.visits[0].by, "Bright");
+  assert.equal(r.visits[0].area, "Idigarai");
   await call("/visits", { method: "POST", headers: pinH, body: JSON.stringify({ visit: { ...v, done: true, by: "Someone else" } }) });
   r = await (await call("/visits", { headers: pinH })).json();
   assert.equal(r.visits[0].done, true);
@@ -57,6 +62,12 @@ test("add, list, update, delete", async () => {
   assert.equal((await call("/visits/abc123xyz", { method: "DELETE", headers: pinH })).status, 200);
   r = await (await call("/visits", { headers: pinH })).json();
   assert.equal(r.visits.length, 0);
+});
+
+test("area list: main first, Idigarai on top, inactive hidden", async () => {
+  const r = await (await call("/visits/areas", { headers: pinH })).json();
+  assert.deepEqual(r.main, ["Idigarai", "Saravanampatti"]);
+  assert.deepEqual(r.other, ["Annur"]);
 });
 
 test("bad input rejected", async () => {

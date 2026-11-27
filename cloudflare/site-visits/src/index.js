@@ -56,7 +56,7 @@ const clean = (v, max) => String(v == null ? "" : v).trim().slice(0, max);
 function toVisit(r) {
   return {
     id: r.id, date: r.visit_date, time: r.visit_time, name: r.name, phone: r.phone,
-    place: r.place, note: r.note, by: r.added_by, done: !!r.done, created: r.created_at,
+    area: r.area || "", place: r.place, note: r.note, by: r.added_by, done: !!r.done, created: r.created_at,
   };
 }
 
@@ -73,6 +73,15 @@ export default {
     try {
       const auth = await checkPin(env, request.headers.get("X-Pin"));
       if (auth !== "ok") return json({ ok: false, error: auth }, auth === "locked" ? 429 : 401, h);
+
+      // Area list from the CRM: main areas (area_master) first, then every other active area
+      if (request.method === "GET" && url.pathname === "/visits/areas") {
+        const main = await env.DB.prepare("SELECT canonical_name AS name FROM area_master WHERE active = 1 ORDER BY CASE WHEN priority_band = 'P1' THEN 0 ELSE 1 END, canonical_name").all();
+        const all = await env.DB.prepare("SELECT name FROM areas WHERE active = 1 ORDER BY name").all();
+        const mainNames = main.results.map((r) => r.name);
+        const rest = all.results.map((r) => r.name).filter((n) => !mainNames.includes(n));
+        return json({ ok: true, main: mainNames, other: rest }, 200, h);
+      }
 
       // List: last 60 days and everything ahead
       if (request.method === "GET" && url.pathname === "/visits") {
@@ -97,12 +106,12 @@ export default {
           return json({ ok: false, error: "missing" }, 400, h);
         }
         await env.DB.prepare(
-          `INSERT INTO site_visits (id, visit_date, visit_time, name, phone, place, note, added_by, done, created_at, updated_at)
-           VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, CURRENT_TIMESTAMP)
+          `INSERT INTO site_visits (id, visit_date, visit_time, name, phone, place, note, added_by, done, created_at, area, updated_at)
+           VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, CURRENT_TIMESTAMP)
            ON CONFLICT(id) DO UPDATE SET visit_date = ?2, visit_time = ?3, name = ?4, phone = ?5, place = ?6,
-             note = ?7, done = ?9, updated_at = CURRENT_TIMESTAMP`
+             note = ?7, done = ?9, area = ?11, updated_at = CURRENT_TIMESTAMP`
         ).bind(id, date, time, name, phone, clean(v.place, 100), clean(v.note, 400), clean(v.by, 30),
-          v.done ? 1 : 0, Number(v.created) || Date.now()).run();
+          v.done ? 1 : 0, Number(v.created) || Date.now(), clean(v.area, 60)).run();
         return json({ ok: true }, 200, h);
       }
 
