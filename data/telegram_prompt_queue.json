@@ -953,14 +953,14 @@
       "video_id": "xOPjWiJJ61c"
     },
     {
+      "prompt_delete_error": "Bad Request: message can't be deleted for everyone",
       "prompt_message_id": 549,
       "r2_key": "social-ready/M0iRDEf_DfQ.mp4",
       "sent_at": "2026-09-17T01:29:47.927453+00:00",
       "status": "published",
       "telegram_file_unique_id": "AgAD7CEAAqd1YFU",
       "uploaded_at": "2026-09-17T03:49:55.547843+00:00",
-      "video_id": "M0iRDEf_DfQ",
-      "prompt_delete_error": "Bad Request: message can't be deleted for everyone"
+      "video_id": "M0iRDEf_DfQ"
     },
     {
       "prompt_message_id": 588,
@@ -969,14 +969,14 @@
       "video_id": "9BzBTyvKXYE"
     },
     {
+      "prompt_delete_error": "Bad Request: message can't be deleted for everyone",
       "prompt_message_id": 590,
       "r2_key": "social-ready/CLp9Pohl8No.mp4",
       "sent_at": "2026-09-17T13:34:13.479979+00:00",
       "status": "published",
       "telegram_file_unique_id": "AgADmCcAApsdYVU",
       "uploaded_at": "2026-09-17T15:26:55.792604+00:00",
-      "video_id": "CLp9Pohl8No",
-      "prompt_delete_error": "Bad Request: message can't be deleted for everyone"
+      "video_id": "CLp9Pohl8No"
     },
     {
       "prompt_message_id": 597,
@@ -1103,14 +1103,14 @@
       "video_id": "zclTKyhfHyE"
     },
     {
+      "prompt_delete_error": "Bad Request: message can't be deleted for everyone",
       "prompt_message_id": 713,
       "r2_key": "social-ready/N8OFO4_0LwY.mp4",
       "sent_at": "2026-09-19T13:06:41.719166+00:00",
       "status": "published",
       "telegram_file_unique_id": "AgADzB0AAuXceFU",
       "uploaded_at": "2026-09-20T01:57:44.730702+00:00",
-      "video_id": "N8OFO4_0LwY",
-      "prompt_delete_error": "Bad Request: message can't be deleted for everyone"
+      "video_id": "N8OFO4_0LwY"
     },
     {
       "prompt_message_id": 715,
@@ -1243,14 +1243,14 @@
       "video_id": "BxSFOoXOLXE"
     },
     {
+      "prompt_delete_error": "Bad Request: message can't be deleted for everyone",
       "prompt_message_id": 872,
       "r2_key": "social-ready/TJ2hnhs0k88.mp4",
       "sent_at": "2026-09-22T10:04:32.840350+00:00",
       "status": "published",
       "telegram_file_unique_id": "AgADKSMAAvJ7mVU",
       "uploaded_at": "2026-09-23T03:26:15.050957+00:00",
-      "video_id": "TJ2hnhs0k88",
-      "prompt_delete_error": "Bad Request: message can't be deleted for everyone"
+      "video_id": "TJ2hnhs0k88"
     },
     {
       "prompt_message_id": 874,
@@ -1475,14 +1475,14 @@
       "video_id": "lCGeuHSd4jM"
     },
     {
+      "prompt_delete_error": "Bad Request: message can't be deleted for everyone",
       "prompt_message_id": 9,
       "r2_key": "social-ready/TxfvE75rWNg.mp4",
       "sent_at": "2026-10-01T18:40:08.461409+00:00",
       "status": "published",
       "telegram_file_unique_id": "AgADBCQAAh91YFY",
       "uploaded_at": "2026-10-12T13:56:41.794341+00:00",
-      "video_id": "TxfvE75rWNg",
-      "prompt_delete_error": "Bad Request: message can't be deleted for everyone"
+      "video_id": "TxfvE75rWNg"
     },
     {
       "prompt_delete_error": "Bad Request: message can't be deleted for everyone",
@@ -1495,14 +1495,14 @@
       "video_id": "K7nJbjEMB9U"
     },
     {
+      "prompt_delete_error": "Bad Request: message can't be deleted for everyone",
       "prompt_message_id": 16,
       "r2_key": "social-ready/OaoigaZDwus.mp4",
       "sent_at": "2026-10-01T22:58:38.995193+00:00",
       "status": "published",
       "telegram_file_unique_id": "AgAD3x4AAh91aFY",
       "uploaded_at": "2026-10-13T01:27:46.296869+00:00",
-      "video_id": "OaoigaZDwus",
-      "prompt_delete_error": "Bad Request: message can't be deleted for everyone"
+      "video_id": "OaoigaZDwus"
     },
     {
       "prompt_message_id": 30,
@@ -1877,14 +1877,14 @@
       "video_id": "gUELE_ESgyo"
     },
     {
+      "prompt_delete_error": "Bad Request: message can't be deleted for everyone",
       "prompt_message_id": 454,
       "r2_key": "social-ready/_XlBaYbZqaY.mp4",
       "sent_at": "2026-10-22T22:44:11.185343+00:00",
       "status": "published",
       "telegram_file_unique_id": "AgADuyIAAnUD-VY",
       "uploaded_at": "2026-10-26T02:07:26.233401+00:00",
-      "video_id": "_XlBaYbZqaY",
-      "prompt_delete_error": "Bad Request: message can't be deleted for everyone"
+      "video_id": "_XlBaYbZqaY"
     },
     {
       "prompt_message_id": 457,
@@ -2098,14 +2098,14 @@
       "video_id": "ezmLsAuE0i0"
     },
     {
+      "prompt_delete_error": "Bad Request: message can't be deleted for everyone",
       "prompt_message_id": 645,
       "r2_key": "social-ready/LzHwTZFDKfo.mp4",
       "sent_at": "2026-11-02T00:44:12.467004+00:00",
       "status": "published",
       "telegram_file_unique_id": "AgADiyQAApARSVc",
       "uploaded_at": "2026-11-03T03:03:52.383167+00:00",
-      "video_id": "LzHwTZFDKfo",
-      "prompt_delete_error": "Bad Request: message can't be deleted for everyone"
+      "video_id": "LzHwTZFDKfo"
     },
     {
       "prompt_message_id": 647,
@@ -2159,14 +2159,14 @@
       "video_id": "oNyfrlOT6mw"
     },
     {
+      "prompt_delete_error": "Bad Request: message can't be deleted for everyone",
       "prompt_message_id": 698,
       "r2_key": "social-ready/IEV-WjbHU1o.mp4",
       "sent_at": "2026-11-06T06:45:56.002996+00:00",
       "status": "published",
       "telegram_file_unique_id": "AgADXyUAAj26eVc",
       "uploaded_at": "2026-11-07T10:09:40.593787+00:00",
-      "video_id": "IEV-WjbHU1o",
-      "prompt_delete_error": "Bad Request: message can't be deleted for everyone"
+      "video_id": "IEV-WjbHU1o"
     },
     {
       "prompt_message_id": 729,
@@ -2896,14 +2896,14 @@
       "video_id": "q7a2NvooQik"
     },
     {
+      "prompt_delete_error": "Bad Request: message can't be deleted for everyone",
       "prompt_message_id": 1292,
       "r2_key": "social-ready/YQCQAHoJrcE.mp4",
       "sent_at": "2026-11-21T09:46:44.650736+00:00",
       "status": "published",
       "telegram_file_unique_id": "AgADkigAAmCIEVQ",
       "uploaded_at": "2026-11-21T12:52:40.145371+00:00",
-      "video_id": "YQCQAHoJrcE",
-      "prompt_delete_error": "Bad Request: message can't be deleted for everyone"
+      "video_id": "YQCQAHoJrcE"
     },
     {
       "prompt_message_id": 1294,
@@ -3062,136 +3062,140 @@
       "video_id": "iPe-txZGEhk"
     },
     {
-      "video_id": "3UJ0H4PXprM",
+      "prompt_message_id": 1414,
       "sent_at": "2026-11-25T10:31:45.553547+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1414
+      "video_id": "3UJ0H4PXprM"
     },
     {
-      "video_id": "MLN5X_Eu1rc",
+      "prompt_message_id": 1416,
       "sent_at": "2026-11-25T10:31:55.021249+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1416
+      "video_id": "MLN5X_Eu1rc"
     },
     {
-      "video_id": "fkYZTbJC2gk",
+      "prompt_message_id": 1437,
       "sent_at": "2026-11-26T03:12:09.433774+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1437
+      "video_id": "fkYZTbJC2gk"
     },
     {
-      "video_id": "lu0g0nxy6s0",
+      "prompt_message_id": 1439,
       "sent_at": "2026-11-26T03:12:21.859393+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1439
+      "video_id": "lu0g0nxy6s0"
     },
     {
-      "video_id": "JHByh9eG6GE",
+      "prompt_message_id": 1443,
       "sent_at": "2026-11-26T05:00:34.553682+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1443
+      "video_id": "JHByh9eG6GE"
     },
     {
-      "video_id": "WZWP1EeWQ1I",
+      "prompt_message_id": 1445,
       "sent_at": "2026-11-26T05:00:46.052080+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1445
+      "video_id": "WZWP1EeWQ1I"
     },
     {
-      "video_id": "K9J8ASXKi2c",
+      "prompt_message_id": 1451,
       "sent_at": "2026-11-26T13:13:29.861178+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1451
+      "video_id": "K9J8ASXKi2c"
     },
     {
-      "video_id": "j6KSvSNBWfs",
+      "prompt_message_id": 1453,
       "sent_at": "2026-11-26T13:13:41.549145+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1453
+      "video_id": "j6KSvSNBWfs"
     },
     {
-      "video_id": "DaeByVTR60k",
+      "prompt_message_id": 1462,
       "sent_at": "2026-11-26T22:38:13.854832+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1462
+      "video_id": "DaeByVTR60k"
     },
     {
-      "video_id": "kuhj2IOASB8",
+      "prompt_message_id": 1464,
       "sent_at": "2026-11-26T22:38:23.547220+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1464
+      "video_id": "kuhj2IOASB8"
     },
     {
-      "video_id": "-Yf34gEU_4E",
+      "prompt_message_id": 1468,
       "sent_at": "2026-11-26T23:51:17.886037+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1468
+      "video_id": "-Yf34gEU_4E"
     },
     {
-      "video_id": "L8Hl3QAvObw",
+      "prompt_message_id": 1470,
       "sent_at": "2026-11-26T23:51:33.187277+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1470
+      "video_id": "L8Hl3QAvObw"
     },
     {
-      "video_id": "HgH8sZ4wTS8",
+      "prompt_message_id": 1474,
       "sent_at": "2026-11-27T04:35:32.547777+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1474
+      "video_id": "HgH8sZ4wTS8"
     },
     {
-      "video_id": "tqGMxUsHg6w",
+      "prompt_message_id": 1476,
       "sent_at": "2026-11-27T04:35:43.480869+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1476
+      "video_id": "tqGMxUsHg6w"
     },
     {
-      "video_id": "Purg4LNGYM4",
+      "prompt_message_id": 1480,
       "sent_at": "2026-11-27T08:25:28.758458+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1480
+      "video_id": "Purg4LNGYM4"
     },
     {
-      "video_id": "KlmacjSiqQs",
+      "prompt_message_id": 1485,
       "sent_at": "2026-11-27T14:25:13.575657+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1485
+      "video_id": "KlmacjSiqQs"
     },
     {
-      "video_id": "bHT7eo-ZKFQ",
+      "prompt_message_id": 1487,
       "sent_at": "2026-11-27T14:25:23.779705+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1487
+      "video_id": "bHT7eo-ZKFQ"
     },
     {
-      "video_id": "WGEbQLB21rA",
+      "prompt_message_id": 1493,
       "sent_at": "2026-11-27T18:56:56.796872+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1493
+      "video_id": "WGEbQLB21rA"
     },
     {
-      "video_id": "npJEO_m_HTc",
+      "prompt_message_id": 1495,
       "sent_at": "2026-11-27T18:57:07.988769+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1495
+      "video_id": "npJEO_m_HTc"
     },
     {
-      "video_id": "bqrpajsr1Qc",
+      "prompt_message_id": 1503,
       "sent_at": "2026-11-27T23:01:26.684753+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1503
+      "video_id": "bqrpajsr1Qc"
     },
     {
-      "video_id": "qNCyBHNG1i0",
+      "prompt_message_id": 1505,
+      "r2_key": "social-ready/qNCyBHNG1i0.mp4",
       "sent_at": "2026-11-27T23:01:56.545032+00:00",
-      "status": "pending_mobile_upload",
-      "prompt_message_id": 1505
+      "status": "published",
+      "telegram_file_unique_id": "AgADTiEAAtZOUFQ",
+      "uploaded_at": "2026-11-28T03:45:48.291452+00:00",
+      "video_id": "qNCyBHNG1i0",
+      "prompt_deleted_at": "2026-11-28T03:47:50.997931+00:00"
     },
     {
-      "video_id": "k_R0bxQD5vg",
+      "prompt_message_id": 1509,
       "sent_at": "2026-11-28T01:58:21.009348+00:00",
       "status": "pending_mobile_upload",
-      "prompt_message_id": 1509
+      "video_id": "k_R0bxQD5vg"
     }
   ]
 }
