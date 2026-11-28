@@ -1,0 +1,158 @@
+{
+  "video_id": "sBQNVOTyR80",
+  "source_url": "https://www.youtube.com/watch?v=sBQNVOTyR80",
+  "property_location": "Pattanam, Coimbatore",
+  "entrance_contaminated": false,
+  "property": {
+    "property_type": "Independent House",
+    "bhk": "2 BHK",
+    "land_area": "3.50 cents",
+    "built_up_area": "1400 Sq.ft",
+    "price": "₹75 Lakhs",
+    "facing": "North",
+    "road_width": "25 Feet",
+    "parking": "Spacious double car parking",
+    "approval": "DTCP & Plan Approval",
+    "floors": "Single-storey simplex house with open terrace",
+    "layout_distribution": "Ground floor contains living hall, kitchen/dining area, two master bedrooms with attached bathrooms, and parking. Roof level is an open terrace utility."
+  },
+  "verified_facts": "3.50 cents land area, 1400 sq.ft building area, North facing land and main door, Price ₹75 Lakhs (Negotiable), Up to 75% - 80% loan available, 2 BHK Simplex House",
+  "content_plan": {
+    "version": "content-director-v1-fallback",
+    "target_duration_seconds": 40,
+    "style": "natural conversational Coimbatore Tamil property presenter",
+    "hook_strategy": "strongest verified fact plus locality",
+    "scenes": [
+      {
+        "name": "location",
+        "voice": "Pattanam, Coimbatore சைட்ல 2 BHK Independent House தேடிட்டு இருந்தீங்கனா இந்த ப்ராப்பர்ட்டியை பாருங்க. நல்ல ரெசிடென்ஷியல் லொக்கேஷன்ல இருக்கு.",
+        "broll": [
+          "exterior",
+          "road"
+        ],
+        "avoid_broll": [
+          "bedroom",
+          "kitchen"
+        ],
+        "vfx": "location-pin",
+        "purpose": "hook"
+      },
+      {
+        "name": "price",
+        "voice": "இதோட கேட்குற விலை ₹75 Lakhs.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "price-reveal",
+        "purpose": "fact"
+      },
+      {
+        "name": "land",
+        "voice": "மொத்தம் 3.50 cents லேண்ட் கிடைக்குது.",
+        "broll": [
+          "land",
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "plot-boundary",
+        "purpose": "fact"
+      },
+      {
+        "name": "builtUp",
+        "voice": "பில்ட் அப் பாத்தீங்கனா 1400 Sq.ft இருக்கு.",
+        "broll": [
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [],
+        "vfx": "builtup-lines",
+        "purpose": "fact"
+      },
+      {
+        "name": "road",
+        "voice": "இதுல முக்கியமான விஷயம், முன்னாடி 25 Feet ரோடு வசதி இருக்கு.",
+        "broll": [
+          "road"
+        ],
+        "avoid_broll": [],
+        "vfx": "road-measure",
+        "purpose": "fact"
+      },
+      {
+        "name": "facing",
+        "voice": "வீடு North ஃபேசிங்.",
+        "broll": [
+          "exterior",
+          "land"
+        ],
+        "avoid_broll": [],
+        "vfx": "compass",
+        "purpose": "fact"
+      },
+      {
+        "name": "approval",
+        "voice": "அப்ரூவல் பாத்தீங்கனா DTCP & Plan Approval இருக்கு.",
+        "broll": [
+          "exterior"
+        ],
+        "avoid_broll": [],
+        "vfx": "approval-seal",
+        "purpose": "fact"
+      },
+      {
+        "name": "verify",
+        "voice": "லொக்கேஷன், அளவு, விலை, டாக்குமெண்ட்ஸ் எல்லாத்தையும் சைட் விசிட்டுக்கு வரும்போது நாம கிளியரா செக் பண்ணிக்கலாம்.",
+        "broll": [
+          "exterior",
+          "living_room",
+          "kitchen",
+          "bedroom"
+        ],
+        "avoid_broll": [
+          "road"
+        ],
+        "vfx": "verify-checklist",
+        "purpose": "trust"
+      },
+      {
+        "name": "cta",
+        "voice": "இந்த ப்ராப்பர்ட்டி பிடிச்சிருந்தா டீட்டெயில்ஸ் மற்றும் சைட் விசிட்டுக்கு கோயம்புத்தூர் வீடு பில்டர்ஸ்க்கு கால் பண்ணுங்க.",
+        "broll": [
+          "exterior",
+          "living_room"
+        ],
+        "avoid_broll": [],
+        "vfx": "cta",
+        "purpose": "cta"
+      }
+    ]
+  },
+  "disclosure": "Representative locality/property visuals; verify the actual property before purchase.",
+  "aspect_ratio": "9:16",
+  "render_engine": "remotion-professional-free",
+  "required_owned_images_folder": "assets/properties/sBQNVOTyR80/",
+  "optional_owned_audio": "assets/audio/sBQNVOTyR80.mp3",
+  "scenes": [
+    {
+      "name": "street",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Front metal folding gate, neem tree in front, compound wall, and exterior staircase leading to the open terrace.. Hard floor/layout lock: Single-storey simplex house with open terrace; Ground floor contains living hall, kitchen/dining area, two master bedrooms with attached bathrooms, and parking. Roof level is an open terrace utility.. Neighbourhood: Residential area located close to SBIOA School in Pattanam, Coimbatore, with nearby schools, colleges, and wide roads.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Smooth establishing gimbal shot from the approach road, ambient city sounds."
+    },
+    {
+      "name": "exterior",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Front metal folding gate, neem tree in front, compound wall, and exterior staircase leading to the open terrace.. Hard floor/layout lock: Single-storey simplex house with open terrace; Ground floor contains living hall, kitchen/dining area, two master bedrooms with attached bathrooms, and parking. Roof level is an open terrace utility.. Neighbourhood: Residential area located close to SBIOA School in Pattanam, Coimbatore, with nearby schools, colleges, and wide roads.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Slow premium reveal of the front elevation and parking, realistic shadows."
+    },
+    {
+      "name": "living",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Front metal folding gate, neem tree in front, compound wall, and exterior staircase leading to the open terrace.. Hard floor/layout lock: Single-storey simplex house with open terrace; Ground floor contains living hall, kitchen/dining area, two master bedrooms with attached bathrooms, and parking. Roof level is an open terrace utility.. Neighbourhood: Residential area located close to SBIOA School in Pattanam, Coimbatore, with nearby schools, colleges, and wide roads.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Interior walkthrough only when a living room is verified in the source."
+    },
+    {
+      "name": "kitchen",
+      "prompt": "Photorealistic contemporary residential property in Pattanam, Coimbatore, Tamil Nadu. Architecture consistent with: Front metal folding gate, neem tree in front, compound wall, and exterior staircase leading to the open terrace.. Hard floor/layout lock: Single-storey simplex house with open terrace; Ground floor contains living hall, kitchen/dining area, two master bedrooms with attached bathrooms, and parking. Roof level is an open terrace utility.. Neighbourhood: Residential area located close to SBIOA School in Pattanam, Coimbatore, with nearby schools, colleges, and wide roads.. Natural tropical daylight, accurate Indian road scale, realistic materials, cinematic property marketing, no logos, no religious or ceremonial imagery or symbols, no visible phone numbers, no misleading text, vertical composition. Kitchen walkthrough only when a kitchen is verified in the source."
+    }
+  ],
+  "status": "auto_approved",
+  "approval_mode": "automatic_fact_gate_v1"
+}
