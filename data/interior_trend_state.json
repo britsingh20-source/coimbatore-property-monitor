@@ -141,7 +141,8 @@
     "we8N5zIJ2CA",
     "N7MbuoF6e1I",
     "NjMPVXKzLF0",
-    "veH9f19bZzY"
+    "veH9f19bZzY",
+    "c3OulVIxtFk"
   ],
   "history": [
     {
@@ -853,6 +854,11 @@
       "video_id": "veH9f19bZzY",
       "creator": "DesignCafe",
       "url": "https://www.youtube.com/watch?v=veH9f19bZzY"
+    },
+    {
+      "video_id": "c3OulVIxtFk",
+      "creator": "Interior Coach",
+      "url": "https://www.youtube.com/watch?v=c3OulVIxtFk"
     }
   ],
   "night_channel_cursor": 1
